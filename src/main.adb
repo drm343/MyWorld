@@ -6,14 +6,11 @@ with Easy_Window;
 with Terminal_Interface.Curses_Constants;
 with My_World.Key_Code;
 with My_World.Character_Status;
-with My_World.Rule;
 
 procedure Main is
    package NCurses renames Terminal_Interface.Curses_Constants;
    package NKeys renames My_World.Key_Code;
    package Character_Status renames My_World.Character_Status;
-   package Rule renames My_World.Rule;
-   package Map renames Rule.Map;
 
    Main_Window : Easy_Window.Main_Window_Type;
    Create_Success : Boolean;
@@ -24,11 +21,6 @@ procedure Main is
    Gnome    : Character_Status.Character_Type := Character_Status.Create_NPC
      ('a',
       Character_Status.Enemy);
-
-   Outside_Map : Map.List   := Map.Empty_List;
-   Border_Map  : Map.List   := Map.Empty_List;
-   Inside_Map  : Map.List   := Map.Empty_List;
-   Cursor      : Map.Cursor := Outside_Map.Last;
 begin
    --  char const *previous_locale = setlocale (LC_ALL, "");
    --  ref: http://panathenaia.halfmoon.jp/alang/ada/character-handling.html
@@ -46,25 +38,26 @@ begin
 
    Easy_Window.Init_Screen;
 
-   Main_Window := Easy_Window.Create_Main_Window (Create_Success, Player, 22, 75);
+   Main_Window := Easy_Window.Create_Main_Window (Create_Success, Player, 75, 20);
 
    if Create_Success then
-      Gnome.Set_Real_Point (10, 5);
-      Inside_Map.Append (Player);
-      Border_Map.Append (Gnome);
+      Gnome.Set_Real_Point (30, 10);
+      Main_Window.Add_Character (Gnome);
+      Main_Window.Update_Graph;
 
       loop
+         Main_Window.Debug;
          Key_Code := Main_Window.Get_Keystroke;
 
          case Key_Code is
          when NCurses.KEY_LEFT =>
-            Main_Window.Move_Graph_Right;
-         when NCurses.KEY_RIGHT =>
             Main_Window.Move_Graph_Left;
+         when NCurses.KEY_RIGHT =>
+            Main_Window.Move_Graph_Right;
          when NCurses.KEY_UP =>
-            Main_Window.Move_Graph_Down;
-         when NCurses.KEY_DOWN =>
             Main_Window.Move_Graph_Up;
+         when NCurses.KEY_DOWN =>
+            Main_Window.Move_Graph_Down;
          when NKeys.Key_q =>
             Main_Window.Delete;
             exit;
@@ -73,9 +66,7 @@ begin
          end case;
 
          Main_Window.Clear_Graph;
-         Main_Window.Update_Graph (Gnome);
-         Main_Window.Update_Graph (Player);
-
+         Main_Window.Update_Graph;
       end loop;
    end if;
 

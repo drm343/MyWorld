@@ -11,12 +11,22 @@ package body My_World.Character_Status is
       end if;
    end "=";
 
+   function "=" (This_Faction  : Faction_Type;
+                 Other_Faction : Faction_Type)
+                 return Boolean is
+   begin
+      if Faction_Type'Image (This_Faction) = Faction_Type'Image (Other_Faction) then
+         return True;
+      else
+         return False;
+      end if;
+   end "=";
+
    function Create_Player (Mark : Character := '@') return Character_Type is
       User_Player : Character_Type;
    begin
       User_Player.Mark           := Mark;
       User_Player.Real_Position  := Create_Point (0, 0);
-      User_Player.Is_Visible     := True;
       User_Player.Graph_Position := Create_Point (0, 0);
       User_Player.Faction        := Player;
       User_Player.Damage         := 0;
@@ -33,7 +43,6 @@ package body My_World.Character_Status is
    begin
       NPC.Mark           := Mark;
       NPC.Real_Position  := Create_Point (0, 0);
-      NPC.Is_Visible     := True;
 
       New_Point := Create_Point (10, 36);
       NPC.Graph_Position.X := New_Point.X;

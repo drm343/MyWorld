@@ -10,7 +10,6 @@ package My_World.Character_Status is
       record
          Mark           : Character;
          Real_Position  : Point;
-         Is_Visible     : Boolean;
          Graph_Position : Point;
          Faction        : Faction_Type;
          Damage         : Natural;
@@ -19,6 +18,10 @@ package My_World.Character_Status is
 
    function "=" (This_Character : Character_Type;
                  Other_Character : Character_Type)
+                 return Boolean;
+
+   function "=" (This_Faction  : Faction_Type;
+                 Other_Faction : Faction_Type)
                  return Boolean;
 
    function Create_Player (Mark : Character := '@') return Character_Type;
