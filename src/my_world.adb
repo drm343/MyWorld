@@ -1,117 +1,169 @@
 package body My_World is
-   function ">=" (Object : Point; Item : Point) return Boolean is
+   function ">=" (Left, Right : Point) return Boolean is
    begin
-      if Object.X >= Item.X and Object.Y >= Item.Y then
+      if Left.X >= Right.X and Left.Y >= Right.Y then
          return True;
       else
          return False;
       end if;
    end ">=";
 
-   function "<=" (Object : Point; Item : Point) return Boolean is
+   function "<=" (Left, Right : Point) return Boolean is
    begin
-       if Object.X <= Item.X and Object.Y <= Item.Y then
-           return True;
-       else
-           return False;
-       end if;
+      if Left.X <= Right.X and Left.Y <= Right.Y then
+         return True;
+      else
+         return False;
+      end if;
    end "<=";
 
-   function ">" (Object : Point; Item : Point) return Boolean is
+   function ">" (Left, Right : Point) return Boolean is
    begin
-       if Object.X > Item.X and Object.Y > Item.Y then
-           return True;
-       else
-           return False;
-       end if;
+      if Left.X > Right.X and Left.Y > Right.Y then
+         return True;
+      else
+         return False;
+      end if;
    end ">";
 
-   function "<" (Object : Point; Item : Point) return Boolean is
+   function "<" (Left, Right : Point) return Boolean is
    begin
-       if Object.X < Item.X and Object.Y < Item.Y then
-           return True;
-       else
-           return False;
-       end if;
+      if Left.X < Right.X and Left.Y < Right.Y then
+         return True;
+      else
+         return False;
+      end if;
    end "<";
 
-   function Create_Point (X : Natural;
-                          Y : Natural)
-                          return Point is
-      Object : Point;
+   function Create_Point (X : Natural; Y : Natural) return Point is
+      New_Point : Point;
    begin
-      if X <= -1 or Y <= -1 then
-         raise Value_Error with "Create_Point: Can not create Point with negative position";
-      end if;
+      New_Point.X := X;
+      New_Point.Y := Y;
 
-      Object.X := X;
-      Object.Y := Y;
-
-      return Object;
+      return New_Point;
    end Create_Point;
 
-   function Create_Point (From : Point;
-                          To   : Point)
-                          return Point is
-      Object : Point;
+   function Create_Point (From : Point; To : Point) return Point is
+      New_Point : Point;
    begin
-      if To.X > From.X or To.Y > From.Y then
-         raise Value_Error with "Create_Point: Second point must small than First Point";
-      end if;
+      New_Point.X := From.X - To.X;
+      New_Point.Y := From.Y - To.Y;
 
-      Object.X := From.X - To.X;
-      Object.Y := From.Y - To.Y;
-
-      return Object;
+      return New_Point;
    end Create_Point;
+
    function Distance (From : Point; To : Point) return Natural is
    begin
-      return ((From.X - To.X) ** 2 + (From.Y - To.Y) ** 2) ** (1/2);
+      return ((From.X - To.X)**2 + (From.Y - To.Y)**2)**(1 / 2);
    end Distance;
 
-   procedure Move_Up (Object : in out Point) is
+   procedure Move_Up (Current_Point : in out Point) is
    begin
-      if Object.Y <= 0 then
-         raise Value_Error with "Position Y Must big then 0";
-      end if;
-
-      Object.Y := Object.Y - 1;
+      Current_Point.Y := Current_Point.Y - 1;
    end Move_Up;
 
-   procedure Move_Down (Object : in out Point) is
+   procedure Move_Down (Current_Point : in out Point) is
    begin
-      Object.Y := Object.Y + 1;
+      Current_Point.Y := Current_Point.Y + 1;
    end Move_Down;
 
-   procedure Move_Left (Object : in out Point) is
+   procedure Move_Left (Current_Point : in out Point) is
    begin
-      if Object.X <= 0 then
+      Current_Point.X := Current_Point.X - 1;
+   end Move_Left;
+
+   procedure Move_Right (Current_Point : in out Point) is
+   begin
+      Current_Point.X := Current_Point.X + 1;
+   end Move_Right;
+
+   function Get_X (Current_Point : in Point) return Natural is
+   begin
+      return Current_Point.X;
+   end Get_X;
+
+   function Get_Y (Current_Point : in Point) return Natural is
+   begin
+      return Current_Point.Y;
+   end Get_Y;
+
+   procedure Set_X (Current_Point : in out Point; X : Natural) is
+   begin
+      Current_Point.X := X;
+   end Set_X;
+
+   procedure Set_Y (Current_Point : in out Point; Y : Natural) is
+   begin
+      Current_Point.Y := Y;
+   end Set_Y;
+
+   function Position_X_Greater_Then_Zero
+     (Current_Point : Point) return Boolean
+   is
+   begin
+      if Current_Point.X <= 0 then
          raise Value_Error with "Position X Must big then 0";
       end if;
 
-      Object.X := Object.X - 1;
-   end Move_Left;
+      return True;
+   end Position_X_Greater_Then_Zero;
 
-   procedure Move_Right (Object : in out Point) is
+   function Position_Y_Greater_Then_Zero
+     (Current_Point : Point) return Boolean
+   is
    begin
-      Object.X := Object.X + 1;
-   end Move_Right;
+      if Current_Point.Y <= 0 then
+         raise Value_Error with "Position Y Must big then 0";
+      end if;
 
-   function Create_Rectangle (First_Point : Point;
-                              Last_Point : Point)
-                              return Rectangle is
-      Object : Rectangle;
+      return True;
+   end Position_Y_Greater_Then_Zero;
+
+   procedure Raise_Value_Error (Result_Value : Boolean; Message : String) is
+      Discard_Result : Truth;
    begin
-      Object.First_Point := First_Point;
-      Object.Last_Point  := Last_Point;
+      Discard_Result := Raise_Value_Error (Result_Value, Message);
+   end Raise_Value_Error;
 
-      return Object;
+   function Raise_Value_Error
+     (Result_Value : Boolean;
+      Message      : String) return Truth
+   is
+   begin
+      case Result_Value is
+         when False =>
+            raise Value_Error with Message;
+         when others =>
+            return Result_Value;
+      end case;
+   end Raise_Value_Error;
+
+   function Create_Rectangle
+     (First_Point : Point;
+      Last_Point  : Point) return Rectangle
+   is
+      New_Rectangle : Rectangle;
+   begin
+      New_Rectangle.First_Point := First_Point;
+      New_Rectangle.Last_Point  := Last_Point;
+
+      return New_Rectangle;
    end Create_Rectangle;
 
-   function Is_In_Rectangle (Object : Rectangle;
-                             Item   : Point) return Boolean is
+   function Get_First_Point (Current_Rectangle : Rectangle) return Point is
    begin
-      if Item >= Object.First_Point and Item < Object.Last_Point then
+      return Current_Rectangle.First_Point;
+   end Get_First_Point;
+
+   function Is_In_Rectangle
+     (Current_Rectangle : Rectangle;
+      Target_Point      : Point) return Boolean
+   is
+   begin
+      if Target_Point >= Current_Rectangle.First_Point and
+        Target_Point <= Current_Rectangle.Last_Point
+      then
          return True;
       else
          return False;

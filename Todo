@@ -1,0 +1,14 @@
+0.0.1
+------------------------------------------
+
+Todo:
+
+* Add attack check system.
+* Add life check system.
+* Add character generation system.
+* Add map generation system.
+* Porting to SDL2 or other GUI Lib.
+
+Done:
+
+* Minimun runnable system.
