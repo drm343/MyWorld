@@ -121,50 +121,6 @@ package body Easy_Window is
       Main_Window.Map.Add (Character);
    end Add_Character;
 
-   procedure Move_Graph_Up (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Move_Up (Main_Window.Map);
-   end Move_Graph_Up;
-
-   procedure Move_Graph_Down (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Move_Down (Main_Window.Map);
-   end Move_Graph_Down;
-
-   procedure Move_Graph_Left (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Move_Left (Main_Window.Map);
-   end Move_Graph_Left;
-
-   procedure Move_Graph_Right (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Move_Right (Main_Window.Map);
-   end Move_Graph_Right;
-
-   procedure Attack_Graph_Up (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Attack_Up (Main_Window.Map);
-      Main_Window.Update_Message ("attack enemy");
-   end Attack_Graph_Up;
-
-   procedure Attack_Graph_Down (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Attack_Down (Main_Window.Map);
-      Main_Window.Update_Message ("attack enemy");
-   end Attack_Graph_Down;
-
-   procedure Attack_Graph_Left (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Attack_Left (Main_Window.Map);
-      Main_Window.Update_Message ("attack enemy");
-   end Attack_Graph_Left;
-
-   procedure Attack_Graph_Right (Main_Window : in out Main_Window_Type) is
-   begin
-      Map_System.Attack_Right (Main_Window.Map);
-      Main_Window.Update_Message ("attack enemy");
-   end Attack_Graph_Right;
-
    procedure Update_Graph (Main_Window : in out Main_Window_Type) is
       procedure Run_Iterate (List : Double_List.List) is
          Position : My_World.Point;
@@ -186,6 +142,9 @@ package body Easy_Window is
       Main_Window.Graph_Window.Update
         (Main_Window.Map.Player.Graph_Position, Main_Window.Map.Player.Mark);
    end Update_Graph;
+
+   procedure Run (Main_Window : in out Main_Window_Type;
+                  Message : Easy_Window.Key_Code) is separate;
 
    procedure Update_Graph
      (Main_Window : in out Main_Window_Type;

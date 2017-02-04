@@ -5,12 +5,11 @@ with Ada.Exceptions;      use Ada.Exceptions;
 with Interfaces.C;
 
 with Easy_Window;
-with Terminal_Interface.Curses_Constants;
 with My_World.Key_Code;
 with My_World.Character_Sheet;
+with My_World.Rule;
 
 procedure Main is
-   package NCurses renames Terminal_Interface.Curses_Constants;
    package NKeys renames My_World.Key_Code;
    package Character_Sheet renames My_World.Character_Sheet;
 
@@ -21,69 +20,6 @@ procedure Main is
 
    Player : Character_Sheet.Status := Character_Sheet.Create_Player;
    Gnome  : Character_Sheet.Status;
-
-   package Action is
-      procedure Run (Message : Easy_Window.Key_Code);
-   end Action;
-
-   package body Action is
-      procedure Move (Message : Easy_Window.Key_Code) is
-      begin
-         case Message is
-            when NCurses.KEY_LEFT =>
-               Main_Window.Move_Graph_Left;
-            when NCurses.KEY_RIGHT =>
-               Main_Window.Move_Graph_Right;
-            when NCurses.KEY_UP =>
-               Main_Window.Move_Graph_Up;
-            when NCurses.KEY_DOWN =>
-               Main_Window.Move_Graph_Down;
-            when others =>
-               null;
-         end case;
-      end Move;
-
-      procedure Attack (Message : Easy_Window.Key_Code) is
-      begin
-         case Message is
-            when NCurses.KEY_LEFT =>
-               Main_Window.Attack_Graph_Left;
-            when NCurses.KEY_RIGHT =>
-               Main_Window.Attack_Graph_Right;
-            when NCurses.KEY_UP =>
-               Main_Window.Attack_Graph_Up;
-            when NCurses.KEY_DOWN =>
-               Main_Window.Attack_Graph_Down;
-            when others =>
-               null;
-         end case;
-      end Attack;
-
-      procedure Run (Message : Easy_Window.Key_Code) is
-      begin
-         <<Move_Action>>
-         declare
-         begin
-            Move (Message);
-            goto Done;
-         exception
-            when Error : My_World.Value_Error =>
-               Main_Window.Update_Message (Exception_Message (Error));
-         end;
-
-         <<Attack_Action>>
-         declare
-         begin
-            Attack (Message);
-         exception
-            when Error : My_World.Value_Error =>
-               Main_Window.Update_Message (Exception_Message (Error));
-         end;
-
-         <<Done>>
-         null;
-      end Run;
-   end Action;
 
 begin
    --  char const *previous_locale = setlocale (LC_ALL, "");
@@ -133,7 +69,7 @@ begin
                Main_Window.Delete;
                exit;
             when others =>
-               Action.Run (Key_Code);
+               Main_Window.Run (Key_Code);
          end case;
 
          Main_Window.Move_Character;
@@ -141,4 +77,7 @@ begin
    end if;
 
    Easy_Window.End_Screen;
+
+   <<Debug>>
+   null;
 end Main;

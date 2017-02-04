@@ -1,3 +1,5 @@
+with My_World.Rule;
+
 package body My_World.Character_Sheet is
    function "="
      (This_Character  : Status;
@@ -38,6 +40,12 @@ package body My_World.Character_Sheet is
       User_Player.Crossable      := False;
       User_Player.Attackable     := False;
 
+      User_Ability.Set_Rank (User_Player.Ability, 2);
+      User_Ability.Set_Speed_Normal (User_Player.Ability);
+      User_Ability.Set_Vary_Powerful (User_Player.Ability);
+      User_Ability.Set_Tough_Normal (User_Player.Ability);
+      User_Ability.Set_Wise_Normal (User_Player.Ability);
+
       return User_Player;
    end Create_Player;
 
@@ -59,6 +67,11 @@ package body My_World.Character_Sheet is
       NPC.Damage           := 0;
       NPC.Crossable        := False;
       NPC.Attackable       := True;
+
+      User_Ability.Set_Speed_Normal (NPC.Ability);
+      User_Ability.Set_Power_Normal (NPC.Ability);
+      User_Ability.Set_Tough_Normal (NPC.Ability);
+      User_Ability.Set_Wise_Normal (NPC.Ability);
 
       return NPC;
    end Create_NPC;
@@ -101,9 +114,7 @@ package body My_World.Character_Sheet is
       This_Character.Graph_Position.Y := Y;
    end Set_Graph_Point;
 
-   function Get_Up_Position
-     (This_Character : in Status) return Point
-   is
+   function Get_Up_Position (This_Character : in Status) return Point is
       Position : Point := This_Character.Real_Position;
    begin
       Move_Up (Position);
@@ -111,9 +122,7 @@ package body My_World.Character_Sheet is
       return Position;
    end Get_Up_Position;
 
-   function Get_Down_Position
-     (This_Character : in Status) return Point
-   is
+   function Get_Down_Position (This_Character : in Status) return Point is
       Position : Point := This_Character.Real_Position;
    begin
       Move_Down (Position);
@@ -121,9 +130,7 @@ package body My_World.Character_Sheet is
       return Position;
    end Get_Down_Position;
 
-   function Get_Left_Position
-     (This_Character : in Status) return Point
-   is
+   function Get_Left_Position (This_Character : in Status) return Point is
       Position : Point := This_Character.Real_Position;
    begin
       Move_Left (Position);
@@ -131,14 +138,61 @@ package body My_World.Character_Sheet is
       return Position;
    end Get_Left_Position;
 
-   function Get_Right_Position
-     (This_Character : in Status) return Point
-   is
+   function Get_Right_Position (This_Character : in Status) return Point is
       Position : Point := This_Character.Real_Position;
    begin
       Move_Right (Position);
 
       return Position;
    end Get_Right_Position;
+
+   procedure Be_Wounded (This_Character : in out Status; Damage : Natural) is
+      function Total_Dices
+        (Ability : Integer;
+         Skill   : Integer) return Positive
+      is
+         Value : Integer := Ability + Skill;
+      begin
+         if Value <= 0 then
+            return 1;
+         else
+            return Value;
+         end if;
+      end Total_Dices;
+
+      Roll_Number : Positive := Total_Dices (Get_Tough (This_Character), 0);
+      Result      : My_World.Rule.Roll_Result;
+   begin
+      This_Character.Damage := This_Character.Damage + Damage;
+
+      Result :=
+        My_World.Rule.Static_Rolls (Roll_Number, This_Character.Damage);
+
+      if My_World.Rule.Is_Failed (Result) then
+         This_Character.Attackable := False;
+         This_Character.Crossable  := True;
+         This_Character.Mark       := 's';
+      end if;
+   end Be_Wounded;
+
+   function Get_Power (This_Character : Status) return Integer is
+   begin
+      return User_Ability.Get_Power (This_Character.Ability);
+   end Get_Power;
+
+   function Get_Speed (This_Character : Status) return Integer is
+   begin
+      return User_Ability.Get_Speed (This_Character.Ability);
+   end Get_Speed;
+
+   function Get_Tough (This_Character : Status) return Integer is
+   begin
+      return User_Ability.Get_Tough (This_Character.Ability);
+   end Get_Tough;
+
+   function Get_Wise (This_Character : Status) return Integer is
+   begin
+      return User_Ability.Get_Wise (This_Character.Ability);
+   end Get_Wise;
 
 end My_World.Character_Sheet;

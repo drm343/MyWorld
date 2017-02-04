@@ -63,15 +63,10 @@ package Easy_Window is
    procedure Add_Character
      (Main_Window : in out Main_Window_Type;
       Character   : in out Character_Sheet.Status);
-   procedure Move_Graph_Up (Main_Window : in out Main_Window_Type);
-   procedure Move_Graph_Down (Main_Window : in out Main_Window_Type);
-   procedure Move_Graph_Left (Main_Window : in out Main_Window_Type);
-   procedure Move_Graph_Right (Main_Window : in out Main_Window_Type);
 
-   procedure Attack_Graph_Up (Main_Window : in out Main_Window_Type);
-   procedure Attack_Graph_Down (Main_Window : in out Main_Window_Type);
-   procedure Attack_Graph_Left (Main_Window : in out Main_Window_Type);
-   procedure Attack_Graph_Right (Main_Window : in out Main_Window_Type);
+   procedure Run
+     (Main_Window : in out Main_Window_Type;
+      Message     :        Easy_Window.Key_Code);
 
    procedure Update_Graph (Main_Window : in out Main_Window_Type);
 

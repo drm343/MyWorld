@@ -9,27 +9,27 @@ package My_World is
    function ">" (Left, Right : Point) return Boolean;
 
    function Create_Point (X : Natural; Y : Natural) return Point with
-      Pre => Raise_Value_Error
-        (X >= 0,
-         "Create Point: Can not create Point with negative position") and
-      Raise_Value_Error
-        (Y >= 0,
-         "Create Point: Can not create Point with negative position");
+     Pre => Raise_Value_Error
+       (X >= 0,
+        "Create Point: Can not create Point with negative position") and
+     Raise_Value_Error
+       (Y >= 0,
+        "Create Point: Can not create Point with negative position");
 
    function Create_Point (From : Point; To : Point) return Point with
-      Pre => Raise_Value_Error
-        (From > To,
-         "Create_Point: Second point must small than First Point");
+     Pre => Raise_Value_Error
+       (From > To,
+        "Create_Point: Second point must small than First Point");
 
    function Distance (From : Point; To : Point) return Natural;
 
    procedure Move_Up (Current_Point : in out Point) with
-      Pre  => Position_Y_Greater_Then_Zero (Current_Point),
-      Post => (Get_Y (Current_Point) >= 0);
+     Pre  => Position_Y_Greater_Then_Zero (Current_Point),
+     Post => (Get_Y (Current_Point) >= 0);
    procedure Move_Down (Current_Point : in out Point);
    procedure Move_Left (Current_Point : in out Point) with
-      Pre  => Position_X_Greater_Then_Zero (Current_Point),
-      Post => (Get_X (Current_Point) >= 0);
+     Pre  => Position_X_Greater_Then_Zero (Current_Point),
+     Post => (Get_X (Current_Point) >= 0);
 
    procedure Move_Right (Current_Point : in out Point);
 
@@ -44,7 +44,6 @@ package My_World is
      (Current_Point : Point) return Boolean;
 
    procedure Raise_Value_Error (Result_Value : Boolean; Message : String);
-
    function Raise_Value_Error
      (Result_Value : Boolean;
       Message      : String) return Truth;

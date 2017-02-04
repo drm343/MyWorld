@@ -5,7 +5,7 @@ project My_World is
    for Object_Dir use "obj";
    for Exec_Dir use "bin";
    type Build_Kind is
-     ("static", "relocatable", "static-pic");
+      ("static", "relocatable", "static-pic");
    Library_Type : Build_Kind := external ("LIBRARY_TYPE");
 
    case Library_Type is
