@@ -15,9 +15,9 @@ typedef struct String_Pool_Origin {
   int16_t max_size;
   int16_t current_size;
 
-	String (*malloc)(struct String_Pool_Origin *, int);
-	void (*reset)(struct String_Pool_Origin *);
-	void (*stop)(struct String_Pool_Origin *);
+  String (*malloc)(struct String_Pool_Origin *, int);
+  void (*reset)(struct String_Pool_Origin *);
+  void (*stop)(struct String_Pool_Origin *);
 } String_Pool;
 typedef String_Pool * String_Pool_Access;
 
