@@ -1,8 +1,6 @@
 # Object file
+obj/*
 *.o
 
-# Ada Library Information
-*.ali
-
-# GPS Ada Dependence Information
-*.npp
+# Execute Binary
+bin/*

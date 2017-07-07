@@ -1,2 +1,2 @@
 # MyWorld
-Use ada to write a roguelike game.
+Write a easy roguelike game with C.
