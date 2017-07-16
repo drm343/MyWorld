@@ -27,6 +27,10 @@ static void character_copy(Status_Access access, Status_Access from) {
 	access->print_status = from->print_status;
 }
 
+static void attack_character(Status_Access from, Status_Access to) {
+  to->damage += 1;
+}
+
 
 // -----------------------------------------
 // SET BASE VALUE
@@ -82,5 +86,7 @@ Character_API character = {
   .get_relation = get_relation,
   .set_relation_ally = set_ally,
   .set_relation_enemy = set_enemy,
-  .set_relation_neutral = set_neutral
+  .set_relation_neutral = set_neutral,
+
+  .attack = attack_character
 };

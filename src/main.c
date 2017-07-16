@@ -6,7 +6,7 @@ typedef SDL_Event * SDL_Event_Access;
 
 int GRID_LENGTH = 24;
 int MAX_COUNT_X = 25;
-int MAX_COUNT_y = 20;
+int MAX_COUNT_Y = 20;
 SDL_Rect position = {
   .x = 0,
   .y = 0,
@@ -16,7 +16,7 @@ SDL_Rect position = {
 
 void set_player_center(void) {
   int CENTER_X = (MAX_COUNT_X + 1) / 2;
-  int CENTER_Y = MAX_COUNT_y / 2;
+  int CENTER_Y = MAX_COUNT_Y / 2;
 
   Player->base->Graph_Position.x =  CENTER_X;
   Player->base->Real_Position.x = CENTER_X;
@@ -25,74 +25,61 @@ void set_player_center(void) {
   Player->base->Real_Position.y = CENTER_Y;
 }
 
-bool key_process(SDL_Event_Access event) {
-  bool can_move_left  = true;
-  bool can_move_right = true;
-  bool can_move_up    = true;
-  bool can_move_down  = true;
+Yes_No occupy_position_by_others(Point_Type point, Status_Access *result) {
+  if (character_pool.find_position(character_use_pool, result, &point)) {
+    return YES;
+  }
+  else {
+    return NO;
+  }
+}
 
-  Point_Type origin_point = {
+Yes_No can_move_position(Point_Type point) {
+  if ((point.x >= 0) && (point.x <= (MAX_COUNT_X - 1))
+      && (point.y >= 0) && (point.y <= (MAX_COUNT_Y - 1))) {
+    return YES;
+  }
+  else {
+    return NO;
+  }
+}
+
+bool key_process(SDL_Event_Access event) {
+  Status_Access npc = NULL;
+  Point_Type point = {
     Player->base->Real_Position.x,
     Player->base->Real_Position.y
   };
 
-  Point_Type point = {
-    origin_point.x - 1,
-    origin_point.y
-  };
-
-  if ((Player->base->Graph_Position.x < 1) ||
-      (character_pool.find_position(character_use_pool, &point))) {
-    can_move_left = false;
-  }
-
-  point.x = origin_point.x + 1;
-  point.y = origin_point.y;
-
-  if ((Player->base->Graph_Position.x > 23) ||
-      (character_pool.find_position(character_use_pool, &point))) {
-    can_move_right = false;
-  }
-
-  point.x = origin_point.x;
-  point.y = origin_point.y - 1;
-
-  if ((Player->base->Graph_Position.y < 1) ||
-      (character_pool.find_position(character_use_pool, &point))) {
-    can_move_up = false;
-  }
-
-  point.x = origin_point.x;
-  point.y = origin_point.y + 1;
-
-  if ((Player->base->Graph_Position.y > 18) ||
-      (character_pool.find_position(character_use_pool, &point))) {
-    can_move_down = false;
-  }
+  Point_Type move_point = {0, 0};
 
   switch ((event->key).keysym.sym) {
     case SDLK_UP:
-      if (can_move_up) {
-        Player->base->Graph_Position.y = Player->base->Graph_Position.y - 1;
-        Player->base->Real_Position.y = Player->base->Real_Position.y - 1;
+      point.y -= 1;
+
+      if (can_move_position(point) == YES) {
+        move_point.y = -1;
       }
       break;
     case SDLK_DOWN:
-      if (can_move_down) {
-        Player->base->Graph_Position.y = Player->base->Graph_Position.y + 1;
-        Player->base->Real_Position.y = Player->base->Real_Position.y + 1;
+      point.y += 1;
+
+      if (can_move_position(point) == YES) {
+        move_point.y = 1;
       }
       break;
     case SDLK_LEFT:
-      if (can_move_left) {
-        Player->base->Graph_Position.x = Player->base->Graph_Position.x - 1;
-        Player->base->Real_Position.x = Player->base->Real_Position.x - 1;
+      point.x -= 1;
+
+      if (can_move_position(point) == YES) {
+        move_point.x = -1;
       }
       break;
     case SDLK_RIGHT:
-      if (can_move_right) {
-        Player->base->Graph_Position.x = Player->base->Graph_Position.x + 1;
-        Player->base->Real_Position.x = Player->base->Real_Position.x + 1;
+      point.x += 1;
+
+      if (can_move_position(point) == YES) {
+        move_point.x = 1;
       }
       break;
     case SDLK_q:
@@ -101,6 +88,16 @@ bool key_process(SDL_Event_Access event) {
     default:
       printf("other\n");
       break;
+  }
+
+  if (occupy_position_by_others(point, &npc) == NO) {
+    Player->base->Graph_Position.x = Player->base->Graph_Position.x + move_point.x;
+    Player->base->Real_Position.x = Player->base->Real_Position.x + move_point.x;
+    Player->base->Graph_Position.y = Player->base->Graph_Position.y + move_point.y;
+    Player->base->Real_Position.y = Player->base->Real_Position.y + move_point.y;
+  }
+  else {
+    character.attack(Player, npc);
   }
   return true;
 }
@@ -117,7 +114,7 @@ void draw_view( SDL_Renderer_Access render) {
     SDL_SetRenderDrawColor(render, 255, 255, 255, SDL_ALPHA_OPAQUE);
     SDL_RenderDrawRect(render, &(rect));
   }
-  for (int count = 0; count <= MAX_COUNT_y - 1; count++) {
+  for (int count = 0; count <= MAX_COUNT_Y - 1; count++) {
     rect.x = 0;
     rect.y = count * GRID_LENGTH;
 
@@ -184,12 +181,6 @@ int main(int argc, char *argv[]) {
   character_use_pool = character_pool.start(100);
 
   Player = character_pool.malloc(character_use_pool);
-
-//  Ability_Access access = &(Player->Ability);
-//  Ability.Set_Rank(access, 2);
-//  Ability.power->Set_Vary_Powerful(access);
-//  Ability.tough->Set_Sickly(access);
-//  Ability.speed->Set_Fast(access);
   set_player_center();
 
   char *CONFIG_FILE = NULL;

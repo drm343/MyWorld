@@ -43,6 +43,8 @@ typedef struct {
   void (*set_relation_ally)(Status_Access);
   void (*set_relation_enemy)(Status_Access);
   void (*set_relation_neutral)(Status_Access);
+
+  void (*attack)(Status_Access, Status_Access);
 } Character_API;
 
 extern Character_API character;

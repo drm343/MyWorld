@@ -111,24 +111,24 @@ static bool pool_find(Character_Pool_Access access, Status_Access *npc,
       return true;
     }
   }
-  npc = NULL;
+  *npc = NULL;
   return false;
 }
 
 
-static bool pool_find_by_position(Character_Pool_Access access,
+static bool pool_find_by_position(Character_Pool_Access access, Status_Access *npc,
     Point_Access point) {
-  Status_Access npc = NULL;
   uint8_t count = 0;
   uint8_t used = access->status->max_size - access->status->current_size;
 
   for (count; count < used; count++) {
-    npc = &(access->status->pool[count]);
+    *npc = &(access->status->pool[count]);
 
-    if(Point.eq(point, &(npc->base->Real_Position))) {
+    if (Point.eq(point, &((*npc)->base->Real_Position))) {
       return true;
     }
   }
+  *npc = NULL;
   return false;
 }
 

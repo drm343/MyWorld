@@ -6,6 +6,21 @@
 
 typedef uint8_t Natural;
 
+typedef enum {
+  EXECUTE_SUCCESS = 0,
+  EXECUTE_FAILED,
+} Execute_Result;
+
+typedef enum {
+  UNUSE,
+  IN_USE
+} Use_Type;
+
+typedef enum {
+  NO = 0,
+  YES
+} Yes_No;
+
 typedef struct {
   uint16_t x;
   uint16_t y;
@@ -18,10 +33,5 @@ typedef struct {
 } POINT_INTERFACE;
 
 extern POINT_INTERFACE Point;
-
-typedef enum {
-  EXECUTE_SUCCESS = 0,
-  EXECUTE_FAILED,
-} Execute_Result;
 
 #endif

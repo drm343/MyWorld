@@ -25,7 +25,7 @@ typedef struct {
   Status_Access (*malloc)(Character_Pool_Access);
   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);
   bool (*find)(Character_Pool_Access, Status_Access *, String);
-  bool (*find_position)(Character_Pool_Access, Point_Access);
+  bool (*find_position)(Character_Pool_Access, Status_Access *, Point_Access);
 } Character_Pool_API;
 
 extern Character_Pool_API character_pool;

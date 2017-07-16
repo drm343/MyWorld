@@ -8,18 +8,14 @@
 #include "graphic.h"
 
 
-typedef enum {
-  UNUSE,
-  IN_USE
-} Use_Type;
-
-
 typedef struct Character_Base {
   String name;
   Style_Access Mark;
   Point_Type Real_Position;
   Point_Type Graph_Position;
   bool crossable;
+  bool attackable;
+  bool is_alive;
   Use_Type status;
 
   void (*release)(struct Character_Base *);

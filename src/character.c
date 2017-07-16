@@ -11,6 +11,8 @@ static void character_copy(Character_Base_Access access, Character_Base_Access f
   access->Mark = from->Mark;
 
   access->crossable = from->crossable;
+  access->attackable = from->attackable;
+  access->is_alive = true;
   access->status = IN_USE;
 
   access->release = from->release;
@@ -24,6 +26,8 @@ void character_base_init(Character_Base_Access access) {
   access->Graph_Position.x = 0;
   access->Graph_Position.y = 0;
   access->crossable = false;
+  access->attackable = true;
+  access->is_alive = true;
   access->status = IN_USE;
 
   access->release = release;
