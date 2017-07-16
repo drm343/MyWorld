@@ -3,6 +3,11 @@
 
 #include "character.h"
 
+typedef enum {
+  DEAD,
+  ALIVE
+} Is_Alive;
+
 
 typedef enum {
   FACTION_PLAYER,
@@ -25,8 +30,6 @@ typedef struct Character {
   String race;
   Faction_Type faction;
   Natural damage;
-
-  void (*print_status)(struct Character *);
 } Status;
 typedef Status * Status_Access;
 
@@ -34,6 +37,7 @@ typedef Status * Status_Access;
 typedef struct {
   void (*init)(Status_Access);
   void (*copy)(Status_Access, Status_Access);
+  void (*print_status)(Status_Access);
   void (*set_name)(Status_Access, String);
   void (*set_race)(Status_Access, String);
   void (*set_style)(Status_Access, Style_Access);
@@ -44,7 +48,7 @@ typedef struct {
   void (*set_relation_enemy)(Status_Access);
   void (*set_relation_neutral)(Status_Access);
 
-  void (*attack)(Status_Access, Status_Access);
+  Is_Alive (*attack)(Status_Access, Status_Access);
 } Character_API;
 
 extern Character_API character;

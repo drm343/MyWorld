@@ -5,6 +5,11 @@
 #include "setup_config.h"
 
 
+typedef enum {
+  NOT_FOUND = 0,
+  FOUND
+} Found_Result;
+
 GENERIC_POOL(Status_Pool, Status_Access);
 typedef Status_Pool * Status_Pool_Access;
 
@@ -24,8 +29,8 @@ typedef struct {
   void (*stop)(Character_Pool_Access);
   Status_Access (*malloc)(Character_Pool_Access);
   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);
-  bool (*find)(Character_Pool_Access, Status_Access *, String);
-  bool (*find_position)(Character_Pool_Access, Status_Access *, Point_Access);
+  Found_Result (*find)(Character_Pool_Access, Status_Access *, String);
+  Found_Result (*find_position)(Character_Pool_Access, Status_Access *, Point_Access);
 } Character_Pool_API;
 
 extern Character_Pool_API character_pool;

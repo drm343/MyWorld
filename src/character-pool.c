@@ -99,7 +99,7 @@ static bool pool_copy(Character_Pool_Access from, Character_Pool_Access to,
 }
 
 
-static bool pool_find(Character_Pool_Access access, Status_Access *npc,
+static Found_Result pool_find(Character_Pool_Access access, Status_Access *npc,
     String race) {
   uint8_t count = 0;
   uint8_t used = access->status->max_size - access->status->current_size;
@@ -108,15 +108,15 @@ static bool pool_find(Character_Pool_Access access, Status_Access *npc,
     *npc = &(access->status->pool[count]);
 
     if(STRCMP((*npc)->race, race)) {
-      return true;
+      return FOUND;
     }
   }
   *npc = NULL;
-  return false;
+  return NOT_FOUND;
 }
 
 
-static bool pool_find_by_position(Character_Pool_Access access, Status_Access *npc,
+static Found_Result pool_find_by_position(Character_Pool_Access access, Status_Access *npc,
     Point_Access point) {
   uint8_t count = 0;
   uint8_t used = access->status->max_size - access->status->current_size;
@@ -125,11 +125,16 @@ static bool pool_find_by_position(Character_Pool_Access access, Status_Access *n
     *npc = &(access->status->pool[count]);
 
     if (Point.eq(point, &((*npc)->base->Real_Position))) {
-      return true;
+      if ((*npc)->base->crossable) {
+        return NOT_FOUND;
+      }
+      else {
+        return FOUND;
+      }
     }
   }
   *npc = NULL;
-  return false;
+  return NOT_FOUND;
 }
 
 

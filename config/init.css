@@ -11,3 +11,6 @@ body {
 #player {
   mark: @;
 }
+#dead {
+  mark: s;
+}

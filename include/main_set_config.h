@@ -7,6 +7,8 @@ int HEIGHT = 600;
 char *FONT_FAMILY = NULL;
 char *GAME_TITLE = NULL;
 
+Style_Access dead = NULL;
+
 Style_Pool_Access style_pool = NULL;
 STRING_POOL_ON_STACK(string_pool);
 

@@ -8,6 +8,7 @@ STRING_POOL_ON_STACK(npc_string_pool);
 
 char *CHARACTER_CONFIG_PATH = NULL;
 
+
 const char *get_file_extension(const char *filename) {
   const char *dot = strrchr(filename, '.');
 

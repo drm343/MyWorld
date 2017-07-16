@@ -6,14 +6,13 @@ static void print_status(Status_Access access) {
 
   printf("--------- status -------\n");
   printf("%s : %s\n", base->name, access->race);
-  printf("Mark: %s %s\n", base->Mark->name, base->Mark->mark);
+  printf("Mark: %s\n", base->Mark->mark);
+  printf("Damage: %d\n", access->damage);
 }
 
 
 static void character_init(Status_Access access) {
   character_base_init(access->base);
-
-  access->print_status = print_status;
 }
 
 
@@ -23,12 +22,21 @@ static void character_copy(Status_Access access, Status_Access from) {
 
   access->faction = from->faction;
   access->damage = from->damage;
-
-  access->print_status = from->print_status;
 }
 
-static void attack_character(Status_Access from, Status_Access to) {
+
+static Is_Alive attack_character(Status_Access from, Status_Access to) {
   to->damage += 1;
+
+  if (to->damage >= 3) {
+    to->base->is_alive = false;
+    to->base->crossable = true;
+    to->base->attackable = false;
+    return DEAD;
+  }
+  else {
+    return ALIVE;
+  }
 }
 
 
@@ -78,6 +86,8 @@ static void set_neutral(Status_Access access) {
 Character_API character = {
   .init = character_init,
   .copy = character_copy,
+  .print_status = print_status,
+  .attack = attack_character,
   .set_name = set_base_name,
   .set_race = set_race,
   .set_style = set_base_style,

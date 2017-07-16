@@ -14,6 +14,7 @@ SDL_Rect position = {
   .h = 24 
 };
 
+
 void set_player_center(void) {
   int CENTER_X = (MAX_COUNT_X + 1) / 2;
   int CENTER_Y = MAX_COUNT_Y / 2;
@@ -26,7 +27,7 @@ void set_player_center(void) {
 }
 
 Yes_No occupy_position_by_others(Point_Type point, Status_Access *result) {
-  if (character_pool.find_position(character_use_pool, result, &point)) {
+  if (character_pool.find_position(character_use_pool, result, &point) == FOUND) {
     return YES;
   }
   else {
@@ -97,7 +98,9 @@ bool key_process(SDL_Event_Access event) {
     Player->base->Real_Position.y = Player->base->Real_Position.y + move_point.y;
   }
   else {
-    character.attack(Player, npc);
+    if (character.attack(Player, npc) == DEAD) {
+      character.set_style(npc, dead);
+    }
   }
   return true;
 }
@@ -127,13 +130,15 @@ void draw_view( SDL_Renderer_Access render) {
   SDL_RenderCopy(render, Player->base->Mark->access, NULL, &(position));
 
   uint8_t used = character_use_pool->status->max_size - character_use_pool->status->current_size;
-  for(int next = 1; next < used; next++) {
+  for (int next = 1; next < used; next++) {
     Status_Access npc = &(character_use_pool->status->pool[next]);
 
     if (npc->base->status == IN_USE) {
-      rect.x = GRID_LENGTH * npc->base->Graph_Position.x;
-      rect.y = GRID_LENGTH * npc->base->Graph_Position.y;
-      SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
+      if (!Point.eq(&(npc->base->Real_Position), &(Player->base->Real_Position))) {
+        rect.x = GRID_LENGTH * npc->base->Graph_Position.x;
+        rect.y = GRID_LENGTH * npc->base->Graph_Position.y;
+        SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
+      }
     }
   }
 
@@ -167,6 +172,8 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 
   result = Style_Pool_Interface.find(style_pool, "player");
   character.set_style(Player, result);
+
+  dead = Style_Pool_Interface.find(style_pool, "dead");
   return EXECUTE_SUCCESS;
 }
 
