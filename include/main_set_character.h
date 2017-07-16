@@ -1,6 +1,6 @@
 #define MAIN_NPC_STRING_malloc(len) string_pool->malloc(npc_string_pool, len);
 
-Character_Pool_Access character_pool = NULL;
+Character_Pool_Access character_prepare_pool = NULL;
 Character_Pool_Access character_use_pool = NULL;
 Status_Access Player = NULL;
 
@@ -8,14 +8,19 @@ STRING_POOL_ON_STACK(npc_string_pool);
 
 char *CHARACTER_CONFIG_PATH = NULL;
 
-const char *get_filename_ext(const char *filename) {
+const char *get_file_extension(const char *filename) {
     const char *dot = strrchr(filename, '.');
-    if(!dot || dot == filename) return "";
-    return dot + 1;
+
+    if (!dot || dot == filename) {
+      return "";
+    }
+    else {
+      return dot + 1;
+    }
 }
 
 bool check_json(char *file_path) {
-  if (strcmp("json", get_filename_ext(file_path)) == 0) {
+  if (strcmp("json", get_file_extension(file_path)) == 0) {
     return true;
   }
   else {
@@ -36,35 +41,37 @@ void setup_character_config_path(char *CONFIG_VALUE) {
 void set_name(Status_Access npc, char *name) {
   size_t name_size = strlen(name);
 
-  npc->name = MAIN_STRING_malloc(name_size);
-  strcpy(npc->name, name);
+  char *character_name = MAIN_STRING_malloc(name_size);
+  strcpy(character_name, name);
+  character.set_name(npc, character_name);
 }
 
 void set_mark(Status_Access npc, char *mark) {
   size_t len  = strlen(mark);
   String key = MAIN_STRING_malloc(len);
   strcpy(key, mark);
-  npc->Mark->mark = key;
+  character.set_mark(npc, key);
 }
 
 void set_race(Status_Access npc, char *race) {
   size_t race_size = strlen(race);
 
-  npc->race = MAIN_STRING_malloc(race_size);
-  strcpy(npc->race, race);
+  char *character_race = MAIN_STRING_malloc(race_size);
+  strcpy(character_race, race);
 
-  npc->Mark->name = npc->race;
+  character.set_race(npc, character_race);
+  character.set_name(npc, character_race);
 }
 
 void set_relation(char *key, Status_Access npc, Relation_Type relation) {
-  Character.Set_Relation_Enemy(npc);
+  character.set_relation_enemy(npc);
 }
 
 void eval_set_npc(mpc_ast_t* t) {
   mpc_ast_t* obj = t->children[1];
-  Status_Access npc = character_pool->malloc(character_pool);
+  Status_Access npc = character_pool.malloc(character_prepare_pool);
   Style_Access style_access = Style_Pool_Interface.malloc(style_pool);
-  npc->set_style(npc, style_access);
+  character.set_style(npc, style_access);
 
   for (int counter = 0; counter < obj->children_num; counter++) {
     mpc_ast_t* kv = obj->children[counter];
@@ -173,16 +180,16 @@ Status_Access use_npc(char *race, char *name) {
   Status_Access origin_npc = NULL;
   Status_Access npc = NULL;
 
-  bool result = character_pool->find(character_pool, &origin_npc, race);
+  bool result = character_pool.find(character_prepare_pool, &origin_npc, race);
 
   if(result) {
-    npc = character_use_pool->malloc(character_use_pool);
-    character_init(npc);
-    npc->copy(npc, origin_npc);
+    npc = character_pool.malloc(character_use_pool);
+    character.copy(npc, origin_npc);
 
     size_t name_size = strlen(name);
-    npc->name = MAIN_STRING_malloc(name_size);
-    strcpy(npc->name, name);
+    char *character_name = MAIN_STRING_malloc(name_size);
+    strcpy(character_name, name);
+    character.set_name(npc, character_name);
   }
   return npc;
 }

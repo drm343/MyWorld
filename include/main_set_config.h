@@ -69,7 +69,7 @@ void setup_mark(mpc_ast_t* t, Style_Access style_access) {
 
     String result = MAIN_STRING_malloc(len);
     strcpy(result, item);
-    SET_ACCESS_FIELD(style_access, mark, result);
+    style_access->mark = result;
   }
 }
 
@@ -83,7 +83,7 @@ bool find_mark(mpc_ast_t* t) {
     strcpy(key, t->children[0]->children[1]->contents);
 
     style_access = Style_Pool_Interface.malloc(style_pool);
-    SET_ACCESS_FIELD(style_access, name, key);
+    style_access->name = key;
     goto SETUP;
   }
   return false;

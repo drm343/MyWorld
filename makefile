@@ -20,10 +20,13 @@ DEBUG=
 
 
 AUTO_BUILD_DEP := $(OBJ)/base_type.o \
-  $(OBJ)/string_pool.o \
- 	$(OBJ)/graphic.o \
- 	$(OBJ)/character-ability.o \
- 	$(OBJ)/character-pool.o \
+	$(OBJ)/string_helper.o \
+	$(OBJ)/string_pool.o \
+	$(OBJ)/graphic.o \
+	$(OBJ)/character.o \
+	$(OBJ)/character-status.o \
+	$(OBJ)/character-skill.o \
+	$(OBJ)/character-pool.o
 
 
 DEP := $(AUTO_BUILD_DEP) \
@@ -34,6 +37,7 @@ all: $(LIB_MY_WORLD)
 	gcc $(DEBUG) $(PLATFORM) -o $(OBJ)/main.o -c -std=c11 $(INCLUDE) $(SRC)/main.c
 	gcc $(DEBUG) $(PLATFORM) $(OBJ)/main.o -s $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@sed -ie "s/APP_NAME=.*/APP_NAME=$(APP_NAME)/" $(CURREND)/app && rm $(CURREND)/appe && echo "sed done"
+
 
 build: all $(PACKAGE)
 	rsync -avh $(CURREND)/static $(PACKAGE)

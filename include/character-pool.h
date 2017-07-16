@@ -1,26 +1,33 @@
-#ifndef HEADER_CHARACTER_POOL
-#define HEADER_CHARACTER_POOL
+#ifndef HEADER_CHARACTER_POOL_NEW
+#define HEADER_CHARACTER_POOL_NEW
 
-#include <stdbool.h>
-
+#include "character-skill.h"
 #include "setup_config.h"
 
-#include "string_pool.h"
-#include "character-ability.h"
 
-typedef struct Character_Pool {
-  Status_Access pool;
-  uint8_t max_size;
-  uint8_t current_size;
+GENERIC_POOL(Status_Pool, Status_Access);
+typedef Status_Pool * Status_Pool_Access;
 
-  void (*stop)(struct Character_Pool *);
-  Status_Access (*malloc)(struct Character_Pool *);
-  bool (*copy)(struct Character_Pool *, struct Character_Pool *, String);
-  bool (*find)(struct Character_Pool *, Status_Access *, String);
-  bool (*find_position)(struct Character_Pool *, Point_Access);
+GENERIC_POOL(Character_Base_Pool, Character_Base_Access);
+typedef Character_Base_Pool * Character_Base_Pool_Access;
+
+
+typedef struct {
+  Status_Pool_Access status;
+  Character_Base_Pool_Access base;
 } Character_Pool_Type;
 typedef Character_Pool_Type * Character_Pool_Access;
 
-Character_Pool_Access Character_Pool_start_heap(uint8_t);
-//void Character_Pool_start_stack(Character_Pool_Access, int);
+
+typedef struct {
+  Character_Pool_Access (*start)(uint8_t);
+  void (*stop)(Character_Pool_Access);
+  Status_Access (*malloc)(Character_Pool_Access);
+  bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);
+  bool (*find)(Character_Pool_Access, Status_Access *, String);
+  bool (*find_position)(Character_Pool_Access, Point_Access);
+} Character_Pool_API;
+
+extern Character_Pool_API character_pool;
+
 #endif
