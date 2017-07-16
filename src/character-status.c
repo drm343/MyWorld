@@ -13,7 +13,7 @@ static void print_status(Status_Access access) {
 static void character_init(Status_Access access) {
   character_base_init(access->base);
 
-	access->print_status = print_status;
+  access->print_status = print_status;
 }
 
 
@@ -24,7 +24,7 @@ static void character_copy(Status_Access access, Status_Access from) {
   access->faction = from->faction;
   access->damage = from->damage;
 
-	access->print_status = from->print_status;
+  access->print_status = from->print_status;
 }
 
 static void attack_character(Status_Access from, Status_Access to) {

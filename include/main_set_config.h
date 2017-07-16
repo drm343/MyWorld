@@ -127,29 +127,29 @@ void setup_style(char *file_path) {
   mpc_parser_t* CSS            = mpc_new("css");
 
   mpca_lang(MPCA_LANG_PREDICTIVE,
-	    " number         : /[1-9]?[0-9]*/                        ; \n"
-	    " element        : /[^'{''}'':'';'' ']*/                 ; \n"
-	    " value          : /[^'{''}'':'';'' ']*/                 ; \n"
-	    " key            : /[^'{''}'':'';'' ']*/                 ; \n"
-	    " id_selector    : '#' <element>                         ; \n"
-	    " class_selector : '.' <element>                         ; \n"
-	    " size_value     : <number> \"px\"                       ; \n"
-	    " size_key       : \"width\" | \"height\"                ; \n"
-	    " windom_key     : \"title\" | \"font-family\"           ; \n"
-	    " windom_attibute: <windom_key> ':' <element>     ';'    ; \n"
-	    " size_attibute  : <size_key> ':' <size_value>  ';'      ; \n"
-	    " mark_attibute  : <key> ':' <value> ';'                 ; \n"
-	    " attibute       : <size_attibute> | <windom_attibute>       "
-	    "                | <mark_attibute>                       ; \n"
-	    " selector       : <id_selector> | <class_selector>          "
-	    "                | <element>                             ; \n"
-	    " css_node       : <selector> '{' <attibute>* '}'        ; \n"
-	    " css            : /^/ <css_node>* /$/                   ; \n",
-	    Number, Element, Value, Key,
-	    ID_Selector, Class_Selector,
-	    Size_Value, Size_Key, Windom_Key, Size_Attibute,
-	    Windom_Attibute, Mark_Attibute, Attibute,
-	    Selector,	CSS_NODE, CSS, NULL);
+      " number         : /[1-9]?[0-9]*/                        ; \n"
+      " element        : /[^'{''}'':'';'' ']*/                 ; \n"
+      " value          : /[^'{''}'':'';'' ']*/                 ; \n"
+      " key            : /[^'{''}'':'';'' ']*/                 ; \n"
+      " id_selector    : '#' <element>                         ; \n"
+      " class_selector : '.' <element>                         ; \n"
+      " size_value     : <number> \"px\"                       ; \n"
+      " size_key       : \"width\" | \"height\"                ; \n"
+      " windom_key     : \"title\" | \"font-family\"           ; \n"
+      " windom_attibute: <windom_key> ':' <element>     ';'    ; \n"
+      " size_attibute  : <size_key> ':' <size_value>  ';'      ; \n"
+      " mark_attibute  : <key> ':' <value> ';'                 ; \n"
+      " attibute       : <size_attibute> | <windom_attibute>       "
+      "                | <mark_attibute>                       ; \n"
+      " selector       : <id_selector> | <class_selector>          "
+      "                | <element>                             ; \n"
+      " css_node       : <selector> '{' <attibute>* '}'        ; \n"
+      " css            : /^/ <css_node>* /$/                   ; \n",
+      Number, Element, Value, Key,
+      ID_Selector, Class_Selector,
+      Size_Value, Size_Key, Windom_Key, Size_Attibute,
+      Windom_Attibute, Mark_Attibute, Attibute,
+      Selector, CSS_NODE, CSS, NULL);
 
   if (mpc_parse_contents(file_path, CSS, &r)) {
     eval_set_config(r.output);
@@ -161,7 +161,7 @@ void setup_style(char *file_path) {
   mpc_cleanup(16,
       Number, Element, Value, Key,         //4
       ID_Selector, Class_Selector,         //2
-	    Size_Value, Size_Key, Windom_Key, Size_Attibute, //4
-	    Windom_Attibute, Mark_Attibute, Attibute, //3
-      Selector,	CSS_NODE, CSS);            //3
+      Size_Value, Size_Key, Windom_Key, Size_Attibute, //4
+      Windom_Attibute, Mark_Attibute, Attibute, //3
+      Selector, CSS_NODE, CSS);            //3
 }

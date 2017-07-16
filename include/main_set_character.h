@@ -9,14 +9,14 @@ STRING_POOL_ON_STACK(npc_string_pool);
 char *CHARACTER_CONFIG_PATH = NULL;
 
 const char *get_file_extension(const char *filename) {
-    const char *dot = strrchr(filename, '.');
+  const char *dot = strrchr(filename, '.');
 
-    if (!dot || dot == filename) {
-      return "";
-    }
-    else {
-      return dot + 1;
-    }
+  if (!dot || dot == filename) {
+    return "";
+  }
+  else {
+    return dot + 1;
+  }
 }
 
 bool check_json(char *file_path) {
@@ -110,19 +110,19 @@ void setup_npc(char *file_path) {
   mpc_parser_t* JSON           = mpc_new("json");
 
   mpca_lang(MPCA_LANG_PREDICTIVE,
-	    " number         : /[0-9]+/                              ; \n"
-	    " key            : /[^'\"''{''}'':'';'' '',']*/          ; \n"
-	    " json_string    : '\"' <key> '\"'                       ; \n"
-	    " json_boolean   : \"true\" | \"false\"                  ; \n"
+      " number         : /[0-9]+/                              ; \n"
+      " key            : /[^'\"''{''}'':'';'' '',']*/          ; \n"
+      " json_string    : '\"' <key> '\"'                       ; \n"
+      " json_boolean   : \"true\" | \"false\"                  ; \n"
       " kv_item        : <json_string> ':'                         "
       "                   (<json_value> | <json_array>)        ; \n"
-	    " json_array     : '[' (<json_value> ','?)* ']'          ; \n"
-	    " json_obj       : '{' (<kv_item> ','?)* '}'             ; \n"
-	    " json_value     : <json_obj> | <json_array>                 "
+      " json_array     : '[' (<json_value> ','?)* ']'          ; \n"
+      " json_obj       : '{' (<kv_item> ','?)* '}'             ; \n"
+      " json_value     : <json_obj> | <json_array>                 "
       "                | <json_boolean>                            "
       "                | <json_string> | <number>              ; \n"
-	    " json           : /^/ <json_value> /$/                  ; \n",
-	    Number, Key,
+      " json           : /^/ <json_value> /$/                  ; \n",
+      Number, Key,
       Json_String, Json_Boolean,
       KV_Item,
       Json_Array, Json_Object,
@@ -139,7 +139,7 @@ void setup_npc(char *file_path) {
   }
 
   mpc_cleanup(9,
-	    Number, Key,
+      Number, Key,
       Json_String, Json_Boolean,
       KV_Item,
       Json_Array, Json_Object,
