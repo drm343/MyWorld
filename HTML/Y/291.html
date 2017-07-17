@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>fmt</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L568'>fmt</a>               568 mpc/mpc.c      static void mpc_err_string_cat(char *buffer, int *pos, int *max, char const *fmt, ...) {</span>
+<span class='curline'><a href='../S/43.html#L572'>fmt</a>               572 mpc/mpc.c        va_start(va, fmt);</span>
+<span class='curline'><a href='../S/43.html#L574'>fmt</a>               574 mpc/mpc.c        (*pos) += vsprintf(buffer + (*pos), fmt, va);</span>
+<span class='curline'><a href='../S/43.html#L1551'>fmt</a>              1551 mpc/mpc.c      mpc_parser_t *mpc_failf(const char *fmt, ...) {</span>
+<span class='curline'><a href='../S/43.html#L1559'>fmt</a>              1559 mpc/mpc.c        va_start(va, fmt);</span>
+<span class='curline'><a href='../S/43.html#L1561'>fmt</a>              1561 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
+<span class='curline'><a href='../S/43.html#L1626'>fmt</a>              1626 mpc/mpc.c      mpc_parser_t *mpc_expectf(mpc_parser_t *a, const char *fmt, ...) {</span>
+<span class='curline'><a href='../S/43.html#L1633'>fmt</a>              1633 mpc/mpc.c        va_start(va, fmt);</span>
+<span class='curline'><a href='../S/43.html#L1635'>fmt</a>              1635 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
+<span class='curline'><a href='../S/44.html#L114'>fmt</a>               114 mpc/mpc.h      mpc_parser_t *mpc_failf(const char *fmt, ...);</span>
+<span class='curline'><a href='../S/44.html#L125'>fmt</a>               125 mpc/mpc.h      mpc_parser_t *mpc_expectf(mpc_parser_t *a, const char *fmt, ...);</span>
+</pre>
+</body>
+</html>

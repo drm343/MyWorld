@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Expr</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/34.html#L13'>Expr</a>               13 mpc/examples/lispy.c   mpc_parser_t* Expr    = mpc_new("expr");</span>
+<span class='curline'><a href='../S/34.html#L26'>Expr</a>               26 mpc/examples/lispy.c     Number, Symbol, String, Comment, Sexpr, Qexpr, Expr, Lispy, NULL);</span>
+<span class='curline'><a href='../S/34.html#L50'>Expr</a>               50 mpc/examples/lispy.c   mpc_cleanup(8, Number, Symbol, String, Comment, Sexpr, Qexpr, Expr, Lispy);</span>
+<span class='curline'><a href='../S/35.html#L5'>Expr</a>                5 mpc/examples/maths.c   mpc_parser_t *Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/35.html#L15'>Expr</a>               15 mpc/examples/maths.c     Expr, Prod, Value, Maths, NULL);</span>
+<span class='curline'><a href='../S/35.html#L17'>Expr</a>               17 mpc/examples/maths.c   mpc_print(Expr);</span>
+<span class='curline'><a href='../S/35.html#L46'>Expr</a>               46 mpc/examples/maths.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
+<span class='curline'><a href='../S/46.html#L38'>Expr</a>               38 mpc/tests/core.c   mpc_parser_t *Expr, *Factor, *Term, *Maths; </span>
+<span class='curline'><a href='../S/46.html#L41'>Expr</a>               41 mpc/tests/core.c   Expr   = mpc_new("expr");</span>
+<span class='curline'><a href='../S/46.html#L46'>Expr</a>               46 mpc/tests/core.c   mpc_define(Expr, mpc_or(2, </span>
+<span class='curline'><a href='../S/46.html#L58'>Expr</a>               58 mpc/tests/core.c     mpc_parens(Expr, free)</span>
+<span class='curline'><a href='../S/46.html#L61'>Expr</a>               61 mpc/tests/core.c   mpc_define(Maths, mpc_whole(Expr, free));</span>
+<span class='curline'><a href='../S/46.html#L69'>Expr</a>               69 mpc/tests/core.c   mpc_cleanup(4, Expr, Factor, Term, Maths);</span>
+<span class='curline'><a href='../S/47.html#L6'>Expr</a>                6 mpc/tests/grammar.c   mpc_parser_t *Expr, *Prod, *Value, *Maths;</span>
+<span class='curline'><a href='../S/47.html#L9'>Expr</a>                9 mpc/tests/grammar.c   Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/47.html#L14'>Expr</a>               14 mpc/tests/grammar.c   mpc_define(Expr,  mpca_grammar(MPCA_LANG_DEFAULT, " &lt;product&gt; (('+' | '-') &lt;product&gt;)* ", Prod));</span>
+<span class='curline'><a href='../S/47.html#L16'>Expr</a>               16 mpc/tests/grammar.c   mpc_define(Value, mpca_grammar(MPCA_LANG_DEFAULT, " /[0-9]+/ | '(' &lt;expression&gt; ')' ", Expr));</span>
+<span class='curline'><a href='../S/47.html#L17'>Expr</a>               17 mpc/tests/grammar.c   mpc_define(Maths, mpca_total(Expr));</span>
+<span class='curline'><a href='../S/47.html#L56'>Expr</a>               56 mpc/tests/grammar.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
+<span class='curline'><a href='../S/47.html#L62'>Expr</a>               62 mpc/tests/grammar.c   mpc_parser_t *Expr, *Prod, *Value, *Maths;</span>
+<span class='curline'><a href='../S/47.html#L64'>Expr</a>               64 mpc/tests/grammar.c   Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/47.html#L74'>Expr</a>               74 mpc/tests/grammar.c     Expr, Prod, Value, Maths);</span>
+<span class='curline'><a href='../S/47.html#L76'>Expr</a>               76 mpc/tests/grammar.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
+<span class='curline'><a href='../S/47.html#L81'>Expr</a>               81 mpc/tests/grammar.c   mpc_parser_t *Expr, *Prod, *Value, *Maths;</span>
+<span class='curline'><a href='../S/47.html#L83'>Expr</a>               83 mpc/tests/grammar.c   Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/47.html#L88'>Expr</a>               88 mpc/tests/grammar.c   mpca_lang_contents(MPCA_LANG_DEFAULT, "./tests/maths.grammar", Expr, Prod, Value, Maths);</span>
+<span class='curline'><a href='../S/47.html#L90'>Expr</a>               90 mpc/tests/grammar.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
+</pre>
+</body>
+</html>

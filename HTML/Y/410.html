@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>parsers</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L3164'>parsers</a>          3164 mpc/mpc.c        mpc_parser_t **parsers;</span>
+<span class='curline'><a href='../S/43.html#L3239'>parsers</a>          3239 mpc/mpc.c            st-&gt;parsers = realloc(st-&gt;parsers, sizeof(mpc_parser_t*) * st-&gt;parsers_num);</span>
+<span class='curline'><a href='../S/43.html#L3240'>parsers</a>          3240 mpc/mpc.c            st-&gt;parsers[st-&gt;parsers_num-1] = va_arg(*st-&gt;va, mpc_parser_t*);</span>
+<span class='curline'><a href='../S/43.html#L3241'>parsers</a>          3241 mpc/mpc.c            if (st-&gt;parsers[st-&gt;parsers_num-1] == NULL) {</span>
+<span class='curline'><a href='../S/43.html#L3246'>parsers</a>          3246 mpc/mpc.c          return st-&gt;parsers[st-&gt;parsers_num-1];</span>
+<span class='curline'><a href='../S/43.html#L3253'>parsers</a>          3253 mpc/mpc.c            mpc_parser_t *q = st-&gt;parsers[i];</span>
+<span class='curline'><a href='../S/43.html#L3264'>parsers</a>          3264 mpc/mpc.c            st-&gt;parsers = realloc(st-&gt;parsers, sizeof(mpc_parser_t*) * st-&gt;parsers_num);</span>
+<span class='curline'><a href='../S/43.html#L3265'>parsers</a>          3265 mpc/mpc.c            st-&gt;parsers[st-&gt;parsers_num-1] = p;</span>
+<span class='curline'><a href='../S/43.html#L3364'>parsers</a>          3364 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/43.html#L3368'>parsers</a>          3368 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/43.html#L3524'>parsers</a>          3524 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/43.html#L3531'>parsers</a>          3531 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/43.html#L3546'>parsers</a>          3546 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/43.html#L3553'>parsers</a>          3553 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/43.html#L3569'>parsers</a>          3569 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/43.html#L3576'>parsers</a>          3576 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/43.html#L3600'>parsers</a>          3600 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/43.html#L3607'>parsers</a>          3607 mpc/mpc.c        free(st.parsers);</span>
+</pre>
+</body>
+</html>

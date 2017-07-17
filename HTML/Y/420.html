@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>pos</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L9'>pos</a>                 9 mpc/mpc.c        s.pos = -1;</span>
+<span class='curline'><a href='../S/43.html#L17'>pos</a>                17 mpc/mpc.c        s.pos = 0;</span>
+<span class='curline'><a href='../S/43.html#L350'>pos</a>               350 mpc/mpc.c          fseek(i-&gt;file, i-&gt;state.pos, SEEK_SET);</span>
+<span class='curline'><a href='../S/43.html#L357'>pos</a>               357 mpc/mpc.c        return i-&gt;state.pos &lt; (long)(strlen(i-&gt;buffer) + i-&gt;marks[0].pos);</span>
+<span class='curline'><a href='../S/43.html#L361'>pos</a>               361 mpc/mpc.c        return i-&gt;buffer[i-&gt;state.pos - i-&gt;marks[0].pos];</span>
+<span class='curline'><a href='../S/43.html#L365'>pos</a>               365 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_STRING &amp;&amp; i-&gt;state.pos == (long)strlen(i-&gt;string)) { return 1; }</span>
+<span class='curline'><a href='../S/43.html#L377'>pos</a>               377 mpc/mpc.c          case MPC_INPUT_STRING: return i-&gt;string[i-&gt;state.pos];</span>
+<span class='curline'><a href='../S/43.html#L400'>pos</a>               400 mpc/mpc.c          case MPC_INPUT_STRING: return i-&gt;string[i-&gt;state.pos];</span>
+<span class='curline'><a href='../S/43.html#L462'>pos</a>               462 mpc/mpc.c        i-&gt;state.pos++;</span>
+<span class='curline'><a href='../S/43.html#L568'>pos</a>               568 mpc/mpc.c      static void mpc_err_string_cat(char *buffer, int *pos, int *max, char const *fmt, ...) {</span>
+<span class='curline'><a href='../S/43.html#L570'>pos</a>               570 mpc/mpc.c        int left = ((*max) - (*pos));</span>
+<span class='curline'><a href='../S/43.html#L574'>pos</a>               574 mpc/mpc.c        (*pos) += vsprintf(buffer + (*pos), fmt, va);</span>
+<span class='curline'><a href='../S/43.html#L607'>pos</a>               607 mpc/mpc.c        int pos = 0; </span>
+<span class='curline'><a href='../S/43.html#L612'>pos</a>               612 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max,</span>
+<span class='curline'><a href='../S/43.html#L617'>pos</a>               617 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, </span>
+<span class='curline'><a href='../S/43.html#L620'>pos</a>               620 mpc/mpc.c        if (x-&gt;expected_num == 0) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "ERROR: NOTHING EXPECTED"); }</span>
+<span class='curline'><a href='../S/43.html#L621'>pos</a>               621 mpc/mpc.c        if (x-&gt;expected_num == 1) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s", x-&gt;expected[0]); }</span>
+<span class='curline'><a href='../S/43.html#L625'>pos</a>               625 mpc/mpc.c            mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s, ", x-&gt;expected[i]);</span>
+<span class='curline'><a href='../S/43.html#L628'>pos</a>               628 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s or %s", </span>
+<span class='curline'><a href='../S/43.html#L633'>pos</a>               633 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, " at ");</span>
+<span class='curline'><a href='../S/43.html#L634'>pos</a>               634 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, mpc_err_char_unescape(x-&gt;recieved));</span>
+<span class='curline'><a href='../S/43.html#L635'>pos</a>               635 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, "\n");</span>
+<span class='curline'><a href='../S/43.html#L745'>pos</a>               745 mpc/mpc.c          if (x[j]-&gt;state.pos &gt; e-&gt;state.pos) { e-&gt;state = x[j]-&gt;state; }</span>
+<span class='curline'><a href='../S/43.html#L750'>pos</a>               750 mpc/mpc.c          if (x[j]-&gt;state.pos &lt; e-&gt;state.pos) { continue; }</span>
+<span class='curline'><a href='../S/44.html#L30'>pos</a>                30 mpc/mpc.h        long pos;</span>
+</pre>
+</body>
+</html>

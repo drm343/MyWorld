@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>include/character-skill.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/55.html'>include</a>/character-skill.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/4.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/10.html#L2' title='Defined at 2 in include/character-skill.h.'>HEADER_CHARACTER_SKILL</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/10.html#L1' title='Referred from 1 in include/character-skill.h.'>HEADER_CHARACTER_SKILL</a>
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> "<a href='13.html'>character-status.h</a>"
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> "<a href='7.html'>setup_config.h</a>"
+<a id='L6' name='L6'></a>   6 
+<a id='L7' name='L7'></a>   7 
+<a id='L8' name='L8'></a>   8 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L9' name='L9'></a>   9   <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a> <a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>;
+<a id='L10' name='L10'></a>  10   <a href='../Y/538.html' title='Multiple used in 37 places.'>uint8_t</a> <a href='../Y/259.html' title='Multiple used in 3 places.'>efficacy</a>;
+<a id='L11' name='L11'></a>  11   <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/400.html' title='Multiple used in 5 places.'>owner</a>;
+<a id='L12' name='L12'></a>  12   <a href='../S/15.html#L17' title='Defined at 17 in include/base_type.h.'>Use_Type</a> <a href='../Y/485.html' title='Multiple used in 24 places.'>status</a>;
+<a id='L13' name='L13'></a>  13 <em class='brace'>}</em> <a href='../R/98.html' title='Multiple referred from 2 places.'>Skill</a>;
+<a id='L14' name='L14'></a>  14 <strong class='reserved'>typedef</strong> <a href='../S/10.html#L13' title='Defined at 13 in include/character-skill.h.'>Skill</a> * <a href='../R/100.html' title='Multiple referred from 13 places.'>Skill_Access</a>;
+<a id='L15' name='L15'></a>  15 
+<a id='L16' name='L16'></a>  16 <a href='../S/7.html#L6' title='Defined at 6 in include/setup_config.h.'>GENERIC_POOL</a>(<a href='../Y/147.html' title='Multiple used in 3 places.'>Skill_Pool</a>, <a href='../S/10.html#L14' title='Defined at 14 in include/character-skill.h.'>Skill_Access</a>);
+<a id='L17' name='L17'></a>  17 <strong class='reserved'>typedef</strong> <a href='../Y/147.html' title='Multiple used in 3 places.'>Skill_Pool</a> * <a href='../R/102.html' title='Multiple referred from 9 places.'>Skill_Pool_Access</a>;
+<a id='L18' name='L18'></a>  18 
+<a id='L19' name='L19'></a>  19 
+<a id='L20' name='L20'></a>  20 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L21' name='L21'></a>  21   <strong class='reserved'>void</strong> (*<a href='../S/14.html#L42' title='Defined at 42 in include/main_set_character.h.'>set_name</a>)(<a href='../S/10.html#L14' title='Defined at 14 in include/character-skill.h.'>Skill_Access</a>, <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a>);
+<a id='L22' name='L22'></a>  22   <strong class='reserved'>void</strong> (*<a href='../Y/467.html' title='Multiple used in 2 places.'>set_efficacy</a>)(<a href='../S/10.html#L14' title='Defined at 14 in include/character-skill.h.'>Skill_Access</a>, <a href='../Y/538.html' title='Multiple used in 37 places.'>uint8_t</a>);
+<a id='L23' name='L23'></a>  23   <strong class='reserved'>void</strong> (*<a href='../Y/452.html' title='Multiple used in 2 places.'>remove</a>)(<a href='../S/10.html#L14' title='Defined at 14 in include/character-skill.h.'>Skill_Access</a>);
+<a id='L24' name='L24'></a>  24 <em class='brace'>}</em> <a href='../R/99.html' title='Multiple referred from 2 places.'>Skill_API</a>;
+<a id='L25' name='L25'></a>  25 
+<a id='L26' name='L26'></a>  26 <strong class='reserved'>extern</strong> <a href='../S/10.html#L24' title='Defined at 24 in include/character-skill.h.'>Skill_API</a> <a href='../Y/477.html' title='Multiple used in 2 places.'>skill</a>;
+<a id='L27' name='L27'></a>  27 
+<a id='L28' name='L28'></a>  28 
+<a id='L29' name='L29'></a>  29 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L30' name='L30'></a>  30   <a href='../S/10.html#L17' title='Defined at 17 in include/character-skill.h.'>Skill_Pool_Access</a> (*<a href='../Y/483.html' title='Multiple used in 26 places.'>start</a>)(<a href='../Y/538.html' title='Multiple used in 37 places.'>uint8_t</a>);
+<a id='L31' name='L31'></a>  31   <strong class='reserved'>void</strong> (*<a href='../Y/490.html' title='Multiple used in 15 places.'>stop</a>)(<a href='../S/10.html#L17' title='Defined at 17 in include/character-skill.h.'>Skill_Pool_Access</a>);
+<a id='L32' name='L32'></a>  32   <a href='../S/10.html#L14' title='Defined at 14 in include/character-skill.h.'>Skill_Access</a> (*<a href='../Y/344.html' title='Multiple used in 77 places.'>malloc</a>)(<a href='../S/10.html#L17' title='Defined at 17 in include/character-skill.h.'>Skill_Pool_Access</a>, <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a>);
+<a id='L33' name='L33'></a>  33   <a href='../Y/201.html' title='Multiple used in 16 places.'>bool</a> (*<a href='../Y/288.html' title='Multiple used in 10 places.'>find</a>)(<a href='../S/10.html#L17' title='Defined at 17 in include/character-skill.h.'>Skill_Pool_Access</a>, <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a>, <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a>, <a href='../S/10.html#L14' title='Defined at 14 in include/character-skill.h.'>Skill_Access</a> *);
+<a id='L34' name='L34'></a>  34 <em class='brace'>}</em> <a href='../R/101.html' title='Multiple referred from 2 places.'>Skill_Pool_API</a>;
+<a id='L35' name='L35'></a>  35 
+<a id='L36' name='L36'></a>  36 <strong class='reserved'>extern</strong> <a href='../S/10.html#L34' title='Defined at 34 in include/character-skill.h.'>Skill_Pool_API</a> <a href='../Y/478.html' title='Multiple used in 2 places.'>skill_pool</a>;
+<a id='L37' name='L37'></a>  37 
+<a id='L38' name='L38'></a>  38 <em class='sharp'>#endif</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

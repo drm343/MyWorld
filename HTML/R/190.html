@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>mpc_define</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L2172'>mpc_define</a>       2172 mpc/mpc.c        mpc_define(Regex, mpc_and(2, mpcf_re_or,</span>
+<span class='curline'><a href='../S/43.html#L2178'>mpc_define</a>       2178 mpc/mpc.c        mpc_define(Term, mpc_many(mpcf_re_and, Factor));</span>
+<span class='curline'><a href='../S/43.html#L2180'>mpc_define</a>       2180 mpc/mpc.c        mpc_define(Factor, mpc_and(2, mpcf_re_repeat,</span>
+<span class='curline'><a href='../S/43.html#L2189'>mpc_define</a>       2189 mpc/mpc.c        mpc_define(Base, mpc_or(4,</span>
+<span class='curline'><a href='../S/43.html#L2196'>mpc_define</a>       2196 mpc/mpc.c        mpc_define(Range, mpc_apply(</span>
+<span class='curline'><a href='../S/43.html#L3302'>mpc_define</a>       3302 mpc/mpc.c        mpc_define(GrammarTotal,</span>
+<span class='curline'><a href='../S/43.html#L3306'>mpc_define</a>       3306 mpc/mpc.c        mpc_define(Grammar, mpc_and(2, mpcaf_grammar_or,</span>
+<span class='curline'><a href='../S/43.html#L3312'>mpc_define</a>       3312 mpc/mpc.c        mpc_define(Term, mpc_many1(mpcaf_grammar_and, Factor));</span>
+<span class='curline'><a href='../S/43.html#L3314'>mpc_define</a>       3314 mpc/mpc.c        mpc_define(Factor, mpc_and(2, mpcaf_grammar_repeat,</span>
+<span class='curline'><a href='../S/43.html#L3326'>mpc_define</a>       3326 mpc/mpc.c        mpc_define(Base, mpc_or(5,</span>
+<span class='curline'><a href='../S/43.html#L3433'>mpc_define</a>       3433 mpc/mpc.c          mpc_define(left, stmt-&gt;grammar);</span>
+<span class='curline'><a href='../S/43.html#L3458'>mpc_define</a>       3458 mpc/mpc.c        mpc_define(Lang, mpc_apply_to(</span>
+<span class='curline'><a href='../S/43.html#L3463'>mpc_define</a>       3463 mpc/mpc.c        mpc_define(Stmt, mpc_and(5, mpca_stmt_afold,</span>
+<span class='curline'><a href='../S/43.html#L3468'>mpc_define</a>       3468 mpc/mpc.c        mpc_define(Grammar, mpc_and(2, mpcaf_grammar_or,</span>
+<span class='curline'><a href='../S/43.html#L3474'>mpc_define</a>       3474 mpc/mpc.c        mpc_define(Term, mpc_many1(mpcaf_grammar_and, Factor));</span>
+<span class='curline'><a href='../S/43.html#L3476'>mpc_define</a>       3476 mpc/mpc.c        mpc_define(Factor, mpc_and(2, mpcaf_grammar_repeat,</span>
+<span class='curline'><a href='../S/43.html#L3488'>mpc_define</a>       3488 mpc/mpc.c        mpc_define(Base, mpc_or(5,</span>
+<span class='curline'><a href='../S/44.html#L90'>mpc_define</a>         90 mpc/mpc.h      mpc_parser_t *mpc_define(mpc_parser_t *p, mpc_parser_t *a);</span>
+<span class='curline'><a href='../S/46.html#L46'>mpc_define</a>         46 mpc/tests/core.c   mpc_define(Expr, mpc_or(2, </span>
+<span class='curline'><a href='../S/46.html#L51'>mpc_define</a>         51 mpc/tests/core.c   mpc_define(Factor, mpc_or(2, </span>
+<span class='curline'><a href='../S/46.html#L56'>mpc_define</a>         56 mpc/tests/core.c   mpc_define(Term, mpc_or(2, </span>
+<span class='curline'><a href='../S/46.html#L61'>mpc_define</a>         61 mpc/tests/core.c   mpc_define(Maths, mpc_whole(Expr, free));</span>
+<span class='curline'><a href='../S/47.html#L14'>mpc_define</a>         14 mpc/tests/grammar.c   mpc_define(Expr,  mpca_grammar(MPCA_LANG_DEFAULT, " &lt;product&gt; (('+' | '-') &lt;product&gt;)* ", Prod));</span>
+<span class='curline'><a href='../S/47.html#L15'>mpc_define</a>         15 mpc/tests/grammar.c   mpc_define(Prod,  mpca_grammar(MPCA_LANG_DEFAULT, " &lt;value&gt;   (('*' | '/')   &lt;value&gt;)* ", Value));</span>
+<span class='curline'><a href='../S/47.html#L16'>mpc_define</a>         16 mpc/tests/grammar.c   mpc_define(Value, mpca_grammar(MPCA_LANG_DEFAULT, " /[0-9]+/ | '(' &lt;expression&gt; ')' ", Expr));</span>
+<span class='curline'><a href='../S/47.html#L17'>mpc_define</a>         17 mpc/tests/grammar.c   mpc_define(Maths, mpca_total(Expr));</span>
+<span class='curline'><a href='../S/47.html#L142'>mpc_define</a>        142 mpc/tests/grammar.c   mpc_define(Line, mpca_tag(mpc_apply(mpc_sym("#line"), mpcf_str_ast), "string"));</span>
+</pre>
+</body>
+</html>

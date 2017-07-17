@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>printf</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/33.html#L9'>printf</a>              9 mpc/examples/foobar.c       printf("Usage: ./foobar &lt;foo/bar&gt;\n");</span>
+<span class='curline'><a href='../S/42.html#L55'>printf</a>             55 mpc/examples/tree_traversal.c   printf("Index: %d; Child: \"%s\"\n", index, child-&gt;tag);</span>
+<span class='curline'><a href='../S/42.html#L62'>printf</a>             62 mpc/examples/tree_traversal.c     printf("-- Index: %d; Child: \"%s\"\n", index, child_sub-&gt;tag);</span>
+<span class='curline'><a href='../S/42.html#L70'>printf</a>             70 mpc/examples/tree_traversal.c   printf("Pre order tree traversal.\n");</span>
+<span class='curline'><a href='../S/42.html#L76'>printf</a>             76 mpc/examples/tree_traversal.c     printf("Tag: %s; Contents: %s\n",</span>
+<span class='curline'><a href='../S/42.html#L84'>printf</a>             84 mpc/examples/tree_traversal.c   printf("Post order tree traversal.\n");</span>
+<span class='curline'><a href='../S/42.html#L91'>printf</a>             91 mpc/examples/tree_traversal.c     printf("Tag: %s; Contents: %s\n",</span>
+<span class='curline'><a href='../S/42.html#L99'>printf</a>             99 mpc/examples/tree_traversal.c   printf("Partial traversal.\n");</span>
+<span class='curline'><a href='../S/42.html#L106'>printf</a>            106 mpc/examples/tree_traversal.c     printf("Tag: %s; Contents: %s\n",</span>
+<span class='curline'><a href='../S/43.html#L2488'>printf</a>           2488 mpc/mpc.c          if (p-&gt;name) { printf("&lt;%s&gt;", p-&gt;name); }</span>
+<span class='curline'><a href='../S/43.html#L2489'>printf</a>           2489 mpc/mpc.c          else { printf("&lt;anon&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2493'>printf</a>           2493 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_UNDEFINED) { printf("&lt;?&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2494'>printf</a>           2494 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_PASS)   { printf("&lt;:&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2495'>printf</a>           2495 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_FAIL)   { printf("&lt;!&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2496'>printf</a>           2496 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_LIFT)   { printf("&lt;#&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2497'>printf</a>           2497 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_STATE)  { printf("&lt;S&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2498'>printf</a>           2498 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_ANCHOR) { printf("&lt;@&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2500'>printf</a>           2500 mpc/mpc.c          printf("%s", p-&gt;data.expect.m);</span>
+<span class='curline'><a href='../S/43.html#L2504'>printf</a>           2504 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_ANY) { printf("&lt;.&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2505'>printf</a>           2505 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_SATISFY) { printf("&lt;f&gt;"); }</span>
+<span class='curline'><a href='../S/43.html#L2513'>printf</a>           2513 mpc/mpc.c          printf("'%s'", s);</span>
+<span class='curline'><a href='../S/43.html#L2528'>printf</a>           2528 mpc/mpc.c          printf("[%s-%s]", s, e);</span>
+<span class='curline'><a href='../S/43.html#L2538'>printf</a>           2538 mpc/mpc.c          printf("[%s]", s);</span>
+<span class='curline'><a href='../S/43.html#L2547'>printf</a>           2547 mpc/mpc.c          printf("[^%s]", s);</span>
+<span class='curline'><a href='../S/43.html#L2556'>printf</a>           2556 mpc/mpc.c          printf("\"%s\"", s);</span>
+<span class='curline'><a href='../S/43.html#L2564'>printf</a>           2564 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_NOT)   { mpc_print_unretained(p-&gt;data.not.x, 0); printf("!"); }</span>
+<span class='curline'><a href='../S/43.html#L2565'>printf</a>           2565 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MAYBE) { mpc_print_unretained(p-&gt;data.not.x, 0); printf("?"); }</span>
+<span class='curline'><a href='../S/43.html#L2567'>printf</a>           2567 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY)  { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("*"); }</span>
+<span class='curline'><a href='../S/43.html#L2568'>printf</a>           2568 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY1) { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("+"); }</span>
+<span class='curline'><a href='../S/43.html#L2569'>printf</a>           2569 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_COUNT) { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("{%i}", p-&gt;data.repeat.n); }</span>
+<span class='curline'><a href='../S/43.html#L2572'>printf</a>           2572 mpc/mpc.c          printf("(");</span>
+<span class='curline'><a href='../S/43.html#L2575'>printf</a>           2575 mpc/mpc.c            printf(" | ");</span>
+<span class='curline'><a href='../S/43.html#L2578'>printf</a>           2578 mpc/mpc.c          printf(")");</span>
+<span class='curline'><a href='../S/43.html#L2582'>printf</a>           2582 mpc/mpc.c          printf("(");</span>
+<span class='curline'><a href='../S/43.html#L2585'>printf</a>           2585 mpc/mpc.c            printf(" ");</span>
+<span class='curline'><a href='../S/43.html#L2588'>printf</a>           2588 mpc/mpc.c          printf(")");</span>
+<span class='curline'><a href='../S/43.html#L2595'>printf</a>           2595 mpc/mpc.c        printf("\n");</span>
+<span class='curline'><a href='../S/43.html#L2648'>printf</a>           2648 mpc/mpc.c            printf("Got "); printer(r.output); printf("\n");</span>
+<span class='curline'><a href='../S/43.html#L2649'>printf</a>           2649 mpc/mpc.c            printf("Expected "); printer(d); printf("\n");</span>
+<span class='curline'><a href='../S/43.html#L3655'>printf</a>           3655 mpc/mpc.c        printf("Stats\n");</span>
+<span class='curline'><a href='../S/43.html#L3656'>printf</a>           3656 mpc/mpc.c        printf("=====\n");</span>
+<span class='curline'><a href='../S/43.html#L3657'>printf</a>           3657 mpc/mpc.c        printf("Node Count: %i\n", mpc_nodecount_unretained(p, 1));</span>
+<span class='curline'><a href='../S/46.html#L8'>printf</a>              8 mpc/tests/core.c static void int_print(const void* x) { printf("'%i'", *((int*)x)); }</span>
+<span class='curline'><a href='../S/46.html#L10'>printf</a>             10 mpc/tests/core.c static void strprint(const void* x) { printf("'%s'", (char*)x); }</span>
+<span class='curline'><a href='../S/49.html#L94'>printf</a>             94 mpc/tests/ptest.c   printf("%s", colors[color]);</span>
+<span class='curline'><a href='../S/49.html#L148'>printf</a>            148 mpc/tests/ptest.c   printf("Failed! \n\n%s\n", assert_err);</span>
+<span class='curline'><a href='../S/49.html#L203'>printf</a>            203 mpc/tests/ptest.c     printf("ERROR: Exceeded maximum test count of %i!\n", </span>
+<span class='curline'><a href='../S/49.html#L208'>printf</a>            208 mpc/tests/ptest.c     printf("ERROR: Test name '%s' too long (Maximum is %i characters)\n", </span>
+<span class='curline'><a href='../S/49.html#L213'>printf</a>            213 mpc/tests/ptest.c     printf("ERROR: Test suite '%s' too long (Maximum is %i characters)\n", </span>
+<span class='curline'><a href='../S/49.html#L281'>printf</a>            281 mpc/tests/ptest.c       printf("\n\n  ===== %s =====\n\n", current_suite);</span>
+<span class='curline'><a href='../S/49.html#L290'>printf</a>            290 mpc/tests/ptest.c     printf("    | %s ... ", test.name);</span>
+<span class='curline'><a href='../S/49.html#L305'>printf</a>            305 mpc/tests/ptest.c       printf("Failed! \n\n%s\n", assert_err);</span>
+<span class='curline'><a href='../S/49.html#L324'>printf</a>            324 mpc/tests/ptest.c   printf("  | Suites  ||");</span>
+<span class='curline'><a href='../S/49.html#L325'>printf</a>            325 mpc/tests/ptest.c   pt_color(YELLOW);  printf(" Total %4d ",  num_suites);        </span>
+<span class='curline'><a href='../S/49.html#L327'>printf</a>            327 mpc/tests/ptest.c   pt_color(GREEN);   printf(" Passed %4d ", num_suites_passes); </span>
+<span class='curline'><a href='../S/49.html#L329'>printf</a>            329 mpc/tests/ptest.c   pt_color(RED);     printf(" Failed %4d ", num_suites_fails);  </span>
+<span class='curline'><a href='../S/49.html#L332'>printf</a>            332 mpc/tests/ptest.c   printf("  | Tests   ||");</span>
+<span class='curline'><a href='../S/49.html#L333'>printf</a>            333 mpc/tests/ptest.c   pt_color(YELLOW);  printf(" Total %4d ",  num_tests);         </span>
+<span class='curline'><a href='../S/49.html#L335'>printf</a>            335 mpc/tests/ptest.c   pt_color(GREEN);   printf(" Passed %4d ", num_tests_passes);  </span>
+<span class='curline'><a href='../S/49.html#L337'>printf</a>            337 mpc/tests/ptest.c   pt_color(RED);     printf(" Failed %4d ", num_tests_fails);   </span>
+<span class='curline'><a href='../S/49.html#L340'>printf</a>            340 mpc/tests/ptest.c   printf("  | Asserts ||");</span>
+<span class='curline'><a href='../S/49.html#L341'>printf</a>            341 mpc/tests/ptest.c   pt_color(YELLOW);  printf(" Total %4d ",  num_asserts);       </span>
+<span class='curline'><a href='../S/49.html#L343'>printf</a>            343 mpc/tests/ptest.c   pt_color(GREEN);   printf(" Passed %4d ", num_assert_passes); </span>
+<span class='curline'><a href='../S/49.html#L345'>printf</a>            345 mpc/tests/ptest.c   pt_color(RED);     printf(" Failed %4d ", num_assert_fails);  </span>
+<span class='curline'><a href='../S/49.html#L353'>printf</a>            353 mpc/tests/ptest.c   printf("      Total Running Time: %0.3fs\n\n", total);</span>
+<span class='curline'><a href='../S/51.html#L8'>printf</a>              8 mpc/tests/regex.c static void string_print(const void* x) { printf("'%s'", (char*)x); }</span>
+<span class='curline'><a href='../S/24.html#L7'>printf</a>              7 src/character-status.c   printf("--------- status -------\n");</span>
+<span class='curline'><a href='../S/24.html#L8'>printf</a>              8 src/character-status.c   printf("%s : %s\n", base-&gt;name, access-&gt;race);</span>
+<span class='curline'><a href='../S/24.html#L9'>printf</a>              9 src/character-status.c   printf("Mark: %s\n", base-&gt;Mark-&gt;mark);</span>
+<span class='curline'><a href='../S/24.html#L10'>printf</a>             10 src/character-status.c   printf("Damage: %d\n", access-&gt;damage);</span>
+<span class='curline'><a href='../S/19.html#L41'>printf</a>             41 src/graphic.c    printf("---- graph ----\n");</span>
+<span class='curline'><a href='../S/19.html#L44'>printf</a>             44 src/graphic.c      printf("%s : %s\n", result-&gt;name, result-&gt;mark);</span>
+<span class='curline'><a href='../S/19.html#L46'>printf</a>             46 src/graphic.c    printf("---- graph done ----\n");</span>
+<span class='curline'><a href='../S/26.html#L90'>printf</a>             90 src/main.c           printf("other\n");</span>
+<span class='curline'><a href='../S/26.html#L153'>printf</a>            153 src/main.c         printf("TTF_OpenFont: %s\n", TTF_GetError());</span>
+<span class='curline'><a href='../S/21.html#L29'>printf</a>             29 src/string_helper.c       printf("bug\n");</span>
+<span class='curline'><a href='../S/21.html#L65'>printf</a>             65 src/string_helper.c       printf("bug\n");</span>
+</pre>
+</body>
+</html>

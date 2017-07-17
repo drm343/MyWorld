@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>marks_num</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L89'>marks_num</a>          89 mpc/mpc.c        int marks_num;</span>
+<span class='curline'><a href='../S/43.html#L118'>marks_num</a>         118 mpc/mpc.c        i-&gt;marks_num = 0;</span>
+<span class='curline'><a href='../S/43.html#L148'>marks_num</a>         148 mpc/mpc.c        i-&gt;marks_num = 0;</span>
+<span class='curline'><a href='../S/43.html#L177'>marks_num</a>         177 mpc/mpc.c        i-&gt;marks_num = 0;</span>
+<span class='curline'><a href='../S/43.html#L205'>marks_num</a>         205 mpc/mpc.c        i-&gt;marks_num = 0;</span>
+<span class='curline'><a href='../S/43.html#L303'>marks_num</a>         303 mpc/mpc.c        i-&gt;marks_num++;</span>
+<span class='curline'><a href='../S/43.html#L305'>marks_num</a>         305 mpc/mpc.c        if (i-&gt;marks_num &gt; i-&gt;marks_slots) {</span>
+<span class='curline'><a href='../S/43.html#L306'>marks_num</a>         306 mpc/mpc.c          i-&gt;marks_slots = i-&gt;marks_num + i-&gt;marks_num / 2;</span>
+<span class='curline'><a href='../S/43.html#L311'>marks_num</a>         311 mpc/mpc.c        i-&gt;marks[i-&gt;marks_num-1] = i-&gt;state;</span>
+<span class='curline'><a href='../S/43.html#L312'>marks_num</a>         312 mpc/mpc.c        i-&gt;lasts[i-&gt;marks_num-1] = i-&gt;last;</span>
+<span class='curline'><a href='../S/43.html#L314'>marks_num</a>         314 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE &amp;&amp; i-&gt;marks_num == 1) {</span>
+<span class='curline'><a href='../S/43.html#L324'>marks_num</a>         324 mpc/mpc.c        i-&gt;marks_num--;</span>
+<span class='curline'><a href='../S/43.html#L326'>marks_num</a>         326 mpc/mpc.c        if (i-&gt;marks_slots &gt; i-&gt;marks_num + i-&gt;marks_num / 2</span>
+<span class='curline'><a href='../S/43.html#L329'>marks_num</a>         329 mpc/mpc.c            i-&gt;marks_num &gt; MPC_INPUT_MARKS_MIN ?</span>
+<span class='curline'><a href='../S/43.html#L330'>marks_num</a>         330 mpc/mpc.c            i-&gt;marks_num : MPC_INPUT_MARKS_MIN;</span>
+<span class='curline'><a href='../S/43.html#L335'>marks_num</a>         335 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE &amp;&amp; i-&gt;marks_num == 0) {</span>
+<span class='curline'><a href='../S/43.html#L346'>marks_num</a>         346 mpc/mpc.c        i-&gt;state = i-&gt;marks[i-&gt;marks_num-1];</span>
+<span class='curline'><a href='../S/43.html#L347'>marks_num</a>         347 mpc/mpc.c        i-&gt;last  = i-&gt;lasts[i-&gt;marks_num-1];</span>
+</pre>
+</body>
+</html>

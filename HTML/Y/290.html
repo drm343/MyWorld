@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>flags</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L3165'>flags</a>            3165 mpc/mpc.c        int flags;</span>
+<span class='curline'><a href='../S/43.html#L3199'>flags</a>            3199 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_string(y) : mpc_tok(mpc_string(y));</span>
+<span class='curline'><a href='../S/43.html#L3207'>flags</a>            3207 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_char(y[0]) : mpc_tok(mpc_char(y[0]));</span>
+<span class='curline'><a href='../S/43.html#L3215'>flags</a>            3215 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_re(y) : mpc_tok(mpc_re(y));</span>
+<span class='curline'><a href='../S/43.html#L3352'>flags</a>            3352 mpc/mpc.c        return (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) ? mpc_predictive(r.output) : r.output;</span>
+<span class='curline'><a href='../S/43.html#L3356'>flags</a>            3356 mpc/mpc.c      mpc_parser_t *mpca_grammar(int flags, const char *grammar, ...) {</span>
+<span class='curline'><a href='../S/43.html#L3365'>flags</a>            3365 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/43.html#L3430'>flags</a>            3430 mpc/mpc.c          if (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) { stmt-&gt;grammar = mpc_predictive(stmt-&gt;grammar); }</span>
+<span class='curline'><a href='../S/43.html#L3514'>flags</a>            3514 mpc/mpc.c      mpc_err_t *mpca_lang_file(int flags, FILE *f, ...) {</span>
+<span class='curline'><a href='../S/43.html#L3525'>flags</a>            3525 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/43.html#L3536'>flags</a>            3536 mpc/mpc.c      mpc_err_t *mpca_lang_pipe(int flags, FILE *p, ...) {</span>
+<span class='curline'><a href='../S/43.html#L3547'>flags</a>            3547 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/43.html#L3558'>flags</a>            3558 mpc/mpc.c      mpc_err_t *mpca_lang(int flags, const char *language, ...) {</span>
+<span class='curline'><a href='../S/43.html#L3570'>flags</a>            3570 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/43.html#L3581'>flags</a>            3581 mpc/mpc.c      mpc_err_t *mpca_lang_contents(int flags, const char *filename, ...) {</span>
+<span class='curline'><a href='../S/43.html#L3601'>flags</a>            3601 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/44.html#L340'>flags</a>             340 mpc/mpc.h      mpc_parser_t *mpca_grammar(int flags, const char *grammar, ...);</span>
+<span class='curline'><a href='../S/44.html#L342'>flags</a>             342 mpc/mpc.h      mpc_err_t *mpca_lang(int flags, const char *language, ...);</span>
+<span class='curline'><a href='../S/44.html#L343'>flags</a>             343 mpc/mpc.h      mpc_err_t *mpca_lang_file(int flags, FILE *f, ...);</span>
+<span class='curline'><a href='../S/44.html#L344'>flags</a>             344 mpc/mpc.h      mpc_err_t *mpca_lang_pipe(int flags, FILE *f, ...);</span>
+<span class='curline'><a href='../S/44.html#L345'>flags</a>             345 mpc/mpc.h      mpc_err_t *mpca_lang_contents(int flags, const char *filename, ...);</span>
+</pre>
+</body>
+</html>

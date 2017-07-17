@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>src/base_type.c</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/59.html'>src</a>/base_type.c</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L4'>[^]</a>[v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L4' title='Defined at 4.'>eq</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='15.html'>base_type.h</a>"
+<a id='L2' name='L2'></a>   2 
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <strong class='reserved'>static</strong> <a href='../Y/201.html' title='Multiple used in 16 places.'>bool</a> <a href='../R/133.html' title='Multiple referred from 4 places.'>eq</a>(<a href='../S/15.html#L28' title='Defined at 28 in include/base_type.h.'>Point_Access</a> <a href='../Y/416.html' title='Multiple used in 2 places.'>point_1</a>, <a href='../S/15.html#L28' title='Defined at 28 in include/base_type.h.'>Point_Access</a> <a href='../Y/417.html' title='Multiple used in 2 places.'>point_2</a>) <em class='brace'>{</em>
+<a id='L5' name='L5'></a>   5   <a href='../Y/201.html' title='Multiple used in 16 places.'>bool</a> <a href='../Y/457.html' title='Multiple used in 65 places.'>result</a> = <a href='../Y/276.html' title='Multiple used in 11 places.'>false</a>;
+<a id='L6' name='L6'></a>   6 
+<a id='L7' name='L7'></a>   7   <strong class='reserved'>if</strong>(<a href='../Y/416.html' title='Multiple used in 2 places.'>point_1</a>-&gt;<a href='../Y/557.html' title='Multiple used in 402 places.'>x</a> == <a href='../Y/417.html' title='Multiple used in 2 places.'>point_2</a>-&gt;<a href='../Y/557.html' title='Multiple used in 402 places.'>x</a> &amp;&amp; <a href='../Y/416.html' title='Multiple used in 2 places.'>point_1</a>-&gt;<a href='../Y/559.html' title='Multiple used in 82 places.'>y</a> == <a href='../Y/417.html' title='Multiple used in 2 places.'>point_2</a>-&gt;<a href='../Y/559.html' title='Multiple used in 82 places.'>y</a>) <em class='brace'>{</em>
+<a id='L8' name='L8'></a>   8     <a href='../Y/457.html' title='Multiple used in 65 places.'>result</a> = <a href='../Y/532.html' title='Multiple used in 12 places.'>true</a>;
+<a id='L9' name='L9'></a>   9   <em class='brace'>}</em>
+<a id='L10' name='L10'></a>  10   <strong class='reserved'>return</strong> <a href='../Y/457.html' title='Multiple used in 65 places.'>result</a>;
+<a id='L11' name='L11'></a>  11 <em class='brace'>}</em>
+<a id='L12' name='L12'></a>  12 
+<a id='L13' name='L13'></a>  13 <a href='../S/15.html#L33' title='Defined at 33 in include/base_type.h.'>POINT_INTERFACE</a> <a href='../Y/84.html' title='Multiple used in 4 places.'>Point</a> = <em class='brace'>{</em>
+<a id='L14' name='L14'></a>  14   .<a href='../S/20.html#L4' title='Defined at 4 in src/base_type.c.'>eq</a> = <a href='../S/20.html#L4' title='Defined at 4 in src/base_type.c.'>eq</a>
+<a id='L15' name='L15'></a>  15 <em class='brace'>}</em>;
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^]<a href='#L4'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

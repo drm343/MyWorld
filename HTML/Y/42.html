@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Grammar</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L3294'>Grammar</a>          3294 mpc/mpc.c        mpc_parser_t *GrammarTotal, *Grammar, *Term, *Factor, *Base;</span>
+<span class='curline'><a href='../S/43.html#L3297'>Grammar</a>          3297 mpc/mpc.c        Grammar = mpc_new("grammar");</span>
+<span class='curline'><a href='../S/43.html#L3303'>Grammar</a>          3303 mpc/mpc.c          mpc_predictive(mpc_total(Grammar, mpc_soft_delete))</span>
+<span class='curline'><a href='../S/43.html#L3306'>Grammar</a>          3306 mpc/mpc.c        mpc_define(Grammar, mpc_and(2, mpcaf_grammar_or,</span>
+<span class='curline'><a href='../S/43.html#L3308'>Grammar</a>          3308 mpc/mpc.c          mpc_maybe(mpc_and(2, mpcf_snd_free, mpc_sym("|"), Grammar, free)),</span>
+<span class='curline'><a href='../S/43.html#L3331'>Grammar</a>          3331 mpc/mpc.c          mpc_tok_parens(Grammar, mpc_soft_delete)</span>
+<span class='curline'><a href='../S/43.html#L3335'>Grammar</a>          3335 mpc/mpc.c        mpc_optimise(Grammar);</span>
+<span class='curline'><a href='../S/43.html#L3348'>Grammar</a>          3348 mpc/mpc.c        mpc_cleanup(5, GrammarTotal, Grammar, Term, Factor, Base);</span>
+<span class='curline'><a href='../S/43.html#L3449'>Grammar</a>          3449 mpc/mpc.c        mpc_parser_t *Lang, *Stmt, *Grammar, *Term, *Factor, *Base; </span>
+<span class='curline'><a href='../S/43.html#L3453'>Grammar</a>          3453 mpc/mpc.c        Grammar = mpc_new("grammar");</span>
+<span class='curline'><a href='../S/43.html#L3464'>Grammar</a>          3464 mpc/mpc.c          mpc_tok(mpc_ident()), mpc_maybe(mpc_tok(mpc_string_lit())), mpc_sym(":"), Grammar, mpc_sym(";"),</span>
+<span class='curline'><a href='../S/43.html#L3468'>Grammar</a>          3468 mpc/mpc.c        mpc_define(Grammar, mpc_and(2, mpcaf_grammar_or,</span>
+<span class='curline'><a href='../S/43.html#L3470'>Grammar</a>          3470 mpc/mpc.c            mpc_maybe(mpc_and(2, mpcf_snd_free, mpc_sym("|"), Grammar, free)),</span>
+<span class='curline'><a href='../S/43.html#L3493'>Grammar</a>          3493 mpc/mpc.c          mpc_tok_parens(Grammar, mpc_soft_delete)</span>
+<span class='curline'><a href='../S/43.html#L3498'>Grammar</a>          3498 mpc/mpc.c        mpc_optimise(Grammar);</span>
+<span class='curline'><a href='../S/43.html#L3509'>Grammar</a>          3509 mpc/mpc.c        mpc_cleanup(6, Lang, Stmt, Grammar, Term, Factor, Base);</span>
+</pre>
+</body>
+</html>

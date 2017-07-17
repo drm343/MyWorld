@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>mpc_or</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L1867'>mpc_or</a>           1867 mpc/mpc.c      mpc_parser_t *mpc_alphanum(void) { return mpc_expect(mpc_or(3, mpc_alpha(), mpc_digit(), mpc_underscore()), "alphanumeric"); }</span>
+<span class='curline'><a href='../S/43.html#L1872'>mpc_or</a>           1872 mpc/mpc.c      mpc_parser_t *mpc_number(void) { return mpc_expect(mpc_or(3, mpc_int(), mpc_hex(), mpc_oct()), "number"); }</span>
+<span class='curline'><a href='../S/43.html#L1897'>mpc_or</a>           1897 mpc/mpc.c        return mpc_expect(mpc_between(mpc_or(2, mpc_escape(), mpc_any()), free, "'", "'"), "char");</span>
+<span class='curline'><a href='../S/43.html#L1901'>mpc_or</a>           1901 mpc/mpc.c        mpc_parser_t *strchar = mpc_or(2, mpc_escape(), mpc_noneof("\""));</span>
+<span class='curline'><a href='../S/43.html#L1906'>mpc_or</a>           1906 mpc/mpc.c        mpc_parser_t *regexchar = mpc_or(2, mpc_escape(), mpc_noneof("/"));</span>
+<span class='curline'><a href='../S/43.html#L1912'>mpc_or</a>           1912 mpc/mpc.c        p0 = mpc_or(2, mpc_alpha(), mpc_underscore());</span>
+<span class='curline'><a href='../S/43.html#L2008'>mpc_or</a>           2008 mpc/mpc.c        else { return mpc_or(2, xs[0], xs[1]); }</span>
+<span class='curline'><a href='../S/43.html#L2182'>mpc_or</a>           2182 mpc/mpc.c          mpc_or(5,</span>
+<span class='curline'><a href='../S/43.html#L2189'>mpc_or</a>           2189 mpc/mpc.c        mpc_define(Base, mpc_or(4,</span>
+<span class='curline'><a href='../S/43.html#L2197'>mpc_or</a>           2197 mpc/mpc.c          mpc_many(mpcf_strfold, mpc_or(2, mpc_escape(), mpc_noneof("]"))),</span>
+<span class='curline'><a href='../S/43.html#L3316'>mpc_or</a>           3316 mpc/mpc.c            mpc_or(6,</span>
+<span class='curline'><a href='../S/43.html#L3326'>mpc_or</a>           3326 mpc/mpc.c        mpc_define(Base, mpc_or(5,</span>
+<span class='curline'><a href='../S/43.html#L3330'>mpc_or</a>           3330 mpc/mpc.c          mpc_apply_to(mpc_tok_braces(mpc_or(2, mpc_digits(), mpc_ident()), free), mpcaf_grammar_id, st),</span>
+<span class='curline'><a href='../S/43.html#L3478'>mpc_or</a>           3478 mpc/mpc.c            mpc_or(6,</span>
+<span class='curline'><a href='../S/43.html#L3488'>mpc_or</a>           3488 mpc/mpc.c        mpc_define(Base, mpc_or(5,</span>
+<span class='curline'><a href='../S/43.html#L3492'>mpc_or</a>           3492 mpc/mpc.c          mpc_apply_to(mpc_tok_braces(mpc_or(2, mpc_digits(), mpc_ident()), free), mpcaf_grammar_id, st),</span>
+<span class='curline'><a href='../S/44.html#L138'>mpc_or</a>            138 mpc/mpc.h      mpc_parser_t *mpc_or(int n, ...);</span>
+<span class='curline'><a href='../S/46.html#L18'>mpc_or</a>             18 mpc/tests/core.c       mpc_or(2, mpc_alpha(), mpc_underscore()),</span>
+<span class='curline'><a href='../S/46.html#L19'>mpc_or</a>             19 mpc/tests/core.c       mpc_many1(mpcf_strfold, mpc_or(3, mpc_alpha(), mpc_underscore(), mpc_digit())),</span>
+<span class='curline'><a href='../S/46.html#L46'>mpc_or</a>             46 mpc/tests/core.c   mpc_define(Expr, mpc_or(2, </span>
+<span class='curline'><a href='../S/46.html#L51'>mpc_or</a>             51 mpc/tests/core.c   mpc_define(Factor, mpc_or(2, </span>
+<span class='curline'><a href='../S/46.html#L56'>mpc_or</a>             56 mpc/tests/core.c   mpc_define(Term, mpc_or(2, </span>
+<span class='curline'><a href='../S/46.html#L121'>mpc_or</a>            121 mpc/tests/core.c   mpc_parser_t* p = mpc_or(2, mpc_char('a'), mpc_char('b'));</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>mpc_nodecount_unretained</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L3621'>mpc_nodecount_unretained</a> 3621 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_EXPECT) { return 1 + mpc_nodecount_unretained(p-&gt;data.expect.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3623'>mpc_nodecount_unretained</a> 3623 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY)    { return 1 + mpc_nodecount_unretained(p-&gt;data.apply.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3624'>mpc_nodecount_unretained</a> 3624 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { return 1 + mpc_nodecount_unretained(p-&gt;data.apply_to.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3625'>mpc_nodecount_unretained</a> 3625 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_PREDICT)  { return 1 + mpc_nodecount_unretained(p-&gt;data.predict.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3627'>mpc_nodecount_unretained</a> 3627 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_NOT)   { return 1 + mpc_nodecount_unretained(p-&gt;data.not.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3628'>mpc_nodecount_unretained</a> 3628 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MAYBE) { return 1 + mpc_nodecount_unretained(p-&gt;data.not.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3630'>mpc_nodecount_unretained</a> 3630 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY)  { return 1 + mpc_nodecount_unretained(p-&gt;data.repeat.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3631'>mpc_nodecount_unretained</a> 3631 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY1) { return 1 + mpc_nodecount_unretained(p-&gt;data.repeat.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3632'>mpc_nodecount_unretained</a> 3632 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_COUNT) { return 1 + mpc_nodecount_unretained(p-&gt;data.repeat.x, 0); }</span>
+<span class='curline'><a href='../S/43.html#L3637'>mpc_nodecount_unretained</a> 3637 mpc/mpc.c            total += mpc_nodecount_unretained(p-&gt;data.or.xs[i], 0);</span>
+<span class='curline'><a href='../S/43.html#L3645'>mpc_nodecount_unretained</a> 3645 mpc/mpc.c            total += mpc_nodecount_unretained(p-&gt;data.and.xs[i], 0);</span>
+<span class='curline'><a href='../S/43.html#L3657'>mpc_nodecount_unretained</a> 3657 mpc/mpc.c        printf("Node Count: %i\n", mpc_nodecount_unretained(p, 1));</span>
+</pre>
+</body>
+</html>

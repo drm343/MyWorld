@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Skill_Pool_Access</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/10.html#L30'>Skill_Pool_Access</a>   30 include/character-skill.h   Skill_Pool_Access (*start)(uint8_t);</span>
+<span class='curline'><a href='../S/10.html#L31'>Skill_Pool_Access</a>   31 include/character-skill.h   void (*stop)(Skill_Pool_Access);</span>
+<span class='curline'><a href='../S/10.html#L32'>Skill_Pool_Access</a>   32 include/character-skill.h   Skill_Access (*malloc)(Skill_Pool_Access, Status_Access);</span>
+<span class='curline'><a href='../S/10.html#L33'>Skill_Pool_Access</a>   33 include/character-skill.h   bool (*find)(Skill_Pool_Access, Status_Access, String, Skill_Access *);</span>
+<span class='curline'><a href='../S/22.html#L22'>Skill_Pool_Access</a>   22 src/character-skill.c static Skill_Pool_Access pool_start(uint8_t size) {</span>
+<span class='curline'><a href='../S/22.html#L24'>Skill_Pool_Access</a>   24 src/character-skill.c   Skill_Pool_Access pool_access = calloc(1, sizeof(Skill_Pool));</span>
+<span class='curline'><a href='../S/22.html#L33'>Skill_Pool_Access</a>   33 src/character-skill.c static void pool_stop(Skill_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/22.html#L38'>Skill_Pool_Access</a>   38 src/character-skill.c static Skill_Access pool_malloc(Skill_Pool_Access pool_access, Status_Access owner) {</span>
+<span class='curline'><a href='../S/22.html#L48'>Skill_Pool_Access</a>   48 src/character-skill.c static bool pool_find(Skill_Pool_Access access, Status_Access owner,</span>
+</pre>
+</body>
+</html>

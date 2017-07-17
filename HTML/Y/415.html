@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>point</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/25.html#L120'>point</a>             120 src/character-pool.c     Point_Access point) {</span>
+<span class='curline'><a href='../S/25.html#L127'>point</a>             127 src/character-pool.c     if (Point.eq(point, &amp;((*npc)-&gt;base-&gt;Real_Position))) {</span>
+<span class='curline'><a href='../S/26.html#L29'>point</a>              29 src/main.c     Yes_No occupy_position_by_others(Point_Type point, Status_Access *result) {</span>
+<span class='curline'><a href='../S/26.html#L30'>point</a>              30 src/main.c       if (character_pool.find_position(character_use_pool, result, &amp;point) == FOUND) {</span>
+<span class='curline'><a href='../S/26.html#L38'>point</a>              38 src/main.c     Yes_No can_move_position(Point_Type point) {</span>
+<span class='curline'><a href='../S/26.html#L39'>point</a>              39 src/main.c       if ((point.x &gt;= 0) &amp;&amp; (point.x &lt;= (MAX_COUNT_X - 1))</span>
+<span class='curline'><a href='../S/26.html#L40'>point</a>              40 src/main.c           &amp;&amp; (point.y &gt;= 0) &amp;&amp; (point.y &lt;= (MAX_COUNT_Y - 1))) {</span>
+<span class='curline'><a href='../S/26.html#L50'>point</a>              50 src/main.c       Point_Type point = {</span>
+<span class='curline'><a href='../S/26.html#L59'>point</a>              59 src/main.c           point.y -= 1;</span>
+<span class='curline'><a href='../S/26.html#L61'>point</a>              61 src/main.c           if (can_move_position(point) == YES) {</span>
+<span class='curline'><a href='../S/26.html#L66'>point</a>              66 src/main.c           point.y += 1;</span>
+<span class='curline'><a href='../S/26.html#L68'>point</a>              68 src/main.c           if (can_move_position(point) == YES) {</span>
+<span class='curline'><a href='../S/26.html#L73'>point</a>              73 src/main.c           point.x -= 1;</span>
+<span class='curline'><a href='../S/26.html#L75'>point</a>              75 src/main.c           if (can_move_position(point) == YES) {</span>
+<span class='curline'><a href='../S/26.html#L80'>point</a>              80 src/main.c           point.x += 1;</span>
+<span class='curline'><a href='../S/26.html#L82'>point</a>              82 src/main.c           if (can_move_position(point) == YES) {</span>
+<span class='curline'><a href='../S/26.html#L94'>point</a>              94 src/main.c       if (occupy_position_by_others(point, &amp;npc) == NO) {</span>
+</pre>
+</body>
+</html>

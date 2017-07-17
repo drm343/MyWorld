@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>include/graphic.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/55.html'>include</a>/graphic.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/7.html' title='Multiple included from 3 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/12.html#L2' title='Defined at 2 in include/graphic.h.'>HEADER_GRAPHIC</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/12.html#L1' title='Referred from 1 in include/graphic.h.'>HEADER_GRAPHIC</a>
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> &lt;SDL2/SDL.h&gt;
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> &lt;SDL2/SDL_ttf.h&gt;
+<a id='L6' name='L6'></a>   6 
+<a id='L7' name='L7'></a>   7 <em class='sharp'>#include</em> "<a href='5.html'>string_pool.h</a>"
+<a id='L8' name='L8'></a>   8 
+<a id='L9' name='L9'></a>   9 <strong class='reserved'>typedef</strong> SDL_Texture * <a href='../S/12.html#L22' title='Referred from 22 in include/graphic.h.'>SDL_Texture_Access</a>;
+<a id='L10' name='L10'></a>  10 
+<a id='L11' name='L11'></a>  11 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L12' name='L12'></a>  12   <a href='../Y/104.html' title='Multiple used in 2 places.'>SDL_Color</a> *<a href='../Y/226.html' title='Multiple used in 5 places.'>color</a>;
+<a id='L13' name='L13'></a>  13   <a href='../Y/159.html' title='Multiple used in 2 places.'>TTF_Font</a> *<a href='../Y/292.html' title='Multiple used in 5 places.'>font</a>;
+<a id='L14' name='L14'></a>  14   <a href='../Y/319.html' title='Multiple used in 3 places.'>int8_t</a> width;
+<a id='L15' name='L15'></a>  15   <a href='../Y/319.html' title='Multiple used in 3 places.'>int8_t</a> height;
+<a id='L16' name='L16'></a>  16 <em class='brace'>}</em> FontConfig;
+<a id='L17' name='L17'></a>  17 
+<a id='L18' name='L18'></a>  18 
+<a id='L19' name='L19'></a>  19 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L20' name='L20'></a>  20   <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a> <a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>;
+<a id='L21' name='L21'></a>  21   <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a> <a href='../Y/345.html' title='Multiple used in 10 places.'>mark</a>;
+<a id='L22' name='L22'></a>  22   <a href='../S/12.html#L9' title='Defined at 9 in include/graphic.h.'>SDL_Texture_Access</a> <a href='../Y/181.html' title='Multiple used in 70 places.'>access</a>;
+<a id='L23' name='L23'></a>  23 <em class='brace'>}</em> <a href='../R/113.html' title='Multiple referred from 2 places.'>Style</a>;
+<a id='L24' name='L24'></a>  24 <strong class='reserved'>typedef</strong> <a href='../S/12.html#L23' title='Defined at 23 in include/graphic.h.'>Style</a> * <a href='../R/114.html' title='Multiple referred from 21 places.'>Style_Access</a>;
+<a id='L25' name='L25'></a>  25 
+<a id='L26' name='L26'></a>  26 
+<a id='L27' name='L27'></a>  27 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L28' name='L28'></a>  28   <a href='../S/12.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> <a href='../Y/418.html' title='Multiple used in 30 places.'>pool</a>;
+<a id='L29' name='L29'></a>  29   <a href='../Y/538.html' title='Multiple used in 37 places.'>uint8_t</a> <a href='../Y/352.html' title='Multiple used in 25 places.'>max_size</a>;
+<a id='L30' name='L30'></a>  30   <a href='../Y/538.html' title='Multiple used in 37 places.'>uint8_t</a> <a href='../Y/240.html' title='Multiple used in 29 places.'>current_size</a>;
+<a id='L31' name='L31'></a>  31 <em class='brace'>}</em> <a href='../R/115.html' title='Multiple referred from 2 places.'>Style_Pool</a>;
+<a id='L32' name='L32'></a>  32 <strong class='reserved'>typedef</strong> <a href='../S/12.html#L31' title='Defined at 31 in include/graphic.h.'>Style_Pool</a> * <a href='../R/116.html' title='Multiple referred from 16 places.'>Style_Pool_Access</a>;
+<a id='L33' name='L33'></a>  33 
+<a id='L34' name='L34'></a>  34 
+<a id='L35' name='L35'></a>  35 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L36' name='L36'></a>  36   <a href='../S/12.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> (*<a href='../Y/344.html' title='Multiple used in 77 places.'>malloc</a>)(<a href='../S/12.html#L32' title='Defined at 32 in include/graphic.h.'>Style_Pool_Access</a>);
+<a id='L37' name='L37'></a>  37   <a href='../S/12.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> (*<a href='../Y/288.html' title='Multiple used in 10 places.'>find</a>)(<a href='../S/12.html#L32' title='Defined at 32 in include/graphic.h.'>Style_Pool_Access</a>, <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a>);
+<a id='L38' name='L38'></a>  38   <a href='../S/12.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> (*<a href='../Y/378.html' title='Multiple used in 14 places.'>next</a>)(<a href='../S/12.html#L32' title='Defined at 32 in include/graphic.h.'>Style_Pool_Access</a>, <a href='../Y/538.html' title='Multiple used in 37 places.'>uint8_t</a> *);
+<a id='L39' name='L39'></a>  39   <strong class='reserved'>void</strong> (*<a href='../Y/306.html' title='Multiple used in 4 places.'>gc</a>) (<a href='../S/12.html#L32' title='Defined at 32 in include/graphic.h.'>Style_Pool_Access</a>);
+<a id='L40' name='L40'></a>  40   <a href='../S/12.html#L32' title='Defined at 32 in include/graphic.h.'>Style_Pool_Access</a> (*<a href='../Y/483.html' title='Multiple used in 26 places.'>start</a>)(<strong class='reserved'>int</strong>);
+<a id='L41' name='L41'></a>  41   <strong class='reserved'>void</strong> (*<a href='../Y/490.html' title='Multiple used in 15 places.'>stop</a>)(<a href='../S/12.html#L32' title='Defined at 32 in include/graphic.h.'>Style_Pool_Access</a>);
+<a id='L42' name='L42'></a>  42   <strong class='reserved'>void</strong> (*<a href='../Y/248.html' title='Multiple used in 2 places.'>debug</a>)(<a href='../S/12.html#L32' title='Defined at 32 in include/graphic.h.'>Style_Pool_Access</a>);
+<a id='L43' name='L43'></a>  43 <em class='brace'>}</em> <a href='../R/97.html' title='Multiple referred from 2 places.'>STYLE_POOL_INTERFACE</a>;
+<a id='L44' name='L44'></a>  44 
+<a id='L45' name='L45'></a>  45 
+<a id='L46' name='L46'></a>  46 <strong class='reserved'>extern</strong> <a href='../S/12.html#L43' title='Defined at 43 in include/graphic.h.'>STYLE_POOL_INTERFACE</a> <a href='../Y/156.html' title='Multiple used in 11 places.'>Style_Pool_Interface</a>;
+<a id='L47' name='L47'></a>  47 <em class='sharp'>#endif</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

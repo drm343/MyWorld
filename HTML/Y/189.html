@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>as</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L2997'>as</a>               2997 mpc/mpc.c        mpc_ast_t** as = (mpc_ast_t**)xs;</span>
+<span class='curline'><a href='../S/43.html#L3009'>as</a>               3009 mpc/mpc.c          if (as[i] == NULL) { continue; }</span>
+<span class='curline'><a href='../S/43.html#L3011'>as</a>               3011 mpc/mpc.c          if        (as[i] &amp;&amp; as[i]-&gt;children_num == 0) {</span>
+<span class='curline'><a href='../S/43.html#L3012'>as</a>               3012 mpc/mpc.c            mpc_ast_add_child(r, as[i]);</span>
+<span class='curline'><a href='../S/43.html#L3013'>as</a>               3013 mpc/mpc.c          } else if (as[i] &amp;&amp; as[i]-&gt;children_num == 1) {</span>
+<span class='curline'><a href='../S/43.html#L3014'>as</a>               3014 mpc/mpc.c            mpc_ast_add_child(r, mpc_ast_add_root_tag(as[i]-&gt;children[0], as[i]-&gt;tag));</span>
+<span class='curline'><a href='../S/43.html#L3015'>as</a>               3015 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
+<span class='curline'><a href='../S/43.html#L3016'>as</a>               3016 mpc/mpc.c          } else if (as[i] &amp;&amp; as[i]-&gt;children_num &gt;= 2) {</span>
+<span class='curline'><a href='../S/43.html#L3017'>as</a>               3017 mpc/mpc.c            for (j = 0; j &lt; as[i]-&gt;children_num; j++) {</span>
+<span class='curline'><a href='../S/43.html#L3018'>as</a>               3018 mpc/mpc.c              mpc_ast_add_child(r, as[i]-&gt;children[j]);</span>
+<span class='curline'><a href='../S/43.html#L3020'>as</a>               3020 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
+<span class='curline'><a href='../S/44.html#L314'>as</a>                314 mpc/mpc.h      mpc_val_t *mpcf_fold_ast(int n, mpc_val_t **as);</span>
+</pre>
+</body>
+</html>

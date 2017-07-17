@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>access</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/12.html#L22'>access</a>             22 include/graphic.h   SDL_Texture_Access access;</span>
+<span class='curline'><a href='../S/25.html#L102'>access</a>            102 src/character-pool.c static Found_Result pool_find(Character_Pool_Access access, Status_Access *npc,</span>
+<span class='curline'><a href='../S/25.html#L105'>access</a>            105 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
+<span class='curline'><a href='../S/25.html#L108'>access</a>            108 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L119'>access</a>            119 src/character-pool.c static Found_Result pool_find_by_position(Character_Pool_Access access, Status_Access *npc,</span>
+<span class='curline'><a href='../S/25.html#L122'>access</a>            122 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
+<span class='curline'><a href='../S/25.html#L125'>access</a>            125 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/22.html#L6'>access</a>              6 src/character-skill.c static void set_skill_name(Skill_Access access, String name) {</span>
+<span class='curline'><a href='../S/22.html#L7'>access</a>              7 src/character-skill.c   access-&gt;name = name;</span>
+<span class='curline'><a href='../S/22.html#L10'>access</a>             10 src/character-skill.c static void set_skill_efficacy(Skill_Access access, uint8_t efficacy) {</span>
+<span class='curline'><a href='../S/22.html#L11'>access</a>             11 src/character-skill.c   access-&gt;efficacy = efficacy;</span>
+<span class='curline'><a href='../S/22.html#L14'>access</a>             14 src/character-skill.c static void remove_skill(Skill_Access access) {</span>
+<span class='curline'><a href='../S/22.html#L15'>access</a>             15 src/character-skill.c   access-&gt;status = UNUSE;</span>
+<span class='curline'><a href='../S/22.html#L48'>access</a>             48 src/character-skill.c static bool pool_find(Skill_Pool_Access access, Status_Access owner,</span>
+<span class='curline'><a href='../S/22.html#L51'>access</a>             51 src/character-skill.c   uint8_t used = access-&gt;max_size - access-&gt;current_size;</span>
+<span class='curline'><a href='../S/22.html#L55'>access</a>             55 src/character-skill.c     *result = &amp;(access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/24.html#L4'>access</a>              4 src/character-status.c static void print_status(Status_Access access) {</span>
+<span class='curline'><a href='../S/24.html#L5'>access</a>              5 src/character-status.c   Character_Base_Access base = access-&gt;base;</span>
+<span class='curline'><a href='../S/24.html#L8'>access</a>              8 src/character-status.c   printf("%s : %s\n", base-&gt;name, access-&gt;race);</span>
+<span class='curline'><a href='../S/24.html#L10'>access</a>             10 src/character-status.c   printf("Damage: %d\n", access-&gt;damage);</span>
+<span class='curline'><a href='../S/24.html#L14'>access</a>             14 src/character-status.c static void character_init(Status_Access access) {</span>
+<span class='curline'><a href='../S/24.html#L15'>access</a>             15 src/character-status.c   character_base_init(access-&gt;base);</span>
+<span class='curline'><a href='../S/24.html#L19'>access</a>             19 src/character-status.c static void character_copy(Status_Access access, Status_Access from) {</span>
+<span class='curline'><a href='../S/24.html#L20'>access</a>             20 src/character-status.c   from-&gt;base-&gt;copy(access-&gt;base, from-&gt;base);</span>
+<span class='curline'><a href='../S/24.html#L21'>access</a>             21 src/character-status.c   access-&gt;race = from-&gt;race;</span>
+<span class='curline'><a href='../S/24.html#L23'>access</a>             23 src/character-status.c   access-&gt;faction = from-&gt;faction;</span>
+<span class='curline'><a href='../S/24.html#L24'>access</a>             24 src/character-status.c   access-&gt;damage = from-&gt;damage;</span>
+<span class='curline'><a href='../S/24.html#L46'>access</a>             46 src/character-status.c static void set_base_name(Status_Access access, String name) {</span>
+<span class='curline'><a href='../S/24.html#L47'>access</a>             47 src/character-status.c   access-&gt;base-&gt;name = name;</span>
+<span class='curline'><a href='../S/24.html#L50'>access</a>             50 src/character-status.c static void set_race(Status_Access access, String race) {</span>
+<span class='curline'><a href='../S/24.html#L51'>access</a>             51 src/character-status.c   access-&gt;race = race;</span>
+<span class='curline'><a href='../S/24.html#L54'>access</a>             54 src/character-status.c static void set_base_style(Status_Access access, Style_Access style) {</span>
+<span class='curline'><a href='../S/24.html#L55'>access</a>             55 src/character-status.c   access-&gt;base-&gt;Mark = style;</span>
+<span class='curline'><a href='../S/24.html#L58'>access</a>             58 src/character-status.c static void set_base_mark(Status_Access access, String mark) {</span>
+<span class='curline'><a href='../S/24.html#L59'>access</a>             59 src/character-status.c   access-&gt;base-&gt;Mark-&gt;mark = mark;</span>
+<span class='curline'><a href='../S/24.html#L66'>access</a>             66 src/character-status.c static Relation_Type get_relation(Status_Access access) {</span>
+<span class='curline'><a href='../S/24.html#L67'>access</a>             67 src/character-status.c   return access-&gt;faction;</span>
+<span class='curline'><a href='../S/24.html#L70'>access</a>             70 src/character-status.c static void set_ally(Status_Access access) {</span>
+<span class='curline'><a href='../S/24.html#L71'>access</a>             71 src/character-status.c   access-&gt;faction = RELATION_ALLY;</span>
+<span class='curline'><a href='../S/24.html#L74'>access</a>             74 src/character-status.c static void set_enemy(Status_Access access) {</span>
+<span class='curline'><a href='../S/24.html#L75'>access</a>             75 src/character-status.c   access-&gt;faction = RELATION_ENEMY;</span>
+<span class='curline'><a href='../S/24.html#L78'>access</a>             78 src/character-status.c static void set_neutral(Status_Access access) {</span>
+<span class='curline'><a href='../S/24.html#L79'>access</a>             79 src/character-status.c   access-&gt;faction = RELATION_NEUTRAL;</span>
+<span class='curline'><a href='../S/23.html#L4'>access</a>              4 src/character.c static void release(Character_Base_Access access) {</span>
+<span class='curline'><a href='../S/23.html#L5'>access</a>              5 src/character.c   access-&gt;status = UNUSE;</span>
+<span class='curline'><a href='../S/23.html#L9'>access</a>              9 src/character.c static void character_copy(Character_Base_Access access, Character_Base_Access from) {</span>
+<span class='curline'><a href='../S/23.html#L10'>access</a>             10 src/character.c   access-&gt;name = from-&gt;name;</span>
+<span class='curline'><a href='../S/23.html#L11'>access</a>             11 src/character.c   access-&gt;Mark = from-&gt;Mark;</span>
+<span class='curline'><a href='../S/23.html#L13'>access</a>             13 src/character.c   access-&gt;crossable = from-&gt;crossable;</span>
+<span class='curline'><a href='../S/23.html#L14'>access</a>             14 src/character.c   access-&gt;attackable = from-&gt;attackable;</span>
+<span class='curline'><a href='../S/23.html#L15'>access</a>             15 src/character.c   access-&gt;is_alive = true;</span>
+<span class='curline'><a href='../S/23.html#L16'>access</a>             16 src/character.c   access-&gt;status = IN_USE;</span>
+<span class='curline'><a href='../S/23.html#L18'>access</a>             18 src/character.c   access-&gt;release = from-&gt;release;</span>
+<span class='curline'><a href='../S/23.html#L19'>access</a>             19 src/character.c   access-&gt;copy = from-&gt;copy;</span>
+<span class='curline'><a href='../S/23.html#L23'>access</a>             23 src/character.c void character_base_init(Character_Base_Access access) {</span>
+<span class='curline'><a href='../S/23.html#L24'>access</a>             24 src/character.c   access-&gt;Real_Position.x  = 0;</span>
+<span class='curline'><a href='../S/23.html#L25'>access</a>             25 src/character.c   access-&gt;Real_Position.y  = 0;</span>
+<span class='curline'><a href='../S/23.html#L26'>access</a>             26 src/character.c   access-&gt;Graph_Position.x = 0;</span>
+<span class='curline'><a href='../S/23.html#L27'>access</a>             27 src/character.c   access-&gt;Graph_Position.y = 0;</span>
+<span class='curline'><a href='../S/23.html#L28'>access</a>             28 src/character.c   access-&gt;crossable = false;</span>
+<span class='curline'><a href='../S/23.html#L29'>access</a>             29 src/character.c   access-&gt;attackable = true;</span>
+<span class='curline'><a href='../S/23.html#L30'>access</a>             30 src/character.c   access-&gt;is_alive = true;</span>
+<span class='curline'><a href='../S/23.html#L31'>access</a>             31 src/character.c   access-&gt;status = IN_USE;</span>
+<span class='curline'><a href='../S/23.html#L33'>access</a>             33 src/character.c   access-&gt;release = release;</span>
+<span class='curline'><a href='../S/23.html#L34'>access</a>             34 src/character.c   access-&gt;copy = character_copy;</span>
+<span class='curline'><a href='../S/19.html#L80'>access</a>             80 src/graphic.c      SDL_DestroyTexture(result-&gt;access);</span>
+<span class='curline'><a href='../S/19.html#L81'>access</a>             81 src/graphic.c      result-&gt;access = NULL;</span>
+<span class='curline'><a href='../S/26.html#L130'>access</a>            130 src/main.c       SDL_RenderCopy(render, Player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
+<span class='curline'><a href='../S/26.html#L140'>access</a>            140 src/main.c             SDL_RenderCopy(render, npc-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(rect));</span>
+<span class='curline'><a href='../S/26.html#L165'>access</a>            165 src/main.c         result-&gt;access = SDL_CreateTextureFromSurface(render, surfaceMessage);</span>
+</pre>
+</body>
+</html>

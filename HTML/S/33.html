@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>mpc/examples/foobar.c</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/56.html'>mpc</a>/<a href='../files/57.html'>examples</a>/foobar.c</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L3'>[^]</a>[v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L3' title='Defined at 3.'>main</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='44.html'>../mpc.h</a>"
+<a id='L2' name='L2'></a>   2 
+<a id='L3' name='L3'></a>   3 <strong class='reserved'>int</strong> main(<strong class='reserved'>int</strong> <a href='../Y/187.html' title='Multiple used in 16 places.'>argc</a>, <strong class='reserved'>char</strong>** <a href='../Y/188.html' title='Multiple used in 18 places.'>argv</a>) <em class='brace'>{</em>
+<a id='L4' name='L4'></a>   4 
+<a id='L5' name='L5'></a>   5     <a href='../S/44.html#L62' title='Defined at 62 in mpc/mpc.h.'>mpc_result_t</a> <a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>;
+<a id='L6' name='L6'></a>   6     <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/35.html' title='Multiple used in 5 places.'>Foobar</a>;
+<a id='L7' name='L7'></a>   7 
+<a id='L8' name='L8'></a>   8     <strong class='reserved'>if</strong> (<a href='../Y/187.html' title='Multiple used in 16 places.'>argc</a> != 2) <em class='brace'>{</em>
+<a id='L9' name='L9'></a>   9       <a href='../Y/426.html' title='Multiple used in 77 places.'>printf</a>("Usage: ./foobar &lt;foo/bar&gt;\n");
+<a id='L10' name='L10'></a>  10       <a href='../Y/267.html' title='Multiple used in 3 places.'>exit</a>(0);
+<a id='L11' name='L11'></a>  11     <em class='brace'>}</em>
+<a id='L12' name='L12'></a>  12 
+<a id='L13' name='L13'></a>  13     <a href='../Y/35.html' title='Multiple used in 5 places.'>Foobar</a> = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("foobar");
+<a id='L14' name='L14'></a>  14     <a href='../S/43.html#L3558' title='Defined at 3558 in mpc/mpc.c.'>mpca_lang</a>(<a href='../S/44.html#L335' title='Defined at 335 in mpc/mpc.h.'>MPCA_LANG_DEFAULT</a>, "foobar : \"foo\" | \"bar\";", <a href='../Y/35.html' title='Multiple used in 5 places.'>Foobar</a>);
+<a id='L15' name='L15'></a>  15     
+<a id='L16' name='L16'></a>  16     <strong class='reserved'>if</strong> (<a href='../S/43.html#L1249' title='Defined at 1249 in mpc/mpc.c.'>mpc_parse</a>("&lt;stdin&gt;", <a href='../Y/188.html' title='Multiple used in 18 places.'>argv</a>[1], <a href='../Y/35.html' title='Multiple used in 5 places.'>Foobar</a>, &amp;<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>)) <em class='brace'>{</em>
+<a id='L17' name='L17'></a>  17         <a href='../S/43.html#L2818' title='Defined at 2818 in mpc/mpc.c.'>mpc_ast_print</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/399.html' title='Multiple used in 89 places.'>output</a>);
+<a id='L18' name='L18'></a>  18         <a href='../S/43.html#L2668' title='Defined at 2668 in mpc/mpc.c.'>mpc_ast_delete</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/399.html' title='Multiple used in 89 places.'>output</a>);
+<a id='L19' name='L19'></a>  19     <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L20' name='L20'></a>  20         <a href='../S/43.html#L558' title='Defined at 558 in mpc/mpc.c.'>mpc_err_print</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/264.html' title='Multiple used in 51 places.'>error</a>);
+<a id='L21' name='L21'></a>  21         <a href='../S/43.html#L549' title='Defined at 549 in mpc/mpc.c.'>mpc_err_delete</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/264.html' title='Multiple used in 51 places.'>error</a>);
+<a id='L22' name='L22'></a>  22     <em class='brace'>}</em>
+<a id='L23' name='L23'></a>  23     
+<a id='L24' name='L24'></a>  24     <a href='../S/43.html#L1503' title='Defined at 1503 in mpc/mpc.c.'>mpc_cleanup</a>(1, <a href='../Y/35.html' title='Multiple used in 5 places.'>Foobar</a>);
+<a id='L25' name='L25'></a>  25     
+<a id='L26' name='L26'></a>  26     <strong class='reserved'>return</strong> 0;
+<a id='L27' name='L27'></a>  27 <em class='brace'>}</em>
+<a id='L28' name='L28'></a>  28 
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^]<a href='#L3'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

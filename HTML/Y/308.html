@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>grammar</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/43.html#L3289'>grammar</a>          3289 mpc/mpc.c      mpc_parser_t *mpca_grammar_st(const char *grammar, mpca_grammar_st_t *st) {</span>
+<span class='curline'><a href='../S/43.html#L3340'>grammar</a>          3340 mpc/mpc.c        if(!mpc_parse("&lt;mpc_grammar_compiler&gt;", grammar, GrammarTotal, &amp;r)) {</span>
+<span class='curline'><a href='../S/43.html#L3356'>grammar</a>          3356 mpc/mpc.c      mpc_parser_t *mpca_grammar(int flags, const char *grammar, ...) {</span>
+<span class='curline'><a href='../S/43.html#L3360'>grammar</a>          3360 mpc/mpc.c        va_start(va, grammar);</span>
+<span class='curline'><a href='../S/43.html#L3367'>grammar</a>          3367 mpc/mpc.c        res = mpca_grammar_st(grammar, &amp;st);  </span>
+<span class='curline'><a href='../S/43.html#L3376'>grammar</a>          3376 mpc/mpc.c        mpc_parser_t *grammar;</span>
+<span class='curline'><a href='../S/43.html#L3383'>grammar</a>          3383 mpc/mpc.c        stmt-&gt;grammar = ((mpc_parser_t**)xs)[3];</span>
+<span class='curline'><a href='../S/43.html#L3412'>grammar</a>          3412 mpc/mpc.c          mpc_soft_delete(stmt-&gt;grammar);</span>
+<span class='curline'><a href='../S/43.html#L3430'>grammar</a>          3430 mpc/mpc.c          if (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) { stmt-&gt;grammar = mpc_predictive(stmt-&gt;grammar); }</span>
+<span class='curline'><a href='../S/43.html#L3431'>grammar</a>          3431 mpc/mpc.c          if (stmt-&gt;name) { stmt-&gt;grammar = mpc_expect(stmt-&gt;grammar, stmt-&gt;name); }</span>
+<span class='curline'><a href='../S/43.html#L3432'>grammar</a>          3432 mpc/mpc.c          mpc_optimise(stmt-&gt;grammar);</span>
+<span class='curline'><a href='../S/43.html#L3433'>grammar</a>          3433 mpc/mpc.c          mpc_define(left, stmt-&gt;grammar);</span>
+<span class='curline'><a href='../S/44.html#L340'>grammar</a>           340 mpc/mpc.h      mpc_parser_t *mpca_grammar(int flags, const char *grammar, ...);</span>
+</pre>
+</body>
+</html>

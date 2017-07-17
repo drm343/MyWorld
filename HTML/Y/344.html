@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>malloc</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/17.html#L30'>malloc</a>             30 include/character-pool.h   Status_Access (*malloc)(Character_Pool_Access);</span>
+<span class='curline'><a href='../S/10.html#L32'>malloc</a>             32 include/character-skill.h   Skill_Access (*malloc)(Skill_Pool_Access, Status_Access);</span>
+<span class='curline'><a href='../S/12.html#L36'>malloc</a>             36 include/graphic.h   Style_Access (*malloc)(Style_Pool_Access);</span>
+<span class='curline'><a href='../S/14.html#L1'>malloc</a>              1 include/main_set_character.h #define MAIN_NPC_STRING_malloc(len) string_pool-&gt;malloc(npc_string_pool, len);</span>
+<span class='curline'><a href='../S/14.html#L73'>malloc</a>             73 include/main_set_character.h   Status_Access npc = character_pool.malloc(character_prepare_pool);</span>
+<span class='curline'><a href='../S/14.html#L74'>malloc</a>             74 include/main_set_character.h   Style_Access style_access = Style_Pool_Interface.malloc(style_pool);</span>
+<span class='curline'><a href='../S/14.html#L187'>malloc</a>            187 include/main_set_character.h     npc = character_pool.malloc(character_use_pool);</span>
+<span class='curline'><a href='../S/11.html#L1'>malloc</a>              1 include/main_set_config.h #define MAIN_STRING_malloc(len) string_pool-&gt;malloc(string_pool, len);</span>
+<span class='curline'><a href='../S/11.html#L87'>malloc</a>             87 include/main_set_config.h     style_access = Style_Pool_Interface.malloc(style_pool);</span>
+<span class='curline'><a href='../S/5.html#L18'>malloc</a>             18 include/string_pool.h   String (*malloc)(struct String_Pool_Origin *, int);</span>
+<span class='curline'><a href='../S/43.html#L103'>malloc</a>            103 mpc/mpc.c        mpc_input_t *i = malloc(sizeof(mpc_input_t));</span>
+<span class='curline'><a href='../S/43.html#L105'>malloc</a>            105 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
+<span class='curline'><a href='../S/43.html#L111'>malloc</a>            111 mpc/mpc.c        i-&gt;string = malloc(strlen(string) + 1);</span>
+<span class='curline'><a href='../S/43.html#L120'>malloc</a>            120 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L121'>malloc</a>            121 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L132'>malloc</a>            132 mpc/mpc.c        mpc_input_t *i = malloc(sizeof(mpc_input_t));</span>
+<span class='curline'><a href='../S/43.html#L134'>malloc</a>            134 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
+<span class='curline'><a href='../S/43.html#L140'>malloc</a>            140 mpc/mpc.c        i-&gt;string = malloc(length + 1);</span>
+<span class='curline'><a href='../S/43.html#L150'>malloc</a>            150 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L151'>malloc</a>            151 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L163'>malloc</a>            163 mpc/mpc.c        mpc_input_t *i = malloc(sizeof(mpc_input_t));</span>
+<span class='curline'><a href='../S/43.html#L165'>malloc</a>            165 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
+<span class='curline'><a href='../S/43.html#L179'>malloc</a>            179 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L180'>malloc</a>            180 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L192'>malloc</a>            192 mpc/mpc.c        mpc_input_t *i = malloc(sizeof(mpc_input_t));</span>
+<span class='curline'><a href='../S/43.html#L194'>malloc</a>            194 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
+<span class='curline'><a href='../S/43.html#L207'>malloc</a>            207 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L208'>malloc</a>            208 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/43.html#L239'>malloc</a>            239 mpc/mpc.c        if (n &gt; sizeof(mpc_mem_t)) { return malloc(n); }</span>
+<span class='curline'><a href='../S/43.html#L252'>malloc</a>            252 mpc/mpc.c        return malloc(n);</span>
+<span class='curline'><a href='../S/43.html#L275'>malloc</a>            275 mpc/mpc.c          q = malloc(n);</span>
+<span class='curline'><a href='../S/43.html#L287'>malloc</a>            287 mpc/mpc.c        q = malloc(sizeof(mpc_mem_t));</span>
+<span class='curline'><a href='../S/43.html#L673'>malloc</a>            673 mpc/mpc.c        x = malloc(sizeof(mpc_err_t));</span>
+<span class='curline'><a href='../S/43.html#L674'>malloc</a>            674 mpc/mpc.c        x-&gt;filename = malloc(strlen(filename) + 1);</span>
+<span class='curline'><a href='../S/43.html#L679'>malloc</a>            679 mpc/mpc.c        x-&gt;failure = malloc(strlen(failure) + 1);</span>
+<span class='curline'><a href='../S/43.html#L1418'>malloc</a>           1418 mpc/mpc.c          p-&gt;name = malloc(strlen(a-&gt;name)+1);</span>
+<span class='curline'><a href='../S/43.html#L1425'>malloc</a>           1425 mpc/mpc.c            p-&gt;data.fail.m = malloc(strlen(a-&gt;data.fail.m)+1);</span>
+<span class='curline'><a href='../S/43.html#L1432'>malloc</a>           1432 mpc/mpc.c            p-&gt;data.string.x = malloc(strlen(a-&gt;data.string.x)+1);</span>
+<span class='curline'><a href='../S/43.html#L1447'>malloc</a>           1447 mpc/mpc.c            p-&gt;data.expect.m = malloc(strlen(a-&gt;data.expect.m)+1);</span>
+<span class='curline'><a href='../S/43.html#L1458'>malloc</a>           1458 mpc/mpc.c            p-&gt;data.or.xs = malloc(a-&gt;data.or.n * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/43.html#L1464'>malloc</a>           1464 mpc/mpc.c            p-&gt;data.and.xs = malloc(a-&gt;data.and.n * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/43.html#L1468'>malloc</a>           1468 mpc/mpc.c            p-&gt;data.and.dxs = malloc((a-&gt;data.and.n-1) * sizeof(mpc_dtor_t));</span>
+<span class='curline'><a href='../S/43.html#L1505'>malloc</a>           1505 mpc/mpc.c        mpc_parser_t **list = malloc(sizeof(mpc_parser_t*) * n);</span>
+<span class='curline'><a href='../S/43.html#L1526'>malloc</a>           1526 mpc/mpc.c        p-&gt;data.fail.m = malloc(strlen(m) + 1);</span>
+<span class='curline'><a href='../S/43.html#L1560'>malloc</a>           1560 mpc/mpc.c        buffer = malloc(2048);</span>
+<span class='curline'><a href='../S/43.html#L1601'>malloc</a>           1601 mpc/mpc.c        p-&gt;data.expect.m = malloc(strlen(expected) + 1);</span>
+<span class='curline'><a href='../S/43.html#L1634'>malloc</a>           1634 mpc/mpc.c        buffer = malloc(2048);</span>
+<span class='curline'><a href='../S/43.html#L1672'>malloc</a>           1672 mpc/mpc.c        p-&gt;data.string.x = malloc(strlen(s) + 1);</span>
+<span class='curline'><a href='../S/43.html#L1680'>malloc</a>           1680 mpc/mpc.c        p-&gt;data.string.x = malloc(strlen(s) + 1);</span>
+<span class='curline'><a href='../S/43.html#L1696'>malloc</a>           1696 mpc/mpc.c        p-&gt;data.string.x = malloc(strlen(s) + 1);</span>
+<span class='curline'><a href='../S/43.html#L1789'>malloc</a>           1789 mpc/mpc.c        p-&gt;data.or.xs = malloc(sizeof(mpc_parser_t*) * n);</span>
+<span class='curline'><a href='../S/43.html#L1810'>malloc</a>           1810 mpc/mpc.c        p-&gt;data.and.xs = malloc(sizeof(mpc_parser_t*) * n);</span>
+<span class='curline'><a href='../S/43.html#L1811'>malloc</a>           1811 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/43.html#L2237'>malloc</a>           2237 mpc/mpc.c        int *y = malloc(sizeof(int));</span>
+<span class='curline'><a href='../S/43.html#L2244'>malloc</a>           2244 mpc/mpc.c        int *y = malloc(sizeof(int));</span>
+<span class='curline'><a href='../S/43.html#L2251'>malloc</a>           2251 mpc/mpc.c        int *y = malloc(sizeof(int));</span>
+<span class='curline'><a href='../S/43.html#L2258'>malloc</a>           2258 mpc/mpc.c        float *y = malloc(sizeof(float));</span>
+<span class='curline'><a href='../S/43.html#L2694'>malloc</a>           2694 mpc/mpc.c        mpc_ast_t *a = malloc(sizeof(mpc_ast_t));</span>
+<span class='curline'><a href='../S/43.html#L2696'>malloc</a>           2696 mpc/mpc.c        a-&gt;tag = malloc(strlen(tag) + 1);</span>
+<span class='curline'><a href='../S/43.html#L2699'>malloc</a>           2699 mpc/mpc.c        a-&gt;contents = malloc(strlen(contents) + 1);</span>
+<span class='curline'><a href='../S/43.html#L2865'>malloc</a>           2865 mpc/mpc.c        trav = malloc(sizeof(mpc_ast_trav_t));</span>
+<span class='curline'><a href='../S/43.html#L2881'>malloc</a>           2881 mpc/mpc.c              n_trav = malloc(sizeof(mpc_ast_trav_t));</span>
+<span class='curline'><a href='../S/43.html#L2927'>malloc</a>           2927 mpc/mpc.c            n_trav = malloc(sizeof(mpc_ast_trav_t));</span>
+<span class='curline'><a href='../S/43.html#L2964'>malloc</a>           2964 mpc/mpc.c              n_trav = malloc(sizeof(mpc_ast_trav_t));</span>
+<span class='curline'><a href='../S/43.html#L3078'>malloc</a>           3078 mpc/mpc.c        p-&gt;data.or.xs = malloc(sizeof(mpc_parser_t*) * n);</span>
+<span class='curline'><a href='../S/43.html#L3100'>malloc</a>           3100 mpc/mpc.c        p-&gt;data.and.xs = malloc(sizeof(mpc_parser_t*) * n);</span>
+<span class='curline'><a href='../S/43.html#L3101'>malloc</a>           3101 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/43.html#L3380'>malloc</a>           3380 mpc/mpc.c        mpca_stmt_t *stmt = malloc(sizeof(mpca_stmt_t));</span>
+<span class='curline'><a href='../S/43.html#L3394'>malloc</a>           3394 mpc/mpc.c        mpca_stmt_t **stmts = malloc(sizeof(mpca_stmt_t*) * (n+1));</span>
+<span class='curline'><a href='../S/25.html#L92'>malloc</a>             92 src/character-pool.c       to_status = character_pool.malloc(to);</span>
+<span class='curline'><a href='../S/25.html#L144'>malloc</a>            144 src/character-pool.c   .malloc = pool_malloc,</span>
+<span class='curline'><a href='../S/22.html#L77'>malloc</a>             77 src/character-skill.c   .malloc = pool_malloc,</span>
+<span class='curline'><a href='../S/19.html#L11'>malloc</a>             11 src/graphic.c  static Style_Access SELF(malloc) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/19.html#L93'>malloc</a>             93 src/graphic.c    .malloc = SELF(malloc),</span>
+<span class='curline'><a href='../S/26.html#L190'>malloc</a>            190 src/main.c       Player = character_pool.malloc(character_use_pool);</span>
+<span class='curline'><a href='../S/18.html#L43'>malloc</a>             43 src/string_pool.c   pool_access-&gt;malloc = pool_malloc;</span>
+<span class='curline'><a href='../S/18.html#L58'>malloc</a>             58 src/string_pool.c   pool_access-&gt;malloc = pool_malloc;</span>
+</pre>
+</body>
+</html>
