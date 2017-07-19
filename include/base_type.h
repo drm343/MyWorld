@@ -22,14 +22,15 @@ typedef enum {
 } Yes_No;
 
 typedef struct {
-  uint16_t x;
-  uint16_t y;
+  int32_t x;
+  int32_t y;
 } Point_Type;
 typedef Point_Type * Point_Access;
 
 
 typedef struct {
   bool (*eq)(Point_Access, Point_Access);
+  void (*print)(Point_Access);
 } POINT_INTERFACE;
 
 extern POINT_INTERFACE Point;
