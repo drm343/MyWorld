@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "setup_config.h"
-
 #include "graphic.h"
+#include "helper_function.h"
+
 
 #define SELF(name) GRAPHIC_##name
 

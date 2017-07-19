@@ -124,11 +124,10 @@ static Found_Result pool_find_by_position(Character_Pool_Access access, Status_A
   for (count; count < used; count++) {
     *npc = &(access->status->pool[count]);
 
-    if (Point.eq(point, &((*npc)->base->Real_Position))) {
-      if ((*npc)->base->crossable) {
-        return NOT_FOUND;
-      }
-      else {
+    if (Point.eq(point, &((*npc)->base->Real_Position))
+        && ((*npc)->faction != FACTION_PLAYER)) {
+
+      if ((*npc)->base->crossable == NO) {
         return FOUND;
       }
     }
@@ -138,11 +137,28 @@ static Found_Result pool_find_by_position(Character_Pool_Access access, Status_A
 }
 
 
+static void reset_graph_position(Character_Pool_Access access,
+    int64_t x,
+    int64_t y) {
+  uint8_t count = 0;
+  uint8_t used = access->status->max_size - access->status->current_size;
+  Status_Access npc = NULL;
+
+  for (count; count < used; count++) {
+    npc = &(access->status->pool[count]);
+
+    npc->base->Graph_Position.x = npc->base->Real_Position.x - x;
+    npc->base->Graph_Position.y = npc->base->Real_Position.y - y;
+  }
+}
+
+
 Character_Pool_API character_pool = {
   .start = pool_start,
   .stop = pool_stop,
   .malloc = pool_malloc,
   .copy = pool_copy,
   .find = pool_find,
-  .find_position = pool_find_by_position
+  .find_position = pool_find_by_position,
+  .reset_graph_position = reset_graph_position
 };

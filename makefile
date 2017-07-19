@@ -26,13 +26,14 @@ AUTO_BUILD_DEP := $(OBJ)/base_type.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
 	$(OBJ)/character-skill.o \
+	$(OBJ)/graphic-camera.o \
 	$(OBJ)/character-pool.o
 
 
 DEP := $(AUTO_BUILD_DEP) \
  	$(OBJ)/mpc.o
 
-
+.PHONY: clean html
 all: $(LIB_MY_WORLD)
 	gcc $(DEBUG) $(PLATFORM) -o $(OBJ)/main.o -c -std=c11 $(INCLUDE) $(SRC)/main.c
 	gcc $(DEBUG) $(PLATFORM) $(OBJ)/main.o -s $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
@@ -60,3 +61,6 @@ $(AUTO_BUILD_DEP):
 clean:
 	rm bin/*
 	rm obj/*
+
+html:
+	cd $(CURREND) && htags -g -F && htags -Ffnsa

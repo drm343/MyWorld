@@ -1,8 +1,7 @@
-#ifndef HEADER_CHARACTER_POOL_NEW
-#define HEADER_CHARACTER_POOL_NEW
-
+#ifndef HEADER_CHARACTER_POOL
+#define HEADER_CHARACTER_POOL
 #include "character-skill.h"
-#include "setup_config.h"
+#include "helper_function.h"
 
 
 typedef enum {
@@ -31,6 +30,8 @@ typedef struct {
   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);
   Found_Result (*find)(Character_Pool_Access, Status_Access *, String);
   Found_Result (*find_position)(Character_Pool_Access, Status_Access *, Point_Access);
+
+  void (*reset_graph_position)(Character_Pool_Access, int64_t, int64_t);
 } Character_Pool_API;
 
 extern Character_Pool_API character_pool;
