@@ -5,7 +5,7 @@
 #include "string_pool.h"
 
 
-String pool_malloc(String_Pool_Access pool_access, int from) {
+String pool_malloc(String_Pool_Access pool_access, uint16_t from) {
   int16_t start = pool_access->max_size - pool_access->current_size;
   String result = &(pool_access->pool)[start];
 
@@ -27,12 +27,7 @@ void pool_stop_heap(String_Pool_Access pool_access) {
 }
 
 
-void pool_stop_stack(String_Pool_Access pool_access) {
-  free(pool_access->pool);
-}
-
-
-String_Pool_Access String_Pool_start_heap(int size) {
+String_Pool_Access String_Pool_start_heap(uint16_t size) {
   String string_memory = calloc(size, sizeof(char));
   String_Pool_Access pool_access = calloc(1, sizeof(String_Pool));
 
@@ -40,22 +35,16 @@ String_Pool_Access String_Pool_start_heap(int size) {
   pool_access->max_size     = size;
   pool_access->current_size = size;
 
-  pool_access->malloc = pool_malloc;
-  pool_access->reset  = pool_reset;
-  pool_access->stop   = pool_stop_heap;
-
   return pool_access;
 }
 
+// -----------------------------------
+// Export API
+// -----------------------------------
+String_Pool_API string_pool = {
+  .start = String_Pool_start_heap,
+  .stop = pool_stop_heap,
 
-void String_Pool_start_stack(String_Pool_Access pool_access, int size) {
-  String string_memory = calloc(size, sizeof(char));
-
-  pool_access->pool         = string_memory;
-  pool_access->max_size     = size;
-  pool_access->current_size = size;
-
-  pool_access->malloc = pool_malloc;
-  pool_access->reset  = pool_reset;
-  pool_access->stop   = pool_stop_stack;
-}
+  .malloc = pool_malloc,
+  .reset  = pool_reset
+};

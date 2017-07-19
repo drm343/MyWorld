@@ -1,4 +1,4 @@
-#define MAIN_STRING_malloc(len) string_pool->malloc(string_pool, len);
+#define MAIN_STRING_malloc(len) string_pool.malloc(config_pool, len);
 
 char *CONF_PATH   = NULL;
 
@@ -9,13 +9,14 @@ char *GAME_TITLE = NULL;
 
 
 Style_Pool_Access style_pool = NULL;
-STRING_POOL_ON_STACK(string_pool);
+String_Pool_Access config_pool = NULL;
+
 
 char *use_value(char *CONFIG_VALUE) {
   char *result = NULL;
   size_t len = strlen(CONFIG_VALUE);
 
-  result = MAIN_STRING_malloc(len);
+  result = string_pool.malloc(config_pool, len);
   strcpy(result, CONFIG_VALUE);
   return result;
 }
@@ -25,7 +26,7 @@ char *use_path(char *CONFIG_NAME) {
   size_t path_len = strlen(CONF_PATH);
   size_t file_len = strlen(CONFIG_NAME);
 
-  result = MAIN_STRING_malloc(path_len + file_len);
+  result = string_pool.malloc(config_pool, path_len + file_len);
   strcpy(result, CONF_PATH);
   strcat(result, CONFIG_NAME);
   return result;
@@ -68,7 +69,7 @@ void setup_mark(mpc_ast_t* t, Style_Access style_access) {
     String item = t->children[2]->contents;
     size_t len  = strlen(item);
 
-    String result = MAIN_STRING_malloc(len);
+    String result = string_pool.malloc(config_pool, len);
     strcpy(result, item);
     style_access->mark = result;
   }
@@ -80,7 +81,7 @@ bool find_mark(mpc_ast_t* t) {
 
   if (strstr(t->children[0]->tag, "id_selector")) {
     size_t key_len = strlen(t->children[0]->children[1]->contents);
-    key = MAIN_STRING_malloc(key_len);
+    key = string_pool.malloc(config_pool, key_len);
     strcpy(key, t->children[0]->children[1]->contents);
 
     style_access = Style_Pool_Interface.malloc(style_pool);

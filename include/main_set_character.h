@@ -1,9 +1,9 @@
-#define MAIN_NPC_STRING_malloc(len) string_pool->malloc(npc_string_pool, len);
+#define MAIN_NPC_STRING_malloc(len) string_pool.malloc(npc_string_pool, len);
 
 Character_Pool_Access character_prepare_pool = NULL;
 Character_Pool_Access character_use_pool = NULL;
 
-STRING_POOL_ON_STACK(npc_string_pool);
+String_Pool_Access npc_string_pool = NULL;
 
 char *CHARACTER_CONFIG_PATH = NULL;
 
@@ -153,7 +153,7 @@ void setup_npc_by_dir() {
   struct dirent *dir;
   char *file_name = NULL;
 
-  String_Pool_start_stack(npc_string_pool, 1000);
+  npc_string_pool = string_pool.start(1000);
   size_t path_len = strlen(CHARACTER_CONFIG_PATH);
 
   d = opendir(CHARACTER_CONFIG_PATH);
@@ -170,7 +170,7 @@ void setup_npc_by_dir() {
       }
     }
 
-    npc_string_pool->stop(npc_string_pool);
+    string_pool.stop(npc_string_pool);
     closedir(d);
   }
 }
@@ -193,8 +193,6 @@ Status_Access use_npc(char *race, char *name, Map_Access map) {
 
     character.set_random_position(npc, map->end.x, map->end.y);
     character.set_random_relation(npc);
-    printf("npc (%d, %d)", npc->base->Real_Position.x, npc->base->Real_Position.y);
-    fflush(stdout);
   }
   return npc;
 }
