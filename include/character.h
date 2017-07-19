@@ -13,8 +13,8 @@ typedef struct Character_Base {
   Style_Access Mark;
   Point_Type Real_Position;
   Point_Type Graph_Position;
-  bool crossable;
-  bool attackable;
+  Yes_No crossable;
+  Yes_No attackable;
   bool is_alive;
   Use_Type status;
 

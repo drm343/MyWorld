@@ -23,10 +23,10 @@ static void character_copy(Character_Base_Access access, Character_Base_Access f
 void character_base_init(Character_Base_Access access) {
   access->Real_Position.x  = 0;
   access->Real_Position.y  = 0;
-  access->Graph_Position.x = 0;
-  access->Graph_Position.y = 0;
-  access->crossable = false;
-  access->attackable = true;
+  access->Graph_Position.x = -1;
+  access->Graph_Position.y = -1;
+  access->crossable = NO;
+  access->attackable = YES;
   access->is_alive = true;
   access->status = IN_USE;
 
