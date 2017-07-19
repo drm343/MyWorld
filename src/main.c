@@ -22,6 +22,41 @@ Map_Type map_1 = {
     .y = 30
   }
 };
+TTF_Font* USE_FONT = NULL;
+
+void message_box(SDL_Renderer_Access render, String message) {
+  int const POINT_COUNT = 5;
+  SDL_Point points[5] = {
+    {0, 20 * 24},
+    {0, 600},
+    {799, 600},
+    {799, 20 * 24},
+    {0, 20 * 24}
+  };
+
+  SDL_SetRenderDrawColor(render, 255, 255, 255, 0);
+  SDL_RenderDrawLines(render, points, POINT_COUNT);
+
+
+  SDL_Color white = {255, 255, 255};
+
+  SDL_Surface* surfaceMessage = NULL;
+  SDL_Rect box = {
+    .x = 0,
+    .y = 20 * 24,
+    .w = string.count_width(message, 24),
+    .h = 24
+  };
+
+  surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
+      message,
+      white);
+  SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);
+  SDL_FreeSurface(surfaceMessage);
+
+  SDL_RenderCopy(render, access, NULL, &(box));
+  SDL_DestroyTexture(access);
+}
 
 void draw_view( SDL_Renderer_Access render) {
   SDL_Rect rect = {.x = 0, .y = 0, .w = GRID_LENGTH, .h = GRID_LENGTH};
@@ -44,6 +79,7 @@ void draw_view( SDL_Renderer_Access render) {
       }
     }
   }
+  message_box(render, "hello world 中文");
 
   SDL_RenderPresent(render);
 }
@@ -51,8 +87,8 @@ void draw_view( SDL_Renderer_Access render) {
 Execute_Result init_view(SDL_Renderer_Access render) {
   SDL_Color white = {255, 255, 255};
 
-  TTF_Font* font = TTF_OpenFont(FONT_FAMILY, 512);
-  if (!font) {
+  USE_FONT = TTF_OpenFont(FONT_FAMILY, 512);
+  if (!USE_FONT) {
     printf("TTF_OpenFont: %s\n", TTF_GetError());
     return EXECUTE_FAILED;
   }
@@ -62,7 +98,7 @@ Execute_Result init_view(SDL_Renderer_Access render) {
   Style_Access result = Style_Pool_Interface.next(style_pool, &counter);
 
   while (result != NULL) {
-    surfaceMessage = TTF_RenderUTF8_Solid(font,
+    surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
         result->mark,
         white);
     result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
@@ -71,7 +107,6 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 
     result = Style_Pool_Interface.next(style_pool, &counter);
   }
-  TTF_CloseFont(font);
 
   result = Style_Pool_Interface.find(style_pool, "player");
   character.set_style(camera_1->player, result);
@@ -88,7 +123,7 @@ int main(int argc, char *argv[]) {
   SDL_Renderer_Access render;
   bool running = true;
 
-  String_Pool_start_stack(string_pool, 1000);
+  config_pool = string_pool.start(1000);
   style_pool = Style_Pool_Interface.start(256);
   character_prepare_pool = character_pool.start(20);
   character_use_pool = character_pool.start(100);
@@ -105,7 +140,7 @@ int main(int argc, char *argv[]) {
   char *CONFIG_FILE = NULL;
   if (argc >= 2) {
     size_t path_lang = strlen(argv[1]);
-    CONF_PATH = MAIN_STRING_malloc(path_lang);
+    CONF_PATH = string_pool.malloc(config_pool, path_lang);
     strcpy(CONF_PATH, argv[1]);
 
     char *CONFIG_NAME = "/config/init.css";
@@ -151,6 +186,7 @@ int main(int argc, char *argv[]) {
 
   SDL_DestroyRenderer(render);
   SDL_DestroyWindow(win);
+  TTF_CloseFont(USE_FONT);
 
 INIT_FAILED:
   TTF_Quit();
@@ -161,5 +197,5 @@ DONE:
   character_pool.stop(character_use_pool);
   character_pool.stop(character_prepare_pool);
   Style_Pool_Interface.stop(style_pool);
-  string_pool->stop(string_pool);
+  string_pool.stop(config_pool);
 }
