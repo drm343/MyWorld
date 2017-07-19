@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>MPC_TYPE_ANY</title>
+<title>MPC_INPUT_FILE</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,12 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1020'>MPC_TYPE_ANY</a>     1020 mpc/mpc.c          case MPC_TYPE_ANY:     MPC_PRIMITIVE(mpc_input_any(i, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1650'>MPC_TYPE_ANY</a>     1650 mpc/mpc.c        p-&gt;type = MPC_TYPE_ANY;</span>
-<span class='curline'><a href='../S/43.html#L2504'>MPC_TYPE_ANY</a>     2504 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_ANY) { printf("&lt;.&gt;"); }</span>
+<span class='curline'><a href='../S/46.html#L196'>MPC_INPUT_FILE</a>    196 mpc/mpc.c        i-&gt;type = MPC_INPUT_FILE;</span>
+<span class='curline'><a href='../S/46.html#L349'>MPC_INPUT_FILE</a>    349 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_FILE) {</span>
+<span class='curline'><a href='../S/46.html#L366'>MPC_INPUT_FILE</a>    366 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_FILE &amp;&amp; feof(i-&gt;file)) { return 1; }</span>
+<span class='curline'><a href='../S/46.html#L378'>MPC_INPUT_FILE</a>    378 mpc/mpc.c          case MPC_INPUT_FILE: c = fgetc(i-&gt;file); return c;</span>
+<span class='curline'><a href='../S/46.html#L401'>MPC_INPUT_FILE</a>    401 mpc/mpc.c          case MPC_INPUT_FILE: </span>
+<span class='curline'><a href='../S/46.html#L436'>MPC_INPUT_FILE</a>    436 mpc/mpc.c          case MPC_INPUT_FILE: fseek(i-&gt;file, -1, SEEK_CUR); { break; }</span>
 </pre>
 </body>
 </html>

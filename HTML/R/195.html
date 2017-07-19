@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_eoi</title>
+<title>mpc_between</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,11 +9,14 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1922'>mpc_eoi</a>          1922 mpc/mpc.c      mpc_parser_t *mpc_endwith(mpc_parser_t *a, mpc_dtor_t da) { return mpc_and(2, mpcf_fst, a, mpc_eoi(), da); }</span>
-<span class='curline'><a href='../S/43.html#L1923'>mpc_eoi</a>          1923 mpc/mpc.c      mpc_parser_t *mpc_whole(mpc_parser_t *a, mpc_dtor_t da) { return mpc_and(3, mpcf_snd, mpc_soi(), a, mpc_eoi(), mpcf_dtor_null, da); }</span>
-<span class='curline'><a href='../S/43.html#L2044'>mpc_eoi</a>          2044 mpc/mpc.c          case 'Z': return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free);</span>
-<span class='curline'><a href='../S/43.html#L2063'>mpc_eoi</a>          2063 mpc/mpc.c        if (s[0] == '$') { free(s); return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free); }</span>
-<span class='curline'><a href='../S/44.html#L147'>mpc_eoi</a>           147 mpc/mpc.h      mpc_parser_t *mpc_eoi(void);</span>
+<span class='curline'><a href='../S/46.html#L1897'>mpc_between</a>      1897 mpc/mpc.c        return mpc_expect(mpc_between(mpc_or(2, mpc_escape(), mpc_any()), free, "'", "'"), "char");</span>
+<span class='curline'><a href='../S/46.html#L1902'>mpc_between</a>      1902 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, strchar), free, "\"", "\""), "string");</span>
+<span class='curline'><a href='../S/46.html#L1907'>mpc_between</a>      1907 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, regexchar), free, "/", "/"), "regex");</span>
+<span class='curline'><a href='../S/46.html#L1939'>mpc_between</a>      1939 mpc/mpc.c      mpc_parser_t *mpc_parens(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_between(a, ad, "(", ")"); }</span>
+<span class='curline'><a href='../S/46.html#L1940'>mpc_between</a>      1940 mpc/mpc.c      mpc_parser_t *mpc_braces(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_between(a, ad, "&lt;", "&gt;"); }</span>
+<span class='curline'><a href='../S/46.html#L1941'>mpc_between</a>      1941 mpc/mpc.c      mpc_parser_t *mpc_brackets(mpc_parser_t *a, mpc_dtor_t ad) { return mpc_between(a, ad, "{", "}"); }</span>
+<span class='curline'><a href='../S/46.html#L1942'>mpc_between</a>      1942 mpc/mpc.c      mpc_parser_t *mpc_squares(mpc_parser_t *a, mpc_dtor_t ad)  { return mpc_between(a, ad, "[", "]"); }</span>
+<span class='curline'><a href='../S/47.html#L202'>mpc_between</a>       202 mpc/mpc.h      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
 </pre>
 </body>
 </html>

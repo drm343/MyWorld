@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>list</title>
+<title>lift</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,11 +9,12 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1505'>list</a>             1505 mpc/mpc.c        mpc_parser_t **list = malloc(sizeof(mpc_parser_t*) * n);</span>
-<span class='curline'><a href='../S/43.html#L1509'>list</a>             1509 mpc/mpc.c        for (i = 0; i &lt; n; i++) { list[i] = va_arg(va, mpc_parser_t*); }</span>
-<span class='curline'><a href='../S/43.html#L1510'>list</a>             1510 mpc/mpc.c        for (i = 0; i &lt; n; i++) { mpc_undefine(list[i]); }</span>
-<span class='curline'><a href='../S/43.html#L1511'>list</a>             1511 mpc/mpc.c        for (i = 0; i &lt; n; i++) { mpc_delete(list[i]); }  </span>
-<span class='curline'><a href='../S/43.html#L1514'>list</a>             1514 mpc/mpc.c        free(list);</span>
+<span class='curline'><a href='../S/46.html#L906'>lift</a>              906 mpc/mpc.c        mpc_pdata_lift_t lift;</span>
+<span class='curline'><a href='../S/46.html#L1034'>lift</a>             1034 mpc/mpc.c          case MPC_TYPE_LIFT:      MPC_SUCCESS(p-&gt;data.lift.lf());</span>
+<span class='curline'><a href='../S/46.html#L1035'>lift</a>             1035 mpc/mpc.c          case MPC_TYPE_LIFT_VAL:  MPC_SUCCESS(p-&gt;data.lift.x);</span>
+<span class='curline'><a href='../S/46.html#L1573'>lift</a>             1573 mpc/mpc.c        p-&gt;data.lift.x = x;</span>
+<span class='curline'><a href='../S/46.html#L1580'>lift</a>             1580 mpc/mpc.c        p-&gt;data.lift.lf = lf;</span>
+<span class='curline'><a href='../S/46.html#L3775'>lift</a>             3775 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.lift.lf == mpcf_ctor_str</span>
 </pre>
 </body>
 </html>

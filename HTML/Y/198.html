@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>b</title>
+<title>bool</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,14 +9,21 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L2741'>b</a>                2741 mpc/mpc.c      int mpc_ast_eq(mpc_ast_t *a, mpc_ast_t *b) {</span>
-<span class='curline'><a href='../S/43.html#L2745'>b</a>                2745 mpc/mpc.c        if (strcmp(a-&gt;tag, b-&gt;tag) != 0) { return 0; }</span>
-<span class='curline'><a href='../S/43.html#L2746'>b</a>                2746 mpc/mpc.c        if (strcmp(a-&gt;contents, b-&gt;contents) != 0) { return 0; }</span>
-<span class='curline'><a href='../S/43.html#L2747'>b</a>                2747 mpc/mpc.c        if (a-&gt;children_num != b-&gt;children_num) { return 0; }</span>
-<span class='curline'><a href='../S/43.html#L2750'>b</a>                2750 mpc/mpc.c          if (!mpc_ast_eq(a-&gt;children[i], b-&gt;children[i])) { return 0; }</span>
-<span class='curline'><a href='../S/44.html#L312'>b</a>                 312 mpc/mpc.h      int mpc_ast_eq(mpc_ast_t *a, mpc_ast_t *b);</span>
-<span class='curline'><a href='../S/21.html#L77'>b</a>                  77 src/string_helper.c     unsigned char b = (unsigned char)((*str)[i - 1]) &amp; 0b11000000;</span>
-<span class='curline'><a href='../S/21.html#L79'>b</a>                  79 src/string_helper.c     if (b == 0b10000000) {</span>
+<span class='curline'><a href='../S/15.html#L32'>bool</a>               32 include/base_type.h   bool (*eq)(Point_Access, Point_Access);</span>
+<span class='curline'><a href='../S/14.html#L30'>bool</a>               30 include/character-pool.h   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);</span>
+<span class='curline'><a href='../S/12.html#L33'>bool</a>               33 include/character-skill.h   bool (*find)(Skill_Pool_Access, Status_Access, String, Skill_Access *);</span>
+<span class='curline'><a href='../S/16.html#L18'>bool</a>               18 include/character.h   bool is_alive;</span>
+<span class='curline'><a href='../S/13.html#L41'>bool</a>               41 include/graphic-camera.h   bool (*take)(Camera_Access, Character_Pool_Access, SDL_Event *);</span>
+<span class='curline'><a href='../S/19.html#L22'>bool</a>               22 include/main_set_character.h bool check_json(char *file_path) {</span>
+<span class='curline'><a href='../S/19.html#L183'>bool</a>              183 include/main_set_character.h   bool result = character_pool.find(character_prepare_pool, &amp;origin_npc, race);</span>
+<span class='curline'><a href='../S/8.html#L51'>bool</a>               51 include/main_set_config.h bool find_window(mpc_ast_t* t) {</span>
+<span class='curline'><a href='../S/8.html#L77'>bool</a>               77 include/main_set_config.h bool find_mark(mpc_ast_t* t) {</span>
+<span class='curline'><a href='../S/24.html#L5'>bool</a>                5 src/base_type.c static bool eq(Point_Access point_1, Point_Access point_2) {</span>
+<span class='curline'><a href='../S/24.html#L6'>bool</a>                6 src/base_type.c   bool result = false;</span>
+<span class='curline'><a href='../S/25.html#L81'>bool</a>               81 src/character-pool.c static bool pool_copy(Character_Pool_Access from, Character_Pool_Access to,</span>
+<span class='curline'><a href='../S/22.html#L48'>bool</a>               48 src/character-skill.c static bool pool_find(Skill_Pool_Access access, Status_Access owner,</span>
+<span class='curline'><a href='../S/29.html#L145'>bool</a>              145 src/graphic-camera.c static bool key_process(Camera_Access access, Character_Pool_Access from_pool,</span>
+<span class='curline'><a href='../S/27.html#L89'>bool</a>               89 src/main.c       bool running = true;</span>
 </pre>
 </body>
 </html>

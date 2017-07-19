@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>filename_len</title>
+<title>find</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,16 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L164'>filename_len</a>      164 include/main_set_character.h         size_t filename_len = strlen(dir-&gt;d_name);</span>
-<span class='curline'><a href='../S/14.html#L166'>filename_len</a>      166 include/main_set_character.h         file_name = MAIN_NPC_STRING_malloc(path_len + filename_len);</span>
+<span class='curline'><a href='../S/14.html#L31'>find</a>               31 include/character-pool.h   Found_Result (*find)(Character_Pool_Access, Status_Access *, String);</span>
+<span class='curline'><a href='../S/12.html#L33'>find</a>               33 include/character-skill.h   bool (*find)(Skill_Pool_Access, Status_Access, String, Skill_Access *);</span>
+<span class='curline'><a href='../S/11.html#L37'>find</a>               37 include/graphic.h   Style_Access (*find)(Style_Pool_Access, String);</span>
+<span class='curline'><a href='../S/19.html#L183'>find</a>              183 include/main_set_character.h   bool result = character_pool.find(character_prepare_pool, &amp;origin_npc, race);</span>
+<span class='curline'><a href='../S/25.html#L161'>find</a>              161 src/character-pool.c   .find = pool_find,</span>
+<span class='curline'><a href='../S/22.html#L78'>find</a>               78 src/character-skill.c   .find = pool_find</span>
+<span class='curline'><a href='../S/23.html#L19'>find</a>               19 src/graphic.c  static Style_Access SELF(find) (Style_Pool_Access pool_access, String name) {</span>
+<span class='curline'><a href='../S/23.html#L95'>find</a>               95 src/graphic.c    .find = SELF(find),</span>
+<span class='curline'><a href='../S/27.html#L76'>find</a>               76 src/main.c       result = Style_Pool_Interface.find(style_pool, "player");</span>
+<span class='curline'><a href='../S/27.html#L79'>find</a>               79 src/main.c       Style_Access dead = Style_Pool_Interface.find(style_pool, "dead");</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>pool_malloc</title>
+<title>mpcf_str_ast</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,12 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/25.html#L144'>pool_malloc</a>       144 src/character-pool.c   .malloc = pool_malloc,</span>
-<span class='curline'><a href='../S/22.html#L77'>pool_malloc</a>        77 src/character-skill.c   .malloc = pool_malloc,</span>
-<span class='curline'><a href='../S/18.html#L43'>pool_malloc</a>        43 src/string_pool.c   pool_access-&gt;malloc = pool_malloc;</span>
-<span class='curline'><a href='../S/18.html#L58'>pool_malloc</a>        58 src/string_pool.c   pool_access-&gt;malloc = pool_malloc;</span>
+<span class='curline'><a href='../S/46.html#L986'>mpcf_str_ast</a>      986 mpc/mpc.c        if (f == mpcf_str_ast)  { return mpcf_input_str_ast(i, x); }</span>
+<span class='curline'><a href='../S/46.html#L3201'>mpcf_str_ast</a>     3201 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "string"));</span>
+<span class='curline'><a href='../S/46.html#L3209'>mpcf_str_ast</a>     3209 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "char"));</span>
+<span class='curline'><a href='../S/46.html#L3217'>mpcf_str_ast</a>     3217 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "regex"));</span>
+<span class='curline'><a href='../S/47.html#L315'>mpcf_str_ast</a>      315 mpc/mpc.h      mpc_val_t *mpcf_str_ast(mpc_val_t *c);</span>
+<span class='curline'><a href='../S/50.html#L142'>mpcf_str_ast</a>      142 mpc/tests/grammar.c   mpc_define(Line, mpca_tag(mpc_apply(mpc_sym("#line"), mpcf_str_ast), "string"));</span>
 </pre>
 </body>
 </html>

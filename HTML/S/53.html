@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>mpc/tests/ptest.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/59.html'>mpc</a>/<a href='../files/61.html'>tests</a>/ptest.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/27.html' title='Multiple included from 5 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/53.html#L2' title='Defined at 2 in mpc/tests/ptest.h.'>ptest_h</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/53.html#L1' title='Referred from 1 in mpc/tests/ptest.h.'>ptest_h</a>
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> &lt;string.h&gt;
+<a id='L5' name='L5'></a>   5 
+<a id='L6' name='L6'></a>   6 <em class='sharp'>#define</em> PT_SUITE(<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>) <strong class='reserved'>void</strong> <a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>(<strong class='reserved'>void</strong>)
+<a id='L7' name='L7'></a>   7 
+<a id='L8' name='L8'></a>   8 <em class='sharp'>#define</em> PT_FUNC(<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>) <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>(<strong class='reserved'>void</strong>)
+<a id='L9' name='L9'></a>   9 <em class='sharp'>#define</em> <a href='../S/53.html#L10' title='Referred from 10 in mpc/tests/ptest.h.'>PT_REG</a>(<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>) <a href='../S/52.html#L198' title='Defined at 198 in mpc/tests/ptest.c.'>pt_add_test</a>(<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>, #<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>)
+<a id='L10' name='L10'></a>  10 <em class='sharp'>#define</em> PT_TEST(<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>) <strong class='reserved'>auto</strong> <strong class='reserved'>void</strong> <a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>(<strong class='reserved'>void</strong>); <a href='../S/53.html#L9' title='Defined at 9 in mpc/tests/ptest.h.'>PT_REG</a>(<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>); <strong class='reserved'>void</strong> <a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>(<strong class='reserved'>void</strong>)
+<a id='L11' name='L11'></a>  11 
+<a id='L12' name='L12'></a>  12 <em class='sharp'>#define</em> <a href='../R/92.html' title='Multiple referred from 69 places.'>PT_ASSERT</a>(<a href='../Y/270.html' title='Multiple used in 4 places.'>expr</a>) <a href='../S/52.html#L109' title='Defined at 109 in mpc/tests/ptest.c.'>pt_assert_run</a>((<strong class='reserved'>int</strong>)(<a href='../Y/270.html' title='Multiple used in 4 places.'>expr</a>), #<a href='../Y/270.html' title='Multiple used in 4 places.'>expr</a>, <a href='../Y/171.html' title='Multiple used in 2 places.'>__FILE__</a>, <a href='../Y/172.html' title='Multiple used in 2 places.'>__LINE__</a>)
+<a id='L13' name='L13'></a>  13 <em class='sharp'>#define</em> <a href='../R/93.html' title='Multiple referred from 7 places.'>PT_ASSERT_STR_EQ</a>(<a href='../Y/302.html' title='Multiple used in 7 places.'>fst</a>, snd) <a href='../S/52.html#L109' title='Defined at 109 in mpc/tests/ptest.c.'>pt_assert_run</a>(<a href='../S/10.html#L12' title='Defined at 12 in include/helper_function.h.'>strcmp</a>(<a href='../Y/302.html' title='Multiple used in 7 places.'>fst</a>, snd) == 0, "strcmp( " #<a href='../Y/302.html' title='Multiple used in 7 places.'>fst</a> ", " #snd " ) == 0", <a href='../Y/171.html' title='Multiple used in 2 places.'>__FILE__</a>, <a href='../Y/172.html' title='Multiple used in 2 places.'>__LINE__</a>)
+<a id='L14' name='L14'></a>  14 
+<a id='L15' name='L15'></a>  15 <strong class='reserved'>void</strong> <a href='../S/52.html#L109' title='Defined at 109 in mpc/tests/ptest.c.'>pt_assert_run</a>(<strong class='reserved'>int</strong> <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a>, <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../Y/270.html' title='Multiple used in 4 places.'>expr</a>, <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../Y/281.html' title='Multiple used in 30 places.'>file</a>, <strong class='reserved'>int</strong> <a href='../Y/343.html' title='Multiple used in 3 places.'>line</a>);
+<a id='L16' name='L16'></a>  16 
+<a id='L17' name='L17'></a>  17 <strong class='reserved'>void</strong> <a href='../S/52.html#L198' title='Defined at 198 in mpc/tests/ptest.c.'>pt_add_test</a>(<strong class='reserved'>void</strong> (*<a href='../Y/304.html' title='Multiple used in 8 places.'>func</a>)(<strong class='reserved'>void</strong>), <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>, <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../Y/522.html' title='Multiple used in 8 places.'>suite</a>);
+<a id='L18' name='L18'></a>  18 <strong class='reserved'>void</strong> <a href='../S/52.html#L231' title='Defined at 231 in mpc/tests/ptest.c.'>pt_add_suite</a>(<strong class='reserved'>void</strong> (*<a href='../Y/304.html' title='Multiple used in 8 places.'>func</a>)(<strong class='reserved'>void</strong>));
+<a id='L19' name='L19'></a>  19 <strong class='reserved'>int</strong> <a href='../S/52.html#L241' title='Defined at 241 in mpc/tests/ptest.c.'>pt_run</a>(<strong class='reserved'>void</strong>);
+<a id='L20' name='L20'></a>  20 
+<a id='L21' name='L21'></a>  21 <em class='sharp'>#endif</em>
+<a id='L22' name='L22'></a>  22 
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

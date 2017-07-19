@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>MPC_PRIMITIVE</title>
+<title>MPCA_LANG_DEFAULT</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,14 +9,16 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1020'>MPC_PRIMITIVE</a>    1020 mpc/mpc.c          case MPC_TYPE_ANY:     MPC_PRIMITIVE(mpc_input_any(i, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1021'>MPC_PRIMITIVE</a>    1021 mpc/mpc.c          case MPC_TYPE_SINGLE:  MPC_PRIMITIVE(mpc_input_char(i, p-&gt;data.single.x, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1022'>MPC_PRIMITIVE</a>    1022 mpc/mpc.c          case MPC_TYPE_RANGE:   MPC_PRIMITIVE(mpc_input_range(i, p-&gt;data.range.x, p-&gt;data.range.y, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1023'>MPC_PRIMITIVE</a>    1023 mpc/mpc.c          case MPC_TYPE_ONEOF:   MPC_PRIMITIVE(mpc_input_oneof(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1024'>MPC_PRIMITIVE</a>    1024 mpc/mpc.c          case MPC_TYPE_NONEOF:  MPC_PRIMITIVE(mpc_input_noneof(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1025'>MPC_PRIMITIVE</a>    1025 mpc/mpc.c          case MPC_TYPE_SATISFY: MPC_PRIMITIVE(mpc_input_satisfy(i, p-&gt;data.satisfy.f, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1026'>MPC_PRIMITIVE</a>    1026 mpc/mpc.c          case MPC_TYPE_STRING:  MPC_PRIMITIVE(mpc_input_string(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/43.html#L1027'>MPC_PRIMITIVE</a>    1027 mpc/mpc.c          case MPC_TYPE_ANCHOR:  MPC_PRIMITIVE(mpc_input_anchor(i, p-&gt;data.anchor.f, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/34.html#L12'>MPCA_LANG_DEFAULT</a>   12 mpc/examples/doge.c   mpca_lang(MPCA_LANG_DEFAULT,</span>
+<span class='curline'><a href='../S/36.html#L14'>MPCA_LANG_DEFAULT</a>   14 mpc/examples/foobar.c     mpca_lang(MPCA_LANG_DEFAULT, "foobar : \"foo\" | \"bar\";", Foobar);</span>
+<span class='curline'><a href='../S/43.html#L23'>MPCA_LANG_DEFAULT</a>   23 mpc/examples/smallc.c   mpc_err_t* err = mpca_lang(MPCA_LANG_DEFAULT,</span>
+<span class='curline'><a href='../S/50.html#L14'>MPCA_LANG_DEFAULT</a>   14 mpc/tests/grammar.c   mpc_define(Expr,  mpca_grammar(MPCA_LANG_DEFAULT, " &lt;product&gt; (('+' | '-') &lt;product&gt;)* ", Prod));</span>
+<span class='curline'><a href='../S/50.html#L15'>MPCA_LANG_DEFAULT</a>   15 mpc/tests/grammar.c   mpc_define(Prod,  mpca_grammar(MPCA_LANG_DEFAULT, " &lt;value&gt;   (('*' | '/')   &lt;value&gt;)* ", Value));</span>
+<span class='curline'><a href='../S/50.html#L16'>MPCA_LANG_DEFAULT</a>   16 mpc/tests/grammar.c   mpc_define(Value, mpca_grammar(MPCA_LANG_DEFAULT, " /[0-9]+/ | '(' &lt;expression&gt; ')' ", Expr));</span>
+<span class='curline'><a href='../S/50.html#L69'>MPCA_LANG_DEFAULT</a>   69 mpc/tests/grammar.c   mpca_lang(MPCA_LANG_DEFAULT,</span>
+<span class='curline'><a href='../S/50.html#L88'>MPCA_LANG_DEFAULT</a>   88 mpc/tests/grammar.c   mpca_lang_contents(MPCA_LANG_DEFAULT, "./tests/maths.grammar", Expr, Prod, Value, Maths);</span>
+<span class='curline'><a href='../S/50.html#L102'>MPCA_LANG_DEFAULT</a>  102 mpc/tests/grammar.c   mpca_lang(MPCA_LANG_DEFAULT,</span>
+<span class='curline'><a href='../S/50.html#L264'>MPCA_LANG_DEFAULT</a>  264 mpc/tests/grammar.c   err = mpca_lang(MPCA_LANG_DEFAULT,</span>
 </pre>
 </body>
 </html>

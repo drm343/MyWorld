@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>res</title>
+<title>realloc</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,42 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1284'>res</a>              1284 mpc/mpc.c        int res;</span>
-<span class='curline'><a href='../S/43.html#L1292'>res</a>              1292 mpc/mpc.c        res = mpc_parse_file(filename, f, p, r);</span>
-<span class='curline'><a href='../S/43.html#L1294'>res</a>              1294 mpc/mpc.c        return res;</span>
-<span class='curline'><a href='../S/43.html#L3358'>res</a>              3358 mpc/mpc.c        mpc_parser_t *res;</span>
-<span class='curline'><a href='../S/43.html#L3367'>res</a>              3367 mpc/mpc.c        res = mpca_grammar_st(grammar, &amp;st);  </span>
-<span class='curline'><a href='../S/43.html#L3370'>res</a>              3370 mpc/mpc.c        return res;</span>
+<span class='curline'><a href='../S/46.html#L272'>realloc</a>           272 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { return realloc(p, n); }</span>
+<span class='curline'><a href='../S/46.html#L307'>realloc</a>           307 mpc/mpc.c          i-&gt;marks = realloc(i-&gt;marks, sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L308'>realloc</a>           308 mpc/mpc.c          i-&gt;lasts = realloc(i-&gt;lasts, sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L331'>realloc</a>           331 mpc/mpc.c          i-&gt;marks = realloc(i-&gt;marks, sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L332'>realloc</a>           332 mpc/mpc.c          i-&gt;lasts = realloc(i-&gt;lasts, sizeof(char) * i-&gt;marks_slots);      </span>
+<span class='curline'><a href='../S/46.html#L456'>realloc</a>           456 mpc/mpc.c          i-&gt;buffer = realloc(i-&gt;buffer, strlen(i-&gt;buffer) + 2);</span>
+<span class='curline'><a href='../S/46.html#L637'>realloc</a>           637 mpc/mpc.c        return realloc(buffer, strlen(buffer) + 1);</span>
+<span class='curline'><a href='../S/46.html#L1401'>realloc</a>          1401 mpc/mpc.c        p-&gt;name = realloc(p-&gt;name, strlen(name) + 1);</span>
+<span class='curline'><a href='../S/46.html#L1564'>realloc</a>          1564 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
+<span class='curline'><a href='../S/46.html#L1638'>realloc</a>          1638 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
+<span class='curline'><a href='../S/46.html#L2116'>realloc</a>          2116 mpc/mpc.c              range = realloc(range, strlen(range) + strlen(tmp) + 1);</span>
+<span class='curline'><a href='../S/46.html#L2119'>realloc</a>          2119 mpc/mpc.c              range = realloc(range, strlen(range) + 1 + 1);</span>
+<span class='curline'><a href='../S/46.html#L2129'>realloc</a>          2129 mpc/mpc.c                range = realloc(range, strlen(range) + strlen("-") + 1);</span>
+<span class='curline'><a href='../S/46.html#L2135'>realloc</a>          2135 mpc/mpc.c                range = realloc(range, strlen(range) + 1 + 1 + 1);</span>
+<span class='curline'><a href='../S/46.html#L2144'>realloc</a>          2144 mpc/mpc.c            range = realloc(range, strlen(range) + 1 + 1);</span>
+<span class='curline'><a href='../S/46.html#L2317'>realloc</a>          2317 mpc/mpc.c              y = realloc(y, strlen(y) + strlen(output[i]) + 1);</span>
+<span class='curline'><a href='../S/46.html#L2326'>realloc</a>          2326 mpc/mpc.c            y = realloc(y, strlen(y) + 2);</span>
+<span class='curline'><a href='../S/46.html#L2354'>realloc</a>          2354 mpc/mpc.c              y = realloc(y, strlen(y) + 1 + 1);</span>
+<span class='curline'><a href='../S/46.html#L2365'>realloc</a>          2365 mpc/mpc.c            y = realloc(y, strlen(y) + 1 + 1);</span>
+<span class='curline'><a href='../S/46.html#L2451'>realloc</a>          2451 mpc/mpc.c        xs[0] = realloc(xs[0], l + 1);</span>
+<span class='curline'><a href='../S/46.html#L2758'>realloc</a>          2758 mpc/mpc.c        r-&gt;children = realloc(r-&gt;children, sizeof(mpc_ast_t*) * r-&gt;children_num);</span>
+<span class='curline'><a href='../S/46.html#L2765'>realloc</a>          2765 mpc/mpc.c        a-&gt;tag = realloc(a-&gt;tag, strlen(t) + 1 + strlen(a-&gt;tag) + 1);</span>
+<span class='curline'><a href='../S/46.html#L2774'>realloc</a>          2774 mpc/mpc.c        a-&gt;tag = realloc(a-&gt;tag, (strlen(t)-1) + strlen(a-&gt;tag) + 1);</span>
+<span class='curline'><a href='../S/46.html#L2781'>realloc</a>          2781 mpc/mpc.c        a-&gt;tag = realloc(a-&gt;tag, strlen(t) + 1);</span>
+<span class='curline'><a href='../S/46.html#L3239'>realloc</a>          3239 mpc/mpc.c            st-&gt;parsers = realloc(st-&gt;parsers, sizeof(mpc_parser_t*) * st-&gt;parsers_num);</span>
+<span class='curline'><a href='../S/46.html#L3264'>realloc</a>          3264 mpc/mpc.c            st-&gt;parsers = realloc(st-&gt;parsers, sizeof(mpc_parser_t*) * st-&gt;parsers_num);</span>
+<span class='curline'><a href='../S/46.html#L3702'>realloc</a>          3702 mpc/mpc.c            p-&gt;data.or.xs = realloc(p-&gt;data.or.xs, sizeof(mpc_parser_t*) * (n + m -1));</span>
+<span class='curline'><a href='../S/46.html#L3715'>realloc</a>          3715 mpc/mpc.c            p-&gt;data.or.xs = realloc(p-&gt;data.or.xs, sizeof(mpc_parser_t*) * (n + m -1));</span>
+<span class='curline'><a href='../S/46.html#L3745'>realloc</a>          3745 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m - 1));</span>
+<span class='curline'><a href='../S/46.html#L3746'>realloc</a>          3746 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3763'>realloc</a>          3763 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m -1));</span>
+<span class='curline'><a href='../S/46.html#L3764'>realloc</a>          3764 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3795'>realloc</a>          3795 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m - 1));</span>
+<span class='curline'><a href='../S/46.html#L3796'>realloc</a>          3796 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3813'>realloc</a>          3813 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m -1));</span>
+<span class='curline'><a href='../S/46.html#L3814'>realloc</a>          3814 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
 </pre>
 </body>
 </html>

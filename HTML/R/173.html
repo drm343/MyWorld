@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_ast_trav_order_t</title>
+<title>mpc_ast_build</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,24 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L2859'>mpc_ast_trav_order_t</a> 2859 mpc/mpc.c                                             mpc_ast_trav_order_t order)</span>
-<span class='curline'><a href='../S/44.html#L299'>mpc_ast_trav_order_t</a>  299 mpc/mpc.h        mpc_ast_trav_order_t   order;</span>
-<span class='curline'><a href='../S/44.html#L303'>mpc_ast_trav_order_t</a>  303 mpc/mpc.h                                             mpc_ast_trav_order_t order);</span>
+<span class='curline'><a href='../S/47.html#L273'>mpc_ast_build</a>     273 mpc/mpc.h      mpc_ast_t *mpc_ast_build(int n, const char *tag, ...);</span>
+<span class='curline'><a href='../S/50.html#L20'>mpc_ast_build</a>      20 mpc/tests/grammar.c   t1 = mpc_ast_build(1, "product|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L21'>mpc_ast_build</a>      21 mpc/tests/grammar.c     mpc_ast_build(3, "value|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L26'>mpc_ast_build</a>      26 mpc/tests/grammar.c   t2 = mpc_ast_build(3, "&gt;",</span>
+<span class='curline'><a href='../S/50.html#L28'>mpc_ast_build</a>      28 mpc/tests/grammar.c       mpc_ast_build(3, "product|value|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L30'>mpc_ast_build</a>      30 mpc/tests/grammar.c         mpc_ast_build(3, "expression|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L32'>mpc_ast_build</a>      32 mpc/tests/grammar.c           mpc_ast_build(5, "product|&gt;", </span>
+<span class='curline'><a href='../S/50.html#L110'>mpc_ast_build</a>     110 mpc/tests/grammar.c       mpc_ast_build(4, "&gt;", </span>
+<span class='curline'><a href='../S/50.html#L112'>mpc_ast_build</a>     112 mpc/tests/grammar.c           mpc_ast_build(2, "phrase|&gt;", </span>
+<span class='curline'><a href='../S/50.html#L115'>mpc_ast_build</a>     115 mpc/tests/grammar.c           mpc_ast_build(2, "phrase|&gt;", </span>
+<span class='curline'><a href='../S/50.html#L153'>mpc_ast_build</a>     153 mpc/tests/grammar.c   t0 = mpc_ast_build(3, "&gt;", </span>
+<span class='curline'><a href='../S/50.html#L155'>mpc_ast_build</a>     155 mpc/tests/grammar.c           mpc_ast_build(3, "linepragma|&gt;", </span>
+<span class='curline'><a href='../S/50.html#L220'>mpc_ast_build</a>     220 mpc/tests/grammar.c   t0 = mpc_ast_build(3, "&gt;",</span>
+<span class='curline'><a href='../S/50.html#L222'>mpc_ast_build</a>     222 mpc/tests/grammar.c           mpc_ast_build(5, "resource|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L227'>mpc_ast_build</a>     227 mpc/tests/grammar.c             mpc_ast_build(5, "inner_block|statement|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L230'>mpc_ast_build</a>     230 mpc/tests/grammar.c               mpc_ast_build(2, "parameter|literal|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L231'>mpc_ast_build</a>     231 mpc/tests/grammar.c                 mpc_ast_build(2, "qstring|&gt;",</span>
+<span class='curline'><a href='../S/50.html#L233'>mpc_ast_build</a>     233 mpc/tests/grammar.c                   mpc_ast_build(2, "qstring|&gt;",</span>
 </pre>
 </body>
 </html>

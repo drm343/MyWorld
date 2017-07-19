@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>lift</title>
+<title>length</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,13 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L906'>lift</a>              906 mpc/mpc.c        mpc_pdata_lift_t lift;</span>
-<span class='curline'><a href='../S/43.html#L1034'>lift</a>             1034 mpc/mpc.c          case MPC_TYPE_LIFT:      MPC_SUCCESS(p-&gt;data.lift.lf());</span>
-<span class='curline'><a href='../S/43.html#L1035'>lift</a>             1035 mpc/mpc.c          case MPC_TYPE_LIFT_VAL:  MPC_SUCCESS(p-&gt;data.lift.x);</span>
-<span class='curline'><a href='../S/43.html#L1573'>lift</a>             1573 mpc/mpc.c        p-&gt;data.lift.x = x;</span>
-<span class='curline'><a href='../S/43.html#L1580'>lift</a>             1580 mpc/mpc.c        p-&gt;data.lift.lf = lf;</span>
-<span class='curline'><a href='../S/43.html#L3775'>lift</a>             3775 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.lift.lf == mpcf_ctor_str</span>
+<span class='curline'><a href='../S/46.html#L130'>length</a>            130 mpc/mpc.c      static mpc_input_t *mpc_input_new_nstring(const char *filename, const char *string, size_t length) {</span>
+<span class='curline'><a href='../S/46.html#L140'>length</a>            140 mpc/mpc.c        i-&gt;string = malloc(length + 1);</span>
+<span class='curline'><a href='../S/46.html#L141'>length</a>            141 mpc/mpc.c        strncpy(i-&gt;string, string, length);</span>
+<span class='curline'><a href='../S/46.html#L142'>length</a>            142 mpc/mpc.c        i-&gt;string[length] = '\0';</span>
+<span class='curline'><a href='../S/46.html#L1257'>length</a>           1257 mpc/mpc.c      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/46.html#L1259'>length</a>           1259 mpc/mpc.c        mpc_input_t *i = mpc_input_new_nstring(filename, string, length);</span>
+<span class='curline'><a href='../S/47.html#L68'>length</a>             68 mpc/mpc.h      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r);</span>
 </pre>
 </body>
 </html>

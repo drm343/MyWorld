@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>stmts</title>
+<title>st</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,18 +9,78 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L3394'>stmts</a>            3394 mpc/mpc.c        mpca_stmt_t **stmts = malloc(sizeof(mpca_stmt_t*) * (n+1));</span>
-<span class='curline'><a href='../S/43.html#L3397'>stmts</a>            3397 mpc/mpc.c          stmts[i] = xs[i];</span>
-<span class='curline'><a href='../S/43.html#L3399'>stmts</a>            3399 mpc/mpc.c        stmts[n] = NULL;  </span>
-<span class='curline'><a href='../S/43.html#L3401'>stmts</a>            3401 mpc/mpc.c        return stmts;</span>
-<span class='curline'><a href='../S/43.html#L3406'>stmts</a>            3406 mpc/mpc.c        mpca_stmt_t **stmts = x;</span>
-<span class='curline'><a href='../S/43.html#L3408'>stmts</a>            3408 mpc/mpc.c        while(*stmts) {</span>
-<span class='curline'><a href='../S/43.html#L3409'>stmts</a>            3409 mpc/mpc.c          mpca_stmt_t *stmt = *stmts; </span>
-<span class='curline'><a href='../S/43.html#L3414'>stmts</a>            3414 mpc/mpc.c          stmts++;</span>
-<span class='curline'><a href='../S/43.html#L3424'>stmts</a>            3424 mpc/mpc.c        mpca_stmt_t **stmts = x;</span>
-<span class='curline'><a href='../S/43.html#L3427'>stmts</a>            3427 mpc/mpc.c        while(*stmts) {</span>
-<span class='curline'><a href='../S/43.html#L3428'>stmts</a>            3428 mpc/mpc.c          stmt = *stmts;</span>
-<span class='curline'><a href='../S/43.html#L3437'>stmts</a>            3437 mpc/mpc.c          stmts++;</span>
+<span class='curline'><a href='../S/45.html#L3197'>st</a>               3197 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/45.html#L3199'>st</a>               3199 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_string(y) : mpc_tok(mpc_string(y));</span>
+<span class='curline'><a href='../S/45.html#L3205'>st</a>               3205 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/45.html#L3207'>st</a>               3207 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_char(y[0]) : mpc_tok(mpc_char(y[0]));</span>
+<span class='curline'><a href='../S/45.html#L3213'>st</a>               3213 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/45.html#L3215'>st</a>               3215 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_re(y) : mpc_tok(mpc_re(y));</span>
+<span class='curline'><a href='../S/45.html#L3227'>st</a>               3227 mpc/mpc.c      static mpc_parser_t *mpca_grammar_find_parser(char *x, mpca_grammar_st_t *st) {</span>
+<span class='curline'><a href='../S/45.html#L3237'>st</a>               3237 mpc/mpc.c          while (st-&gt;parsers_num &lt;= i) {</span>
+<span class='curline'><a href='../S/45.html#L3238'>st</a>               3238 mpc/mpc.c            st-&gt;parsers_num++;</span>
+<span class='curline'><a href='../S/45.html#L3239'>st</a>               3239 mpc/mpc.c            st-&gt;parsers = realloc(st-&gt;parsers, sizeof(mpc_parser_t*) * st-&gt;parsers_num);</span>
+<span class='curline'><a href='../S/45.html#L3240'>st</a>               3240 mpc/mpc.c            st-&gt;parsers[st-&gt;parsers_num-1] = va_arg(*st-&gt;va, mpc_parser_t*);</span>
+<span class='curline'><a href='../S/45.html#L3241'>st</a>               3241 mpc/mpc.c            if (st-&gt;parsers[st-&gt;parsers_num-1] == NULL) {</span>
+<span class='curline'><a href='../S/45.html#L3242'>st</a>               3242 mpc/mpc.c              return mpc_failf("No Parser in position %i! Only supplied %i Parsers!", i, st-&gt;parsers_num);</span>
+<span class='curline'><a href='../S/45.html#L3246'>st</a>               3246 mpc/mpc.c          return st-&gt;parsers[st-&gt;parsers_num-1];</span>
+<span class='curline'><a href='../S/45.html#L3252'>st</a>               3252 mpc/mpc.c          for (i = 0; i &lt; st-&gt;parsers_num; i++) {</span>
+<span class='curline'><a href='../S/45.html#L3253'>st</a>               3253 mpc/mpc.c            mpc_parser_t *q = st-&gt;parsers[i];</span>
+<span class='curline'><a href='../S/45.html#L3261'>st</a>               3261 mpc/mpc.c            p = va_arg(*st-&gt;va, mpc_parser_t*);</span>
+<span class='curline'><a href='../S/45.html#L3263'>st</a>               3263 mpc/mpc.c            st-&gt;parsers_num++;</span>
+<span class='curline'><a href='../S/45.html#L3264'>st</a>               3264 mpc/mpc.c            st-&gt;parsers = realloc(st-&gt;parsers, sizeof(mpc_parser_t*) * st-&gt;parsers_num);</span>
+<span class='curline'><a href='../S/45.html#L3265'>st</a>               3265 mpc/mpc.c            st-&gt;parsers[st-&gt;parsers_num-1] = p;</span>
+<span class='curline'><a href='../S/45.html#L3278'>st</a>               3278 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/45.html#L3279'>st</a>               3279 mpc/mpc.c        mpc_parser_t *p = mpca_grammar_find_parser(x, st);</span>
+<span class='curline'><a href='../S/45.html#L3289'>st</a>               3289 mpc/mpc.c      mpc_parser_t *mpca_grammar_st(const char *grammar, mpca_grammar_st_t *st) {</span>
+<span class='curline'><a href='../S/45.html#L3327'>st</a>               3327 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_string_lit()), mpcaf_grammar_string, st),</span>
+<span class='curline'><a href='../S/45.html#L3328'>st</a>               3328 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_char_lit()),   mpcaf_grammar_char, st),</span>
+<span class='curline'><a href='../S/45.html#L3329'>st</a>               3329 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_regex_lit()),  mpcaf_grammar_regex, st),</span>
+<span class='curline'><a href='../S/45.html#L3330'>st</a>               3330 mpc/mpc.c          mpc_apply_to(mpc_tok_braces(mpc_or(2, mpc_digits(), mpc_ident()), free), mpcaf_grammar_id, st),</span>
+<span class='curline'><a href='../S/45.html#L3352'>st</a>               3352 mpc/mpc.c        return (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) ? mpc_predictive(r.output) : r.output;</span>
+<span class='curline'><a href='../S/45.html#L3357'>st</a>               3357 mpc/mpc.c        mpca_grammar_st_t st;</span>
+<span class='curline'><a href='../S/45.html#L3362'>st</a>               3362 mpc/mpc.c        st.va = &amp;va;</span>
+<span class='curline'><a href='../S/45.html#L3363'>st</a>               3363 mpc/mpc.c        st.parsers_num = 0;</span>
+<span class='curline'><a href='../S/45.html#L3364'>st</a>               3364 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/45.html#L3365'>st</a>               3365 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/45.html#L3367'>st</a>               3367 mpc/mpc.c        res = mpca_grammar_st(grammar, &amp;st);  </span>
+<span class='curline'><a href='../S/45.html#L3368'>st</a>               3368 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/45.html#L3422'>st</a>               3422 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/45.html#L3429'>st</a>               3429 mpc/mpc.c          left = mpca_grammar_find_parser(stmt-&gt;ident, st);</span>
+<span class='curline'><a href='../S/45.html#L3430'>st</a>               3430 mpc/mpc.c          if (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) { stmt-&gt;grammar = mpc_predictive(stmt-&gt;grammar); }</span>
+<span class='curline'><a href='../S/45.html#L3445'>st</a>               3445 mpc/mpc.c      static mpc_err_t *mpca_lang_st(mpc_input_t *i, mpca_grammar_st_t *st) {</span>
+<span class='curline'><a href='../S/45.html#L3460'>st</a>               3460 mpc/mpc.c          mpca_stmt_list_apply_to, st</span>
+<span class='curline'><a href='../S/45.html#L3489'>st</a>               3489 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_string_lit()), mpcaf_grammar_string, st),</span>
+<span class='curline'><a href='../S/45.html#L3490'>st</a>               3490 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_char_lit()),   mpcaf_grammar_char, st),</span>
+<span class='curline'><a href='../S/45.html#L3491'>st</a>               3491 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_regex_lit()),  mpcaf_grammar_regex, st),</span>
+<span class='curline'><a href='../S/45.html#L3492'>st</a>               3492 mpc/mpc.c          mpc_apply_to(mpc_tok_braces(mpc_or(2, mpc_digits(), mpc_ident()), free), mpcaf_grammar_id, st),</span>
+<span class='curline'><a href='../S/45.html#L3515'>st</a>               3515 mpc/mpc.c        mpca_grammar_st_t st;</span>
+<span class='curline'><a href='../S/45.html#L3522'>st</a>               3522 mpc/mpc.c        st.va = &amp;va;</span>
+<span class='curline'><a href='../S/45.html#L3523'>st</a>               3523 mpc/mpc.c        st.parsers_num = 0;</span>
+<span class='curline'><a href='../S/45.html#L3524'>st</a>               3524 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/45.html#L3525'>st</a>               3525 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/45.html#L3528'>st</a>               3528 mpc/mpc.c        err = mpca_lang_st(i, &amp;st);</span>
+<span class='curline'><a href='../S/45.html#L3531'>st</a>               3531 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/45.html#L3537'>st</a>               3537 mpc/mpc.c        mpca_grammar_st_t st;</span>
+<span class='curline'><a href='../S/45.html#L3544'>st</a>               3544 mpc/mpc.c        st.va = &amp;va;</span>
+<span class='curline'><a href='../S/45.html#L3545'>st</a>               3545 mpc/mpc.c        st.parsers_num = 0;</span>
+<span class='curline'><a href='../S/45.html#L3546'>st</a>               3546 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/45.html#L3547'>st</a>               3547 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/45.html#L3550'>st</a>               3550 mpc/mpc.c        err = mpca_lang_st(i, &amp;st);</span>
+<span class='curline'><a href='../S/45.html#L3553'>st</a>               3553 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/45.html#L3560'>st</a>               3560 mpc/mpc.c        mpca_grammar_st_t st;</span>
+<span class='curline'><a href='../S/45.html#L3567'>st</a>               3567 mpc/mpc.c        st.va = &amp;va;</span>
+<span class='curline'><a href='../S/45.html#L3568'>st</a>               3568 mpc/mpc.c        st.parsers_num = 0;</span>
+<span class='curline'><a href='../S/45.html#L3569'>st</a>               3569 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/45.html#L3570'>st</a>               3570 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/45.html#L3573'>st</a>               3573 mpc/mpc.c        err = mpca_lang_st(i, &amp;st);</span>
+<span class='curline'><a href='../S/45.html#L3576'>st</a>               3576 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/45.html#L3583'>st</a>               3583 mpc/mpc.c        mpca_grammar_st_t st;</span>
+<span class='curline'><a href='../S/45.html#L3598'>st</a>               3598 mpc/mpc.c        st.va = &amp;va;</span>
+<span class='curline'><a href='../S/45.html#L3599'>st</a>               3599 mpc/mpc.c        st.parsers_num = 0;</span>
+<span class='curline'><a href='../S/45.html#L3600'>st</a>               3600 mpc/mpc.c        st.parsers = NULL;</span>
+<span class='curline'><a href='../S/45.html#L3601'>st</a>               3601 mpc/mpc.c        st.flags = flags;</span>
+<span class='curline'><a href='../S/45.html#L3604'>st</a>               3604 mpc/mpc.c        err = mpca_lang_st(i, &amp;st);</span>
+<span class='curline'><a href='../S/45.html#L3607'>st</a>               3607 mpc/mpc.c        free(st.parsers);</span>
 </pre>
 </body>
 </html>

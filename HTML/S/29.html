@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>src/graphic-camera.c</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/62.html'>src</a>/graphic-camera.c</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L8'>[^]</a><a href='#L281'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L8' title='Defined at 8.'>print_mode</a></li>
+<li><a href='#L20' title='Defined at 20.'>print_horizon_mode</a></li>
+<li><a href='#L24' title='Defined at 24.'>print_vertical_mode</a></li>
+<li><a href='#L29' title='Defined at 29.'>occupy_position_by_others</a></li>
+<li><a href='#L40' title='Defined at 40.'>debug</a></li>
+<li><a href='#L77' title='Defined at 77.'>can_move_horizon</a></li>
+<li><a href='#L111' title='Defined at 111.'>can_move_vertical</a></li>
+<li><a href='#L145' title='Defined at 145.'>key_process</a></li>
+<li><a href='#L222' title='Defined at 222.'>camera_start</a></li>
+<li><a href='#L242' title='Defined at 242.'>camera_stop</a></li>
+<li><a href='#L247' title='Defined at 247.'>camera_set_max_x</a></li>
+<li><a href='#L253' title='Defined at 253.'>camera_set_max_y</a></li>
+<li><a href='#L260' title='Defined at 260.'>set_player</a></li>
+<li><a href='#L273' title='Defined at 273.'>set_map</a></li>
+<li><a href='#L281' title='Defined at 281.'>set_dead_style</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='13.html'>graphic-camera.h</a>"
+<a id='L2' name='L2'></a>   2 
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <strong class='reserved'>static</strong> <strong class='reserved'>int</strong> <a href='../Y/68.html' title='Multiple used in 5 places.'>MAX_X</a> = 0;
+<a id='L5' name='L5'></a>   5 <strong class='reserved'>static</strong> <strong class='reserved'>int</strong> <a href='../Y/69.html' title='Multiple used in 5 places.'>MAX_Y</a> = 0;
+<a id='L6' name='L6'></a>   6 
+<a id='L7' name='L7'></a>   7 
+<a id='L8' name='L8'></a>   8 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/472.html' title='Multiple referred from 2 places.'>print_mode</a>(<a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a> <a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>, <a href='../S/13.html#L12' title='Defined at 12 in include/graphic-camera.h.'>Camera_Mode</a> <a href='../Y/366.html' title='Multiple used in 2 places.'>mode</a>) <em class='brace'>{</em>
+<a id='L9' name='L9'></a>   9   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("%s", <a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>);
+<a id='L10' name='L10'></a>  10   <strong class='reserved'>switch</strong> (<a href='../Y/366.html' title='Multiple used in 2 places.'>mode</a>) <em class='brace'>{</em>
+<a id='L11' name='L11'></a>  11     <strong class='reserved'>case</strong> <a href='../S/13.html#L11' title='Defined at 11 in include/graphic-camera.h.'>CAMERA_MOVE</a>:
+<a id='L12' name='L12'></a>  12       <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("MOVE\n");
+<a id='L13' name='L13'></a>  13       <strong class='reserved'>break</strong>;
+<a id='L14' name='L14'></a>  14     <strong class='reserved'>default</strong>:
+<a id='L15' name='L15'></a>  15       <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("FIX\n");
+<a id='L16' name='L16'></a>  16       <strong class='reserved'>break</strong>;
+<a id='L17' name='L17'></a>  17   <em class='brace'>}</em>
+<a id='L18' name='L18'></a>  18 <em class='brace'>}</em>
+<a id='L19' name='L19'></a>  19 
+<a id='L20' name='L20'></a>  20 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> print_horizon_mode(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>) <em class='brace'>{</em>
+<a id='L21' name='L21'></a>  21   <a href='../S/29.html#L8' title='Defined at 8 in src/graphic-camera.c.'>print_mode</a>("horizon: ", <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a>);
+<a id='L22' name='L22'></a>  22 <em class='brace'>}</em>
+<a id='L23' name='L23'></a>  23 
+<a id='L24' name='L24'></a>  24 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> print_vertical_mode(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>) <em class='brace'>{</em>
+<a id='L25' name='L25'></a>  25   <a href='../S/29.html#L8' title='Defined at 8 in src/graphic-camera.c.'>print_mode</a>("vertical: ", <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a>);
+<a id='L26' name='L26'></a>  26 <em class='brace'>}</em>
+<a id='L27' name='L27'></a>  27 
+<a id='L28' name='L28'></a>  28 
+<a id='L29' name='L29'></a>  29 <strong class='reserved'>static</strong> <a href='../S/15.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../S/29.html#L184' title='Referred from 184 in src/graphic-camera.c.'>occupy_position_by_others</a>(<a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>,
+<a id='L30' name='L30'></a>  30     <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>, <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> *<a href='../Y/465.html' title='Multiple used in 77 places.'>result</a>) <em class='brace'>{</em>
+<a id='L31' name='L31'></a>  31   <strong class='reserved'>if</strong> (<a href='../Y/210.html' title='Multiple used in 13 places.'>character_pool</a>.<a href='../Y/288.html' title='Multiple used in 3 places.'>find_position</a>(<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a>, &amp;<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>) == <a href='../S/14.html#L9' title='Defined at 9 in include/character-pool.h.'>FOUND</a>) <em class='brace'>{</em>
+<a id='L32' name='L32'></a>  32     <strong class='reserved'>return</strong> <a href='../S/15.html#L21' title='Defined at 21 in include/base_type.h.'>YES</a>;
+<a id='L33' name='L33'></a>  33   <em class='brace'>}</em>
+<a id='L34' name='L34'></a>  34   <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L35' name='L35'></a>  35     <strong class='reserved'>return</strong> <a href='../S/15.html#L20' title='Defined at 20 in include/base_type.h.'>NO</a>;
+<a id='L36' name='L36'></a>  36   <em class='brace'>}</em>
+<a id='L37' name='L37'></a>  37 <em class='brace'>}</em>
+<a id='L38' name='L38'></a>  38 
+<a id='L39' name='L39'></a>  39 
+<a id='L40' name='L40'></a>  40 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/148.html' title='Multiple referred from 2 places.'>debug</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>) <em class='brace'>{</em>
+<a id='L41' name='L41'></a>  41   <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>;
+<a id='L42' name='L42'></a>  42   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a> = <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>;
+<a id='L43' name='L43'></a>  43 
+<a id='L44' name='L44'></a>  44   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>;
+<a id='L45' name='L45'></a>  45 
+<a id='L46' name='L46'></a>  46   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/298.html' title='Multiple used in 26 places.'>from</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>;
+<a id='L47' name='L47'></a>  47   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/539.html' title='Multiple used in 17 places.'>to</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>;
+<a id='L48' name='L48'></a>  48 
+<a id='L49' name='L49'></a>  49   <a href='../S/9.html#L10' title='Defined at 10 in include/map_system.h.'>Map_Access</a> <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>;
+<a id='L50' name='L50'></a>  50   <a href='../S/15.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a> = <a href='../S/15.html#L21' title='Defined at 21 in include/base_type.h.'>YES</a>;
+<a id='L51' name='L51'></a>  51 
+<a id='L52' name='L52'></a>  52   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("------------------------\n");
+<a id='L53' name='L53'></a>  53   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[map](%d, %d)\n", <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>);
+<a id='L54' name='L54'></a>  54   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[center](%d, %d)\n", <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>);
+<a id='L55' name='L55'></a>  55   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[start](%d, %d)\n", <a href='../Y/298.html' title='Multiple used in 26 places.'>from</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/298.html' title='Multiple used in 26 places.'>from</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>);
+<a id='L56' name='L56'></a>  56   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[end](%d, %d)\n", <a href='../Y/539.html' title='Multiple used in 17 places.'>to</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/539.html' title='Multiple used in 17 places.'>to</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>);
+<a id='L57' name='L57'></a>  57   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[position](%d, %d)\n", <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>);
+<a id='L58' name='L58'></a>  58   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[left check] %d\n",
+<a id='L59' name='L59'></a>  59       (<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &gt; (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> - 1)));
+<a id='L60' name='L60'></a>  60   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[right check] %d\n",
+<a id='L61' name='L61'></a>  61       ((<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> + 1) &lt; (<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> - (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> - 1))));
+<a id='L62' name='L62'></a>  62   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[from end] %d\n",
+<a id='L63' name='L63'></a>  63       (<a href='../Y/298.html' title='Multiple used in 26 places.'>from</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &lt;= 0));
+<a id='L64' name='L64'></a>  64   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[to end] %d\n",
+<a id='L65' name='L65'></a>  65       (<a href='../Y/539.html' title='Multiple used in 17 places.'>to</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &gt;= <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>));
+<a id='L66' name='L66'></a>  66   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[up check] %d\n",
+<a id='L67' name='L67'></a>  67       (<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &gt; (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> - 1)));
+<a id='L68' name='L68'></a>  68   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[down check] %d\n",
+<a id='L69' name='L69'></a>  69       ((<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> + 1) &lt; (<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> - (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> - 1))));
+<a id='L70' name='L70'></a>  70   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[from end] %d\n",
+<a id='L71' name='L71'></a>  71       (<a href='../Y/298.html' title='Multiple used in 26 places.'>from</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &lt;= 0));
+<a id='L72' name='L72'></a>  72   <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("[to end] %d\n",
+<a id='L73' name='L73'></a>  73       (<a href='../Y/539.html' title='Multiple used in 17 places.'>to</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &gt;= <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>));
+<a id='L74' name='L74'></a>  74 <em class='brace'>}</em>
+<a id='L75' name='L75'></a>  75 
+<a id='L76' name='L76'></a>  76 
+<a id='L77' name='L77'></a>  77 <strong class='reserved'>static</strong> <a href='../S/15.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../S/29.html#L198' title='Referred from 198 in src/graphic-camera.c.'>can_move_horizon</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>,
+<a id='L78' name='L78'></a>  78     <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>) <em class='brace'>{</em>
+<a id='L79' name='L79'></a>  79   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>;
+<a id='L80' name='L80'></a>  80 
+<a id='L81' name='L81'></a>  81   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/298.html' title='Multiple used in 26 places.'>from</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>;
+<a id='L82' name='L82'></a>  82   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/539.html' title='Multiple used in 17 places.'>to</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>;
+<a id='L83' name='L83'></a>  83 
+<a id='L84' name='L84'></a>  84   <a href='../S/9.html#L10' title='Defined at 10 in include/map_system.h.'>Map_Access</a> <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>;
+<a id='L85' name='L85'></a>  85   <a href='../S/15.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a> = <a href='../S/15.html#L21' title='Defined at 21 in include/base_type.h.'>YES</a>;
+<a id='L86' name='L86'></a>  86 
+<a id='L87' name='L87'></a>  87   <strong class='reserved'>if</strong> ((<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &gt; (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> - 1))
+<a id='L88' name='L88'></a>  88       &amp;&amp; ((<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> + 1)&lt; (<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> - (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> - 1)))) <em class='brace'>{</em>
+<a id='L89' name='L89'></a>  89     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a> = <a href='../S/13.html#L11' title='Defined at 11 in include/graphic-camera.h.'>CAMERA_MOVE</a>;
+<a id='L90' name='L90'></a>  90   <em class='brace'>}</em>
+<a id='L91' name='L91'></a>  91   <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/298.html' title='Multiple used in 26 places.'>from</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &lt;= 0) <em class='brace'>{</em>
+<a id='L92' name='L92'></a>  92     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a> = <a href='../S/13.html#L10' title='Defined at 10 in include/graphic-camera.h.'>CAMERA_FIX</a>;
+<a id='L93' name='L93'></a>  93 
+<a id='L94' name='L94'></a>  94     <strong class='reserved'>if</strong> (<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &lt; 0) <em class='brace'>{</em>
+<a id='L95' name='L95'></a>  95       <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a> = <a href='../S/15.html#L20' title='Defined at 20 in include/base_type.h.'>NO</a>;
+<a id='L96' name='L96'></a>  96     <em class='brace'>}</em>
+<a id='L97' name='L97'></a>  97   <em class='brace'>}</em>
+<a id='L98' name='L98'></a>  98   <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/539.html' title='Multiple used in 17 places.'>to</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &gt;= <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>) <em class='brace'>{</em>
+<a id='L99' name='L99'></a>  99     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a> = <a href='../S/13.html#L10' title='Defined at 10 in include/graphic-camera.h.'>CAMERA_FIX</a>;
+<a id='L100' name='L100'></a> 100 
+<a id='L101' name='L101'></a> 101     <strong class='reserved'>if</strong> (<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> &gt;= <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>) <em class='brace'>{</em>
+<a id='L102' name='L102'></a> 102       <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a> = <a href='../S/15.html#L20' title='Defined at 20 in include/base_type.h.'>NO</a>;
+<a id='L103' name='L103'></a> 103     <em class='brace'>}</em>
+<a id='L104' name='L104'></a> 104   <em class='brace'>}</em>
+<a id='L105' name='L105'></a> 105   <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L106' name='L106'></a> 106     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a> = <a href='../S/13.html#L11' title='Defined at 11 in include/graphic-camera.h.'>CAMERA_MOVE</a>;
+<a id='L107' name='L107'></a> 107   <em class='brace'>}</em>
+<a id='L108' name='L108'></a> 108   <strong class='reserved'>return</strong> <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a>;
+<a id='L109' name='L109'></a> 109 <em class='brace'>}</em>
+<a id='L110' name='L110'></a> 110 
+<a id='L111' name='L111'></a> 111 <strong class='reserved'>static</strong> <a href='../S/15.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../S/29.html#L185' title='Referred from 185 in src/graphic-camera.c.'>can_move_vertical</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>,
+<a id='L112' name='L112'></a> 112     <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>) <em class='brace'>{</em>
+<a id='L113' name='L113'></a> 113   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>;
+<a id='L114' name='L114'></a> 114 
+<a id='L115' name='L115'></a> 115   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/298.html' title='Multiple used in 26 places.'>from</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>;
+<a id='L116' name='L116'></a> 116   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/539.html' title='Multiple used in 17 places.'>to</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>;
+<a id='L117' name='L117'></a> 117 
+<a id='L118' name='L118'></a> 118   <a href='../S/9.html#L10' title='Defined at 10 in include/map_system.h.'>Map_Access</a> <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>;
+<a id='L119' name='L119'></a> 119   <a href='../S/15.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a> = <a href='../S/15.html#L21' title='Defined at 21 in include/base_type.h.'>YES</a>;
+<a id='L120' name='L120'></a> 120 
+<a id='L121' name='L121'></a> 121   <strong class='reserved'>if</strong> ((<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &gt; (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> - 1))
+<a id='L122' name='L122'></a> 122       &amp;&amp; ((<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> + 1)&lt; (<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> - (<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> - 1)))) <em class='brace'>{</em>
+<a id='L123' name='L123'></a> 123     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/562.html' title='Multiple used in 7 places.'>vertical</a> = <a href='../S/13.html#L11' title='Defined at 11 in include/graphic-camera.h.'>CAMERA_MOVE</a>;
+<a id='L124' name='L124'></a> 124   <em class='brace'>}</em>
+<a id='L125' name='L125'></a> 125   <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/298.html' title='Multiple used in 26 places.'>from</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &lt;= 0) <em class='brace'>{</em>
+<a id='L126' name='L126'></a> 126     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/562.html' title='Multiple used in 7 places.'>vertical</a> = <a href='../S/13.html#L10' title='Defined at 10 in include/graphic-camera.h.'>CAMERA_FIX</a>;
+<a id='L127' name='L127'></a> 127 
+<a id='L128' name='L128'></a> 128     <strong class='reserved'>if</strong> (<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &lt; 0) <em class='brace'>{</em>
+<a id='L129' name='L129'></a> 129       <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a> = <a href='../S/15.html#L20' title='Defined at 20 in include/base_type.h.'>NO</a>;
+<a id='L130' name='L130'></a> 130     <em class='brace'>}</em>
+<a id='L131' name='L131'></a> 131   <em class='brace'>}</em>
+<a id='L132' name='L132'></a> 132   <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/539.html' title='Multiple used in 17 places.'>to</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &gt;= <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>) <em class='brace'>{</em>
+<a id='L133' name='L133'></a> 133     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/562.html' title='Multiple used in 7 places.'>vertical</a> = <a href='../S/13.html#L10' title='Defined at 10 in include/graphic-camera.h.'>CAMERA_FIX</a>;
+<a id='L134' name='L134'></a> 134 
+<a id='L135' name='L135'></a> 135     <strong class='reserved'>if</strong> (<a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> &gt;= <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>) <em class='brace'>{</em>
+<a id='L136' name='L136'></a> 136       <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a> = <a href='../S/15.html#L20' title='Defined at 20 in include/base_type.h.'>NO</a>;
+<a id='L137' name='L137'></a> 137     <em class='brace'>}</em>
+<a id='L138' name='L138'></a> 138   <em class='brace'>}</em>
+<a id='L139' name='L139'></a> 139   <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L140' name='L140'></a> 140     <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/562.html' title='Multiple used in 7 places.'>vertical</a> = <a href='../S/13.html#L11' title='Defined at 11 in include/graphic-camera.h.'>CAMERA_MOVE</a>;
+<a id='L141' name='L141'></a> 141   <em class='brace'>}</em>
+<a id='L142' name='L142'></a> 142   <strong class='reserved'>return</strong> <a href='../Y/465.html' title='Multiple used in 77 places.'>result</a>;
+<a id='L143' name='L143'></a> 143 <em class='brace'>}</em>
+<a id='L144' name='L144'></a> 144 
+<a id='L145' name='L145'></a> 145 <strong class='reserved'>static</strong> <a href='../Y/198.html' title='Multiple used in 15 places.'>bool</a> <a href='../S/29.html#L297' title='Referred from 297 in src/graphic-camera.c.'>key_process</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a> <a href='../Y/299.html' title='Multiple used in 3 places.'>from_pool</a>,
+<a id='L146' name='L146'></a> 146     <a href='../Y/109.html' title='Multiple used in 4 places.'>SDL_Event</a> *<a href='../Y/265.html' title='Multiple used in 7 places.'>event</a>) <em class='brace'>{</em>
+<a id='L147' name='L147'></a> 147   <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>;
+<a id='L148' name='L148'></a> 148   <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/386.html' title='Multiple used in 46 places.'>npc</a> = <a href='../Y/74.html' title='Multiple used in 147 places.'>NULL</a>;
+<a id='L149' name='L149'></a> 149   <a href='../S/11.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> <a href='../Y/247.html' title='Multiple used in 6 places.'>dead</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/247.html' title='Multiple used in 6 places.'>dead</a>;
+<a id='L150' name='L150'></a> 150 
+<a id='L151' name='L151'></a> 151   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a> = <em class='brace'>{</em>
+<a id='L152' name='L152'></a> 152     <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>,
+<a id='L153' name='L153'></a> 153     <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>
+<a id='L154' name='L154'></a> 154   <em class='brace'>}</em>;
+<a id='L155' name='L155'></a> 155 
+<a id='L156' name='L156'></a> 156   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a> = <em class='brace'>{</em>0, 0<em class='brace'>}</em>;
+<a id='L157' name='L157'></a> 157 
+<a id='L158' name='L158'></a> 158   <strong class='reserved'>if</strong> ((<a href='../Y/265.html' title='Multiple used in 7 places.'>event</a>-&gt;<a href='../Y/327.html' title='Multiple used in 14 places.'>key</a>).<a href='../Y/329.html' title='Multiple used in 2 places.'>keysym</a>.<a href='../Y/526.html' title='Multiple used in 2 places.'>sym</a> == SDLK_q) <em class='brace'>{</em>
+<a id='L159' name='L159'></a> 159     <strong class='reserved'>return</strong> <a href='../Y/275.html' title='Multiple used in 10 places.'>false</a>;
+<a id='L160' name='L160'></a> 160   <em class='brace'>}</em>
+<a id='L161' name='L161'></a> 161 
+<a id='L162' name='L162'></a> 162   <strong class='reserved'>switch</strong> ((<a href='../Y/265.html' title='Multiple used in 7 places.'>event</a>-&gt;<a href='../Y/327.html' title='Multiple used in 14 places.'>key</a>).<a href='../Y/329.html' title='Multiple used in 2 places.'>keysym</a>.<a href='../Y/526.html' title='Multiple used in 2 places.'>sym</a>) <em class='brace'>{</em>
+<a id='L163' name='L163'></a> 163     <strong class='reserved'>case</strong> SDLK_UP:
+<a id='L164' name='L164'></a> 164       <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> -= 1;
+<a id='L165' name='L165'></a> 165       <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = -1;
+<a id='L166' name='L166'></a> 166       <strong class='reserved'>break</strong>;
+<a id='L167' name='L167'></a> 167     <strong class='reserved'>case</strong> SDLK_DOWN:
+<a id='L168' name='L168'></a> 168       <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> += 1;
+<a id='L169' name='L169'></a> 169       <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = 1;
+<a id='L170' name='L170'></a> 170       <strong class='reserved'>break</strong>;
+<a id='L171' name='L171'></a> 171     <strong class='reserved'>case</strong> SDLK_LEFT:
+<a id='L172' name='L172'></a> 172       <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> -= 1;
+<a id='L173' name='L173'></a> 173       <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = -1;
+<a id='L174' name='L174'></a> 174       <strong class='reserved'>break</strong>;
+<a id='L175' name='L175'></a> 175     <strong class='reserved'>case</strong> SDLK_RIGHT:
+<a id='L176' name='L176'></a> 176       <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> += 1;
+<a id='L177' name='L177'></a> 177       <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = 1;
+<a id='L178' name='L178'></a> 178       <strong class='reserved'>break</strong>;
+<a id='L179' name='L179'></a> 179     <strong class='reserved'>default</strong>:
+<a id='L180' name='L180'></a> 180       <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("other\n");
+<a id='L181' name='L181'></a> 181       <strong class='reserved'>break</strong>;
+<a id='L182' name='L182'></a> 182   <em class='brace'>}</em>
+<a id='L183' name='L183'></a> 183 
+<a id='L184' name='L184'></a> 184   <strong class='reserved'>if</strong> (<a href='../S/29.html#L29' title='Defined at 29 in src/graphic-camera.c.'>occupy_position_by_others</a>(<a href='../Y/299.html' title='Multiple used in 3 places.'>from_pool</a>, <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>, &amp;<a href='../Y/386.html' title='Multiple used in 46 places.'>npc</a>) == <a href='../S/15.html#L20' title='Defined at 20 in include/base_type.h.'>NO</a>) <em class='brace'>{</em>
+<a id='L185' name='L185'></a> 185     <strong class='reserved'>if</strong> ((<a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> != 0) &amp;&amp; (<a href='../S/29.html#L111' title='Defined at 111 in src/graphic-camera.c.'>can_move_vertical</a>(<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>) == <a href='../S/15.html#L21' title='Defined at 21 in include/base_type.h.'>YES</a>)) <em class='brace'>{</em>
+<a id='L186' name='L186'></a> 186       <strong class='reserved'>switch</strong> (<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/562.html' title='Multiple used in 7 places.'>vertical</a>) <em class='brace'>{</em>
+<a id='L187' name='L187'></a> 187         <strong class='reserved'>case</strong> <a href='../S/13.html#L11' title='Defined at 11 in include/graphic-camera.h.'>CAMERA_MOVE</a>:
+<a id='L188' name='L188'></a> 188           <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L189' name='L189'></a> 189           <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L190' name='L190'></a> 190           <strong class='reserved'>break</strong>;
+<a id='L191' name='L191'></a> 191         <strong class='reserved'>default</strong>:
+<a id='L192' name='L192'></a> 192           <strong class='reserved'>break</strong>;
+<a id='L193' name='L193'></a> 193       <em class='brace'>}</em>
+<a id='L194' name='L194'></a> 194 
+<a id='L195' name='L195'></a> 195       <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L196' name='L196'></a> 196       <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L197' name='L197'></a> 197     <em class='brace'>}</em>
+<a id='L198' name='L198'></a> 198     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> ((<a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> != 0) &amp;&amp; (<a href='../S/29.html#L77' title='Defined at 77 in src/graphic-camera.c.'>can_move_horizon</a>(<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../Y/422.html' title='Multiple used in 28 places.'>point</a>) == <a href='../S/15.html#L21' title='Defined at 21 in include/base_type.h.'>YES</a>)) <em class='brace'>{</em>
+<a id='L199' name='L199'></a> 199       <strong class='reserved'>switch</strong> (<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a>) <em class='brace'>{</em>
+<a id='L200' name='L200'></a> 200         <strong class='reserved'>case</strong> <a href='../S/13.html#L11' title='Defined at 11 in include/graphic-camera.h.'>CAMERA_MOVE</a>:
+<a id='L201' name='L201'></a> 201           <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L202' name='L202'></a> 202           <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L203' name='L203'></a> 203           <strong class='reserved'>break</strong>;
+<a id='L204' name='L204'></a> 204         <strong class='reserved'>default</strong>:
+<a id='L205' name='L205'></a> 205           <strong class='reserved'>break</strong>;
+<a id='L206' name='L206'></a> 206       <em class='brace'>}</em>
+<a id='L207' name='L207'></a> 207 
+<a id='L208' name='L208'></a> 208       <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L209' name='L209'></a> 209       <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = <a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> + <a href='../Y/561.html' title='Multiple used in 15 places.'>vector</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L210' name='L210'></a> 210     <em class='brace'>}</em>
+<a id='L211' name='L211'></a> 211   <em class='brace'>}</em>
+<a id='L212' name='L212'></a> 212   <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L213' name='L213'></a> 213     <strong class='reserved'>if</strong> (<a href='../Y/208.html' title='Multiple used in 22 places.'>character</a>.<a href='../Y/193.html' title='Multiple used in 3 places.'>attack</a>(<a href='../Y/81.html' title='Multiple used in 12 places.'>Player</a>, <a href='../Y/386.html' title='Multiple used in 46 places.'>npc</a>) == <a href='../S/18.html#L7' title='Defined at 7 in include/character-status.h.'>DEAD</a>) <em class='brace'>{</em>
+<a id='L214' name='L214'></a> 214       <a href='../Y/208.html' title='Multiple used in 22 places.'>character</a>.<a href='../Y/481.html' title='Multiple used in 5 places.'>set_style</a>(<a href='../Y/386.html' title='Multiple used in 46 places.'>npc</a>, <a href='../Y/247.html' title='Multiple used in 6 places.'>dead</a>);
+<a id='L215' name='L215'></a> 215     <em class='brace'>}</em>
+<a id='L216' name='L216'></a> 216   <em class='brace'>}</em>
+<a id='L217' name='L217'></a> 217   <a href='../Y/210.html' title='Multiple used in 13 places.'>character_pool</a>.<a href='../S/25.html#L140' title='Defined at 140 in src/character-pool.c.'>reset_graph_position</a>(<a href='../Y/299.html' title='Multiple used in 3 places.'>from_pool</a>, <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>);
+<a id='L218' name='L218'></a> 218   <strong class='reserved'>return</strong> <a href='../Y/545.html' title='Multiple used in 11 places.'>true</a>;
+<a id='L219' name='L219'></a> 219 <em class='brace'>}</em>
+<a id='L220' name='L220'></a> 220 
+<a id='L221' name='L221'></a> 221 
+<a id='L222' name='L222'></a> 222 <strong class='reserved'>static</strong> <a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../S/29.html#L287' title='Referred from 287 in src/graphic-camera.c.'>camera_start</a>(<strong class='reserved'>void</strong>) <em class='brace'>{</em>
+<a id='L223' name='L223'></a> 223   <a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a> = <a href='../Y/202.html' title='Multiple used in 21 places.'>calloc</a>(1, <strong class='reserved'>sizeof</strong>(<a href='../S/13.html#L26' title='Defined at 26 in include/graphic-camera.h.'>Camera_Type</a>));
+<a id='L224' name='L224'></a> 224   <a href='../Y/68.html' title='Multiple used in 5 places.'>MAX_X</a> = 25;
+<a id='L225' name='L225'></a> 225   <a href='../Y/69.html' title='Multiple used in 5 places.'>MAX_Y</a> = 20;
+<a id='L226' name='L226'></a> 226 
+<a id='L227' name='L227'></a> 227   <a href='../Y/203.html' title='Multiple used in 10 places.'>camera</a>.<a href='../Y/476.html' title='Multiple used in 3 places.'>set_max_x</a>(<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../Y/68.html' title='Multiple used in 5 places.'>MAX_X</a>);
+<a id='L228' name='L228'></a> 228   <a href='../Y/203.html' title='Multiple used in 10 places.'>camera</a>.<a href='../Y/477.html' title='Multiple used in 3 places.'>set_max_y</a>(<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../Y/69.html' title='Multiple used in 5 places.'>MAX_Y</a>);
+<a id='L229' name='L229'></a> 229 
+<a id='L230' name='L230'></a> 230   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = 0;
+<a id='L231' name='L231'></a> 231   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = 0;
+<a id='L232' name='L232'></a> 232   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = <a href='../Y/68.html' title='Multiple used in 5 places.'>MAX_X</a> - 1;
+<a id='L233' name='L233'></a> 233   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = <a href='../Y/69.html' title='Multiple used in 5 places.'>MAX_Y</a> - 1;
+<a id='L234' name='L234'></a> 234 
+<a id='L235' name='L235'></a> 235   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a> = <a href='../S/13.html#L9' title='Defined at 9 in include/graphic-camera.h.'>CAMERA_UNDEFINE</a>;
+<a id='L236' name='L236'></a> 236   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/562.html' title='Multiple used in 7 places.'>vertical</a> = <a href='../S/13.html#L9' title='Defined at 9 in include/graphic-camera.h.'>CAMERA_UNDEFINE</a>;
+<a id='L237' name='L237'></a> 237   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a> = <a href='../Y/74.html' title='Multiple used in 147 places.'>NULL</a>;
+<a id='L238' name='L238'></a> 238   <strong class='reserved'>return</strong> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>;
+<a id='L239' name='L239'></a> 239 <em class='brace'>}</em>
+<a id='L240' name='L240'></a> 240 
+<a id='L241' name='L241'></a> 241 
+<a id='L242' name='L242'></a> 242 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../S/29.html#L288' title='Referred from 288 in src/graphic-camera.c.'>camera_stop</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>) <em class='brace'>{</em>
+<a id='L243' name='L243'></a> 243   <a href='../Y/297.html' title='Multiple used in 188 places.'>free</a>(<a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>);
+<a id='L244' name='L244'></a> 244 <em class='brace'>}</em>
+<a id='L245' name='L245'></a> 245 
+<a id='L246' name='L246'></a> 246 
+<a id='L247' name='L247'></a> 247 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../S/29.html#L293' title='Referred from 293 in src/graphic-camera.c.'>camera_set_max_x</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <strong class='reserved'>int</strong> <a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>) <em class='brace'>{</em>
+<a id='L248' name='L248'></a> 248   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/357.html' title='Multiple used in 4 places.'>max_x</a> = <a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L249' name='L249'></a> 249   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = (<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> - 1) / 2;
+<a id='L250' name='L250'></a> 250   <a href='../Y/68.html' title='Multiple used in 5 places.'>MAX_X</a> = <a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L251' name='L251'></a> 251 <em class='brace'>}</em>
+<a id='L252' name='L252'></a> 252 
+<a id='L253' name='L253'></a> 253 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../S/29.html#L294' title='Referred from 294 in src/graphic-camera.c.'>camera_set_max_y</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <strong class='reserved'>int</strong> <a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>) <em class='brace'>{</em>
+<a id='L254' name='L254'></a> 254   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/358.html' title='Multiple used in 4 places.'>max_y</a> = <a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L255' name='L255'></a> 255   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = (<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> - 1) / 2;
+<a id='L256' name='L256'></a> 256   <a href='../Y/69.html' title='Multiple used in 5 places.'>MAX_Y</a> = <a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L257' name='L257'></a> 257 <em class='brace'>}</em>
+<a id='L258' name='L258'></a> 258 
+<a id='L259' name='L259'></a> 259 
+<a id='L260' name='L260'></a> 260 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/498.html' title='Multiple referred from 3 places.'>set_player</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>) <em class='brace'>{</em>
+<a id='L261' name='L261'></a> 261   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a> = <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>;
+<a id='L262' name='L262'></a> 262 
+<a id='L263' name='L263'></a> 263   <a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L264' name='L264'></a> 264   <a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/90.html' title='Multiple used in 19 places.'>Real_Position</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L265' name='L265'></a> 265 
+<a id='L266' name='L266'></a> 266   <a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/42.html' title='Multiple used in 11 places.'>Graph_Position</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> = <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>;
+<a id='L267' name='L267'></a> 267   <a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>-&gt;<a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>-&gt;<a href='../Y/42.html' title='Multiple used in 11 places.'>Graph_Position</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> = <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>;
+<a id='L268' name='L268'></a> 268 
+<a id='L269' name='L269'></a> 269   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/421.html' title='Multiple used in 14 places.'>player</a> = <a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>;
+<a id='L270' name='L270'></a> 270 <em class='brace'>}</em>
+<a id='L271' name='L271'></a> 271 
+<a id='L272' name='L272'></a> 272 
+<a id='L273' name='L273'></a> 273 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/494.html' title='Multiple referred from 3 places.'>set_map</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../S/9.html#L10' title='Defined at 10 in include/map_system.h.'>Map_Access</a> <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>) <em class='brace'>{</em>
+<a id='L274' name='L274'></a> 274   <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a> -= 1;
+<a id='L275' name='L275'></a> 275   <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>-&gt;<a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>.<a href='../Y/573.html' title='Multiple used in 113 places.'>y</a> -= 1;
+<a id='L276' name='L276'></a> 276 
+<a id='L277' name='L277'></a> 277   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/347.html' title='Multiple used in 23 places.'>map</a> = <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>;
+<a id='L278' name='L278'></a> 278 <em class='brace'>}</em>
+<a id='L279' name='L279'></a> 279 
+<a id='L280' name='L280'></a> 280 
+<a id='L281' name='L281'></a> 281 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/492.html' title='Multiple referred from 3 places.'>set_dead_style</a>(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>, <a href='../S/11.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> <a href='../Y/517.html' title='Multiple used in 4 places.'>style</a>) <em class='brace'>{</em>
+<a id='L282' name='L282'></a> 282   <a href='../Y/178.html' title='Multiple used in 149 places.'>access</a>-&gt;<a href='../Y/247.html' title='Multiple used in 6 places.'>dead</a> = <a href='../Y/517.html' title='Multiple used in 4 places.'>style</a>;
+<a id='L283' name='L283'></a> 283 <em class='brace'>}</em>
+<a id='L284' name='L284'></a> 284 
+<a id='L285' name='L285'></a> 285 
+<a id='L286' name='L286'></a> 286 <a href='../S/13.html#L42' title='Defined at 42 in include/graphic-camera.h.'>Graphic_Camera_API</a> <a href='../Y/203.html' title='Multiple used in 10 places.'>camera</a> = <em class='brace'>{</em>
+<a id='L287' name='L287'></a> 287   .<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a> = <a href='../S/29.html#L222' title='Defined at 222 in src/graphic-camera.c.'>camera_start</a>,
+<a id='L288' name='L288'></a> 288   .<a href='../Y/501.html' title='Multiple used in 18 places.'>stop</a> = <a href='../S/29.html#L242' title='Defined at 242 in src/graphic-camera.c.'>camera_stop</a>,
+<a id='L289' name='L289'></a> 289 
+<a id='L290' name='L290'></a> 290   .<a href='../S/29.html#L260' title='Defined at 260 in src/graphic-camera.c.'>set_player</a> = <a href='../S/29.html#L260' title='Defined at 260 in src/graphic-camera.c.'>set_player</a>,
+<a id='L291' name='L291'></a> 291   .<a href='../S/29.html#L273' title='Defined at 273 in src/graphic-camera.c.'>set_map</a> = <a href='../S/29.html#L273' title='Defined at 273 in src/graphic-camera.c.'>set_map</a>,
+<a id='L292' name='L292'></a> 292 
+<a id='L293' name='L293'></a> 293   .<a href='../Y/476.html' title='Multiple used in 3 places.'>set_max_x</a> = <a href='../S/29.html#L247' title='Defined at 247 in src/graphic-camera.c.'>camera_set_max_x</a>,
+<a id='L294' name='L294'></a> 294   .<a href='../Y/477.html' title='Multiple used in 3 places.'>set_max_y</a> = <a href='../S/29.html#L253' title='Defined at 253 in src/graphic-camera.c.'>camera_set_max_y</a>,
+<a id='L295' name='L295'></a> 295   .<a href='../S/29.html#L281' title='Defined at 281 in src/graphic-camera.c.'>set_dead_style</a> = <a href='../S/29.html#L281' title='Defined at 281 in src/graphic-camera.c.'>set_dead_style</a>,
+<a id='L296' name='L296'></a> 296 
+<a id='L297' name='L297'></a> 297   .<a href='../Y/532.html' title='Multiple used in 3 places.'>take</a> = <a href='../S/29.html#L145' title='Defined at 145 in src/graphic-camera.c.'>key_process</a>
+<a id='L298' name='L298'></a> 298 <em class='brace'>}</em>;
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L8'>[^]</a><a href='#L281'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

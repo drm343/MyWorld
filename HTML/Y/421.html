@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>position</title>
+<title>player</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,20 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/26.html#L10'>position</a>           10 src/main.c     SDL_Rect position = {</span>
-<span class='curline'><a href='../S/26.html#L128'>position</a>          128 src/main.c       position.x = GRID_LENGTH * Player-&gt;base-&gt;Graph_Position.x;</span>
-<span class='curline'><a href='../S/26.html#L129'>position</a>          129 src/main.c       position.y = GRID_LENGTH * Player-&gt;base-&gt;Graph_Position.y;</span>
-<span class='curline'><a href='../S/26.html#L130'>position</a>          130 src/main.c       SDL_RenderCopy(render, Player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
+<span class='curline'><a href='../S/13.html#L16'>player</a>             16 include/graphic-camera.h   Status_Access player;</span>
+<span class='curline'><a href='../S/29.html#L41'>player</a>             41 src/graphic-camera.c   Status_Access Player = access-&gt;player;</span>
+<span class='curline'><a href='../S/29.html#L147'>player</a>            147 src/graphic-camera.c   Status_Access Player = access-&gt;player;</span>
+<span class='curline'><a href='../S/29.html#L260'>player</a>            260 src/graphic-camera.c static void set_player(Camera_Access access, Status_Access player) {</span>
+<span class='curline'><a href='../S/29.html#L263'>player</a>            263 src/graphic-camera.c   player-&gt;base-&gt;Real_Position.x = center.x;</span>
+<span class='curline'><a href='../S/29.html#L264'>player</a>            264 src/graphic-camera.c   player-&gt;base-&gt;Real_Position.y = center.y;</span>
+<span class='curline'><a href='../S/29.html#L266'>player</a>            266 src/graphic-camera.c   player-&gt;base-&gt;Graph_Position.x = center.x;</span>
+<span class='curline'><a href='../S/29.html#L267'>player</a>            267 src/graphic-camera.c   player-&gt;base-&gt;Graph_Position.y = center.y;</span>
+<span class='curline'><a href='../S/29.html#L269'>player</a>            269 src/graphic-camera.c   access-&gt;player = player;</span>
+<span class='curline'><a href='../S/27.html#L31'>player</a>             31 src/main.c       position.x = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.x;</span>
+<span class='curline'><a href='../S/27.html#L32'>player</a>             32 src/main.c       position.y = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.y;</span>
+<span class='curline'><a href='../S/27.html#L33'>player</a>             33 src/main.c       SDL_RenderCopy(render, camera_1-&gt;player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
+<span class='curline'><a href='../S/27.html#L40'>player</a>             40 src/main.c           if (!Point.eq(&amp;(npc-&gt;base-&gt;Real_Position), &amp;(camera_1-&gt;player-&gt;base-&gt;Real_Position))) {</span>
+<span class='curline'><a href='../S/27.html#L77'>player</a>             77 src/main.c       character.set_style(camera_1-&gt;player, result);</span>
 </pre>
 </body>
 </html>

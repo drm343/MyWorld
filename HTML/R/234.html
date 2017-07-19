@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_input_buffer_in_range</title>
+<title>mpc_expect</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,38 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L383'>mpc_input_buffer_in_range</a>  383 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/43.html#L418'>mpc_input_buffer_in_range</a>  418 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/43.html#L441'>mpc_input_buffer_in_range</a>  441 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/43.html#L455'>mpc_input_buffer_in_range</a>  455 mpc/mpc.c        &amp;&amp;  i-&gt;buffer &amp;&amp; !mpc_input_buffer_in_range(i)) {</span>
+<span class='curline'><a href='../S/46.html#L1588'>mpc_expect</a>       1588 mpc/mpc.c        return mpc_expect(p, "anchor");</span>
+<span class='curline'><a href='../S/46.html#L1651'>mpc_expect</a>       1651 mpc/mpc.c        return mpc_expect(p, "any character");</span>
+<span class='curline'><a href='../S/46.html#L1832'>mpc_expect</a>       1832 mpc/mpc.c      mpc_parser_t *mpc_soi(void) { return mpc_expect(mpc_anchor(mpc_soi_anchor), "start of input"); }</span>
+<span class='curline'><a href='../S/46.html#L1833'>mpc_expect</a>       1833 mpc/mpc.c      mpc_parser_t *mpc_eoi(void) { return mpc_expect(mpc_anchor(mpc_eoi_anchor), "end of input"); }</span>
+<span class='curline'><a href='../S/46.html#L1846'>mpc_expect</a>       1846 mpc/mpc.c      mpc_parser_t *mpc_boundary(void) { return mpc_expect(mpc_anchor(mpc_boundary_anchor), "boundary"); }</span>
+<span class='curline'><a href='../S/46.html#L1848'>mpc_expect</a>       1848 mpc/mpc.c      mpc_parser_t *mpc_whitespace(void) { return mpc_expect(mpc_oneof(" \f\n\r\t\v"), "whitespace"); }</span>
+<span class='curline'><a href='../S/46.html#L1849'>mpc_expect</a>       1849 mpc/mpc.c      mpc_parser_t *mpc_whitespaces(void) { return mpc_expect(mpc_many(mpcf_strfold, mpc_whitespace()), "spaces"); }</span>
+<span class='curline'><a href='../S/46.html#L1850'>mpc_expect</a>       1850 mpc/mpc.c      mpc_parser_t *mpc_blank(void) { return mpc_expect(mpc_apply(mpc_whitespaces(), mpcf_free), "whitespace"); }</span>
+<span class='curline'><a href='../S/46.html#L1852'>mpc_expect</a>       1852 mpc/mpc.c      mpc_parser_t *mpc_newline(void) { return mpc_expect(mpc_char('\n'), "newline"); }</span>
+<span class='curline'><a href='../S/46.html#L1853'>mpc_expect</a>       1853 mpc/mpc.c      mpc_parser_t *mpc_tab(void) { return mpc_expect(mpc_char('\t'), "tab"); }</span>
+<span class='curline'><a href='../S/46.html#L1856'>mpc_expect</a>       1856 mpc/mpc.c      mpc_parser_t *mpc_digit(void) { return mpc_expect(mpc_oneof("0123456789"), "digit"); }</span>
+<span class='curline'><a href='../S/46.html#L1857'>mpc_expect</a>       1857 mpc/mpc.c      mpc_parser_t *mpc_hexdigit(void) { return mpc_expect(mpc_oneof("0123456789ABCDEFabcdef"), "hex digit"); }</span>
+<span class='curline'><a href='../S/46.html#L1858'>mpc_expect</a>       1858 mpc/mpc.c      mpc_parser_t *mpc_octdigit(void) { return mpc_expect(mpc_oneof("01234567"), "oct digit"); }</span>
+<span class='curline'><a href='../S/46.html#L1859'>mpc_expect</a>       1859 mpc/mpc.c      mpc_parser_t *mpc_digits(void) { return mpc_expect(mpc_many1(mpcf_strfold, mpc_digit()), "digits"); }</span>
+<span class='curline'><a href='../S/46.html#L1860'>mpc_expect</a>       1860 mpc/mpc.c      mpc_parser_t *mpc_hexdigits(void) { return mpc_expect(mpc_many1(mpcf_strfold, mpc_hexdigit()), "hex digits"); }</span>
+<span class='curline'><a href='../S/46.html#L1861'>mpc_expect</a>       1861 mpc/mpc.c      mpc_parser_t *mpc_octdigits(void) { return mpc_expect(mpc_many1(mpcf_strfold, mpc_octdigit()), "oct digits"); }</span>
+<span class='curline'><a href='../S/46.html#L1863'>mpc_expect</a>       1863 mpc/mpc.c      mpc_parser_t *mpc_lower(void) { return mpc_expect(mpc_oneof("abcdefghijklmnopqrstuvwxyz"), "lowercase letter"); }</span>
+<span class='curline'><a href='../S/46.html#L1864'>mpc_expect</a>       1864 mpc/mpc.c      mpc_parser_t *mpc_upper(void) { return mpc_expect(mpc_oneof("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "uppercase letter"); }</span>
+<span class='curline'><a href='../S/46.html#L1865'>mpc_expect</a>       1865 mpc/mpc.c      mpc_parser_t *mpc_alpha(void) { return mpc_expect(mpc_oneof("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), "letter"); }</span>
+<span class='curline'><a href='../S/46.html#L1866'>mpc_expect</a>       1866 mpc/mpc.c      mpc_parser_t *mpc_underscore(void) { return mpc_expect(mpc_char('_'), "underscore"); }</span>
+<span class='curline'><a href='../S/46.html#L1867'>mpc_expect</a>       1867 mpc/mpc.c      mpc_parser_t *mpc_alphanum(void) { return mpc_expect(mpc_or(3, mpc_alpha(), mpc_digit(), mpc_underscore()), "alphanumeric"); }</span>
+<span class='curline'><a href='../S/46.html#L1869'>mpc_expect</a>       1869 mpc/mpc.c      mpc_parser_t *mpc_int(void) { return mpc_expect(mpc_apply(mpc_digits(), mpcf_int), "integer"); }</span>
+<span class='curline'><a href='../S/46.html#L1870'>mpc_expect</a>       1870 mpc/mpc.c      mpc_parser_t *mpc_hex(void) { return mpc_expect(mpc_apply(mpc_hexdigits(), mpcf_hex), "hexadecimal"); }</span>
+<span class='curline'><a href='../S/46.html#L1871'>mpc_expect</a>       1871 mpc/mpc.c      mpc_parser_t *mpc_oct(void) { return mpc_expect(mpc_apply(mpc_octdigits(), mpcf_oct), "octadecimal"); }</span>
+<span class='curline'><a href='../S/46.html#L1872'>mpc_expect</a>       1872 mpc/mpc.c      mpc_parser_t *mpc_number(void) { return mpc_expect(mpc_or(3, mpc_int(), mpc_hex(), mpc_oct()), "number"); }</span>
+<span class='curline'><a href='../S/46.html#L1888'>mpc_expect</a>       1888 mpc/mpc.c        return mpc_expect(mpc_and(4, mpcf_strfold, p0, p1, p2, p3, free, free, free), "real");</span>
+<span class='curline'><a href='../S/46.html#L1893'>mpc_expect</a>       1893 mpc/mpc.c        return mpc_expect(mpc_apply(mpc_real(), mpcf_float), "float");</span>
+<span class='curline'><a href='../S/46.html#L1897'>mpc_expect</a>       1897 mpc/mpc.c        return mpc_expect(mpc_between(mpc_or(2, mpc_escape(), mpc_any()), free, "'", "'"), "char");</span>
+<span class='curline'><a href='../S/46.html#L1902'>mpc_expect</a>       1902 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, strchar), free, "\"", "\""), "string");</span>
+<span class='curline'><a href='../S/46.html#L1907'>mpc_expect</a>       1907 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, regexchar), free, "/", "/"), "regex");</span>
+<span class='curline'><a href='../S/46.html#L3431'>mpc_expect</a>       3431 mpc/mpc.c          if (stmt-&gt;name) { stmt-&gt;grammar = mpc_expect(stmt-&gt;grammar, stmt-&gt;name); }</span>
+<span class='curline'><a href='../S/47.html#L124'>mpc_expect</a>        124 mpc/mpc.h      mpc_parser_t *mpc_expect(mpc_parser_t *a, const char *e);</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>Stripper</title>
+<title>Style_Pool_Interface</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,17 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L76'>Stripper</a>           76 mpc/tests/core.c   mpc_parser_t *Stripper  = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrim);</span>
-<span class='curline'><a href='../S/46.html#L80'>Stripper</a>           80 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Stripper,  " asdmlm dasd  ", "asdmlm dasd", streq, free, strprint));</span>
-<span class='curline'><a href='../S/46.html#L84'>Stripper</a>           84 mpc/tests/core.c   mpc_delete(Stripper);</span>
+<span class='curline'><a href='../S/11.html#L46'>Style_Pool_Interface</a>   46 include/graphic.h extern STYLE_POOL_INTERFACE Style_Pool_Interface;</span>
+<span class='curline'><a href='../S/19.html#L73'>Style_Pool_Interface</a>   73 include/main_set_character.h   Style_Access style_access = Style_Pool_Interface.malloc(style_pool);</span>
+<span class='curline'><a href='../S/8.html#L86'>Style_Pool_Interface</a>   86 include/main_set_config.h     style_access = Style_Pool_Interface.malloc(style_pool);</span>
+<span class='curline'><a href='../S/23.html#L90'>Style_Pool_Interface</a>   90 src/graphic.c  STYLE_POOL_INTERFACE Style_Pool_Interface = {</span>
+<span class='curline'><a href='../S/27.html#L62'>Style_Pool_Interface</a>   62 src/main.c       Style_Access result = Style_Pool_Interface.next(style_pool, &amp;counter);</span>
+<span class='curline'><a href='../S/27.html#L72'>Style_Pool_Interface</a>   72 src/main.c         result = Style_Pool_Interface.next(style_pool, &amp;counter);</span>
+<span class='curline'><a href='../S/27.html#L76'>Style_Pool_Interface</a>   76 src/main.c       result = Style_Pool_Interface.find(style_pool, "player");</span>
+<span class='curline'><a href='../S/27.html#L79'>Style_Pool_Interface</a>   79 src/main.c       Style_Access dead = Style_Pool_Interface.find(style_pool, "dead");</span>
+<span class='curline'><a href='../S/27.html#L92'>Style_Pool_Interface</a>   92 src/main.c       style_pool = Style_Pool_Interface.start(256);</span>
+<span class='curline'><a href='../S/27.html#L150'>Style_Pool_Interface</a>  150 src/main.c       Style_Pool_Interface.gc(style_pool);</span>
+<span class='curline'><a href='../S/27.html#L163'>Style_Pool_Interface</a>  163 src/main.c       Style_Pool_Interface.stop(style_pool);</span>
 </pre>
 </body>
 </html>

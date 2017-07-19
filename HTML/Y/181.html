@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>access</title>
+<title>and</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,76 +9,106 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/12.html#L22'>access</a>             22 include/graphic.h   SDL_Texture_Access access;</span>
-<span class='curline'><a href='../S/25.html#L102'>access</a>            102 src/character-pool.c static Found_Result pool_find(Character_Pool_Access access, Status_Access *npc,</span>
-<span class='curline'><a href='../S/25.html#L105'>access</a>            105 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
-<span class='curline'><a href='../S/25.html#L108'>access</a>            108 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
-<span class='curline'><a href='../S/25.html#L119'>access</a>            119 src/character-pool.c static Found_Result pool_find_by_position(Character_Pool_Access access, Status_Access *npc,</span>
-<span class='curline'><a href='../S/25.html#L122'>access</a>            122 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
-<span class='curline'><a href='../S/25.html#L125'>access</a>            125 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
-<span class='curline'><a href='../S/22.html#L6'>access</a>              6 src/character-skill.c static void set_skill_name(Skill_Access access, String name) {</span>
-<span class='curline'><a href='../S/22.html#L7'>access</a>              7 src/character-skill.c   access-&gt;name = name;</span>
-<span class='curline'><a href='../S/22.html#L10'>access</a>             10 src/character-skill.c static void set_skill_efficacy(Skill_Access access, uint8_t efficacy) {</span>
-<span class='curline'><a href='../S/22.html#L11'>access</a>             11 src/character-skill.c   access-&gt;efficacy = efficacy;</span>
-<span class='curline'><a href='../S/22.html#L14'>access</a>             14 src/character-skill.c static void remove_skill(Skill_Access access) {</span>
-<span class='curline'><a href='../S/22.html#L15'>access</a>             15 src/character-skill.c   access-&gt;status = UNUSE;</span>
-<span class='curline'><a href='../S/22.html#L48'>access</a>             48 src/character-skill.c static bool pool_find(Skill_Pool_Access access, Status_Access owner,</span>
-<span class='curline'><a href='../S/22.html#L51'>access</a>             51 src/character-skill.c   uint8_t used = access-&gt;max_size - access-&gt;current_size;</span>
-<span class='curline'><a href='../S/22.html#L55'>access</a>             55 src/character-skill.c     *result = &amp;(access-&gt;pool[count]);</span>
-<span class='curline'><a href='../S/24.html#L4'>access</a>              4 src/character-status.c static void print_status(Status_Access access) {</span>
-<span class='curline'><a href='../S/24.html#L5'>access</a>              5 src/character-status.c   Character_Base_Access base = access-&gt;base;</span>
-<span class='curline'><a href='../S/24.html#L8'>access</a>              8 src/character-status.c   printf("%s : %s\n", base-&gt;name, access-&gt;race);</span>
-<span class='curline'><a href='../S/24.html#L10'>access</a>             10 src/character-status.c   printf("Damage: %d\n", access-&gt;damage);</span>
-<span class='curline'><a href='../S/24.html#L14'>access</a>             14 src/character-status.c static void character_init(Status_Access access) {</span>
-<span class='curline'><a href='../S/24.html#L15'>access</a>             15 src/character-status.c   character_base_init(access-&gt;base);</span>
-<span class='curline'><a href='../S/24.html#L19'>access</a>             19 src/character-status.c static void character_copy(Status_Access access, Status_Access from) {</span>
-<span class='curline'><a href='../S/24.html#L20'>access</a>             20 src/character-status.c   from-&gt;base-&gt;copy(access-&gt;base, from-&gt;base);</span>
-<span class='curline'><a href='../S/24.html#L21'>access</a>             21 src/character-status.c   access-&gt;race = from-&gt;race;</span>
-<span class='curline'><a href='../S/24.html#L23'>access</a>             23 src/character-status.c   access-&gt;faction = from-&gt;faction;</span>
-<span class='curline'><a href='../S/24.html#L24'>access</a>             24 src/character-status.c   access-&gt;damage = from-&gt;damage;</span>
-<span class='curline'><a href='../S/24.html#L46'>access</a>             46 src/character-status.c static void set_base_name(Status_Access access, String name) {</span>
-<span class='curline'><a href='../S/24.html#L47'>access</a>             47 src/character-status.c   access-&gt;base-&gt;name = name;</span>
-<span class='curline'><a href='../S/24.html#L50'>access</a>             50 src/character-status.c static void set_race(Status_Access access, String race) {</span>
-<span class='curline'><a href='../S/24.html#L51'>access</a>             51 src/character-status.c   access-&gt;race = race;</span>
-<span class='curline'><a href='../S/24.html#L54'>access</a>             54 src/character-status.c static void set_base_style(Status_Access access, Style_Access style) {</span>
-<span class='curline'><a href='../S/24.html#L55'>access</a>             55 src/character-status.c   access-&gt;base-&gt;Mark = style;</span>
-<span class='curline'><a href='../S/24.html#L58'>access</a>             58 src/character-status.c static void set_base_mark(Status_Access access, String mark) {</span>
-<span class='curline'><a href='../S/24.html#L59'>access</a>             59 src/character-status.c   access-&gt;base-&gt;Mark-&gt;mark = mark;</span>
-<span class='curline'><a href='../S/24.html#L66'>access</a>             66 src/character-status.c static Relation_Type get_relation(Status_Access access) {</span>
-<span class='curline'><a href='../S/24.html#L67'>access</a>             67 src/character-status.c   return access-&gt;faction;</span>
-<span class='curline'><a href='../S/24.html#L70'>access</a>             70 src/character-status.c static void set_ally(Status_Access access) {</span>
-<span class='curline'><a href='../S/24.html#L71'>access</a>             71 src/character-status.c   access-&gt;faction = RELATION_ALLY;</span>
-<span class='curline'><a href='../S/24.html#L74'>access</a>             74 src/character-status.c static void set_enemy(Status_Access access) {</span>
-<span class='curline'><a href='../S/24.html#L75'>access</a>             75 src/character-status.c   access-&gt;faction = RELATION_ENEMY;</span>
-<span class='curline'><a href='../S/24.html#L78'>access</a>             78 src/character-status.c static void set_neutral(Status_Access access) {</span>
-<span class='curline'><a href='../S/24.html#L79'>access</a>             79 src/character-status.c   access-&gt;faction = RELATION_NEUTRAL;</span>
-<span class='curline'><a href='../S/23.html#L4'>access</a>              4 src/character.c static void release(Character_Base_Access access) {</span>
-<span class='curline'><a href='../S/23.html#L5'>access</a>              5 src/character.c   access-&gt;status = UNUSE;</span>
-<span class='curline'><a href='../S/23.html#L9'>access</a>              9 src/character.c static void character_copy(Character_Base_Access access, Character_Base_Access from) {</span>
-<span class='curline'><a href='../S/23.html#L10'>access</a>             10 src/character.c   access-&gt;name = from-&gt;name;</span>
-<span class='curline'><a href='../S/23.html#L11'>access</a>             11 src/character.c   access-&gt;Mark = from-&gt;Mark;</span>
-<span class='curline'><a href='../S/23.html#L13'>access</a>             13 src/character.c   access-&gt;crossable = from-&gt;crossable;</span>
-<span class='curline'><a href='../S/23.html#L14'>access</a>             14 src/character.c   access-&gt;attackable = from-&gt;attackable;</span>
-<span class='curline'><a href='../S/23.html#L15'>access</a>             15 src/character.c   access-&gt;is_alive = true;</span>
-<span class='curline'><a href='../S/23.html#L16'>access</a>             16 src/character.c   access-&gt;status = IN_USE;</span>
-<span class='curline'><a href='../S/23.html#L18'>access</a>             18 src/character.c   access-&gt;release = from-&gt;release;</span>
-<span class='curline'><a href='../S/23.html#L19'>access</a>             19 src/character.c   access-&gt;copy = from-&gt;copy;</span>
-<span class='curline'><a href='../S/23.html#L23'>access</a>             23 src/character.c void character_base_init(Character_Base_Access access) {</span>
-<span class='curline'><a href='../S/23.html#L24'>access</a>             24 src/character.c   access-&gt;Real_Position.x  = 0;</span>
-<span class='curline'><a href='../S/23.html#L25'>access</a>             25 src/character.c   access-&gt;Real_Position.y  = 0;</span>
-<span class='curline'><a href='../S/23.html#L26'>access</a>             26 src/character.c   access-&gt;Graph_Position.x = 0;</span>
-<span class='curline'><a href='../S/23.html#L27'>access</a>             27 src/character.c   access-&gt;Graph_Position.y = 0;</span>
-<span class='curline'><a href='../S/23.html#L28'>access</a>             28 src/character.c   access-&gt;crossable = false;</span>
-<span class='curline'><a href='../S/23.html#L29'>access</a>             29 src/character.c   access-&gt;attackable = true;</span>
-<span class='curline'><a href='../S/23.html#L30'>access</a>             30 src/character.c   access-&gt;is_alive = true;</span>
-<span class='curline'><a href='../S/23.html#L31'>access</a>             31 src/character.c   access-&gt;status = IN_USE;</span>
-<span class='curline'><a href='../S/23.html#L33'>access</a>             33 src/character.c   access-&gt;release = release;</span>
-<span class='curline'><a href='../S/23.html#L34'>access</a>             34 src/character.c   access-&gt;copy = character_copy;</span>
-<span class='curline'><a href='../S/19.html#L80'>access</a>             80 src/graphic.c      SDL_DestroyTexture(result-&gt;access);</span>
-<span class='curline'><a href='../S/19.html#L81'>access</a>             81 src/graphic.c      result-&gt;access = NULL;</span>
-<span class='curline'><a href='../S/26.html#L130'>access</a>            130 src/main.c       SDL_RenderCopy(render, Player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
-<span class='curline'><a href='../S/26.html#L140'>access</a>            140 src/main.c             SDL_RenderCopy(render, npc-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(rect));</span>
-<span class='curline'><a href='../S/26.html#L165'>access</a>            165 src/main.c         result-&gt;access = SDL_CreateTextureFromSurface(render, surfaceMessage);</span>
+<span class='curline'><a href='../S/46.html#L918'>and</a>               918 mpc/mpc.c        mpc_pdata_and_t and;</span>
+<span class='curline'><a href='../S/46.html#L1198'>and</a>              1198 mpc/mpc.c            if (p-&gt;data.and.n == 0) { MPC_SUCCESS(NULL); }</span>
+<span class='curline'><a href='../S/46.html#L1205'>and</a>              1205 mpc/mpc.c            for (j = 0; j &lt; p-&gt;data.and.n; j++) {</span>
+<span class='curline'><a href='../S/46.html#L1206'>and</a>              1206 mpc/mpc.c              if (!mpc_parse_run(i, p-&gt;data.and.xs[j], &amp;results[j], e)) {</span>
+<span class='curline'><a href='../S/46.html#L1209'>and</a>              1209 mpc/mpc.c                  mpc_parse_dtor(i, p-&gt;data.and.dxs[k], results[k].output);</span>
+<span class='curline'><a href='../S/46.html#L1217'>and</a>              1217 mpc/mpc.c              mpc_parse_fold(i, p-&gt;data.and.f, j, (mpc_val_t**)results);</span>
+<span class='curline'><a href='../S/46.html#L1316'>and</a>              1316 mpc/mpc.c        for (i = 0; i &lt; p-&gt;data.and.n; i++) {</span>
+<span class='curline'><a href='../S/46.html#L1317'>and</a>              1317 mpc/mpc.c          mpc_undefine_unretained(p-&gt;data.and.xs[i], 0);</span>
+<span class='curline'><a href='../S/46.html#L1319'>and</a>              1319 mpc/mpc.c        free(p-&gt;data.and.xs);</span>
+<span class='curline'><a href='../S/46.html#L1320'>and</a>              1320 mpc/mpc.c        free(p-&gt;data.and.dxs);</span>
+<span class='curline'><a href='../S/46.html#L1464'>and</a>              1464 mpc/mpc.c            p-&gt;data.and.xs = malloc(a-&gt;data.and.n * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L1465'>and</a>              1465 mpc/mpc.c            for (i = 0; i &lt; a-&gt;data.and.n; i++) {</span>
+<span class='curline'><a href='../S/46.html#L1466'>and</a>              1466 mpc/mpc.c              p-&gt;data.and.xs[i] = mpc_copy(a-&gt;data.and.xs[i]);</span>
+<span class='curline'><a href='../S/46.html#L1468'>and</a>              1468 mpc/mpc.c            p-&gt;data.and.dxs = malloc((a-&gt;data.and.n-1) * sizeof(mpc_dtor_t));</span>
+<span class='curline'><a href='../S/46.html#L1469'>and</a>              1469 mpc/mpc.c            for (i = 0; i &lt; a-&gt;data.and.n-1; i++) {</span>
+<span class='curline'><a href='../S/46.html#L1470'>and</a>              1470 mpc/mpc.c              p-&gt;data.and.dxs[i] = a-&gt;data.and.dxs[i];</span>
+<span class='curline'><a href='../S/46.html#L1808'>and</a>              1808 mpc/mpc.c        p-&gt;data.and.n = n;</span>
+<span class='curline'><a href='../S/46.html#L1809'>and</a>              1809 mpc/mpc.c        p-&gt;data.and.f = f;</span>
+<span class='curline'><a href='../S/46.html#L1810'>and</a>              1810 mpc/mpc.c        p-&gt;data.and.xs = malloc(sizeof(mpc_parser_t*) * n);</span>
+<span class='curline'><a href='../S/46.html#L1811'>and</a>              1811 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/46.html#L1815'>and</a>              1815 mpc/mpc.c          p-&gt;data.and.xs[i] = va_arg(va, mpc_parser_t*);</span>
+<span class='curline'><a href='../S/46.html#L1818'>and</a>              1818 mpc/mpc.c          p-&gt;data.and.dxs[i] = va_arg(va, mpc_dtor_t);</span>
+<span class='curline'><a href='../S/46.html#L2583'>and</a>              2583 mpc/mpc.c          for(i = 0; i &lt; p-&gt;data.and.n-1; i++) {</span>
+<span class='curline'><a href='../S/46.html#L2584'>and</a>              2584 mpc/mpc.c            mpc_print_unretained(p-&gt;data.and.xs[i], 0);</span>
+<span class='curline'><a href='../S/46.html#L2587'>and</a>              2587 mpc/mpc.c          mpc_print_unretained(p-&gt;data.and.xs[p-&gt;data.and.n-1], 0);</span>
+<span class='curline'><a href='../S/46.html#L3098'>and</a>              3098 mpc/mpc.c        p-&gt;data.and.n = n;</span>
+<span class='curline'><a href='../S/46.html#L3099'>and</a>              3099 mpc/mpc.c        p-&gt;data.and.f = mpcf_fold_ast;</span>
+<span class='curline'><a href='../S/46.html#L3100'>and</a>              3100 mpc/mpc.c        p-&gt;data.and.xs = malloc(sizeof(mpc_parser_t*) * n);</span>
+<span class='curline'><a href='../S/46.html#L3101'>and</a>              3101 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/46.html#L3105'>and</a>              3105 mpc/mpc.c          p-&gt;data.and.xs[i] = va_arg(va, mpc_parser_t*);</span>
+<span class='curline'><a href='../S/46.html#L3108'>and</a>              3108 mpc/mpc.c          p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete;</span>
+<span class='curline'><a href='../S/46.html#L3644'>and</a>              3644 mpc/mpc.c          for(i = 0; i &lt; p-&gt;data.and.n; i++) {</span>
+<span class='curline'><a href='../S/46.html#L3645'>and</a>              3645 mpc/mpc.c            total += mpc_nodecount_unretained(p-&gt;data.and.xs[i], 0);</span>
+<span class='curline'><a href='../S/46.html#L3686'>and</a>              3686 mpc/mpc.c          for(i = 0; i &lt; p-&gt;data.and.n; i++) {</span>
+<span class='curline'><a href='../S/46.html#L3687'>and</a>              3687 mpc/mpc.c            mpc_optimise_unretained(p-&gt;data.and.xs[i], 0);</span>
+<span class='curline'><a href='../S/46.html#L3724'>and</a>              3724 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.n == 2</span>
+<span class='curline'><a href='../S/46.html#L3725'>and</a>              3725 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;type == MPC_TYPE_PASS</span>
+<span class='curline'><a href='../S/46.html#L3726'>and</a>              3726 mpc/mpc.c          &amp;&amp; !p-&gt;data.and.xs[0]-&gt;retained</span>
+<span class='curline'><a href='../S/46.html#L3727'>and</a>              3727 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_fold_ast) {</span>
+<span class='curline'><a href='../S/46.html#L3728'>and</a>              3728 mpc/mpc.c            t = p-&gt;data.and.xs[1];</span>
+<span class='curline'><a href='../S/46.html#L3729'>and</a>              3729 mpc/mpc.c            mpc_delete(p-&gt;data.and.xs[0]);</span>
+<span class='curline'><a href='../S/46.html#L3730'>and</a>              3730 mpc/mpc.c            free(p-&gt;data.and.xs); free(p-&gt;data.and.dxs); free(p-&gt;name);</span>
+<span class='curline'><a href='../S/46.html#L3738'>and</a>              3738 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_fold_ast</span>
+<span class='curline'><a href='../S/46.html#L3739'>and</a>              3739 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;type == MPC_TYPE_AND</span>
+<span class='curline'><a href='../S/46.html#L3740'>and</a>              3740 mpc/mpc.c          &amp;&amp; !p-&gt;data.and.xs[0]-&gt;retained</span>
+<span class='curline'><a href='../S/46.html#L3741'>and</a>              3741 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.and.f == mpcf_fold_ast) {</span>
+<span class='curline'><a href='../S/46.html#L3742'>and</a>              3742 mpc/mpc.c            t = p-&gt;data.and.xs[0];</span>
+<span class='curline'><a href='../S/46.html#L3743'>and</a>              3743 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
+<span class='curline'><a href='../S/46.html#L3744'>and</a>              3744 mpc/mpc.c            p-&gt;data.and.n = n + m - 1;</span>
+<span class='curline'><a href='../S/46.html#L3745'>and</a>              3745 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m - 1));</span>
+<span class='curline'><a href='../S/46.html#L3746'>and</a>              3746 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3747'>and</a>              3747 mpc/mpc.c            memmove(p-&gt;data.and.xs + m, p-&gt;data.and.xs + 1, (n - 1) * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3748'>and</a>              3748 mpc/mpc.c            memmove(p-&gt;data.and.xs, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3749'>and</a>              3749 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete; }</span>
+<span class='curline'><a href='../S/46.html#L3750'>and</a>              3750 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/46.html#L3756'>and</a>              3756 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_fold_ast</span>
+<span class='curline'><a href='../S/46.html#L3757'>and</a>              3757 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;type == MPC_TYPE_AND</span>
+<span class='curline'><a href='../S/46.html#L3758'>and</a>              3758 mpc/mpc.c          &amp;&amp; !p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;retained</span>
+<span class='curline'><a href='../S/46.html#L3759'>and</a>              3759 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;data.and.f == mpcf_fold_ast) {</span>
+<span class='curline'><a href='../S/46.html#L3760'>and</a>              3760 mpc/mpc.c            t = p-&gt;data.and.xs[p-&gt;data.and.n-1];</span>
+<span class='curline'><a href='../S/46.html#L3761'>and</a>              3761 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
+<span class='curline'><a href='../S/46.html#L3762'>and</a>              3762 mpc/mpc.c            p-&gt;data.and.n = n + m - 1;</span>
+<span class='curline'><a href='../S/46.html#L3763'>and</a>              3763 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m -1));</span>
+<span class='curline'><a href='../S/46.html#L3764'>and</a>              3764 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3765'>and</a>              3765 mpc/mpc.c            memmove(p-&gt;data.and.xs + n - 1, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3766'>and</a>              3766 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete; }</span>
+<span class='curline'><a href='../S/46.html#L3767'>and</a>              3767 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/46.html#L3773'>and</a>              3773 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.n == 2</span>
+<span class='curline'><a href='../S/46.html#L3774'>and</a>              3774 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;type == MPC_TYPE_LIFT</span>
+<span class='curline'><a href='../S/46.html#L3775'>and</a>              3775 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.lift.lf == mpcf_ctor_str</span>
+<span class='curline'><a href='../S/46.html#L3776'>and</a>              3776 mpc/mpc.c          &amp;&amp; !p-&gt;data.and.xs[0]-&gt;retained</span>
+<span class='curline'><a href='../S/46.html#L3777'>and</a>              3777 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_strfold) {</span>
+<span class='curline'><a href='../S/46.html#L3778'>and</a>              3778 mpc/mpc.c            t = p-&gt;data.and.xs[1];</span>
+<span class='curline'><a href='../S/46.html#L3779'>and</a>              3779 mpc/mpc.c            mpc_delete(p-&gt;data.and.xs[0]);</span>
+<span class='curline'><a href='../S/46.html#L3780'>and</a>              3780 mpc/mpc.c            free(p-&gt;data.and.xs); free(p-&gt;data.and.dxs); free(p-&gt;name);</span>
+<span class='curline'><a href='../S/46.html#L3788'>and</a>              3788 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_strfold</span>
+<span class='curline'><a href='../S/46.html#L3789'>and</a>              3789 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;type == MPC_TYPE_AND</span>
+<span class='curline'><a href='../S/46.html#L3790'>and</a>              3790 mpc/mpc.c          &amp;&amp; !p-&gt;data.and.xs[0]-&gt;retained</span>
+<span class='curline'><a href='../S/46.html#L3791'>and</a>              3791 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.and.f == mpcf_strfold) {</span>
+<span class='curline'><a href='../S/46.html#L3792'>and</a>              3792 mpc/mpc.c            t = p-&gt;data.and.xs[0];</span>
+<span class='curline'><a href='../S/46.html#L3793'>and</a>              3793 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
+<span class='curline'><a href='../S/46.html#L3794'>and</a>              3794 mpc/mpc.c            p-&gt;data.and.n = n + m - 1;</span>
+<span class='curline'><a href='../S/46.html#L3795'>and</a>              3795 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m - 1));</span>
+<span class='curline'><a href='../S/46.html#L3796'>and</a>              3796 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3797'>and</a>              3797 mpc/mpc.c            memmove(p-&gt;data.and.xs + m, p-&gt;data.and.xs + 1, (n - 1) * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3798'>and</a>              3798 mpc/mpc.c            memmove(p-&gt;data.and.xs, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3799'>and</a>              3799 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = free; }</span>
+<span class='curline'><a href='../S/46.html#L3800'>and</a>              3800 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/46.html#L3806'>and</a>              3806 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_strfold</span>
+<span class='curline'><a href='../S/46.html#L3807'>and</a>              3807 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;type == MPC_TYPE_AND</span>
+<span class='curline'><a href='../S/46.html#L3808'>and</a>              3808 mpc/mpc.c          &amp;&amp; !p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;retained</span>
+<span class='curline'><a href='../S/46.html#L3809'>and</a>              3809 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;data.and.f == mpcf_strfold) {</span>
+<span class='curline'><a href='../S/46.html#L3810'>and</a>              3810 mpc/mpc.c            t = p-&gt;data.and.xs[p-&gt;data.and.n-1];</span>
+<span class='curline'><a href='../S/46.html#L3811'>and</a>              3811 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
+<span class='curline'><a href='../S/46.html#L3812'>and</a>              3812 mpc/mpc.c            p-&gt;data.and.n = n + m - 1;</span>
+<span class='curline'><a href='../S/46.html#L3813'>and</a>              3813 mpc/mpc.c            p-&gt;data.and.xs = realloc(p-&gt;data.and.xs, sizeof(mpc_parser_t*) * (n + m -1));</span>
+<span class='curline'><a href='../S/46.html#L3814'>and</a>              3814 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3815'>and</a>              3815 mpc/mpc.c            memmove(p-&gt;data.and.xs + n - 1, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3816'>and</a>              3816 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = free; }</span>
+<span class='curline'><a href='../S/46.html#L3817'>and</a>              3817 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
 </pre>
 </body>
 </html>

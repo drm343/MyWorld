@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>npc</title>
+<title>mpc_fold_t</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,44 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L42'>npc</a>                42 include/main_set_character.h void set_name(Status_Access npc, char *name) {</span>
-<span class='curline'><a href='../S/14.html#L47'>npc</a>                47 include/main_set_character.h   character.set_name(npc, character_name);</span>
-<span class='curline'><a href='../S/14.html#L50'>npc</a>                50 include/main_set_character.h void set_mark(Status_Access npc, char *mark) {</span>
-<span class='curline'><a href='../S/14.html#L54'>npc</a>                54 include/main_set_character.h   character.set_mark(npc, key);</span>
-<span class='curline'><a href='../S/14.html#L57'>npc</a>                57 include/main_set_character.h void set_race(Status_Access npc, char *race) {</span>
-<span class='curline'><a href='../S/14.html#L63'>npc</a>                63 include/main_set_character.h   character.set_race(npc, character_race);</span>
-<span class='curline'><a href='../S/14.html#L64'>npc</a>                64 include/main_set_character.h   character.set_name(npc, character_race);</span>
-<span class='curline'><a href='../S/14.html#L67'>npc</a>                67 include/main_set_character.h void set_relation(char *key, Status_Access npc, Relation_Type relation) {</span>
-<span class='curline'><a href='../S/14.html#L68'>npc</a>                68 include/main_set_character.h   character.set_relation_enemy(npc);</span>
-<span class='curline'><a href='../S/14.html#L73'>npc</a>                73 include/main_set_character.h   Status_Access npc = character_pool.malloc(character_prepare_pool);</span>
-<span class='curline'><a href='../S/14.html#L75'>npc</a>                75 include/main_set_character.h   character.set_style(npc, style_access);</span>
-<span class='curline'><a href='../S/14.html#L85'>npc</a>                85 include/main_set_character.h         set_name(npc, value-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/14.html#L88'>npc</a>                88 include/main_set_character.h         set_mark(npc, value-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/14.html#L91'>npc</a>                91 include/main_set_character.h         set_race(npc, value-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/14.html#L182'>npc</a>               182 include/main_set_character.h   Status_Access npc = NULL;</span>
-<span class='curline'><a href='../S/14.html#L187'>npc</a>               187 include/main_set_character.h     npc = character_pool.malloc(character_use_pool);</span>
-<span class='curline'><a href='../S/14.html#L188'>npc</a>               188 include/main_set_character.h     character.copy(npc, origin_npc);</span>
-<span class='curline'><a href='../S/14.html#L193'>npc</a>               193 include/main_set_character.h     character.set_name(npc, character_name);</span>
-<span class='curline'><a href='../S/14.html#L195'>npc</a>               195 include/main_set_character.h   return npc;</span>
-<span class='curline'><a href='../S/25.html#L102'>npc</a>               102 src/character-pool.c static Found_Result pool_find(Character_Pool_Access access, Status_Access *npc,</span>
-<span class='curline'><a href='../S/25.html#L108'>npc</a>               108 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
-<span class='curline'><a href='../S/25.html#L110'>npc</a>               110 src/character-pool.c     if(STRCMP((*npc)-&gt;race, race)) {</span>
-<span class='curline'><a href='../S/25.html#L114'>npc</a>               114 src/character-pool.c   *npc = NULL;</span>
-<span class='curline'><a href='../S/25.html#L119'>npc</a>               119 src/character-pool.c static Found_Result pool_find_by_position(Character_Pool_Access access, Status_Access *npc,</span>
-<span class='curline'><a href='../S/25.html#L125'>npc</a>               125 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
-<span class='curline'><a href='../S/25.html#L127'>npc</a>               127 src/character-pool.c     if (Point.eq(point, &amp;((*npc)-&gt;base-&gt;Real_Position))) {</span>
-<span class='curline'><a href='../S/25.html#L128'>npc</a>               128 src/character-pool.c       if ((*npc)-&gt;base-&gt;crossable) {</span>
-<span class='curline'><a href='../S/25.html#L136'>npc</a>               136 src/character-pool.c   *npc = NULL;</span>
-<span class='curline'><a href='../S/26.html#L49'>npc</a>                49 src/main.c       Status_Access npc = NULL;</span>
-<span class='curline'><a href='../S/26.html#L94'>npc</a>                94 src/main.c       if (occupy_position_by_others(point, &amp;npc) == NO) {</span>
-<span class='curline'><a href='../S/26.html#L101'>npc</a>               101 src/main.c         if (character.attack(Player, npc) == DEAD) {</span>
-<span class='curline'><a href='../S/26.html#L102'>npc</a>               102 src/main.c           character.set_style(npc, dead);</span>
-<span class='curline'><a href='../S/26.html#L134'>npc</a>               134 src/main.c         Status_Access npc = &amp;(character_use_pool-&gt;status-&gt;pool[next]);</span>
-<span class='curline'><a href='../S/26.html#L136'>npc</a>               136 src/main.c         if (npc-&gt;base-&gt;status == IN_USE) {</span>
-<span class='curline'><a href='../S/26.html#L137'>npc</a>               137 src/main.c           if (!Point.eq(&amp;(npc-&gt;base-&gt;Real_Position), &amp;(Player-&gt;base-&gt;Real_Position))) {</span>
-<span class='curline'><a href='../S/26.html#L138'>npc</a>               138 src/main.c             rect.x = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.x;</span>
-<span class='curline'><a href='../S/26.html#L139'>npc</a>               139 src/main.c             rect.y = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.y;</span>
-<span class='curline'><a href='../S/26.html#L140'>npc</a>               140 src/main.c             SDL_RenderCopy(render, npc-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(rect));</span>
+<span class='curline'><a href='../S/46.html#L900'>mpc_fold_t</a>        900 mpc/mpc.c      typedef struct { int n; mpc_fold_t f; mpc_parser_t *x; mpc_dtor_t dx; } mpc_pdata_repeat_t;</span>
+<span class='curline'><a href='../S/46.html#L902'>mpc_fold_t</a>        902 mpc/mpc.c      typedef struct { int n; mpc_fold_t f; mpc_parser_t **xs; mpc_dtor_t *dxs;  } mpc_pdata_and_t;</span>
+<span class='curline'><a href='../S/46.html#L958'>mpc_fold_t</a>        958 mpc/mpc.c      static mpc_val_t *mpc_parse_fold(mpc_input_t *i, mpc_fold_t f, int n, mpc_val_t **xs) {</span>
+<span class='curline'><a href='../S/46.html#L1754'>mpc_fold_t</a>       1754 mpc/mpc.c      mpc_parser_t *mpc_many(mpc_fold_t f, mpc_parser_t *a) {</span>
+<span class='curline'><a href='../S/46.html#L1762'>mpc_fold_t</a>       1762 mpc/mpc.c      mpc_parser_t *mpc_many1(mpc_fold_t f, mpc_parser_t *a) {</span>
+<span class='curline'><a href='../S/46.html#L1770'>mpc_fold_t</a>       1770 mpc/mpc.c      mpc_parser_t *mpc_count(int n, mpc_fold_t f, mpc_parser_t *a, mpc_dtor_t da) {</span>
+<span class='curline'><a href='../S/46.html#L1800'>mpc_fold_t</a>       1800 mpc/mpc.c      mpc_parser_t *mpc_and(int n, mpc_fold_t f, ...) {</span>
+<span class='curline'><a href='../S/47.html#L82'>mpc_fold_t</a>         82 mpc/mpc.h      typedef mpc_val_t*(*mpc_fold_t)(int,mpc_val_t**);</span>
+<span class='curline'><a href='../S/47.html#L134'>mpc_fold_t</a>        134 mpc/mpc.h      mpc_parser_t *mpc_many(mpc_fold_t f, mpc_parser_t *a);</span>
+<span class='curline'><a href='../S/47.html#L135'>mpc_fold_t</a>        135 mpc/mpc.h      mpc_parser_t *mpc_many1(mpc_fold_t f, mpc_parser_t *a);</span>
+<span class='curline'><a href='../S/47.html#L136'>mpc_fold_t</a>        136 mpc/mpc.h      mpc_parser_t *mpc_count(int n, mpc_fold_t f, mpc_parser_t *a, mpc_dtor_t da);</span>
+<span class='curline'><a href='../S/47.html#L139'>mpc_fold_t</a>        139 mpc/mpc.h      mpc_parser_t *mpc_and(int n, mpc_fold_t f, ...);</span>
 </pre>
 </body>
 </html>

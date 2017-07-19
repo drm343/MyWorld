@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>max_size</title>
+<title>marks_slots</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,31 +9,28 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/12.html#L29'>max_size</a>           29 include/graphic.h   uint8_t max_size;</span>
-<span class='curline'><a href='../S/7.html#L8'>max_size</a>            8 include/setup_config.h   uint8_t max_size; \</span>
-<span class='curline'><a href='../S/5.html#L15'>max_size</a>           15 include/string_pool.h   int16_t max_size;</span>
-<span class='curline'><a href='../S/25.html#L9'>max_size</a>            9 src/character-pool.c   pool_access-&gt;max_size = size;</span>
-<span class='curline'><a href='../S/25.html#L20'>max_size</a>           20 src/character-pool.c   pool_access-&gt;max_size = size;</span>
-<span class='curline'><a href='../S/25.html#L56'>max_size</a>           56 src/character-pool.c   uint8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/25.html#L64'>max_size</a>           64 src/character-pool.c   uint8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/25.html#L84'>max_size</a>           84 src/character-pool.c   uint8_t used = from-&gt;status-&gt;max_size - from-&gt;status-&gt;current_size;</span>
-<span class='curline'><a href='../S/25.html#L105'>max_size</a>          105 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
-<span class='curline'><a href='../S/25.html#L122'>max_size</a>          122 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
-<span class='curline'><a href='../S/22.html#L27'>max_size</a>           27 src/character-skill.c   pool_access-&gt;max_size = size;</span>
-<span class='curline'><a href='../S/22.html#L39'>max_size</a>           39 src/character-skill.c   uint8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/22.html#L51'>max_size</a>           51 src/character-skill.c   uint8_t used = access-&gt;max_size - access-&gt;current_size;</span>
-<span class='curline'><a href='../S/19.html#L12'>max_size</a>           12 src/graphic.c    int8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/19.html#L21'>max_size</a>           21 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/19.html#L38'>max_size</a>           38 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/19.html#L51'>max_size</a>           51 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/19.html#L67'>max_size</a>           67 src/graphic.c    pool_access-&gt;max_size = size;</span>
-<span class='curline'><a href='../S/19.html#L74'>max_size</a>           74 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/26.html#L132'>max_size</a>          132 src/main.c       uint8_t used = character_use_pool-&gt;status-&gt;max_size - character_use_pool-&gt;status-&gt;current_size;</span>
-<span class='curline'><a href='../S/18.html#L9'>max_size</a>            9 src/string_pool.c   int16_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
-<span class='curline'><a href='../S/18.html#L18'>max_size</a>           18 src/string_pool.c   memset(pool_access-&gt;pool, 0, pool_access-&gt;max_size);</span>
-<span class='curline'><a href='../S/18.html#L20'>max_size</a>           20 src/string_pool.c   pool_access-&gt;current_size = pool_access-&gt;max_size;</span>
-<span class='curline'><a href='../S/18.html#L40'>max_size</a>           40 src/string_pool.c   pool_access-&gt;max_size     = size;</span>
-<span class='curline'><a href='../S/18.html#L55'>max_size</a>           55 src/string_pool.c   pool_access-&gt;max_size     = size;</span>
+<span class='curline'><a href='../S/46.html#L88'>marks_slots</a>        88 mpc/mpc.c        int marks_slots;</span>
+<span class='curline'><a href='../S/46.html#L119'>marks_slots</a>       119 mpc/mpc.c        i-&gt;marks_slots = MPC_INPUT_MARKS_MIN;</span>
+<span class='curline'><a href='../S/46.html#L120'>marks_slots</a>       120 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L121'>marks_slots</a>       121 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L149'>marks_slots</a>       149 mpc/mpc.c        i-&gt;marks_slots = MPC_INPUT_MARKS_MIN;</span>
+<span class='curline'><a href='../S/46.html#L150'>marks_slots</a>       150 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L151'>marks_slots</a>       151 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L178'>marks_slots</a>       178 mpc/mpc.c        i-&gt;marks_slots = MPC_INPUT_MARKS_MIN;</span>
+<span class='curline'><a href='../S/46.html#L179'>marks_slots</a>       179 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L180'>marks_slots</a>       180 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L206'>marks_slots</a>       206 mpc/mpc.c        i-&gt;marks_slots = MPC_INPUT_MARKS_MIN;</span>
+<span class='curline'><a href='../S/46.html#L207'>marks_slots</a>       207 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L208'>marks_slots</a>       208 mpc/mpc.c        i-&gt;lasts = malloc(sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L305'>marks_slots</a>       305 mpc/mpc.c        if (i-&gt;marks_num &gt; i-&gt;marks_slots) {</span>
+<span class='curline'><a href='../S/46.html#L306'>marks_slots</a>       306 mpc/mpc.c          i-&gt;marks_slots = i-&gt;marks_num + i-&gt;marks_num / 2;</span>
+<span class='curline'><a href='../S/46.html#L307'>marks_slots</a>       307 mpc/mpc.c          i-&gt;marks = realloc(i-&gt;marks, sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L308'>marks_slots</a>       308 mpc/mpc.c          i-&gt;lasts = realloc(i-&gt;lasts, sizeof(char) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L326'>marks_slots</a>       326 mpc/mpc.c        if (i-&gt;marks_slots &gt; i-&gt;marks_num + i-&gt;marks_num / 2</span>
+<span class='curline'><a href='../S/46.html#L327'>marks_slots</a>       327 mpc/mpc.c        &amp;&amp;  i-&gt;marks_slots &gt; MPC_INPUT_MARKS_MIN) {</span>
+<span class='curline'><a href='../S/46.html#L328'>marks_slots</a>       328 mpc/mpc.c          i-&gt;marks_slots = </span>
+<span class='curline'><a href='../S/46.html#L331'>marks_slots</a>       331 mpc/mpc.c          i-&gt;marks = realloc(i-&gt;marks, sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/46.html#L332'>marks_slots</a>       332 mpc/mpc.c          i-&gt;lasts = realloc(i-&gt;lasts, sizeof(char) * i-&gt;marks_slots);      </span>
 </pre>
 </body>
 </html>

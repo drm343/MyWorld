@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpcf_dtor_null</title>
+<title>mpca_state</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,13 +9,12 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1921'>mpcf_dtor_null</a>   1921 mpc/mpc.c      mpc_parser_t *mpc_startwith(mpc_parser_t *a) { return mpc_and(2, mpcf_snd, mpc_soi(), a, mpcf_dtor_null); }</span>
-<span class='curline'><a href='../S/43.html#L1923'>mpcf_dtor_null</a>   1923 mpc/mpc.c      mpc_parser_t *mpc_whole(mpc_parser_t *a, mpc_dtor_t da) { return mpc_and(3, mpcf_snd, mpc_soi(), a, mpc_eoi(), mpcf_dtor_null, da); }</span>
-<span class='curline'><a href='../S/43.html#L1925'>mpcf_dtor_null</a>   1925 mpc/mpc.c      mpc_parser_t *mpc_stripl(mpc_parser_t *a) { return mpc_and(2, mpcf_snd, mpc_blank(), a, mpcf_dtor_null); }</span>
-<span class='curline'><a href='../S/43.html#L1926'>mpcf_dtor_null</a>   1926 mpc/mpc.c      mpc_parser_t *mpc_stripr(mpc_parser_t *a) { return mpc_and(2, mpcf_fst, a, mpc_blank(), mpcf_dtor_null); }</span>
-<span class='curline'><a href='../S/43.html#L1927'>mpcf_dtor_null</a>   1927 mpc/mpc.c      mpc_parser_t *mpc_strip(mpc_parser_t *a) { return mpc_and(3, mpcf_snd, mpc_blank(), a, mpc_blank(), mpcf_dtor_null, mpcf_dtor_null); }</span>
-<span class='curline'><a href='../S/43.html#L1928'>mpcf_dtor_null</a>   1928 mpc/mpc.c      mpc_parser_t *mpc_tok(mpc_parser_t *a) { return mpc_and(2, mpcf_fst, a, mpc_blank(), mpcf_dtor_null); }</span>
-<span class='curline'><a href='../S/44.html#L218'>mpcf_dtor_null</a>    218 mpc/mpc.h      void mpcf_dtor_null(mpc_val_t *x);</span>
+<span class='curline'><a href='../S/46.html#L3201'>mpca_state</a>       3201 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "string"));</span>
+<span class='curline'><a href='../S/46.html#L3209'>mpca_state</a>       3209 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "char"));</span>
+<span class='curline'><a href='../S/46.html#L3217'>mpca_state</a>       3217 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "regex"));</span>
+<span class='curline'><a href='../S/46.html#L3283'>mpca_state</a>       3283 mpc/mpc.c          return mpca_state(mpca_root(mpca_add_tag(p, p-&gt;name)));</span>
+<span class='curline'><a href='../S/46.html#L3285'>mpca_state</a>       3285 mpc/mpc.c          return mpca_state(mpca_root(p));</span>
+<span class='curline'><a href='../S/47.html#L321'>mpca_state</a>        321 mpc/mpc.h      mpc_parser_t *mpca_state(mpc_parser_t *a);</span>
 </pre>
 </body>
 </html>

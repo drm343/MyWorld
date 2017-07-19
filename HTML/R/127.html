@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>can_move_position</title>
+<title>Style_Pool_Access</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,22 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/26.html#L61'>can_move_position</a>   61 src/main.c           if (can_move_position(point) == YES) {</span>
-<span class='curline'><a href='../S/26.html#L68'>can_move_position</a>   68 src/main.c           if (can_move_position(point) == YES) {</span>
-<span class='curline'><a href='../S/26.html#L75'>can_move_position</a>   75 src/main.c           if (can_move_position(point) == YES) {</span>
-<span class='curline'><a href='../S/26.html#L82'>can_move_position</a>   82 src/main.c           if (can_move_position(point) == YES) {</span>
+<span class='curline'><a href='../S/11.html#L36'>Style_Pool_Access</a>   36 include/graphic.h   Style_Access (*malloc)(Style_Pool_Access);</span>
+<span class='curline'><a href='../S/11.html#L37'>Style_Pool_Access</a>   37 include/graphic.h   Style_Access (*find)(Style_Pool_Access, String);</span>
+<span class='curline'><a href='../S/11.html#L38'>Style_Pool_Access</a>   38 include/graphic.h   Style_Access (*next)(Style_Pool_Access, uint8_t *);</span>
+<span class='curline'><a href='../S/11.html#L39'>Style_Pool_Access</a>   39 include/graphic.h   void (*gc) (Style_Pool_Access);</span>
+<span class='curline'><a href='../S/11.html#L40'>Style_Pool_Access</a>   40 include/graphic.h   Style_Pool_Access (*start)(int);</span>
+<span class='curline'><a href='../S/11.html#L41'>Style_Pool_Access</a>   41 include/graphic.h   void (*stop)(Style_Pool_Access);</span>
+<span class='curline'><a href='../S/11.html#L42'>Style_Pool_Access</a>   42 include/graphic.h   void (*debug)(Style_Pool_Access);</span>
+<span class='curline'><a href='../S/8.html#L11'>Style_Pool_Access</a>   11 include/main_set_config.h Style_Pool_Access style_pool = NULL;</span>
+<span class='curline'><a href='../S/23.html#L11'>Style_Pool_Access</a>   11 src/graphic.c  static Style_Access SELF(malloc) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/23.html#L19'>Style_Pool_Access</a>   19 src/graphic.c  static Style_Access SELF(find) (Style_Pool_Access pool_access, String name) {</span>
+<span class='curline'><a href='../S/23.html#L36'>Style_Pool_Access</a>   36 src/graphic.c  static void print_graph(Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/23.html#L49'>Style_Pool_Access</a>   49 src/graphic.c  static Style_Access SELF(next) (Style_Pool_Access pool_access, uint8_t * current_counter) {</span>
+<span class='curline'><a href='../S/23.html#L62'>Style_Pool_Access</a>   62 src/graphic.c  static Style_Pool_Access SELF(start) (int size) {</span>
+<span class='curline'><a href='../S/23.html#L64'>Style_Pool_Access</a>   64 src/graphic.c    Style_Pool_Access pool_access = calloc(1, sizeof(Style_Pool));</span>
+<span class='curline'><a href='../S/23.html#L72'>Style_Pool_Access</a>   72 src/graphic.c  static void SELF(gc) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/23.html#L85'>Style_Pool_Access</a>   85 src/graphic.c  static void SELF(stop) (Style_Pool_Access pool_access) {</span>
 </pre>
 </body>
 </html>

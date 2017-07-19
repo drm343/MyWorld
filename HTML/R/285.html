@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_parse</title>
+<title>mpc_mem_t</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,22 +9,14 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/33.html#L16'>mpc_parse</a>          16 mpc/examples/foobar.c     if (mpc_parse("&lt;stdin&gt;", argv[1], Foobar, &amp;r)) {</span>
-<span class='curline'><a href='../S/43.html#L2210'>mpc_parse</a>        2210 mpc/mpc.c        if(!mpc_parse("&lt;mpc_re_compiler&gt;", re, RegexEnclose, &amp;r)) {</span>
-<span class='curline'><a href='../S/43.html#L2619'>mpc_parse</a>        2619 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
-<span class='curline'><a href='../S/43.html#L2642'>mpc_parse</a>        2642 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
-<span class='curline'><a href='../S/43.html#L3340'>mpc_parse</a>        3340 mpc/mpc.c        if(!mpc_parse("&lt;mpc_grammar_compiler&gt;", grammar, GrammarTotal, &amp;r)) {</span>
-<span class='curline'><a href='../S/44.html#L67'>mpc_parse</a>          67 mpc/mpc.h      int mpc_parse(const char *filename, const char *string, mpc_parser_t *p, mpc_result_t *r);</span>
-<span class='curline'><a href='../S/46.html#L94'>mpc_parse</a>          94 mpc/tests/core.c   success = mpc_parse("test", "046", p, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L99'>mpc_parse</a>          99 mpc/tests/core.c   success = mpc_parse("test", "046aa", p, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L104'>mpc_parse</a>         104 mpc/tests/core.c   success = mpc_parse("test", "04632", p, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L109'>mpc_parse</a>         109 mpc/tests/core.c   success = mpc_parse("test", "04", p, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L124'>mpc_parse</a>         124 mpc/tests/core.c   success = mpc_parse("test", "aa", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L129'>mpc_parse</a>         129 mpc/tests/core.c   success = mpc_parse("test", "bb", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L134'>mpc_parse</a>         134 mpc/tests/core.c   success = mpc_parse("test", "ab", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L139'>mpc_parse</a>         139 mpc/tests/core.c   success = mpc_parse("test", "ba", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L144'>mpc_parse</a>         144 mpc/tests/core.c   success = mpc_parse("test", "c", p, &amp;r);</span>
-<span class='curline'><a href='../S/47.html#L270'>mpc_parse</a>         270 mpc/tests/grammar.c   result = mpc_parse("&lt;stdin&gt;", "test", Parser, &amp;r);</span>
+<span class='curline'><a href='../S/46.html#L97'>mpc_mem_t</a>          97 mpc/mpc.c        mpc_mem_t mem[MPC_INPUT_MEM_NUM];</span>
+<span class='curline'><a href='../S/46.html#L232'>mpc_mem_t</a>         232 mpc/mpc.c          (char*)p &lt;  (char*)(i-&gt;mem) + (MPC_INPUT_MEM_NUM * sizeof(mpc_mem_t));</span>
+<span class='curline'><a href='../S/46.html#L239'>mpc_mem_t</a>         239 mpc/mpc.c        if (n &gt; sizeof(mpc_mem_t)) { return malloc(n); }</span>
+<span class='curline'><a href='../S/46.html#L264'>mpc_mem_t</a>         264 mpc/mpc.c        j = ((size_t)(((char*)p) - ((char*)i-&gt;mem))) / sizeof(mpc_mem_t);</span>
+<span class='curline'><a href='../S/46.html#L274'>mpc_mem_t</a>         274 mpc/mpc.c        if (n &gt; sizeof(mpc_mem_t)) {</span>
+<span class='curline'><a href='../S/46.html#L276'>mpc_mem_t</a>         276 mpc/mpc.c          memcpy(q, p, sizeof(mpc_mem_t));</span>
+<span class='curline'><a href='../S/46.html#L287'>mpc_mem_t</a>         287 mpc/mpc.c        q = malloc(sizeof(mpc_mem_t));</span>
+<span class='curline'><a href='../S/46.html#L288'>mpc_mem_t</a>         288 mpc/mpc.c        memcpy(q, p, sizeof(mpc_mem_t));</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_escape_input_raw_re</title>
+<title>mpc_apply_to_t</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,13 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L2293'>mpc_escape_input_raw_re</a> 2293 mpc/mpc.c      static const char mpc_escape_input_raw_re[] = { '/' };</span>
-<span class='curline'><a href='../S/43.html#L2391'>mpc_escape_input_raw_re</a> 2391 mpc/mpc.c        mpc_val_t *y = mpcf_escape_new(x, mpc_escape_input_raw_re, mpc_escape_output_raw_re);</span>
-<span class='curline'><a href='../S/43.html#L2397'>mpc_escape_input_raw_re</a> 2397 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_re, mpc_escape_output_raw_re);</span>
+<span class='curline'><a href='../S/46.html#L897'>mpc_apply_to_t</a>    897 mpc/mpc.c      typedef struct { mpc_parser_t *x; mpc_apply_to_t f; void *d; } mpc_pdata_apply_to_t;</span>
+<span class='curline'><a href='../S/46.html#L990'>mpc_apply_to_t</a>    990 mpc/mpc.c      static mpc_val_t *mpc_parse_apply_to(mpc_input_t *i, mpc_apply_to_t f, mpc_val_t *x, mpc_val_t *d) {</span>
+<span class='curline'><a href='../S/46.html#L1713'>mpc_apply_to_t</a>   1713 mpc/mpc.c      mpc_parser_t *mpc_apply_to(mpc_parser_t *a, mpc_apply_to_t f, void *x) {</span>
+<span class='curline'><a href='../S/46.html#L3052'>mpc_apply_to_t</a>   3052 mpc/mpc.c        return mpc_apply_to(a, (mpc_apply_to_t)mpc_ast_tag, (void*)t);</span>
+<span class='curline'><a href='../S/46.html#L3056'>mpc_apply_to_t</a>   3056 mpc/mpc.c        return mpc_apply_to(a, (mpc_apply_to_t)mpc_ast_add_tag, (void*)t);</span>
+<span class='curline'><a href='../S/47.html#L81'>mpc_apply_to_t</a>     81 mpc/mpc.h      typedef mpc_val_t*(*mpc_apply_to_t)(mpc_val_t*,void*);</span>
+<span class='curline'><a href='../S/47.html#L127'>mpc_apply_to_t</a>    127 mpc/mpc.h      mpc_parser_t *mpc_apply_to(mpc_parser_t *a, mpc_apply_to_t f, void *x);</span>
 </pre>
 </body>
 </html>

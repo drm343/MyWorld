@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>o</title>
+<title>num_suites</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,34 +9,9 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L452'>o</a>                 452 mpc/mpc.c      static int mpc_input_success(mpc_input_t *i, char c, char **o) {</span>
-<span class='curline'><a href='../S/43.html#L470'>o</a>                 470 mpc/mpc.c        if (o) {</span>
-<span class='curline'><a href='../S/43.html#L471'>o</a>                 471 mpc/mpc.c          (*o) = mpc_malloc(i, 2);</span>
-<span class='curline'><a href='../S/43.html#L472'>o</a>                 472 mpc/mpc.c          (*o)[0] = c;</span>
-<span class='curline'><a href='../S/43.html#L473'>o</a>                 473 mpc/mpc.c          (*o)[1] = '\0';</span>
-<span class='curline'><a href='../S/43.html#L479'>o</a>                 479 mpc/mpc.c      static int mpc_input_any(mpc_input_t *i, char **o) {</span>
-<span class='curline'><a href='../S/43.html#L482'>o</a>                 482 mpc/mpc.c        return mpc_input_success(i, x, o);</span>
-<span class='curline'><a href='../S/43.html#L485'>o</a>                 485 mpc/mpc.c      static int mpc_input_char(mpc_input_t *i, char c, char **o) {</span>
-<span class='curline'><a href='../S/43.html#L488'>o</a>                 488 mpc/mpc.c        return x == c ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);</span>
-<span class='curline'><a href='../S/43.html#L491'>o</a>                 491 mpc/mpc.c      static int mpc_input_range(mpc_input_t *i, char c, char d, char **o) {</span>
-<span class='curline'><a href='../S/43.html#L494'>o</a>                 494 mpc/mpc.c        return x &gt;= c &amp;&amp; x &lt;= d ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);  </span>
-<span class='curline'><a href='../S/43.html#L497'>o</a>                 497 mpc/mpc.c      static int mpc_input_oneof(mpc_input_t *i, const char *c, char **o) {</span>
-<span class='curline'><a href='../S/43.html#L500'>o</a>                 500 mpc/mpc.c        return strchr(c, x) != 0 ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);  </span>
-<span class='curline'><a href='../S/43.html#L503'>o</a>                 503 mpc/mpc.c      static int mpc_input_noneof(mpc_input_t *i, const char *c, char **o) {</span>
-<span class='curline'><a href='../S/43.html#L506'>o</a>                 506 mpc/mpc.c        return strchr(c, x) == 0 ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);  </span>
-<span class='curline'><a href='../S/43.html#L509'>o</a>                 509 mpc/mpc.c      static int mpc_input_satisfy(mpc_input_t *i, int(*cond)(char), char **o) {</span>
-<span class='curline'><a href='../S/43.html#L512'>o</a>                 512 mpc/mpc.c        return cond(x) ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);  </span>
-<span class='curline'><a href='../S/43.html#L515'>o</a>                 515 mpc/mpc.c      static int mpc_input_string(mpc_input_t *i, const char *c, char **o) {</span>
-<span class='curline'><a href='../S/43.html#L529'>o</a>                 529 mpc/mpc.c        *o = mpc_malloc(i, strlen(c) + 1);</span>
-<span class='curline'><a href='../S/43.html#L530'>o</a>                 530 mpc/mpc.c        strcpy(*o, c);</span>
-<span class='curline'><a href='../S/43.html#L534'>o</a>                 534 mpc/mpc.c      static int mpc_input_anchor(mpc_input_t* i, int(*f)(char,char), char **o) {</span>
-<span class='curline'><a href='../S/43.html#L535'>o</a>                 535 mpc/mpc.c        *o = NULL;</span>
-<span class='curline'><a href='../S/43.html#L1933'>o</a>                1933 mpc/mpc.c      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c) {</span>
-<span class='curline'><a href='../S/43.html#L1935'>o</a>                1935 mpc/mpc.c          mpc_string(o), a, mpc_string(c),</span>
-<span class='curline'><a href='../S/43.html#L1944'>o</a>                1944 mpc/mpc.c      mpc_parser_t *mpc_tok_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c) {</span>
-<span class='curline'><a href='../S/43.html#L1946'>o</a>                1946 mpc/mpc.c          mpc_sym(o), mpc_tok(a), mpc_sym(c),</span>
-<span class='curline'><a href='../S/44.html#L202'>o</a>                 202 mpc/mpc.h      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
-<span class='curline'><a href='../S/44.html#L208'>o</a>                 208 mpc/mpc.h      mpc_parser_t *mpc_tok_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
+<span class='curline'><a href='../S/52.html#L227'>num_suites</a>        227 mpc/tests/ptest.c static int num_suites = 0;</span>
+<span class='curline'><a href='../S/52.html#L232'>num_suites</a>        232 mpc/tests/ptest.c   num_suites++;</span>
+<span class='curline'><a href='../S/52.html#L325'>num_suites</a>        325 mpc/tests/ptest.c   pt_color(YELLOW);  printf(" Total %4d ",  num_suites);        </span>
 </pre>
 </body>
 </html>

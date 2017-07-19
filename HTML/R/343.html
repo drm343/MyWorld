@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_test_pass</title>
+<title>mpc_soi</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,23 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/44.html#L356'>mpc_test_pass</a>     356 mpc/mpc.h      int mpc_test_pass(mpc_parser_t *p, const char *s, const void *d,</span>
-<span class='curline'><a href='../S/46.html#L24'>mpc_test_pass</a>      24 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Ident, "test", "test", streq, free, strprint));</span>
-<span class='curline'><a href='../S/46.html#L26'>mpc_test_pass</a>      26 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Ident, "anoth21er", "anoth21er", streq, free, strprint));</span>
-<span class='curline'><a href='../S/46.html#L27'>mpc_test_pass</a>      27 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Ident, "du__de", "du__de", streq, free, strprint));</span>
-<span class='curline'><a href='../S/46.html#L63'>mpc_test_pass</a>      63 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "1", &amp;r0, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L64'>mpc_test_pass</a>      64 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", &amp;r1, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L65'>mpc_test_pass</a>      65 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(4*2)+5", &amp;r2, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L78'>mpc_test_pass</a>      78 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Stripperl, " asdmlm dasd  ", "asdmlm dasd  ", streq, free, strprint));</span>
-<span class='curline'><a href='../S/46.html#L79'>mpc_test_pass</a>      79 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Stripperr, " asdmlm dasd  ", " asdmlm dasd", streq, free, strprint));</span>
-<span class='curline'><a href='../S/46.html#L80'>mpc_test_pass</a>      80 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Stripper,  " asdmlm dasd  ", "asdmlm dasd", streq, free, strprint));</span>
-<span class='curline'><a href='../S/47.html#L46'>mpc_test_pass</a>      46 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "  24 ", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L47'>mpc_test_pass</a>      47 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", t1, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L48'>mpc_test_pass</a>      48 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(4 * 2 * 11 + 2) + 5", t2, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L121'>mpc_test_pass</a>     121 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Doge, "so c so c", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L161'>mpc_test_pass</a>     161 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Parser, "#line 10 \"test\"", t0, </span>
-<span class='curline'><a href='../S/47.html#L246'>mpc_test_pass</a>     246 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Qscript, "[my_func]\n  echo (a b c)\n", t0,</span>
-<span class='curline'><a href='../S/51.html#L11'>mpc_test_pass</a>      11 mpc/tests/regex.c   return mpc_test_pass(p, value, match, string_eq, free, string_print);</span>
+<span class='curline'><a href='../S/46.html#L1921'>mpc_soi</a>          1921 mpc/mpc.c      mpc_parser_t *mpc_startwith(mpc_parser_t *a) { return mpc_and(2, mpcf_snd, mpc_soi(), a, mpcf_dtor_null); }</span>
+<span class='curline'><a href='../S/46.html#L1923'>mpc_soi</a>          1923 mpc/mpc.c      mpc_parser_t *mpc_whole(mpc_parser_t *a, mpc_dtor_t da) { return mpc_and(3, mpcf_snd, mpc_soi(), a, mpc_eoi(), mpcf_dtor_null, da); }</span>
+<span class='curline'><a href='../S/46.html#L2043'>mpc_soi</a>          2043 mpc/mpc.c          case 'A': return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/46.html#L2062'>mpc_soi</a>          2062 mpc/mpc.c        if (s[0] == '^') { free(s); return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/47.html#L148'>mpc_soi</a>           148 mpc/mpc.h      mpc_parser_t *mpc_soi(void);</span>
 </pre>
 </body>
 </html>

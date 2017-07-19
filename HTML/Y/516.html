@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>t</title>
+<title>struct_name</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,90 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L71'>t</a>                  71 include/main_set_character.h void eval_set_npc(mpc_ast_t* t) {</span>
-<span class='curline'><a href='../S/14.html#L72'>t</a>                  72 include/main_set_character.h   mpc_ast_t* obj = t-&gt;children[1];</span>
-<span class='curline'><a href='../S/11.html#L35'>t</a>                  35 include/main_set_config.h void setup_window(mpc_ast_t* t) {</span>
-<span class='curline'><a href='../S/11.html#L36'>t</a>                  36 include/main_set_config.h   if (strstr(t-&gt;tag, "attibute")) {</span>
-<span class='curline'><a href='../S/11.html#L37'>t</a>                  37 include/main_set_config.h     if (STRCMP(t-&gt;children[0]-&gt;contents, "width")) {</span>
-<span class='curline'><a href='../S/11.html#L38'>t</a>                  38 include/main_set_config.h       WIDTH = atoi(t-&gt;children[2]-&gt;children[0]-&gt;contents);</span>
-<span class='curline'><a href='../S/11.html#L40'>t</a>                  40 include/main_set_config.h     else if (STRCMP(t-&gt;children[0]-&gt;contents, "height")) {</span>
-<span class='curline'><a href='../S/11.html#L41'>t</a>                  41 include/main_set_config.h       HEIGHT = atoi(t-&gt;children[2]-&gt;children[0]-&gt;contents);</span>
-<span class='curline'><a href='../S/11.html#L43'>t</a>                  43 include/main_set_config.h     else if (STRCMP(t-&gt;children[0]-&gt;contents, "font-family")) {</span>
-<span class='curline'><a href='../S/11.html#L44'>t</a>                  44 include/main_set_config.h       FONT_FAMILY = use_path(t-&gt;children[2]-&gt;contents);</span>
-<span class='curline'><a href='../S/11.html#L46'>t</a>                  46 include/main_set_config.h     else if (STRCMP(t-&gt;children[0]-&gt;contents, "title")) {</span>
-<span class='curline'><a href='../S/11.html#L47'>t</a>                  47 include/main_set_config.h       GAME_TITLE = use_value(t-&gt;children[2]-&gt;contents);</span>
-<span class='curline'><a href='../S/11.html#L52'>t</a>                  52 include/main_set_config.h bool find_window(mpc_ast_t* t) {</span>
-<span class='curline'><a href='../S/11.html#L53'>t</a>                  53 include/main_set_config.h   if (strstr(t-&gt;children[0]-&gt;tag, "element")) {</span>
-<span class='curline'><a href='../S/11.html#L54'>t</a>                  54 include/main_set_config.h     if (STRCMP(t-&gt;children[0]-&gt;contents, "window")) {</span>
-<span class='curline'><a href='../S/11.html#L61'>t</a>                  61 include/main_set_config.h   for (int counter = 1; counter &lt;= t-&gt;children_num - 1; counter++) {</span>
-<span class='curline'><a href='../S/11.html#L62'>t</a>                  62 include/main_set_config.h     setup_window(t-&gt;children[counter]);</span>
-<span class='curline'><a href='../S/11.html#L67'>t</a>                  67 include/main_set_config.h void setup_mark(mpc_ast_t* t, Style_Access style_access) {</span>
-<span class='curline'><a href='../S/11.html#L68'>t</a>                  68 include/main_set_config.h   if (strstr(t-&gt;tag, "mark_attibute")) {</span>
-<span class='curline'><a href='../S/11.html#L69'>t</a>                  69 include/main_set_config.h     String item = t-&gt;children[2]-&gt;contents;</span>
-<span class='curline'><a href='../S/11.html#L78'>t</a>                  78 include/main_set_config.h bool find_mark(mpc_ast_t* t) {</span>
-<span class='curline'><a href='../S/11.html#L82'>t</a>                  82 include/main_set_config.h   if (strstr(t-&gt;children[0]-&gt;tag, "id_selector")) {</span>
-<span class='curline'><a href='../S/11.html#L83'>t</a>                  83 include/main_set_config.h     size_t key_len = strlen(t-&gt;children[0]-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/11.html#L85'>t</a>                  85 include/main_set_config.h     strcpy(key, t-&gt;children[0]-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/11.html#L94'>t</a>                  94 include/main_set_config.h   for (int counter = 1; counter &lt;= t-&gt;children_num - 1; counter++) {</span>
-<span class='curline'><a href='../S/11.html#L95'>t</a>                  95 include/main_set_config.h     setup_mark(t-&gt;children[counter], style_access);</span>
-<span class='curline'><a href='../S/11.html#L100'>t</a>                 100 include/main_set_config.h void eval_set_config(mpc_ast_t* t) {</span>
-<span class='curline'><a href='../S/11.html#L101'>t</a>                 101 include/main_set_config.h   if (strstr(t-&gt;tag, "css")) {</span>
-<span class='curline'><a href='../S/11.html#L102'>t</a>                 102 include/main_set_config.h     find_window(t) || find_mark(t);</span>
-<span class='curline'><a href='../S/11.html#L106'>t</a>                 106 include/main_set_config.h   for (int counter = 1; counter &lt;= t-&gt;children_num - 1; counter++) {</span>
-<span class='curline'><a href='../S/11.html#L107'>t</a>                 107 include/main_set_config.h     eval_set_config(t-&gt;children[counter]);</span>
-<span class='curline'><a href='../S/43.html#L2763'>t</a>                2763 mpc/mpc.c      mpc_ast_t *mpc_ast_add_tag(mpc_ast_t *a, const char *t) {</span>
-<span class='curline'><a href='../S/43.html#L2765'>t</a>                2765 mpc/mpc.c        a-&gt;tag = realloc(a-&gt;tag, strlen(t) + 1 + strlen(a-&gt;tag) + 1);</span>
-<span class='curline'><a href='../S/43.html#L2766'>t</a>                2766 mpc/mpc.c        memmove(a-&gt;tag + strlen(t) + 1, a-&gt;tag, strlen(a-&gt;tag)+1);</span>
-<span class='curline'><a href='../S/43.html#L2767'>t</a>                2767 mpc/mpc.c        memmove(a-&gt;tag, t, strlen(t));</span>
-<span class='curline'><a href='../S/43.html#L2768'>t</a>                2768 mpc/mpc.c        memmove(a-&gt;tag + strlen(t), "|", 1);</span>
-<span class='curline'><a href='../S/43.html#L2772'>t</a>                2772 mpc/mpc.c      mpc_ast_t *mpc_ast_add_root_tag(mpc_ast_t *a, const char *t) {</span>
-<span class='curline'><a href='../S/43.html#L2774'>t</a>                2774 mpc/mpc.c        a-&gt;tag = realloc(a-&gt;tag, (strlen(t)-1) + strlen(a-&gt;tag) + 1);</span>
-<span class='curline'><a href='../S/43.html#L2775'>t</a>                2775 mpc/mpc.c        memmove(a-&gt;tag + (strlen(t)-1), a-&gt;tag, strlen(a-&gt;tag)+1);</span>
-<span class='curline'><a href='../S/43.html#L2776'>t</a>                2776 mpc/mpc.c        memmove(a-&gt;tag, t, (strlen(t)-1));</span>
-<span class='curline'><a href='../S/43.html#L2780'>t</a>                2780 mpc/mpc.c      mpc_ast_t *mpc_ast_tag(mpc_ast_t *a, const char *t) {</span>
-<span class='curline'><a href='../S/43.html#L2781'>t</a>                2781 mpc/mpc.c        a-&gt;tag = realloc(a-&gt;tag, strlen(t) + 1);</span>
-<span class='curline'><a href='../S/43.html#L2782'>t</a>                2782 mpc/mpc.c        strcpy(a-&gt;tag, t);</span>
-<span class='curline'><a href='../S/43.html#L3051'>t</a>                3051 mpc/mpc.c      mpc_parser_t *mpca_tag(mpc_parser_t *a, const char *t) {</span>
-<span class='curline'><a href='../S/43.html#L3052'>t</a>                3052 mpc/mpc.c        return mpc_apply_to(a, (mpc_apply_to_t)mpc_ast_tag, (void*)t);</span>
-<span class='curline'><a href='../S/43.html#L3055'>t</a>                3055 mpc/mpc.c      mpc_parser_t *mpca_add_tag(mpc_parser_t *a, const char *t) {</span>
-<span class='curline'><a href='../S/43.html#L3056'>t</a>                3056 mpc/mpc.c        return mpc_apply_to(a, (mpc_apply_to_t)mpc_ast_add_tag, (void*)t);</span>
-<span class='curline'><a href='../S/43.html#L3663'>t</a>                3663 mpc/mpc.c        mpc_parser_t *t;</span>
-<span class='curline'><a href='../S/43.html#L3699'>t</a>                3699 mpc/mpc.c            t = p-&gt;data.or.xs[p-&gt;data.or.n-1];</span>
-<span class='curline'><a href='../S/43.html#L3700'>t</a>                3700 mpc/mpc.c            n = p-&gt;data.or.n; m = t-&gt;data.or.n;</span>
-<span class='curline'><a href='../S/43.html#L3703'>t</a>                3703 mpc/mpc.c            memmove(p-&gt;data.or.xs + n - 1, t-&gt;data.or.xs, m * sizeof(mpc_parser_t*));</span>
-<span class='curline'><a href='../S/43.html#L3704'>t</a>                3704 mpc/mpc.c            free(t-&gt;data.or.xs); free(t-&gt;name); free(t);</span>
-<span class='curline'><a href='../S/43.html#L3712'>t</a>                3712 mpc/mpc.c            t = p-&gt;data.or.xs[0];</span>
-<span class='curline'><a href='../S/43.html#L3713'>t</a>                3713 mpc/mpc.c            n = p-&gt;data.or.n; m = t-&gt;data.or.n;</span>
-<span class='curline'><a href='../S/43.html#L3716'>t</a>                3716 mpc/mpc.c            memmove(p-&gt;data.or.xs + m, t-&gt;data.or.xs + 1, n * sizeof(mpc_parser_t*));</span>
-<span class='curline'><a href='../S/43.html#L3717'>t</a>                3717 mpc/mpc.c            memmove(p-&gt;data.or.xs, t-&gt;data.or.xs, m * sizeof(mpc_parser_t*));</span>
-<span class='curline'><a href='../S/43.html#L3718'>t</a>                3718 mpc/mpc.c            free(t-&gt;data.or.xs); free(t-&gt;name); free(t);</span>
-<span class='curline'><a href='../S/43.html#L3728'>t</a>                3728 mpc/mpc.c            t = p-&gt;data.and.xs[1];</span>
-<span class='curline'><a href='../S/43.html#L3731'>t</a>                3731 mpc/mpc.c            memcpy(p, t, sizeof(mpc_parser_t));</span>
-<span class='curline'><a href='../S/43.html#L3732'>t</a>                3732 mpc/mpc.c            free(t);</span>
-<span class='curline'><a href='../S/43.html#L3742'>t</a>                3742 mpc/mpc.c            t = p-&gt;data.and.xs[0];</span>
-<span class='curline'><a href='../S/43.html#L3743'>t</a>                3743 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
-<span class='curline'><a href='../S/43.html#L3748'>t</a>                3748 mpc/mpc.c            memmove(p-&gt;data.and.xs, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
-<span class='curline'><a href='../S/43.html#L3750'>t</a>                3750 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
-<span class='curline'><a href='../S/43.html#L3760'>t</a>                3760 mpc/mpc.c            t = p-&gt;data.and.xs[p-&gt;data.and.n-1];</span>
-<span class='curline'><a href='../S/43.html#L3761'>t</a>                3761 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
-<span class='curline'><a href='../S/43.html#L3765'>t</a>                3765 mpc/mpc.c            memmove(p-&gt;data.and.xs + n - 1, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
-<span class='curline'><a href='../S/43.html#L3767'>t</a>                3767 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
-<span class='curline'><a href='../S/43.html#L3778'>t</a>                3778 mpc/mpc.c            t = p-&gt;data.and.xs[1];</span>
-<span class='curline'><a href='../S/43.html#L3781'>t</a>                3781 mpc/mpc.c            memcpy(p, t, sizeof(mpc_parser_t));</span>
-<span class='curline'><a href='../S/43.html#L3782'>t</a>                3782 mpc/mpc.c            free(t);</span>
-<span class='curline'><a href='../S/43.html#L3792'>t</a>                3792 mpc/mpc.c            t = p-&gt;data.and.xs[0];</span>
-<span class='curline'><a href='../S/43.html#L3793'>t</a>                3793 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
-<span class='curline'><a href='../S/43.html#L3798'>t</a>                3798 mpc/mpc.c            memmove(p-&gt;data.and.xs, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
-<span class='curline'><a href='../S/43.html#L3800'>t</a>                3800 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
-<span class='curline'><a href='../S/43.html#L3810'>t</a>                3810 mpc/mpc.c            t = p-&gt;data.and.xs[p-&gt;data.and.n-1];</span>
-<span class='curline'><a href='../S/43.html#L3811'>t</a>                3811 mpc/mpc.c            n = p-&gt;data.and.n; m = t-&gt;data.and.n;</span>
-<span class='curline'><a href='../S/43.html#L3815'>t</a>                3815 mpc/mpc.c            memmove(p-&gt;data.and.xs + n - 1, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
-<span class='curline'><a href='../S/43.html#L3817'>t</a>                3817 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
-<span class='curline'><a href='../S/44.html#L276'>t</a>                 276 mpc/mpc.h      mpc_ast_t *mpc_ast_add_tag(mpc_ast_t *a, const char *t);</span>
-<span class='curline'><a href='../S/44.html#L277'>t</a>                 277 mpc/mpc.h      mpc_ast_t *mpc_ast_add_root_tag(mpc_ast_t *a, const char *t);</span>
-<span class='curline'><a href='../S/44.html#L278'>t</a>                 278 mpc/mpc.h      mpc_ast_t *mpc_ast_tag(mpc_ast_t *a, const char *t);</span>
-<span class='curline'><a href='../S/44.html#L318'>t</a>                 318 mpc/mpc.h      mpc_parser_t *mpca_tag(mpc_parser_t *a, const char *t);</span>
-<span class='curline'><a href='../S/44.html#L319'>t</a>                 319 mpc/mpc.h      mpc_parser_t *mpca_add_tag(mpc_parser_t *a, const char *t);</span>
+<span class='curline'><a href='../S/10.html#L6'>struct_name</a>         6 include/helper_function.h #define GENERIC_POOL(name, struct_name) typedef struct { \</span>
+<span class='curline'><a href='../S/10.html#L7'>struct_name</a>         7 include/helper_function.h   struct_name pool; \</span>
 </pre>
 </body>
 </html>

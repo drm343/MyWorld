@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>marks_num</title>
+<title>map</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,24 +9,29 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L89'>marks_num</a>          89 mpc/mpc.c        int marks_num;</span>
-<span class='curline'><a href='../S/43.html#L118'>marks_num</a>         118 mpc/mpc.c        i-&gt;marks_num = 0;</span>
-<span class='curline'><a href='../S/43.html#L148'>marks_num</a>         148 mpc/mpc.c        i-&gt;marks_num = 0;</span>
-<span class='curline'><a href='../S/43.html#L177'>marks_num</a>         177 mpc/mpc.c        i-&gt;marks_num = 0;</span>
-<span class='curline'><a href='../S/43.html#L205'>marks_num</a>         205 mpc/mpc.c        i-&gt;marks_num = 0;</span>
-<span class='curline'><a href='../S/43.html#L303'>marks_num</a>         303 mpc/mpc.c        i-&gt;marks_num++;</span>
-<span class='curline'><a href='../S/43.html#L305'>marks_num</a>         305 mpc/mpc.c        if (i-&gt;marks_num &gt; i-&gt;marks_slots) {</span>
-<span class='curline'><a href='../S/43.html#L306'>marks_num</a>         306 mpc/mpc.c          i-&gt;marks_slots = i-&gt;marks_num + i-&gt;marks_num / 2;</span>
-<span class='curline'><a href='../S/43.html#L311'>marks_num</a>         311 mpc/mpc.c        i-&gt;marks[i-&gt;marks_num-1] = i-&gt;state;</span>
-<span class='curline'><a href='../S/43.html#L312'>marks_num</a>         312 mpc/mpc.c        i-&gt;lasts[i-&gt;marks_num-1] = i-&gt;last;</span>
-<span class='curline'><a href='../S/43.html#L314'>marks_num</a>         314 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE &amp;&amp; i-&gt;marks_num == 1) {</span>
-<span class='curline'><a href='../S/43.html#L324'>marks_num</a>         324 mpc/mpc.c        i-&gt;marks_num--;</span>
-<span class='curline'><a href='../S/43.html#L326'>marks_num</a>         326 mpc/mpc.c        if (i-&gt;marks_slots &gt; i-&gt;marks_num + i-&gt;marks_num / 2</span>
-<span class='curline'><a href='../S/43.html#L329'>marks_num</a>         329 mpc/mpc.c            i-&gt;marks_num &gt; MPC_INPUT_MARKS_MIN ?</span>
-<span class='curline'><a href='../S/43.html#L330'>marks_num</a>         330 mpc/mpc.c            i-&gt;marks_num : MPC_INPUT_MARKS_MIN;</span>
-<span class='curline'><a href='../S/43.html#L335'>marks_num</a>         335 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE &amp;&amp; i-&gt;marks_num == 0) {</span>
-<span class='curline'><a href='../S/43.html#L346'>marks_num</a>         346 mpc/mpc.c        i-&gt;state = i-&gt;marks[i-&gt;marks_num-1];</span>
-<span class='curline'><a href='../S/43.html#L347'>marks_num</a>         347 mpc/mpc.c        i-&gt;last  = i-&gt;lasts[i-&gt;marks_num-1];</span>
+<span class='curline'><a href='../S/13.html#L25'>map</a>                25 include/graphic-camera.h   Map_Access map;</span>
+<span class='curline'><a href='../S/19.html#L179'>map</a>               179 include/main_set_character.h Status_Access use_npc(char *race, char *name, Map_Access map) {</span>
+<span class='curline'><a href='../S/19.html#L194'>map</a>               194 include/main_set_character.h     character.set_random_position(npc, map-&gt;end.x, map-&gt;end.y);</span>
+<span class='curline'><a href='../S/29.html#L49'>map</a>                49 src/graphic-camera.c   Map_Access map = access-&gt;map;</span>
+<span class='curline'><a href='../S/29.html#L53'>map</a>                53 src/graphic-camera.c   printf("[map](%d, %d)\n", access-&gt;map-&gt;end.x, access-&gt;map-&gt;end.y);</span>
+<span class='curline'><a href='../S/29.html#L61'>map</a>                61 src/graphic-camera.c       ((point.x + 1) &lt; (map-&gt;end.x - (center.x - 1))));</span>
+<span class='curline'><a href='../S/29.html#L65'>map</a>                65 src/graphic-camera.c       (to.x &gt;= map-&gt;end.x));</span>
+<span class='curline'><a href='../S/29.html#L69'>map</a>                69 src/graphic-camera.c       ((point.y + 1) &lt; (map-&gt;end.y - (center.y - 1))));</span>
+<span class='curline'><a href='../S/29.html#L73'>map</a>                73 src/graphic-camera.c       (to.y &gt;= map-&gt;end.y));</span>
+<span class='curline'><a href='../S/29.html#L84'>map</a>                84 src/graphic-camera.c   Map_Access map = access-&gt;map;</span>
+<span class='curline'><a href='../S/29.html#L88'>map</a>                88 src/graphic-camera.c       &amp;&amp; ((point.x + 1)&lt; (map-&gt;end.x - (center.x - 1)))) {</span>
+<span class='curline'><a href='../S/29.html#L98'>map</a>                98 src/graphic-camera.c   else if (to.x &gt;= map-&gt;end.x) {</span>
+<span class='curline'><a href='../S/29.html#L101'>map</a>               101 src/graphic-camera.c     if (point.x &gt;= map-&gt;end.x) {</span>
+<span class='curline'><a href='../S/29.html#L118'>map</a>               118 src/graphic-camera.c   Map_Access map = access-&gt;map;</span>
+<span class='curline'><a href='../S/29.html#L122'>map</a>               122 src/graphic-camera.c       &amp;&amp; ((point.y + 1)&lt; (map-&gt;end.y - (center.y - 1)))) {</span>
+<span class='curline'><a href='../S/29.html#L132'>map</a>               132 src/graphic-camera.c   else if (to.y &gt;= map-&gt;end.y) {</span>
+<span class='curline'><a href='../S/29.html#L135'>map</a>               135 src/graphic-camera.c     if (point.y &gt;= map-&gt;end.y) {</span>
+<span class='curline'><a href='../S/29.html#L237'>map</a>               237 src/graphic-camera.c   access-&gt;map = NULL;</span>
+<span class='curline'><a href='../S/29.html#L273'>map</a>               273 src/graphic-camera.c static void set_map(Camera_Access access, Map_Access map) {</span>
+<span class='curline'><a href='../S/29.html#L274'>map</a>               274 src/graphic-camera.c   map-&gt;end.x -= 1;</span>
+<span class='curline'><a href='../S/29.html#L275'>map</a>               275 src/graphic-camera.c   map-&gt;end.y -= 1;</span>
+<span class='curline'><a href='../S/29.html#L277'>map</a>               277 src/graphic-camera.c   access-&gt;map = map;</span>
+<span class='curline'><a href='../S/27.html#L122'>map</a>               122 src/main.c       use_npc("goblin", "random-name", camera_1-&gt;map);</span>
 </pre>
 </body>
 </html>

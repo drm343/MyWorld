@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>mpc_digit</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/45.html#L1859'>mpc_digit</a>        1859 mpc/mpc.c      mpc_parser_t *mpc_digits(void) { return mpc_expect(mpc_many1(mpcf_strfold, mpc_digit()), "digits"); }</span>
+<span class='curline'><a href='../S/45.html#L1867'>mpc_digit</a>        1867 mpc/mpc.c      mpc_parser_t *mpc_alphanum(void) { return mpc_expect(mpc_or(3, mpc_alpha(), mpc_digit(), mpc_underscore()), "alphanumeric"); }</span>
+<span class='curline'><a href='../S/45.html#L2045'>mpc_digit</a>        2045 mpc/mpc.c          case 'd': return mpc_digit();</span>
+<span class='curline'><a href='../S/45.html#L2046'>mpc_digit</a>        2046 mpc/mpc.c          case 'D': return mpc_not_lift(mpc_digit(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/46.html#L160'>mpc_digit</a>         160 mpc/mpc.h      mpc_parser_t *mpc_digit(void);</span>
+<span class='curline'><a href='../S/48.html#L19'>mpc_digit</a>          19 mpc/tests/core.c       mpc_many1(mpcf_strfold, mpc_or(3, mpc_alpha(), mpc_underscore(), mpc_digit())),</span>
+<span class='curline'><a href='../S/48.html#L92'>mpc_digit</a>          92 mpc/tests/core.c   mpc_parser_t *p = mpc_count(3, mpcf_strfold, mpc_digit(), free);</span>
+</pre>
+</body>
+</html>

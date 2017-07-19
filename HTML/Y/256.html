@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>dx</title>
+<title>dxs</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,29 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L899'>dx</a>                899 mpc/mpc.c      typedef struct { mpc_parser_t *x; mpc_dtor_t dx; mpc_ctor_t lf; } mpc_pdata_not_t;</span>
-<span class='curline'><a href='../S/43.html#L900'>dx</a>                900 mpc/mpc.c      typedef struct { int n; mpc_fold_t f; mpc_parser_t *x; mpc_dtor_t dx; } mpc_pdata_repeat_t;</span>
-<span class='curline'><a href='../S/43.html#L1084'>dx</a>               1084 mpc/mpc.c              mpc_parse_dtor(i, p-&gt;data.not.dx, r-&gt;output);</span>
-<span class='curline'><a href='../S/43.html#L1167'>dx</a>               1167 mpc/mpc.c                mpc_parse_dtor(i, p-&gt;data.repeat.dx, results[k].output);</span>
-<span class='curline'><a href='../S/43.html#L1733'>dx</a>               1733 mpc/mpc.c        p-&gt;data.not.dx = da;</span>
-<span class='curline'><a href='../S/43.html#L1776'>dx</a>               1776 mpc/mpc.c        p-&gt;data.repeat.dx = da;</span>
+<span class='curline'><a href='../S/46.html#L902'>dxs</a>               902 mpc/mpc.c      typedef struct { int n; mpc_fold_t f; mpc_parser_t **xs; mpc_dtor_t *dxs;  } mpc_pdata_and_t;</span>
+<span class='curline'><a href='../S/46.html#L1209'>dxs</a>              1209 mpc/mpc.c                  mpc_parse_dtor(i, p-&gt;data.and.dxs[k], results[k].output);</span>
+<span class='curline'><a href='../S/46.html#L1320'>dxs</a>              1320 mpc/mpc.c        free(p-&gt;data.and.dxs);</span>
+<span class='curline'><a href='../S/46.html#L1468'>dxs</a>              1468 mpc/mpc.c            p-&gt;data.and.dxs = malloc((a-&gt;data.and.n-1) * sizeof(mpc_dtor_t));</span>
+<span class='curline'><a href='../S/46.html#L1470'>dxs</a>              1470 mpc/mpc.c              p-&gt;data.and.dxs[i] = a-&gt;data.and.dxs[i];</span>
+<span class='curline'><a href='../S/46.html#L1811'>dxs</a>              1811 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/46.html#L1818'>dxs</a>              1818 mpc/mpc.c          p-&gt;data.and.dxs[i] = va_arg(va, mpc_dtor_t);</span>
+<span class='curline'><a href='../S/46.html#L3101'>dxs</a>              3101 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/46.html#L3108'>dxs</a>              3108 mpc/mpc.c          p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete;</span>
+<span class='curline'><a href='../S/46.html#L3730'>dxs</a>              3730 mpc/mpc.c            free(p-&gt;data.and.xs); free(p-&gt;data.and.dxs); free(p-&gt;name);</span>
+<span class='curline'><a href='../S/46.html#L3746'>dxs</a>              3746 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3749'>dxs</a>              3749 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete; }</span>
+<span class='curline'><a href='../S/46.html#L3750'>dxs</a>              3750 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/46.html#L3764'>dxs</a>              3764 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3766'>dxs</a>              3766 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete; }</span>
+<span class='curline'><a href='../S/46.html#L3767'>dxs</a>              3767 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/46.html#L3780'>dxs</a>              3780 mpc/mpc.c            free(p-&gt;data.and.xs); free(p-&gt;data.and.dxs); free(p-&gt;name);</span>
+<span class='curline'><a href='../S/46.html#L3796'>dxs</a>              3796 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3799'>dxs</a>              3799 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = free; }</span>
+<span class='curline'><a href='../S/46.html#L3800'>dxs</a>              3800 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/46.html#L3814'>dxs</a>              3814 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/46.html#L3816'>dxs</a>              3816 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = free; }</span>
+<span class='curline'><a href='../S/46.html#L3817'>dxs</a>              3817 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
 </pre>
 </body>
 </html>

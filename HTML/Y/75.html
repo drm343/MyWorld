@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>Maths</title>
+<title>Node</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,38 +9,12 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/35.html#L8'>Maths</a>               8 mpc/examples/maths.c   mpc_parser_t *Maths = mpc_new("maths");</span>
-<span class='curline'><a href='../S/35.html#L15'>Maths</a>              15 mpc/examples/maths.c     Expr, Prod, Value, Maths, NULL);</span>
-<span class='curline'><a href='../S/35.html#L20'>Maths</a>              20 mpc/examples/maths.c   mpc_print(Maths);</span>
-<span class='curline'><a href='../S/35.html#L25'>Maths</a>              25 mpc/examples/maths.c     if (mpc_parse_contents(argv[1], Maths, &amp;r)) {</span>
-<span class='curline'><a href='../S/35.html#L36'>Maths</a>              36 mpc/examples/maths.c     if (mpc_parse_pipe("&lt;stdin&gt;", stdin, Maths, &amp;r)) {</span>
-<span class='curline'><a href='../S/35.html#L46'>Maths</a>              46 mpc/examples/maths.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
-<span class='curline'><a href='../S/46.html#L38'>Maths</a>              38 mpc/tests/core.c   mpc_parser_t *Expr, *Factor, *Term, *Maths; </span>
-<span class='curline'><a href='../S/46.html#L44'>Maths</a>              44 mpc/tests/core.c   Maths  = mpc_new("maths");</span>
-<span class='curline'><a href='../S/46.html#L61'>Maths</a>              61 mpc/tests/core.c   mpc_define(Maths, mpc_whole(Expr, free));</span>
-<span class='curline'><a href='../S/46.html#L63'>Maths</a>              63 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "1", &amp;r0, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L64'>Maths</a>              64 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", &amp;r1, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L65'>Maths</a>              65 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(4*2)+5", &amp;r2, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L66'>Maths</a>              66 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Maths, "a", &amp;r3, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L67'>Maths</a>              67 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", &amp;r4, int_eq, free, int_print));</span>
-<span class='curline'><a href='../S/46.html#L69'>Maths</a>              69 mpc/tests/core.c   mpc_cleanup(4, Expr, Factor, Term, Maths);</span>
-<span class='curline'><a href='../S/47.html#L6'>Maths</a>               6 mpc/tests/grammar.c   mpc_parser_t *Expr, *Prod, *Value, *Maths;</span>
-<span class='curline'><a href='../S/47.html#L12'>Maths</a>              12 mpc/tests/grammar.c   Maths = mpc_new("maths");</span>
-<span class='curline'><a href='../S/47.html#L17'>Maths</a>              17 mpc/tests/grammar.c   mpc_define(Maths, mpca_total(Expr));</span>
-<span class='curline'><a href='../S/47.html#L46'>Maths</a>              46 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "  24 ", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L47'>Maths</a>              47 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", t1, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L48'>Maths</a>              48 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(4 * 2 * 11 + 2) + 5", t2, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L49'>Maths</a>              49 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "a", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L50'>Maths</a>              50 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/47.html#L56'>Maths</a>              56 mpc/tests/grammar.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
-<span class='curline'><a href='../S/47.html#L62'>Maths</a>              62 mpc/tests/grammar.c   mpc_parser_t *Expr, *Prod, *Value, *Maths;</span>
-<span class='curline'><a href='../S/47.html#L67'>Maths</a>              67 mpc/tests/grammar.c   Maths = mpc_new("maths");</span>
-<span class='curline'><a href='../S/47.html#L74'>Maths</a>              74 mpc/tests/grammar.c     Expr, Prod, Value, Maths);</span>
-<span class='curline'><a href='../S/47.html#L76'>Maths</a>              76 mpc/tests/grammar.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
-<span class='curline'><a href='../S/47.html#L81'>Maths</a>              81 mpc/tests/grammar.c   mpc_parser_t *Expr, *Prod, *Value, *Maths;</span>
-<span class='curline'><a href='../S/47.html#L86'>Maths</a>              86 mpc/tests/grammar.c   Maths = mpc_new("maths");</span>
-<span class='curline'><a href='../S/47.html#L88'>Maths</a>              88 mpc/tests/grammar.c   mpca_lang_contents(MPCA_LANG_DEFAULT, "./tests/maths.grammar", Expr, Prod, Value, Maths);</span>
-<span class='curline'><a href='../S/47.html#L90'>Maths</a>              90 mpc/tests/grammar.c   mpc_cleanup(4, Expr, Prod, Value, Maths);</span>
+<span class='curline'><a href='../S/45.html#L6'>Node</a>                6 mpc/examples/tree_traversal.c   mpc_parser_t *Node  = mpc_new("node");</span>
+<span class='curline'><a href='../S/45.html#L17'>Node</a>               17 mpc/examples/tree_traversal.c         Node, Leaf, Input, NULL);</span>
+<span class='curline'><a href='../S/45.html#L26'>Node</a>               26 mpc/examples/tree_traversal.c       mpc_cleanup(3, Node, Leaf, Input);</span>
+<span class='curline'><a href='../S/45.html#L37'>Node</a>               37 mpc/examples/tree_traversal.c       mpc_cleanup(3, Node, Leaf, Input);</span>
+<span class='curline'><a href='../S/45.html#L50'>Node</a>               50 mpc/examples/tree_traversal.c     mpc_cleanup(3, Node, Leaf, Input);</span>
+<span class='curline'><a href='../S/45.html#L115'>Node</a>              115 mpc/examples/tree_traversal.c   mpc_cleanup(3, Node, Leaf, Input);</span>
 </pre>
 </body>
 </html>

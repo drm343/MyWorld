@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>apply_to</title>
+<title>as</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,17 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L914'>apply_to</a>          914 mpc/mpc.c        mpc_pdata_apply_to_t apply_to;</span>
-<span class='curline'><a href='../S/43.html#L1048'>apply_to</a>         1048 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.apply_to.x, r, e)) {</span>
-<span class='curline'><a href='../S/43.html#L1049'>apply_to</a>         1049 mpc/mpc.c              MPC_SUCCESS(mpc_parse_apply_to(i, p-&gt;data.apply_to.f, r-&gt;output, p-&gt;data.apply_to.d));</span>
-<span class='curline'><a href='../S/43.html#L1339'>apply_to</a>         1339 mpc/mpc.c          case MPC_TYPE_APPLY_TO: mpc_undefine_unretained(p-&gt;data.apply_to.x, 0); break;</span>
-<span class='curline'><a href='../S/43.html#L1437'>apply_to</a>         1437 mpc/mpc.c          case MPC_TYPE_APPLY_TO: p-&gt;data.apply_to.x = mpc_copy(a-&gt;data.apply_to.x); break;</span>
-<span class='curline'><a href='../S/43.html#L1716'>apply_to</a>         1716 mpc/mpc.c        p-&gt;data.apply_to.x = a;</span>
-<span class='curline'><a href='../S/43.html#L1717'>apply_to</a>         1717 mpc/mpc.c        p-&gt;data.apply_to.f = f;</span>
-<span class='curline'><a href='../S/43.html#L1718'>apply_to</a>         1718 mpc/mpc.c        p-&gt;data.apply_to.d = x;</span>
-<span class='curline'><a href='../S/43.html#L2561'>apply_to</a>         2561 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { mpc_print_unretained(p-&gt;data.apply_to.x, 0); }</span>
-<span class='curline'><a href='../S/43.html#L3624'>apply_to</a>         3624 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { return 1 + mpc_nodecount_unretained(p-&gt;data.apply_to.x, 0); }</span>
-<span class='curline'><a href='../S/43.html#L3671'>apply_to</a>         3671 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { mpc_optimise_unretained(p-&gt;data.apply_to.x, 0); }</span>
+<span class='curline'><a href='../S/46.html#L2997'>as</a>               2997 mpc/mpc.c        mpc_ast_t** as = (mpc_ast_t**)xs;</span>
+<span class='curline'><a href='../S/46.html#L3009'>as</a>               3009 mpc/mpc.c          if (as[i] == NULL) { continue; }</span>
+<span class='curline'><a href='../S/46.html#L3011'>as</a>               3011 mpc/mpc.c          if        (as[i] &amp;&amp; as[i]-&gt;children_num == 0) {</span>
+<span class='curline'><a href='../S/46.html#L3012'>as</a>               3012 mpc/mpc.c            mpc_ast_add_child(r, as[i]);</span>
+<span class='curline'><a href='../S/46.html#L3013'>as</a>               3013 mpc/mpc.c          } else if (as[i] &amp;&amp; as[i]-&gt;children_num == 1) {</span>
+<span class='curline'><a href='../S/46.html#L3014'>as</a>               3014 mpc/mpc.c            mpc_ast_add_child(r, mpc_ast_add_root_tag(as[i]-&gt;children[0], as[i]-&gt;tag));</span>
+<span class='curline'><a href='../S/46.html#L3015'>as</a>               3015 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
+<span class='curline'><a href='../S/46.html#L3016'>as</a>               3016 mpc/mpc.c          } else if (as[i] &amp;&amp; as[i]-&gt;children_num &gt;= 2) {</span>
+<span class='curline'><a href='../S/46.html#L3017'>as</a>               3017 mpc/mpc.c            for (j = 0; j &lt; as[i]-&gt;children_num; j++) {</span>
+<span class='curline'><a href='../S/46.html#L3018'>as</a>               3018 mpc/mpc.c              mpc_ast_add_child(r, as[i]-&gt;children[j]);</span>
+<span class='curline'><a href='../S/46.html#L3020'>as</a>               3020 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
+<span class='curline'><a href='../S/47.html#L314'>as</a>                314 mpc/mpc.h      mpc_val_t *mpcf_fold_ast(int n, mpc_val_t **as);</span>
 </pre>
 </body>
 </html>

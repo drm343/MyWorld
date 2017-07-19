@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>strcat</title>
+<title>status</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,24 +9,30 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L39'>strcat</a>             39 include/main_set_character.h   strcat(CHARACTER_CONFIG_PATH, CONFIG_NAME);</span>
-<span class='curline'><a href='../S/14.html#L168'>strcat</a>            168 include/main_set_character.h         strcat(file_name, dir-&gt;d_name);</span>
-<span class='curline'><a href='../S/11.html#L31'>strcat</a>             31 include/main_set_config.h   strcat(result, CONFIG_NAME);</span>
-<span class='curline'><a href='../S/43.html#L794'>strcat</a>            794 mpc/mpc.c          strcat(expect, x-&gt;expected[0]);</span>
-<span class='curline'><a href='../S/43.html#L814'>strcat</a>            814 mpc/mpc.c            strcat(expect, x-&gt;expected[j]); strcat(expect, ", ");</span>
-<span class='curline'><a href='../S/43.html#L816'>strcat</a>            816 mpc/mpc.c          strcat(expect, x-&gt;expected[x-&gt;expected_num-2]);</span>
-<span class='curline'><a href='../S/43.html#L817'>strcat</a>            817 mpc/mpc.c          strcat(expect, " or ");</span>
-<span class='curline'><a href='../S/43.html#L818'>strcat</a>            818 mpc/mpc.c          strcat(expect, x-&gt;expected[x-&gt;expected_num-1]);</span>
-<span class='curline'><a href='../S/43.html#L945'>strcat</a>            945 mpc/mpc.c        for (j = 1; j &lt; n; j++) { strcat(xs[0], xs[j]); mpc_free(i, xs[j]); }</span>
-<span class='curline'><a href='../S/43.html#L2117'>strcat</a>           2117 mpc/mpc.c              strcat(range, tmp);</span>
-<span class='curline'><a href='../S/43.html#L2130'>strcat</a>           2130 mpc/mpc.c                strcat(range, "-");</span>
-<span class='curline'><a href='../S/43.html#L2318'>strcat</a>           2318 mpc/mpc.c              strcat(y, output[i]);</span>
-<span class='curline'><a href='../S/43.html#L2328'>strcat</a>           2328 mpc/mpc.c            strcat(y, buff);</span>
-<span class='curline'><a href='../S/43.html#L2356'>strcat</a>           2356 mpc/mpc.c              strcat(y, buff);</span>
-<span class='curline'><a href='../S/43.html#L2367'>strcat</a>           2367 mpc/mpc.c            strcat(y, buff);</span>
-<span class='curline'><a href='../S/43.html#L2454'>strcat</a>           2454 mpc/mpc.c          strcat(xs[0], xs[i]); free(xs[i]);</span>
-<span class='curline'><a href='../S/49.html#L120'>strcat</a>            120 mpc/tests/ptest.c     strcat(assert_err, assert_err_buff);</span>
-<span class='curline'><a href='../S/49.html#L145'>strcat</a>            145 mpc/tests/ptest.c   strcat(assert_err, assert_err_buff);</span>
+<span class='curline'><a href='../S/12.html#L21'>status</a>             21 include/character-pool.h   Status_Pool_Access status;</span>
+<span class='curline'><a href='../S/9.html#L12'>status</a>             12 include/character-skill.h   Use_Type status;</span>
+<span class='curline'><a href='../S/11.html#L19'>status</a>             19 include/character.h   Use_Type status;</span>
+<span class='curline'><a href='../S/25.html#L27'>status</a>             27 src/character-pool.c   Status_Pool_Access status = status_pool_start(size);</span>
+<span class='curline'><a href='../S/25.html#L32'>status</a>             32 src/character-pool.c   pool_access-&gt;status = status;</span>
+<span class='curline'><a href='../S/25.html#L49'>status</a>             49 src/character-pool.c   status_pool_stop(pool_access-&gt;status);</span>
+<span class='curline'><a href='../S/25.html#L72'>status</a>             72 src/character-pool.c   Status_Access status = status_pool_malloc(pool_access-&gt;status);</span>
+<span class='curline'><a href='../S/25.html#L75'>status</a>             75 src/character-pool.c   status-&gt;base = base;</span>
+<span class='curline'><a href='../S/25.html#L76'>status</a>             76 src/character-pool.c   character.init(status);</span>
+<span class='curline'><a href='../S/25.html#L77'>status</a>             77 src/character-pool.c   return status;</span>
+<span class='curline'><a href='../S/25.html#L84'>status</a>             84 src/character-pool.c   uint8_t used = from-&gt;status-&gt;max_size - from-&gt;status-&gt;current_size;</span>
+<span class='curline'><a href='../S/25.html#L89'>status</a>             89 src/character-pool.c     from_status = &amp;(from-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L105'>status</a>            105 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
+<span class='curline'><a href='../S/25.html#L108'>status</a>            108 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L122'>status</a>            122 src/character-pool.c   uint8_t used = access-&gt;status-&gt;max_size - access-&gt;status-&gt;current_size;</span>
+<span class='curline'><a href='../S/25.html#L125'>status</a>            125 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/22.html#L15'>status</a>             15 src/character-skill.c   access-&gt;status = UNUSE;</span>
+<span class='curline'><a href='../S/22.html#L42'>status</a>             42 src/character-skill.c   result-&gt;status = IN_USE;</span>
+<span class='curline'><a href='../S/23.html#L5'>status</a>              5 src/character.c   access-&gt;status = UNUSE;</span>
+<span class='curline'><a href='../S/23.html#L16'>status</a>             16 src/character.c   access-&gt;status = IN_USE;</span>
+<span class='curline'><a href='../S/23.html#L31'>status</a>             31 src/character.c   access-&gt;status = IN_USE;</span>
+<span class='curline'><a href='../S/27.html#L40'>status</a>             40 src/main.c       uint8_t used = character_use_pool-&gt;status-&gt;max_size - character_use_pool-&gt;status-&gt;current_size;</span>
+<span class='curline'><a href='../S/27.html#L42'>status</a>             42 src/main.c         Status_Access npc = &amp;(character_use_pool-&gt;status-&gt;pool[next]);</span>
+<span class='curline'><a href='../S/27.html#L44'>status</a>             44 src/main.c         if (npc-&gt;base-&gt;status == IN_USE) {</span>
 </pre>
 </body>
 </html>

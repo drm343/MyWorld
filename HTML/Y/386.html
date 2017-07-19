@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>num_suites</title>
+<title>npc</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,52 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/49.html#L227'>num_suites</a>        227 mpc/tests/ptest.c static int num_suites = 0;</span>
-<span class='curline'><a href='../S/49.html#L232'>num_suites</a>        232 mpc/tests/ptest.c   num_suites++;</span>
-<span class='curline'><a href='../S/49.html#L325'>num_suites</a>        325 mpc/tests/ptest.c   pt_color(YELLOW);  printf(" Total %4d ",  num_suites);        </span>
+<span class='curline'><a href='../S/19.html#L41'>npc</a>                41 include/main_set_character.h void set_name(Status_Access npc, char *name) {</span>
+<span class='curline'><a href='../S/19.html#L46'>npc</a>                46 include/main_set_character.h   character.set_name(npc, character_name);</span>
+<span class='curline'><a href='../S/19.html#L49'>npc</a>                49 include/main_set_character.h void set_mark(Status_Access npc, char *mark) {</span>
+<span class='curline'><a href='../S/19.html#L53'>npc</a>                53 include/main_set_character.h   character.set_mark(npc, key);</span>
+<span class='curline'><a href='../S/19.html#L56'>npc</a>                56 include/main_set_character.h void set_race(Status_Access npc, char *race) {</span>
+<span class='curline'><a href='../S/19.html#L62'>npc</a>                62 include/main_set_character.h   character.set_race(npc, character_race);</span>
+<span class='curline'><a href='../S/19.html#L63'>npc</a>                63 include/main_set_character.h   character.set_name(npc, character_race);</span>
+<span class='curline'><a href='../S/19.html#L66'>npc</a>                66 include/main_set_character.h void set_relation(char *key, Status_Access npc, Relation_Type relation) {</span>
+<span class='curline'><a href='../S/19.html#L67'>npc</a>                67 include/main_set_character.h   character.set_relation_enemy(npc);</span>
+<span class='curline'><a href='../S/19.html#L72'>npc</a>                72 include/main_set_character.h   Status_Access npc = character_pool.malloc(character_prepare_pool);</span>
+<span class='curline'><a href='../S/19.html#L74'>npc</a>                74 include/main_set_character.h   character.set_style(npc, style_access);</span>
+<span class='curline'><a href='../S/19.html#L84'>npc</a>                84 include/main_set_character.h         set_name(npc, value-&gt;children[1]-&gt;contents);</span>
+<span class='curline'><a href='../S/19.html#L87'>npc</a>                87 include/main_set_character.h         set_mark(npc, value-&gt;children[1]-&gt;contents);</span>
+<span class='curline'><a href='../S/19.html#L90'>npc</a>                90 include/main_set_character.h         set_race(npc, value-&gt;children[1]-&gt;contents);</span>
+<span class='curline'><a href='../S/19.html#L181'>npc</a>               181 include/main_set_character.h   Status_Access npc = NULL;</span>
+<span class='curline'><a href='../S/19.html#L186'>npc</a>               186 include/main_set_character.h     npc = character_pool.malloc(character_use_pool);</span>
+<span class='curline'><a href='../S/19.html#L187'>npc</a>               187 include/main_set_character.h     character.copy(npc, origin_npc);</span>
+<span class='curline'><a href='../S/19.html#L192'>npc</a>               192 include/main_set_character.h     character.set_name(npc, character_name);</span>
+<span class='curline'><a href='../S/19.html#L194'>npc</a>               194 include/main_set_character.h     character.set_random_position(npc, map-&gt;end.x, map-&gt;end.y);</span>
+<span class='curline'><a href='../S/19.html#L195'>npc</a>               195 include/main_set_character.h     character.set_random_relation(npc);</span>
+<span class='curline'><a href='../S/19.html#L196'>npc</a>               196 include/main_set_character.h     printf("npc (%d, %d)", npc-&gt;base-&gt;Real_Position.x, npc-&gt;base-&gt;Real_Position.y);</span>
+<span class='curline'><a href='../S/19.html#L199'>npc</a>               199 include/main_set_character.h   return npc;</span>
+<span class='curline'><a href='../S/25.html#L102'>npc</a>               102 src/character-pool.c static Found_Result pool_find(Character_Pool_Access access, Status_Access *npc,</span>
+<span class='curline'><a href='../S/25.html#L108'>npc</a>               108 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L110'>npc</a>               110 src/character-pool.c     if(STRCMP((*npc)-&gt;race, race)) {</span>
+<span class='curline'><a href='../S/25.html#L114'>npc</a>               114 src/character-pool.c   *npc = NULL;</span>
+<span class='curline'><a href='../S/25.html#L119'>npc</a>               119 src/character-pool.c static Found_Result pool_find_by_position(Character_Pool_Access access, Status_Access *npc,</span>
+<span class='curline'><a href='../S/25.html#L125'>npc</a>               125 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L127'>npc</a>               127 src/character-pool.c     if (Point.eq(point, &amp;((*npc)-&gt;base-&gt;Real_Position))</span>
+<span class='curline'><a href='../S/25.html#L128'>npc</a>               128 src/character-pool.c         &amp;&amp; ((*npc)-&gt;faction != FACTION_PLAYER)) {</span>
+<span class='curline'><a href='../S/25.html#L130'>npc</a>               130 src/character-pool.c       if ((*npc)-&gt;base-&gt;crossable == NO) {</span>
+<span class='curline'><a href='../S/25.html#L135'>npc</a>               135 src/character-pool.c   *npc = NULL;</span>
+<span class='curline'><a href='../S/25.html#L145'>npc</a>               145 src/character-pool.c   Status_Access npc = NULL;</span>
+<span class='curline'><a href='../S/25.html#L148'>npc</a>               148 src/character-pool.c     npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L150'>npc</a>               150 src/character-pool.c     npc-&gt;base-&gt;Graph_Position.x = npc-&gt;base-&gt;Real_Position.x - x;</span>
+<span class='curline'><a href='../S/25.html#L151'>npc</a>               151 src/character-pool.c     npc-&gt;base-&gt;Graph_Position.y = npc-&gt;base-&gt;Real_Position.y - y;</span>
+<span class='curline'><a href='../S/29.html#L148'>npc</a>               148 src/graphic-camera.c   Status_Access npc = NULL;</span>
+<span class='curline'><a href='../S/29.html#L184'>npc</a>               184 src/graphic-camera.c   if (occupy_position_by_others(from_pool, point, &amp;npc) == NO) {</span>
+<span class='curline'><a href='../S/29.html#L213'>npc</a>               213 src/graphic-camera.c     if (character.attack(Player, npc) == DEAD) {</span>
+<span class='curline'><a href='../S/29.html#L214'>npc</a>               214 src/graphic-camera.c       character.set_style(npc, dead);</span>
+<span class='curline'><a href='../S/27.html#L37'>npc</a>                37 src/main.c         Status_Access npc = &amp;(character_use_pool-&gt;status-&gt;pool[next]);</span>
+<span class='curline'><a href='../S/27.html#L39'>npc</a>                39 src/main.c         if (npc-&gt;base-&gt;status == IN_USE) {</span>
+<span class='curline'><a href='../S/27.html#L40'>npc</a>                40 src/main.c           if (!Point.eq(&amp;(npc-&gt;base-&gt;Real_Position), &amp;(camera_1-&gt;player-&gt;base-&gt;Real_Position))) {</span>
+<span class='curline'><a href='../S/27.html#L41'>npc</a>                41 src/main.c             rect.x = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.x;</span>
+<span class='curline'><a href='../S/27.html#L42'>npc</a>                42 src/main.c             rect.y = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.y;</span>
+<span class='curline'><a href='../S/27.html#L43'>npc</a>                43 src/main.c             SDL_RenderCopy(render, npc-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(rect));</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>stmt</title>
+<title>skill_pool</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,26 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L3380'>stmt</a>             3380 mpc/mpc.c        mpca_stmt_t *stmt = malloc(sizeof(mpca_stmt_t));</span>
-<span class='curline'><a href='../S/43.html#L3381'>stmt</a>             3381 mpc/mpc.c        stmt-&gt;ident = ((char**)xs)[0];</span>
-<span class='curline'><a href='../S/43.html#L3382'>stmt</a>             3382 mpc/mpc.c        stmt-&gt;name = ((char**)xs)[1];</span>
-<span class='curline'><a href='../S/43.html#L3383'>stmt</a>             3383 mpc/mpc.c        stmt-&gt;grammar = ((mpc_parser_t**)xs)[3];</span>
-<span class='curline'><a href='../S/43.html#L3388'>stmt</a>             3388 mpc/mpc.c        return stmt;</span>
-<span class='curline'><a href='../S/43.html#L3409'>stmt</a>             3409 mpc/mpc.c          mpca_stmt_t *stmt = *stmts; </span>
-<span class='curline'><a href='../S/43.html#L3410'>stmt</a>             3410 mpc/mpc.c          free(stmt-&gt;ident);</span>
-<span class='curline'><a href='../S/43.html#L3411'>stmt</a>             3411 mpc/mpc.c          free(stmt-&gt;name);</span>
-<span class='curline'><a href='../S/43.html#L3412'>stmt</a>             3412 mpc/mpc.c          mpc_soft_delete(stmt-&gt;grammar);</span>
-<span class='curline'><a href='../S/43.html#L3413'>stmt</a>             3413 mpc/mpc.c          free(stmt);  </span>
-<span class='curline'><a href='../S/43.html#L3423'>stmt</a>             3423 mpc/mpc.c        mpca_stmt_t *stmt;</span>
-<span class='curline'><a href='../S/43.html#L3428'>stmt</a>             3428 mpc/mpc.c          stmt = *stmts;</span>
-<span class='curline'><a href='../S/43.html#L3429'>stmt</a>             3429 mpc/mpc.c          left = mpca_grammar_find_parser(stmt-&gt;ident, st);</span>
-<span class='curline'><a href='../S/43.html#L3430'>stmt</a>             3430 mpc/mpc.c          if (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) { stmt-&gt;grammar = mpc_predictive(stmt-&gt;grammar); }</span>
-<span class='curline'><a href='../S/43.html#L3431'>stmt</a>             3431 mpc/mpc.c          if (stmt-&gt;name) { stmt-&gt;grammar = mpc_expect(stmt-&gt;grammar, stmt-&gt;name); }</span>
-<span class='curline'><a href='../S/43.html#L3432'>stmt</a>             3432 mpc/mpc.c          mpc_optimise(stmt-&gt;grammar);</span>
-<span class='curline'><a href='../S/43.html#L3433'>stmt</a>             3433 mpc/mpc.c          mpc_define(left, stmt-&gt;grammar);</span>
-<span class='curline'><a href='../S/43.html#L3434'>stmt</a>             3434 mpc/mpc.c          free(stmt-&gt;ident);</span>
-<span class='curline'><a href='../S/43.html#L3435'>stmt</a>             3435 mpc/mpc.c          free(stmt-&gt;name);</span>
-<span class='curline'><a href='../S/43.html#L3436'>stmt</a>             3436 mpc/mpc.c          free(stmt);</span>
+<span class='curline'><a href='../S/12.html#L36'>skill_pool</a>         36 include/character-skill.h extern Skill_Pool_API skill_pool;</span>
+<span class='curline'><a href='../S/22.html#L74'>skill_pool</a>         74 src/character-skill.c Skill_Pool_API skill_pool = {</span>
 </pre>
 </body>
 </html>

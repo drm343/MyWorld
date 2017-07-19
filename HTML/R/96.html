@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>STRING_POOL_ON_STACK</title>
+<title>Point_Type</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,30 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L7'>STRING_POOL_ON_STACK</a>    7 include/main_set_character.h STRING_POOL_ON_STACK(npc_string_pool);</span>
-<span class='curline'><a href='../S/11.html#L13'>STRING_POOL_ON_STACK</a>   13 include/main_set_config.h STRING_POOL_ON_STACK(string_pool);</span>
+<span class='curline'><a href='../S/15.html#L28'>Point_Type</a>         28 include/base_type.h typedef Point_Type * Point_Access;</span>
+<span class='curline'><a href='../S/16.html#L14'>Point_Type</a>         14 include/character.h   Point_Type Real_Position;</span>
+<span class='curline'><a href='../S/16.html#L15'>Point_Type</a>         15 include/character.h   Point_Type Graph_Position;</span>
+<span class='curline'><a href='../S/13.html#L18'>Point_Type</a>         18 include/graphic-camera.h   Point_Type center;</span>
+<span class='curline'><a href='../S/13.html#L21'>Point_Type</a>         21 include/graphic-camera.h   Point_Type start;</span>
+<span class='curline'><a href='../S/13.html#L22'>Point_Type</a>         22 include/graphic-camera.h   Point_Type end;</span>
+<span class='curline'><a href='../S/9.html#L7'>Point_Type</a>          7 include/map_system.h   Point_Type start;</span>
+<span class='curline'><a href='../S/9.html#L8'>Point_Type</a>          8 include/map_system.h   Point_Type end;</span>
+<span class='curline'><a href='../S/29.html#L30'>Point_Type</a>         30 src/graphic-camera.c     Point_Type point, Status_Access *result) {</span>
+<span class='curline'><a href='../S/29.html#L42'>Point_Type</a>         42 src/graphic-camera.c   Point_Type point = Player-&gt;base-&gt;Real_Position;</span>
+<span class='curline'><a href='../S/29.html#L44'>Point_Type</a>         44 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
+<span class='curline'><a href='../S/29.html#L46'>Point_Type</a>         46 src/graphic-camera.c   Point_Type from = access-&gt;start;</span>
+<span class='curline'><a href='../S/29.html#L47'>Point_Type</a>         47 src/graphic-camera.c   Point_Type to = access-&gt;end;</span>
+<span class='curline'><a href='../S/29.html#L78'>Point_Type</a>         78 src/graphic-camera.c     Point_Type point) {</span>
+<span class='curline'><a href='../S/29.html#L79'>Point_Type</a>         79 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
+<span class='curline'><a href='../S/29.html#L81'>Point_Type</a>         81 src/graphic-camera.c   Point_Type from = access-&gt;start;</span>
+<span class='curline'><a href='../S/29.html#L82'>Point_Type</a>         82 src/graphic-camera.c   Point_Type to = access-&gt;end;</span>
+<span class='curline'><a href='../S/29.html#L112'>Point_Type</a>        112 src/graphic-camera.c     Point_Type point) {</span>
+<span class='curline'><a href='../S/29.html#L113'>Point_Type</a>        113 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
+<span class='curline'><a href='../S/29.html#L115'>Point_Type</a>        115 src/graphic-camera.c   Point_Type from = access-&gt;start;</span>
+<span class='curline'><a href='../S/29.html#L116'>Point_Type</a>        116 src/graphic-camera.c   Point_Type to = access-&gt;end;</span>
+<span class='curline'><a href='../S/29.html#L151'>Point_Type</a>        151 src/graphic-camera.c   Point_Type point = {</span>
+<span class='curline'><a href='../S/29.html#L156'>Point_Type</a>        156 src/graphic-camera.c   Point_Type vector = {0, 0};</span>
+<span class='curline'><a href='../S/29.html#L261'>Point_Type</a>        261 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_any</title>
+<title>int_print</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,13 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1854'>mpc_any</a>          1854 mpc/mpc.c      mpc_parser_t *mpc_escape(void) { return mpc_and(2, mpcf_strfold, mpc_char('\\'), mpc_any(), free); }</span>
-<span class='curline'><a href='../S/43.html#L1897'>mpc_any</a>          1897 mpc/mpc.c        return mpc_expect(mpc_between(mpc_or(2, mpc_escape(), mpc_any()), free, "'", "'"), "char");</span>
-<span class='curline'><a href='../S/43.html#L2061'>mpc_any</a>          2061 mpc/mpc.c        if (s[0] == '.') { free(s); return mpc_any(); }</span>
-<span class='curline'><a href='../S/44.html#L100'>mpc_any</a>           100 mpc/mpc.h      mpc_parser_t *mpc_any(void);</span>
-<span class='curline'><a href='../S/46.html#L74'>mpc_any</a>            74 mpc/tests/core.c   mpc_parser_t *Stripperl = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtriml);</span>
-<span class='curline'><a href='../S/46.html#L75'>mpc_any</a>            75 mpc/tests/core.c   mpc_parser_t *Stripperr = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrimr);</span>
-<span class='curline'><a href='../S/46.html#L76'>mpc_any</a>            76 mpc/tests/core.c   mpc_parser_t *Stripper  = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrim);</span>
+<span class='curline'><a href='../S/48.html#L63'>int_print</a>          63 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "1", &amp;r0, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/48.html#L64'>int_print</a>          64 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", &amp;r1, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/48.html#L65'>int_print</a>          65 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(4*2)+5", &amp;r2, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/48.html#L66'>int_print</a>          66 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Maths, "a", &amp;r3, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/48.html#L67'>int_print</a>          67 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", &amp;r4, int_eq, free, int_print));</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_between</title>
+<title>mpc_ast_get_child_lb</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,14 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1897'>mpc_between</a>      1897 mpc/mpc.c        return mpc_expect(mpc_between(mpc_or(2, mpc_escape(), mpc_any()), free, "'", "'"), "char");</span>
-<span class='curline'><a href='../S/43.html#L1902'>mpc_between</a>      1902 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, strchar), free, "\"", "\""), "string");</span>
-<span class='curline'><a href='../S/43.html#L1907'>mpc_between</a>      1907 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, regexchar), free, "/", "/"), "regex");</span>
-<span class='curline'><a href='../S/43.html#L1939'>mpc_between</a>      1939 mpc/mpc.c      mpc_parser_t *mpc_parens(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_between(a, ad, "(", ")"); }</span>
-<span class='curline'><a href='../S/43.html#L1940'>mpc_between</a>      1940 mpc/mpc.c      mpc_parser_t *mpc_braces(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_between(a, ad, "&lt;", "&gt;"); }</span>
-<span class='curline'><a href='../S/43.html#L1941'>mpc_between</a>      1941 mpc/mpc.c      mpc_parser_t *mpc_brackets(mpc_parser_t *a, mpc_dtor_t ad) { return mpc_between(a, ad, "{", "}"); }</span>
-<span class='curline'><a href='../S/43.html#L1942'>mpc_between</a>      1942 mpc/mpc.c      mpc_parser_t *mpc_squares(mpc_parser_t *a, mpc_dtor_t ad)  { return mpc_between(a, ad, "[", "]"); }</span>
-<span class='curline'><a href='../S/44.html#L202'>mpc_between</a>       202 mpc/mpc.h      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
+<span class='curline'><a href='../S/45.html#L59'>mpc_ast_get_child_lb</a>   59 mpc/examples/tree_traversal.c   child_sub = mpc_ast_get_child_lb(child, "node|leaf|regex", 0);</span>
+<span class='curline'><a href='../S/45.html#L66'>mpc_ast_get_child_lb</a>   66 mpc/examples/tree_traversal.c     child_sub = mpc_ast_get_child_lb(child, "node|leaf|regex", lb);</span>
+<span class='curline'><a href='../S/46.html#L2843'>mpc_ast_get_child_lb</a> 2843 mpc/mpc.c        return mpc_ast_get_child_lb(ast, tag, 0);</span>
+<span class='curline'><a href='../S/47.html#L288'>mpc_ast_get_child_lb</a>  288 mpc/mpc.h      mpc_ast_t *mpc_ast_get_child_lb(mpc_ast_t *ast, const char *tag, int lb);</span>
 </pre>
 </body>
 </html>

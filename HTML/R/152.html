@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_ast_add_child</title>
+<title>mpc_alpha</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L2719'>mpc_ast_add_child</a> 2719 mpc/mpc.c          mpc_ast_add_child(a, va_arg(va, mpc_ast_t*));</span>
-<span class='curline'><a href='../S/43.html#L2737'>mpc_ast_add_child</a> 2737 mpc/mpc.c        mpc_ast_add_child(r, a);</span>
-<span class='curline'><a href='../S/43.html#L3012'>mpc_ast_add_child</a> 3012 mpc/mpc.c            mpc_ast_add_child(r, as[i]);</span>
-<span class='curline'><a href='../S/43.html#L3014'>mpc_ast_add_child</a> 3014 mpc/mpc.c            mpc_ast_add_child(r, mpc_ast_add_root_tag(as[i]-&gt;children[0], as[i]-&gt;tag));</span>
-<span class='curline'><a href='../S/43.html#L3018'>mpc_ast_add_child</a> 3018 mpc/mpc.c              mpc_ast_add_child(r, as[i]-&gt;children[j]);</span>
-<span class='curline'><a href='../S/44.html#L275'>mpc_ast_add_child</a>  275 mpc/mpc.h      mpc_ast_t *mpc_ast_add_child(mpc_ast_t *r, mpc_ast_t *a);</span>
+<span class='curline'><a href='../S/45.html#L1867'>mpc_alpha</a>        1867 mpc/mpc.c      mpc_parser_t *mpc_alphanum(void) { return mpc_expect(mpc_or(3, mpc_alpha(), mpc_digit(), mpc_underscore()), "alphanumeric"); }</span>
+<span class='curline'><a href='../S/45.html#L1912'>mpc_alpha</a>        1912 mpc/mpc.c        p0 = mpc_or(2, mpc_alpha(), mpc_underscore());</span>
+<span class='curline'><a href='../S/46.html#L169'>mpc_alpha</a>         169 mpc/mpc.h      mpc_parser_t *mpc_alpha(void);</span>
+<span class='curline'><a href='../S/48.html#L18'>mpc_alpha</a>          18 mpc/tests/core.c       mpc_or(2, mpc_alpha(), mpc_underscore()),</span>
+<span class='curline'><a href='../S/48.html#L19'>mpc_alpha</a>          19 mpc/tests/core.c       mpc_many1(mpcf_strfold, mpc_or(3, mpc_alpha(), mpc_underscore(), mpc_digit())),</span>
 </pre>
 </body>
 </html>

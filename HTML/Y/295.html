@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>found</title>
+<title>fp</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,14 +9,15 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L2305'>found</a>            2305 mpc/mpc.c        int found;</span>
-<span class='curline'><a href='../S/43.html#L2313'>found</a>            2313 mpc/mpc.c          found = 0;</span>
-<span class='curline'><a href='../S/43.html#L2319'>found</a>            2319 mpc/mpc.c              found = 1;</span>
-<span class='curline'><a href='../S/43.html#L2325'>found</a>            2325 mpc/mpc.c          if (!found) {</span>
-<span class='curline'><a href='../S/43.html#L2341'>found</a>            2341 mpc/mpc.c        int found = 0;</span>
-<span class='curline'><a href='../S/43.html#L2349'>found</a>            2349 mpc/mpc.c          found = 0;</span>
-<span class='curline'><a href='../S/43.html#L2357'>found</a>            2357 mpc/mpc.c              found = 1;</span>
-<span class='curline'><a href='../S/43.html#L2364'>found</a>            2364 mpc/mpc.c          if (!found) {</span>
+<span class='curline'><a href='../S/46.html#L2792'>fp</a>               2792 mpc/mpc.c      static void mpc_ast_print_depth(mpc_ast_t *a, int d, FILE *fp) {</span>
+<span class='curline'><a href='../S/46.html#L2797'>fp</a>               2797 mpc/mpc.c          fprintf(fp, "NULL\n");</span>
+<span class='curline'><a href='../S/46.html#L2801'>fp</a>               2801 mpc/mpc.c        for (i = 0; i &lt; d; i++) { fprintf(fp, "  "); }</span>
+<span class='curline'><a href='../S/46.html#L2804'>fp</a>               2804 mpc/mpc.c          fprintf(fp, "%s:%lu:%lu '%s'\n", a-&gt;tag, </span>
+<span class='curline'><a href='../S/46.html#L2809'>fp</a>               2809 mpc/mpc.c          fprintf(fp, "%s \n", a-&gt;tag);</span>
+<span class='curline'><a href='../S/46.html#L2813'>fp</a>               2813 mpc/mpc.c          mpc_ast_print_depth(a-&gt;children[i], d+1, fp);</span>
+<span class='curline'><a href='../S/46.html#L2822'>fp</a>               2822 mpc/mpc.c      void mpc_ast_print_to(mpc_ast_t *a, FILE *fp) {</span>
+<span class='curline'><a href='../S/46.html#L2823'>fp</a>               2823 mpc/mpc.c        mpc_ast_print_depth(a, 0, fp);</span>
+<span class='curline'><a href='../S/47.html#L283'>fp</a>                283 mpc/mpc.h      void mpc_ast_print_to(mpc_ast_t *a, FILE *fp);</span>
 </pre>
 </body>
 </html>

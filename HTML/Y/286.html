@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>filename</title>
+<title>filename_len</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,61 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L12'>filename</a>           12 include/main_set_character.h const char *get_file_extension(const char *filename) {</span>
-<span class='curline'><a href='../S/14.html#L13'>filename</a>           13 include/main_set_character.h   const char *dot = strrchr(filename, '.');</span>
-<span class='curline'><a href='../S/14.html#L15'>filename</a>           15 include/main_set_character.h   if (!dot || dot == filename) {</span>
-<span class='curline'><a href='../S/43.html#L79'>filename</a>           79 mpc/mpc.c        char *filename;  </span>
-<span class='curline'><a href='../S/43.html#L101'>filename</a>          101 mpc/mpc.c      static mpc_input_t *mpc_input_new_string(const char *filename, const char *string) {</span>
-<span class='curline'><a href='../S/43.html#L105'>filename</a>          105 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
-<span class='curline'><a href='../S/43.html#L106'>filename</a>          106 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
-<span class='curline'><a href='../S/43.html#L130'>filename</a>          130 mpc/mpc.c      static mpc_input_t *mpc_input_new_nstring(const char *filename, const char *string, size_t length) {</span>
-<span class='curline'><a href='../S/43.html#L134'>filename</a>          134 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
-<span class='curline'><a href='../S/43.html#L135'>filename</a>          135 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
-<span class='curline'><a href='../S/43.html#L161'>filename</a>          161 mpc/mpc.c      static mpc_input_t *mpc_input_new_pipe(const char *filename, FILE *pipe) {</span>
-<span class='curline'><a href='../S/43.html#L165'>filename</a>          165 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
-<span class='curline'><a href='../S/43.html#L166'>filename</a>          166 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
-<span class='curline'><a href='../S/43.html#L190'>filename</a>          190 mpc/mpc.c      static mpc_input_t *mpc_input_new_file(const char *filename, FILE *file) {</span>
-<span class='curline'><a href='../S/43.html#L194'>filename</a>          194 mpc/mpc.c        i-&gt;filename = malloc(strlen(filename) + 1);</span>
-<span class='curline'><a href='../S/43.html#L195'>filename</a>          195 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
-<span class='curline'><a href='../S/43.html#L219'>filename</a>          219 mpc/mpc.c        free(i-&gt;filename);</span>
-<span class='curline'><a href='../S/43.html#L553'>filename</a>          553 mpc/mpc.c        free(x-&gt;filename);</span>
-<span class='curline'><a href='../S/43.html#L613'>filename</a>          613 mpc/mpc.c          "%s: error: %s\n", x-&gt;filename, x-&gt;failure);</span>
-<span class='curline'><a href='../S/43.html#L618'>filename</a>          618 mpc/mpc.c          "%s:%i:%i: error: expected ", x-&gt;filename, x-&gt;state.row+1, x-&gt;state.col+1);</span>
-<span class='curline'><a href='../S/43.html#L644'>filename</a>          644 mpc/mpc.c        x-&gt;filename = mpc_malloc(i, strlen(i-&gt;filename) + 1);</span>
-<span class='curline'><a href='../S/43.html#L645'>filename</a>          645 mpc/mpc.c        strcpy(x-&gt;filename, i-&gt;filename);</span>
-<span class='curline'><a href='../S/43.html#L660'>filename</a>          660 mpc/mpc.c        x-&gt;filename = mpc_malloc(i, strlen(i-&gt;filename) + 1);</span>
-<span class='curline'><a href='../S/43.html#L661'>filename</a>          661 mpc/mpc.c        strcpy(x-&gt;filename, i-&gt;filename);</span>
-<span class='curline'><a href='../S/43.html#L671'>filename</a>          671 mpc/mpc.c      static mpc_err_t *mpc_err_file(const char *filename, const char *failure) {</span>
-<span class='curline'><a href='../S/43.html#L674'>filename</a>          674 mpc/mpc.c        x-&gt;filename = malloc(strlen(filename) + 1);</span>
-<span class='curline'><a href='../S/43.html#L675'>filename</a>          675 mpc/mpc.c        strcpy(x-&gt;filename, filename);</span>
-<span class='curline'><a href='../S/43.html#L690'>filename</a>          690 mpc/mpc.c        mpc_free(i, x-&gt;filename);</span>
-<span class='curline'><a href='../S/43.html#L701'>filename</a>          701 mpc/mpc.c        x-&gt;filename = mpc_export(i, x-&gt;filename);</span>
-<span class='curline'><a href='../S/43.html#L740'>filename</a>          740 mpc/mpc.c        e-&gt;filename = mpc_malloc(i, strlen(x[fst]-&gt;filename)+1);</span>
-<span class='curline'><a href='../S/43.html#L741'>filename</a>          741 mpc/mpc.c        strcpy(e-&gt;filename, x[fst]-&gt;filename);</span>
-<span class='curline'><a href='../S/43.html#L1249'>filename</a>         1249 mpc/mpc.c      int mpc_parse(const char *filename, const char *string, mpc_parser_t *p, mpc_result_t *r) {</span>
-<span class='curline'><a href='../S/43.html#L1251'>filename</a>         1251 mpc/mpc.c        mpc_input_t *i = mpc_input_new_string(filename, string);</span>
-<span class='curline'><a href='../S/43.html#L1257'>filename</a>         1257 mpc/mpc.c      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r) {</span>
-<span class='curline'><a href='../S/43.html#L1259'>filename</a>         1259 mpc/mpc.c        mpc_input_t *i = mpc_input_new_nstring(filename, string, length);</span>
-<span class='curline'><a href='../S/43.html#L1265'>filename</a>         1265 mpc/mpc.c      int mpc_parse_file(const char *filename, FILE *file, mpc_parser_t *p, mpc_result_t *r) {</span>
-<span class='curline'><a href='../S/43.html#L1267'>filename</a>         1267 mpc/mpc.c        mpc_input_t *i = mpc_input_new_file(filename, file);</span>
-<span class='curline'><a href='../S/43.html#L1273'>filename</a>         1273 mpc/mpc.c      int mpc_parse_pipe(const char *filename, FILE *pipe, mpc_parser_t *p, mpc_result_t *r) {</span>
-<span class='curline'><a href='../S/43.html#L1275'>filename</a>         1275 mpc/mpc.c        mpc_input_t *i = mpc_input_new_pipe(filename, pipe);</span>
-<span class='curline'><a href='../S/43.html#L1281'>filename</a>         1281 mpc/mpc.c      int mpc_parse_contents(const char *filename, mpc_parser_t *p, mpc_result_t *r) {</span>
-<span class='curline'><a href='../S/43.html#L1283'>filename</a>         1283 mpc/mpc.c        FILE *f = fopen(filename, "rb");</span>
-<span class='curline'><a href='../S/43.html#L1288'>filename</a>         1288 mpc/mpc.c          r-&gt;error = mpc_err_file(filename, "Unable to open file!");</span>
-<span class='curline'><a href='../S/43.html#L1292'>filename</a>         1292 mpc/mpc.c        res = mpc_parse_file(filename, f, p, r);</span>
-<span class='curline'><a href='../S/43.html#L3581'>filename</a>         3581 mpc/mpc.c      mpc_err_t *mpca_lang_contents(int flags, const char *filename, ...) {</span>
-<span class='curline'><a href='../S/43.html#L3589'>filename</a>         3589 mpc/mpc.c        FILE *f = fopen(filename, "rb");</span>
-<span class='curline'><a href='../S/43.html#L3592'>filename</a>         3592 mpc/mpc.c          err = mpc_err_file(filename, "Unable to open file!");</span>
-<span class='curline'><a href='../S/43.html#L3596'>filename</a>         3596 mpc/mpc.c        va_start(va, filename);</span>
-<span class='curline'><a href='../S/43.html#L3603'>filename</a>         3603 mpc/mpc.c        i = mpc_input_new_file(filename, f);</span>
-<span class='curline'><a href='../S/44.html#L42'>filename</a>           42 mpc/mpc.h        char *filename;</span>
-<span class='curline'><a href='../S/44.html#L67'>filename</a>           67 mpc/mpc.h      int mpc_parse(const char *filename, const char *string, mpc_parser_t *p, mpc_result_t *r);</span>
-<span class='curline'><a href='../S/44.html#L68'>filename</a>           68 mpc/mpc.h      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r);</span>
-<span class='curline'><a href='../S/44.html#L69'>filename</a>           69 mpc/mpc.h      int mpc_parse_file(const char *filename, FILE *file, mpc_parser_t *p, mpc_result_t *r);</span>
-<span class='curline'><a href='../S/44.html#L70'>filename</a>           70 mpc/mpc.h      int mpc_parse_pipe(const char *filename, FILE *pipe, mpc_parser_t *p, mpc_result_t *r);</span>
-<span class='curline'><a href='../S/44.html#L71'>filename</a>           71 mpc/mpc.h      int mpc_parse_contents(const char *filename, mpc_parser_t *p, mpc_result_t *r);</span>
-<span class='curline'><a href='../S/44.html#L345'>filename</a>          345 mpc/mpc.h      mpc_err_t *mpca_lang_contents(int flags, const char *filename, ...);</span>
+<span class='curline'><a href='../S/19.html#L163'>filename_len</a>      163 include/main_set_character.h         size_t filename_len = strlen(dir-&gt;d_name);</span>
+<span class='curline'><a href='../S/19.html#L165'>filename_len</a>      165 include/main_set_character.h         file_name = MAIN_NPC_STRING_malloc(path_len + filename_len);</span>
 </pre>
 </body>
 </html>

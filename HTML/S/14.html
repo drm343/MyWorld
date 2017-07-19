@@ -1,234 +1,61 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>include/main_set_character.h</title>
+<title>include/character-pool.h</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
 <link rel='stylesheet' type='text/css' href='../style.css' />
 </head>
 <body>
-<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/55.html'>include</a>/main_set_character.h</h2>
-<em class='comment'>/* [&lt;][&gt;]<a href='#L12'>[^]</a><a href='#L180'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/58.html'>include</a>/character-pool.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
 <hr />
-<h2 class='header'><a href='9.html#L15' title='Included from 15 in include/main.h.'>INCLUDED FROM</a></h2>
-<hr />
-<h2 class='header'>DEFINITIONS</h2>
-This source file includes following definitions.
-<ol>
-<li><a href='#L12' title='Defined at 12.'>get_file_extension</a></li>
-<li><a href='#L23' title='Defined at 23.'>check_json</a></li>
-<li><a href='#L32' title='Defined at 32.'>setup_character_config_path</a></li>
-<li><a href='#L42' title='Defined at 42.'>set_name</a></li>
-<li><a href='#L50' title='Defined at 50.'>set_mark</a></li>
-<li><a href='#L57' title='Defined at 57.'>set_race</a></li>
-<li><a href='#L67' title='Defined at 67.'>set_relation</a></li>
-<li><a href='#L71' title='Defined at 71.'>eval_set_npc</a></li>
-<li><a href='#L100' title='Defined at 100.'>setup_npc</a></li>
-<li><a href='#L152' title='Defined at 152.'>setup_npc_by_dir</a></li>
-<li><a href='#L180' title='Defined at 180.'>use_npc</a></li>
-</ol>
+<h2 class='header'><a href='../J/3.html' title='Multiple included from 3 places.'>INCLUDED FROM</a></h2>
 <hr />
 <pre>
-<a id='L1' name='L1'></a>   1 <em class='sharp'>#define</em> <a href='../S/14.html#L166' title='Referred from 166 in include/main_set_character.h.'>MAIN_NPC_STRING_malloc</a>(<a href='../Y/335.html' title='Multiple used in 15 places.'>len</a>) <a href='../Y/498.html' title='Multiple used in 5 places.'>string_pool</a>-&gt;<a href='../Y/344.html' title='Multiple used in 77 places.'>malloc</a>(<a href='../Y/381.html' title='Multiple used in 4 places.'>npc_string_pool</a>, <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a>);
-<a id='L2' name='L2'></a>   2 
-<a id='L3' name='L3'></a>   3 <a href='../S/17.html#L24' title='Defined at 24 in include/character-pool.h.'>Character_Pool_Access</a> <a href='../Y/211.html' title='Multiple used in 5 places.'>character_prepare_pool</a> = <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>;
-<a id='L4' name='L4'></a>   4 <a href='../S/17.html#L24' title='Defined at 24 in include/character-pool.h.'>Character_Pool_Access</a> <a href='../Y/213.html' title='Multiple used in 8 places.'>character_use_pool</a> = <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>;
-<a id='L5' name='L5'></a>   5 <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/83.html' title='Multiple used in 18 places.'>Player</a> = <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>;
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/14.html#L2' title='Defined at 2 in include/character-pool.h.'>HEADER_CHARACTER_POOL</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/14.html#L1' title='Referred from 1 in include/character-pool.h.'>HEADER_CHARACTER_POOL</a>
+<a id='L3' name='L3'></a>   3 <em class='sharp'>#include</em> "<a href='12.html'>character-skill.h</a>"
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> "<a href='10.html'>helper_function.h</a>"
+<a id='L5' name='L5'></a>   5 
 <a id='L6' name='L6'></a>   6 
-<a id='L7' name='L7'></a>   7 <a href='../S/5.html#L9' title='Defined at 9 in include/string_pool.h.'>STRING_POOL_ON_STACK</a>(<a href='../Y/381.html' title='Multiple used in 4 places.'>npc_string_pool</a>);
-<a id='L8' name='L8'></a>   8 
-<a id='L9' name='L9'></a>   9 <strong class='reserved'>char</strong> *<a href='../Y/9.html' title='Multiple used in 7 places.'>CHARACTER_CONFIG_PATH</a> = <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>;
-<a id='L10' name='L10'></a>  10 
+<a id='L7' name='L7'></a>   7 <strong class='reserved'>typedef</strong> <strong class='reserved'>enum</strong> <em class='brace'>{</em>
+<a id='L8' name='L8'></a>   8   <a href='../R/89.html' title='Multiple referred from 2 places.'>NOT_FOUND</a> = 0,
+<a id='L9' name='L9'></a>   9   <a href='../R/24.html' title='Multiple referred from 3 places.'>FOUND</a>
+<a id='L10' name='L10'></a>  10 <em class='brace'>}</em> <a href='../R/26.html' title='Multiple referred from 4 places.'>Found_Result</a>;
 <a id='L11' name='L11'></a>  11 
-<a id='L12' name='L12'></a>  12 <strong class='reserved'>const</strong> <strong class='reserved'>char</strong> *<a href='../S/14.html#L24' title='Referred from 24 in include/main_set_character.h.'>get_file_extension</a>(<strong class='reserved'>const</strong> <strong class='reserved'>char</strong> *<a href='../Y/286.html' title='Multiple used in 55 places.'>filename</a>) <em class='brace'>{</em>
-<a id='L13' name='L13'></a>  13   <strong class='reserved'>const</strong> <strong class='reserved'>char</strong> *<a href='../Y/255.html' title='Multiple used in 3 places.'>dot</a> = strrchr(<a href='../Y/286.html' title='Multiple used in 55 places.'>filename</a>, '.');
+<a id='L12' name='L12'></a>  12 <a href='../S/10.html#L6' title='Defined at 6 in include/helper_function.h.'>GENERIC_POOL</a>(<a href='../Y/147.html' title='Multiple used in 3 places.'>Status_Pool</a>, <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a>);
+<a id='L13' name='L13'></a>  13 <strong class='reserved'>typedef</strong> <a href='../Y/147.html' title='Multiple used in 3 places.'>Status_Pool</a> * <a href='../R/116.html' title='Multiple referred from 6 places.'>Status_Pool_Access</a>;
 <a id='L14' name='L14'></a>  14 
-<a id='L15' name='L15'></a>  15   <strong class='reserved'>if</strong> (!<a href='../Y/255.html' title='Multiple used in 3 places.'>dot</a> || <a href='../Y/255.html' title='Multiple used in 3 places.'>dot</a> == <a href='../Y/286.html' title='Multiple used in 55 places.'>filename</a>) <em class='brace'>{</em>
-<a id='L16' name='L16'></a>  16     <strong class='reserved'>return</strong> "";
-<a id='L17' name='L17'></a>  17   <em class='brace'>}</em>
-<a id='L18' name='L18'></a>  18   <strong class='reserved'>else</strong> <em class='brace'>{</em>
-<a id='L19' name='L19'></a>  19     <strong class='reserved'>return</strong> <a href='../Y/255.html' title='Multiple used in 3 places.'>dot</a> + 1;
-<a id='L20' name='L20'></a>  20   <em class='brace'>}</em>
-<a id='L21' name='L21'></a>  21 <em class='brace'>}</em>
-<a id='L22' name='L22'></a>  22 
-<a id='L23' name='L23'></a>  23 <a href='../Y/201.html' title='Multiple used in 16 places.'>bool</a> <a href='../S/14.html#L163' title='Referred from 163 in include/main_set_character.h.'>check_json</a>(<strong class='reserved'>char</strong> *<a href='../Y/285.html' title='Multiple used in 6 places.'>file_path</a>) <em class='brace'>{</em>
-<a id='L24' name='L24'></a>  24   <strong class='reserved'>if</strong> (<a href='../S/7.html#L12' title='Defined at 12 in include/setup_config.h.'>strcmp</a>("json", <a href='../S/14.html#L12' title='Defined at 12 in include/main_set_character.h.'>get_file_extension</a>(<a href='../Y/285.html' title='Multiple used in 6 places.'>file_path</a>)) == 0) <em class='brace'>{</em>
-<a id='L25' name='L25'></a>  25     <strong class='reserved'>return</strong> <a href='../Y/532.html' title='Multiple used in 12 places.'>true</a>;
-<a id='L26' name='L26'></a>  26   <em class='brace'>}</em>
-<a id='L27' name='L27'></a>  27   <strong class='reserved'>else</strong> <em class='brace'>{</em>
-<a id='L28' name='L28'></a>  28     <strong class='reserved'>return</strong> <a href='../Y/276.html' title='Multiple used in 11 places.'>false</a>;
-<a id='L29' name='L29'></a>  29   <em class='brace'>}</em>
-<a id='L30' name='L30'></a>  30 <em class='brace'>}</em>
-<a id='L31' name='L31'></a>  31 
-<a id='L32' name='L32'></a>  32 <strong class='reserved'>void</strong> <a href='../S/26.html#L201' title='Referred from 201 in src/main.c.'>setup_character_config_path</a>(<strong class='reserved'>char</strong> *<a href='../Y/13.html' title='Multiple used in 6 places.'>CONFIG_VALUE</a>) <em class='brace'>{</em>
-<a id='L33' name='L33'></a>  33   <strong class='reserved'>char</strong> *<a href='../Y/12.html' title='Multiple used in 8 places.'>CONFIG_NAME</a> = "/config/npc/";
-<a id='L34' name='L34'></a>  34   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/336.html' title='Multiple used in 2 places.'>len1</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/13.html' title='Multiple used in 6 places.'>CONFIG_VALUE</a>);
-<a id='L35' name='L35'></a>  35   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/337.html' title='Multiple used in 2 places.'>len2</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/12.html' title='Multiple used in 8 places.'>CONFIG_NAME</a>);
+<a id='L15' name='L15'></a>  15 <a href='../S/10.html#L6' title='Defined at 6 in include/helper_function.h.'>GENERIC_POOL</a>(<a href='../Y/16.html' title='Multiple used in 3 places.'>Character_Base_Pool</a>, <a href='../S/16.html#L24' title='Defined at 24 in include/character.h.'>Character_Base_Access</a>);
+<a id='L16' name='L16'></a>  16 <strong class='reserved'>typedef</strong> <a href='../Y/16.html' title='Multiple used in 3 places.'>Character_Base_Pool</a> * <a href='../R/12.html' title='Multiple referred from 6 places.'>Character_Base_Pool_Access</a>;
+<a id='L17' name='L17'></a>  17 
+<a id='L18' name='L18'></a>  18 
+<a id='L19' name='L19'></a>  19 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L20' name='L20'></a>  20   <a href='../S/14.html#L13' title='Defined at 13 in include/character-pool.h.'>Status_Pool_Access</a> <a href='../Y/496.html' title='Multiple used in 26 places.'>status</a>;
+<a id='L21' name='L21'></a>  21   <a href='../S/14.html#L16' title='Defined at 16 in include/character-pool.h.'>Character_Base_Pool_Access</a> <a href='../Y/197.html' title='Multiple used in 45 places.'>base</a>;
+<a id='L22' name='L22'></a>  22 <em class='brace'>}</em> <a href='../R/16.html' title='Multiple referred from 2 places.'>Character_Pool_Type</a>;
+<a id='L23' name='L23'></a>  23 <strong class='reserved'>typedef</strong> <a href='../S/14.html#L22' title='Defined at 22 in include/character-pool.h.'>Character_Pool_Type</a> * <a href='../R/15.html' title='Multiple referred from 20 places.'>Character_Pool_Access</a>;
+<a id='L24' name='L24'></a>  24 
+<a id='L25' name='L25'></a>  25 
+<a id='L26' name='L26'></a>  26 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L27' name='L27'></a>  27   <a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a> (*<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>)(<a href='../Y/550.html' title='Multiple used in 39 places.'>uint8_t</a>);
+<a id='L28' name='L28'></a>  28   <strong class='reserved'>void</strong> (*<a href='../Y/501.html' title='Multiple used in 18 places.'>stop</a>)(<a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>);
+<a id='L29' name='L29'></a>  29   <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> (*<a href='../Y/346.html' title='Multiple used in 77 places.'>malloc</a>)(<a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>);
+<a id='L30' name='L30'></a>  30   <a href='../Y/198.html' title='Multiple used in 15 places.'>bool</a> (*<a href='../Y/232.html' title='Multiple used in 10 places.'>copy</a>)(<a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a>);
+<a id='L31' name='L31'></a>  31   <a href='../S/14.html#L10' title='Defined at 10 in include/character-pool.h.'>Found_Result</a> (*<a href='../Y/287.html' title='Multiple used in 10 places.'>find</a>)(<a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> *, <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a>);
+<a id='L32' name='L32'></a>  32   <a href='../S/14.html#L10' title='Defined at 10 in include/character-pool.h.'>Found_Result</a> (*<a href='../Y/288.html' title='Multiple used in 3 places.'>find_position</a>)(<a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> *, <a href='../S/15.html#L28' title='Defined at 28 in include/base_type.h.'>Point_Access</a>);
+<a id='L33' name='L33'></a>  33 
+<a id='L34' name='L34'></a>  34   <strong class='reserved'>void</strong> (*<a href='../S/25.html#L140' title='Defined at 140 in src/character-pool.c.'>reset_graph_position</a>)(<a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../Y/320.html' title='Multiple used in 11 places.'>int64_t</a>, <a href='../Y/320.html' title='Multiple used in 11 places.'>int64_t</a>);
+<a id='L35' name='L35'></a>  35 <em class='brace'>}</em> <a href='../R/14.html' title='Multiple referred from 2 places.'>Character_Pool_API</a>;
 <a id='L36' name='L36'></a>  36 
-<a id='L37' name='L37'></a>  37   <a href='../Y/9.html' title='Multiple used in 7 places.'>CHARACTER_CONFIG_PATH</a> = <a href='../S/11.html#L1' title='Defined at 1 in include/main_set_config.h.'>MAIN_STRING_malloc</a>(<a href='../Y/336.html' title='Multiple used in 2 places.'>len1</a> + <a href='../Y/337.html' title='Multiple used in 2 places.'>len2</a>);
-<a id='L38' name='L38'></a>  38   <a href='../Y/495.html' title='Multiple used in 46 places.'>strcpy</a>(<a href='../Y/9.html' title='Multiple used in 7 places.'>CHARACTER_CONFIG_PATH</a>, <a href='../Y/13.html' title='Multiple used in 6 places.'>CONFIG_VALUE</a>);
-<a id='L39' name='L39'></a>  39   <a href='../Y/492.html' title='Multiple used in 18 places.'>strcat</a>(<a href='../Y/9.html' title='Multiple used in 7 places.'>CHARACTER_CONFIG_PATH</a>, <a href='../Y/12.html' title='Multiple used in 8 places.'>CONFIG_NAME</a>);
-<a id='L40' name='L40'></a>  40 <em class='brace'>}</em>
-<a id='L41' name='L41'></a>  41 
-<a id='L42' name='L42'></a>  42 <strong class='reserved'>void</strong> <a href='../R/474.html' title='Multiple referred from 9 places.'>set_name</a>(<a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <strong class='reserved'>char</strong> *<a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>) <em class='brace'>{</em>
-<a id='L43' name='L43'></a>  43   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/377.html' title='Multiple used in 4 places.'>name_size</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>);
-<a id='L44' name='L44'></a>  44 
-<a id='L45' name='L45'></a>  45   <strong class='reserved'>char</strong> *<a href='../Y/209.html' title='Multiple used in 6 places.'>character_name</a> = <a href='../S/11.html#L1' title='Defined at 1 in include/main_set_config.h.'>MAIN_STRING_malloc</a>(<a href='../Y/377.html' title='Multiple used in 4 places.'>name_size</a>);
-<a id='L46' name='L46'></a>  46   <a href='../Y/495.html' title='Multiple used in 46 places.'>strcpy</a>(<a href='../Y/209.html' title='Multiple used in 6 places.'>character_name</a>, <a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>);
-<a id='L47' name='L47'></a>  47   <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../S/14.html#L42' title='Defined at 42 in include/main_set_character.h.'>set_name</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/209.html' title='Multiple used in 6 places.'>character_name</a>);
-<a id='L48' name='L48'></a>  48 <em class='brace'>}</em>
-<a id='L49' name='L49'></a>  49 
-<a id='L50' name='L50'></a>  50 <strong class='reserved'>void</strong> <a href='../R/473.html' title='Multiple referred from 4 places.'>set_mark</a>(<a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <strong class='reserved'>char</strong> *<a href='../Y/345.html' title='Multiple used in 10 places.'>mark</a>) <em class='brace'>{</em>
-<a id='L51' name='L51'></a>  51   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a>  = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/345.html' title='Multiple used in 10 places.'>mark</a>);
-<a id='L52' name='L52'></a>  52   <a href='../S/5.html#L12' title='Defined at 12 in include/string_pool.h.'>String</a> <a href='../Y/325.html' title='Multiple used in 13 places.'>key</a> = <a href='../S/11.html#L1' title='Defined at 1 in include/main_set_config.h.'>MAIN_STRING_malloc</a>(<a href='../Y/335.html' title='Multiple used in 15 places.'>len</a>);
-<a id='L53' name='L53'></a>  53   <a href='../Y/495.html' title='Multiple used in 46 places.'>strcpy</a>(<a href='../Y/325.html' title='Multiple used in 13 places.'>key</a>, <a href='../Y/345.html' title='Multiple used in 10 places.'>mark</a>);
-<a id='L54' name='L54'></a>  54   <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../S/14.html#L50' title='Defined at 50 in include/main_set_character.h.'>set_mark</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/325.html' title='Multiple used in 13 places.'>key</a>);
-<a id='L55' name='L55'></a>  55 <em class='brace'>}</em>
-<a id='L56' name='L56'></a>  56 
-<a id='L57' name='L57'></a>  57 <strong class='reserved'>void</strong> <a href='../R/477.html' title='Multiple referred from 4 places.'>set_race</a>(<a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <strong class='reserved'>char</strong> *<a href='../Y/436.html' title='Multiple used in 12 places.'>race</a>) <em class='brace'>{</em>
-<a id='L58' name='L58'></a>  58   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/437.html' title='Multiple used in 2 places.'>race_size</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/436.html' title='Multiple used in 12 places.'>race</a>);
-<a id='L59' name='L59'></a>  59 
-<a id='L60' name='L60'></a>  60   <strong class='reserved'>char</strong> *<a href='../Y/212.html' title='Multiple used in 4 places.'>character_race</a> = <a href='../S/11.html#L1' title='Defined at 1 in include/main_set_config.h.'>MAIN_STRING_malloc</a>(<a href='../Y/437.html' title='Multiple used in 2 places.'>race_size</a>);
-<a id='L61' name='L61'></a>  61   <a href='../Y/495.html' title='Multiple used in 46 places.'>strcpy</a>(<a href='../Y/212.html' title='Multiple used in 4 places.'>character_race</a>, <a href='../Y/436.html' title='Multiple used in 12 places.'>race</a>);
-<a id='L62' name='L62'></a>  62 
-<a id='L63' name='L63'></a>  63   <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../D/522.html' title='Multiple defined in 2 places.'>set_race</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/212.html' title='Multiple used in 4 places.'>character_race</a>);
-<a id='L64' name='L64'></a>  64   <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../S/14.html#L42' title='Defined at 42 in include/main_set_character.h.'>set_name</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/212.html' title='Multiple used in 4 places.'>character_race</a>);
-<a id='L65' name='L65'></a>  65 <em class='brace'>}</em>
-<a id='L66' name='L66'></a>  66 
-<a id='L67' name='L67'></a>  67 <strong class='reserved'>void</strong> set_relation(<strong class='reserved'>char</strong> *<a href='../Y/325.html' title='Multiple used in 13 places.'>key</a>, <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../S/13.html#L24' title='Defined at 24 in include/character-status.h.'>Relation_Type</a> relation) <em class='brace'>{</em>
-<a id='L68' name='L68'></a>  68   <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../Y/469.html' title='Multiple used in 3 places.'>set_relation_enemy</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>);
-<a id='L69' name='L69'></a>  69 <em class='brace'>}</em>
-<a id='L70' name='L70'></a>  70 
-<a id='L71' name='L71'></a>  71 <strong class='reserved'>void</strong> <a href='../S/14.html#L135' title='Referred from 135 in include/main_set_character.h.'>eval_set_npc</a>(<a href='../D/214.html' title='Multiple defined in 2 places.'>mpc_ast_t</a>* <a href='../Y/516.html' title='Multiple used in 84 places.'>t</a>) <em class='brace'>{</em>
-<a id='L72' name='L72'></a>  72   <a href='../D/214.html' title='Multiple defined in 2 places.'>mpc_ast_t</a>* <a href='../Y/393.html' title='Multiple used in 5 places.'>obj</a> = <a href='../Y/516.html' title='Multiple used in 84 places.'>t</a>-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[1];
-<a id='L73' name='L73'></a>  73   <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a> = <a href='../Y/210.html' title='Multiple used in 12 places.'>character_pool</a>.<a href='../Y/344.html' title='Multiple used in 77 places.'>malloc</a>(<a href='../Y/211.html' title='Multiple used in 5 places.'>character_prepare_pool</a>);
-<a id='L74' name='L74'></a>  74   <a href='../S/12.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> <a href='../Y/507.html' title='Multiple used in 8 places.'>style_access</a> = <a href='../Y/156.html' title='Multiple used in 11 places.'>Style_Pool_Interface</a>.<a href='../Y/344.html' title='Multiple used in 77 places.'>malloc</a>(<a href='../Y/509.html' title='Multiple used in 10 places.'>style_pool</a>);
-<a id='L75' name='L75'></a>  75   <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../Y/471.html' title='Multiple used in 5 places.'>set_style</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/507.html' title='Multiple used in 8 places.'>style_access</a>);
-<a id='L76' name='L76'></a>  76 
-<a id='L77' name='L77'></a>  77   <strong class='reserved'>for</strong> (<strong class='reserved'>int</strong> <a href='../Y/235.html' title='Multiple used in 14 places.'>counter</a> = 0; <a href='../Y/235.html' title='Multiple used in 14 places.'>counter</a> &lt; <a href='../Y/393.html' title='Multiple used in 5 places.'>obj</a>-&gt;<a href='../Y/218.html' title='Multiple used in 26 places.'>children_num</a>; <a href='../Y/235.html' title='Multiple used in 14 places.'>counter</a>++) <em class='brace'>{</em>
-<a id='L78' name='L78'></a>  78     <a href='../D/214.html' title='Multiple defined in 2 places.'>mpc_ast_t</a>* <a href='../Y/328.html' title='Multiple used in 4 places.'>kv</a> = <a href='../Y/393.html' title='Multiple used in 5 places.'>obj</a>-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[<a href='../Y/235.html' title='Multiple used in 14 places.'>counter</a>];
-<a id='L79' name='L79'></a>  79 
-<a id='L80' name='L80'></a>  80     <strong class='reserved'>if</strong> (<a href='../Y/502.html' title='Multiple used in 7 places.'>strstr</a>(<a href='../Y/328.html' title='Multiple used in 4 places.'>kv</a>-&gt;<a href='../Y/520.html' title='Multiple used in 47 places.'>tag</a>, "kv_item")) <em class='brace'>{</em>
-<a id='L81' name='L81'></a>  81       <a href='../D/214.html' title='Multiple defined in 2 places.'>mpc_ast_t</a>* <a href='../Y/325.html' title='Multiple used in 13 places.'>key</a> = <a href='../Y/328.html' title='Multiple used in 4 places.'>kv</a>-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[0]-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[1];
-<a id='L82' name='L82'></a>  82       <a href='../D/214.html' title='Multiple defined in 2 places.'>mpc_ast_t</a>* <a href='../Y/547.html' title='Multiple used in 10 places.'>value</a> = <a href='../Y/328.html' title='Multiple used in 4 places.'>kv</a>-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[2];
-<a id='L83' name='L83'></a>  83 
-<a id='L84' name='L84'></a>  84       <strong class='reserved'>if</strong> (<a href='../S/7.html#L12' title='Defined at 12 in include/setup_config.h.'>STRCMP</a>(<a href='../Y/325.html' title='Multiple used in 13 places.'>key</a>-&gt;<a href='../Y/231.html' title='Multiple used in 31 places.'>contents</a>, "name")) <em class='brace'>{</em>
-<a id='L85' name='L85'></a>  85         <a href='../S/14.html#L42' title='Defined at 42 in include/main_set_character.h.'>set_name</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/547.html' title='Multiple used in 10 places.'>value</a>-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[1]-&gt;<a href='../Y/231.html' title='Multiple used in 31 places.'>contents</a>);
-<a id='L86' name='L86'></a>  86       <em class='brace'>}</em>
-<a id='L87' name='L87'></a>  87       <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/502.html' title='Multiple used in 7 places.'>strstr</a>(<a href='../Y/325.html' title='Multiple used in 13 places.'>key</a>-&gt;<a href='../Y/231.html' title='Multiple used in 31 places.'>contents</a>, "mark")) <em class='brace'>{</em>
-<a id='L88' name='L88'></a>  88         <a href='../S/14.html#L50' title='Defined at 50 in include/main_set_character.h.'>set_mark</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/547.html' title='Multiple used in 10 places.'>value</a>-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[1]-&gt;<a href='../Y/231.html' title='Multiple used in 31 places.'>contents</a>);
-<a id='L89' name='L89'></a>  89       <em class='brace'>}</em>
-<a id='L90' name='L90'></a>  90       <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../S/7.html#L12' title='Defined at 12 in include/setup_config.h.'>STRCMP</a>(<a href='../Y/325.html' title='Multiple used in 13 places.'>key</a>-&gt;<a href='../Y/231.html' title='Multiple used in 31 places.'>contents</a>, "race")) <em class='brace'>{</em>
-<a id='L91' name='L91'></a>  91         <a href='../D/522.html' title='Multiple defined in 2 places.'>set_race</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/547.html' title='Multiple used in 10 places.'>value</a>-&gt;<a href='../Y/217.html' title='Multiple used in 43 places.'>children</a>[1]-&gt;<a href='../Y/231.html' title='Multiple used in 31 places.'>contents</a>);
-<a id='L92' name='L92'></a>  92       <em class='brace'>}</em>
-<a id='L93' name='L93'></a>  93       <strong class='reserved'>else</strong> <em class='brace'>{</em>
-<a id='L94' name='L94'></a>  94         <em class='comment'>//printf("%s: %s\n", key-&gt;contents, value-&gt;tag);</em>
-<a id='L95' name='L95'></a>  95       <em class='brace'>}</em>
-<a id='L96' name='L96'></a>  96     <em class='brace'>}</em>
-<a id='L97' name='L97'></a>  97   <em class='brace'>}</em>
-<a id='L98' name='L98'></a>  98 <em class='brace'>}</em>
-<a id='L99' name='L99'></a>  99 
-<a id='L100' name='L100'></a> 100 <strong class='reserved'>void</strong> <a href='../S/14.html#L170' title='Referred from 170 in include/main_set_character.h.'>setup_npc</a>(<strong class='reserved'>char</strong> *<a href='../Y/285.html' title='Multiple used in 6 places.'>file_path</a>) <em class='brace'>{</em>
-<a id='L101' name='L101'></a> 101   <a href='../S/44.html#L62' title='Defined at 62 in mpc/mpc.h.'>mpc_result_t</a> <a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>;
-<a id='L102' name='L102'></a> 102 
-<a id='L103' name='L103'></a> 103   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/79.html' title='Multiple used in 18 places.'>Number</a>         = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("number");
-<a id='L104' name='L104'></a> 104   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/61.html' title='Multiple used in 6 places.'>Key</a>            = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("key");
-<a id='L105' name='L105'></a> 105   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/58.html' title='Multiple used in 3 places.'>Json_String</a>    = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("json_string");
-<a id='L106' name='L106'></a> 106   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/56.html' title='Multiple used in 3 places.'>Json_Boolean</a>   = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("json_boolean");
-<a id='L107' name='L107'></a> 107   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/59.html' title='Multiple used in 3 places.'>Json_Value</a>     = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("json_value");
-<a id='L108' name='L108'></a> 108   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/60.html' title='Multiple used in 3 places.'>KV_Item</a>        = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("kv_item");
-<a id='L109' name='L109'></a> 109   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/55.html' title='Multiple used in 3 places.'>Json_Array</a>     = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("json_array");
-<a id='L110' name='L110'></a> 110   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/57.html' title='Multiple used in 3 places.'>Json_Object</a>    = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("json_obj");
-<a id='L111' name='L111'></a> 111   <a href='../D/340.html' title='Multiple defined in 2 places.'>mpc_parser_t</a>* <a href='../Y/54.html' title='Multiple used in 4 places.'>JSON</a>           = <a href='../S/43.html#L1398' title='Defined at 1398 in mpc/mpc.c.'>mpc_new</a>("json");
-<a id='L112' name='L112'></a> 112 
-<a id='L113' name='L113'></a> 113   <a href='../S/43.html#L3558' title='Defined at 3558 in mpc/mpc.c.'>mpca_lang</a>(<a href='../S/44.html#L336' title='Defined at 336 in mpc/mpc.h.'>MPCA_LANG_PREDICTIVE</a>,
-<a id='L114' name='L114'></a> 114       " number         : /[0-9]+/                              ; \n"
-<a id='L115' name='L115'></a> 115       " key            : /[^'\"''{''}'':'';'' '',']*/          ; \n"
-<a id='L116' name='L116'></a> 116       " json_string    : '\"' &lt;key&gt; '\"'                       ; \n"
-<a id='L117' name='L117'></a> 117       " json_boolean   : \"true\" | \"false\"                  ; \n"
-<a id='L118' name='L118'></a> 118       " kv_item        : &lt;json_string&gt; ':'                         "
-<a id='L119' name='L119'></a> 119       "                   (&lt;json_value&gt; | &lt;json_array&gt;)        ; \n"
-<a id='L120' name='L120'></a> 120       " json_array     : '[' (&lt;json_value&gt; ','?)* ']'          ; \n"
-<a id='L121' name='L121'></a> 121       " json_obj       : '{' (&lt;kv_item&gt; ','?)* '}'             ; \n"
-<a id='L122' name='L122'></a> 122       " json_value     : &lt;json_obj&gt; | &lt;json_array&gt;                 "
-<a id='L123' name='L123'></a> 123       "                | &lt;json_boolean&gt;                            "
-<a id='L124' name='L124'></a> 124       "                | &lt;json_string&gt; | &lt;number&gt;              ; \n"
-<a id='L125' name='L125'></a> 125       " json           : /^/ &lt;json_value&gt; /$/                  ; \n",
-<a id='L126' name='L126'></a> 126       <a href='../Y/79.html' title='Multiple used in 18 places.'>Number</a>, <a href='../Y/61.html' title='Multiple used in 6 places.'>Key</a>,
-<a id='L127' name='L127'></a> 127       <a href='../Y/58.html' title='Multiple used in 3 places.'>Json_String</a>, <a href='../Y/56.html' title='Multiple used in 3 places.'>Json_Boolean</a>,
-<a id='L128' name='L128'></a> 128       <a href='../Y/60.html' title='Multiple used in 3 places.'>KV_Item</a>,
-<a id='L129' name='L129'></a> 129       <a href='../Y/55.html' title='Multiple used in 3 places.'>Json_Array</a>, <a href='../Y/57.html' title='Multiple used in 3 places.'>Json_Object</a>,
-<a id='L130' name='L130'></a> 130       <a href='../Y/59.html' title='Multiple used in 3 places.'>Json_Value</a>,
-<a id='L131' name='L131'></a> 131       <a href='../Y/54.html' title='Multiple used in 4 places.'>JSON</a>, <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>);
-<a id='L132' name='L132'></a> 132 
-<a id='L133' name='L133'></a> 133   <strong class='reserved'>if</strong> (<a href='../S/43.html#L1281' title='Defined at 1281 in mpc/mpc.c.'>mpc_parse_contents</a>(<a href='../Y/285.html' title='Multiple used in 6 places.'>file_path</a>, <a href='../Y/54.html' title='Multiple used in 4 places.'>JSON</a>, &amp;<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>)) <em class='brace'>{</em>
-<a id='L134' name='L134'></a> 134     <em class='comment'>//mpc_ast_print(r.output);</em>
-<a id='L135' name='L135'></a> 135     <a href='../S/14.html#L71' title='Defined at 71 in include/main_set_character.h.'>eval_set_npc</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/399.html' title='Multiple used in 89 places.'>output</a>);
-<a id='L136' name='L136'></a> 136     <a href='../S/43.html#L2668' title='Defined at 2668 in mpc/mpc.c.'>mpc_ast_delete</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/399.html' title='Multiple used in 89 places.'>output</a>);
-<a id='L137' name='L137'></a> 137   <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
-<a id='L138' name='L138'></a> 138     <a href='../S/43.html#L558' title='Defined at 558 in mpc/mpc.c.'>mpc_err_print</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/264.html' title='Multiple used in 51 places.'>error</a>);
-<a id='L139' name='L139'></a> 139     <a href='../S/43.html#L549' title='Defined at 549 in mpc/mpc.c.'>mpc_err_delete</a>(<a href='../Y/430.html' title='Multiple used in 205 places.'>r</a>.<a href='../Y/264.html' title='Multiple used in 51 places.'>error</a>);
-<a id='L140' name='L140'></a> 140   <em class='brace'>}</em>
-<a id='L141' name='L141'></a> 141 
-<a id='L142' name='L142'></a> 142   <a href='../S/43.html#L1503' title='Defined at 1503 in mpc/mpc.c.'>mpc_cleanup</a>(9,
-<a id='L143' name='L143'></a> 143       <a href='../Y/79.html' title='Multiple used in 18 places.'>Number</a>, <a href='../Y/61.html' title='Multiple used in 6 places.'>Key</a>,
-<a id='L144' name='L144'></a> 144       <a href='../Y/58.html' title='Multiple used in 3 places.'>Json_String</a>, <a href='../Y/56.html' title='Multiple used in 3 places.'>Json_Boolean</a>,
-<a id='L145' name='L145'></a> 145       <a href='../Y/60.html' title='Multiple used in 3 places.'>KV_Item</a>,
-<a id='L146' name='L146'></a> 146       <a href='../Y/55.html' title='Multiple used in 3 places.'>Json_Array</a>, <a href='../Y/57.html' title='Multiple used in 3 places.'>Json_Object</a>,
-<a id='L147' name='L147'></a> 147       <a href='../Y/59.html' title='Multiple used in 3 places.'>Json_Value</a>,
-<a id='L148' name='L148'></a> 148       <a href='../Y/54.html' title='Multiple used in 4 places.'>JSON</a>);
-<a id='L149' name='L149'></a> 149 <em class='brace'>}</em>
-<a id='L150' name='L150'></a> 150 
-<a id='L151' name='L151'></a> 151 <em class='sharp'>#ifdef</em> LINUX_VERSION_FUNCTION
-<a id='L152' name='L152'></a> 152 <strong class='reserved'>void</strong> <a href='../S/26.html#L208' title='Referred from 208 in src/main.c.'>setup_npc_by_dir</a>() <em class='brace'>{</em>
-<a id='L153' name='L153'></a> 153   DIR *<a href='../Y/242.html' title='Multiple used in 25 places.'>d</a>;
-<a id='L154' name='L154'></a> 154   <strong class='reserved'>struct</strong> dirent *<a href='../Y/253.html' title='Multiple used in 5 places.'>dir</a>;
-<a id='L155' name='L155'></a> 155   <strong class='reserved'>char</strong> *<a href='../Y/284.html' title='Multiple used in 5 places.'>file_name</a> = <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>;
-<a id='L156' name='L156'></a> 156 
-<a id='L157' name='L157'></a> 157   <a href='../S/18.html#L51' title='Defined at 51 in src/string_pool.c.'>String_Pool_start_stack</a>(<a href='../Y/381.html' title='Multiple used in 4 places.'>npc_string_pool</a>, 1000);
-<a id='L158' name='L158'></a> 158   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/413.html' title='Multiple used in 4 places.'>path_len</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/9.html' title='Multiple used in 7 places.'>CHARACTER_CONFIG_PATH</a>);
-<a id='L159' name='L159'></a> 159 
-<a id='L160' name='L160'></a> 160   <a href='../Y/242.html' title='Multiple used in 25 places.'>d</a> = opendir(<a href='../Y/9.html' title='Multiple used in 7 places.'>CHARACTER_CONFIG_PATH</a>);
-<a id='L161' name='L161'></a> 161   <strong class='reserved'>if</strong> (<a href='../Y/242.html' title='Multiple used in 25 places.'>d</a>) <em class='brace'>{</em>
-<a id='L162' name='L162'></a> 162     <strong class='reserved'>while</strong> ((<a href='../Y/253.html' title='Multiple used in 5 places.'>dir</a> = readdir(<a href='../Y/242.html' title='Multiple used in 25 places.'>d</a>)) != <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>) <em class='brace'>{</em>
-<a id='L163' name='L163'></a> 163       <strong class='reserved'>if</strong> (<a href='../S/14.html#L23' title='Defined at 23 in include/main_set_character.h.'>check_json</a>(<a href='../Y/253.html' title='Multiple used in 5 places.'>dir</a>-&gt;<a href='../Y/243.html' title='Multiple used in 3 places.'>d_name</a>)) <em class='brace'>{</em>
-<a id='L164' name='L164'></a> 164         <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/287.html' title='Multiple used in 2 places.'>filename_len</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/253.html' title='Multiple used in 5 places.'>dir</a>-&gt;<a href='../Y/243.html' title='Multiple used in 3 places.'>d_name</a>);
-<a id='L165' name='L165'></a> 165 
-<a id='L166' name='L166'></a> 166         <a href='../Y/284.html' title='Multiple used in 5 places.'>file_name</a> = <a href='../S/14.html#L1' title='Defined at 1 in include/main_set_character.h.'>MAIN_NPC_STRING_malloc</a>(<a href='../Y/413.html' title='Multiple used in 4 places.'>path_len</a> + <a href='../Y/287.html' title='Multiple used in 2 places.'>filename_len</a>);
-<a id='L167' name='L167'></a> 167         <a href='../Y/495.html' title='Multiple used in 46 places.'>strcpy</a>(<a href='../Y/284.html' title='Multiple used in 5 places.'>file_name</a>, <a href='../Y/9.html' title='Multiple used in 7 places.'>CHARACTER_CONFIG_PATH</a>);
-<a id='L168' name='L168'></a> 168         <a href='../Y/492.html' title='Multiple used in 18 places.'>strcat</a>(<a href='../Y/284.html' title='Multiple used in 5 places.'>file_name</a>, <a href='../Y/253.html' title='Multiple used in 5 places.'>dir</a>-&gt;<a href='../Y/243.html' title='Multiple used in 3 places.'>d_name</a>);
-<a id='L169' name='L169'></a> 169 
-<a id='L170' name='L170'></a> 170         <a href='../S/14.html#L100' title='Defined at 100 in include/main_set_character.h.'>setup_npc</a>(<a href='../Y/284.html' title='Multiple used in 5 places.'>file_name</a>);
-<a id='L171' name='L171'></a> 171       <em class='brace'>}</em>
-<a id='L172' name='L172'></a> 172     <em class='brace'>}</em>
-<a id='L173' name='L173'></a> 173 
-<a id='L174' name='L174'></a> 174     <a href='../Y/381.html' title='Multiple used in 4 places.'>npc_string_pool</a>-&gt;<a href='../Y/490.html' title='Multiple used in 15 places.'>stop</a>(<a href='../Y/381.html' title='Multiple used in 4 places.'>npc_string_pool</a>);
-<a id='L175' name='L175'></a> 175     closedir(<a href='../Y/242.html' title='Multiple used in 25 places.'>d</a>);
-<a id='L176' name='L176'></a> 176   <em class='brace'>}</em>
-<a id='L177' name='L177'></a> 177 <em class='brace'>}</em>
-<a id='L178' name='L178'></a> 178 <em class='sharp'>#endif</em>
-<a id='L179' name='L179'></a> 179 
-<a id='L180' name='L180'></a> 180 <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../S/26.html#L209' title='Referred from 209 in src/main.c.'>use_npc</a>(<strong class='reserved'>char</strong> *<a href='../Y/436.html' title='Multiple used in 12 places.'>race</a>, <strong class='reserved'>char</strong> *<a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>) <em class='brace'>{</em>
-<a id='L181' name='L181'></a> 181   <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/397.html' title='Multiple used in 3 places.'>origin_npc</a> = <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>;
-<a id='L182' name='L182'></a> 182   <a href='../S/13.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a> = <a href='../Y/76.html' title='Multiple used in 145 places.'>NULL</a>;
-<a id='L183' name='L183'></a> 183 
-<a id='L184' name='L184'></a> 184   <a href='../Y/201.html' title='Multiple used in 16 places.'>bool</a> <a href='../Y/457.html' title='Multiple used in 65 places.'>result</a> = <a href='../Y/210.html' title='Multiple used in 12 places.'>character_pool</a>.<a href='../Y/288.html' title='Multiple used in 10 places.'>find</a>(<a href='../Y/211.html' title='Multiple used in 5 places.'>character_prepare_pool</a>, &amp;<a href='../Y/397.html' title='Multiple used in 3 places.'>origin_npc</a>, <a href='../Y/436.html' title='Multiple used in 12 places.'>race</a>);
-<a id='L185' name='L185'></a> 185 
-<a id='L186' name='L186'></a> 186   <strong class='reserved'>if</strong>(<a href='../Y/457.html' title='Multiple used in 65 places.'>result</a>) <em class='brace'>{</em>
-<a id='L187' name='L187'></a> 187     <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a> = <a href='../Y/210.html' title='Multiple used in 12 places.'>character_pool</a>.<a href='../Y/344.html' title='Multiple used in 77 places.'>malloc</a>(<a href='../Y/213.html' title='Multiple used in 8 places.'>character_use_pool</a>);
-<a id='L188' name='L188'></a> 188     <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../Y/232.html' title='Multiple used in 10 places.'>copy</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/397.html' title='Multiple used in 3 places.'>origin_npc</a>);
-<a id='L189' name='L189'></a> 189 
-<a id='L190' name='L190'></a> 190     <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/377.html' title='Multiple used in 4 places.'>name_size</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>);
-<a id='L191' name='L191'></a> 191     <strong class='reserved'>char</strong> *<a href='../Y/209.html' title='Multiple used in 6 places.'>character_name</a> = <a href='../S/11.html#L1' title='Defined at 1 in include/main_set_config.h.'>MAIN_STRING_malloc</a>(<a href='../Y/377.html' title='Multiple used in 4 places.'>name_size</a>);
-<a id='L192' name='L192'></a> 192     <a href='../Y/495.html' title='Multiple used in 46 places.'>strcpy</a>(<a href='../Y/209.html' title='Multiple used in 6 places.'>character_name</a>, <a href='../S/8.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>);
-<a id='L193' name='L193'></a> 193     <a href='../Y/208.html' title='Multiple used in 16 places.'>character</a>.<a href='../S/14.html#L42' title='Defined at 42 in include/main_set_character.h.'>set_name</a>(<a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>, <a href='../Y/209.html' title='Multiple used in 6 places.'>character_name</a>);
-<a id='L194' name='L194'></a> 194   <em class='brace'>}</em>
-<a id='L195' name='L195'></a> 195   <strong class='reserved'>return</strong> <a href='../Y/380.html' title='Multiple used in 38 places.'>npc</a>;
-<a id='L196' name='L196'></a> 196 <em class='brace'>}</em>
+<a id='L37' name='L37'></a>  37 <strong class='reserved'>extern</strong> <a href='../S/14.html#L35' title='Defined at 35 in include/character-pool.h.'>Character_Pool_API</a> <a href='../Y/210.html' title='Multiple used in 13 places.'>character_pool</a>;
+<a id='L38' name='L38'></a>  38 
+<a id='L39' name='L39'></a>  39 <em class='sharp'>#endif</em>
 </pre>
 <hr />
 <a id='BOTTOM' name='BOTTOM'></a>
-<em class='comment'>/* [&lt;][&gt;]<a href='#L12'>[^]</a><a href='#L180'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
 </body>
 </html>

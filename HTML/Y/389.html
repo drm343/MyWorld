@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>num_tests</title>
+<title>num_assert_fails</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,9 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/49.html#L194'>num_tests</a>         194 mpc/tests/ptest.c static int num_tests = 0;</span>
-<span class='curline'><a href='../S/49.html#L202'>num_tests</a>         202 mpc/tests/ptest.c   if (num_tests == MAX_TESTS) {</span>
-<span class='curline'><a href='../S/49.html#L221'>num_tests</a>         221 mpc/tests/ptest.c   tests[num_tests] = test;</span>
-<span class='curline'><a href='../S/49.html#L222'>num_tests</a>         222 mpc/tests/ptest.c   num_tests++;</span>
-<span class='curline'><a href='../S/49.html#L263'>num_tests</a>         263 mpc/tests/ptest.c   for(i = 0; i &lt; num_tests; i++) {</span>
-<span class='curline'><a href='../S/49.html#L333'>num_tests</a>         333 mpc/tests/ptest.c   pt_color(YELLOW);  printf(" Total %4d ",  num_tests);         </span>
+<span class='curline'><a href='../S/52.html#L103'>num_assert_fails</a>  103 mpc/tests/ptest.c static int num_assert_fails  = 0;</span>
+<span class='curline'><a href='../S/52.html#L122'>num_assert_fails</a>  122 mpc/tests/ptest.c     num_assert_fails++;</span>
+<span class='curline'><a href='../S/52.html#L345'>num_assert_fails</a>  345 mpc/tests/ptest.c   pt_color(RED);     printf(" Failed %4d ", num_assert_fails);  </span>
 </pre>
 </body>
 </html>

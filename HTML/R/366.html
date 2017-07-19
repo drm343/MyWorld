@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpca_grammar_find_parser</title>
+<title>mpc_whitespace</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L3279'>mpca_grammar_find_parser</a> 3279 mpc/mpc.c        mpc_parser_t *p = mpca_grammar_find_parser(x, st);</span>
-<span class='curline'><a href='../S/43.html#L3429'>mpca_grammar_find_parser</a> 3429 mpc/mpc.c          left = mpca_grammar_find_parser(stmt-&gt;ident, st);</span>
+<span class='curline'><a href='../S/45.html#L1849'>mpc_whitespace</a>   1849 mpc/mpc.c      mpc_parser_t *mpc_whitespaces(void) { return mpc_expect(mpc_many(mpcf_strfold, mpc_whitespace()), "spaces"); }</span>
+<span class='curline'><a href='../S/45.html#L2047'>mpc_whitespace</a>   2047 mpc/mpc.c          case 's': return mpc_whitespace();</span>
+<span class='curline'><a href='../S/45.html#L2048'>mpc_whitespace</a>   2048 mpc/mpc.c          case 'S': return mpc_not_lift(mpc_whitespace(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/46.html#L152'>mpc_whitespace</a>    152 mpc/mpc.h      mpc_parser_t *mpc_whitespace(void);</span>
 </pre>
 </body>
 </html>

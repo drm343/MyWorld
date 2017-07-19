@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_ast_traverse_next</title>
+<title>mpc_ast_eq</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,13 +9,17 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/42.html#L73'>mpc_ast_traverse_next</a>   73 mpc/examples/tree_traversal.c   ast_next = mpc_ast_traverse_next(&amp;trav);</span>
-<span class='curline'><a href='../S/42.html#L79'>mpc_ast_traverse_next</a>   79 mpc/examples/tree_traversal.c     ast_next = mpc_ast_traverse_next(&amp;trav);</span>
-<span class='curline'><a href='../S/42.html#L88'>mpc_ast_traverse_next</a>   88 mpc/examples/tree_traversal.c   ast_next = mpc_ast_traverse_next(&amp;trav);</span>
-<span class='curline'><a href='../S/42.html#L94'>mpc_ast_traverse_next</a>   94 mpc/examples/tree_traversal.c     ast_next = mpc_ast_traverse_next(&amp;trav);</span>
-<span class='curline'><a href='../S/42.html#L103'>mpc_ast_traverse_next</a>  103 mpc/examples/tree_traversal.c   ast_next = mpc_ast_traverse_next(&amp;trav);</span>
-<span class='curline'><a href='../S/42.html#L109'>mpc_ast_traverse_next</a>  109 mpc/examples/tree_traversal.c     ast_next = mpc_ast_traverse_next(&amp;trav);</span>
-<span class='curline'><a href='../S/44.html#L305'>mpc_ast_traverse_next</a>  305 mpc/mpc.h      mpc_ast_t *mpc_ast_traverse_next(mpc_ast_trav_t **trav);</span>
+<span class='curline'><a href='../S/46.html#L2750'>mpc_ast_eq</a>       2750 mpc/mpc.c          if (!mpc_ast_eq(a-&gt;children[i], b-&gt;children[i])) { return 0; }</span>
+<span class='curline'><a href='../S/47.html#L312'>mpc_ast_eq</a>        312 mpc/mpc.h      int mpc_ast_eq(mpc_ast_t *a, mpc_ast_t *b);</span>
+<span class='curline'><a href='../S/50.html#L46'>mpc_ast_eq</a>         46 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "  24 ", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/50.html#L47'>mpc_ast_eq</a>         47 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", t1, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/50.html#L48'>mpc_ast_eq</a>         48 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(4 * 2 * 11 + 2) + 5", t2, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/50.html#L49'>mpc_ast_eq</a>         49 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "a", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/50.html#L50'>mpc_ast_eq</a>         50 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/50.html#L121'>mpc_ast_eq</a>        121 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Doge, "so c so c", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/50.html#L123'>mpc_ast_eq</a>        123 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Doge, "so a so c", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/50.html#L162'>mpc_ast_eq</a>        162 mpc/tests/grammar.c     (int(*)(const void*,const void*))mpc_ast_eq, </span>
+<span class='curline'><a href='../S/50.html#L247'>mpc_ast_eq</a>        247 mpc/tests/grammar.c     (int(*)(const void*,const void*))mpc_ast_eq,</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_regex_lit</title>
+<title>mpc_print_unretained</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,19 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L3329'>mpc_regex_lit</a>    3329 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_regex_lit()),  mpcaf_grammar_regex, st),</span>
-<span class='curline'><a href='../S/43.html#L3491'>mpc_regex_lit</a>    3491 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_regex_lit()),  mpcaf_grammar_regex, st),</span>
-<span class='curline'><a href='../S/44.html#L183'>mpc_regex_lit</a>     183 mpc/mpc.h      mpc_parser_t *mpc_regex_lit(void);</span>
+<span class='curline'><a href='../S/45.html#L2560'>mpc_print_unretained</a> 2560 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY)    { mpc_print_unretained(p-&gt;data.apply.x, 0); }</span>
+<span class='curline'><a href='../S/45.html#L2561'>mpc_print_unretained</a> 2561 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { mpc_print_unretained(p-&gt;data.apply_to.x, 0); }</span>
+<span class='curline'><a href='../S/45.html#L2562'>mpc_print_unretained</a> 2562 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_PREDICT)  { mpc_print_unretained(p-&gt;data.predict.x, 0); }</span>
+<span class='curline'><a href='../S/45.html#L2564'>mpc_print_unretained</a> 2564 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_NOT)   { mpc_print_unretained(p-&gt;data.not.x, 0); printf("!"); }</span>
+<span class='curline'><a href='../S/45.html#L2565'>mpc_print_unretained</a> 2565 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MAYBE) { mpc_print_unretained(p-&gt;data.not.x, 0); printf("?"); }</span>
+<span class='curline'><a href='../S/45.html#L2567'>mpc_print_unretained</a> 2567 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY)  { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("*"); }</span>
+<span class='curline'><a href='../S/45.html#L2568'>mpc_print_unretained</a> 2568 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY1) { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("+"); }</span>
+<span class='curline'><a href='../S/45.html#L2569'>mpc_print_unretained</a> 2569 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_COUNT) { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("{%i}", p-&gt;data.repeat.n); }</span>
+<span class='curline'><a href='../S/45.html#L2574'>mpc_print_unretained</a> 2574 mpc/mpc.c            mpc_print_unretained(p-&gt;data.or.xs[i], 0);</span>
+<span class='curline'><a href='../S/45.html#L2577'>mpc_print_unretained</a> 2577 mpc/mpc.c          mpc_print_unretained(p-&gt;data.or.xs[p-&gt;data.or.n-1], 0);</span>
+<span class='curline'><a href='../S/45.html#L2584'>mpc_print_unretained</a> 2584 mpc/mpc.c            mpc_print_unretained(p-&gt;data.and.xs[i], 0);</span>
+<span class='curline'><a href='../S/45.html#L2587'>mpc_print_unretained</a> 2587 mpc/mpc.c          mpc_print_unretained(p-&gt;data.and.xs[p-&gt;data.and.n-1], 0);</span>
+<span class='curline'><a href='../S/45.html#L2594'>mpc_print_unretained</a> 2594 mpc/mpc.c        mpc_print_unretained(p, 1);</span>
 </pre>
 </body>
 </html>

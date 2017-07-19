@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>CONFIG_NAME</title>
+<title>CONF_PATH</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,14 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L33'>CONFIG_NAME</a>        33 include/main_set_character.h   char *CONFIG_NAME = "/config/npc/";</span>
-<span class='curline'><a href='../S/14.html#L35'>CONFIG_NAME</a>        35 include/main_set_character.h   size_t len2 = strlen(CONFIG_NAME);</span>
-<span class='curline'><a href='../S/14.html#L39'>CONFIG_NAME</a>        39 include/main_set_character.h   strcat(CHARACTER_CONFIG_PATH, CONFIG_NAME);</span>
-<span class='curline'><a href='../S/11.html#L24'>CONFIG_NAME</a>        24 include/main_set_config.h char *use_path(char *CONFIG_NAME) {</span>
-<span class='curline'><a href='../S/11.html#L27'>CONFIG_NAME</a>        27 include/main_set_config.h   size_t file_len = strlen(CONFIG_NAME);</span>
-<span class='curline'><a href='../S/11.html#L31'>CONFIG_NAME</a>        31 include/main_set_config.h   strcat(result, CONFIG_NAME);</span>
-<span class='curline'><a href='../S/26.html#L199'>CONFIG_NAME</a>       199 src/main.c         char *CONFIG_NAME = "/config/init.css";</span>
-<span class='curline'><a href='../S/26.html#L200'>CONFIG_NAME</a>       200 src/main.c         CONFIG_FILE = use_path(CONFIG_NAME);</span>
+<span class='curline'><a href='../S/8.html#L3'>CONF_PATH</a>           3 include/main_set_config.h char *CONF_PATH   = NULL;</span>
+<span class='curline'><a href='../S/8.html#L25'>CONF_PATH</a>          25 include/main_set_config.h   size_t path_len = strlen(CONF_PATH);</span>
+<span class='curline'><a href='../S/8.html#L29'>CONF_PATH</a>          29 include/main_set_config.h   strcpy(result, CONF_PATH);</span>
+<span class='curline'><a href='../S/27.html#L108'>CONF_PATH</a>         108 src/main.c         CONF_PATH = MAIN_STRING_malloc(path_lang);</span>
+<span class='curline'><a href='../S/27.html#L109'>CONF_PATH</a>         109 src/main.c         strcpy(CONF_PATH, argv[1]);</span>
 </pre>
 </body>
 </html>

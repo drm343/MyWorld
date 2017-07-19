@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>q</title>
+<title>predict</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,24 +9,14 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L270'>q</a>                 270 mpc/mpc.c        char *q = NULL;</span>
-<span class='curline'><a href='../S/43.html#L275'>q</a>                 275 mpc/mpc.c          q = malloc(n);</span>
-<span class='curline'><a href='../S/43.html#L276'>q</a>                 276 mpc/mpc.c          memcpy(q, p, sizeof(mpc_mem_t));</span>
-<span class='curline'><a href='../S/43.html#L278'>q</a>                 278 mpc/mpc.c          return q;</span>
-<span class='curline'><a href='../S/43.html#L285'>q</a>                 285 mpc/mpc.c        char *q = NULL;</span>
-<span class='curline'><a href='../S/43.html#L287'>q</a>                 287 mpc/mpc.c        q = malloc(sizeof(mpc_mem_t));</span>
-<span class='curline'><a href='../S/43.html#L288'>q</a>                 288 mpc/mpc.c        memcpy(q, p, sizeof(mpc_mem_t));</span>
-<span class='curline'><a href='../S/43.html#L290'>q</a>                 290 mpc/mpc.c        return q; </span>
-<span class='curline'><a href='../S/43.html#L3253'>q</a>                3253 mpc/mpc.c            mpc_parser_t *q = st-&gt;parsers[i];</span>
-<span class='curline'><a href='../S/43.html#L3254'>q</a>                3254 mpc/mpc.c            if (q == NULL) { return mpc_failf("Unknown Parser '%s'!", x); }</span>
-<span class='curline'><a href='../S/43.html#L3255'>q</a>                3255 mpc/mpc.c            if (q-&gt;name &amp;&amp; strcmp(q-&gt;name, x) == 0) { return q; }</span>
-<span class='curline'><a href='../S/46.html#L122'>q</a>                 122 mpc/tests/core.c   mpc_parser_t* q = mpc_and(2, mpcf_strfold, p, mpc_copy(p), free);</span>
-<span class='curline'><a href='../S/46.html#L124'>q</a>                 124 mpc/tests/core.c   success = mpc_parse("test", "aa", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L129'>q</a>                 129 mpc/tests/core.c   success = mpc_parse("test", "bb", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L134'>q</a>                 134 mpc/tests/core.c   success = mpc_parse("test", "ab", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L139'>q</a>                 139 mpc/tests/core.c   success = mpc_parse("test", "ba", q, &amp;r);</span>
-<span class='curline'><a href='../S/46.html#L149'>q</a>                 149 mpc/tests/core.c   mpc_delete(mpc_copy(q));</span>
-<span class='curline'><a href='../S/46.html#L151'>q</a>                 151 mpc/tests/core.c   mpc_delete(q);</span>
+<span class='curline'><a href='../S/46.html#L915'>predict</a>           915 mpc/mpc.c        mpc_pdata_predict_t predict;</span>
+<span class='curline'><a href='../S/46.html#L1066'>predict</a>          1066 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.predict.x, r, e)) {      </span>
+<span class='curline'><a href='../S/46.html#L1340'>predict</a>          1340 mpc/mpc.c          case MPC_TYPE_PREDICT:  mpc_undefine_unretained(p-&gt;data.predict.x, 0);  break;</span>
+<span class='curline'><a href='../S/46.html#L1438'>predict</a>          1438 mpc/mpc.c          case MPC_TYPE_PREDICT:  p-&gt;data.predict.x  = mpc_copy(a-&gt;data.predict.x);  break;</span>
+<span class='curline'><a href='../S/46.html#L1725'>predict</a>          1725 mpc/mpc.c        p-&gt;data.predict.x = a;</span>
+<span class='curline'><a href='../S/46.html#L2562'>predict</a>          2562 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_PREDICT)  { mpc_print_unretained(p-&gt;data.predict.x, 0); }</span>
+<span class='curline'><a href='../S/46.html#L3625'>predict</a>          3625 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_PREDICT)  { return 1 + mpc_nodecount_unretained(p-&gt;data.predict.x, 0); }</span>
+<span class='curline'><a href='../S/46.html#L3672'>predict</a>          3672 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_PREDICT)  { mpc_optimise_unretained(p-&gt;data.predict.x, 0); }</span>
 </pre>
 </body>
 </html>

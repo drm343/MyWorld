@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>buffer</title>
+<title>camera</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,51 +9,16 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L83'>buffer</a>             83 mpc/mpc.c        char *buffer;</span>
-<span class='curline'><a href='../S/43.html#L113'>buffer</a>            113 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/43.html#L143'>buffer</a>            143 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/43.html#L172'>buffer</a>            172 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/43.html#L200'>buffer</a>            200 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/43.html#L222'>buffer</a>            222 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE) { free(i-&gt;buffer); }</span>
-<span class='curline'><a href='../S/43.html#L315'>buffer</a>            315 mpc/mpc.c          i-&gt;buffer = calloc(1, 1);</span>
-<span class='curline'><a href='../S/43.html#L336'>buffer</a>            336 mpc/mpc.c          free(i-&gt;buffer);</span>
-<span class='curline'><a href='../S/43.html#L337'>buffer</a>            337 mpc/mpc.c          i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/43.html#L357'>buffer</a>            357 mpc/mpc.c        return i-&gt;state.pos &lt; (long)(strlen(i-&gt;buffer) + i-&gt;marks[0].pos);</span>
-<span class='curline'><a href='../S/43.html#L361'>buffer</a>            361 mpc/mpc.c        return i-&gt;buffer[i-&gt;state.pos - i-&gt;marks[0].pos];</span>
-<span class='curline'><a href='../S/43.html#L381'>buffer</a>            381 mpc/mpc.c            if (!i-&gt;buffer) { c = getc(i-&gt;file); return c; }</span>
-<span class='curline'><a href='../S/43.html#L383'>buffer</a>            383 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/43.html#L411'>buffer</a>            411 mpc/mpc.c            if (!i-&gt;buffer) {</span>
-<span class='curline'><a href='../S/43.html#L418'>buffer</a>            418 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/43.html#L439'>buffer</a>            439 mpc/mpc.c            if (!i-&gt;buffer) { ungetc(c, i-&gt;file); break; }</span>
-<span class='curline'><a href='../S/43.html#L441'>buffer</a>            441 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/43.html#L455'>buffer</a>            455 mpc/mpc.c        &amp;&amp;  i-&gt;buffer &amp;&amp; !mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/43.html#L456'>buffer</a>            456 mpc/mpc.c          i-&gt;buffer = realloc(i-&gt;buffer, strlen(i-&gt;buffer) + 2);</span>
-<span class='curline'><a href='../S/43.html#L457'>buffer</a>            457 mpc/mpc.c          i-&gt;buffer[strlen(i-&gt;buffer) + 1] = '\0';</span>
-<span class='curline'><a href='../S/43.html#L458'>buffer</a>            458 mpc/mpc.c          i-&gt;buffer[strlen(i-&gt;buffer) + 0] = c;</span>
-<span class='curline'><a href='../S/43.html#L568'>buffer</a>            568 mpc/mpc.c      static void mpc_err_string_cat(char *buffer, int *pos, int *max, char const *fmt, ...) {</span>
-<span class='curline'><a href='../S/43.html#L574'>buffer</a>            574 mpc/mpc.c        (*pos) += vsprintf(buffer + (*pos), fmt, va);</span>
-<span class='curline'><a href='../S/43.html#L609'>buffer</a>            609 mpc/mpc.c        char *buffer = calloc(1, 1024);</span>
-<span class='curline'><a href='../S/43.html#L612'>buffer</a>            612 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max,</span>
-<span class='curline'><a href='../S/43.html#L614'>buffer</a>            614 mpc/mpc.c          return buffer;</span>
-<span class='curline'><a href='../S/43.html#L617'>buffer</a>            617 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, </span>
-<span class='curline'><a href='../S/43.html#L620'>buffer</a>            620 mpc/mpc.c        if (x-&gt;expected_num == 0) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "ERROR: NOTHING EXPECTED"); }</span>
-<span class='curline'><a href='../S/43.html#L621'>buffer</a>            621 mpc/mpc.c        if (x-&gt;expected_num == 1) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s", x-&gt;expected[0]); }</span>
-<span class='curline'><a href='../S/43.html#L625'>buffer</a>            625 mpc/mpc.c            mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s, ", x-&gt;expected[i]);</span>
-<span class='curline'><a href='../S/43.html#L628'>buffer</a>            628 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s or %s", </span>
-<span class='curline'><a href='../S/43.html#L633'>buffer</a>            633 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, " at ");</span>
-<span class='curline'><a href='../S/43.html#L634'>buffer</a>            634 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, mpc_err_char_unescape(x-&gt;recieved));</span>
-<span class='curline'><a href='../S/43.html#L635'>buffer</a>            635 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, "\n");</span>
-<span class='curline'><a href='../S/43.html#L637'>buffer</a>            637 mpc/mpc.c        return realloc(buffer, strlen(buffer) + 1);</span>
-<span class='curline'><a href='../S/43.html#L1554'>buffer</a>           1554 mpc/mpc.c        char *buffer;</span>
-<span class='curline'><a href='../S/43.html#L1560'>buffer</a>           1560 mpc/mpc.c        buffer = malloc(2048);</span>
-<span class='curline'><a href='../S/43.html#L1561'>buffer</a>           1561 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
-<span class='curline'><a href='../S/43.html#L1564'>buffer</a>           1564 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
-<span class='curline'><a href='../S/43.html#L1565'>buffer</a>           1565 mpc/mpc.c        p-&gt;data.fail.m = buffer;</span>
-<span class='curline'><a href='../S/43.html#L1628'>buffer</a>           1628 mpc/mpc.c        char *buffer;</span>
-<span class='curline'><a href='../S/43.html#L1634'>buffer</a>           1634 mpc/mpc.c        buffer = malloc(2048);</span>
-<span class='curline'><a href='../S/43.html#L1635'>buffer</a>           1635 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
-<span class='curline'><a href='../S/43.html#L1638'>buffer</a>           1638 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
-<span class='curline'><a href='../S/43.html#L1640'>buffer</a>           1640 mpc/mpc.c        p-&gt;data.expect.m = buffer;</span>
+<span class='curline'><a href='../S/13.html#L44'>camera</a>             44 include/graphic-camera.h extern Graphic_Camera_API camera;</span>
+<span class='curline'><a href='../S/29.html#L227'>camera</a>            227 src/graphic-camera.c   camera.set_max_x(access, MAX_X);</span>
+<span class='curline'><a href='../S/29.html#L228'>camera</a>            228 src/graphic-camera.c   camera.set_max_y(access, MAX_Y);</span>
+<span class='curline'><a href='../S/29.html#L286'>camera</a>            286 src/graphic-camera.c Graphic_Camera_API camera = {</span>
+<span class='curline'><a href='../S/27.html#L80'>camera</a>             80 src/main.c       camera.set_dead_style(camera_1, dead);</span>
+<span class='curline'><a href='../S/27.html#L95'>camera</a>             95 src/main.c       camera_1 = camera.start();</span>
+<span class='curline'><a href='../S/27.html#L103'>camera</a>            103 src/main.c       camera.set_player(camera_1, Player);</span>
+<span class='curline'><a href='../S/27.html#L121'>camera</a>            121 src/main.c       camera.set_map(camera_1, &amp;map_1);</span>
+<span class='curline'><a href='../S/27.html#L140'>camera</a>            140 src/main.c               running = camera.take(camera_1, character_use_pool, &amp;event);</span>
+<span class='curline'><a href='../S/27.html#L160'>camera</a>            160 src/main.c       camera.stop(camera_1);</span>
 </pre>
 </body>
 </html>

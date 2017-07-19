@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_apply_to_t</title>
+<title>memmove</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,13 +9,21 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L897'>mpc_apply_to_t</a>    897 mpc/mpc.c      typedef struct { mpc_parser_t *x; mpc_apply_to_t f; void *d; } mpc_pdata_apply_to_t;</span>
-<span class='curline'><a href='../S/43.html#L990'>mpc_apply_to_t</a>    990 mpc/mpc.c      static mpc_val_t *mpc_parse_apply_to(mpc_input_t *i, mpc_apply_to_t f, mpc_val_t *x, mpc_val_t *d) {</span>
-<span class='curline'><a href='../S/43.html#L1713'>mpc_apply_to_t</a>   1713 mpc/mpc.c      mpc_parser_t *mpc_apply_to(mpc_parser_t *a, mpc_apply_to_t f, void *x) {</span>
-<span class='curline'><a href='../S/43.html#L3052'>mpc_apply_to_t</a>   3052 mpc/mpc.c        return mpc_apply_to(a, (mpc_apply_to_t)mpc_ast_tag, (void*)t);</span>
-<span class='curline'><a href='../S/43.html#L3056'>mpc_apply_to_t</a>   3056 mpc/mpc.c        return mpc_apply_to(a, (mpc_apply_to_t)mpc_ast_add_tag, (void*)t);</span>
-<span class='curline'><a href='../S/44.html#L81'>mpc_apply_to_t</a>     81 mpc/mpc.h      typedef mpc_val_t*(*mpc_apply_to_t)(mpc_val_t*,void*);</span>
-<span class='curline'><a href='../S/44.html#L127'>mpc_apply_to_t</a>    127 mpc/mpc.h      mpc_parser_t *mpc_apply_to(mpc_parser_t *a, mpc_apply_to_t f, void *x);</span>
+<span class='curline'><a href='../S/46.html#L2267'>memmove</a>          2267 mpc/mpc.c          memmove(s, s+1, strlen(s));</span>
+<span class='curline'><a href='../S/46.html#L2766'>memmove</a>          2766 mpc/mpc.c        memmove(a-&gt;tag + strlen(t) + 1, a-&gt;tag, strlen(a-&gt;tag)+1);</span>
+<span class='curline'><a href='../S/46.html#L2767'>memmove</a>          2767 mpc/mpc.c        memmove(a-&gt;tag, t, strlen(t));</span>
+<span class='curline'><a href='../S/46.html#L2768'>memmove</a>          2768 mpc/mpc.c        memmove(a-&gt;tag + strlen(t), "|", 1);</span>
+<span class='curline'><a href='../S/46.html#L2775'>memmove</a>          2775 mpc/mpc.c        memmove(a-&gt;tag + (strlen(t)-1), a-&gt;tag, strlen(a-&gt;tag)+1);</span>
+<span class='curline'><a href='../S/46.html#L2776'>memmove</a>          2776 mpc/mpc.c        memmove(a-&gt;tag, t, (strlen(t)-1));</span>
+<span class='curline'><a href='../S/46.html#L3703'>memmove</a>          3703 mpc/mpc.c            memmove(p-&gt;data.or.xs + n - 1, t-&gt;data.or.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3716'>memmove</a>          3716 mpc/mpc.c            memmove(p-&gt;data.or.xs + m, t-&gt;data.or.xs + 1, n * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3717'>memmove</a>          3717 mpc/mpc.c            memmove(p-&gt;data.or.xs, t-&gt;data.or.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3747'>memmove</a>          3747 mpc/mpc.c            memmove(p-&gt;data.and.xs + m, p-&gt;data.and.xs + 1, (n - 1) * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3748'>memmove</a>          3748 mpc/mpc.c            memmove(p-&gt;data.and.xs, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3765'>memmove</a>          3765 mpc/mpc.c            memmove(p-&gt;data.and.xs + n - 1, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3797'>memmove</a>          3797 mpc/mpc.c            memmove(p-&gt;data.and.xs + m, p-&gt;data.and.xs + 1, (n - 1) * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3798'>memmove</a>          3798 mpc/mpc.c            memmove(p-&gt;data.and.xs, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
+<span class='curline'><a href='../S/46.html#L3815'>memmove</a>          3815 mpc/mpc.c            memmove(p-&gt;data.and.xs + n - 1, t-&gt;data.and.xs, m * sizeof(mpc_parser_t*));</span>
 </pre>
 </body>
 </html>

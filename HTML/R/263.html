@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_many</title>
+<title>mpc_input_peekc</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,19 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1849'>mpc_many</a>         1849 mpc/mpc.c      mpc_parser_t *mpc_whitespaces(void) { return mpc_expect(mpc_many(mpcf_strfold, mpc_whitespace()), "spaces"); }</span>
-<span class='curline'><a href='../S/43.html#L1902'>mpc_many</a>         1902 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, strchar), free, "\"", "\""), "string");</span>
-<span class='curline'><a href='../S/43.html#L1907'>mpc_many</a>         1907 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, regexchar), free, "/", "/"), "regex");</span>
-<span class='curline'><a href='../S/43.html#L1913'>mpc_many</a>         1913 mpc/mpc.c        p1 = mpc_many(mpcf_strfold, mpc_alphanum()); </span>
-<span class='curline'><a href='../S/43.html#L2024'>mpc_many</a>         2024 mpc/mpc.c        if (strcmp(xs[1], "*") == 0) { free(xs[1]); return mpc_many(mpcf_strfold, xs[0]); }</span>
-<span class='curline'><a href='../S/43.html#L2178'>mpc_many</a>         2178 mpc/mpc.c        mpc_define(Term, mpc_many(mpcf_re_and, Factor));</span>
-<span class='curline'><a href='../S/43.html#L2197'>mpc_many</a>         2197 mpc/mpc.c          mpc_many(mpcf_strfold, mpc_or(2, mpc_escape(), mpc_noneof("]"))),</span>
-<span class='curline'><a href='../S/43.html#L3065'>mpc_many</a>         3065 mpc/mpc.c      mpc_parser_t *mpca_many(mpc_parser_t *a) { return mpc_many(mpcf_fold_ast, a); }</span>
-<span class='curline'><a href='../S/43.html#L3459'>mpc_many</a>         3459 mpc/mpc.c          mpc_total(mpc_predictive(mpc_many(mpca_stmt_fold, Stmt)), mpca_stmt_list_delete),</span>
-<span class='curline'><a href='../S/44.html#L134'>mpc_many</a>          134 mpc/mpc.h      mpc_parser_t *mpc_many(mpc_fold_t f, mpc_parser_t *a);</span>
-<span class='curline'><a href='../S/46.html#L74'>mpc_many</a>           74 mpc/tests/core.c   mpc_parser_t *Stripperl = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtriml);</span>
-<span class='curline'><a href='../S/46.html#L75'>mpc_many</a>           75 mpc/tests/core.c   mpc_parser_t *Stripperr = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrimr);</span>
-<span class='curline'><a href='../S/46.html#L76'>mpc_many</a>           76 mpc/tests/core.c   mpc_parser_t *Stripper  = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrim);</span>
+<span class='curline'><a href='../S/46.html#L536'>mpc_input_peekc</a>   536 mpc/mpc.c        return f(i-&gt;last, mpc_input_peekc(i));</span>
+<span class='curline'><a href='../S/46.html#L652'>mpc_input_peekc</a>   652 mpc/mpc.c        x-&gt;recieved = mpc_input_peekc(i);</span>
 </pre>
 </body>
 </html>

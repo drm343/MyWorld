@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>signal</title>
+<title>s</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,126 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/49.html#L256'>signal</a>            256 mpc/tests/ptest.c   signal(SIGFPE,  ptest_signal);</span>
-<span class='curline'><a href='../S/49.html#L257'>signal</a>            257 mpc/tests/ptest.c   signal(SIGILL,  ptest_signal);</span>
-<span class='curline'><a href='../S/49.html#L258'>signal</a>            258 mpc/tests/ptest.c   signal(SIGSEGV, ptest_signal);</span>
+<span class='curline'><a href='../S/46.html#L8'>s</a>                   8 mpc/mpc.c        mpc_state_t s;</span>
+<span class='curline'><a href='../S/46.html#L9'>s</a>                   9 mpc/mpc.c        s.pos = -1;</span>
+<span class='curline'><a href='../S/46.html#L10'>s</a>                  10 mpc/mpc.c        s.row = -1;</span>
+<span class='curline'><a href='../S/46.html#L11'>s</a>                  11 mpc/mpc.c        s.col = -1;</span>
+<span class='curline'><a href='../S/46.html#L12'>s</a>                  12 mpc/mpc.c        return s;</span>
+<span class='curline'><a href='../S/46.html#L16'>s</a>                  16 mpc/mpc.c        mpc_state_t s;</span>
+<span class='curline'><a href='../S/46.html#L17'>s</a>                  17 mpc/mpc.c        s.pos = 0;</span>
+<span class='curline'><a href='../S/46.html#L18'>s</a>                  18 mpc/mpc.c        s.row = 0;</span>
+<span class='curline'><a href='../S/46.html#L19'>s</a>                  19 mpc/mpc.c        s.col = 0;</span>
+<span class='curline'><a href='../S/46.html#L20'>s</a>                  20 mpc/mpc.c        return s;</span>
+<span class='curline'><a href='../S/46.html#L950'>s</a>                 950 mpc/mpc.c        mpc_state_t *s = ((mpc_state_t**)xs)[0];</span>
+<span class='curline'><a href='../S/46.html#L952'>s</a>                 952 mpc/mpc.c        a = mpc_ast_state(a, *s);</span>
+<span class='curline'><a href='../S/46.html#L953'>s</a>                 953 mpc/mpc.c        mpc_free(i, s);</span>
+<span class='curline'><a href='../S/46.html#L1661'>s</a>                1661 mpc/mpc.c      mpc_parser_t *mpc_range(char s, char e) {</span>
+<span class='curline'><a href='../S/46.html#L1664'>s</a>                1664 mpc/mpc.c        p-&gt;data.range.x = s;</span>
+<span class='curline'><a href='../S/46.html#L1666'>s</a>                1666 mpc/mpc.c        return mpc_expectf(p, "character between '%c' and '%c'", s, e);</span>
+<span class='curline'><a href='../S/46.html#L1669'>s</a>                1669 mpc/mpc.c      mpc_parser_t *mpc_oneof(const char *s) {</span>
+<span class='curline'><a href='../S/46.html#L1672'>s</a>                1672 mpc/mpc.c        p-&gt;data.string.x = malloc(strlen(s) + 1);</span>
+<span class='curline'><a href='../S/46.html#L1673'>s</a>                1673 mpc/mpc.c        strcpy(p-&gt;data.string.x, s);</span>
+<span class='curline'><a href='../S/46.html#L1674'>s</a>                1674 mpc/mpc.c        return mpc_expectf(p, "one of '%s'", s);</span>
+<span class='curline'><a href='../S/46.html#L1677'>s</a>                1677 mpc/mpc.c      mpc_parser_t *mpc_noneof(const char *s) {</span>
+<span class='curline'><a href='../S/46.html#L1680'>s</a>                1680 mpc/mpc.c        p-&gt;data.string.x = malloc(strlen(s) + 1);</span>
+<span class='curline'><a href='../S/46.html#L1681'>s</a>                1681 mpc/mpc.c        strcpy(p-&gt;data.string.x, s);</span>
+<span class='curline'><a href='../S/46.html#L1682'>s</a>                1682 mpc/mpc.c        return mpc_expectf(p, "none of '%s'", s);</span>
+<span class='curline'><a href='../S/46.html#L1693'>s</a>                1693 mpc/mpc.c      mpc_parser_t *mpc_string(const char *s) {</span>
+<span class='curline'><a href='../S/46.html#L1696'>s</a>                1696 mpc/mpc.c        p-&gt;data.string.x = malloc(strlen(s) + 1);</span>
+<span class='curline'><a href='../S/46.html#L1697'>s</a>                1697 mpc/mpc.c        strcpy(p-&gt;data.string.x, s);</span>
+<span class='curline'><a href='../S/46.html#L1698'>s</a>                1698 mpc/mpc.c        return mpc_expectf(p, "\"%s\"", s);</span>
+<span class='curline'><a href='../S/46.html#L1929'>s</a>                1929 mpc/mpc.c      mpc_parser_t *mpc_sym(const char *s) { return mpc_tok(mpc_string(s)); }</span>
+<span class='curline'><a href='../S/46.html#L2057'>s</a>                2057 mpc/mpc.c        char *s = x;</span>
+<span class='curline'><a href='../S/46.html#L2061'>s</a>                2061 mpc/mpc.c        if (s[0] == '.') { free(s); return mpc_any(); }</span>
+<span class='curline'><a href='../S/46.html#L2062'>s</a>                2062 mpc/mpc.c        if (s[0] == '^') { free(s); return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/46.html#L2063'>s</a>                2063 mpc/mpc.c        if (s[0] == '$') { free(s); return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/46.html#L2066'>s</a>                2066 mpc/mpc.c        if (s[0] == '\\') {</span>
+<span class='curline'><a href='../S/46.html#L2067'>s</a>                2067 mpc/mpc.c          p = mpc_re_escape_char(s[1]);</span>
+<span class='curline'><a href='../S/46.html#L2068'>s</a>                2068 mpc/mpc.c          p = (p == NULL) ? mpc_char(s[1]) : p;</span>
+<span class='curline'><a href='../S/46.html#L2069'>s</a>                2069 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/46.html#L2074'>s</a>                2074 mpc/mpc.c        p = mpc_char(s[0]);</span>
+<span class='curline'><a href='../S/46.html#L2075'>s</a>                2075 mpc/mpc.c        free(s);</span>
+<span class='curline'><a href='../S/46.html#L2102'>s</a>                2102 mpc/mpc.c        const char *s = x;</span>
+<span class='curline'><a href='../S/46.html#L2103'>s</a>                2103 mpc/mpc.c        int comp = s[0] == '^' ? 1 : 0;</span>
+<span class='curline'><a href='../S/46.html#L2106'>s</a>                2106 mpc/mpc.c        if (s[0] == '\0') { free(x); return mpc_fail("Invalid Regex Range Expression"); } </span>
+<span class='curline'><a href='../S/46.html#L2107'>s</a>                2107 mpc/mpc.c        if (s[0] == '^' &amp;&amp; </span>
+<span class='curline'><a href='../S/46.html#L2108'>s</a>                2108 mpc/mpc.c            s[1] == '\0') { free(x); return mpc_fail("Invalid Regex Range Expression"); }</span>
+<span class='curline'><a href='../S/46.html#L2110'>s</a>                2110 mpc/mpc.c        for (i = comp; i &lt; strlen(s); i++){</span>
+<span class='curline'><a href='../S/46.html#L2113'>s</a>                2113 mpc/mpc.c          if (s[i] == '\\') {</span>
+<span class='curline'><a href='../S/46.html#L2114'>s</a>                2114 mpc/mpc.c            tmp = mpc_re_range_escape_char(s[i+1]);</span>
+<span class='curline'><a href='../S/46.html#L2121'>s</a>                2121 mpc/mpc.c              range[strlen(range) + 0] = s[i+1];      </span>
+<span class='curline'><a href='../S/46.html#L2127'>s</a>                2127 mpc/mpc.c          else if (s[i] == '-') {</span>
+<span class='curline'><a href='../S/46.html#L2128'>s</a>                2128 mpc/mpc.c            if (s[i+1] == '\0' || i == 0) {</span>
+<span class='curline'><a href='../S/46.html#L2132'>s</a>                2132 mpc/mpc.c              start = s[i-1]+1;</span>
+<span class='curline'><a href='../S/46.html#L2133'>s</a>                2133 mpc/mpc.c              end = s[i+1]-1;</span>
+<span class='curline'><a href='../S/46.html#L2146'>s</a>                2146 mpc/mpc.c            range[strlen(range) + 0] = s[i];</span>
+<span class='curline'><a href='../S/46.html#L2265'>s</a>                2265 mpc/mpc.c        char *s = x;</span>
+<span class='curline'><a href='../S/46.html#L2266'>s</a>                2266 mpc/mpc.c        while (isspace(*s)) {</span>
+<span class='curline'><a href='../S/46.html#L2267'>s</a>                2267 mpc/mpc.c          memmove(s, s+1, strlen(s));</span>
+<span class='curline'><a href='../S/46.html#L2269'>s</a>                2269 mpc/mpc.c        return s;</span>
+<span class='curline'><a href='../S/46.html#L2273'>s</a>                2273 mpc/mpc.c        char *s = x;</span>
+<span class='curline'><a href='../S/46.html#L2274'>s</a>                2274 mpc/mpc.c        size_t l = strlen(s);</span>
+<span class='curline'><a href='../S/46.html#L2275'>s</a>                2275 mpc/mpc.c        while (isspace(s[l-1])) {</span>
+<span class='curline'><a href='../S/46.html#L2276'>s</a>                2276 mpc/mpc.c          s[l-1] = '\0'; l--;</span>
+<span class='curline'><a href='../S/46.html#L2278'>s</a>                2278 mpc/mpc.c        return s;</span>
+<span class='curline'><a href='../S/46.html#L2307'>s</a>                2307 mpc/mpc.c        char *s = x;</span>
+<span class='curline'><a href='../S/46.html#L2310'>s</a>                2310 mpc/mpc.c        while (*s) {</span>
+<span class='curline'><a href='../S/46.html#L2316'>s</a>                2316 mpc/mpc.c            if (*s == input[i]) {</span>
+<span class='curline'><a href='../S/46.html#L2327'>s</a>                2327 mpc/mpc.c            buff[0] = *s; buff[1] = '\0';</span>
+<span class='curline'><a href='../S/46.html#L2331'>s</a>                2331 mpc/mpc.c          s++;</span>
+<span class='curline'><a href='../S/46.html#L2343'>s</a>                2343 mpc/mpc.c        char *s = x;</span>
+<span class='curline'><a href='../S/46.html#L2346'>s</a>                2346 mpc/mpc.c        while (*s) {</span>
+<span class='curline'><a href='../S/46.html#L2352'>s</a>                2352 mpc/mpc.c            if ((*(s+0)) == output[i][0] &amp;&amp;</span>
+<span class='curline'><a href='../S/46.html#L2353'>s</a>                2353 mpc/mpc.c                (*(s+1)) == output[i][1]) {</span>
+<span class='curline'><a href='../S/46.html#L2358'>s</a>                2358 mpc/mpc.c              s++;</span>
+<span class='curline'><a href='../S/46.html#L2366'>s</a>                2366 mpc/mpc.c            buff[0] = *s; buff[1] = '\0';</span>
+<span class='curline'><a href='../S/46.html#L2370'>s</a>                2370 mpc/mpc.c          if (*s == '\0') { break; }</span>
+<span class='curline'><a href='../S/46.html#L2371'>s</a>                2371 mpc/mpc.c          else { s++; }</span>
+<span class='curline'><a href='../S/46.html#L2484'>s</a>                2484 mpc/mpc.c        char *s, *e;</span>
+<span class='curline'><a href='../S/46.html#L2509'>s</a>                2509 mpc/mpc.c          s = mpcf_escape_new(</span>
+<span class='curline'><a href='../S/46.html#L2513'>s</a>                2513 mpc/mpc.c          printf("'%s'", s);</span>
+<span class='curline'><a href='../S/46.html#L2514'>s</a>                2514 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/46.html#L2519'>s</a>                2519 mpc/mpc.c          s = mpcf_escape_new(</span>
+<span class='curline'><a href='../S/46.html#L2528'>s</a>                2528 mpc/mpc.c          printf("[%s-%s]", s, e);</span>
+<span class='curline'><a href='../S/46.html#L2529'>s</a>                2529 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/46.html#L2534'>s</a>                2534 mpc/mpc.c          s = mpcf_escape_new(</span>
+<span class='curline'><a href='../S/46.html#L2538'>s</a>                2538 mpc/mpc.c          printf("[%s]", s);</span>
+<span class='curline'><a href='../S/46.html#L2539'>s</a>                2539 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/46.html#L2543'>s</a>                2543 mpc/mpc.c          s = mpcf_escape_new(</span>
+<span class='curline'><a href='../S/46.html#L2547'>s</a>                2547 mpc/mpc.c          printf("[^%s]", s);</span>
+<span class='curline'><a href='../S/46.html#L2548'>s</a>                2548 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/46.html#L2552'>s</a>                2552 mpc/mpc.c          s = mpcf_escape_new(</span>
+<span class='curline'><a href='../S/46.html#L2556'>s</a>                2556 mpc/mpc.c          printf("\"%s\"", s);</span>
+<span class='curline'><a href='../S/46.html#L2557'>s</a>                2557 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/46.html#L2613'>s</a>                2613 mpc/mpc.c      int mpc_test_fail(mpc_parser_t *p, const char *s, const void *d,</span>
+<span class='curline'><a href='../S/46.html#L2619'>s</a>                2619 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
+<span class='curline'><a href='../S/46.html#L2636'>s</a>                2636 mpc/mpc.c      int mpc_test_pass(mpc_parser_t *p, const char *s, const void *d,</span>
+<span class='curline'><a href='../S/46.html#L2642'>s</a>                2642 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
+<span class='curline'><a href='../S/46.html#L2786'>s</a>                2786 mpc/mpc.c      mpc_ast_t *mpc_ast_state(mpc_ast_t *a, mpc_state_t s) {</span>
+<span class='curline'><a href='../S/46.html#L2788'>s</a>                2788 mpc/mpc.c        a-&gt;state = s;</span>
+<span class='curline'><a href='../S/46.html#L3039'>s</a>                3039 mpc/mpc.c        mpc_state_t *s = ((mpc_state_t**)xs)[0];</span>
+<span class='curline'><a href='../S/46.html#L3042'>s</a>                3042 mpc/mpc.c        a = mpc_ast_state(a, *s);</span>
+<span class='curline'><a href='../S/46.html#L3043'>s</a>                3043 mpc/mpc.c        free(s);</span>
+<span class='curline'><a href='../S/46.html#L3196'>s</a>                3196 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_string(mpc_val_t *x, void *s) {</span>
+<span class='curline'><a href='../S/46.html#L3197'>s</a>                3197 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/46.html#L3204'>s</a>                3204 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_char(mpc_val_t *x, void *s) {</span>
+<span class='curline'><a href='../S/46.html#L3205'>s</a>                3205 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/46.html#L3212'>s</a>                3212 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_regex(mpc_val_t *x, void *s) {</span>
+<span class='curline'><a href='../S/46.html#L3213'>s</a>                3213 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/46.html#L3221'>s</a>                3221 mpc/mpc.c      static int is_number(const char* s) {</span>
+<span class='curline'><a href='../S/46.html#L3223'>s</a>                3223 mpc/mpc.c        for (i = 0; i &lt; strlen(s); i++) { if (!strchr("0123456789", s[i])) { return 0; } }</span>
+<span class='curline'><a href='../S/46.html#L3276'>s</a>                3276 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_id(mpc_val_t *x, void *s) {</span>
+<span class='curline'><a href='../S/46.html#L3278'>s</a>                3278 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/46.html#L3420'>s</a>                3420 mpc/mpc.c      static mpc_val_t *mpca_stmt_list_apply_to(mpc_val_t *x, void *s) {</span>
+<span class='curline'><a href='../S/46.html#L3422'>s</a>                3422 mpc/mpc.c        mpca_grammar_st_t *st = s;</span>
+<span class='curline'><a href='../S/47.html#L102'>s</a>                 102 mpc/mpc.h      mpc_parser_t *mpc_range(char s, char e);</span>
+<span class='curline'><a href='../S/47.html#L103'>s</a>                 103 mpc/mpc.h      mpc_parser_t *mpc_oneof(const char *s);</span>
+<span class='curline'><a href='../S/47.html#L104'>s</a>                 104 mpc/mpc.h      mpc_parser_t *mpc_noneof(const char *s);</span>
+<span class='curline'><a href='../S/47.html#L106'>s</a>                 106 mpc/mpc.h      mpc_parser_t *mpc_string(const char *s);</span>
+<span class='curline'><a href='../S/47.html#L199'>s</a>                 199 mpc/mpc.h      mpc_parser_t *mpc_sym(const char *s);</span>
+<span class='curline'><a href='../S/47.html#L279'>s</a>                 279 mpc/mpc.h      mpc_ast_t *mpc_ast_state(mpc_ast_t *a, mpc_state_t s);</span>
+<span class='curline'><a href='../S/47.html#L356'>s</a>                 356 mpc/mpc.h      int mpc_test_pass(mpc_parser_t *p, const char *s, const void *d,</span>
+<span class='curline'><a href='../S/47.html#L361'>s</a>                 361 mpc/mpc.h      int mpc_test_fail(mpc_parser_t *p, const char *s, const void *d,</span>
 </pre>
 </body>
 </html>

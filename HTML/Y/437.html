@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>race_size</title>
+<title>r</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,211 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L58'>race_size</a>          58 include/main_set_character.h   size_t race_size = strlen(race);</span>
-<span class='curline'><a href='../S/14.html#L60'>race_size</a>          60 include/main_set_character.h   char *character_race = MAIN_STRING_malloc(race_size);</span>
+<span class='curline'><a href='../S/19.html#L100'>r</a>                 100 include/main_set_character.h   mpc_result_t r;</span>
+<span class='curline'><a href='../S/19.html#L132'>r</a>                 132 include/main_set_character.h   if (mpc_parse_contents(file_path, JSON, &amp;r)) {</span>
+<span class='curline'><a href='../S/19.html#L134'>r</a>                 134 include/main_set_character.h     eval_set_npc(r.output);</span>
+<span class='curline'><a href='../S/19.html#L135'>r</a>                 135 include/main_set_character.h     mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/19.html#L137'>r</a>                 137 include/main_set_character.h     mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/19.html#L138'>r</a>                 138 include/main_set_character.h     mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/8.html#L111'>r</a>                 111 include/main_set_config.h   mpc_result_t r;</span>
+<span class='curline'><a href='../S/8.html#L155'>r</a>                 155 include/main_set_config.h   if (mpc_parse_contents(file_path, CSS, &amp;r)) {</span>
+<span class='curline'><a href='../S/8.html#L156'>r</a>                 156 include/main_set_config.h     eval_set_config(r.output);</span>
+<span class='curline'><a href='../S/8.html#L157'>r</a>                 157 include/main_set_config.h     mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/8.html#L159'>r</a>                 159 include/main_set_config.h     mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/34.html#L5'>r</a>                   5 mpc/examples/doge.c   mpc_result_t r;</span>
+<span class='curline'><a href='../S/34.html#L21'>r</a>                  21 mpc/examples/doge.c     if (mpc_parse_contents(argv[1], Doge, &amp;r)) {</span>
+<span class='curline'><a href='../S/34.html#L22'>r</a>                  22 mpc/examples/doge.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/34.html#L23'>r</a>                  23 mpc/examples/doge.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/34.html#L25'>r</a>                  25 mpc/examples/doge.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/34.html#L26'>r</a>                  26 mpc/examples/doge.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/34.html#L31'>r</a>                  31 mpc/examples/doge.c     if (mpc_parse_pipe("&lt;stdin&gt;", stdin, Doge, &amp;r)) {</span>
+<span class='curline'><a href='../S/34.html#L32'>r</a>                  32 mpc/examples/doge.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/34.html#L33'>r</a>                  33 mpc/examples/doge.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/34.html#L35'>r</a>                  35 mpc/examples/doge.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/34.html#L36'>r</a>                  36 mpc/examples/doge.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/36.html#L5'>r</a>                   5 mpc/examples/foobar.c     mpc_result_t r;</span>
+<span class='curline'><a href='../S/36.html#L16'>r</a>                  16 mpc/examples/foobar.c     if (mpc_parse("&lt;stdin&gt;", argv[1], Foobar, &amp;r)) {</span>
+<span class='curline'><a href='../S/36.html#L17'>r</a>                  17 mpc/examples/foobar.c         mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/36.html#L18'>r</a>                  18 mpc/examples/foobar.c         mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/36.html#L20'>r</a>                  20 mpc/examples/foobar.c         mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/36.html#L21'>r</a>                  21 mpc/examples/foobar.c         mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/37.html#L5'>r</a>                   5 mpc/examples/lispy.c   mpc_result_t r;  </span>
+<span class='curline'><a href='../S/37.html#L30'>r</a>                  30 mpc/examples/lispy.c     if (mpc_parse_contents(argv[1], Lispy, &amp;r)) {</span>
+<span class='curline'><a href='../S/37.html#L31'>r</a>                  31 mpc/examples/lispy.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/37.html#L32'>r</a>                  32 mpc/examples/lispy.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/37.html#L34'>r</a>                  34 mpc/examples/lispy.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/37.html#L35'>r</a>                  35 mpc/examples/lispy.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/37.html#L40'>r</a>                  40 mpc/examples/lispy.c     if (mpc_parse_pipe("&lt;stdin&gt;", stdin, Lispy, &amp;r)) {</span>
+<span class='curline'><a href='../S/37.html#L41'>r</a>                  41 mpc/examples/lispy.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/37.html#L42'>r</a>                  42 mpc/examples/lispy.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/37.html#L44'>r</a>                  44 mpc/examples/lispy.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/37.html#L45'>r</a>                  45 mpc/examples/lispy.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/38.html#L24'>r</a>                  24 mpc/examples/maths.c     mpc_result_t r;</span>
+<span class='curline'><a href='../S/38.html#L25'>r</a>                  25 mpc/examples/maths.c     if (mpc_parse_contents(argv[1], Maths, &amp;r)) {</span>
+<span class='curline'><a href='../S/38.html#L26'>r</a>                  26 mpc/examples/maths.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/38.html#L27'>r</a>                  27 mpc/examples/maths.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/38.html#L29'>r</a>                  29 mpc/examples/maths.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/38.html#L30'>r</a>                  30 mpc/examples/maths.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/38.html#L35'>r</a>                  35 mpc/examples/maths.c     mpc_result_t r;</span>
+<span class='curline'><a href='../S/38.html#L36'>r</a>                  36 mpc/examples/maths.c     if (mpc_parse_pipe("&lt;stdin&gt;", stdin, Maths, &amp;r)) {</span>
+<span class='curline'><a href='../S/38.html#L37'>r</a>                  37 mpc/examples/maths.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/38.html#L38'>r</a>                  38 mpc/examples/maths.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/38.html#L40'>r</a>                  40 mpc/examples/maths.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/38.html#L41'>r</a>                  41 mpc/examples/maths.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/43.html#L73'>r</a>                  73 mpc/examples/smallc.c     mpc_result_t r;</span>
+<span class='curline'><a href='../S/43.html#L74'>r</a>                  74 mpc/examples/smallc.c     if (mpc_parse_contents(argv[1], Smallc, &amp;r)) {</span>
+<span class='curline'><a href='../S/43.html#L75'>r</a>                  75 mpc/examples/smallc.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/43.html#L76'>r</a>                  76 mpc/examples/smallc.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/43.html#L78'>r</a>                  78 mpc/examples/smallc.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/43.html#L79'>r</a>                  79 mpc/examples/smallc.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/43.html#L84'>r</a>                  84 mpc/examples/smallc.c     mpc_result_t r;</span>
+<span class='curline'><a href='../S/43.html#L85'>r</a>                  85 mpc/examples/smallc.c     if (mpc_parse_pipe("&lt;stdin&gt;", stdin, Smallc, &amp;r)) {</span>
+<span class='curline'><a href='../S/43.html#L86'>r</a>                  86 mpc/examples/smallc.c       mpc_ast_print(r.output);</span>
+<span class='curline'><a href='../S/43.html#L87'>r</a>                  87 mpc/examples/smallc.c       mpc_ast_delete(r.output);</span>
+<span class='curline'><a href='../S/43.html#L89'>r</a>                  89 mpc/examples/smallc.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/43.html#L90'>r</a>                  90 mpc/examples/smallc.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/45.html#L10'>r</a>                  10 mpc/examples/tree_traversal.c   mpc_result_t r;</span>
+<span class='curline'><a href='../S/45.html#L21'>r</a>                  21 mpc/examples/tree_traversal.c     if (mpc_parse_contents(argv[1], Input, &amp;r)) {</span>
+<span class='curline'><a href='../S/45.html#L22'>r</a>                  22 mpc/examples/tree_traversal.c       ast = r.output;</span>
+<span class='curline'><a href='../S/45.html#L24'>r</a>                  24 mpc/examples/tree_traversal.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/45.html#L25'>r</a>                  25 mpc/examples/tree_traversal.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/45.html#L32'>r</a>                  32 mpc/examples/tree_traversal.c     if (mpc_parse_pipe("&lt;stdin&gt;", stdin, Input, &amp;r)) {</span>
+<span class='curline'><a href='../S/45.html#L33'>r</a>                  33 mpc/examples/tree_traversal.c       ast = r.output;</span>
+<span class='curline'><a href='../S/45.html#L35'>r</a>                  35 mpc/examples/tree_traversal.c       mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/45.html#L36'>r</a>                  36 mpc/examples/tree_traversal.c       mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/46.html#L540'>r</a>                 540 mpc/mpc.c        mpc_state_t *r = mpc_malloc(i, sizeof(mpc_state_t));</span>
+<span class='curline'><a href='../S/46.html#L541'>r</a>                 541 mpc/mpc.c        memcpy(r, &amp;i-&gt;state, sizeof(mpc_state_t));</span>
+<span class='curline'><a href='../S/46.html#L542'>r</a>                 542 mpc/mpc.c        return r;</span>
+<span class='curline'><a href='../S/46.html#L1003'>r</a>                1003 mpc/mpc.c      #define MPC_SUCCESS(x) r-&gt;output = x; return 1</span>
+<span class='curline'><a href='../S/46.html#L1004'>r</a>                1004 mpc/mpc.c      #define MPC_FAILURE(x) r-&gt;error = x; return 0</span>
+<span class='curline'><a href='../S/46.html#L1006'>r</a>                1006 mpc/mpc.c        if (x) { MPC_SUCCESS(r-&gt;output); } \</span>
+<span class='curline'><a href='../S/46.html#L1009'>r</a>                1009 mpc/mpc.c      static int mpc_parse_run(mpc_input_t *i, mpc_parser_t *p, mpc_result_t *r, mpc_err_t **e) {</span>
+<span class='curline'><a href='../S/46.html#L1020'>r</a>                1020 mpc/mpc.c          case MPC_TYPE_ANY:     MPC_PRIMITIVE(mpc_input_any(i, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1021'>r</a>                1021 mpc/mpc.c          case MPC_TYPE_SINGLE:  MPC_PRIMITIVE(mpc_input_char(i, p-&gt;data.single.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1022'>r</a>                1022 mpc/mpc.c          case MPC_TYPE_RANGE:   MPC_PRIMITIVE(mpc_input_range(i, p-&gt;data.range.x, p-&gt;data.range.y, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1023'>r</a>                1023 mpc/mpc.c          case MPC_TYPE_ONEOF:   MPC_PRIMITIVE(mpc_input_oneof(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1024'>r</a>                1024 mpc/mpc.c          case MPC_TYPE_NONEOF:  MPC_PRIMITIVE(mpc_input_noneof(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1025'>r</a>                1025 mpc/mpc.c          case MPC_TYPE_SATISFY: MPC_PRIMITIVE(mpc_input_satisfy(i, p-&gt;data.satisfy.f, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1026'>r</a>                1026 mpc/mpc.c          case MPC_TYPE_STRING:  MPC_PRIMITIVE(mpc_input_string(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1027'>r</a>                1027 mpc/mpc.c          case MPC_TYPE_ANCHOR:  MPC_PRIMITIVE(mpc_input_anchor(i, p-&gt;data.anchor.f, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1041'>r</a>                1041 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.apply.x, r, e)) {</span>
+<span class='curline'><a href='../S/46.html#L1042'>r</a>                1042 mpc/mpc.c              MPC_SUCCESS(mpc_parse_apply(i, p-&gt;data.apply.f, r-&gt;output));</span>
+<span class='curline'><a href='../S/46.html#L1044'>r</a>                1044 mpc/mpc.c              MPC_FAILURE(r-&gt;output);</span>
+<span class='curline'><a href='../S/46.html#L1048'>r</a>                1048 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.apply_to.x, r, e)) {</span>
+<span class='curline'><a href='../S/46.html#L1049'>r</a>                1049 mpc/mpc.c              MPC_SUCCESS(mpc_parse_apply_to(i, p-&gt;data.apply_to.f, r-&gt;output, p-&gt;data.apply_to.d));</span>
+<span class='curline'><a href='../S/46.html#L1051'>r</a>                1051 mpc/mpc.c              MPC_FAILURE(r-&gt;error);</span>
+<span class='curline'><a href='../S/46.html#L1056'>r</a>                1056 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.expect.x, r, e)) {</span>
+<span class='curline'><a href='../S/46.html#L1058'>r</a>                1058 mpc/mpc.c              MPC_SUCCESS(r-&gt;output);</span>
+<span class='curline'><a href='../S/46.html#L1066'>r</a>                1066 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.predict.x, r, e)) {      </span>
+<span class='curline'><a href='../S/46.html#L1068'>r</a>                1068 mpc/mpc.c              MPC_SUCCESS(r-&gt;output);</span>
+<span class='curline'><a href='../S/46.html#L1071'>r</a>                1071 mpc/mpc.c              MPC_FAILURE(r-&gt;error);</span>
+<span class='curline'><a href='../S/46.html#L1081'>r</a>                1081 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.not.x, r, e)) {</span>
+<span class='curline'><a href='../S/46.html#L1084'>r</a>                1084 mpc/mpc.c              mpc_parse_dtor(i, p-&gt;data.not.dx, r-&gt;output);</span>
+<span class='curline'><a href='../S/46.html#L1093'>r</a>                1093 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.not.x, r, e)) {</span>
+<span class='curline'><a href='../S/46.html#L1094'>r</a>                1094 mpc/mpc.c              MPC_SUCCESS(r-&gt;output);</span>
+<span class='curline'><a href='../S/46.html#L1096'>r</a>                1096 mpc/mpc.c              *e = mpc_err_merge(i, *e, r-&gt;error);</span>
+<span class='curline'><a href='../S/46.html#L1235'>r</a>                1235 mpc/mpc.c      int mpc_parse_input(mpc_input_t *i, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/46.html#L1239'>r</a>                1239 mpc/mpc.c        x = mpc_parse_run(i, p, r, &amp;e);</span>
+<span class='curline'><a href='../S/46.html#L1242'>r</a>                1242 mpc/mpc.c          r-&gt;output = mpc_export(i, r-&gt;output);</span>
+<span class='curline'><a href='../S/46.html#L1244'>r</a>                1244 mpc/mpc.c          r-&gt;error = mpc_err_export(i, mpc_err_merge(i, e, r-&gt;error));</span>
+<span class='curline'><a href='../S/46.html#L1249'>r</a>                1249 mpc/mpc.c      int mpc_parse(const char *filename, const char *string, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/46.html#L1252'>r</a>                1252 mpc/mpc.c        x = mpc_parse_input(i, p, r);</span>
+<span class='curline'><a href='../S/46.html#L1257'>r</a>                1257 mpc/mpc.c      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/46.html#L1260'>r</a>                1260 mpc/mpc.c        x = mpc_parse_input(i, p, r);</span>
+<span class='curline'><a href='../S/46.html#L1265'>r</a>                1265 mpc/mpc.c      int mpc_parse_file(const char *filename, FILE *file, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/46.html#L1268'>r</a>                1268 mpc/mpc.c        x = mpc_parse_input(i, p, r);</span>
+<span class='curline'><a href='../S/46.html#L1273'>r</a>                1273 mpc/mpc.c      int mpc_parse_pipe(const char *filename, FILE *pipe, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/46.html#L1276'>r</a>                1276 mpc/mpc.c        x = mpc_parse_input(i, p, r);</span>
+<span class='curline'><a href='../S/46.html#L1281'>r</a>                1281 mpc/mpc.c      int mpc_parse_contents(const char *filename, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/46.html#L1287'>r</a>                1287 mpc/mpc.c          r-&gt;output = NULL;</span>
+<span class='curline'><a href='../S/46.html#L1288'>r</a>                1288 mpc/mpc.c          r-&gt;error = mpc_err_file(filename, "Unable to open file!");</span>
+<span class='curline'><a href='../S/46.html#L1292'>r</a>                1292 mpc/mpc.c        res = mpc_parse_file(filename, f, p, r);</span>
+<span class='curline'><a href='../S/46.html#L2163'>r</a>                2163 mpc/mpc.c        mpc_result_t r;</span>
+<span class='curline'><a href='../S/46.html#L2210'>r</a>                2210 mpc/mpc.c        if(!mpc_parse("&lt;mpc_re_compiler&gt;", re, RegexEnclose, &amp;r)) {</span>
+<span class='curline'><a href='../S/46.html#L2211'>r</a>                2211 mpc/mpc.c          err_msg = mpc_err_string(r.error);</span>
+<span class='curline'><a href='../S/46.html#L2213'>r</a>                2213 mpc/mpc.c          mpc_err_delete(r.error);  </span>
+<span class='curline'><a href='../S/46.html#L2215'>r</a>                2215 mpc/mpc.c          r.output = err_out;</span>
+<span class='curline'><a href='../S/46.html#L2220'>r</a>                2220 mpc/mpc.c        mpc_optimise(r.output);</span>
+<span class='curline'><a href='../S/46.html#L2222'>r</a>                2222 mpc/mpc.c        return r.output;</span>
+<span class='curline'><a href='../S/46.html#L2617'>r</a>                2617 mpc/mpc.c        mpc_result_t r;</span>
+<span class='curline'><a href='../S/46.html#L2619'>r</a>                2619 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
+<span class='curline'><a href='../S/46.html#L2621'>r</a>                2621 mpc/mpc.c          if (tester(r.output, d)) {</span>
+<span class='curline'><a href='../S/46.html#L2622'>r</a>                2622 mpc/mpc.c            destructor(r.output);</span>
+<span class='curline'><a href='../S/46.html#L2625'>r</a>                2625 mpc/mpc.c            destructor(r.output);</span>
+<span class='curline'><a href='../S/46.html#L2630'>r</a>                2630 mpc/mpc.c          mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/46.html#L2641'>r</a>                2641 mpc/mpc.c        mpc_result_t r;  </span>
+<span class='curline'><a href='../S/46.html#L2642'>r</a>                2642 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
+<span class='curline'><a href='../S/46.html#L2644'>r</a>                2644 mpc/mpc.c          if (tester(r.output, d)) {</span>
+<span class='curline'><a href='../S/46.html#L2645'>r</a>                2645 mpc/mpc.c            destructor(r.output);</span>
+<span class='curline'><a href='../S/46.html#L2648'>r</a>                2648 mpc/mpc.c            printf("Got "); printer(r.output); printf("\n");</span>
+<span class='curline'><a href='../S/46.html#L2650'>r</a>                2650 mpc/mpc.c            destructor(r.output);</span>
+<span class='curline'><a href='../S/46.html#L2655'>r</a>                2655 mpc/mpc.c          mpc_err_print(r.error);</span>
+<span class='curline'><a href='../S/46.html#L2656'>r</a>                2656 mpc/mpc.c          mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/46.html#L2730'>r</a>                2730 mpc/mpc.c        mpc_ast_t *r;</span>
+<span class='curline'><a href='../S/46.html#L2736'>r</a>                2736 mpc/mpc.c        r = mpc_ast_new("&gt;", "");</span>
+<span class='curline'><a href='../S/46.html#L2737'>r</a>                2737 mpc/mpc.c        mpc_ast_add_child(r, a);</span>
+<span class='curline'><a href='../S/46.html#L2738'>r</a>                2738 mpc/mpc.c        return r;</span>
+<span class='curline'><a href='../S/46.html#L2756'>r</a>                2756 mpc/mpc.c      mpc_ast_t *mpc_ast_add_child(mpc_ast_t *r, mpc_ast_t *a) {</span>
+<span class='curline'><a href='../S/46.html#L2757'>r</a>                2757 mpc/mpc.c        r-&gt;children_num++;</span>
+<span class='curline'><a href='../S/46.html#L2758'>r</a>                2758 mpc/mpc.c        r-&gt;children = realloc(r-&gt;children, sizeof(mpc_ast_t*) * r-&gt;children_num);</span>
+<span class='curline'><a href='../S/46.html#L2759'>r</a>                2759 mpc/mpc.c        r-&gt;children[r-&gt;children_num-1] = a;</span>
+<span class='curline'><a href='../S/46.html#L2760'>r</a>                2760 mpc/mpc.c        return r;</span>
+<span class='curline'><a href='../S/46.html#L2998'>r</a>                2998 mpc/mpc.c        mpc_ast_t *r;</span>
+<span class='curline'><a href='../S/46.html#L3005'>r</a>                3005 mpc/mpc.c        r = mpc_ast_new("&gt;", "");</span>
+<span class='curline'><a href='../S/46.html#L3012'>r</a>                3012 mpc/mpc.c            mpc_ast_add_child(r, as[i]);</span>
+<span class='curline'><a href='../S/46.html#L3014'>r</a>                3014 mpc/mpc.c            mpc_ast_add_child(r, mpc_ast_add_root_tag(as[i]-&gt;children[0], as[i]-&gt;tag));</span>
+<span class='curline'><a href='../S/46.html#L3018'>r</a>                3018 mpc/mpc.c              mpc_ast_add_child(r, as[i]-&gt;children[j]);</span>
+<span class='curline'><a href='../S/46.html#L3025'>r</a>                3025 mpc/mpc.c        if (r-&gt;children_num) {</span>
+<span class='curline'><a href='../S/46.html#L3026'>r</a>                3026 mpc/mpc.c          r-&gt;state = r-&gt;children[0]-&gt;state;</span>
+<span class='curline'><a href='../S/46.html#L3029'>r</a>                3029 mpc/mpc.c        return r;</span>
+<span class='curline'><a href='../S/46.html#L3293'>r</a>                3293 mpc/mpc.c        mpc_result_t r;</span>
+<span class='curline'><a href='../S/46.html#L3340'>r</a>                3340 mpc/mpc.c        if(!mpc_parse("&lt;mpc_grammar_compiler&gt;", grammar, GrammarTotal, &amp;r)) {</span>
+<span class='curline'><a href='../S/46.html#L3341'>r</a>                3341 mpc/mpc.c          err_msg = mpc_err_string(r.error);</span>
+<span class='curline'><a href='../S/46.html#L3343'>r</a>                3343 mpc/mpc.c          mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/46.html#L3345'>r</a>                3345 mpc/mpc.c          r.output = err_out;</span>
+<span class='curline'><a href='../S/46.html#L3350'>r</a>                3350 mpc/mpc.c        mpc_optimise(r.output);</span>
+<span class='curline'><a href='../S/46.html#L3352'>r</a>                3352 mpc/mpc.c        return (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) ? mpc_predictive(r.output) : r.output;</span>
+<span class='curline'><a href='../S/46.html#L3447'>r</a>                3447 mpc/mpc.c        mpc_result_t r;</span>
+<span class='curline'><a href='../S/46.html#L3503'>r</a>                3503 mpc/mpc.c        if (!mpc_parse_input(i, Lang, &amp;r)) {</span>
+<span class='curline'><a href='../S/46.html#L3504'>r</a>                3504 mpc/mpc.c          e = r.error;</span>
+<span class='curline'><a href='../S/47.html#L67'>r</a>                  67 mpc/mpc.h      int mpc_parse(const char *filename, const char *string, mpc_parser_t *p, mpc_result_t *r);</span>
+<span class='curline'><a href='../S/47.html#L68'>r</a>                  68 mpc/mpc.h      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r);</span>
+<span class='curline'><a href='../S/47.html#L69'>r</a>                  69 mpc/mpc.h      int mpc_parse_file(const char *filename, FILE *file, mpc_parser_t *p, mpc_result_t *r);</span>
+<span class='curline'><a href='../S/47.html#L70'>r</a>                  70 mpc/mpc.h      int mpc_parse_pipe(const char *filename, FILE *pipe, mpc_parser_t *p, mpc_result_t *r);</span>
+<span class='curline'><a href='../S/47.html#L71'>r</a>                  71 mpc/mpc.h      int mpc_parse_contents(const char *filename, mpc_parser_t *p, mpc_result_t *r);</span>
+<span class='curline'><a href='../S/47.html#L275'>r</a>                 275 mpc/mpc.h      mpc_ast_t *mpc_ast_add_child(mpc_ast_t *r, mpc_ast_t *a);</span>
+<span class='curline'><a href='../S/49.html#L91'>r</a>                  91 mpc/tests/core.c   mpc_result_t r;</span>
+<span class='curline'><a href='../S/49.html#L94'>r</a>                  94 mpc/tests/core.c   success = mpc_parse("test", "046", p, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L96'>r</a>                  96 mpc/tests/core.c   PT_ASSERT_STR_EQ(r.output, "046");</span>
+<span class='curline'><a href='../S/49.html#L97'>r</a>                  97 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/49.html#L99'>r</a>                  99 mpc/tests/core.c   success = mpc_parse("test", "046aa", p, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L101'>r</a>                 101 mpc/tests/core.c   PT_ASSERT_STR_EQ(r.output, "046");</span>
+<span class='curline'><a href='../S/49.html#L102'>r</a>                 102 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/49.html#L104'>r</a>                 104 mpc/tests/core.c   success = mpc_parse("test", "04632", p, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L106'>r</a>                 106 mpc/tests/core.c   PT_ASSERT_STR_EQ(r.output, "046");</span>
+<span class='curline'><a href='../S/49.html#L107'>r</a>                 107 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/49.html#L109'>r</a>                 109 mpc/tests/core.c   success = mpc_parse("test", "04", p, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L111'>r</a>                 111 mpc/tests/core.c   mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/49.html#L120'>r</a>                 120 mpc/tests/core.c   mpc_result_t r;</span>
+<span class='curline'><a href='../S/49.html#L124'>r</a>                 124 mpc/tests/core.c   success = mpc_parse("test", "aa", q, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L126'>r</a>                 126 mpc/tests/core.c   PT_ASSERT_STR_EQ(r.output, "aa");</span>
+<span class='curline'><a href='../S/49.html#L127'>r</a>                 127 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/49.html#L129'>r</a>                 129 mpc/tests/core.c   success = mpc_parse("test", "bb", q, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L131'>r</a>                 131 mpc/tests/core.c   PT_ASSERT_STR_EQ(r.output, "bb");</span>
+<span class='curline'><a href='../S/49.html#L132'>r</a>                 132 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/49.html#L134'>r</a>                 134 mpc/tests/core.c   success = mpc_parse("test", "ab", q, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L136'>r</a>                 136 mpc/tests/core.c   PT_ASSERT_STR_EQ(r.output, "ab");</span>
+<span class='curline'><a href='../S/49.html#L137'>r</a>                 137 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/49.html#L139'>r</a>                 139 mpc/tests/core.c   success = mpc_parse("test", "ba", q, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L141'>r</a>                 141 mpc/tests/core.c   PT_ASSERT_STR_EQ(r.output, "ba");</span>
+<span class='curline'><a href='../S/49.html#L142'>r</a>                 142 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/49.html#L144'>r</a>                 144 mpc/tests/core.c   success = mpc_parse("test", "c", p, &amp;r);</span>
+<span class='curline'><a href='../S/49.html#L146'>r</a>                 146 mpc/tests/core.c   mpc_err_delete(r.error);</span>
+<span class='curline'><a href='../S/50.html#L261'>r</a>                 261 mpc/tests/grammar.c   mpc_result_t r;</span>
+<span class='curline'><a href='../S/50.html#L270'>r</a>                 270 mpc/tests/grammar.c   result = mpc_parse("&lt;stdin&gt;", "test", Parser, &amp;r);</span>
+<span class='curline'><a href='../S/50.html#L273'>r</a>                 273 mpc/tests/grammar.c   PT_ASSERT(r.error != NULL);</span>
+<span class='curline'><a href='../S/50.html#L274'>r</a>                 274 mpc/tests/grammar.c   PT_ASSERT(strcmp(r.error-&gt;failure, "Unknown Parser 'missing'!") == 0);</span>
+<span class='curline'><a href='../S/50.html#L276'>r</a>                 276 mpc/tests/grammar.c   mpc_err_delete(r.error);</span>
 </pre>
 </body>
 </html>

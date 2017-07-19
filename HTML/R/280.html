@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_oneof</title>
+<title>mpc_many</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,20 +9,19 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1848'>mpc_oneof</a>        1848 mpc/mpc.c      mpc_parser_t *mpc_whitespace(void) { return mpc_expect(mpc_oneof(" \f\n\r\t\v"), "whitespace"); }</span>
-<span class='curline'><a href='../S/43.html#L1856'>mpc_oneof</a>        1856 mpc/mpc.c      mpc_parser_t *mpc_digit(void) { return mpc_expect(mpc_oneof("0123456789"), "digit"); }</span>
-<span class='curline'><a href='../S/43.html#L1857'>mpc_oneof</a>        1857 mpc/mpc.c      mpc_parser_t *mpc_hexdigit(void) { return mpc_expect(mpc_oneof("0123456789ABCDEFabcdef"), "hex digit"); }</span>
-<span class='curline'><a href='../S/43.html#L1858'>mpc_oneof</a>        1858 mpc/mpc.c      mpc_parser_t *mpc_octdigit(void) { return mpc_expect(mpc_oneof("01234567"), "oct digit"); }</span>
-<span class='curline'><a href='../S/43.html#L1863'>mpc_oneof</a>        1863 mpc/mpc.c      mpc_parser_t *mpc_lower(void) { return mpc_expect(mpc_oneof("abcdefghijklmnopqrstuvwxyz"), "lowercase letter"); }</span>
-<span class='curline'><a href='../S/43.html#L1864'>mpc_oneof</a>        1864 mpc/mpc.c      mpc_parser_t *mpc_upper(void) { return mpc_expect(mpc_oneof("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "uppercase letter"); }</span>
-<span class='curline'><a href='../S/43.html#L1865'>mpc_oneof</a>        1865 mpc/mpc.c      mpc_parser_t *mpc_alpha(void) { return mpc_expect(mpc_oneof("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), "letter"); }</span>
-<span class='curline'><a href='../S/43.html#L1880'>mpc_oneof</a>        1880 mpc/mpc.c        p0 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/43.html#L1883'>mpc_oneof</a>        1883 mpc/mpc.c        p30 = mpc_oneof("eE");</span>
-<span class='curline'><a href='../S/43.html#L1884'>mpc_oneof</a>        1884 mpc/mpc.c        p31 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/43.html#L2151'>mpc_oneof</a>        2151 mpc/mpc.c        out = comp == 1 ? mpc_noneof(range) : mpc_oneof(range);</span>
-<span class='curline'><a href='../S/44.html#L103'>mpc_oneof</a>         103 mpc/mpc.h      mpc_parser_t *mpc_oneof(const char *s);</span>
-<span class='curline'><a href='../S/46.html#L47'>mpc_oneof</a>          47 mpc/tests/core.c     mpc_and(3, mpcf_maths, Factor, mpc_oneof("*/"), Factor, free, free),</span>
-<span class='curline'><a href='../S/46.html#L52'>mpc_oneof</a>          52 mpc/tests/core.c     mpc_and(3, mpcf_maths, Term, mpc_oneof("+-"), Term, free, free),</span>
+<span class='curline'><a href='../S/46.html#L1849'>mpc_many</a>         1849 mpc/mpc.c      mpc_parser_t *mpc_whitespaces(void) { return mpc_expect(mpc_many(mpcf_strfold, mpc_whitespace()), "spaces"); }</span>
+<span class='curline'><a href='../S/46.html#L1902'>mpc_many</a>         1902 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, strchar), free, "\"", "\""), "string");</span>
+<span class='curline'><a href='../S/46.html#L1907'>mpc_many</a>         1907 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, regexchar), free, "/", "/"), "regex");</span>
+<span class='curline'><a href='../S/46.html#L1913'>mpc_many</a>         1913 mpc/mpc.c        p1 = mpc_many(mpcf_strfold, mpc_alphanum()); </span>
+<span class='curline'><a href='../S/46.html#L2024'>mpc_many</a>         2024 mpc/mpc.c        if (strcmp(xs[1], "*") == 0) { free(xs[1]); return mpc_many(mpcf_strfold, xs[0]); }</span>
+<span class='curline'><a href='../S/46.html#L2178'>mpc_many</a>         2178 mpc/mpc.c        mpc_define(Term, mpc_many(mpcf_re_and, Factor));</span>
+<span class='curline'><a href='../S/46.html#L2197'>mpc_many</a>         2197 mpc/mpc.c          mpc_many(mpcf_strfold, mpc_or(2, mpc_escape(), mpc_noneof("]"))),</span>
+<span class='curline'><a href='../S/46.html#L3065'>mpc_many</a>         3065 mpc/mpc.c      mpc_parser_t *mpca_many(mpc_parser_t *a) { return mpc_many(mpcf_fold_ast, a); }</span>
+<span class='curline'><a href='../S/46.html#L3459'>mpc_many</a>         3459 mpc/mpc.c          mpc_total(mpc_predictive(mpc_many(mpca_stmt_fold, Stmt)), mpca_stmt_list_delete),</span>
+<span class='curline'><a href='../S/47.html#L134'>mpc_many</a>          134 mpc/mpc.h      mpc_parser_t *mpc_many(mpc_fold_t f, mpc_parser_t *a);</span>
+<span class='curline'><a href='../S/49.html#L74'>mpc_many</a>           74 mpc/tests/core.c   mpc_parser_t *Stripperl = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtriml);</span>
+<span class='curline'><a href='../S/49.html#L75'>mpc_many</a>           75 mpc/tests/core.c   mpc_parser_t *Stripperr = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrimr);</span>
+<span class='curline'><a href='../S/49.html#L76'>mpc_many</a>           76 mpc/tests/core.c   mpc_parser_t *Stripper  = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrim);</span>
 </pre>
 </body>
 </html>

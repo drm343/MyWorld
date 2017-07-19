@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>Character_Base_Access</title>
+<title>Camera_Access</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,17 +9,29 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/17.html#L16'>Character_Base_Access</a>   16 include/character-pool.h GENERIC_POOL(Character_Base_Pool, Character_Base_Access);</span>
-<span class='curline'><a href='../S/13.html#L28'>Character_Base_Access</a>   28 include/character-status.h   Character_Base_Access base;</span>
-<span class='curline'><a href='../S/16.html#L27'>Character_Base_Access</a>   27 include/character.h void character_base_init(Character_Base_Access);</span>
-<span class='curline'><a href='../S/25.html#L16'>Character_Base_Access</a>   16 src/character-pool.c   Character_Base_Access memory = calloc(size, sizeof(Character_Base_Type));</span>
-<span class='curline'><a href='../S/25.html#L63'>Character_Base_Access</a>   63 src/character-pool.c static Character_Base_Access base_pool_malloc(Character_Base_Pool_Access pool_access) {</span>
-<span class='curline'><a href='../S/25.html#L65'>Character_Base_Access</a>   65 src/character-pool.c   Character_Base_Access result = &amp;(pool_access-&gt;pool[start]);</span>
-<span class='curline'><a href='../S/25.html#L73'>Character_Base_Access</a>   73 src/character-pool.c   Character_Base_Access base = base_pool_malloc(pool_access-&gt;base);</span>
-<span class='curline'><a href='../S/24.html#L5'>Character_Base_Access</a>    5 src/character-status.c   Character_Base_Access base = access-&gt;base;</span>
-<span class='curline'><a href='../S/23.html#L4'>Character_Base_Access</a>    4 src/character.c static void release(Character_Base_Access access) {</span>
-<span class='curline'><a href='../S/23.html#L9'>Character_Base_Access</a>    9 src/character.c static void character_copy(Character_Base_Access access, Character_Base_Access from) {</span>
-<span class='curline'><a href='../S/23.html#L23'>Character_Base_Access</a>   23 src/character.c void character_base_init(Character_Base_Access access) {</span>
+<span class='curline'><a href='../S/13.html#L31'>Camera_Access</a>      31 include/graphic-camera.h   Camera_Access (*start)(void);</span>
+<span class='curline'><a href='../S/13.html#L32'>Camera_Access</a>      32 include/graphic-camera.h   void (*stop)(Camera_Access);</span>
+<span class='curline'><a href='../S/13.html#L34'>Camera_Access</a>      34 include/graphic-camera.h   void (*set_max_x)(Camera_Access, int);</span>
+<span class='curline'><a href='../S/13.html#L35'>Camera_Access</a>      35 include/graphic-camera.h   void (*set_max_y)(Camera_Access, int);</span>
+<span class='curline'><a href='../S/13.html#L36'>Camera_Access</a>      36 include/graphic-camera.h   void (*set_dead_style)(Camera_Access, Style_Access);</span>
+<span class='curline'><a href='../S/13.html#L38'>Camera_Access</a>      38 include/graphic-camera.h   void (*set_player)(Camera_Access, Status_Access);</span>
+<span class='curline'><a href='../S/13.html#L39'>Camera_Access</a>      39 include/graphic-camera.h   void (*set_map)(Camera_Access, Map_Access);</span>
+<span class='curline'><a href='../S/13.html#L41'>Camera_Access</a>      41 include/graphic-camera.h   bool (*take)(Camera_Access, Character_Pool_Access, SDL_Event *);</span>
+<span class='curline'><a href='../S/29.html#L20'>Camera_Access</a>      20 src/graphic-camera.c static void print_horizon_mode(Camera_Access access) {</span>
+<span class='curline'><a href='../S/29.html#L24'>Camera_Access</a>      24 src/graphic-camera.c static void print_vertical_mode(Camera_Access access) {</span>
+<span class='curline'><a href='../S/29.html#L40'>Camera_Access</a>      40 src/graphic-camera.c static void debug(Camera_Access access) {</span>
+<span class='curline'><a href='../S/29.html#L77'>Camera_Access</a>      77 src/graphic-camera.c static Yes_No can_move_horizon(Camera_Access access,</span>
+<span class='curline'><a href='../S/29.html#L111'>Camera_Access</a>     111 src/graphic-camera.c static Yes_No can_move_vertical(Camera_Access access,</span>
+<span class='curline'><a href='../S/29.html#L145'>Camera_Access</a>     145 src/graphic-camera.c static bool key_process(Camera_Access access, Character_Pool_Access from_pool,</span>
+<span class='curline'><a href='../S/29.html#L222'>Camera_Access</a>     222 src/graphic-camera.c static Camera_Access camera_start(void) {</span>
+<span class='curline'><a href='../S/29.html#L223'>Camera_Access</a>     223 src/graphic-camera.c   Camera_Access access = calloc(1, sizeof(Camera_Type));</span>
+<span class='curline'><a href='../S/29.html#L242'>Camera_Access</a>     242 src/graphic-camera.c static void camera_stop(Camera_Access access) {</span>
+<span class='curline'><a href='../S/29.html#L247'>Camera_Access</a>     247 src/graphic-camera.c static void camera_set_max_x(Camera_Access access, int x) {</span>
+<span class='curline'><a href='../S/29.html#L253'>Camera_Access</a>     253 src/graphic-camera.c static void camera_set_max_y(Camera_Access access, int y) {</span>
+<span class='curline'><a href='../S/29.html#L260'>Camera_Access</a>     260 src/graphic-camera.c static void set_player(Camera_Access access, Status_Access player) {</span>
+<span class='curline'><a href='../S/29.html#L273'>Camera_Access</a>     273 src/graphic-camera.c static void set_map(Camera_Access access, Map_Access map) {</span>
+<span class='curline'><a href='../S/29.html#L281'>Camera_Access</a>     281 src/graphic-camera.c static void set_dead_style(Camera_Access access, Style_Access style) {</span>
+<span class='curline'><a href='../S/27.html#L14'>Camera_Access</a>      14 src/main.c     Camera_Access camera_1 = NULL;</span>
 </pre>
 </body>
 </html>

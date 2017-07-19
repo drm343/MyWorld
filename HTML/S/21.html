@@ -8,7 +8,7 @@
 <link rel='stylesheet' type='text/css' href='../style.css' />
 </head>
 <body>
-<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/59.html'>src</a>/string_helper.c</h2>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/62.html'>src</a>/string_helper.c</h2>
 <em class='comment'>/* [&lt;][&gt;]<a href='#L3'>[^]</a><a href='#L73'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
 <hr />
 <h2 class='header'>DEFINITIONS</h2>
@@ -22,95 +22,95 @@ This source file includes following definitions.
 <pre>
 <a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='6.html'>string_helper.h</a>"
 <a id='L2' name='L2'></a>   2 
-<a id='L3' name='L3'></a>   3 <strong class='reserved'>static</strong> <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../S/21.html#L91' title='Referred from 91 in src/string_helper.c.'>strlen_utf8</a>(<strong class='reserved'>char</strong> *<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>) <em class='brace'>{</em>
-<a id='L4' name='L4'></a>   4   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/351.html' title='Multiple used in 4 places.'>max_counter</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>);
-<a id='L5' name='L5'></a>   5   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 0;
-<a id='L6' name='L6'></a>   6   <a href='../Y/318.html' title='Multiple used in 4 places.'>int64_t</a> <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a> = 0;
+<a id='L3' name='L3'></a>   3 <strong class='reserved'>static</strong> <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../S/21.html#L91' title='Referred from 91 in src/string_helper.c.'>strlen_utf8</a>(<strong class='reserved'>char</strong> *<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>) <em class='brace'>{</em>
+<a id='L4' name='L4'></a>   4   <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/355.html' title='Multiple used in 4 places.'>max_counter</a> = <a href='../Y/510.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>);
+<a id='L5' name='L5'></a>   5   <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 0;
+<a id='L6' name='L6'></a>   6   <a href='../Y/320.html' title='Multiple used in 11 places.'>int64_t</a> <a href='../Y/337.html' title='Multiple used in 15 places.'>len</a> = 0;
 <a id='L7' name='L7'></a>   7   <strong class='reserved'>unsigned</strong> <strong class='reserved'>char</strong> <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> = 0;
 <a id='L8' name='L8'></a>   8 
-<a id='L9' name='L9'></a>   9   <strong class='reserved'>for</strong> (<a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/313.html' title='Multiple used in 13 places.'>index</a> = 0; <a href='../Y/313.html' title='Multiple used in 13 places.'>index</a> &lt; <a href='../Y/351.html' title='Multiple used in 4 places.'>max_counter</a>; <a href='../Y/313.html' title='Multiple used in 13 places.'>index</a> += <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a>) <em class='brace'>{</em>
-<a id='L10' name='L10'></a>  10     <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> = <a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>[<a href='../Y/313.html' title='Multiple used in 13 places.'>index</a>];
-<a id='L11' name='L11'></a>  11     <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a>++;
+<a id='L9' name='L9'></a>   9   <strong class='reserved'>for</strong> (<a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/314.html' title='Multiple used in 13 places.'>index</a> = 0; <a href='../Y/314.html' title='Multiple used in 13 places.'>index</a> &lt; <a href='../Y/355.html' title='Multiple used in 4 places.'>max_counter</a>; <a href='../Y/314.html' title='Multiple used in 13 places.'>index</a> += <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a>) <em class='brace'>{</em>
+<a id='L10' name='L10'></a>  10     <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> = <a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>[<a href='../Y/314.html' title='Multiple used in 13 places.'>index</a>];
+<a id='L11' name='L11'></a>  11     <a href='../Y/337.html' title='Multiple used in 15 places.'>len</a>++;
 <a id='L12' name='L12'></a>  12 
 <a id='L13' name='L13'></a>  13     <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &lt; 0b11000000) <em class='brace'>{</em>
-<a id='L14' name='L14'></a>  14       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 1;
+<a id='L14' name='L14'></a>  14       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 1;
 <a id='L15' name='L15'></a>  15     <em class='brace'>}</em>
 <a id='L16' name='L16'></a>  16     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &lt; 0b11100000 &amp;&amp; <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &gt; 0b11000000) <em class='brace'>{</em>
-<a id='L17' name='L17'></a>  17       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 2;
+<a id='L17' name='L17'></a>  17       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 2;
 <a id='L18' name='L18'></a>  18     <em class='brace'>}</em>
 <a id='L19' name='L19'></a>  19     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &lt; 0b11110000 &amp;&amp; <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &gt; 0b11100000) <em class='brace'>{</em>
-<a id='L20' name='L20'></a>  20       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 3;
+<a id='L20' name='L20'></a>  20       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 3;
 <a id='L21' name='L21'></a>  21     <em class='brace'>}</em>
 <a id='L22' name='L22'></a>  22     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &gt; 0b11110000) <em class='brace'>{</em>
-<a id='L23' name='L23'></a>  23       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 4;
+<a id='L23' name='L23'></a>  23       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 4;
 <a id='L24' name='L24'></a>  24     <em class='brace'>}</em>
 <a id='L25' name='L25'></a>  25     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> == 0) <em class='brace'>{</em>
 <a id='L26' name='L26'></a>  26       <strong class='reserved'>break</strong>;
 <a id='L27' name='L27'></a>  27     <em class='brace'>}</em>
 <a id='L28' name='L28'></a>  28     <strong class='reserved'>else</strong> <em class='brace'>{</em>
-<a id='L29' name='L29'></a>  29       <a href='../Y/426.html' title='Multiple used in 77 places.'>printf</a>("bug\n");
+<a id='L29' name='L29'></a>  29       <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("bug\n");
 <a id='L30' name='L30'></a>  30       <strong class='reserved'>break</strong>;
 <a id='L31' name='L31'></a>  31     <em class='brace'>}</em>
 <a id='L32' name='L32'></a>  32   <em class='brace'>}</em>
-<a id='L33' name='L33'></a>  33   <strong class='reserved'>return</strong> <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a>;
+<a id='L33' name='L33'></a>  33   <strong class='reserved'>return</strong> <a href='../Y/337.html' title='Multiple used in 15 places.'>len</a>;
 <a id='L34' name='L34'></a>  34 <em class='brace'>}</em>
 <a id='L35' name='L35'></a>  35 
 <a id='L36' name='L36'></a>  36 
-<a id='L37' name='L37'></a>  37 <strong class='reserved'>static</strong> <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../S/21.html#L92' title='Referred from 92 in src/string_helper.c.'>calculate_grid_width_utf8</a>(<strong class='reserved'>char</strong> *<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>, <a href='../Y/318.html' title='Multiple used in 4 places.'>int64_t</a> <a href='../Y/303.html' title='Multiple used in 2 places.'>full_size</a>) <em class='brace'>{</em>
-<a id='L38' name='L38'></a>  38   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/351.html' title='Multiple used in 4 places.'>max_counter</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>);
-<a id='L39' name='L39'></a>  39   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/313.html' title='Multiple used in 13 places.'>index</a> = 0;
-<a id='L40' name='L40'></a>  40   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 0;
-<a id='L41' name='L41'></a>  41   <a href='../Y/318.html' title='Multiple used in 4 places.'>int64_t</a> <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a> = 0;
+<a id='L37' name='L37'></a>  37 <strong class='reserved'>static</strong> <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../S/21.html#L92' title='Referred from 92 in src/string_helper.c.'>calculate_grid_width_utf8</a>(<strong class='reserved'>char</strong> *<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>, <a href='../Y/320.html' title='Multiple used in 11 places.'>int64_t</a> <a href='../Y/303.html' title='Multiple used in 2 places.'>full_size</a>) <em class='brace'>{</em>
+<a id='L38' name='L38'></a>  38   <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/355.html' title='Multiple used in 4 places.'>max_counter</a> = <a href='../Y/510.html' title='Multiple used in 94 places.'>strlen</a>(<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>);
+<a id='L39' name='L39'></a>  39   <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/314.html' title='Multiple used in 13 places.'>index</a> = 0;
+<a id='L40' name='L40'></a>  40   <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 0;
+<a id='L41' name='L41'></a>  41   <a href='../Y/320.html' title='Multiple used in 11 places.'>int64_t</a> <a href='../Y/337.html' title='Multiple used in 15 places.'>len</a> = 0;
 <a id='L42' name='L42'></a>  42   <strong class='reserved'>unsigned</strong> <strong class='reserved'>char</strong> <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> = 0;
 <a id='L43' name='L43'></a>  43 
-<a id='L44' name='L44'></a>  44   <strong class='reserved'>for</strong> (<a href='../Y/313.html' title='Multiple used in 13 places.'>index</a> = 0; <a href='../Y/313.html' title='Multiple used in 13 places.'>index</a> &lt; <a href='../Y/351.html' title='Multiple used in 4 places.'>max_counter</a>; <a href='../Y/313.html' title='Multiple used in 13 places.'>index</a> += <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a>) <em class='brace'>{</em>
-<a id='L45' name='L45'></a>  45     <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> = <a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>[<a href='../Y/313.html' title='Multiple used in 13 places.'>index</a>];
-<a id='L46' name='L46'></a>  46     <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a> += 2;
+<a id='L44' name='L44'></a>  44   <strong class='reserved'>for</strong> (<a href='../Y/314.html' title='Multiple used in 13 places.'>index</a> = 0; <a href='../Y/314.html' title='Multiple used in 13 places.'>index</a> &lt; <a href='../Y/355.html' title='Multiple used in 4 places.'>max_counter</a>; <a href='../Y/314.html' title='Multiple used in 13 places.'>index</a> += <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a>) <em class='brace'>{</em>
+<a id='L45' name='L45'></a>  45     <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> = <a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>[<a href='../Y/314.html' title='Multiple used in 13 places.'>index</a>];
+<a id='L46' name='L46'></a>  46     <a href='../Y/337.html' title='Multiple used in 15 places.'>len</a> += 2;
 <a id='L47' name='L47'></a>  47 
 <a id='L48' name='L48'></a>  48     <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &lt; 0b11000000) <em class='brace'>{</em>
-<a id='L49' name='L49'></a>  49       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 1;
-<a id='L50' name='L50'></a>  50       <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a>--;
+<a id='L49' name='L49'></a>  49       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 1;
+<a id='L50' name='L50'></a>  50       <a href='../Y/337.html' title='Multiple used in 15 places.'>len</a>--;
 <a id='L51' name='L51'></a>  51     <em class='brace'>}</em>
 <a id='L52' name='L52'></a>  52     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &lt; 0b11100000 &amp;&amp; <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &gt; 0b11000000) <em class='brace'>{</em>
-<a id='L53' name='L53'></a>  53       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 2;
+<a id='L53' name='L53'></a>  53       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 2;
 <a id='L54' name='L54'></a>  54     <em class='brace'>}</em>
 <a id='L55' name='L55'></a>  55     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &lt; 0b11110000 &amp;&amp; <a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &gt; 0b11100000) <em class='brace'>{</em>
-<a id='L56' name='L56'></a>  56       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 3;
+<a id='L56' name='L56'></a>  56       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 3;
 <a id='L57' name='L57'></a>  57     <em class='brace'>}</em>
 <a id='L58' name='L58'></a>  58     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> &gt; 0b11110000) <em class='brace'>{</em>
-<a id='L59' name='L59'></a>  59       <a href='../Y/361.html' title='Multiple used in 12 places.'>move_position</a> = 4;
+<a id='L59' name='L59'></a>  59       <a href='../Y/367.html' title='Multiple used in 12 places.'>move_position</a> = 4;
 <a id='L60' name='L60'></a>  60     <em class='brace'>}</em>
 <a id='L61' name='L61'></a>  61     <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/214.html' title='Multiple used in 14 places.'>check</a> == 0) <em class='brace'>{</em>
 <a id='L62' name='L62'></a>  62       <strong class='reserved'>break</strong>;
 <a id='L63' name='L63'></a>  63     <em class='brace'>}</em>
 <a id='L64' name='L64'></a>  64     <strong class='reserved'>else</strong> <em class='brace'>{</em>
-<a id='L65' name='L65'></a>  65       <a href='../Y/426.html' title='Multiple used in 77 places.'>printf</a>("bug\n");
+<a id='L65' name='L65'></a>  65       <a href='../Y/433.html' title='Multiple used in 96 places.'>printf</a>("bug\n");
 <a id='L66' name='L66'></a>  66       <strong class='reserved'>break</strong>;
 <a id='L67' name='L67'></a>  67     <em class='brace'>}</em>
 <a id='L68' name='L68'></a>  68   <em class='brace'>}</em>
-<a id='L69' name='L69'></a>  69   <strong class='reserved'>return</strong> <a href='../Y/335.html' title='Multiple used in 15 places.'>len</a> * (<a href='../Y/303.html' title='Multiple used in 2 places.'>full_size</a> / 2);
+<a id='L69' name='L69'></a>  69   <strong class='reserved'>return</strong> <a href='../Y/337.html' title='Multiple used in 15 places.'>len</a> * (<a href='../Y/303.html' title='Multiple used in 2 places.'>full_size</a> / 2);
 <a id='L70' name='L70'></a>  70 <em class='brace'>}</em>
 <a id='L71' name='L71'></a>  71 
 <a id='L72' name='L72'></a>  72 
-<a id='L73' name='L73'></a>  73 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/466.html' title='Multiple referred from 2 places.'>remove_last</a>(<strong class='reserved'>char</strong> **<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>) <em class='brace'>{</em>
-<a id='L74' name='L74'></a>  74   <a href='../Y/476.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/311.html' title='Multiple used in 574 places.'>i</a> = <a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a>(*<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>);
+<a id='L73' name='L73'></a>  73 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/485.html' title='Multiple referred from 2 places.'>remove_last</a>(<strong class='reserved'>char</strong> **<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>) <em class='brace'>{</em>
+<a id='L74' name='L74'></a>  74   <a href='../Y/486.html' title='Multiple used in 42 places.'>size_t</a> <a href='../Y/312.html' title='Multiple used in 574 places.'>i</a> = <a href='../Y/510.html' title='Multiple used in 94 places.'>strlen</a>(*<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>);
 <a id='L75' name='L75'></a>  75 
-<a id='L76' name='L76'></a>  76   <strong class='reserved'>for</strong> (<a href='../Y/311.html' title='Multiple used in 574 places.'>i</a>; <a href='../Y/311.html' title='Multiple used in 574 places.'>i</a> &gt; 0; <a href='../Y/311.html' title='Multiple used in 574 places.'>i</a>--) <em class='brace'>{</em>
-<a id='L77' name='L77'></a>  77     <strong class='reserved'>unsigned</strong> <strong class='reserved'>char</strong> <a href='../Y/198.html' title='Multiple used in 8 places.'>b</a> = (<strong class='reserved'>unsigned</strong> <strong class='reserved'>char</strong>)((*<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>)[<a href='../Y/311.html' title='Multiple used in 574 places.'>i</a> - 1]) &amp; 0b11000000;
+<a id='L76' name='L76'></a>  76   <strong class='reserved'>for</strong> (<a href='../Y/312.html' title='Multiple used in 574 places.'>i</a>; <a href='../Y/312.html' title='Multiple used in 574 places.'>i</a> &gt; 0; <a href='../Y/312.html' title='Multiple used in 574 places.'>i</a>--) <em class='brace'>{</em>
+<a id='L77' name='L77'></a>  77     <strong class='reserved'>unsigned</strong> <strong class='reserved'>char</strong> <a href='../Y/195.html' title='Multiple used in 8 places.'>b</a> = (<strong class='reserved'>unsigned</strong> <strong class='reserved'>char</strong>)((*<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>)[<a href='../Y/312.html' title='Multiple used in 574 places.'>i</a> - 1]) &amp; 0b11000000;
 <a id='L78' name='L78'></a>  78 
-<a id='L79' name='L79'></a>  79     <strong class='reserved'>if</strong> (<a href='../Y/198.html' title='Multiple used in 8 places.'>b</a> == 0b10000000) <em class='brace'>{</em>
-<a id='L80' name='L80'></a>  80       (*<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>)[<a href='../Y/311.html' title='Multiple used in 574 places.'>i</a> - 1] = 0;
+<a id='L79' name='L79'></a>  79     <strong class='reserved'>if</strong> (<a href='../Y/195.html' title='Multiple used in 8 places.'>b</a> == 0b10000000) <em class='brace'>{</em>
+<a id='L80' name='L80'></a>  80       (*<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>)[<a href='../Y/312.html' title='Multiple used in 574 places.'>i</a> - 1] = 0;
 <a id='L81' name='L81'></a>  81     <em class='brace'>}</em>
 <a id='L82' name='L82'></a>  82     <strong class='reserved'>else</strong> <em class='brace'>{</em>
-<a id='L83' name='L83'></a>  83       (*<a href='../Y/491.html' title='Multiple used in 14 places.'>str</a>)[<a href='../Y/311.html' title='Multiple used in 574 places.'>i</a> - 1] = 0;
+<a id='L83' name='L83'></a>  83       (*<a href='../Y/502.html' title='Multiple used in 16 places.'>str</a>)[<a href='../Y/312.html' title='Multiple used in 574 places.'>i</a> - 1] = 0;
 <a id='L84' name='L84'></a>  84       <strong class='reserved'>break</strong>;
 <a id='L85' name='L85'></a>  85     <em class='brace'>}</em>
 <a id='L86' name='L86'></a>  86   <em class='brace'>}</em>
 <a id='L87' name='L87'></a>  87 <em class='brace'>}</em>
 <a id='L88' name='L88'></a>  88 
-<a id='L89' name='L89'></a>  89 <a href='../S/6.html#L13' title='Defined at 13 in include/string_helper.h.'>String_API</a> <a href='../Y/496.html' title='Multiple used in 38 places.'>string</a> = <em class='brace'>{</em>
+<a id='L89' name='L89'></a>  89 <a href='../S/6.html#L13' title='Defined at 13 in include/string_helper.h.'>String_API</a> <a href='../Y/507.html' title='Multiple used in 38 places.'>string</a> = <em class='brace'>{</em>
 <a id='L90' name='L90'></a>  90   .<a href='../S/21.html#L73' title='Defined at 73 in src/string_helper.c.'>remove_last</a> = <a href='../S/21.html#L73' title='Defined at 73 in src/string_helper.c.'>remove_last</a>,
-<a id='L91' name='L91'></a>  91   .<a href='../Y/499.html' title='Multiple used in 94 places.'>strlen</a> = <a href='../S/21.html#L3' title='Defined at 3 in src/string_helper.c.'>strlen_utf8</a>,
+<a id='L91' name='L91'></a>  91   .<a href='../Y/510.html' title='Multiple used in 94 places.'>strlen</a> = <a href='../S/21.html#L3' title='Defined at 3 in src/string_helper.c.'>strlen_utf8</a>,
 <a id='L92' name='L92'></a>  92   .<a href='../Y/234.html' title='Multiple used in 2 places.'>count_width</a> = <a href='../S/21.html#L37' title='Defined at 37 in src/string_helper.c.'>calculate_grid_width_utf8</a>
 <a id='L93' name='L93'></a>  93 <em class='brace'>}</em>;
 </pre>

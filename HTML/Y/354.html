@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mem_full</title>
+<title>max</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,14 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L96'>mem_full</a>           96 mpc/mpc.c        char mem_full[MPC_INPUT_MEM_NUM];</span>
-<span class='curline'><a href='../S/43.html#L125'>mem_full</a>          125 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/43.html#L155'>mem_full</a>          155 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/43.html#L184'>mem_full</a>          184 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/43.html#L212'>mem_full</a>          212 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/43.html#L243'>mem_full</a>          243 mpc/mpc.c          if (!i-&gt;mem_full[i-&gt;mem_index]) {</span>
-<span class='curline'><a href='../S/43.html#L245'>mem_full</a>          245 mpc/mpc.c            i-&gt;mem_full[i-&gt;mem_index] = 1;</span>
-<span class='curline'><a href='../S/43.html#L265'>mem_full</a>          265 mpc/mpc.c        i-&gt;mem_full[j] = 0;</span>
+<span class='curline'><a href='../S/46.html#L568'>max</a>               568 mpc/mpc.c      static void mpc_err_string_cat(char *buffer, int *pos, int *max, char const *fmt, ...) {</span>
+<span class='curline'><a href='../S/46.html#L570'>max</a>               570 mpc/mpc.c        int left = ((*max) - (*pos));</span>
+<span class='curline'><a href='../S/46.html#L608'>max</a>               608 mpc/mpc.c        int max = 1023;</span>
+<span class='curline'><a href='../S/46.html#L612'>max</a>               612 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max,</span>
+<span class='curline'><a href='../S/46.html#L617'>max</a>               617 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, </span>
+<span class='curline'><a href='../S/46.html#L620'>max</a>               620 mpc/mpc.c        if (x-&gt;expected_num == 0) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "ERROR: NOTHING EXPECTED"); }</span>
+<span class='curline'><a href='../S/46.html#L621'>max</a>               621 mpc/mpc.c        if (x-&gt;expected_num == 1) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s", x-&gt;expected[0]); }</span>
+<span class='curline'><a href='../S/46.html#L625'>max</a>               625 mpc/mpc.c            mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s, ", x-&gt;expected[i]);</span>
+<span class='curline'><a href='../S/46.html#L628'>max</a>               628 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s or %s", </span>
+<span class='curline'><a href='../S/46.html#L633'>max</a>               633 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, " at ");</span>
+<span class='curline'><a href='../S/46.html#L634'>max</a>               634 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, mpc_err_char_unescape(x-&gt;recieved));</span>
+<span class='curline'><a href='../S/46.html#L635'>max</a>               635 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, "\n");</span>
 </pre>
 </body>
 </html>

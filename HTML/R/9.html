@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>Character_Pool_Access</title>
+<title>Character_API</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,21 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/17.html#L28'>Character_Pool_Access</a>   28 include/character-pool.h   Character_Pool_Access (*start)(uint8_t);</span>
-<span class='curline'><a href='../S/17.html#L29'>Character_Pool_Access</a>   29 include/character-pool.h   void (*stop)(Character_Pool_Access);</span>
-<span class='curline'><a href='../S/17.html#L30'>Character_Pool_Access</a>   30 include/character-pool.h   Status_Access (*malloc)(Character_Pool_Access);</span>
-<span class='curline'><a href='../S/17.html#L31'>Character_Pool_Access</a>   31 include/character-pool.h   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);</span>
-<span class='curline'><a href='../S/17.html#L32'>Character_Pool_Access</a>   32 include/character-pool.h   Found_Result (*find)(Character_Pool_Access, Status_Access *, String);</span>
-<span class='curline'><a href='../S/17.html#L33'>Character_Pool_Access</a>   33 include/character-pool.h   Found_Result (*find_position)(Character_Pool_Access, Status_Access *, Point_Access);</span>
-<span class='curline'><a href='../S/14.html#L3'>Character_Pool_Access</a>    3 include/main_set_character.h Character_Pool_Access character_prepare_pool = NULL;</span>
-<span class='curline'><a href='../S/14.html#L4'>Character_Pool_Access</a>    4 include/main_set_character.h Character_Pool_Access character_use_pool = NULL;</span>
-<span class='curline'><a href='../S/25.html#L26'>Character_Pool_Access</a>   26 src/character-pool.c static Character_Pool_Access pool_start(uint8_t size) {</span>
-<span class='curline'><a href='../S/25.html#L30'>Character_Pool_Access</a>   30 src/character-pool.c   Character_Pool_Access pool_access = calloc(1, sizeof(Character_Pool_Type));</span>
-<span class='curline'><a href='../S/25.html#L48'>Character_Pool_Access</a>   48 src/character-pool.c static void pool_stop(Character_Pool_Access pool_access) {</span>
-<span class='curline'><a href='../S/25.html#L71'>Character_Pool_Access</a>   71 src/character-pool.c static Status_Access pool_malloc(Character_Pool_Access pool_access) {</span>
-<span class='curline'><a href='../S/25.html#L81'>Character_Pool_Access</a>   81 src/character-pool.c static bool pool_copy(Character_Pool_Access from, Character_Pool_Access to,</span>
-<span class='curline'><a href='../S/25.html#L102'>Character_Pool_Access</a>  102 src/character-pool.c static Found_Result pool_find(Character_Pool_Access access, Status_Access *npc,</span>
-<span class='curline'><a href='../S/25.html#L119'>Character_Pool_Access</a>  119 src/character-pool.c static Found_Result pool_find_by_position(Character_Pool_Access access, Status_Access *npc,</span>
+<span class='curline'><a href='../S/18.html#L56'>Character_API</a>      56 include/character-status.h extern Character_API character;</span>
+<span class='curline'><a href='../S/28.html#L109'>Character_API</a>     109 src/character-status.c Character_API character = {</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>MPC_TYPE_AND</title>
+<title>MPC_FAILURE</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,24 +9,19 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1196'>MPC_TYPE_AND</a>     1196 mpc/mpc.c          case MPC_TYPE_AND:</span>
-<span class='curline'><a href='../S/43.html#L1359'>MPC_TYPE_AND</a>     1359 mpc/mpc.c          case MPC_TYPE_AND: mpc_undefine_and(p); break;</span>
-<span class='curline'><a href='../S/43.html#L1463'>MPC_TYPE_AND</a>     1463 mpc/mpc.c          case MPC_TYPE_AND:</span>
-<span class='curline'><a href='../S/43.html#L1807'>MPC_TYPE_AND</a>     1807 mpc/mpc.c        p-&gt;type = MPC_TYPE_AND;</span>
-<span class='curline'><a href='../S/43.html#L2581'>MPC_TYPE_AND</a>     2581 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_AND) {</span>
-<span class='curline'><a href='../S/43.html#L3097'>MPC_TYPE_AND</a>     3097 mpc/mpc.c        p-&gt;type = MPC_TYPE_AND;</span>
-<span class='curline'><a href='../S/43.html#L3642'>MPC_TYPE_AND</a>     3642 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_AND) {</span>
-<span class='curline'><a href='../S/43.html#L3685'>MPC_TYPE_AND</a>     3685 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_AND) {</span>
-<span class='curline'><a href='../S/43.html#L3723'>MPC_TYPE_AND</a>     3723 mpc/mpc.c          if (p-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3737'>MPC_TYPE_AND</a>     3737 mpc/mpc.c          if (p-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3739'>MPC_TYPE_AND</a>     3739 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3755'>MPC_TYPE_AND</a>     3755 mpc/mpc.c          if (p-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3757'>MPC_TYPE_AND</a>     3757 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3772'>MPC_TYPE_AND</a>     3772 mpc/mpc.c          if (p-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3787'>MPC_TYPE_AND</a>     3787 mpc/mpc.c          if (p-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3789'>MPC_TYPE_AND</a>     3789 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3805'>MPC_TYPE_AND</a>     3805 mpc/mpc.c          if (p-&gt;type == MPC_TYPE_AND</span>
-<span class='curline'><a href='../S/43.html#L3807'>MPC_TYPE_AND</a>     3807 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;type == MPC_TYPE_AND</span>
+<span class='curline'><a href='../S/46.html#L1007'>MPC_FAILURE</a>      1007 mpc/mpc.c        else { MPC_FAILURE(NULL); }</span>
+<span class='curline'><a href='../S/46.html#L1031'>MPC_FAILURE</a>      1031 mpc/mpc.c          case MPC_TYPE_UNDEFINED: MPC_FAILURE(mpc_err_fail(i, "Parser Undefined!"));</span>
+<span class='curline'><a href='../S/46.html#L1033'>MPC_FAILURE</a>      1033 mpc/mpc.c          case MPC_TYPE_FAIL:      MPC_FAILURE(mpc_err_fail(i, p-&gt;data.fail.m));</span>
+<span class='curline'><a href='../S/46.html#L1044'>MPC_FAILURE</a>      1044 mpc/mpc.c              MPC_FAILURE(r-&gt;output);</span>
+<span class='curline'><a href='../S/46.html#L1051'>MPC_FAILURE</a>      1051 mpc/mpc.c              MPC_FAILURE(r-&gt;error);</span>
+<span class='curline'><a href='../S/46.html#L1061'>MPC_FAILURE</a>      1061 mpc/mpc.c              MPC_FAILURE(mpc_err_new(i, p-&gt;data.expect.m));</span>
+<span class='curline'><a href='../S/46.html#L1071'>MPC_FAILURE</a>      1071 mpc/mpc.c              MPC_FAILURE(r-&gt;error);</span>
+<span class='curline'><a href='../S/46.html#L1085'>MPC_FAILURE</a>      1085 mpc/mpc.c              MPC_FAILURE(mpc_err_new(i, "opposite"));</span>
+<span class='curline'><a href='../S/46.html#L1140'>MPC_FAILURE</a>      1140 mpc/mpc.c              MPC_FAILURE(</span>
+<span class='curline'><a href='../S/46.html#L1169'>MPC_FAILURE</a>      1169 mpc/mpc.c              MPC_FAILURE(</span>
+<span class='curline'><a href='../S/46.html#L1193'>MPC_FAILURE</a>      1193 mpc/mpc.c            MPC_FAILURE(NULL;</span>
+<span class='curline'><a href='../S/46.html#L1211'>MPC_FAILURE</a>      1211 mpc/mpc.c                MPC_FAILURE(results[j].error;</span>
+<span class='curline'><a href='../S/46.html#L1224'>MPC_FAILURE</a>      1224 mpc/mpc.c            MPC_FAILURE(mpc_err_fail(i, "Unknown Parser Type Id!"));</span>
 </pre>
 </body>
 </html>

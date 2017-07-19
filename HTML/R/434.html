@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpcf_strtrimr</title>
+<title>mpcf_int</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L2282'>mpcf_strtrimr</a>    2282 mpc/mpc.c        return mpcf_strtriml(mpcf_strtrimr(x));</span>
-<span class='curline'><a href='../S/44.html#L229'>mpcf_strtrimr</a>     229 mpc/mpc.h      mpc_val_t *mpcf_strtrimr(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/46.html#L75'>mpcf_strtrimr</a>      75 mpc/tests/core.c   mpc_parser_t *Stripperr = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrimr);</span>
+<span class='curline'><a href='../S/46.html#L1869'>mpcf_int</a>         1869 mpc/mpc.c      mpc_parser_t *mpc_int(void) { return mpc_expect(mpc_apply(mpc_digits(), mpcf_int), "integer"); }</span>
+<span class='curline'><a href='../S/47.html#L224'>mpcf_int</a>          224 mpc/mpc.h      mpc_val_t *mpcf_int(mpc_val_t *x);</span>
 </pre>
 </body>
 </html>

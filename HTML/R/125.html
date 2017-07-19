@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Style_Access</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L43'>Style_Access</a>       43 include/character-status.h   void (*set_style)(Status_Access, Style_Access);</span>
+<span class='curline'><a href='../S/16.html#L13'>Style_Access</a>       13 include/character.h   Style_Access Mark;</span>
+<span class='curline'><a href='../S/13.html#L17'>Style_Access</a>       17 include/graphic-camera.h   Style_Access dead;</span>
+<span class='curline'><a href='../S/13.html#L36'>Style_Access</a>       36 include/graphic-camera.h   void (*set_dead_style)(Camera_Access, Style_Access);</span>
+<span class='curline'><a href='../S/11.html#L28'>Style_Access</a>       28 include/graphic.h   Style_Access pool;</span>
+<span class='curline'><a href='../S/11.html#L36'>Style_Access</a>       36 include/graphic.h   Style_Access (*malloc)(Style_Pool_Access);</span>
+<span class='curline'><a href='../S/11.html#L37'>Style_Access</a>       37 include/graphic.h   Style_Access (*find)(Style_Pool_Access, String);</span>
+<span class='curline'><a href='../S/11.html#L38'>Style_Access</a>       38 include/graphic.h   Style_Access (*next)(Style_Pool_Access, uint8_t *);</span>
+<span class='curline'><a href='../S/19.html#L73'>Style_Access</a>       73 include/main_set_character.h   Style_Access style_access = Style_Pool_Interface.malloc(style_pool);</span>
+<span class='curline'><a href='../S/8.html#L66'>Style_Access</a>       66 include/main_set_config.h void setup_mark(mpc_ast_t* t, Style_Access style_access) {</span>
+<span class='curline'><a href='../S/8.html#L79'>Style_Access</a>       79 include/main_set_config.h   Style_Access style_access = NULL;</span>
+<span class='curline'><a href='../S/28.html#L55'>Style_Access</a>       55 src/character-status.c static void set_base_style(Status_Access access, Style_Access style) {</span>
+<span class='curline'><a href='../S/29.html#L149'>Style_Access</a>      149 src/graphic-camera.c   Style_Access dead = access-&gt;dead;</span>
+<span class='curline'><a href='../S/29.html#L281'>Style_Access</a>      281 src/graphic-camera.c static void set_dead_style(Camera_Access access, Style_Access style) {</span>
+<span class='curline'><a href='../S/23.html#L11'>Style_Access</a>       11 src/graphic.c  static Style_Access SELF(malloc) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/23.html#L13'>Style_Access</a>       13 src/graphic.c    Style_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/23.html#L19'>Style_Access</a>       19 src/graphic.c  static Style_Access SELF(find) (Style_Pool_Access pool_access, String name) {</span>
+<span class='curline'><a href='../S/23.html#L22'>Style_Access</a>       22 src/graphic.c    Style_Access result = NULL;</span>
+<span class='curline'><a href='../S/23.html#L39'>Style_Access</a>       39 src/graphic.c    Style_Access result = NULL;</span>
+<span class='curline'><a href='../S/23.html#L49'>Style_Access</a>       49 src/graphic.c  static Style_Access SELF(next) (Style_Pool_Access pool_access, uint8_t * current_counter) {</span>
+<span class='curline'><a href='../S/23.html#L52'>Style_Access</a>       52 src/graphic.c    Style_Access result = NULL;</span>
+<span class='curline'><a href='../S/23.html#L63'>Style_Access</a>       63 src/graphic.c    Style_Access style_memory = calloc(size, sizeof(Style));</span>
+<span class='curline'><a href='../S/23.html#L75'>Style_Access</a>       75 src/graphic.c    Style_Access result = NULL;</span>
+<span class='curline'><a href='../S/27.html#L62'>Style_Access</a>       62 src/main.c       Style_Access result = Style_Pool_Interface.next(style_pool, &amp;counter);</span>
+<span class='curline'><a href='../S/27.html#L79'>Style_Access</a>       79 src/main.c       Style_Access dead = Style_Pool_Interface.find(style_pool, "dead");</span>
+</pre>
+</body>
+</html>

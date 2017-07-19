@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpca_grammar</title>
+<title>mpc_tok_parens</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,9 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/44.html#L340'>mpca_grammar</a>      340 mpc/mpc.h      mpc_parser_t *mpca_grammar(int flags, const char *grammar, ...);</span>
-<span class='curline'><a href='../S/47.html#L14'>mpca_grammar</a>       14 mpc/tests/grammar.c   mpc_define(Expr,  mpca_grammar(MPCA_LANG_DEFAULT, " &lt;product&gt; (('+' | '-') &lt;product&gt;)* ", Prod));</span>
-<span class='curline'><a href='../S/47.html#L15'>mpca_grammar</a>       15 mpc/tests/grammar.c   mpc_define(Prod,  mpca_grammar(MPCA_LANG_DEFAULT, " &lt;value&gt;   (('*' | '/')   &lt;value&gt;)* ", Value));</span>
-<span class='curline'><a href='../S/47.html#L16'>mpca_grammar</a>       16 mpc/tests/grammar.c   mpc_define(Value, mpca_grammar(MPCA_LANG_DEFAULT, " /[0-9]+/ | '(' &lt;expression&gt; ')' ", Expr));</span>
+<span class='curline'><a href='../S/46.html#L3331'>mpc_tok_parens</a>   3331 mpc/mpc.c          mpc_tok_parens(Grammar, mpc_soft_delete)</span>
+<span class='curline'><a href='../S/46.html#L3493'>mpc_tok_parens</a>   3493 mpc/mpc.c          mpc_tok_parens(Grammar, mpc_soft_delete)</span>
+<span class='curline'><a href='../S/47.html#L209'>mpc_tok_parens</a>    209 mpc/mpc.h      mpc_parser_t *mpc_tok_parens(mpc_parser_t *a, mpc_dtor_t ad);</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_undefine</title>
+<title>mpc_tok</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,19 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L1510'>mpc_undefine</a>     1510 mpc/mpc.c        for (i = 0; i &lt; n; i++) { mpc_undefine(list[i]); }</span>
-<span class='curline'><a href='../S/44.html#L91'>mpc_undefine</a>       91 mpc/mpc.h      mpc_parser_t *mpc_undefine(mpc_parser_t *p);</span>
+<span class='curline'><a href='../S/45.html#L1929'>mpc_tok</a>          1929 mpc/mpc.c      mpc_parser_t *mpc_sym(const char *s) { return mpc_tok(mpc_string(s)); }</span>
+<span class='curline'><a href='../S/45.html#L1946'>mpc_tok</a>          1946 mpc/mpc.c          mpc_sym(o), mpc_tok(a), mpc_sym(c),</span>
+<span class='curline'><a href='../S/45.html#L3199'>mpc_tok</a>          3199 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_string(y) : mpc_tok(mpc_string(y));</span>
+<span class='curline'><a href='../S/45.html#L3207'>mpc_tok</a>          3207 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_char(y[0]) : mpc_tok(mpc_char(y[0]));</span>
+<span class='curline'><a href='../S/45.html#L3215'>mpc_tok</a>          3215 mpc/mpc.c        mpc_parser_t *p = (st-&gt;flags &amp; MPCA_LANG_WHITESPACE_SENSITIVE) ? mpc_re(y) : mpc_tok(mpc_re(y));</span>
+<span class='curline'><a href='../S/45.html#L3327'>mpc_tok</a>          3327 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_string_lit()), mpcaf_grammar_string, st),</span>
+<span class='curline'><a href='../S/45.html#L3328'>mpc_tok</a>          3328 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_char_lit()),   mpcaf_grammar_char, st),</span>
+<span class='curline'><a href='../S/45.html#L3329'>mpc_tok</a>          3329 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_regex_lit()),  mpcaf_grammar_regex, st),</span>
+<span class='curline'><a href='../S/45.html#L3464'>mpc_tok</a>          3464 mpc/mpc.c          mpc_tok(mpc_ident()), mpc_maybe(mpc_tok(mpc_string_lit())), mpc_sym(":"), Grammar, mpc_sym(";"),</span>
+<span class='curline'><a href='../S/45.html#L3489'>mpc_tok</a>          3489 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_string_lit()), mpcaf_grammar_string, st),</span>
+<span class='curline'><a href='../S/45.html#L3490'>mpc_tok</a>          3490 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_char_lit()),   mpcaf_grammar_char, st),</span>
+<span class='curline'><a href='../S/45.html#L3491'>mpc_tok</a>          3491 mpc/mpc.c          mpc_apply_to(mpc_tok(mpc_regex_lit()),  mpcaf_grammar_regex, st),</span>
+<span class='curline'><a href='../S/46.html#L198'>mpc_tok</a>           198 mpc/mpc.h      mpc_parser_t *mpc_tok(mpc_parser_t *a); </span>
 </pre>
 </body>
 </html>
