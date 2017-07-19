@@ -29,6 +29,7 @@ static Is_Alive attack_character(Status_Access from, Status_Access to) {
   to->damage += 1;
 
   if (to->damage >= 3) {
+    character.set_relation_enemy(to);
     to->base->is_alive = false;
     to->base->crossable = true;
     to->base->attackable = false;
@@ -60,6 +61,28 @@ static void set_base_mark(Status_Access access, String mark) {
 }
 
 
+static void set_random_position(Status_Access access,
+    int64_t max_x, int64_t max_y) {
+  access->base->Real_Position.x = rand() % max_x;
+  access->base->Real_Position.y = rand() % max_y;
+}
+
+
+static void set_random_relation(Status_Access access) {
+  int result = (rand() % 100) + 1;
+
+  if (result <= 33) {
+    character.set_relation_ally(access);
+  }
+  else if (result >= 67) {
+    character.set_relation_enemy(access);
+  }
+  else {
+    character.set_relation_neutral(access);
+  }
+}
+
+
 // -----------------------------------------
 // RELATION
 // -----------------------------------------
@@ -87,11 +110,12 @@ Character_API character = {
   .init = character_init,
   .copy = character_copy,
   .print_status = print_status,
-  .attack = attack_character,
   .set_name = set_base_name,
   .set_race = set_race,
   .set_style = set_base_style,
   .set_mark = set_base_mark,
+  .set_random_position = set_random_position,
+  .set_random_relation = set_random_relation,
 
   .get_relation = get_relation,
   .set_relation_ally = set_ally,

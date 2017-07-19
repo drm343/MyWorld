@@ -1,5 +1,5 @@
-#ifndef HEADER_CHARACTER_ABILITY_NEW
-#define HEADER_CHARACTER_ABILITY_NEW
+#ifndef HEADER_CHARACTER_STATUS
+#define HEADER_CHARACTER_STATUS
 
 #include "character.h"
 
@@ -49,6 +49,8 @@ typedef struct {
   void (*set_relation_neutral)(Status_Access);
 
   Is_Alive (*attack)(Status_Access, Status_Access);
+  void (*set_random_position)(Status_Access, int64_t, int64_t);
+  void (*set_random_relation)(Status_Access);
 } Character_API;
 
 extern Character_API character;

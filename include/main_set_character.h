@@ -2,7 +2,6 @@
 
 Character_Pool_Access character_prepare_pool = NULL;
 Character_Pool_Access character_use_pool = NULL;
-Status_Access Player = NULL;
 
 STRING_POOL_ON_STACK(npc_string_pool);
 
@@ -177,7 +176,7 @@ void setup_npc_by_dir() {
 }
 #endif
 
-Status_Access use_npc(char *race, char *name) {
+Status_Access use_npc(char *race, char *name, Map_Access map) {
   Status_Access origin_npc = NULL;
   Status_Access npc = NULL;
 
@@ -191,6 +190,11 @@ Status_Access use_npc(char *race, char *name) {
     char *character_name = MAIN_STRING_malloc(name_size);
     strcpy(character_name, name);
     character.set_name(npc, character_name);
+
+    character.set_random_position(npc, map->end.x, map->end.y);
+    character.set_random_relation(npc);
+    printf("npc (%d, %d)", npc->base->Real_Position.x, npc->base->Real_Position.y);
+    fflush(stdout);
   }
   return npc;
 }
