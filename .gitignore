@@ -4,3 +4,6 @@ obj/*
 
 # Execute Binary
 bin/*
+
+# Static file include lib that thay are not compile by makefile
+static
