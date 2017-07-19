@@ -177,7 +177,6 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
       vector.x = 1;
       break;
     default:
-      printf("other\n");
       break;
   }
 
@@ -214,7 +213,9 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
       character.set_style(npc, dead);
     }
   }
-  character_pool.reset_graph_position(from_pool, access->start.x, access->start.y);
+  character_pool.reset_graph_position(from_pool,
+      access->start.x, access->start.y,
+      access->max_x, access->max_y);
   return true;
 }
 
@@ -222,7 +223,7 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
 static Camera_Access camera_start(void) {
   Camera_Access access = calloc(1, sizeof(Camera_Type));
   MAX_X = 25;
-  MAX_Y = 20;
+  MAX_Y = 21;
 
   camera.set_max_x(access, MAX_X);
   camera.set_max_y(access, MAX_Y);

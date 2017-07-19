@@ -139,16 +139,25 @@ static Found_Result pool_find_by_position(Character_Pool_Access access, Status_A
 
 static void reset_graph_position(Character_Pool_Access access,
     int64_t x,
-    int64_t y) {
+    int64_t y,
+    int64_t max_x,
+    int64_t max_y) {
   uint8_t count = 0;
   uint8_t used = access->status->max_size - access->status->current_size;
   Status_Access npc = NULL;
+  int64_t counter_x = 0;
+  int64_t counter_y = 0;
 
   for (count; count < used; count++) {
     npc = &(access->status->pool[count]);
 
-    npc->base->Graph_Position.x = npc->base->Real_Position.x - x;
-    npc->base->Graph_Position.y = npc->base->Real_Position.y - y;
+    counter_x = npc->base->Real_Position.x - x;
+    counter_y = npc->base->Real_Position.y - y;
+
+    if ((counter_x < max_x) && (counter_y < max_y)) {
+      npc->base->Graph_Position.x = counter_x;
+      npc->base->Graph_Position.y = counter_y;
+    }
   }
 }
 
