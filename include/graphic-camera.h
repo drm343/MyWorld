@@ -18,7 +18,7 @@ typedef struct {
   Style_Access dead;
   Point_Type center;
   int64_t max_x; // 25
-  int64_t max_y; // 20
+  int64_t max_y; // 21
   Point_Type start;
   Point_Type end;
   Camera_Mode horizon;

@@ -225,7 +225,7 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
     }
     else {
       char *a = "攻擊 ";
-      char *b = "，受到 1 點傷害";
+      char *b = "，造成 1 點傷害";
       int64_t len = string.strlen_ascii(a) + string.strlen_ascii(b);
       len += string.strlen_ascii(npc->base->name);
       String message = string_pool.malloc(tmp_pool, len);

@@ -154,9 +154,14 @@ static void reset_graph_position(Character_Pool_Access access,
     counter_x = npc->base->Real_Position.x - x;
     counter_y = npc->base->Real_Position.y - y;
 
-    if ((counter_x < max_x) && (counter_y < max_y)) {
+    if (((counter_x >= 0) || (counter_y >= 0)) &&
+        ((counter_x < max_x) && (counter_y < max_y - 1))) {
       npc->base->Graph_Position.x = counter_x;
       npc->base->Graph_Position.y = counter_y;
+    }
+    else {
+      npc->base->Graph_Position.x = -1;
+      npc->base->Graph_Position.y = -1;
     }
   }
 }
