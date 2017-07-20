@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>character_name</title>
+<title>camera</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,16 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/19.html#L44'>character_name</a>     44 include/main_set_character.h   char *character_name = MAIN_STRING_malloc(name_size);</span>
-<span class='curline'><a href='../S/19.html#L45'>character_name</a>     45 include/main_set_character.h   strcpy(character_name, name);</span>
-<span class='curline'><a href='../S/19.html#L46'>character_name</a>     46 include/main_set_character.h   character.set_name(npc, character_name);</span>
-<span class='curline'><a href='../S/19.html#L190'>character_name</a>    190 include/main_set_character.h     char *character_name = MAIN_STRING_malloc(name_size);</span>
-<span class='curline'><a href='../S/19.html#L191'>character_name</a>    191 include/main_set_character.h     strcpy(character_name, name);</span>
-<span class='curline'><a href='../S/19.html#L192'>character_name</a>    192 include/main_set_character.h     character.set_name(npc, character_name);</span>
+<span class='curline'><a href='../S/17.html#L45'>camera</a>             45 include/graphic-camera.h extern Graphic_Camera_API camera;</span>
+<span class='curline'><a href='../S/30.html#L251'>camera</a>            251 src/graphic-camera.c   camera.set_max_x(access, MAX_X);</span>
+<span class='curline'><a href='../S/30.html#L252'>camera</a>            252 src/graphic-camera.c   camera.set_max_y(access, MAX_Y);</span>
+<span class='curline'><a href='../S/30.html#L312'>camera</a>            312 src/graphic-camera.c Graphic_Camera_API camera = {</span>
+<span class='curline'><a href='../S/31.html#L127'>camera</a>            127 src/main.c       camera.set_dead_style(camera_1, dead);</span>
+<span class='curline'><a href='../S/31.html#L142'>camera</a>            142 src/main.c       camera_1 = camera.start();</span>
+<span class='curline'><a href='../S/31.html#L151'>camera</a>            151 src/main.c       camera.set_player(camera_1, Player);</span>
+<span class='curline'><a href='../S/31.html#L169'>camera</a>            169 src/main.c       camera.set_map(camera_1, &amp;map_1);</span>
+<span class='curline'><a href='../S/31.html#L188'>camera</a>            188 src/main.c               running = camera.take(camera_1, character_use_pool, box_1, &amp;event);</span>
+<span class='curline'><a href='../S/31.html#L209'>camera</a>            209 src/main.c       camera.stop(camera_1);</span>
 </pre>
 </body>
 </html>

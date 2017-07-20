@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpcf_unescape_new</title>
+<title>mpcf_strfold</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,37 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L2385'>mpcf_unescape_new</a> 2385 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_c, mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2397'>mpcf_unescape_new</a> 2397 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_re, mpc_escape_output_raw_re);</span>
-<span class='curline'><a href='../S/46.html#L2409'>mpcf_unescape_new</a> 2409 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_cstr, mpc_escape_output_raw_cstr);</span>
-<span class='curline'><a href='../S/46.html#L2421'>mpcf_unescape_new</a> 2421 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_cchar, mpc_escape_output_raw_cchar);</span>
+<span class='curline'><a href='../S/48.html#L967'>mpcf_strfold</a>      967 mpc/mpc.c        if (f == mpcf_strfold)   { return mpcf_input_strfold(i, n, xs); }</span>
+<span class='curline'><a href='../S/48.html#L1849'>mpcf_strfold</a>     1849 mpc/mpc.c      mpc_parser_t *mpc_whitespaces(void) { return mpc_expect(mpc_many(mpcf_strfold, mpc_whitespace()), "spaces"); }</span>
+<span class='curline'><a href='../S/48.html#L1854'>mpcf_strfold</a>     1854 mpc/mpc.c      mpc_parser_t *mpc_escape(void) { return mpc_and(2, mpcf_strfold, mpc_char('\\'), mpc_any(), free); }</span>
+<span class='curline'><a href='../S/48.html#L1859'>mpcf_strfold</a>     1859 mpc/mpc.c      mpc_parser_t *mpc_digits(void) { return mpc_expect(mpc_many1(mpcf_strfold, mpc_digit()), "digits"); }</span>
+<span class='curline'><a href='../S/48.html#L1860'>mpcf_strfold</a>     1860 mpc/mpc.c      mpc_parser_t *mpc_hexdigits(void) { return mpc_expect(mpc_many1(mpcf_strfold, mpc_hexdigit()), "hex digits"); }</span>
+<span class='curline'><a href='../S/48.html#L1861'>mpcf_strfold</a>     1861 mpc/mpc.c      mpc_parser_t *mpc_octdigits(void) { return mpc_expect(mpc_many1(mpcf_strfold, mpc_octdigit()), "oct digits"); }</span>
+<span class='curline'><a href='../S/48.html#L1882'>mpcf_strfold</a>     1882 mpc/mpc.c        p2 = mpc_maybe_lift(mpc_and(2, mpcf_strfold, mpc_char('.'), mpc_digits(), free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1886'>mpcf_strfold</a>     1886 mpc/mpc.c        p3 = mpc_maybe_lift(mpc_and(3, mpcf_strfold, p30, p31, p32, free, free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1888'>mpcf_strfold</a>     1888 mpc/mpc.c        return mpc_expect(mpc_and(4, mpcf_strfold, p0, p1, p2, p3, free, free, free), "real");</span>
+<span class='curline'><a href='../S/48.html#L1902'>mpcf_strfold</a>     1902 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, strchar), free, "\"", "\""), "string");</span>
+<span class='curline'><a href='../S/48.html#L1907'>mpcf_strfold</a>     1907 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, regexchar), free, "/", "/"), "regex");</span>
+<span class='curline'><a href='../S/48.html#L1913'>mpcf_strfold</a>     1913 mpc/mpc.c        p1 = mpc_many(mpcf_strfold, mpc_alphanum()); </span>
+<span class='curline'><a href='../S/48.html#L1914'>mpcf_strfold</a>     1914 mpc/mpc.c        return mpc_and(2, mpcf_strfold, p0, p1, free);</span>
+<span class='curline'><a href='../S/48.html#L2015'>mpcf_strfold</a>     2015 mpc/mpc.c          p = mpc_and(2, mpcf_strfold, p, xs[i], free);</span>
+<span class='curline'><a href='../S/48.html#L2024'>mpcf_strfold</a>     2024 mpc/mpc.c        if (strcmp(xs[1], "*") == 0) { free(xs[1]); return mpc_many(mpcf_strfold, xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L2025'>mpcf_strfold</a>     2025 mpc/mpc.c        if (strcmp(xs[1], "+") == 0) { free(xs[1]); return mpc_many1(mpcf_strfold, xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L2030'>mpcf_strfold</a>     2030 mpc/mpc.c        return mpc_count(num, mpcf_strfold, xs[0], free);</span>
+<span class='curline'><a href='../S/48.html#L2197'>mpcf_strfold</a>     2197 mpc/mpc.c          mpc_many(mpcf_strfold, mpc_or(2, mpc_escape(), mpc_noneof("]"))),</span>
+<span class='curline'><a href='../S/48.html#L3777'>mpcf_strfold</a>     3777 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_strfold) {</span>
+<span class='curline'><a href='../S/48.html#L3788'>mpcf_strfold</a>     3788 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_strfold</span>
+<span class='curline'><a href='../S/48.html#L3791'>mpcf_strfold</a>     3791 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.and.f == mpcf_strfold) {</span>
+<span class='curline'><a href='../S/48.html#L3806'>mpcf_strfold</a>     3806 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_strfold</span>
+<span class='curline'><a href='../S/48.html#L3809'>mpcf_strfold</a>     3809 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;data.and.f == mpcf_strfold) {</span>
+<span class='curline'><a href='../S/49.html#L251'>mpcf_strfold</a>      251 mpc/mpc.h      mpc_val_t *mpcf_strfold(int n, mpc_val_t** xs);</span>
+<span class='curline'><a href='../S/51.html#L17'>mpcf_strfold</a>       17 mpc/tests/core.c     mpc_and(2, mpcf_strfold,</span>
+<span class='curline'><a href='../S/51.html#L19'>mpcf_strfold</a>       19 mpc/tests/core.c       mpc_many1(mpcf_strfold, mpc_or(3, mpc_alpha(), mpc_underscore(), mpc_digit())),</span>
+<span class='curline'><a href='../S/51.html#L74'>mpcf_strfold</a>       74 mpc/tests/core.c   mpc_parser_t *Stripperl = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtriml);</span>
+<span class='curline'><a href='../S/51.html#L75'>mpcf_strfold</a>       75 mpc/tests/core.c   mpc_parser_t *Stripperr = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrimr);</span>
+<span class='curline'><a href='../S/51.html#L76'>mpcf_strfold</a>       76 mpc/tests/core.c   mpc_parser_t *Stripper  = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrim);</span>
+<span class='curline'><a href='../S/51.html#L92'>mpcf_strfold</a>       92 mpc/tests/core.c   mpc_parser_t *p = mpc_count(3, mpcf_strfold, mpc_digit(), free);</span>
+<span class='curline'><a href='../S/51.html#L122'>mpcf_strfold</a>      122 mpc/tests/core.c   mpc_parser_t* q = mpc_and(2, mpcf_strfold, p, mpc_copy(p), free);</span>
 </pre>
 </body>
 </html>

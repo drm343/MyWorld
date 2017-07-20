@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_failf</title>
+<title>mpc_err_string</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,13 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1493'>mpc_failf</a>        1493 mpc/mpc.c          mpc_parser_t *a2 = mpc_failf("Attempt to assign to Unretained Parser!");</span>
-<span class='curline'><a href='../S/46.html#L2212'>mpc_failf</a>        2212 mpc/mpc.c          err_out = mpc_failf("Invalid Regex: %s", err_msg);</span>
-<span class='curline'><a href='../S/46.html#L3242'>mpc_failf</a>        3242 mpc/mpc.c              return mpc_failf("No Parser in position %i! Only supplied %i Parsers!", i, st-&gt;parsers_num);</span>
-<span class='curline'><a href='../S/46.html#L3254'>mpc_failf</a>        3254 mpc/mpc.c            if (q == NULL) { return mpc_failf("Unknown Parser '%s'!", x); }</span>
-<span class='curline'><a href='../S/46.html#L3267'>mpc_failf</a>        3267 mpc/mpc.c            if (p == NULL || p-&gt;name == NULL) { return mpc_failf("Unknown Parser '%s'!", x); }</span>
-<span class='curline'><a href='../S/46.html#L3342'>mpc_failf</a>        3342 mpc/mpc.c          err_out = mpc_failf("Invalid Grammar: %s", err_msg);</span>
-<span class='curline'><a href='../S/47.html#L114'>mpc_failf</a>         114 mpc/mpc.h      mpc_parser_t *mpc_failf(const char *fmt, ...);</span>
+<span class='curline'><a href='../S/48.html#L563'>mpc_err_string</a>    563 mpc/mpc.c        char *str = mpc_err_string(x);</span>
+<span class='curline'><a href='../S/48.html#L2211'>mpc_err_string</a>   2211 mpc/mpc.c          err_msg = mpc_err_string(r.error);</span>
+<span class='curline'><a href='../S/48.html#L3341'>mpc_err_string</a>   3341 mpc/mpc.c          err_msg = mpc_err_string(r.error);</span>
+<span class='curline'><a href='../S/49.html#L49'>mpc_err_string</a>     49 mpc/mpc.h      char *mpc_err_string(mpc_err_t *e);</span>
 </pre>
 </body>
 </html>

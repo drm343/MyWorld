@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>white</title>
+<title>trav</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,62 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/27.html#L52'>white</a>              52 src/main.c       SDL_Color white = {255, 255, 255};</span>
-<span class='curline'><a href='../S/27.html#L67'>white</a>              67 src/main.c             white);</span>
+<span class='curline'><a href='../S/47.html#L9'>trav</a>                9 mpc/examples/tree_traversal.c   mpc_ast_trav_t *trav;</span>
+<span class='curline'><a href='../S/47.html#L71'>trav</a>               71 mpc/examples/tree_traversal.c   trav = mpc_ast_traverse_start(ast, mpc_ast_trav_order_pre);</span>
+<span class='curline'><a href='../S/47.html#L73'>trav</a>               73 mpc/examples/tree_traversal.c   ast_next = mpc_ast_traverse_next(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L79'>trav</a>               79 mpc/examples/tree_traversal.c     ast_next = mpc_ast_traverse_next(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L82'>trav</a>               82 mpc/examples/tree_traversal.c   mpc_ast_traverse_free(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L86'>trav</a>               86 mpc/examples/tree_traversal.c   trav = mpc_ast_traverse_start(ast, mpc_ast_trav_order_post);</span>
+<span class='curline'><a href='../S/47.html#L88'>trav</a>               88 mpc/examples/tree_traversal.c   ast_next = mpc_ast_traverse_next(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L94'>trav</a>               94 mpc/examples/tree_traversal.c     ast_next = mpc_ast_traverse_next(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L97'>trav</a>               97 mpc/examples/tree_traversal.c   mpc_ast_traverse_free(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L101'>trav</a>              101 mpc/examples/tree_traversal.c   trav = mpc_ast_traverse_start(ast, mpc_ast_trav_order_post);</span>
+<span class='curline'><a href='../S/47.html#L103'>trav</a>              103 mpc/examples/tree_traversal.c   ast_next = mpc_ast_traverse_next(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L109'>trav</a>              109 mpc/examples/tree_traversal.c     ast_next = mpc_ast_traverse_next(&amp;trav);</span>
+<span class='curline'><a href='../S/47.html#L112'>trav</a>              112 mpc/examples/tree_traversal.c   mpc_ast_traverse_free(&amp;trav);</span>
+<span class='curline'><a href='../S/48.html#L2861'>trav</a>             2861 mpc/mpc.c        mpc_ast_trav_t *trav, *n_trav;</span>
+<span class='curline'><a href='../S/48.html#L2865'>trav</a>             2865 mpc/mpc.c        trav = malloc(sizeof(mpc_ast_trav_t));</span>
+<span class='curline'><a href='../S/48.html#L2866'>trav</a>             2866 mpc/mpc.c        trav-&gt;curr_node = cnode;</span>
+<span class='curline'><a href='../S/48.html#L2867'>trav</a>             2867 mpc/mpc.c        trav-&gt;parent = NULL;</span>
+<span class='curline'><a href='../S/48.html#L2868'>trav</a>             2868 mpc/mpc.c        trav-&gt;curr_child = 0;</span>
+<span class='curline'><a href='../S/48.html#L2869'>trav</a>             2869 mpc/mpc.c        trav-&gt;order = order;</span>
+<span class='curline'><a href='../S/48.html#L2883'>trav</a>             2883 mpc/mpc.c              n_trav-&gt;parent = trav;</span>
+<span class='curline'><a href='../S/48.html#L2887'>trav</a>             2887 mpc/mpc.c              trav = n_trav;</span>
+<span class='curline'><a href='../S/48.html#L2897'>trav</a>             2897 mpc/mpc.c        return trav;</span>
+<span class='curline'><a href='../S/48.html#L2900'>trav</a>             2900 mpc/mpc.c      mpc_ast_t *mpc_ast_traverse_next(mpc_ast_trav_t **trav) {</span>
+<span class='curline'><a href='../S/48.html#L2906'>trav</a>             2906 mpc/mpc.c        if(*trav == NULL) return NULL;</span>
+<span class='curline'><a href='../S/48.html#L2908'>trav</a>             2908 mpc/mpc.c        switch((*trav)-&gt;order) {</span>
+<span class='curline'><a href='../S/48.html#L2910'>trav</a>             2910 mpc/mpc.c            ret = (*trav)-&gt;curr_node;</span>
+<span class='curline'><a href='../S/48.html#L2913'>trav</a>             2913 mpc/mpc.c            while(*trav != NULL &amp;&amp;</span>
+<span class='curline'><a href='../S/48.html#L2914'>trav</a>             2914 mpc/mpc.c              (*trav)-&gt;curr_child &gt;= (*trav)-&gt;curr_node-&gt;children_num)</span>
+<span class='curline'><a href='../S/48.html#L2916'>trav</a>             2916 mpc/mpc.c              to_free = *trav;</span>
+<span class='curline'><a href='../S/48.html#L2917'>trav</a>             2917 mpc/mpc.c              *trav = (*trav)-&gt;parent;</span>
+<span class='curline'><a href='../S/48.html#L2922'>trav</a>             2922 mpc/mpc.c            if(*trav == NULL) {</span>
+<span class='curline'><a href='../S/48.html#L2929'>trav</a>             2929 mpc/mpc.c            cchild = (*trav)-&gt;curr_child;</span>
+<span class='curline'><a href='../S/48.html#L2930'>trav</a>             2930 mpc/mpc.c            n_trav-&gt;curr_node = (*trav)-&gt;curr_node-&gt;children[cchild];</span>
+<span class='curline'><a href='../S/48.html#L2931'>trav</a>             2931 mpc/mpc.c            n_trav-&gt;parent = *trav;</span>
+<span class='curline'><a href='../S/48.html#L2933'>trav</a>             2933 mpc/mpc.c            n_trav-&gt;order = (*trav)-&gt;order;</span>
+<span class='curline'><a href='../S/48.html#L2935'>trav</a>             2935 mpc/mpc.c            (*trav)-&gt;curr_child++;</span>
+<span class='curline'><a href='../S/48.html#L2936'>trav</a>             2936 mpc/mpc.c            *trav = n_trav;</span>
+<span class='curline'><a href='../S/48.html#L2941'>trav</a>             2941 mpc/mpc.c            ret = (*trav)-&gt;curr_node;</span>
+<span class='curline'><a href='../S/48.html#L2946'>trav</a>             2946 mpc/mpc.c            to_free = *trav;</span>
+<span class='curline'><a href='../S/48.html#L2947'>trav</a>             2947 mpc/mpc.c            *trav = (*trav)-&gt;parent;</span>
+<span class='curline'><a href='../S/48.html#L2950'>trav</a>             2950 mpc/mpc.c            if(*trav == NULL)</span>
+<span class='curline'><a href='../S/48.html#L2954'>trav</a>             2954 mpc/mpc.c            (*trav)-&gt;curr_child++;</span>
+<span class='curline'><a href='../S/48.html#L2957'>trav</a>             2957 mpc/mpc.c            if((*trav)-&gt;curr_child &gt;= (*trav)-&gt;curr_node-&gt;children_num) {</span>
+<span class='curline'><a href='../S/48.html#L2963'>trav</a>             2963 mpc/mpc.c            while((*trav)-&gt;curr_node-&gt;children_num &gt; 0) {</span>
+<span class='curline'><a href='../S/48.html#L2966'>trav</a>             2966 mpc/mpc.c              cchild = (*trav)-&gt;curr_child;</span>
+<span class='curline'><a href='../S/48.html#L2967'>trav</a>             2967 mpc/mpc.c              n_trav-&gt;curr_node = (*trav)-&gt;curr_node-&gt;children[cchild];</span>
+<span class='curline'><a href='../S/48.html#L2968'>trav</a>             2968 mpc/mpc.c              n_trav-&gt;parent = *trav;</span>
+<span class='curline'><a href='../S/48.html#L2970'>trav</a>             2970 mpc/mpc.c              n_trav-&gt;order = (*trav)-&gt;order;</span>
+<span class='curline'><a href='../S/48.html#L2972'>trav</a>             2972 mpc/mpc.c              *trav = n_trav;</span>
+<span class='curline'><a href='../S/48.html#L2983'>trav</a>             2983 mpc/mpc.c      void mpc_ast_traverse_free(mpc_ast_trav_t **trav) {</span>
+<span class='curline'><a href='../S/48.html#L2987'>trav</a>             2987 mpc/mpc.c        while(*trav != NULL) {</span>
+<span class='curline'><a href='../S/48.html#L2988'>trav</a>             2988 mpc/mpc.c            n_trav = (*trav)-&gt;parent;</span>
+<span class='curline'><a href='../S/48.html#L2989'>trav</a>             2989 mpc/mpc.c            free(*trav);</span>
+<span class='curline'><a href='../S/48.html#L2990'>trav</a>             2990 mpc/mpc.c            *trav = n_trav;</span>
+<span class='curline'><a href='../S/49.html#L305'>trav</a>              305 mpc/mpc.h      mpc_ast_t *mpc_ast_traverse_next(mpc_ast_trav_t **trav);</span>
+<span class='curline'><a href='../S/49.html#L307'>trav</a>              307 mpc/mpc.h      void mpc_ast_traverse_free(mpc_ast_trav_t **trav);</span>
 </pre>
 </body>
 </html>

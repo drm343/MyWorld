@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>Typeident</title>
+<title>Term</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,33 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L14'>Typeident</a>          14 mpc/examples/smallc.c   mpc_parser_t* Typeident = mpc_new("typeident");</span>
-<span class='curline'><a href='../S/43.html#L63'>Typeident</a>          63 mpc/examples/smallc.c     Typeident, Decls, Args, Body, Procedure, Main, Includes, Smallc, NULL);</span>
-<span class='curline'><a href='../S/43.html#L96'>Typeident</a>          96 mpc/examples/smallc.c                   Typeident, Decls, Args, Body, Procedure, Main, Includes, Smallc);</span>
+<span class='curline'><a href='../S/45.html#L10'>Term</a>               10 mpc/examples/smallc.c   mpc_parser_t* Term      = mpc_new("term");</span>
+<span class='curline'><a href='../S/45.html#L62'>Term</a>               62 mpc/examples/smallc.c     Ident, Number, Character, String, Factor, Term, Lexp, Stmt, Exp, </span>
+<span class='curline'><a href='../S/45.html#L95'>Term</a>               95 mpc/examples/smallc.c   mpc_cleanup(17, Ident, Number, Character, String, Factor, Term, Lexp, Stmt, Exp,</span>
+<span class='curline'><a href='../S/48.html#L2164'>Term</a>             2164 mpc/mpc.c        mpc_parser_t *Regex, *Term, *Factor, *Base, *Range, *RegexEnclose; </span>
+<span class='curline'><a href='../S/48.html#L2167'>Term</a>             2167 mpc/mpc.c        Term   = mpc_new("term");</span>
+<span class='curline'><a href='../S/48.html#L2173'>Term</a>             2173 mpc/mpc.c          Term, </span>
+<span class='curline'><a href='../S/48.html#L2178'>Term</a>             2178 mpc/mpc.c        mpc_define(Term, mpc_many(mpcf_re_and, Factor));</span>
+<span class='curline'><a href='../S/48.html#L2205'>Term</a>             2205 mpc/mpc.c        mpc_optimise(Term);</span>
+<span class='curline'><a href='../S/48.html#L2218'>Term</a>             2218 mpc/mpc.c        mpc_cleanup(6, RegexEnclose, Regex, Term, Factor, Base, Range);</span>
+<span class='curline'><a href='../S/48.html#L3294'>Term</a>             3294 mpc/mpc.c        mpc_parser_t *GrammarTotal, *Grammar, *Term, *Factor, *Base;</span>
+<span class='curline'><a href='../S/48.html#L3298'>Term</a>             3298 mpc/mpc.c        Term = mpc_new("term");</span>
+<span class='curline'><a href='../S/48.html#L3307'>Term</a>             3307 mpc/mpc.c          Term,</span>
+<span class='curline'><a href='../S/48.html#L3312'>Term</a>             3312 mpc/mpc.c        mpc_define(Term, mpc_many1(mpcaf_grammar_and, Factor));</span>
+<span class='curline'><a href='../S/48.html#L3337'>Term</a>             3337 mpc/mpc.c        mpc_optimise(Term);</span>
+<span class='curline'><a href='../S/48.html#L3348'>Term</a>             3348 mpc/mpc.c        mpc_cleanup(5, GrammarTotal, Grammar, Term, Factor, Base);</span>
+<span class='curline'><a href='../S/48.html#L3449'>Term</a>             3449 mpc/mpc.c        mpc_parser_t *Lang, *Stmt, *Grammar, *Term, *Factor, *Base; </span>
+<span class='curline'><a href='../S/48.html#L3454'>Term</a>             3454 mpc/mpc.c        Term    = mpc_new("term");</span>
+<span class='curline'><a href='../S/48.html#L3469'>Term</a>             3469 mpc/mpc.c            Term,</span>
+<span class='curline'><a href='../S/48.html#L3474'>Term</a>             3474 mpc/mpc.c        mpc_define(Term, mpc_many1(mpcaf_grammar_and, Factor));</span>
+<span class='curline'><a href='../S/48.html#L3499'>Term</a>             3499 mpc/mpc.c        mpc_optimise(Term);</span>
+<span class='curline'><a href='../S/48.html#L3509'>Term</a>             3509 mpc/mpc.c        mpc_cleanup(6, Lang, Stmt, Grammar, Term, Factor, Base);</span>
+<span class='curline'><a href='../S/51.html#L38'>Term</a>               38 mpc/tests/core.c   mpc_parser_t *Expr, *Factor, *Term, *Maths; </span>
+<span class='curline'><a href='../S/51.html#L43'>Term</a>               43 mpc/tests/core.c   Term   = mpc_new("term");</span>
+<span class='curline'><a href='../S/51.html#L52'>Term</a>               52 mpc/tests/core.c     mpc_and(3, mpcf_maths, Term, mpc_oneof("+-"), Term, free, free),</span>
+<span class='curline'><a href='../S/51.html#L53'>Term</a>               53 mpc/tests/core.c     Term</span>
+<span class='curline'><a href='../S/51.html#L56'>Term</a>               56 mpc/tests/core.c   mpc_define(Term, mpc_or(2, </span>
+<span class='curline'><a href='../S/51.html#L69'>Term</a>               69 mpc/tests/core.c   mpc_cleanup(4, Expr, Factor, Term, Maths);</span>
 </pre>
 </body>
 </html>

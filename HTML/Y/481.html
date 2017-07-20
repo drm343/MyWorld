@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>set_style</title>
+<title>render</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,11 +9,25 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/18.html#L43'>set_style</a>          43 include/character-status.h   void (*set_style)(Status_Access, Style_Access);</span>
-<span class='curline'><a href='../S/19.html#L74'>set_style</a>          74 include/main_set_character.h   character.set_style(npc, style_access);</span>
-<span class='curline'><a href='../S/28.html#L115'>set_style</a>         115 src/character-status.c   .set_style = set_base_style,</span>
-<span class='curline'><a href='../S/29.html#L214'>set_style</a>         214 src/graphic-camera.c       character.set_style(npc, dead);</span>
-<span class='curline'><a href='../S/27.html#L77'>set_style</a>          77 src/main.c       character.set_style(camera_1-&gt;player, result);</span>
+<span class='curline'><a href='../S/31.html#L28'>render</a>             28 src/main.c     void draw_message_box(SDL_Renderer_Access render) {</span>
+<span class='curline'><a href='../S/31.html#L48'>render</a>             48 src/main.c         SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);</span>
+<span class='curline'><a href='../S/31.html#L49'>render</a>             49 src/main.c         SDL_RenderDrawLines(render, box_1-&gt;box, 5);</span>
+<span class='curline'><a href='../S/31.html#L64'>render</a>             64 src/main.c           SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);</span>
+<span class='curline'><a href='../S/31.html#L67'>render</a>             67 src/main.c           SDL_RenderCopy(render, access, NULL, &amp;(box));</span>
+<span class='curline'><a href='../S/31.html#L73'>render</a>             73 src/main.c     void draw_view( SDL_Renderer_Access render) {</span>
+<span class='curline'><a href='../S/31.html#L75'>render</a>             75 src/main.c       SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);</span>
+<span class='curline'><a href='../S/31.html#L76'>render</a>             76 src/main.c       SDL_RenderClear(render);</span>
+<span class='curline'><a href='../S/31.html#L80'>render</a>             80 src/main.c       SDL_RenderCopy(render, camera_1-&gt;player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
+<span class='curline'><a href='../S/31.html#L90'>render</a>             90 src/main.c             SDL_RenderCopy(render, npc-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(rect));</span>
+<span class='curline'><a href='../S/31.html#L94'>render</a>             94 src/main.c       draw_message_box(render);</span>
+<span class='curline'><a href='../S/31.html#L96'>render</a>             96 src/main.c       SDL_RenderPresent(render);</span>
+<span class='curline'><a href='../S/31.html#L99'>render</a>             99 src/main.c     Execute_Result init_view(SDL_Renderer_Access render) {</span>
+<span class='curline'><a href='../S/31.html#L116'>render</a>            116 src/main.c         result-&gt;access = SDL_CreateTextureFromSurface(render, surfaceMessage);</span>
+<span class='curline'><a href='../S/31.html#L135'>render</a>            135 src/main.c       SDL_Renderer_Access render;</span>
+<span class='curline'><a href='../S/31.html#L173'>render</a>            173 src/main.c       render = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);</span>
+<span class='curline'><a href='../S/31.html#L175'>render</a>            175 src/main.c       if (init_view(render) != EXECUTE_SUCCESS) {</span>
+<span class='curline'><a href='../S/31.html#L193'>render</a>            193 src/main.c           draw_view(render);</span>
+<span class='curline'><a href='../S/31.html#L199'>render</a>            199 src/main.c       SDL_DestroyRenderer(render);</span>
 </pre>
 </body>
 </html>

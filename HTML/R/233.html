@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_escape</title>
+<title>mpc_err_new</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1897'>mpc_escape</a>       1897 mpc/mpc.c        return mpc_expect(mpc_between(mpc_or(2, mpc_escape(), mpc_any()), free, "'", "'"), "char");</span>
-<span class='curline'><a href='../S/46.html#L1901'>mpc_escape</a>       1901 mpc/mpc.c        mpc_parser_t *strchar = mpc_or(2, mpc_escape(), mpc_noneof("\""));</span>
-<span class='curline'><a href='../S/46.html#L1906'>mpc_escape</a>       1906 mpc/mpc.c        mpc_parser_t *regexchar = mpc_or(2, mpc_escape(), mpc_noneof("/"));</span>
-<span class='curline'><a href='../S/46.html#L2192'>mpc_escape</a>       2192 mpc/mpc.c          mpc_apply(mpc_escape(), mpcf_re_escape),</span>
-<span class='curline'><a href='../S/46.html#L2197'>mpc_escape</a>       2197 mpc/mpc.c          mpc_many(mpcf_strfold, mpc_or(2, mpc_escape(), mpc_noneof("]"))),</span>
-<span class='curline'><a href='../S/47.html#L158'>mpc_escape</a>        158 mpc/mpc.h      mpc_parser_t *mpc_escape(void);</span>
+<span class='curline'><a href='../S/48.html#L1061'>mpc_err_new</a>      1061 mpc/mpc.c              MPC_FAILURE(mpc_err_new(i, p-&gt;data.expect.m));</span>
+<span class='curline'><a href='../S/48.html#L1085'>mpc_err_new</a>      1085 mpc/mpc.c              MPC_FAILURE(mpc_err_new(i, "opposite"));</span>
 </pre>
 </body>
 </html>

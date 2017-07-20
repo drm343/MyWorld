@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>num</title>
+<title>mpc_dtor_t</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,75 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L2021'>num</a>              2021 mpc/mpc.c        int num;</span>
-<span class='curline'><a href='../S/46.html#L2027'>num</a>              2027 mpc/mpc.c        num = *(int*)xs[1];</span>
-<span class='curline'><a href='../S/46.html#L2030'>num</a>              2030 mpc/mpc.c        return mpc_count(num, mpcf_strfold, xs[0], free);</span>
-<span class='curline'><a href='../S/46.html#L3184'>num</a>              3184 mpc/mpc.c        int num;</span>
-<span class='curline'><a href='../S/46.html#L3191'>num</a>              3191 mpc/mpc.c        num = *((int*)xs[1]);</span>
-<span class='curline'><a href='../S/46.html#L3193'>num</a>              3193 mpc/mpc.c        return mpca_count(num, xs[0]);</span>
+<span class='curline'><a href='../S/48.html#L899'>mpc_dtor_t</a>        899 mpc/mpc.c      typedef struct { mpc_parser_t *x; mpc_dtor_t dx; mpc_ctor_t lf; } mpc_pdata_not_t;</span>
+<span class='curline'><a href='../S/48.html#L900'>mpc_dtor_t</a>        900 mpc/mpc.c      typedef struct { int n; mpc_fold_t f; mpc_parser_t *x; mpc_dtor_t dx; } mpc_pdata_repeat_t;</span>
+<span class='curline'><a href='../S/48.html#L902'>mpc_dtor_t</a>        902 mpc/mpc.c      typedef struct { int n; mpc_fold_t f; mpc_parser_t **xs; mpc_dtor_t *dxs;  } mpc_pdata_and_t;</span>
+<span class='curline'><a href='../S/48.html#L994'>mpc_dtor_t</a>        994 mpc/mpc.c      static void mpc_parse_dtor(mpc_input_t *i, mpc_dtor_t d, mpc_val_t *x) {</span>
+<span class='curline'><a href='../S/48.html#L1468'>mpc_dtor_t</a>       1468 mpc/mpc.c            p-&gt;data.and.dxs = malloc((a-&gt;data.and.n-1) * sizeof(mpc_dtor_t));</span>
+<span class='curline'><a href='../S/48.html#L1729'>mpc_dtor_t</a>       1729 mpc/mpc.c      mpc_parser_t *mpc_not_lift(mpc_parser_t *a, mpc_dtor_t da, mpc_ctor_t lf) {</span>
+<span class='curline'><a href='../S/48.html#L1738'>mpc_dtor_t</a>       1738 mpc/mpc.c      mpc_parser_t *mpc_not(mpc_parser_t *a, mpc_dtor_t da) {</span>
+<span class='curline'><a href='../S/48.html#L1770'>mpc_dtor_t</a>       1770 mpc/mpc.c      mpc_parser_t *mpc_count(int n, mpc_fold_t f, mpc_parser_t *a, mpc_dtor_t da) {</span>
+<span class='curline'><a href='../S/48.html#L1811'>mpc_dtor_t</a>       1811 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/48.html#L1818'>mpc_dtor_t</a>       1818 mpc/mpc.c          p-&gt;data.and.dxs[i] = va_arg(va, mpc_dtor_t);</span>
+<span class='curline'><a href='../S/48.html#L1922'>mpc_dtor_t</a>       1922 mpc/mpc.c      mpc_parser_t *mpc_endwith(mpc_parser_t *a, mpc_dtor_t da) { return mpc_and(2, mpcf_fst, a, mpc_eoi(), da); }</span>
+<span class='curline'><a href='../S/48.html#L1923'>mpc_dtor_t</a>       1923 mpc/mpc.c      mpc_parser_t *mpc_whole(mpc_parser_t *a, mpc_dtor_t da) { return mpc_and(3, mpcf_snd, mpc_soi(), a, mpc_eoi(), mpcf_dtor_null, da); }</span>
+<span class='curline'><a href='../S/48.html#L1931'>mpc_dtor_t</a>       1931 mpc/mpc.c      mpc_parser_t *mpc_total(mpc_parser_t *a, mpc_dtor_t da) { return mpc_whole(mpc_strip(a), da); }</span>
+<span class='curline'><a href='../S/48.html#L1933'>mpc_dtor_t</a>       1933 mpc/mpc.c      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c) {</span>
+<span class='curline'><a href='../S/48.html#L1939'>mpc_dtor_t</a>       1939 mpc/mpc.c      mpc_parser_t *mpc_parens(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_between(a, ad, "(", ")"); }</span>
+<span class='curline'><a href='../S/48.html#L1940'>mpc_dtor_t</a>       1940 mpc/mpc.c      mpc_parser_t *mpc_braces(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_between(a, ad, "&lt;", "&gt;"); }</span>
+<span class='curline'><a href='../S/48.html#L1941'>mpc_dtor_t</a>       1941 mpc/mpc.c      mpc_parser_t *mpc_brackets(mpc_parser_t *a, mpc_dtor_t ad) { return mpc_between(a, ad, "{", "}"); }</span>
+<span class='curline'><a href='../S/48.html#L1942'>mpc_dtor_t</a>       1942 mpc/mpc.c      mpc_parser_t *mpc_squares(mpc_parser_t *a, mpc_dtor_t ad)  { return mpc_between(a, ad, "[", "]"); }</span>
+<span class='curline'><a href='../S/48.html#L1944'>mpc_dtor_t</a>       1944 mpc/mpc.c      mpc_parser_t *mpc_tok_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c) {</span>
+<span class='curline'><a href='../S/48.html#L1950'>mpc_dtor_t</a>       1950 mpc/mpc.c      mpc_parser_t *mpc_tok_parens(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_tok_between(a, ad, "(", ")"); }</span>
+<span class='curline'><a href='../S/48.html#L1951'>mpc_dtor_t</a>       1951 mpc/mpc.c      mpc_parser_t *mpc_tok_braces(mpc_parser_t *a, mpc_dtor_t ad)   { return mpc_tok_between(a, ad, "&lt;", "&gt;"); }</span>
+<span class='curline'><a href='../S/48.html#L1952'>mpc_dtor_t</a>       1952 mpc/mpc.c      mpc_parser_t *mpc_tok_brackets(mpc_parser_t *a, mpc_dtor_t ad) { return mpc_tok_between(a, ad, "{", "}"); }</span>
+<span class='curline'><a href='../S/48.html#L1953'>mpc_dtor_t</a>       1953 mpc/mpc.c      mpc_parser_t *mpc_tok_squares(mpc_parser_t *a, mpc_dtor_t ad)  { return mpc_tok_between(a, ad, "[", "]"); }</span>
+<span class='curline'><a href='../S/48.html#L2175'>mpc_dtor_t</a>       2175 mpc/mpc.c          (mpc_dtor_t)mpc_delete</span>
+<span class='curline'><a href='../S/48.html#L2186'>mpc_dtor_t</a>       2186 mpc/mpc.c          (mpc_dtor_t)mpc_delete</span>
+<span class='curline'><a href='../S/48.html#L2190'>mpc_dtor_t</a>       2190 mpc/mpc.c          mpc_parens(Regex, (mpc_dtor_t)mpc_delete),</span>
+<span class='curline'><a href='../S/48.html#L2191'>mpc_dtor_t</a>       2191 mpc/mpc.c          mpc_squares(Range, (mpc_dtor_t)mpc_delete),</span>
+<span class='curline'><a href='../S/48.html#L2201'>mpc_dtor_t</a>       2201 mpc/mpc.c        RegexEnclose = mpc_whole(mpc_predictive(Regex), (mpc_dtor_t)mpc_delete);</span>
+<span class='curline'><a href='../S/48.html#L2615'>mpc_dtor_t</a>       2615 mpc/mpc.c        mpc_dtor_t destructor,</span>
+<span class='curline'><a href='../S/48.html#L2638'>mpc_dtor_t</a>       2638 mpc/mpc.c        mpc_dtor_t destructor, </span>
+<span class='curline'><a href='../S/48.html#L3063'>mpc_dtor_t</a>       3063 mpc/mpc.c      mpc_parser_t *mpca_not(mpc_parser_t *a) { return mpc_not(a, (mpc_dtor_t)mpc_ast_delete); }</span>
+<span class='curline'><a href='../S/48.html#L3067'>mpc_dtor_t</a>       3067 mpc/mpc.c      mpc_parser_t *mpca_count(int n, mpc_parser_t *a) { return mpc_count(n, mpcf_fold_ast, a, (mpc_dtor_t)mpc_ast_delete); }</span>
+<span class='curline'><a href='../S/48.html#L3101'>mpc_dtor_t</a>       3101 mpc/mpc.c        p-&gt;data.and.dxs = malloc(sizeof(mpc_dtor_t) * (n-1));</span>
+<span class='curline'><a href='../S/48.html#L3108'>mpc_dtor_t</a>       3108 mpc/mpc.c          p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete;</span>
+<span class='curline'><a href='../S/48.html#L3115'>mpc_dtor_t</a>       3115 mpc/mpc.c      mpc_parser_t *mpca_total(mpc_parser_t *a) { return mpc_total(a, (mpc_dtor_t)mpc_ast_delete); }</span>
+<span class='curline'><a href='../S/48.html#L3746'>mpc_dtor_t</a>       3746 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/48.html#L3749'>mpc_dtor_t</a>       3749 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete; }</span>
+<span class='curline'><a href='../S/48.html#L3764'>mpc_dtor_t</a>       3764 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/48.html#L3766'>mpc_dtor_t</a>       3766 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = (mpc_dtor_t)mpc_ast_delete; }</span>
+<span class='curline'><a href='../S/48.html#L3796'>mpc_dtor_t</a>       3796 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/48.html#L3814'>mpc_dtor_t</a>       3814 mpc/mpc.c            p-&gt;data.and.dxs = realloc(p-&gt;data.and.dxs, sizeof(mpc_dtor_t) * (n + m - 1 - 1));</span>
+<span class='curline'><a href='../S/49.html#L77'>mpc_dtor_t</a>         77 mpc/mpc.h      typedef void(*mpc_dtor_t)(mpc_val_t*);</span>
+<span class='curline'><a href='../S/49.html#L129'>mpc_dtor_t</a>        129 mpc/mpc.h      mpc_parser_t *mpc_not(mpc_parser_t *a, mpc_dtor_t da);</span>
+<span class='curline'><a href='../S/49.html#L130'>mpc_dtor_t</a>        130 mpc/mpc.h      mpc_parser_t *mpc_not_lift(mpc_parser_t *a, mpc_dtor_t da, mpc_ctor_t lf);</span>
+<span class='curline'><a href='../S/49.html#L136'>mpc_dtor_t</a>        136 mpc/mpc.h      mpc_parser_t *mpc_count(int n, mpc_fold_t f, mpc_parser_t *a, mpc_dtor_t da);</span>
+<span class='curline'><a href='../S/49.html#L192'>mpc_dtor_t</a>        192 mpc/mpc.h      mpc_parser_t *mpc_endwith(mpc_parser_t *a, mpc_dtor_t da);</span>
+<span class='curline'><a href='../S/49.html#L193'>mpc_dtor_t</a>        193 mpc/mpc.h      mpc_parser_t *mpc_whole(mpc_parser_t *a, mpc_dtor_t da);</span>
+<span class='curline'><a href='../S/49.html#L200'>mpc_dtor_t</a>        200 mpc/mpc.h      mpc_parser_t *mpc_total(mpc_parser_t *a, mpc_dtor_t da);</span>
+<span class='curline'><a href='../S/49.html#L202'>mpc_dtor_t</a>        202 mpc/mpc.h      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
+<span class='curline'><a href='../S/49.html#L203'>mpc_dtor_t</a>        203 mpc/mpc.h      mpc_parser_t *mpc_parens(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L204'>mpc_dtor_t</a>        204 mpc/mpc.h      mpc_parser_t *mpc_braces(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L205'>mpc_dtor_t</a>        205 mpc/mpc.h      mpc_parser_t *mpc_brackets(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L206'>mpc_dtor_t</a>        206 mpc/mpc.h      mpc_parser_t *mpc_squares(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L208'>mpc_dtor_t</a>        208 mpc/mpc.h      mpc_parser_t *mpc_tok_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
+<span class='curline'><a href='../S/49.html#L209'>mpc_dtor_t</a>        209 mpc/mpc.h      mpc_parser_t *mpc_tok_parens(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L210'>mpc_dtor_t</a>        210 mpc/mpc.h      mpc_parser_t *mpc_tok_braces(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L211'>mpc_dtor_t</a>        211 mpc/mpc.h      mpc_parser_t *mpc_tok_brackets(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L212'>mpc_dtor_t</a>        212 mpc/mpc.h      mpc_parser_t *mpc_tok_squares(mpc_parser_t *a, mpc_dtor_t ad);</span>
+<span class='curline'><a href='../S/49.html#L358'>mpc_dtor_t</a>        358 mpc/mpc.h        mpc_dtor_t destructor, </span>
+<span class='curline'><a href='../S/49.html#L363'>mpc_dtor_t</a>        363 mpc/mpc.h        mpc_dtor_t destructor,</span>
+<span class='curline'><a href='../S/52.html#L46'>mpc_dtor_t</a>         46 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "  24 ", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/52.html#L47'>mpc_dtor_t</a>         47 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", t1, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/52.html#L48'>mpc_dtor_t</a>         48 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "(4 * 2 * 11 + 2) + 5", t2, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/52.html#L49'>mpc_dtor_t</a>         49 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "a", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/52.html#L50'>mpc_dtor_t</a>         50 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/52.html#L121'>mpc_dtor_t</a>        121 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Doge, "so c so c", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/52.html#L123'>mpc_dtor_t</a>        123 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Doge, "so a so c", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
+<span class='curline'><a href='../S/52.html#L163'>mpc_dtor_t</a>        163 mpc/tests/grammar.c     (mpc_dtor_t)mpc_ast_delete, </span>
+<span class='curline'><a href='../S/52.html#L248'>mpc_dtor_t</a>        248 mpc/tests/grammar.c     (mpc_dtor_t)mpc_ast_delete,</span>
 </pre>
 </body>
 </html>

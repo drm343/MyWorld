@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>repeat</title>
+<title>r4</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,40 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L917'>repeat</a>            917 mpc/mpc.c        mpc_pdata_repeat_t repeat;</span>
-<span class='curline'><a href='../S/46.html#L1106'>repeat</a>           1106 mpc/mpc.c            while (mpc_parse_run(i, p-&gt;data.repeat.x, &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1120'>repeat</a>           1120 mpc/mpc.c              mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1127'>repeat</a>           1127 mpc/mpc.c            while (mpc_parse_run(i, p-&gt;data.repeat.x, &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1146'>repeat</a>           1146 mpc/mpc.c                mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1152'>repeat</a>           1152 mpc/mpc.c            results = p-&gt;data.repeat.n &gt; MPC_PARSE_STACK_MIN</span>
-<span class='curline'><a href='../S/46.html#L1153'>repeat</a>           1153 mpc/mpc.c              ? mpc_malloc(i, sizeof(mpc_result_t) * p-&gt;data.repeat.n)</span>
-<span class='curline'><a href='../S/46.html#L1156'>repeat</a>           1156 mpc/mpc.c            while (mpc_parse_run(i, p-&gt;data.repeat.x, &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1158'>repeat</a>           1158 mpc/mpc.c              if (j == p-&gt;data.repeat.n) { break; }</span>
-<span class='curline'><a href='../S/46.html#L1161'>repeat</a>           1161 mpc/mpc.c            if (j == p-&gt;data.repeat.n) {</span>
-<span class='curline'><a href='../S/46.html#L1163'>repeat</a>           1163 mpc/mpc.c                mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1164'>repeat</a>           1164 mpc/mpc.c                if (p-&gt;data.repeat.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1167'>repeat</a>           1167 mpc/mpc.c                mpc_parse_dtor(i, p-&gt;data.repeat.dx, results[k].output);</span>
-<span class='curline'><a href='../S/46.html#L1170'>repeat</a>           1170 mpc/mpc.c                mpc_err_count(i, results[j].error, p-&gt;data.repeat.n);</span>
-<span class='curline'><a href='../S/46.html#L1171'>repeat</a>           1171 mpc/mpc.c                if (p-&gt;data.repeat.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });  </span>
-<span class='curline'><a href='../S/46.html#L1355'>repeat</a>           1355 mpc/mpc.c            mpc_undefine_unretained(p-&gt;data.repeat.x, 0);</span>
-<span class='curline'><a href='../S/46.html#L1454'>repeat</a>           1454 mpc/mpc.c            p-&gt;data.repeat.x = mpc_copy(a-&gt;data.repeat.x);</span>
-<span class='curline'><a href='../S/46.html#L1757'>repeat</a>           1757 mpc/mpc.c        p-&gt;data.repeat.x = a;</span>
-<span class='curline'><a href='../S/46.html#L1758'>repeat</a>           1758 mpc/mpc.c        p-&gt;data.repeat.f = f;</span>
-<span class='curline'><a href='../S/46.html#L1765'>repeat</a>           1765 mpc/mpc.c        p-&gt;data.repeat.x = a;</span>
-<span class='curline'><a href='../S/46.html#L1766'>repeat</a>           1766 mpc/mpc.c        p-&gt;data.repeat.f = f;</span>
-<span class='curline'><a href='../S/46.html#L1773'>repeat</a>           1773 mpc/mpc.c        p-&gt;data.repeat.n = n;</span>
-<span class='curline'><a href='../S/46.html#L1774'>repeat</a>           1774 mpc/mpc.c        p-&gt;data.repeat.f = f;</span>
-<span class='curline'><a href='../S/46.html#L1775'>repeat</a>           1775 mpc/mpc.c        p-&gt;data.repeat.x = a;</span>
-<span class='curline'><a href='../S/46.html#L1776'>repeat</a>           1776 mpc/mpc.c        p-&gt;data.repeat.dx = da;</span>
-<span class='curline'><a href='../S/46.html#L2567'>repeat</a>           2567 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY)  { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("*"); }</span>
-<span class='curline'><a href='../S/46.html#L2568'>repeat</a>           2568 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY1) { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("+"); }</span>
-<span class='curline'><a href='../S/46.html#L2569'>repeat</a>           2569 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_COUNT) { mpc_print_unretained(p-&gt;data.repeat.x, 0); printf("{%i}", p-&gt;data.repeat.n); }</span>
-<span class='curline'><a href='../S/46.html#L3630'>repeat</a>           3630 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY)  { return 1 + mpc_nodecount_unretained(p-&gt;data.repeat.x, 0); }</span>
-<span class='curline'><a href='../S/46.html#L3631'>repeat</a>           3631 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY1) { return 1 + mpc_nodecount_unretained(p-&gt;data.repeat.x, 0); }</span>
-<span class='curline'><a href='../S/46.html#L3632'>repeat</a>           3632 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_COUNT) { return 1 + mpc_nodecount_unretained(p-&gt;data.repeat.x, 0); }</span>
-<span class='curline'><a href='../S/46.html#L3675'>repeat</a>           3675 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY)     { mpc_optimise_unretained(p-&gt;data.repeat.x, 0); }</span>
-<span class='curline'><a href='../S/46.html#L3676'>repeat</a>           3676 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_MANY1)    { mpc_optimise_unretained(p-&gt;data.repeat.x, 0); }</span>
-<span class='curline'><a href='../S/46.html#L3677'>repeat</a>           3677 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_COUNT)    { mpc_optimise_unretained(p-&gt;data.repeat.x, 0); }</span>
+<span class='curline'><a href='../S/51.html#L39'>r4</a>                 39 mpc/tests/core.c   int r0 = 1, r1 = 5, r2 = 13, r3 = 0, r4 = 2;</span>
+<span class='curline'><a href='../S/51.html#L67'>r4</a>                 67 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", &amp;r4, int_eq, free, int_print));</span>
 </pre>
 </body>
 </html>

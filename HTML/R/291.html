@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_not_lift</title>
+<title>mpc_maybe_lift</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,13 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1739'>mpc_not_lift</a>     1739 mpc/mpc.c        return mpc_not_lift(a, da, mpcf_ctor_null);</span>
-<span class='curline'><a href='../S/46.html#L2042'>mpc_not_lift</a>     2042 mpc/mpc.c          case 'B': return mpc_not_lift(mpc_boundary(), free, mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/46.html#L2046'>mpc_not_lift</a>     2046 mpc/mpc.c          case 'D': return mpc_not_lift(mpc_digit(), free, mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/46.html#L2048'>mpc_not_lift</a>     2048 mpc/mpc.c          case 'S': return mpc_not_lift(mpc_whitespace(), free, mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/46.html#L2050'>mpc_not_lift</a>     2050 mpc/mpc.c          case 'W': return mpc_not_lift(mpc_alphanum(), free, mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/47.html#L130'>mpc_not_lift</a>      130 mpc/mpc.h      mpc_parser_t *mpc_not_lift(mpc_parser_t *a, mpc_dtor_t da, mpc_ctor_t lf);</span>
+<span class='curline'><a href='../S/48.html#L1751'>mpc_maybe_lift</a>   1751 mpc/mpc.c        return mpc_maybe_lift(a, mpcf_ctor_null);</span>
+<span class='curline'><a href='../S/48.html#L1880'>mpc_maybe_lift</a>   1880 mpc/mpc.c        p0 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1882'>mpc_maybe_lift</a>   1882 mpc/mpc.c        p2 = mpc_maybe_lift(mpc_and(2, mpcf_strfold, mpc_char('.'), mpc_digits(), free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1884'>mpc_maybe_lift</a>   1884 mpc/mpc.c        p31 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1886'>mpc_maybe_lift</a>   1886 mpc/mpc.c        p3 = mpc_maybe_lift(mpc_and(3, mpcf_strfold, p30, p31, p32, free, free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2026'>mpc_maybe_lift</a>   2026 mpc/mpc.c        if (strcmp(xs[1], "?") == 0) { free(xs[1]); return mpc_maybe_lift(xs[0], mpcf_ctor_str); }</span>
+<span class='curline'><a href='../S/49.html#L132'>mpc_maybe_lift</a>    132 mpc/mpc.h      mpc_parser_t *mpc_maybe_lift(mpc_parser_t *a, mpc_ctor_t lf);</span>
 </pre>
 </body>
 </html>

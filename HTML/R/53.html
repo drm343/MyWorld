@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>MPC_INPUT_FILE</title>
+<title>MPC_FAILURE</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,19 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L196'>MPC_INPUT_FILE</a>    196 mpc/mpc.c        i-&gt;type = MPC_INPUT_FILE;</span>
-<span class='curline'><a href='../S/46.html#L349'>MPC_INPUT_FILE</a>    349 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_FILE) {</span>
-<span class='curline'><a href='../S/46.html#L366'>MPC_INPUT_FILE</a>    366 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_FILE &amp;&amp; feof(i-&gt;file)) { return 1; }</span>
-<span class='curline'><a href='../S/46.html#L378'>MPC_INPUT_FILE</a>    378 mpc/mpc.c          case MPC_INPUT_FILE: c = fgetc(i-&gt;file); return c;</span>
-<span class='curline'><a href='../S/46.html#L401'>MPC_INPUT_FILE</a>    401 mpc/mpc.c          case MPC_INPUT_FILE: </span>
-<span class='curline'><a href='../S/46.html#L436'>MPC_INPUT_FILE</a>    436 mpc/mpc.c          case MPC_INPUT_FILE: fseek(i-&gt;file, -1, SEEK_CUR); { break; }</span>
+<span class='curline'><a href='../S/48.html#L1007'>MPC_FAILURE</a>      1007 mpc/mpc.c        else { MPC_FAILURE(NULL); }</span>
+<span class='curline'><a href='../S/48.html#L1031'>MPC_FAILURE</a>      1031 mpc/mpc.c          case MPC_TYPE_UNDEFINED: MPC_FAILURE(mpc_err_fail(i, "Parser Undefined!"));</span>
+<span class='curline'><a href='../S/48.html#L1033'>MPC_FAILURE</a>      1033 mpc/mpc.c          case MPC_TYPE_FAIL:      MPC_FAILURE(mpc_err_fail(i, p-&gt;data.fail.m));</span>
+<span class='curline'><a href='../S/48.html#L1044'>MPC_FAILURE</a>      1044 mpc/mpc.c              MPC_FAILURE(r-&gt;output);</span>
+<span class='curline'><a href='../S/48.html#L1051'>MPC_FAILURE</a>      1051 mpc/mpc.c              MPC_FAILURE(r-&gt;error);</span>
+<span class='curline'><a href='../S/48.html#L1061'>MPC_FAILURE</a>      1061 mpc/mpc.c              MPC_FAILURE(mpc_err_new(i, p-&gt;data.expect.m));</span>
+<span class='curline'><a href='../S/48.html#L1071'>MPC_FAILURE</a>      1071 mpc/mpc.c              MPC_FAILURE(r-&gt;error);</span>
+<span class='curline'><a href='../S/48.html#L1085'>MPC_FAILURE</a>      1085 mpc/mpc.c              MPC_FAILURE(mpc_err_new(i, "opposite"));</span>
+<span class='curline'><a href='../S/48.html#L1140'>MPC_FAILURE</a>      1140 mpc/mpc.c              MPC_FAILURE(</span>
+<span class='curline'><a href='../S/48.html#L1169'>MPC_FAILURE</a>      1169 mpc/mpc.c              MPC_FAILURE(</span>
+<span class='curline'><a href='../S/48.html#L1193'>MPC_FAILURE</a>      1193 mpc/mpc.c            MPC_FAILURE(NULL;</span>
+<span class='curline'><a href='../S/48.html#L1211'>MPC_FAILURE</a>      1211 mpc/mpc.c                MPC_FAILURE(results[j].error;</span>
+<span class='curline'><a href='../S/48.html#L1224'>MPC_FAILURE</a>      1224 mpc/mpc.c            MPC_FAILURE(mpc_err_fail(i, "Unknown Parser Type Id!"));</span>
 </pre>
 </body>
 </html>

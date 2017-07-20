@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_copy</title>
+<title>mpc_boundary</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,18 +9,9 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1436'>mpc_copy</a>         1436 mpc/mpc.c          case MPC_TYPE_APPLY:    p-&gt;data.apply.x    = mpc_copy(a-&gt;data.apply.x);    break;</span>
-<span class='curline'><a href='../S/46.html#L1437'>mpc_copy</a>         1437 mpc/mpc.c          case MPC_TYPE_APPLY_TO: p-&gt;data.apply_to.x = mpc_copy(a-&gt;data.apply_to.x); break;</span>
-<span class='curline'><a href='../S/46.html#L1438'>mpc_copy</a>         1438 mpc/mpc.c          case MPC_TYPE_PREDICT:  p-&gt;data.predict.x  = mpc_copy(a-&gt;data.predict.x);  break;</span>
-<span class='curline'><a href='../S/46.html#L1442'>mpc_copy</a>         1442 mpc/mpc.c            p-&gt;data.not.x = mpc_copy(a-&gt;data.not.x);</span>
-<span class='curline'><a href='../S/46.html#L1446'>mpc_copy</a>         1446 mpc/mpc.c            p-&gt;data.expect.x = mpc_copy(a-&gt;data.expect.x);</span>
-<span class='curline'><a href='../S/46.html#L1454'>mpc_copy</a>         1454 mpc/mpc.c            p-&gt;data.repeat.x = mpc_copy(a-&gt;data.repeat.x);</span>
-<span class='curline'><a href='../S/46.html#L1460'>mpc_copy</a>         1460 mpc/mpc.c              p-&gt;data.or.xs[i] = mpc_copy(a-&gt;data.or.xs[i]);</span>
-<span class='curline'><a href='../S/46.html#L1466'>mpc_copy</a>         1466 mpc/mpc.c              p-&gt;data.and.xs[i] = mpc_copy(a-&gt;data.and.xs[i]);</span>
-<span class='curline'><a href='../S/47.html#L89'>mpc_copy</a>           89 mpc/mpc.h      mpc_parser_t *mpc_copy(mpc_parser_t *a);</span>
-<span class='curline'><a href='../S/49.html#L122'>mpc_copy</a>          122 mpc/tests/core.c   mpc_parser_t* q = mpc_and(2, mpcf_strfold, p, mpc_copy(p), free);</span>
-<span class='curline'><a href='../S/49.html#L148'>mpc_copy</a>          148 mpc/tests/core.c   mpc_delete(mpc_copy(p));</span>
-<span class='curline'><a href='../S/49.html#L149'>mpc_copy</a>          149 mpc/tests/core.c   mpc_delete(mpc_copy(q));</span>
+<span class='curline'><a href='../S/48.html#L2041'>mpc_boundary</a>     2041 mpc/mpc.c          case 'b': return mpc_and(2, mpcf_snd, mpc_boundary(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2042'>mpc_boundary</a>     2042 mpc/mpc.c          case 'B': return mpc_not_lift(mpc_boundary(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/49.html#L150'>mpc_boundary</a>      150 mpc/mpc.h      mpc_parser_t *mpc_boundary(void);</span>
 </pre>
 </body>
 </html>

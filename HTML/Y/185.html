@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>argv</title>
+<title>apply_to</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,24 +9,17 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/34.html#L3'>argv</a>                3 mpc/examples/doge.c int main(int argc, char **argv) {</span>
-<span class='curline'><a href='../S/34.html#L21'>argv</a>               21 mpc/examples/doge.c     if (mpc_parse_contents(argv[1], Doge, &amp;r)) {</span>
-<span class='curline'><a href='../S/36.html#L3'>argv</a>                3 mpc/examples/foobar.c int main(int argc, char** argv) {</span>
-<span class='curline'><a href='../S/36.html#L16'>argv</a>               16 mpc/examples/foobar.c     if (mpc_parse("&lt;stdin&gt;", argv[1], Foobar, &amp;r)) {</span>
-<span class='curline'><a href='../S/37.html#L3'>argv</a>                3 mpc/examples/lispy.c int main(int argc, char **argv) {</span>
-<span class='curline'><a href='../S/37.html#L30'>argv</a>               30 mpc/examples/lispy.c     if (mpc_parse_contents(argv[1], Lispy, &amp;r)) {</span>
-<span class='curline'><a href='../S/38.html#L3'>argv</a>                3 mpc/examples/maths.c int main(int argc, char **argv) {</span>
-<span class='curline'><a href='../S/38.html#L25'>argv</a>               25 mpc/examples/maths.c     if (mpc_parse_contents(argv[1], Maths, &amp;r)) {</span>
-<span class='curline'><a href='../S/43.html#L3'>argv</a>                3 mpc/examples/smallc.c int main(int argc, char **argv) {</span>
-<span class='curline'><a href='../S/43.html#L74'>argv</a>               74 mpc/examples/smallc.c     if (mpc_parse_contents(argv[1], Smallc, &amp;r)) {</span>
-<span class='curline'><a href='../S/45.html#L3'>argv</a>                3 mpc/examples/tree_traversal.c int main(int argc, char *argv[]) {</span>
-<span class='curline'><a href='../S/45.html#L21'>argv</a>               21 mpc/examples/tree_traversal.c     if (mpc_parse_contents(argv[1], Input, &amp;r)) {</span>
-<span class='curline'><a href='../S/55.html#L7'>argv</a>                7 mpc/tests/test.c int main(int argc, char** argv) {</span>
-<span class='curline'><a href='../S/55.html#L8'>argv</a>                8 mpc/tests/test.c   (void) argc; (void) argv;</span>
-<span class='curline'><a href='../S/27.html#L84'>argv</a>               84 src/main.c     int main(int argc, char *argv[]) {</span>
-<span class='curline'><a href='../S/27.html#L107'>argv</a>              107 src/main.c         size_t path_lang = strlen(argv[1]);</span>
-<span class='curline'><a href='../S/27.html#L109'>argv</a>              109 src/main.c         strcpy(CONF_PATH, argv[1]);</span>
-<span class='curline'><a href='../S/27.html#L113'>argv</a>              113 src/main.c         setup_character_config_path(argv[1]);</span>
+<span class='curline'><a href='../S/48.html#L914'>apply_to</a>          914 mpc/mpc.c        mpc_pdata_apply_to_t apply_to;</span>
+<span class='curline'><a href='../S/48.html#L1048'>apply_to</a>         1048 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.apply_to.x, r, e)) {</span>
+<span class='curline'><a href='../S/48.html#L1049'>apply_to</a>         1049 mpc/mpc.c              MPC_SUCCESS(mpc_parse_apply_to(i, p-&gt;data.apply_to.f, r-&gt;output, p-&gt;data.apply_to.d));</span>
+<span class='curline'><a href='../S/48.html#L1339'>apply_to</a>         1339 mpc/mpc.c          case MPC_TYPE_APPLY_TO: mpc_undefine_unretained(p-&gt;data.apply_to.x, 0); break;</span>
+<span class='curline'><a href='../S/48.html#L1437'>apply_to</a>         1437 mpc/mpc.c          case MPC_TYPE_APPLY_TO: p-&gt;data.apply_to.x = mpc_copy(a-&gt;data.apply_to.x); break;</span>
+<span class='curline'><a href='../S/48.html#L1716'>apply_to</a>         1716 mpc/mpc.c        p-&gt;data.apply_to.x = a;</span>
+<span class='curline'><a href='../S/48.html#L1717'>apply_to</a>         1717 mpc/mpc.c        p-&gt;data.apply_to.f = f;</span>
+<span class='curline'><a href='../S/48.html#L1718'>apply_to</a>         1718 mpc/mpc.c        p-&gt;data.apply_to.d = x;</span>
+<span class='curline'><a href='../S/48.html#L2561'>apply_to</a>         2561 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { mpc_print_unretained(p-&gt;data.apply_to.x, 0); }</span>
+<span class='curline'><a href='../S/48.html#L3624'>apply_to</a>         3624 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { return 1 + mpc_nodecount_unretained(p-&gt;data.apply_to.x, 0); }</span>
+<span class='curline'><a href='../S/48.html#L3671'>apply_to</a>         3671 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_APPLY_TO) { mpc_optimise_unretained(p-&gt;data.apply_to.x, 0); }</span>
 </pre>
 </body>
 </html>

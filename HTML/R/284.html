@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_mem_ptr</title>
+<title>mpc_lift</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,13 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L263'>mpc_mem_ptr</a>       263 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { free(p); return; }</span>
-<span class='curline'><a href='../S/46.html#L272'>mpc_mem_ptr</a>       272 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { return realloc(p, n); }</span>
-<span class='curline'><a href='../S/46.html#L286'>mpc_mem_ptr</a>       286 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { return p; }</span>
+<span class='curline'><a href='../S/48.html#L2013'>mpc_lift</a>         2013 mpc/mpc.c        mpc_parser_t *p = mpc_lift(mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2041'>mpc_lift</a>         2041 mpc/mpc.c          case 'b': return mpc_and(2, mpcf_snd, mpc_boundary(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2043'>mpc_lift</a>         2043 mpc/mpc.c          case 'A': return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2044'>mpc_lift</a>         2044 mpc/mpc.c          case 'Z': return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2062'>mpc_lift</a>         2062 mpc/mpc.c        if (s[0] == '^') { free(s); return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/48.html#L2063'>mpc_lift</a>         2063 mpc/mpc.c        if (s[0] == '$') { free(s); return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/49.html#L115'>mpc_lift</a>          115 mpc/mpc.h      mpc_parser_t *mpc_lift(mpc_ctor_t f);</span>
 </pre>
 </body>
 </html>

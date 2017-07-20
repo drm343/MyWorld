@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>MPC_SUCCESS</title>
+<title>MPC_PRIMITIVE</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,25 +9,14 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1006'>MPC_SUCCESS</a>      1006 mpc/mpc.c        if (x) { MPC_SUCCESS(r-&gt;output); } \</span>
-<span class='curline'><a href='../S/46.html#L1032'>MPC_SUCCESS</a>      1032 mpc/mpc.c          case MPC_TYPE_PASS:      MPC_SUCCESS(NULL);</span>
-<span class='curline'><a href='../S/46.html#L1034'>MPC_SUCCESS</a>      1034 mpc/mpc.c          case MPC_TYPE_LIFT:      MPC_SUCCESS(p-&gt;data.lift.lf());</span>
-<span class='curline'><a href='../S/46.html#L1035'>MPC_SUCCESS</a>      1035 mpc/mpc.c          case MPC_TYPE_LIFT_VAL:  MPC_SUCCESS(p-&gt;data.lift.x);</span>
-<span class='curline'><a href='../S/46.html#L1036'>MPC_SUCCESS</a>      1036 mpc/mpc.c          case MPC_TYPE_STATE:     MPC_SUCCESS(mpc_input_state_copy(i));</span>
-<span class='curline'><a href='../S/46.html#L1042'>MPC_SUCCESS</a>      1042 mpc/mpc.c              MPC_SUCCESS(mpc_parse_apply(i, p-&gt;data.apply.f, r-&gt;output));</span>
-<span class='curline'><a href='../S/46.html#L1049'>MPC_SUCCESS</a>      1049 mpc/mpc.c              MPC_SUCCESS(mpc_parse_apply_to(i, p-&gt;data.apply_to.f, r-&gt;output, p-&gt;data.apply_to.d));</span>
-<span class='curline'><a href='../S/46.html#L1058'>MPC_SUCCESS</a>      1058 mpc/mpc.c              MPC_SUCCESS(r-&gt;output);</span>
-<span class='curline'><a href='../S/46.html#L1068'>MPC_SUCCESS</a>      1068 mpc/mpc.c              MPC_SUCCESS(r-&gt;output);</span>
-<span class='curline'><a href='../S/46.html#L1089'>MPC_SUCCESS</a>      1089 mpc/mpc.c              MPC_SUCCESS(p-&gt;data.not.lf());</span>
-<span class='curline'><a href='../S/46.html#L1094'>MPC_SUCCESS</a>      1094 mpc/mpc.c              MPC_SUCCESS(r-&gt;output);</span>
-<span class='curline'><a href='../S/46.html#L1097'>MPC_SUCCESS</a>      1097 mpc/mpc.c              MPC_SUCCESS(p-&gt;data.not.lf());</span>
-<span class='curline'><a href='../S/46.html#L1119'>MPC_SUCCESS</a>      1119 mpc/mpc.c            MPC_SUCCESS(</span>
-<span class='curline'><a href='../S/46.html#L1145'>MPC_SUCCESS</a>      1145 mpc/mpc.c              MPC_SUCCESS(</span>
-<span class='curline'><a href='../S/46.html#L1162'>MPC_SUCCESS</a>      1162 mpc/mpc.c              MPC_SUCCESS(</span>
-<span class='curline'><a href='../S/46.html#L1178'>MPC_SUCCESS</a>      1178 mpc/mpc.c            if (p-&gt;data.or.n == 0) { MPC_SUCCESS(NULL); }</span>
-<span class='curline'><a href='../S/46.html#L1186'>MPC_SUCCESS</a>      1186 mpc/mpc.c                MPC_SUCCESS(results[j].output;</span>
-<span class='curline'><a href='../S/46.html#L1198'>MPC_SUCCESS</a>      1198 mpc/mpc.c            if (p-&gt;data.and.n == 0) { MPC_SUCCESS(NULL); }</span>
-<span class='curline'><a href='../S/46.html#L1216'>MPC_SUCCESS</a>      1216 mpc/mpc.c            MPC_SUCCESS(</span>
+<span class='curline'><a href='../S/48.html#L1020'>MPC_PRIMITIVE</a>    1020 mpc/mpc.c          case MPC_TYPE_ANY:     MPC_PRIMITIVE(mpc_input_any(i, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1021'>MPC_PRIMITIVE</a>    1021 mpc/mpc.c          case MPC_TYPE_SINGLE:  MPC_PRIMITIVE(mpc_input_char(i, p-&gt;data.single.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1022'>MPC_PRIMITIVE</a>    1022 mpc/mpc.c          case MPC_TYPE_RANGE:   MPC_PRIMITIVE(mpc_input_range(i, p-&gt;data.range.x, p-&gt;data.range.y, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1023'>MPC_PRIMITIVE</a>    1023 mpc/mpc.c          case MPC_TYPE_ONEOF:   MPC_PRIMITIVE(mpc_input_oneof(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1024'>MPC_PRIMITIVE</a>    1024 mpc/mpc.c          case MPC_TYPE_NONEOF:  MPC_PRIMITIVE(mpc_input_noneof(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1025'>MPC_PRIMITIVE</a>    1025 mpc/mpc.c          case MPC_TYPE_SATISFY: MPC_PRIMITIVE(mpc_input_satisfy(i, p-&gt;data.satisfy.f, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1026'>MPC_PRIMITIVE</a>    1026 mpc/mpc.c          case MPC_TYPE_STRING:  MPC_PRIMITIVE(mpc_input_string(i, p-&gt;data.string.x, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1027'>MPC_PRIMITIVE</a>    1027 mpc/mpc.c          case MPC_TYPE_ANCHOR:  MPC_PRIMITIVE(mpc_input_anchor(i, p-&gt;data.anchor.f, (char**)&amp;r-&gt;output));</span>
 </pre>
 </body>
 </html>

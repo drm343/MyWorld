@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_ast_delete_no_children</title>
+<title>mpc_apply</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,23 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L3015'>mpc_ast_delete_no_children</a> 3015 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
-<span class='curline'><a href='../S/46.html#L3020'>mpc_ast_delete_no_children</a> 3020 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
+<span class='curline'><a href='../S/48.html#L1850'>mpc_apply</a>        1850 mpc/mpc.c      mpc_parser_t *mpc_blank(void) { return mpc_expect(mpc_apply(mpc_whitespaces(), mpcf_free), "whitespace"); }</span>
+<span class='curline'><a href='../S/48.html#L1869'>mpc_apply</a>        1869 mpc/mpc.c      mpc_parser_t *mpc_int(void) { return mpc_expect(mpc_apply(mpc_digits(), mpcf_int), "integer"); }</span>
+<span class='curline'><a href='../S/48.html#L1870'>mpc_apply</a>        1870 mpc/mpc.c      mpc_parser_t *mpc_hex(void) { return mpc_expect(mpc_apply(mpc_hexdigits(), mpcf_hex), "hexadecimal"); }</span>
+<span class='curline'><a href='../S/48.html#L1871'>mpc_apply</a>        1871 mpc/mpc.c      mpc_parser_t *mpc_oct(void) { return mpc_expect(mpc_apply(mpc_octdigits(), mpcf_oct), "octadecimal"); }</span>
+<span class='curline'><a href='../S/48.html#L1893'>mpc_apply</a>        1893 mpc/mpc.c        return mpc_expect(mpc_apply(mpc_real(), mpcf_float), "float");</span>
+<span class='curline'><a href='../S/48.html#L2192'>mpc_apply</a>        2192 mpc/mpc.c          mpc_apply(mpc_escape(), mpcf_re_escape),</span>
+<span class='curline'><a href='../S/48.html#L2193'>mpc_apply</a>        2193 mpc/mpc.c          mpc_apply(mpc_noneof(")|"), mpcf_re_escape)</span>
+<span class='curline'><a href='../S/48.html#L2196'>mpc_apply</a>        2196 mpc/mpc.c        mpc_define(Range, mpc_apply(</span>
+<span class='curline'><a href='../S/48.html#L3060'>mpc_apply</a>        3060 mpc/mpc.c        return mpc_apply(a, (mpc_apply_t)mpc_ast_add_root);</span>
+<span class='curline'><a href='../S/48.html#L3201'>mpc_apply</a>        3201 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "string"));</span>
+<span class='curline'><a href='../S/48.html#L3209'>mpc_apply</a>        3209 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "char"));</span>
+<span class='curline'><a href='../S/48.html#L3217'>mpc_apply</a>        3217 mpc/mpc.c        return mpca_state(mpca_tag(mpc_apply(p, mpcf_str_ast), "regex"));</span>
+<span class='curline'><a href='../S/49.html#L126'>mpc_apply</a>         126 mpc/mpc.h      mpc_parser_t *mpc_apply(mpc_parser_t *a, mpc_apply_t f);</span>
+<span class='curline'><a href='../S/51.html#L74'>mpc_apply</a>          74 mpc/tests/core.c   mpc_parser_t *Stripperl = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtriml);</span>
+<span class='curline'><a href='../S/51.html#L75'>mpc_apply</a>          75 mpc/tests/core.c   mpc_parser_t *Stripperr = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrimr);</span>
+<span class='curline'><a href='../S/51.html#L76'>mpc_apply</a>          76 mpc/tests/core.c   mpc_parser_t *Stripper  = mpc_apply(mpc_many(mpcf_strfold, mpc_any()), mpcf_strtrim);</span>
+<span class='curline'><a href='../S/52.html#L142'>mpc_apply</a>         142 mpc/tests/grammar.c   mpc_define(Line, mpca_tag(mpc_apply(mpc_sym("#line"), mpcf_str_ast), "string"));</span>
 </pre>
 </body>
 </html>

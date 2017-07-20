@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_val_t</title>
+<title>mpc_total</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,120 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L929'>mpc_val_t</a>         929 mpc/mpc.c      static mpc_val_t *mpcf_input_nth_free(mpc_input_t *i, int n, mpc_val_t **xs, int x) {</span>
-<span class='curline'><a href='../S/46.html#L935'>mpc_val_t</a>         935 mpc/mpc.c      static mpc_val_t *mpcf_input_fst_free(mpc_input_t *i, int n, mpc_val_t **xs) { return mpcf_input_nth_free(i, n, xs, 0); }</span>
-<span class='curline'><a href='../S/46.html#L936'>mpc_val_t</a>         936 mpc/mpc.c      static mpc_val_t *mpcf_input_snd_free(mpc_input_t *i, int n, mpc_val_t **xs) { return mpcf_input_nth_free(i, n, xs, 1); }</span>
-<span class='curline'><a href='../S/46.html#L937'>mpc_val_t</a>         937 mpc/mpc.c      static mpc_val_t *mpcf_input_trd_free(mpc_input_t *i, int n, mpc_val_t **xs) { return mpcf_input_nth_free(i, n, xs, 2); }</span>
-<span class='curline'><a href='../S/46.html#L939'>mpc_val_t</a>         939 mpc/mpc.c      static mpc_val_t *mpcf_input_strfold(mpc_input_t *i, int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L949'>mpc_val_t</a>         949 mpc/mpc.c      static mpc_val_t *mpcf_input_state_ast(mpc_input_t *i, int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L958'>mpc_val_t</a>         958 mpc/mpc.c      static mpc_val_t *mpc_parse_fold(mpc_input_t *i, mpc_fold_t f, int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L973'>mpc_val_t</a>         973 mpc/mpc.c      static mpc_val_t *mpcf_input_free(mpc_input_t *i, mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L978'>mpc_val_t</a>         978 mpc/mpc.c      static mpc_val_t *mpcf_input_str_ast(mpc_input_t *i, mpc_val_t *c) {</span>
-<span class='curline'><a href='../S/46.html#L984'>mpc_val_t</a>         984 mpc/mpc.c      static mpc_val_t *mpc_parse_apply(mpc_input_t *i, mpc_apply_t f, mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L990'>mpc_val_t</a>         990 mpc/mpc.c      static mpc_val_t *mpc_parse_apply_to(mpc_input_t *i, mpc_apply_to_t f, mpc_val_t *x, mpc_val_t *d) {</span>
-<span class='curline'><a href='../S/46.html#L994'>mpc_val_t</a>         994 mpc/mpc.c      static void mpc_parse_dtor(mpc_input_t *i, mpc_dtor_t d, mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L1120'>mpc_val_t</a>        1120 mpc/mpc.c              mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1146'>mpc_val_t</a>        1146 mpc/mpc.c                mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1163'>mpc_val_t</a>        1163 mpc/mpc.c                mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1217'>mpc_val_t</a>        1217 mpc/mpc.c              mpc_parse_fold(i, p-&gt;data.and.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1386'>mpc_val_t</a>        1386 mpc/mpc.c      static void mpc_soft_delete(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L1570'>mpc_val_t</a>        1570 mpc/mpc.c      mpc_parser_t *mpc_lift_val(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2005'>mpc_val_t</a>        2005 mpc/mpc.c      static mpc_val_t *mpcf_re_or(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L2011'>mpc_val_t</a>        2011 mpc/mpc.c      static mpc_val_t *mpcf_re_and(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L2020'>mpc_val_t</a>        2020 mpc/mpc.c      static mpc_val_t *mpcf_re_repeat(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L2055'>mpc_val_t</a>        2055 mpc/mpc.c      static mpc_val_t *mpcf_re_escape(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2096'>mpc_val_t</a>        2096 mpc/mpc.c      static mpc_val_t *mpcf_re_range(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2230'>mpc_val_t</a>        2230 mpc/mpc.c      void mpcf_dtor_null(mpc_val_t *x) { (void) x; return; }</span>
-<span class='curline'><a href='../S/46.html#L2232'>mpc_val_t</a>        2232 mpc/mpc.c      mpc_val_t *mpcf_ctor_null(void) { return NULL; }</span>
-<span class='curline'><a href='../S/46.html#L2233'>mpc_val_t</a>        2233 mpc/mpc.c      mpc_val_t *mpcf_ctor_str(void) { return calloc(1, 1); }</span>
-<span class='curline'><a href='../S/46.html#L2234'>mpc_val_t</a>        2234 mpc/mpc.c      mpc_val_t *mpcf_free(mpc_val_t *x) { free(x); return NULL; }</span>
-<span class='curline'><a href='../S/46.html#L2236'>mpc_val_t</a>        2236 mpc/mpc.c      mpc_val_t *mpcf_int(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2243'>mpc_val_t</a>        2243 mpc/mpc.c      mpc_val_t *mpcf_hex(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2250'>mpc_val_t</a>        2250 mpc/mpc.c      mpc_val_t *mpcf_oct(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2257'>mpc_val_t</a>        2257 mpc/mpc.c      mpc_val_t *mpcf_float(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2264'>mpc_val_t</a>        2264 mpc/mpc.c      mpc_val_t *mpcf_strtriml(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2272'>mpc_val_t</a>        2272 mpc/mpc.c      mpc_val_t *mpcf_strtrimr(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2281'>mpc_val_t</a>        2281 mpc/mpc.c      mpc_val_t *mpcf_strtrim(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2302'>mpc_val_t</a>        2302 mpc/mpc.c      static mpc_val_t *mpcf_escape_new(mpc_val_t *x, const char *input, const char **output) {</span>
-<span class='curline'><a href='../S/46.html#L2338'>mpc_val_t</a>        2338 mpc/mpc.c      static mpc_val_t *mpcf_unescape_new(mpc_val_t *x, const char *input, const char **output) {</span>
-<span class='curline'><a href='../S/46.html#L2378'>mpc_val_t</a>        2378 mpc/mpc.c      mpc_val_t *mpcf_escape(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2379'>mpc_val_t</a>        2379 mpc/mpc.c        mpc_val_t *y = mpcf_escape_new(x, mpc_escape_input_c, mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2384'>mpc_val_t</a>        2384 mpc/mpc.c      mpc_val_t *mpcf_unescape(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2385'>mpc_val_t</a>        2385 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_c, mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2390'>mpc_val_t</a>        2390 mpc/mpc.c      mpc_val_t *mpcf_escape_regex(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2391'>mpc_val_t</a>        2391 mpc/mpc.c        mpc_val_t *y = mpcf_escape_new(x, mpc_escape_input_raw_re, mpc_escape_output_raw_re);</span>
-<span class='curline'><a href='../S/46.html#L2396'>mpc_val_t</a>        2396 mpc/mpc.c      mpc_val_t *mpcf_unescape_regex(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2397'>mpc_val_t</a>        2397 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_re, mpc_escape_output_raw_re);</span>
-<span class='curline'><a href='../S/46.html#L2402'>mpc_val_t</a>        2402 mpc/mpc.c      mpc_val_t *mpcf_escape_string_raw(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2403'>mpc_val_t</a>        2403 mpc/mpc.c        mpc_val_t *y = mpcf_escape_new(x, mpc_escape_input_raw_cstr, mpc_escape_output_raw_cstr);</span>
-<span class='curline'><a href='../S/46.html#L2408'>mpc_val_t</a>        2408 mpc/mpc.c      mpc_val_t *mpcf_unescape_string_raw(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2409'>mpc_val_t</a>        2409 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_cstr, mpc_escape_output_raw_cstr);</span>
-<span class='curline'><a href='../S/46.html#L2414'>mpc_val_t</a>        2414 mpc/mpc.c      mpc_val_t *mpcf_escape_char_raw(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2415'>mpc_val_t</a>        2415 mpc/mpc.c        mpc_val_t *y = mpcf_escape_new(x, mpc_escape_input_raw_cchar, mpc_escape_output_raw_cchar);</span>
-<span class='curline'><a href='../S/46.html#L2420'>mpc_val_t</a>        2420 mpc/mpc.c      mpc_val_t *mpcf_unescape_char_raw(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L2421'>mpc_val_t</a>        2421 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_cchar, mpc_escape_output_raw_cchar);</span>
-<span class='curline'><a href='../S/46.html#L2426'>mpc_val_t</a>        2426 mpc/mpc.c      mpc_val_t *mpcf_null(int n, mpc_val_t** xs) { (void) n; (void) xs; return NULL; }</span>
-<span class='curline'><a href='../S/46.html#L2427'>mpc_val_t</a>        2427 mpc/mpc.c      mpc_val_t *mpcf_fst(int n, mpc_val_t **xs) { (void) n; return xs[0]; }</span>
-<span class='curline'><a href='../S/46.html#L2428'>mpc_val_t</a>        2428 mpc/mpc.c      mpc_val_t *mpcf_snd(int n, mpc_val_t **xs) { (void) n; return xs[1]; }</span>
-<span class='curline'><a href='../S/46.html#L2429'>mpc_val_t</a>        2429 mpc/mpc.c      mpc_val_t *mpcf_trd(int n, mpc_val_t **xs) { (void) n; return xs[2]; }</span>
-<span class='curline'><a href='../S/46.html#L2431'>mpc_val_t</a>        2431 mpc/mpc.c      static mpc_val_t *mpcf_nth_free(int n, mpc_val_t **xs, int x) {</span>
-<span class='curline'><a href='../S/46.html#L2439'>mpc_val_t</a>        2439 mpc/mpc.c      mpc_val_t *mpcf_fst_free(int n, mpc_val_t **xs) { return mpcf_nth_free(n, xs, 0); }</span>
-<span class='curline'><a href='../S/46.html#L2440'>mpc_val_t</a>        2440 mpc/mpc.c      mpc_val_t *mpcf_snd_free(int n, mpc_val_t **xs) { return mpcf_nth_free(n, xs, 1); }</span>
-<span class='curline'><a href='../S/46.html#L2441'>mpc_val_t</a>        2441 mpc/mpc.c      mpc_val_t *mpcf_trd_free(int n, mpc_val_t **xs) { return mpcf_nth_free(n, xs, 2); }</span>
-<span class='curline'><a href='../S/46.html#L2443'>mpc_val_t</a>        2443 mpc/mpc.c      mpc_val_t *mpcf_strfold(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L2460'>mpc_val_t</a>        2460 mpc/mpc.c      mpc_val_t *mpcf_maths(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L2994'>mpc_val_t</a>        2994 mpc/mpc.c      mpc_val_t *mpcf_fold_ast(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L3032'>mpc_val_t</a>        3032 mpc/mpc.c      mpc_val_t *mpcf_str_ast(mpc_val_t *c) {</span>
-<span class='curline'><a href='../S/46.html#L3038'>mpc_val_t</a>        3038 mpc/mpc.c      mpc_val_t *mpcf_state_ast(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L3168'>mpc_val_t</a>        3168 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_or(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L3174'>mpc_val_t</a>        3174 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_and(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L3183'>mpc_val_t</a>        3183 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_repeat(int n, mpc_val_t **xs) { </span>
-<span class='curline'><a href='../S/46.html#L3196'>mpc_val_t</a>        3196 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_string(mpc_val_t *x, void *s) {</span>
-<span class='curline'><a href='../S/46.html#L3204'>mpc_val_t</a>        3204 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_char(mpc_val_t *x, void *s) {</span>
-<span class='curline'><a href='../S/46.html#L3212'>mpc_val_t</a>        3212 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_regex(mpc_val_t *x, void *s) {</span>
-<span class='curline'><a href='../S/46.html#L3276'>mpc_val_t</a>        3276 mpc/mpc.c      static mpc_val_t *mpcaf_grammar_id(mpc_val_t *x, void *s) {</span>
-<span class='curline'><a href='../S/46.html#L3379'>mpc_val_t</a>        3379 mpc/mpc.c      static mpc_val_t *mpca_stmt_afold(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L3391'>mpc_val_t</a>        3391 mpc/mpc.c      static mpc_val_t *mpca_stmt_fold(int n, mpc_val_t **xs) {</span>
-<span class='curline'><a href='../S/46.html#L3404'>mpc_val_t</a>        3404 mpc/mpc.c      static void mpca_stmt_list_delete(mpc_val_t *x) {</span>
-<span class='curline'><a href='../S/46.html#L3420'>mpc_val_t</a>        3420 mpc/mpc.c      static mpc_val_t *mpca_stmt_list_apply_to(mpc_val_t *x, void *s) {</span>
-<span class='curline'><a href='../S/47.html#L61'>mpc_val_t</a>          61 mpc/mpc.h        mpc_val_t *output;</span>
-<span class='curline'><a href='../S/47.html#L77'>mpc_val_t</a>          77 mpc/mpc.h      typedef void(*mpc_dtor_t)(mpc_val_t*);</span>
-<span class='curline'><a href='../S/47.html#L78'>mpc_val_t</a>          78 mpc/mpc.h      typedef mpc_val_t*(*mpc_ctor_t)(void);</span>
-<span class='curline'><a href='../S/47.html#L80'>mpc_val_t</a>          80 mpc/mpc.h      typedef mpc_val_t*(*mpc_apply_t)(mpc_val_t*);</span>
-<span class='curline'><a href='../S/47.html#L81'>mpc_val_t</a>          81 mpc/mpc.h      typedef mpc_val_t*(*mpc_apply_to_t)(mpc_val_t*,void*);</span>
-<span class='curline'><a href='../S/47.html#L82'>mpc_val_t</a>          82 mpc/mpc.h      typedef mpc_val_t*(*mpc_fold_t)(int,mpc_val_t**);</span>
-<span class='curline'><a href='../S/47.html#L116'>mpc_val_t</a>         116 mpc/mpc.h      mpc_parser_t *mpc_lift_val(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L218'>mpc_val_t</a>         218 mpc/mpc.h      void mpcf_dtor_null(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L220'>mpc_val_t</a>         220 mpc/mpc.h      mpc_val_t *mpcf_ctor_null(void);</span>
-<span class='curline'><a href='../S/47.html#L221'>mpc_val_t</a>         221 mpc/mpc.h      mpc_val_t *mpcf_ctor_str(void);</span>
-<span class='curline'><a href='../S/47.html#L223'>mpc_val_t</a>         223 mpc/mpc.h      mpc_val_t *mpcf_free(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L224'>mpc_val_t</a>         224 mpc/mpc.h      mpc_val_t *mpcf_int(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L225'>mpc_val_t</a>         225 mpc/mpc.h      mpc_val_t *mpcf_hex(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L226'>mpc_val_t</a>         226 mpc/mpc.h      mpc_val_t *mpcf_oct(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L227'>mpc_val_t</a>         227 mpc/mpc.h      mpc_val_t *mpcf_float(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L228'>mpc_val_t</a>         228 mpc/mpc.h      mpc_val_t *mpcf_strtriml(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L229'>mpc_val_t</a>         229 mpc/mpc.h      mpc_val_t *mpcf_strtrimr(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L230'>mpc_val_t</a>         230 mpc/mpc.h      mpc_val_t *mpcf_strtrim(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L232'>mpc_val_t</a>         232 mpc/mpc.h      mpc_val_t *mpcf_escape(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L233'>mpc_val_t</a>         233 mpc/mpc.h      mpc_val_t *mpcf_escape_regex(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L234'>mpc_val_t</a>         234 mpc/mpc.h      mpc_val_t *mpcf_escape_string_raw(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L235'>mpc_val_t</a>         235 mpc/mpc.h      mpc_val_t *mpcf_escape_char_raw(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L237'>mpc_val_t</a>         237 mpc/mpc.h      mpc_val_t *mpcf_unescape(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L238'>mpc_val_t</a>         238 mpc/mpc.h      mpc_val_t *mpcf_unescape_regex(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L239'>mpc_val_t</a>         239 mpc/mpc.h      mpc_val_t *mpcf_unescape_string_raw(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L240'>mpc_val_t</a>         240 mpc/mpc.h      mpc_val_t *mpcf_unescape_char_raw(mpc_val_t *x);</span>
-<span class='curline'><a href='../S/47.html#L242'>mpc_val_t</a>         242 mpc/mpc.h      mpc_val_t *mpcf_null(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L243'>mpc_val_t</a>         243 mpc/mpc.h      mpc_val_t *mpcf_fst(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L244'>mpc_val_t</a>         244 mpc/mpc.h      mpc_val_t *mpcf_snd(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L245'>mpc_val_t</a>         245 mpc/mpc.h      mpc_val_t *mpcf_trd(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L247'>mpc_val_t</a>         247 mpc/mpc.h      mpc_val_t *mpcf_fst_free(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L248'>mpc_val_t</a>         248 mpc/mpc.h      mpc_val_t *mpcf_snd_free(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L249'>mpc_val_t</a>         249 mpc/mpc.h      mpc_val_t *mpcf_trd_free(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L251'>mpc_val_t</a>         251 mpc/mpc.h      mpc_val_t *mpcf_strfold(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L252'>mpc_val_t</a>         252 mpc/mpc.h      mpc_val_t *mpcf_maths(int n, mpc_val_t** xs);</span>
-<span class='curline'><a href='../S/47.html#L314'>mpc_val_t</a>         314 mpc/mpc.h      mpc_val_t *mpcf_fold_ast(int n, mpc_val_t **as);</span>
-<span class='curline'><a href='../S/47.html#L315'>mpc_val_t</a>         315 mpc/mpc.h      mpc_val_t *mpcf_str_ast(mpc_val_t *c);</span>
-<span class='curline'><a href='../S/47.html#L316'>mpc_val_t</a>         316 mpc/mpc.h      mpc_val_t *mpcf_state_ast(int n, mpc_val_t **xs);</span>
+<span class='curline'><a href='../S/48.html#L3115'>mpc_total</a>        3115 mpc/mpc.c      mpc_parser_t *mpca_total(mpc_parser_t *a) { return mpc_total(a, (mpc_dtor_t)mpc_ast_delete); }</span>
+<span class='curline'><a href='../S/48.html#L3303'>mpc_total</a>        3303 mpc/mpc.c          mpc_predictive(mpc_total(Grammar, mpc_soft_delete))</span>
+<span class='curline'><a href='../S/48.html#L3459'>mpc_total</a>        3459 mpc/mpc.c          mpc_total(mpc_predictive(mpc_many(mpca_stmt_fold, Stmt)), mpca_stmt_list_delete),</span>
+<span class='curline'><a href='../S/49.html#L200'>mpc_total</a>         200 mpc/mpc.h      mpc_parser_t *mpc_total(mpc_parser_t *a, mpc_dtor_t da);</span>
 </pre>
 </body>
 </html>

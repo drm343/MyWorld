@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>buff</title>
+<title>base</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,21 +9,56 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L2306'>buff</a>             2306 mpc/mpc.c        char buff[2];</span>
-<span class='curline'><a href='../S/46.html#L2327'>buff</a>             2327 mpc/mpc.c            buff[0] = *s; buff[1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2328'>buff</a>             2328 mpc/mpc.c            strcat(y, buff);</span>
-<span class='curline'><a href='../S/46.html#L2342'>buff</a>             2342 mpc/mpc.c        char buff[2];</span>
-<span class='curline'><a href='../S/46.html#L2355'>buff</a>             2355 mpc/mpc.c              buff[0] = input[i]; buff[1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2356'>buff</a>             2356 mpc/mpc.c              strcat(y, buff);</span>
-<span class='curline'><a href='../S/46.html#L2366'>buff</a>             2366 mpc/mpc.c            buff[0] = *s; buff[1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2367'>buff</a>             2367 mpc/mpc.c            strcat(y, buff);</span>
-<span class='curline'><a href='../S/46.html#L2485'>buff</a>             2485 mpc/mpc.c        char buff[2];</span>
-<span class='curline'><a href='../S/46.html#L2508'>buff</a>             2508 mpc/mpc.c          buff[0] = p-&gt;data.single.x; buff[1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2510'>buff</a>             2510 mpc/mpc.c            buff,</span>
-<span class='curline'><a href='../S/46.html#L2518'>buff</a>             2518 mpc/mpc.c          buff[0] = p-&gt;data.range.x; buff[1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2520'>buff</a>             2520 mpc/mpc.c            buff,</span>
-<span class='curline'><a href='../S/46.html#L2523'>buff</a>             2523 mpc/mpc.c          buff[0] = p-&gt;data.range.y; buff[1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2525'>buff</a>             2525 mpc/mpc.c            buff,</span>
+<span class='curline'><a href='../S/13.html#L21'>base</a>               21 include/character-pool.h   Character_Base_Pool_Access base;</span>
+<span class='curline'><a href='../S/11.html#L28'>base</a>               28 include/character-status.h   Character_Base_Access base;</span>
+<span class='curline'><a href='../S/25.html#L28'>base</a>               28 src/character-pool.c   Character_Base_Pool_Access base = base_pool_start(size);</span>
+<span class='curline'><a href='../S/25.html#L33'>base</a>               33 src/character-pool.c   pool_access-&gt;base = base;</span>
+<span class='curline'><a href='../S/25.html#L50'>base</a>               50 src/character-pool.c   base_pool_stop(pool_access-&gt;base);</span>
+<span class='curline'><a href='../S/25.html#L73'>base</a>               73 src/character-pool.c   Character_Base_Access base = base_pool_malloc(pool_access-&gt;base);</span>
+<span class='curline'><a href='../S/25.html#L75'>base</a>               75 src/character-pool.c   status-&gt;base = base;</span>
+<span class='curline'><a href='../S/25.html#L91'>base</a>               91 src/character-pool.c     if(STRCMP(from_status-&gt;base-&gt;name, name)) {</span>
+<span class='curline'><a href='../S/25.html#L127'>base</a>              127 src/character-pool.c     if (Point.eq(point, &amp;((*npc)-&gt;base-&gt;Real_Position))</span>
+<span class='curline'><a href='../S/25.html#L130'>base</a>              130 src/character-pool.c       if ((*npc)-&gt;base-&gt;crossable == NO) {</span>
+<span class='curline'><a href='../S/25.html#L154'>base</a>              154 src/character-pool.c     counter_x = npc-&gt;base-&gt;Real_Position.x - x;</span>
+<span class='curline'><a href='../S/25.html#L155'>base</a>              155 src/character-pool.c     counter_y = npc-&gt;base-&gt;Real_Position.y - y;</span>
+<span class='curline'><a href='../S/25.html#L158'>base</a>              158 src/character-pool.c       npc-&gt;base-&gt;Graph_Position.x = counter_x;</span>
+<span class='curline'><a href='../S/25.html#L159'>base</a>              159 src/character-pool.c       npc-&gt;base-&gt;Graph_Position.y = counter_y;</span>
+<span class='curline'><a href='../S/24.html#L5'>base</a>                5 src/character-status.c   Character_Base_Access base = access-&gt;base;</span>
+<span class='curline'><a href='../S/24.html#L8'>base</a>                8 src/character-status.c   printf("%s : %s\n", base-&gt;name, access-&gt;race);</span>
+<span class='curline'><a href='../S/24.html#L9'>base</a>                9 src/character-status.c   printf("Mark: %s\n", base-&gt;Mark-&gt;mark);</span>
+<span class='curline'><a href='../S/24.html#L15'>base</a>               15 src/character-status.c   character_base_init(access-&gt;base);</span>
+<span class='curline'><a href='../S/24.html#L20'>base</a>               20 src/character-status.c   from-&gt;base-&gt;copy(access-&gt;base, from-&gt;base);</span>
+<span class='curline'><a href='../S/24.html#L33'>base</a>               33 src/character-status.c     to-&gt;base-&gt;is_alive = false;</span>
+<span class='curline'><a href='../S/24.html#L34'>base</a>               34 src/character-status.c     to-&gt;base-&gt;crossable = true;</span>
+<span class='curline'><a href='../S/24.html#L35'>base</a>               35 src/character-status.c     to-&gt;base-&gt;attackable = false;</span>
+<span class='curline'><a href='../S/24.html#L48'>base</a>               48 src/character-status.c   access-&gt;base-&gt;name = name;</span>
+<span class='curline'><a href='../S/24.html#L56'>base</a>               56 src/character-status.c   access-&gt;base-&gt;Mark = style;</span>
+<span class='curline'><a href='../S/24.html#L60'>base</a>               60 src/character-status.c   access-&gt;base-&gt;Mark-&gt;mark = mark;</span>
+<span class='curline'><a href='../S/24.html#L66'>base</a>               66 src/character-status.c   access-&gt;base-&gt;Real_Position.x = rand() % max_x;</span>
+<span class='curline'><a href='../S/24.html#L67'>base</a>               67 src/character-status.c   access-&gt;base-&gt;Real_Position.y = rand() % max_y;</span>
+<span class='curline'><a href='../S/30.html#L44'>base</a>               44 src/graphic-camera.c   Point_Type point = Player-&gt;base-&gt;Real_Position;</span>
+<span class='curline'><a href='../S/30.html#L154'>base</a>              154 src/graphic-camera.c     Player-&gt;base-&gt;Real_Position.x,</span>
+<span class='curline'><a href='../S/30.html#L155'>base</a>              155 src/graphic-camera.c     Player-&gt;base-&gt;Real_Position.y</span>
+<span class='curline'><a href='../S/30.html#L196'>base</a>              196 src/graphic-camera.c       Player-&gt;base-&gt;Real_Position.x = Player-&gt;base-&gt;Real_Position.x + vector.x;</span>
+<span class='curline'><a href='../S/30.html#L197'>base</a>              197 src/graphic-camera.c       Player-&gt;base-&gt;Real_Position.y = Player-&gt;base-&gt;Real_Position.y + vector.y;</span>
+<span class='curline'><a href='../S/30.html#L209'>base</a>              209 src/graphic-camera.c       Player-&gt;base-&gt;Real_Position.x = Player-&gt;base-&gt;Real_Position.x + vector.x;</span>
+<span class='curline'><a href='../S/30.html#L210'>base</a>              210 src/graphic-camera.c       Player-&gt;base-&gt;Real_Position.y = Player-&gt;base-&gt;Real_Position.y + vector.y;</span>
+<span class='curline'><a href='../S/30.html#L219'>base</a>              219 src/graphic-camera.c       len += string.strlen_ascii(npc-&gt;base-&gt;name);</span>
+<span class='curline'><a href='../S/30.html#L221'>base</a>              221 src/graphic-camera.c       strcpy(message, npc-&gt;base-&gt;name);</span>
+<span class='curline'><a href='../S/30.html#L230'>base</a>              230 src/graphic-camera.c       len += string.strlen_ascii(npc-&gt;base-&gt;name);</span>
+<span class='curline'><a href='../S/30.html#L233'>base</a>              233 src/graphic-camera.c       strcat(message, npc-&gt;base-&gt;name);</span>
+<span class='curline'><a href='../S/30.html#L289'>base</a>              289 src/graphic-camera.c   player-&gt;base-&gt;Real_Position.x = center.x;</span>
+<span class='curline'><a href='../S/30.html#L290'>base</a>              290 src/graphic-camera.c   player-&gt;base-&gt;Real_Position.y = center.y;</span>
+<span class='curline'><a href='../S/30.html#L292'>base</a>              292 src/graphic-camera.c   player-&gt;base-&gt;Graph_Position.x = center.x;</span>
+<span class='curline'><a href='../S/30.html#L293'>base</a>              293 src/graphic-camera.c   player-&gt;base-&gt;Graph_Position.y = center.y;</span>
+<span class='curline'><a href='../S/31.html#L78'>base</a>               78 src/main.c       position.x = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.x;</span>
+<span class='curline'><a href='../S/31.html#L79'>base</a>               79 src/main.c       position.y = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.y;</span>
+<span class='curline'><a href='../S/31.html#L80'>base</a>               80 src/main.c       SDL_RenderCopy(render, camera_1-&gt;player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
+<span class='curline'><a href='../S/31.html#L86'>base</a>               86 src/main.c         if (npc-&gt;base-&gt;status == IN_USE) {</span>
+<span class='curline'><a href='../S/31.html#L87'>base</a>               87 src/main.c           if (!Point.eq(&amp;(npc-&gt;base-&gt;Real_Position), &amp;(camera_1-&gt;player-&gt;base-&gt;Real_Position))) {</span>
+<span class='curline'><a href='../S/31.html#L88'>base</a>               88 src/main.c             rect.x = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.x;</span>
+<span class='curline'><a href='../S/31.html#L89'>base</a>               89 src/main.c             rect.y = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.y;</span>
+<span class='curline'><a href='../S/31.html#L90'>base</a>               90 src/main.c             SDL_RenderCopy(render, npc-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(rect));</span>
 </pre>
 </body>
 </html>

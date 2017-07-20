@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>t0</title>
+<title>strcpy</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,23 +9,55 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/50.html#L7'>t0</a>                  7 mpc/tests/grammar.c   mpc_ast_t *t0, *t1, *t2;</span>
-<span class='curline'><a href='../S/50.html#L19'>t0</a>                 19 mpc/tests/grammar.c   t0 = mpc_ast_new("product|value|regex", "24");</span>
-<span class='curline'><a href='../S/50.html#L46'>t0</a>                 46 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Maths, "  24 ", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/50.html#L49'>t0</a>                 49 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "a", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/50.html#L50'>t0</a>                 50 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/50.html#L52'>t0</a>                 52 mpc/tests/grammar.c   mpc_ast_delete(t0);</span>
-<span class='curline'><a href='../S/50.html#L96'>t0</a>                 96 mpc/tests/grammar.c   mpc_ast_t *t0;  </span>
-<span class='curline'><a href='../S/50.html#L109'>t0</a>                109 mpc/tests/grammar.c   t0 = </span>
-<span class='curline'><a href='../S/50.html#L121'>t0</a>                121 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Doge, "so c so c", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/50.html#L123'>t0</a>                123 mpc/tests/grammar.c   PT_ASSERT(mpc_test_fail(Doge, "so a so c", t0, (int(*)(const void*,const void*))mpc_ast_eq, (mpc_dtor_t)mpc_ast_delete, (void(*)(const void*))mpc_ast_print));</span>
-<span class='curline'><a href='../S/50.html#L125'>t0</a>                125 mpc/tests/grammar.c   mpc_ast_delete(t0);</span>
-<span class='curline'><a href='../S/50.html#L133'>t0</a>                133 mpc/tests/grammar.c   mpc_ast_t *t0;</span>
-<span class='curline'><a href='../S/50.html#L153'>t0</a>                153 mpc/tests/grammar.c   t0 = mpc_ast_build(3, "&gt;", </span>
-<span class='curline'><a href='../S/50.html#L161'>t0</a>                161 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Parser, "#line 10 \"test\"", t0, </span>
-<span class='curline'><a href='../S/50.html#L172'>t0</a>                172 mpc/tests/grammar.c   mpc_ast_t *t0;</span>
-<span class='curline'><a href='../S/50.html#L220'>t0</a>                220 mpc/tests/grammar.c   t0 = mpc_ast_build(3, "&gt;",</span>
-<span class='curline'><a href='../S/50.html#L246'>t0</a>                246 mpc/tests/grammar.c   PT_ASSERT(mpc_test_pass(Qscript, "[my_func]\n  echo (a b c)\n", t0,</span>
+<span class='curline'><a href='../S/14.html#L37'>strcpy</a>             37 include/main_set_character.h   strcpy(CHARACTER_CONFIG_PATH, CONFIG_VALUE);</span>
+<span class='curline'><a href='../S/14.html#L45'>strcpy</a>             45 include/main_set_character.h   strcpy(character_name, name);</span>
+<span class='curline'><a href='../S/14.html#L52'>strcpy</a>             52 include/main_set_character.h   strcpy(key, mark);</span>
+<span class='curline'><a href='../S/14.html#L60'>strcpy</a>             60 include/main_set_character.h   strcpy(character_race, race);</span>
+<span class='curline'><a href='../S/14.html#L166'>strcpy</a>            166 include/main_set_character.h         strcpy(file_name, CHARACTER_CONFIG_PATH);</span>
+<span class='curline'><a href='../S/14.html#L191'>strcpy</a>            191 include/main_set_character.h     strcpy(character_name, name);</span>
+<span class='curline'><a href='../S/15.html#L20'>strcpy</a>             20 include/main_set_config.h   strcpy(result, CONFIG_VALUE);</span>
+<span class='curline'><a href='../S/15.html#L30'>strcpy</a>             30 include/main_set_config.h   strcpy(result, CONF_PATH);</span>
+<span class='curline'><a href='../S/15.html#L73'>strcpy</a>             73 include/main_set_config.h     strcpy(result, item);</span>
+<span class='curline'><a href='../S/15.html#L85'>strcpy</a>             85 include/main_set_config.h     strcpy(key, t-&gt;children[0]-&gt;children[1]-&gt;contents);</span>
+<span class='curline'><a href='../S/48.html#L106'>strcpy</a>            106 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
+<span class='curline'><a href='../S/48.html#L112'>strcpy</a>            112 mpc/mpc.c        strcpy(i-&gt;string, string);</span>
+<span class='curline'><a href='../S/48.html#L135'>strcpy</a>            135 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
+<span class='curline'><a href='../S/48.html#L166'>strcpy</a>            166 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
+<span class='curline'><a href='../S/48.html#L195'>strcpy</a>            195 mpc/mpc.c        strcpy(i-&gt;filename, filename);</span>
+<span class='curline'><a href='../S/48.html#L530'>strcpy</a>            530 mpc/mpc.c        strcpy(*o, c);</span>
+<span class='curline'><a href='../S/48.html#L645'>strcpy</a>            645 mpc/mpc.c        strcpy(x-&gt;filename, i-&gt;filename);</span>
+<span class='curline'><a href='../S/48.html#L650'>strcpy</a>            650 mpc/mpc.c        strcpy(x-&gt;expected[0], expected);</span>
+<span class='curline'><a href='../S/48.html#L661'>strcpy</a>            661 mpc/mpc.c        strcpy(x-&gt;filename, i-&gt;filename);</span>
+<span class='curline'><a href='../S/48.html#L666'>strcpy</a>            666 mpc/mpc.c        strcpy(x-&gt;failure, failure);</span>
+<span class='curline'><a href='../S/48.html#L675'>strcpy</a>            675 mpc/mpc.c        strcpy(x-&gt;filename, filename);</span>
+<span class='curline'><a href='../S/48.html#L680'>strcpy</a>            680 mpc/mpc.c        strcpy(x-&gt;failure, failure);</span>
+<span class='curline'><a href='../S/48.html#L720'>strcpy</a>            720 mpc/mpc.c        strcpy(x-&gt;expected[x-&gt;expected_num-1], expected);</span>
+<span class='curline'><a href='../S/48.html#L741'>strcpy</a>            741 mpc/mpc.c        strcpy(e-&gt;filename, x[fst]-&gt;filename);</span>
+<span class='curline'><a href='../S/48.html#L754'>strcpy</a>            754 mpc/mpc.c            strcpy(e-&gt;failure, x[j]-&gt;failure);</span>
+<span class='curline'><a href='../S/48.html#L793'>strcpy</a>            793 mpc/mpc.c          strcpy(expect, prefix);</span>
+<span class='curline'><a href='../S/48.html#L812'>strcpy</a>            812 mpc/mpc.c          strcpy(expect, prefix);</span>
+<span class='curline'><a href='../S/48.html#L1402'>strcpy</a>           1402 mpc/mpc.c        strcpy(p-&gt;name, name);</span>
+<span class='curline'><a href='../S/48.html#L1419'>strcpy</a>           1419 mpc/mpc.c          strcpy(p-&gt;name, a-&gt;name);</span>
+<span class='curline'><a href='../S/48.html#L1426'>strcpy</a>           1426 mpc/mpc.c            strcpy(p-&gt;data.fail.m, a-&gt;data.fail.m);</span>
+<span class='curline'><a href='../S/48.html#L1433'>strcpy</a>           1433 mpc/mpc.c            strcpy(p-&gt;data.string.x, a-&gt;data.string.x);</span>
+<span class='curline'><a href='../S/48.html#L1448'>strcpy</a>           1448 mpc/mpc.c            strcpy(p-&gt;data.expect.m, a-&gt;data.expect.m);</span>
+<span class='curline'><a href='../S/48.html#L1527'>strcpy</a>           1527 mpc/mpc.c        strcpy(p-&gt;data.fail.m, m);</span>
+<span class='curline'><a href='../S/48.html#L1602'>strcpy</a>           1602 mpc/mpc.c        strcpy(p-&gt;data.expect.m, expected);</span>
+<span class='curline'><a href='../S/48.html#L1673'>strcpy</a>           1673 mpc/mpc.c        strcpy(p-&gt;data.string.x, s);</span>
+<span class='curline'><a href='../S/48.html#L1681'>strcpy</a>           1681 mpc/mpc.c        strcpy(p-&gt;data.string.x, s);</span>
+<span class='curline'><a href='../S/48.html#L1697'>strcpy</a>           1697 mpc/mpc.c        strcpy(p-&gt;data.string.x, s);</span>
+<span class='curline'><a href='../S/48.html#L2697'>strcpy</a>           2697 mpc/mpc.c        strcpy(a-&gt;tag, tag);</span>
+<span class='curline'><a href='../S/48.html#L2700'>strcpy</a>           2700 mpc/mpc.c        strcpy(a-&gt;contents, contents);</span>
+<span class='curline'><a href='../S/48.html#L2782'>strcpy</a>           2782 mpc/mpc.c        strcpy(a-&gt;tag, t);</span>
+<span class='curline'><a href='../S/54.html#L164'>strcpy</a>            164 mpc/tests/ptest.c   strcpy(output, input);</span>
+<span class='curline'><a href='../S/54.html#L261'>strcpy</a>            261 mpc/tests/ptest.c   strcpy(current_suite, "");</span>
+<span class='curline'><a href='../S/54.html#L280'>strcpy</a>            280 mpc/tests/ptest.c       strcpy(current_suite, test.suite);</span>
+<span class='curline'><a href='../S/54.html#L287'>strcpy</a>            287 mpc/tests/ptest.c     strcpy(assert_err, "");</span>
+<span class='curline'><a href='../S/54.html#L288'>strcpy</a>            288 mpc/tests/ptest.c     strcpy(assert_err_buff, "");</span>
+<span class='curline'><a href='../S/30.html#L221'>strcpy</a>            221 src/graphic-camera.c       strcpy(message, npc-&gt;base-&gt;name);</span>
+<span class='curline'><a href='../S/30.html#L232'>strcpy</a>            232 src/graphic-camera.c       strcpy(message, a);</span>
+<span class='curline'><a href='../S/29.html#L38'>strcpy</a>             38 src/graphic-message.c   strcpy(new_message, message);</span>
+<span class='curline'><a href='../S/31.html#L157'>strcpy</a>            157 src/main.c         strcpy(CONF_PATH, argv[1]);</span>
 </pre>
 </body>
 </html>

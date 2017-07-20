@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>as</title>
+<title>argc</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,18 +9,22 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L2997'>as</a>               2997 mpc/mpc.c        mpc_ast_t** as = (mpc_ast_t**)xs;</span>
-<span class='curline'><a href='../S/46.html#L3009'>as</a>               3009 mpc/mpc.c          if (as[i] == NULL) { continue; }</span>
-<span class='curline'><a href='../S/46.html#L3011'>as</a>               3011 mpc/mpc.c          if        (as[i] &amp;&amp; as[i]-&gt;children_num == 0) {</span>
-<span class='curline'><a href='../S/46.html#L3012'>as</a>               3012 mpc/mpc.c            mpc_ast_add_child(r, as[i]);</span>
-<span class='curline'><a href='../S/46.html#L3013'>as</a>               3013 mpc/mpc.c          } else if (as[i] &amp;&amp; as[i]-&gt;children_num == 1) {</span>
-<span class='curline'><a href='../S/46.html#L3014'>as</a>               3014 mpc/mpc.c            mpc_ast_add_child(r, mpc_ast_add_root_tag(as[i]-&gt;children[0], as[i]-&gt;tag));</span>
-<span class='curline'><a href='../S/46.html#L3015'>as</a>               3015 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
-<span class='curline'><a href='../S/46.html#L3016'>as</a>               3016 mpc/mpc.c          } else if (as[i] &amp;&amp; as[i]-&gt;children_num &gt;= 2) {</span>
-<span class='curline'><a href='../S/46.html#L3017'>as</a>               3017 mpc/mpc.c            for (j = 0; j &lt; as[i]-&gt;children_num; j++) {</span>
-<span class='curline'><a href='../S/46.html#L3018'>as</a>               3018 mpc/mpc.c              mpc_ast_add_child(r, as[i]-&gt;children[j]);</span>
-<span class='curline'><a href='../S/46.html#L3020'>as</a>               3020 mpc/mpc.c            mpc_ast_delete_no_children(as[i]);</span>
-<span class='curline'><a href='../S/47.html#L314'>as</a>                314 mpc/mpc.h      mpc_val_t *mpcf_fold_ast(int n, mpc_val_t **as);</span>
+<span class='curline'><a href='../S/36.html#L3'>argc</a>                3 mpc/examples/doge.c int main(int argc, char **argv) {</span>
+<span class='curline'><a href='../S/36.html#L19'>argc</a>               19 mpc/examples/doge.c   if (argc &gt; 1) {</span>
+<span class='curline'><a href='../S/38.html#L3'>argc</a>                3 mpc/examples/foobar.c int main(int argc, char** argv) {</span>
+<span class='curline'><a href='../S/38.html#L8'>argc</a>                8 mpc/examples/foobar.c     if (argc != 2) {</span>
+<span class='curline'><a href='../S/39.html#L3'>argc</a>                3 mpc/examples/lispy.c int main(int argc, char **argv) {</span>
+<span class='curline'><a href='../S/39.html#L28'>argc</a>               28 mpc/examples/lispy.c   if (argc &gt; 1) {</span>
+<span class='curline'><a href='../S/40.html#L3'>argc</a>                3 mpc/examples/maths.c int main(int argc, char **argv) {</span>
+<span class='curline'><a href='../S/40.html#L22'>argc</a>               22 mpc/examples/maths.c   if (argc &gt; 1) {</span>
+<span class='curline'><a href='../S/45.html#L3'>argc</a>                3 mpc/examples/smallc.c int main(int argc, char **argv) {</span>
+<span class='curline'><a href='../S/45.html#L71'>argc</a>               71 mpc/examples/smallc.c   if (argc &gt; 1) {</span>
+<span class='curline'><a href='../S/47.html#L3'>argc</a>                3 mpc/examples/tree_traversal.c int main(int argc, char *argv[]) {</span>
+<span class='curline'><a href='../S/47.html#L19'>argc</a>               19 mpc/examples/tree_traversal.c   if (argc &gt; 1) {</span>
+<span class='curline'><a href='../S/57.html#L7'>argc</a>                7 mpc/tests/test.c int main(int argc, char** argv) {</span>
+<span class='curline'><a href='../S/57.html#L8'>argc</a>                8 mpc/tests/test.c   (void) argc; (void) argv;</span>
+<span class='curline'><a href='../S/31.html#L131'>argc</a>              131 src/main.c     int main(int argc, char *argv[]) {</span>
+<span class='curline'><a href='../S/31.html#L154'>argc</a>              154 src/main.c       if (argc &gt;= 2) {</span>
 </pre>
 </body>
 </html>

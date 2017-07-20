@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>race</title>
+<title>pool</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,18 +9,39 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/18.html#L30'>race</a>               30 include/character-status.h   String race;</span>
-<span class='curline'><a href='../S/19.html#L56'>race</a>               56 include/main_set_character.h void set_race(Status_Access npc, char *race) {</span>
-<span class='curline'><a href='../S/19.html#L57'>race</a>               57 include/main_set_character.h   size_t race_size = strlen(race);</span>
-<span class='curline'><a href='../S/19.html#L60'>race</a>               60 include/main_set_character.h   strcpy(character_race, race);</span>
-<span class='curline'><a href='../S/19.html#L179'>race</a>              179 include/main_set_character.h Status_Access use_npc(char *race, char *name, Map_Access map) {</span>
-<span class='curline'><a href='../S/19.html#L183'>race</a>              183 include/main_set_character.h   bool result = character_pool.find(character_prepare_pool, &amp;origin_npc, race);</span>
-<span class='curline'><a href='../S/25.html#L103'>race</a>              103 src/character-pool.c     String race) {</span>
-<span class='curline'><a href='../S/25.html#L110'>race</a>              110 src/character-pool.c     if(STRCMP((*npc)-&gt;race, race)) {</span>
-<span class='curline'><a href='../S/28.html#L8'>race</a>                8 src/character-status.c   printf("%s : %s\n", base-&gt;name, access-&gt;race);</span>
-<span class='curline'><a href='../S/28.html#L21'>race</a>               21 src/character-status.c   access-&gt;race = from-&gt;race;</span>
-<span class='curline'><a href='../S/28.html#L51'>race</a>               51 src/character-status.c static void set_race(Status_Access access, String race) {</span>
-<span class='curline'><a href='../S/28.html#L52'>race</a>               52 src/character-status.c   access-&gt;race = race;</span>
+<span class='curline'><a href='../S/12.html#L28'>pool</a>               28 include/graphic.h   Style_Access pool;</span>
+<span class='curline'><a href='../S/7.html#L7'>pool</a>                7 include/helper_function.h   struct_name pool; \</span>
+<span class='curline'><a href='../S/19.html#L7'>pool</a>                7 include/string_pool.h   String pool;</span>
+<span class='curline'><a href='../S/25.html#L8'>pool</a>                8 src/character-pool.c   pool_access-&gt;pool = memory;</span>
+<span class='curline'><a href='../S/25.html#L19'>pool</a>               19 src/character-pool.c   pool_access-&gt;pool = memory;</span>
+<span class='curline'><a href='../S/25.html#L39'>pool</a>               39 src/character-pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/25.html#L44'>pool</a>               44 src/character-pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/25.html#L57'>pool</a>               57 src/character-pool.c   Status_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/25.html#L65'>pool</a>               65 src/character-pool.c   Character_Base_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/25.html#L89'>pool</a>               89 src/character-pool.c     from_status = &amp;(from-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L108'>pool</a>              108 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L125'>pool</a>              125 src/character-pool.c     *npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/25.html#L152'>pool</a>              152 src/character-pool.c     npc = &amp;(access-&gt;status-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/21.html#L26'>pool</a>               26 src/character-skill.c   pool_access-&gt;pool = memory;</span>
+<span class='curline'><a href='../S/21.html#L34'>pool</a>               34 src/character-skill.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/21.html#L40'>pool</a>               40 src/character-skill.c   Skill_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/21.html#L55'>pool</a>               55 src/character-skill.c     *result = &amp;(access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/29.html#L29'>pool</a>               29 src/graphic-message.c   String_Pool_Access pool = NULL;</span>
+<span class='curline'><a href='../S/29.html#L32'>pool</a>               32 src/graphic-message.c       pool = access-&gt;pool_1;</span>
+<span class='curline'><a href='../S/29.html#L35'>pool</a>               35 src/graphic-message.c       pool = access-&gt;pool_2;</span>
+<span class='curline'><a href='../S/29.html#L37'>pool</a>               37 src/graphic-message.c   String new_message = string_pool.malloc(pool, string.strlen_ascii(message));</span>
+<span class='curline'><a href='../S/26.html#L13'>pool</a>               13 src/graphic.c    Style_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/26.html#L25'>pool</a>               25 src/graphic.c      result = &amp;(pool_access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/26.html#L43'>pool</a>               43 src/graphic.c      result = &amp;(pool_access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/26.html#L55'>pool</a>               55 src/graphic.c      result = &amp;(pool_access-&gt;pool[counter]);</span>
+<span class='curline'><a href='../S/26.html#L66'>pool</a>               66 src/graphic.c    pool_access-&gt;pool = style_memory;</span>
+<span class='curline'><a href='../S/26.html#L78'>pool</a>               78 src/graphic.c      result = &amp;(pool_access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/26.html#L86'>pool</a>               86 src/graphic.c    free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/31.html#L84'>pool</a>               84 src/main.c         Status_Access npc = &amp;(character_use_pool-&gt;status-&gt;pool[next]);</span>
+<span class='curline'><a href='../S/27.html#L10'>pool</a>               10 src/string_pool.c   String result = &amp;(pool_access-&gt;pool)[start];</span>
+<span class='curline'><a href='../S/27.html#L18'>pool</a>               18 src/string_pool.c   memset(pool_access-&gt;pool, 0, pool_access-&gt;max_size);</span>
+<span class='curline'><a href='../S/27.html#L25'>pool</a>               25 src/string_pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/27.html#L34'>pool</a>               34 src/string_pool.c   pool_access-&gt;pool         = string_memory;</span>
 </pre>
 </body>
 </html>

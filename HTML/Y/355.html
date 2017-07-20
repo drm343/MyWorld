@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>max_counter</title>
+<title>length</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,13 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/21.html#L4'>max_counter</a>         4 src/string_helper.c   size_t max_counter = strlen(str);</span>
-<span class='curline'><a href='../S/21.html#L9'>max_counter</a>         9 src/string_helper.c   for (size_t index = 0; index &lt; max_counter; index += move_position) {</span>
-<span class='curline'><a href='../S/21.html#L38'>max_counter</a>        38 src/string_helper.c   size_t max_counter = strlen(str);</span>
-<span class='curline'><a href='../S/21.html#L44'>max_counter</a>        44 src/string_helper.c   for (index = 0; index &lt; max_counter; index += move_position) {</span>
+<span class='curline'><a href='../S/48.html#L130'>length</a>            130 mpc/mpc.c      static mpc_input_t *mpc_input_new_nstring(const char *filename, const char *string, size_t length) {</span>
+<span class='curline'><a href='../S/48.html#L140'>length</a>            140 mpc/mpc.c        i-&gt;string = malloc(length + 1);</span>
+<span class='curline'><a href='../S/48.html#L141'>length</a>            141 mpc/mpc.c        strncpy(i-&gt;string, string, length);</span>
+<span class='curline'><a href='../S/48.html#L142'>length</a>            142 mpc/mpc.c        i-&gt;string[length] = '\0';</span>
+<span class='curline'><a href='../S/48.html#L1257'>length</a>           1257 mpc/mpc.c      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r) {</span>
+<span class='curline'><a href='../S/48.html#L1259'>length</a>           1259 mpc/mpc.c        mpc_input_t *i = mpc_input_new_nstring(filename, string, length);</span>
+<span class='curline'><a href='../S/49.html#L68'>length</a>             68 mpc/mpc.h      int mpc_nparse(const char *filename, const char *string, size_t length, mpc_parser_t *p, mpc_result_t *r);</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>regex_test_pass</title>
+<title>pt_assert_run</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,28 +9,9 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/54.html#L29'>regex_test_pass</a>    29 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "abc", "abc"));</span>
-<span class='curline'><a href='../S/54.html#L30'>regex_test_pass</a>    30 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "bcd", "bcd"));</span>
-<span class='curline'><a href='../S/54.html#L33'>regex_test_pass</a>    33 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re1, "e", "e"));</span>
-<span class='curline'><a href='../S/54.html#L34'>regex_test_pass</a>    34 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re2, "abc", "abc"));</span>
-<span class='curline'><a href='../S/54.html#L35'>regex_test_pass</a>    35 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re2, "abcabab", "abcabab"));</span>
-<span class='curline'><a href='../S/54.html#L36'>regex_test_pass</a>    36 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re2, "abcababd", "abcabab"));</span>
-<span class='curline'><a href='../S/54.html#L37'>regex_test_pass</a>    37 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re5, "abcddg", "abcddg"));</span>
-<span class='curline'><a href='../S/54.html#L56'>regex_test_pass</a>    56 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "foo", "foo"));</span>
-<span class='curline'><a href='../S/54.html#L57'>regex_test_pass</a>    57 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "foo.", "foo"));</span>
-<span class='curline'><a href='../S/54.html#L58'>regex_test_pass</a>    58 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "foo)", "foo"));</span>
-<span class='curline'><a href='../S/54.html#L59'>regex_test_pass</a>    59 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "foo baz", "foo"));</span>
-<span class='curline'><a href='../S/54.html#L64'>regex_test_pass</a>    64 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re1, "foo", "foo"));</span>
-<span class='curline'><a href='../S/54.html#L65'>regex_test_pass</a>    65 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re1, " foo", " foo"));</span>
-<span class='curline'><a href='../S/54.html#L68'>regex_test_pass</a>    68 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re2, "python", "python"));</span>
-<span class='curline'><a href='../S/54.html#L69'>regex_test_pass</a>    69 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re2, "py3", "py3"));</span>
-<span class='curline'><a href='../S/54.html#L70'>regex_test_pass</a>    70 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re2, "py2", "py2"));</span>
-<span class='curline'><a href='../S/54.html#L103'>regex_test_pass</a>   103 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "\"there\"", "\"there\""));</span>
-<span class='curline'><a href='../S/54.html#L104'>regex_test_pass</a>   104 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "\"hello\"", "\"hello\""));</span>
-<span class='curline'><a href='../S/54.html#L105'>regex_test_pass</a>   105 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "\"i am dan\"", "\"i am dan\""));</span>
-<span class='curline'><a href='../S/54.html#L106'>regex_test_pass</a>   106 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, "\"i a\\\"m dan\"", "\"i a\\\"m dan\""));</span>
-<span class='curline'><a href='../S/54.html#L116'>regex_test_pass</a>   116 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, ";comment", ";comment"));</span>
-<span class='curline'><a href='../S/54.html#L117'>regex_test_pass</a>   117 mpc/tests/regex.c   PT_ASSERT(regex_test_pass(re0, ";i am the\nman", ";i am the"));</span>
+<span class='curline'><a href='../S/55.html#L12'>pt_assert_run</a>      12 mpc/tests/ptest.h #define PT_ASSERT(expr) pt_assert_run((int)(expr), #expr, __FILE__, __LINE__)</span>
+<span class='curline'><a href='../S/55.html#L13'>pt_assert_run</a>      13 mpc/tests/ptest.h #define PT_ASSERT_STR_EQ(fst, snd) pt_assert_run(strcmp(fst, snd) == 0, "strcmp( " #fst ", " #snd " ) == 0", __FILE__, __LINE__)</span>
+<span class='curline'><a href='../S/55.html#L15'>pt_assert_run</a>      15 mpc/tests/ptest.h void pt_assert_run(int result, const char* expr, const char* file, int line);</span>
 </pre>
 </body>
 </html>

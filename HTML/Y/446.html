@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>range</title>
+<title>pool_access</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,28 +9,92 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L910'>range</a>             910 mpc/mpc.c        mpc_pdata_range_t range;</span>
-<span class='curline'><a href='../S/46.html#L1022'>range</a>            1022 mpc/mpc.c          case MPC_TYPE_RANGE:   MPC_PRIMITIVE(mpc_input_range(i, p-&gt;data.range.x, p-&gt;data.range.y, (char**)&amp;r-&gt;output));</span>
-<span class='curline'><a href='../S/46.html#L1664'>range</a>            1664 mpc/mpc.c        p-&gt;data.range.x = s;</span>
-<span class='curline'><a href='../S/46.html#L1665'>range</a>            1665 mpc/mpc.c        p-&gt;data.range.y = e;</span>
-<span class='curline'><a href='../S/46.html#L2104'>range</a>            2104 mpc/mpc.c        char *range = calloc(1,1);</span>
-<span class='curline'><a href='../S/46.html#L2116'>range</a>            2116 mpc/mpc.c              range = realloc(range, strlen(range) + strlen(tmp) + 1);</span>
-<span class='curline'><a href='../S/46.html#L2117'>range</a>            2117 mpc/mpc.c              strcat(range, tmp);</span>
-<span class='curline'><a href='../S/46.html#L2119'>range</a>            2119 mpc/mpc.c              range = realloc(range, strlen(range) + 1 + 1);</span>
-<span class='curline'><a href='../S/46.html#L2120'>range</a>            2120 mpc/mpc.c              range[strlen(range) + 1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2121'>range</a>            2121 mpc/mpc.c              range[strlen(range) + 0] = s[i+1];      </span>
-<span class='curline'><a href='../S/46.html#L2129'>range</a>            2129 mpc/mpc.c                range = realloc(range, strlen(range) + strlen("-") + 1);</span>
-<span class='curline'><a href='../S/46.html#L2130'>range</a>            2130 mpc/mpc.c                strcat(range, "-");</span>
-<span class='curline'><a href='../S/46.html#L2135'>range</a>            2135 mpc/mpc.c                range = realloc(range, strlen(range) + 1 + 1 + 1);</span>
-<span class='curline'><a href='../S/46.html#L2136'>range</a>            2136 mpc/mpc.c                range[strlen(range) + 1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2137'>range</a>            2137 mpc/mpc.c                range[strlen(range) + 0] = (char)j;</span>
-<span class='curline'><a href='../S/46.html#L2144'>range</a>            2144 mpc/mpc.c            range = realloc(range, strlen(range) + 1 + 1);</span>
-<span class='curline'><a href='../S/46.html#L2145'>range</a>            2145 mpc/mpc.c            range[strlen(range) + 1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2146'>range</a>            2146 mpc/mpc.c            range[strlen(range) + 0] = s[i];</span>
-<span class='curline'><a href='../S/46.html#L2151'>range</a>            2151 mpc/mpc.c        out = comp == 1 ? mpc_noneof(range) : mpc_oneof(range);</span>
-<span class='curline'><a href='../S/46.html#L2154'>range</a>            2154 mpc/mpc.c        free(range);</span>
-<span class='curline'><a href='../S/46.html#L2518'>range</a>            2518 mpc/mpc.c          buff[0] = p-&gt;data.range.x; buff[1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L2523'>range</a>            2523 mpc/mpc.c          buff[0] = p-&gt;data.range.y; buff[1] = '\0';</span>
+<span class='curline'><a href='../S/25.html#L6'>pool_access</a>         6 src/character-pool.c   Status_Pool_Access pool_access = calloc(1, sizeof(Status_Pool));</span>
+<span class='curline'><a href='../S/25.html#L8'>pool_access</a>         8 src/character-pool.c   pool_access-&gt;pool = memory;</span>
+<span class='curline'><a href='../S/25.html#L9'>pool_access</a>         9 src/character-pool.c   pool_access-&gt;max_size = size;</span>
+<span class='curline'><a href='../S/25.html#L10'>pool_access</a>        10 src/character-pool.c   pool_access-&gt;current_size = size;</span>
+<span class='curline'><a href='../S/25.html#L12'>pool_access</a>        12 src/character-pool.c   return pool_access;</span>
+<span class='curline'><a href='../S/25.html#L17'>pool_access</a>        17 src/character-pool.c   Character_Base_Pool_Access pool_access = calloc(1, sizeof(Character_Base_Pool));</span>
+<span class='curline'><a href='../S/25.html#L19'>pool_access</a>        19 src/character-pool.c   pool_access-&gt;pool = memory;</span>
+<span class='curline'><a href='../S/25.html#L20'>pool_access</a>        20 src/character-pool.c   pool_access-&gt;max_size = size;</span>
+<span class='curline'><a href='../S/25.html#L21'>pool_access</a>        21 src/character-pool.c   pool_access-&gt;current_size = size;</span>
+<span class='curline'><a href='../S/25.html#L23'>pool_access</a>        23 src/character-pool.c   return pool_access;</span>
+<span class='curline'><a href='../S/25.html#L30'>pool_access</a>        30 src/character-pool.c   Character_Pool_Access pool_access = calloc(1, sizeof(Character_Pool_Type));</span>
+<span class='curline'><a href='../S/25.html#L32'>pool_access</a>        32 src/character-pool.c   pool_access-&gt;status = status;</span>
+<span class='curline'><a href='../S/25.html#L33'>pool_access</a>        33 src/character-pool.c   pool_access-&gt;base = base;</span>
+<span class='curline'><a href='../S/25.html#L34'>pool_access</a>        34 src/character-pool.c   return pool_access;</span>
+<span class='curline'><a href='../S/25.html#L38'>pool_access</a>        38 src/character-pool.c static void status_pool_stop(Status_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/25.html#L39'>pool_access</a>        39 src/character-pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/25.html#L40'>pool_access</a>        40 src/character-pool.c   free(pool_access);</span>
+<span class='curline'><a href='../S/25.html#L43'>pool_access</a>        43 src/character-pool.c static void base_pool_stop(Character_Base_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/25.html#L44'>pool_access</a>        44 src/character-pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/25.html#L45'>pool_access</a>        45 src/character-pool.c   free(pool_access);</span>
+<span class='curline'><a href='../S/25.html#L48'>pool_access</a>        48 src/character-pool.c static void pool_stop(Character_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/25.html#L49'>pool_access</a>        49 src/character-pool.c   status_pool_stop(pool_access-&gt;status);</span>
+<span class='curline'><a href='../S/25.html#L50'>pool_access</a>        50 src/character-pool.c   base_pool_stop(pool_access-&gt;base);</span>
+<span class='curline'><a href='../S/25.html#L51'>pool_access</a>        51 src/character-pool.c   free(pool_access);</span>
+<span class='curline'><a href='../S/25.html#L55'>pool_access</a>        55 src/character-pool.c static Status_Access status_pool_malloc(Status_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/25.html#L56'>pool_access</a>        56 src/character-pool.c   uint8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/25.html#L57'>pool_access</a>        57 src/character-pool.c   Status_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/25.html#L59'>pool_access</a>        59 src/character-pool.c   pool_access-&gt;current_size -= 1;</span>
+<span class='curline'><a href='../S/25.html#L63'>pool_access</a>        63 src/character-pool.c static Character_Base_Access base_pool_malloc(Character_Base_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/25.html#L64'>pool_access</a>        64 src/character-pool.c   uint8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/25.html#L65'>pool_access</a>        65 src/character-pool.c   Character_Base_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/25.html#L67'>pool_access</a>        67 src/character-pool.c   pool_access-&gt;current_size -= 1;</span>
+<span class='curline'><a href='../S/25.html#L71'>pool_access</a>        71 src/character-pool.c static Status_Access pool_malloc(Character_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/25.html#L72'>pool_access</a>        72 src/character-pool.c   Status_Access status = status_pool_malloc(pool_access-&gt;status);</span>
+<span class='curline'><a href='../S/25.html#L73'>pool_access</a>        73 src/character-pool.c   Character_Base_Access base = base_pool_malloc(pool_access-&gt;base);</span>
+<span class='curline'><a href='../S/21.html#L24'>pool_access</a>        24 src/character-skill.c   Skill_Pool_Access pool_access = calloc(1, sizeof(Skill_Pool));</span>
+<span class='curline'><a href='../S/21.html#L26'>pool_access</a>        26 src/character-skill.c   pool_access-&gt;pool = memory;</span>
+<span class='curline'><a href='../S/21.html#L27'>pool_access</a>        27 src/character-skill.c   pool_access-&gt;max_size = size;</span>
+<span class='curline'><a href='../S/21.html#L28'>pool_access</a>        28 src/character-skill.c   pool_access-&gt;current_size = size;</span>
+<span class='curline'><a href='../S/21.html#L30'>pool_access</a>        30 src/character-skill.c   return pool_access;</span>
+<span class='curline'><a href='../S/21.html#L33'>pool_access</a>        33 src/character-skill.c static void pool_stop(Skill_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/21.html#L34'>pool_access</a>        34 src/character-skill.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/21.html#L35'>pool_access</a>        35 src/character-skill.c   free(pool_access);</span>
+<span class='curline'><a href='../S/21.html#L38'>pool_access</a>        38 src/character-skill.c static Skill_Access pool_malloc(Skill_Pool_Access pool_access, Status_Access owner) {</span>
+<span class='curline'><a href='../S/21.html#L39'>pool_access</a>        39 src/character-skill.c   uint8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/21.html#L40'>pool_access</a>        40 src/character-skill.c   Skill_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/21.html#L44'>pool_access</a>        44 src/character-skill.c   pool_access-&gt;current_size -= 1;</span>
+<span class='curline'><a href='../S/26.html#L11'>pool_access</a>        11 src/graphic.c  static Style_Access SELF(malloc) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/26.html#L12'>pool_access</a>        12 src/graphic.c    int8_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/26.html#L13'>pool_access</a>        13 src/graphic.c    Style_Access result = &amp;(pool_access-&gt;pool[start]);</span>
+<span class='curline'><a href='../S/26.html#L15'>pool_access</a>        15 src/graphic.c    pool_access-&gt;current_size -= 1;</span>
+<span class='curline'><a href='../S/26.html#L19'>pool_access</a>        19 src/graphic.c  static Style_Access SELF(find) (Style_Pool_Access pool_access, String name) {</span>
+<span class='curline'><a href='../S/26.html#L21'>pool_access</a>        21 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/26.html#L25'>pool_access</a>        25 src/graphic.c      result = &amp;(pool_access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/26.html#L36'>pool_access</a>        36 src/graphic.c  static void print_graph(Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/26.html#L38'>pool_access</a>        38 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/26.html#L43'>pool_access</a>        43 src/graphic.c      result = &amp;(pool_access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/26.html#L49'>pool_access</a>        49 src/graphic.c  static Style_Access SELF(next) (Style_Pool_Access pool_access, uint8_t * current_counter) {</span>
+<span class='curline'><a href='../S/26.html#L51'>pool_access</a>        51 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/26.html#L55'>pool_access</a>        55 src/graphic.c      result = &amp;(pool_access-&gt;pool[counter]);</span>
+<span class='curline'><a href='../S/26.html#L64'>pool_access</a>        64 src/graphic.c    Style_Pool_Access pool_access = calloc(1, sizeof(Style_Pool));</span>
+<span class='curline'><a href='../S/26.html#L66'>pool_access</a>        66 src/graphic.c    pool_access-&gt;pool = style_memory;</span>
+<span class='curline'><a href='../S/26.html#L67'>pool_access</a>        67 src/graphic.c    pool_access-&gt;max_size = size;</span>
+<span class='curline'><a href='../S/26.html#L68'>pool_access</a>        68 src/graphic.c    pool_access-&gt;current_size = size;</span>
+<span class='curline'><a href='../S/26.html#L69'>pool_access</a>        69 src/graphic.c    return pool_access;</span>
+<span class='curline'><a href='../S/26.html#L72'>pool_access</a>        72 src/graphic.c  static void SELF(gc) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/26.html#L74'>pool_access</a>        74 src/graphic.c    uint8_t used = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/26.html#L78'>pool_access</a>        78 src/graphic.c      result = &amp;(pool_access-&gt;pool[count]);</span>
+<span class='curline'><a href='../S/26.html#L85'>pool_access</a>        85 src/graphic.c  static void SELF(stop) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/26.html#L86'>pool_access</a>        86 src/graphic.c    free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/26.html#L87'>pool_access</a>        87 src/graphic.c    free(pool_access);</span>
+<span class='curline'><a href='../S/27.html#L8'>pool_access</a>         8 src/string_pool.c String pool_malloc(String_Pool_Access pool_access, uint16_t from) {</span>
+<span class='curline'><a href='../S/27.html#L9'>pool_access</a>         9 src/string_pool.c   int16_t start = pool_access-&gt;max_size - pool_access-&gt;current_size;</span>
+<span class='curline'><a href='../S/27.html#L10'>pool_access</a>        10 src/string_pool.c   String result = &amp;(pool_access-&gt;pool)[start];</span>
+<span class='curline'><a href='../S/27.html#L12'>pool_access</a>        12 src/string_pool.c   pool_access-&gt;current_size -= (from + 1);</span>
+<span class='curline'><a href='../S/27.html#L17'>pool_access</a>        17 src/string_pool.c void pool_reset(String_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/27.html#L18'>pool_access</a>        18 src/string_pool.c   memset(pool_access-&gt;pool, 0, pool_access-&gt;max_size);</span>
+<span class='curline'><a href='../S/27.html#L20'>pool_access</a>        20 src/string_pool.c   pool_access-&gt;current_size = pool_access-&gt;max_size;</span>
+<span class='curline'><a href='../S/27.html#L24'>pool_access</a>        24 src/string_pool.c void pool_stop_heap(String_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/27.html#L25'>pool_access</a>        25 src/string_pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/27.html#L26'>pool_access</a>        26 src/string_pool.c   free(pool_access);</span>
+<span class='curline'><a href='../S/27.html#L32'>pool_access</a>        32 src/string_pool.c   String_Pool_Access pool_access = calloc(1, sizeof(String_Pool));</span>
+<span class='curline'><a href='../S/27.html#L34'>pool_access</a>        34 src/string_pool.c   pool_access-&gt;pool         = string_memory;</span>
+<span class='curline'><a href='../S/27.html#L35'>pool_access</a>        35 src/string_pool.c   pool_access-&gt;max_size     = size;</span>
+<span class='curline'><a href='../S/27.html#L36'>pool_access</a>        36 src/string_pool.c   pool_access-&gt;current_size = size;</span>
+<span class='curline'><a href='../S/27.html#L38'>pool_access</a>        38 src/string_pool.c   return pool_access;</span>
 </pre>
 </body>
 </html>

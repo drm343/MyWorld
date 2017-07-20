@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpcf_fold_ast</title>
+<title>mpcf_ctor_str</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,16 +9,23 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L3065'>mpcf_fold_ast</a>    3065 mpc/mpc.c      mpc_parser_t *mpca_many(mpc_parser_t *a) { return mpc_many(mpcf_fold_ast, a); }</span>
-<span class='curline'><a href='../S/46.html#L3066'>mpcf_fold_ast</a>    3066 mpc/mpc.c      mpc_parser_t *mpca_many1(mpc_parser_t *a) { return mpc_many1(mpcf_fold_ast, a); }</span>
-<span class='curline'><a href='../S/46.html#L3067'>mpcf_fold_ast</a>    3067 mpc/mpc.c      mpc_parser_t *mpca_count(int n, mpc_parser_t *a) { return mpc_count(n, mpcf_fold_ast, a, (mpc_dtor_t)mpc_ast_delete); }</span>
-<span class='curline'><a href='../S/46.html#L3099'>mpcf_fold_ast</a>    3099 mpc/mpc.c        p-&gt;data.and.f = mpcf_fold_ast;</span>
-<span class='curline'><a href='../S/46.html#L3727'>mpcf_fold_ast</a>    3727 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_fold_ast) {</span>
-<span class='curline'><a href='../S/46.html#L3738'>mpcf_fold_ast</a>    3738 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_fold_ast</span>
-<span class='curline'><a href='../S/46.html#L3741'>mpcf_fold_ast</a>    3741 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.and.f == mpcf_fold_ast) {</span>
-<span class='curline'><a href='../S/46.html#L3756'>mpcf_fold_ast</a>    3756 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.f == mpcf_fold_ast</span>
-<span class='curline'><a href='../S/46.html#L3759'>mpcf_fold_ast</a>    3759 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[p-&gt;data.and.n-1]-&gt;data.and.f == mpcf_fold_ast) {</span>
-<span class='curline'><a href='../S/47.html#L314'>mpcf_fold_ast</a>     314 mpc/mpc.h      mpc_val_t *mpcf_fold_ast(int n, mpc_val_t **as);</span>
+<span class='curline'><a href='../S/48.html#L1880'>mpcf_ctor_str</a>    1880 mpc/mpc.c        p0 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1882'>mpcf_ctor_str</a>    1882 mpc/mpc.c        p2 = mpc_maybe_lift(mpc_and(2, mpcf_strfold, mpc_char('.'), mpc_digits(), free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1884'>mpcf_ctor_str</a>    1884 mpc/mpc.c        p31 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1886'>mpcf_ctor_str</a>    1886 mpc/mpc.c        p3 = mpc_maybe_lift(mpc_and(3, mpcf_strfold, p30, p31, p32, free, free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2013'>mpcf_ctor_str</a>    2013 mpc/mpc.c        mpc_parser_t *p = mpc_lift(mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2026'>mpcf_ctor_str</a>    2026 mpc/mpc.c        if (strcmp(xs[1], "?") == 0) { free(xs[1]); return mpc_maybe_lift(xs[0], mpcf_ctor_str); }</span>
+<span class='curline'><a href='../S/48.html#L2041'>mpcf_ctor_str</a>    2041 mpc/mpc.c          case 'b': return mpc_and(2, mpcf_snd, mpc_boundary(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2042'>mpcf_ctor_str</a>    2042 mpc/mpc.c          case 'B': return mpc_not_lift(mpc_boundary(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2043'>mpcf_ctor_str</a>    2043 mpc/mpc.c          case 'A': return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2044'>mpcf_ctor_str</a>    2044 mpc/mpc.c          case 'Z': return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2046'>mpcf_ctor_str</a>    2046 mpc/mpc.c          case 'D': return mpc_not_lift(mpc_digit(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2048'>mpcf_ctor_str</a>    2048 mpc/mpc.c          case 'S': return mpc_not_lift(mpc_whitespace(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2050'>mpcf_ctor_str</a>    2050 mpc/mpc.c          case 'W': return mpc_not_lift(mpc_alphanum(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2062'>mpcf_ctor_str</a>    2062 mpc/mpc.c        if (s[0] == '^') { free(s); return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/48.html#L2063'>mpcf_ctor_str</a>    2063 mpc/mpc.c        if (s[0] == '$') { free(s); return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/48.html#L3775'>mpcf_ctor_str</a>    3775 mpc/mpc.c          &amp;&amp;  p-&gt;data.and.xs[0]-&gt;data.lift.lf == mpcf_ctor_str</span>
+<span class='curline'><a href='../S/49.html#L221'>mpcf_ctor_str</a>     221 mpc/mpc.h      mpc_val_t *mpcf_ctor_str(void);</span>
 </pre>
 </body>
 </html>

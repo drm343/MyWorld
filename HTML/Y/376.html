@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_escape_output_c</title>
+<title>mem_index</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,15 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L2289'>mpc_escape_output_c</a> 2289 mpc/mpc.c      static const char *mpc_escape_output_c[] = {</span>
-<span class='curline'><a href='../S/46.html#L2379'>mpc_escape_output_c</a> 2379 mpc/mpc.c        mpc_val_t *y = mpcf_escape_new(x, mpc_escape_input_c, mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2385'>mpc_escape_output_c</a> 2385 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_c, mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2512'>mpc_escape_output_c</a> 2512 mpc/mpc.c            mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2522'>mpc_escape_output_c</a> 2522 mpc/mpc.c            mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2527'>mpc_escape_output_c</a> 2527 mpc/mpc.c            mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2537'>mpc_escape_output_c</a> 2537 mpc/mpc.c            mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2546'>mpc_escape_output_c</a> 2546 mpc/mpc.c            mpc_escape_output_c);</span>
-<span class='curline'><a href='../S/46.html#L2555'>mpc_escape_output_c</a> 2555 mpc/mpc.c            mpc_escape_output_c);</span>
+<span class='curline'><a href='../S/48.html#L95'>mem_index</a>          95 mpc/mpc.c        size_t mem_index;</span>
+<span class='curline'><a href='../S/48.html#L124'>mem_index</a>         124 mpc/mpc.c        i-&gt;mem_index = 0;</span>
+<span class='curline'><a href='../S/48.html#L154'>mem_index</a>         154 mpc/mpc.c        i-&gt;mem_index = 0;</span>
+<span class='curline'><a href='../S/48.html#L183'>mem_index</a>         183 mpc/mpc.c        i-&gt;mem_index = 0;</span>
+<span class='curline'><a href='../S/48.html#L211'>mem_index</a>         211 mpc/mpc.c        i-&gt;mem_index = 0;</span>
+<span class='curline'><a href='../S/48.html#L241'>mem_index</a>         241 mpc/mpc.c        j = i-&gt;mem_index;</span>
+<span class='curline'><a href='../S/48.html#L243'>mem_index</a>         243 mpc/mpc.c          if (!i-&gt;mem_full[i-&gt;mem_index]) {</span>
+<span class='curline'><a href='../S/48.html#L244'>mem_index</a>         244 mpc/mpc.c            p = (void*)(i-&gt;mem + i-&gt;mem_index);</span>
+<span class='curline'><a href='../S/48.html#L245'>mem_index</a>         245 mpc/mpc.c            i-&gt;mem_full[i-&gt;mem_index] = 1;</span>
+<span class='curline'><a href='../S/48.html#L246'>mem_index</a>         246 mpc/mpc.c            i-&gt;mem_index = (i-&gt;mem_index+1) % MPC_INPUT_MEM_NUM;</span>
+<span class='curline'><a href='../S/48.html#L249'>mem_index</a>         249 mpc/mpc.c          i-&gt;mem_index = (i-&gt;mem_index+1) % MPC_INPUT_MEM_NUM;</span>
+<span class='curline'><a href='../S/48.html#L250'>mem_index</a>         250 mpc/mpc.c        } while (j != i-&gt;mem_index);</span>
 </pre>
 </body>
 </html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>mpc/tests/regex.c</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.5.7' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/61.html'>mpc</a>/<a href='../files/63.html'>tests</a>/regex.c</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L7'>[^]</a><a href='#L123'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L7' title='Defined at 7.'>string_eq</a></li>
+<li><a href='#L8' title='Defined at 8.'>string_print</a></li>
+<li><a href='#L10' title='Defined at 10.'>regex_test_pass</a></li>
+<li><a href='#L14' title='Defined at 14.'>regex_test_fail</a></li>
+<li><a href='#L18' title='Defined at 18.'>test_regex_basic</a></li>
+<li><a href='#L48' title='Defined at 48.'>test_regex_boundary</a></li>
+<li><a href='#L81' title='Defined at 81.'>test_regex_range</a></li>
+<li><a href='#L99' title='Defined at 99.'>test_regex_string</a></li>
+<li><a href='#L112' title='Defined at 112.'>test_regex_lisp_comment</a></li>
+<li><a href='#L123' title='Defined at 123.'>suite_regex</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='55.html'>ptest.h</a>"
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#include</em> "<a href='49.html'>../mpc.h</a>"
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> &lt;string.h&gt;
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> &lt;stdlib.h&gt;
+<a id='L6' name='L6'></a>   6 
+<a id='L7' name='L7'></a>   7 <strong class='reserved'>static</strong> <strong class='reserved'>int</strong> <a href='../R/523.html' title='Multiple referred from 2 places.'>string_eq</a>(<strong class='reserved'>const</strong> <strong class='reserved'>void</strong>* <a href='../Y/596.html' title='Multiple used in 439 places.'>x</a>, <strong class='reserved'>const</strong> <strong class='reserved'>void</strong>* <a href='../Y/598.html' title='Multiple used in 119 places.'>y</a>) <em class='brace'>{</em> <strong class='reserved'>return</strong> (<a href='../S/7.html#L12' title='Defined at 12 in include/helper_function.h.'>strcmp</a>(<a href='../Y/596.html' title='Multiple used in 439 places.'>x</a>, <a href='../Y/598.html' title='Multiple used in 119 places.'>y</a>) == 0); <em class='brace'>}</em>
+<a id='L8' name='L8'></a>   8 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/524.html' title='Multiple referred from 2 places.'>string_print</a>(<strong class='reserved'>const</strong> <strong class='reserved'>void</strong>* <a href='../Y/596.html' title='Multiple used in 439 places.'>x</a>) <em class='brace'>{</em> <a href='../Y/453.html' title='Multiple used in 94 places.'>printf</a>("'%s'", (<strong class='reserved'>char</strong>*)<a href='../Y/596.html' title='Multiple used in 439 places.'>x</a>); <em class='brace'>}</em>
+<a id='L9' name='L9'></a>   9 
+<a id='L10' name='L10'></a>  10 <strong class='reserved'>int</strong> <a href='../R/490.html' title='Multiple referred from 22 places.'>regex_test_pass</a>(<a href='../D/365.html' title='Multiple defined in 2 places.'>mpc_parser_t</a> *<a href='../Y/425.html' title='Multiple used in 533 places.'>p</a>, <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../Y/584.html' title='Multiple used in 8 places.'>value</a>, <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../Y/368.html' title='Multiple used in 4 places.'>match</a>) <em class='brace'>{</em>
+<a id='L11' name='L11'></a>  11   <strong class='reserved'>return</strong> <a href='../S/48.html#L2636' title='Defined at 2636 in mpc/mpc.c.'>mpc_test_pass</a>(<a href='../Y/425.html' title='Multiple used in 533 places.'>p</a>, <a href='../Y/584.html' title='Multiple used in 8 places.'>value</a>, <a href='../Y/368.html' title='Multiple used in 4 places.'>match</a>, <a href='../S/56.html#L7' title='Defined at 7 in mpc/tests/regex.c.'>string_eq</a>, <a href='../Y/308.html' title='Multiple used in 189 places.'>free</a>, <a href='../S/56.html#L8' title='Defined at 8 in mpc/tests/regex.c.'>string_print</a>);
+<a id='L12' name='L12'></a>  12 <em class='brace'>}</em>
+<a id='L13' name='L13'></a>  13 
+<a id='L14' name='L14'></a>  14 <strong class='reserved'>int</strong> <a href='../R/489.html' title='Multiple referred from 8 places.'>regex_test_fail</a>(<a href='../D/365.html' title='Multiple defined in 2 places.'>mpc_parser_t</a> *<a href='../Y/425.html' title='Multiple used in 533 places.'>p</a>, <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../Y/584.html' title='Multiple used in 8 places.'>value</a>, <strong class='reserved'>const</strong> <strong class='reserved'>char</strong>* <a href='../Y/368.html' title='Multiple used in 4 places.'>match</a>) <em class='brace'>{</em>
+<a id='L15' name='L15'></a>  15   <strong class='reserved'>return</strong> <a href='../S/48.html#L2613' title='Defined at 2613 in mpc/mpc.c.'>mpc_test_fail</a>(<a href='../Y/425.html' title='Multiple used in 533 places.'>p</a>, <a href='../Y/584.html' title='Multiple used in 8 places.'>value</a>, <a href='../Y/368.html' title='Multiple used in 4 places.'>match</a>, <a href='../S/56.html#L7' title='Defined at 7 in mpc/tests/regex.c.'>string_eq</a>, <a href='../Y/308.html' title='Multiple used in 189 places.'>free</a>, <a href='../S/56.html#L8' title='Defined at 8 in mpc/tests/regex.c.'>string_print</a>);
+<a id='L16' name='L16'></a>  16 <em class='brace'>}</em>
+<a id='L17' name='L17'></a>  17 
+<a id='L18' name='L18'></a>  18 <strong class='reserved'>void</strong> <a href='../S/56.html#L124' title='Referred from 124 in mpc/tests/regex.c.'>test_regex_basic</a>(<strong class='reserved'>void</strong>) <em class='brace'>{</em>
+<a id='L19' name='L19'></a>  19 
+<a id='L20' name='L20'></a>  20   <a href='../D/365.html' title='Multiple defined in 2 places.'>mpc_parser_t</a> *<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, *<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>, *<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, *<a href='../Y/471.html' title='Multiple used in 6 places.'>re3</a>, *<a href='../Y/472.html' title='Multiple used in 3 places.'>re4</a>, *<a href='../Y/473.html' title='Multiple used in 4 places.'>re5</a>;
+<a id='L21' name='L21'></a>  21 
+<a id='L22' name='L22'></a>  22   <a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("abc|bcd");
+<a id='L23' name='L23'></a>  23   <a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("abc|bcd|e");
+<a id='L24' name='L24'></a>  24   <a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("ab()c(ab)*");
+<a id='L25' name='L25'></a>  25   <a href='../Y/471.html' title='Multiple used in 6 places.'>re3</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("abc(abdd)?");
+<a id='L26' name='L26'></a>  26   <a href='../Y/472.html' title='Multiple used in 3 places.'>re4</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("ab|c(abdd)?");
+<a id='L27' name='L27'></a>  27   <a href='../Y/473.html' title='Multiple used in 4 places.'>re5</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("abc(ab|dd)+g$");
+<a id='L28' name='L28'></a>  28   
+<a id='L29' name='L29'></a>  29   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "abc", "abc"));
+<a id='L30' name='L30'></a>  30   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "bcd", "bcd"));
+<a id='L31' name='L31'></a>  31   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "bc", "bc"));
+<a id='L32' name='L32'></a>  32   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "ab", "ab"));
+<a id='L33' name='L33'></a>  33   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>, "e", "e"));
+<a id='L34' name='L34'></a>  34   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "abc", "abc"));
+<a id='L35' name='L35'></a>  35   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "abcabab", "abcabab"));
+<a id='L36' name='L36'></a>  36   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "abcababd", "abcabab"));
+<a id='L37' name='L37'></a>  37   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/473.html' title='Multiple used in 4 places.'>re5</a>, "abcddg", "abcddg"));
+<a id='L38' name='L38'></a>  38   
+<a id='L39' name='L39'></a>  39   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>);
+<a id='L40' name='L40'></a>  40   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>);
+<a id='L41' name='L41'></a>  41   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>);
+<a id='L42' name='L42'></a>  42   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/471.html' title='Multiple used in 6 places.'>re3</a>);
+<a id='L43' name='L43'></a>  43   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/472.html' title='Multiple used in 3 places.'>re4</a>);
+<a id='L44' name='L44'></a>  44   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/473.html' title='Multiple used in 4 places.'>re5</a>);
+<a id='L45' name='L45'></a>  45 
+<a id='L46' name='L46'></a>  46 <em class='brace'>}</em>
+<a id='L47' name='L47'></a>  47 
+<a id='L48' name='L48'></a>  48 <strong class='reserved'>void</strong> <a href='../S/56.html#L128' title='Referred from 128 in mpc/tests/regex.c.'>test_regex_boundary</a>(<strong class='reserved'>void</strong>) <em class='brace'>{</em>
+<a id='L49' name='L49'></a>  49 
+<a id='L50' name='L50'></a>  50   <a href='../D/365.html' title='Multiple defined in 2 places.'>mpc_parser_t</a> *<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, *<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>, *<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>;
+<a id='L51' name='L51'></a>  51 
+<a id='L52' name='L52'></a>  52   <a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("\\bfoo\\b");
+<a id='L53' name='L53'></a>  53   <a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("(w| )?\\bfoo\\b");
+<a id='L54' name='L54'></a>  54   <a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("py\\B.*");
+<a id='L55' name='L55'></a>  55 
+<a id='L56' name='L56'></a>  56   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "foo", "foo"));
+<a id='L57' name='L57'></a>  57   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "foo.", "foo"));
+<a id='L58' name='L58'></a>  58   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "foo)", "foo"));
+<a id='L59' name='L59'></a>  59   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "foo baz", "foo"));
+<a id='L60' name='L60'></a>  60   
+<a id='L61' name='L61'></a>  61   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "foobar", "foo"));
+<a id='L62' name='L62'></a>  62   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "foo3", "foo"));
+<a id='L63' name='L63'></a>  63   
+<a id='L64' name='L64'></a>  64   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>, "foo", "foo"));
+<a id='L65' name='L65'></a>  65   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>, " foo", " foo"));
+<a id='L66' name='L66'></a>  66   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>, "wfoo", "foo"));
+<a id='L67' name='L67'></a>  67   
+<a id='L68' name='L68'></a>  68   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "python", "python"));
+<a id='L69' name='L69'></a>  69   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "py3", "py3"));
+<a id='L70' name='L70'></a>  70   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "py2", "py2"));
+<a id='L71' name='L71'></a>  71   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "py", "py"));
+<a id='L72' name='L72'></a>  72   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "py.", "py."));
+<a id='L73' name='L73'></a>  73   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L14' title='Defined at 14 in mpc/tests/regex.c.'>regex_test_fail</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, "py!", "py!"));
+<a id='L74' name='L74'></a>  74   
+<a id='L75' name='L75'></a>  75   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>);
+<a id='L76' name='L76'></a>  76   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>);
+<a id='L77' name='L77'></a>  77   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>);
+<a id='L78' name='L78'></a>  78   
+<a id='L79' name='L79'></a>  79 <em class='brace'>}</em>
+<a id='L80' name='L80'></a>  80 
+<a id='L81' name='L81'></a>  81 <strong class='reserved'>void</strong> <a href='../S/56.html#L125' title='Referred from 125 in mpc/tests/regex.c.'>test_regex_range</a>(<strong class='reserved'>void</strong>) <em class='brace'>{</em>
+<a id='L82' name='L82'></a>  82 
+<a id='L83' name='L83'></a>  83   <a href='../D/365.html' title='Multiple defined in 2 places.'>mpc_parser_t</a> *<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, *<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>, *<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>, *<a href='../Y/471.html' title='Multiple used in 6 places.'>re3</a>;
+<a id='L84' name='L84'></a>  84   
+<a id='L85' name='L85'></a>  85   <a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("abg[abcdef]");
+<a id='L86' name='L86'></a>  86   <a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("y*[a-z]");
+<a id='L87' name='L87'></a>  87   <a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("zz(p+)?[A-Z_0\\]123]*");
+<a id='L88' name='L88'></a>  88   <a href='../Y/471.html' title='Multiple used in 6 places.'>re3</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("^[^56hy].*$");
+<a id='L89' name='L89'></a>  89   
+<a id='L90' name='L90'></a>  90   <em class='comment'>/* TODO: Testing */</em>
+<a id='L91' name='L91'></a>  91   
+<a id='L92' name='L92'></a>  92   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>);
+<a id='L93' name='L93'></a>  93   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/469.html' title='Multiple used in 13 places.'>re1</a>);
+<a id='L94' name='L94'></a>  94   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/470.html' title='Multiple used in 18 places.'>re2</a>);
+<a id='L95' name='L95'></a>  95   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/471.html' title='Multiple used in 6 places.'>re3</a>);
+<a id='L96' name='L96'></a>  96   
+<a id='L97' name='L97'></a>  97 <em class='brace'>}</em>
+<a id='L98' name='L98'></a>  98 
+<a id='L99' name='L99'></a>  99 <strong class='reserved'>void</strong> <a href='../S/56.html#L126' title='Referred from 126 in mpc/tests/regex.c.'>test_regex_string</a>(<strong class='reserved'>void</strong>) <em class='brace'>{</em>
+<a id='L100' name='L100'></a> 100   
+<a id='L101' name='L101'></a> 101   <a href='../D/365.html' title='Multiple defined in 2 places.'>mpc_parser_t</a> *<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>("\"(\\\\.|[^\"])*\"");
+<a id='L102' name='L102'></a> 102 
+<a id='L103' name='L103'></a> 103   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "\"there\"", "\"there\""));
+<a id='L104' name='L104'></a> 104   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "\"hello\"", "\"hello\""));
+<a id='L105' name='L105'></a> 105   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "\"i am dan\"", "\"i am dan\""));
+<a id='L106' name='L106'></a> 106   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, "\"i a\\\"m dan\"", "\"i a\\\"m dan\""));
+<a id='L107' name='L107'></a> 107 
+<a id='L108' name='L108'></a> 108   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>);
+<a id='L109' name='L109'></a> 109 
+<a id='L110' name='L110'></a> 110 <em class='brace'>}</em>
+<a id='L111' name='L111'></a> 111 
+<a id='L112' name='L112'></a> 112 <strong class='reserved'>void</strong> <a href='../S/56.html#L127' title='Referred from 127 in mpc/tests/regex.c.'>test_regex_lisp_comment</a>(<strong class='reserved'>void</strong>) <em class='brace'>{</em>
+<a id='L113' name='L113'></a> 113   
+<a id='L114' name='L114'></a> 114   <a href='../D/365.html' title='Multiple defined in 2 places.'>mpc_parser_t</a> *<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a> = <a href='../S/48.html#L2159' title='Defined at 2159 in mpc/mpc.c.'>mpc_re</a>(";[^\\n\\r]*");
+<a id='L115' name='L115'></a> 115 
+<a id='L116' name='L116'></a> 116   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, ";comment", ";comment"));
+<a id='L117' name='L117'></a> 117   <a href='../S/55.html#L12' title='Defined at 12 in mpc/tests/ptest.h.'>PT_ASSERT</a>(<a href='../S/56.html#L10' title='Defined at 10 in mpc/tests/regex.c.'>regex_test_pass</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>, ";i am the\nman", ";i am the"));
+<a id='L118' name='L118'></a> 118   
+<a id='L119' name='L119'></a> 119   <a href='../S/48.html#L1371' title='Defined at 1371 in mpc/mpc.c.'>mpc_delete</a>(<a href='../Y/468.html' title='Multiple used in 29 places.'>re0</a>);
+<a id='L120' name='L120'></a> 120   
+<a id='L121' name='L121'></a> 121 <em class='brace'>}</em>
+<a id='L122' name='L122'></a> 122 
+<a id='L123' name='L123'></a> 123 <strong class='reserved'>void</strong> <a href='../R/530.html' title='Multiple referred from 2 places.'>suite_regex</a>(<strong class='reserved'>void</strong>) <em class='brace'>{</em>
+<a id='L124' name='L124'></a> 124   <a href='../S/54.html#L198' title='Defined at 198 in mpc/tests/ptest.c.'>pt_add_test</a>(<a href='../S/56.html#L18' title='Defined at 18 in mpc/tests/regex.c.'>test_regex_basic</a>, "Test Regex Basic", "Suite Regex");
+<a id='L125' name='L125'></a> 125   <a href='../S/54.html#L198' title='Defined at 198 in mpc/tests/ptest.c.'>pt_add_test</a>(<a href='../S/56.html#L81' title='Defined at 81 in mpc/tests/regex.c.'>test_regex_range</a>, "Test Regex Range", "Suite Regex");
+<a id='L126' name='L126'></a> 126   <a href='../S/54.html#L198' title='Defined at 198 in mpc/tests/ptest.c.'>pt_add_test</a>(<a href='../S/56.html#L99' title='Defined at 99 in mpc/tests/regex.c.'>test_regex_string</a>, "Test Regex String", "Suite Regex");
+<a id='L127' name='L127'></a> 127   <a href='../S/54.html#L198' title='Defined at 198 in mpc/tests/ptest.c.'>pt_add_test</a>(<a href='../S/56.html#L112' title='Defined at 112 in mpc/tests/regex.c.'>test_regex_lisp_comment</a>, "Test Regex Lisp Comment", "Suite Regex");
+<a id='L128' name='L128'></a> 128   <a href='../S/54.html#L198' title='Defined at 198 in mpc/tests/ptest.c.'>pt_add_test</a>(<a href='../S/56.html#L48' title='Defined at 48 in mpc/tests/regex.c.'>test_regex_boundary</a>, "Test Regex Boundary", "Suite Regex");
+<a id='L129' name='L129'></a> 129 <em class='brace'>}</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L7'>[^]</a><a href='#L123'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

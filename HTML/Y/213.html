@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>character_use_pool</title>
+<title>char_unescape_buffer</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,14 +9,13 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/19.html#L4'>character_use_pool</a>    4 include/main_set_character.h Character_Pool_Access character_use_pool = NULL;</span>
-<span class='curline'><a href='../S/19.html#L186'>character_use_pool</a>  186 include/main_set_character.h     npc = character_pool.malloc(character_use_pool);</span>
-<span class='curline'><a href='../S/27.html#L35'>character_use_pool</a>   35 src/main.c       uint8_t used = character_use_pool-&gt;status-&gt;max_size - character_use_pool-&gt;status-&gt;current_size;</span>
-<span class='curline'><a href='../S/27.html#L37'>character_use_pool</a>   37 src/main.c         Status_Access npc = &amp;(character_use_pool-&gt;status-&gt;pool[next]);</span>
-<span class='curline'><a href='../S/27.html#L94'>character_use_pool</a>   94 src/main.c       character_use_pool = character_pool.start(100);</span>
-<span class='curline'><a href='../S/27.html#L102'>character_use_pool</a>  102 src/main.c       Status_Access Player = character_pool.malloc(character_use_pool);</span>
-<span class='curline'><a href='../S/27.html#L140'>character_use_pool</a>  140 src/main.c               running = camera.take(camera_1, character_use_pool, &amp;event);</span>
-<span class='curline'><a href='../S/27.html#L161'>character_use_pool</a>  161 src/main.c       character_pool.stop(character_use_pool);</span>
+<span class='curline'><a href='../S/48.html#L578'>char_unescape_buffer</a>  578 mpc/mpc.c      static char char_unescape_buffer[4];</span>
+<span class='curline'><a href='../S/48.html#L582'>char_unescape_buffer</a>  582 mpc/mpc.c        char_unescape_buffer[0] = '\'';</span>
+<span class='curline'><a href='../S/48.html#L583'>char_unescape_buffer</a>  583 mpc/mpc.c        char_unescape_buffer[1] = ' ';</span>
+<span class='curline'><a href='../S/48.html#L584'>char_unescape_buffer</a>  584 mpc/mpc.c        char_unescape_buffer[2] = '\'';</span>
+<span class='curline'><a href='../S/48.html#L585'>char_unescape_buffer</a>  585 mpc/mpc.c        char_unescape_buffer[3] = '\0';</span>
+<span class='curline'><a href='../S/48.html#L598'>char_unescape_buffer</a>  598 mpc/mpc.c            char_unescape_buffer[1] = c;</span>
+<span class='curline'><a href='../S/48.html#L599'>char_unescape_buffer</a>  599 mpc/mpc.c            return char_unescape_buffer;</span>
 </pre>
 </body>
 </html>

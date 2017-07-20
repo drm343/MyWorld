@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_oct</title>
+<title>mpc_new</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,129 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1872'>mpc_oct</a>          1872 mpc/mpc.c      mpc_parser_t *mpc_number(void) { return mpc_expect(mpc_or(3, mpc_int(), mpc_hex(), mpc_oct()), "number"); }</span>
-<span class='curline'><a href='../S/47.html#L175'>mpc_oct</a>           175 mpc/mpc.h      mpc_parser_t *mpc_oct(void);</span>
+<span class='curline'><a href='../S/14.html#L102'>mpc_new</a>           102 include/main_set_character.h   mpc_parser_t* Number         = mpc_new("number");</span>
+<span class='curline'><a href='../S/14.html#L103'>mpc_new</a>           103 include/main_set_character.h   mpc_parser_t* Key            = mpc_new("key");</span>
+<span class='curline'><a href='../S/14.html#L104'>mpc_new</a>           104 include/main_set_character.h   mpc_parser_t* Json_String    = mpc_new("json_string");</span>
+<span class='curline'><a href='../S/14.html#L105'>mpc_new</a>           105 include/main_set_character.h   mpc_parser_t* Json_Boolean   = mpc_new("json_boolean");</span>
+<span class='curline'><a href='../S/14.html#L106'>mpc_new</a>           106 include/main_set_character.h   mpc_parser_t* Json_Value     = mpc_new("json_value");</span>
+<span class='curline'><a href='../S/14.html#L107'>mpc_new</a>           107 include/main_set_character.h   mpc_parser_t* KV_Item        = mpc_new("kv_item");</span>
+<span class='curline'><a href='../S/14.html#L108'>mpc_new</a>           108 include/main_set_character.h   mpc_parser_t* Json_Array     = mpc_new("json_array");</span>
+<span class='curline'><a href='../S/14.html#L109'>mpc_new</a>           109 include/main_set_character.h   mpc_parser_t* Json_Object    = mpc_new("json_obj");</span>
+<span class='curline'><a href='../S/14.html#L110'>mpc_new</a>           110 include/main_set_character.h   mpc_parser_t* JSON           = mpc_new("json");</span>
+<span class='curline'><a href='../S/15.html#L114'>mpc_new</a>           114 include/main_set_config.h   mpc_parser_t* Number         = mpc_new("number");</span>
+<span class='curline'><a href='../S/15.html#L115'>mpc_new</a>           115 include/main_set_config.h   mpc_parser_t* Element        = mpc_new("element");</span>
+<span class='curline'><a href='../S/15.html#L116'>mpc_new</a>           116 include/main_set_config.h   mpc_parser_t* Value          = mpc_new("value");</span>
+<span class='curline'><a href='../S/15.html#L117'>mpc_new</a>           117 include/main_set_config.h   mpc_parser_t* Key            = mpc_new("key");</span>
+<span class='curline'><a href='../S/15.html#L118'>mpc_new</a>           118 include/main_set_config.h   mpc_parser_t* ID_Selector    = mpc_new("id_selector");</span>
+<span class='curline'><a href='../S/15.html#L119'>mpc_new</a>           119 include/main_set_config.h   mpc_parser_t* Class_Selector = mpc_new("class_selector");</span>
+<span class='curline'><a href='../S/15.html#L120'>mpc_new</a>           120 include/main_set_config.h   mpc_parser_t* Size_Value     = mpc_new("size_value");</span>
+<span class='curline'><a href='../S/15.html#L121'>mpc_new</a>           121 include/main_set_config.h   mpc_parser_t* Size_Key       = mpc_new("size_key");</span>
+<span class='curline'><a href='../S/15.html#L122'>mpc_new</a>           122 include/main_set_config.h   mpc_parser_t* Windom_Key     = mpc_new("windom_key");</span>
+<span class='curline'><a href='../S/15.html#L123'>mpc_new</a>           123 include/main_set_config.h   mpc_parser_t* Size_Attibute  = mpc_new("size_attibute");</span>
+<span class='curline'><a href='../S/15.html#L124'>mpc_new</a>           124 include/main_set_config.h   mpc_parser_t* Windom_Attibute= mpc_new("windom_attibute");</span>
+<span class='curline'><a href='../S/15.html#L125'>mpc_new</a>           125 include/main_set_config.h   mpc_parser_t* Mark_Attibute  = mpc_new("mark_attibute");</span>
+<span class='curline'><a href='../S/15.html#L126'>mpc_new</a>           126 include/main_set_config.h   mpc_parser_t* Attibute       = mpc_new("attibute");</span>
+<span class='curline'><a href='../S/15.html#L127'>mpc_new</a>           127 include/main_set_config.h   mpc_parser_t* Selector       = mpc_new("selector");</span>
+<span class='curline'><a href='../S/15.html#L128'>mpc_new</a>           128 include/main_set_config.h   mpc_parser_t* CSS_NODE       = mpc_new("css_node");</span>
+<span class='curline'><a href='../S/15.html#L129'>mpc_new</a>           129 include/main_set_config.h   mpc_parser_t* CSS            = mpc_new("css");</span>
+<span class='curline'><a href='../S/36.html#L7'>mpc_new</a>             7 mpc/examples/doge.c   mpc_parser_t* Adjective = mpc_new("adjective");</span>
+<span class='curline'><a href='../S/36.html#L8'>mpc_new</a>             8 mpc/examples/doge.c   mpc_parser_t* Noun      = mpc_new("noun");</span>
+<span class='curline'><a href='../S/36.html#L9'>mpc_new</a>             9 mpc/examples/doge.c   mpc_parser_t* Phrase    = mpc_new("phrase");</span>
+<span class='curline'><a href='../S/36.html#L10'>mpc_new</a>            10 mpc/examples/doge.c   mpc_parser_t* Doge      = mpc_new("doge");</span>
+<span class='curline'><a href='../S/38.html#L13'>mpc_new</a>            13 mpc/examples/foobar.c     Foobar = mpc_new("foobar");</span>
+<span class='curline'><a href='../S/39.html#L7'>mpc_new</a>             7 mpc/examples/lispy.c   mpc_parser_t* Number  = mpc_new("number");</span>
+<span class='curline'><a href='../S/39.html#L8'>mpc_new</a>             8 mpc/examples/lispy.c   mpc_parser_t* Symbol  = mpc_new("symbol");</span>
+<span class='curline'><a href='../S/39.html#L9'>mpc_new</a>             9 mpc/examples/lispy.c   mpc_parser_t* String  = mpc_new("string");</span>
+<span class='curline'><a href='../S/39.html#L10'>mpc_new</a>            10 mpc/examples/lispy.c   mpc_parser_t* Comment = mpc_new("comment");</span>
+<span class='curline'><a href='../S/39.html#L11'>mpc_new</a>            11 mpc/examples/lispy.c   mpc_parser_t* Sexpr   = mpc_new("sexpr");</span>
+<span class='curline'><a href='../S/39.html#L12'>mpc_new</a>            12 mpc/examples/lispy.c   mpc_parser_t* Qexpr   = mpc_new("qexpr");</span>
+<span class='curline'><a href='../S/39.html#L13'>mpc_new</a>            13 mpc/examples/lispy.c   mpc_parser_t* Expr    = mpc_new("expr");</span>
+<span class='curline'><a href='../S/39.html#L14'>mpc_new</a>            14 mpc/examples/lispy.c   mpc_parser_t* Lispy   = mpc_new("lispy");</span>
+<span class='curline'><a href='../S/40.html#L5'>mpc_new</a>             5 mpc/examples/maths.c   mpc_parser_t *Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/40.html#L6'>mpc_new</a>             6 mpc/examples/maths.c   mpc_parser_t *Prod  = mpc_new("product");</span>
+<span class='curline'><a href='../S/40.html#L7'>mpc_new</a>             7 mpc/examples/maths.c   mpc_parser_t *Value = mpc_new("value");</span>
+<span class='curline'><a href='../S/40.html#L8'>mpc_new</a>             8 mpc/examples/maths.c   mpc_parser_t *Maths = mpc_new("maths");</span>
+<span class='curline'><a href='../S/45.html#L5'>mpc_new</a>             5 mpc/examples/smallc.c   mpc_parser_t* Ident     = mpc_new("ident");</span>
+<span class='curline'><a href='../S/45.html#L6'>mpc_new</a>             6 mpc/examples/smallc.c   mpc_parser_t* Number    = mpc_new("number");</span>
+<span class='curline'><a href='../S/45.html#L7'>mpc_new</a>             7 mpc/examples/smallc.c   mpc_parser_t* Character = mpc_new("character");</span>
+<span class='curline'><a href='../S/45.html#L8'>mpc_new</a>             8 mpc/examples/smallc.c   mpc_parser_t* String    = mpc_new("string");</span>
+<span class='curline'><a href='../S/45.html#L9'>mpc_new</a>             9 mpc/examples/smallc.c   mpc_parser_t* Factor    = mpc_new("factor");</span>
+<span class='curline'><a href='../S/45.html#L10'>mpc_new</a>            10 mpc/examples/smallc.c   mpc_parser_t* Term      = mpc_new("term");</span>
+<span class='curline'><a href='../S/45.html#L11'>mpc_new</a>            11 mpc/examples/smallc.c   mpc_parser_t* Lexp      = mpc_new("lexp");</span>
+<span class='curline'><a href='../S/45.html#L12'>mpc_new</a>            12 mpc/examples/smallc.c   mpc_parser_t* Stmt      = mpc_new("stmt");</span>
+<span class='curline'><a href='../S/45.html#L13'>mpc_new</a>            13 mpc/examples/smallc.c   mpc_parser_t* Exp       = mpc_new("exp");</span>
+<span class='curline'><a href='../S/45.html#L14'>mpc_new</a>            14 mpc/examples/smallc.c   mpc_parser_t* Typeident = mpc_new("typeident");</span>
+<span class='curline'><a href='../S/45.html#L15'>mpc_new</a>            15 mpc/examples/smallc.c   mpc_parser_t* Decls     = mpc_new("decls");</span>
+<span class='curline'><a href='../S/45.html#L16'>mpc_new</a>            16 mpc/examples/smallc.c   mpc_parser_t* Args      = mpc_new("args");</span>
+<span class='curline'><a href='../S/45.html#L17'>mpc_new</a>            17 mpc/examples/smallc.c   mpc_parser_t* Body      = mpc_new("body");</span>
+<span class='curline'><a href='../S/45.html#L18'>mpc_new</a>            18 mpc/examples/smallc.c   mpc_parser_t* Procedure = mpc_new("procedure");</span>
+<span class='curline'><a href='../S/45.html#L19'>mpc_new</a>            19 mpc/examples/smallc.c   mpc_parser_t* Main      = mpc_new("main");</span>
+<span class='curline'><a href='../S/45.html#L20'>mpc_new</a>            20 mpc/examples/smallc.c   mpc_parser_t* Includes  = mpc_new("includes");</span>
+<span class='curline'><a href='../S/45.html#L21'>mpc_new</a>            21 mpc/examples/smallc.c   mpc_parser_t* Smallc    = mpc_new("smallc");</span>
+<span class='curline'><a href='../S/47.html#L5'>mpc_new</a>             5 mpc/examples/tree_traversal.c   mpc_parser_t *Input  = mpc_new("input");</span>
+<span class='curline'><a href='../S/47.html#L6'>mpc_new</a>             6 mpc/examples/tree_traversal.c   mpc_parser_t *Node  = mpc_new("node");</span>
+<span class='curline'><a href='../S/47.html#L7'>mpc_new</a>             7 mpc/examples/tree_traversal.c   mpc_parser_t *Leaf  = mpc_new("leaf");</span>
+<span class='curline'><a href='../S/48.html#L2166'>mpc_new</a>          2166 mpc/mpc.c        Regex  = mpc_new("regex");</span>
+<span class='curline'><a href='../S/48.html#L2167'>mpc_new</a>          2167 mpc/mpc.c        Term   = mpc_new("term");</span>
+<span class='curline'><a href='../S/48.html#L2168'>mpc_new</a>          2168 mpc/mpc.c        Factor = mpc_new("factor");</span>
+<span class='curline'><a href='../S/48.html#L2169'>mpc_new</a>          2169 mpc/mpc.c        Base   = mpc_new("base");</span>
+<span class='curline'><a href='../S/48.html#L2170'>mpc_new</a>          2170 mpc/mpc.c        Range  = mpc_new("range");</span>
+<span class='curline'><a href='../S/48.html#L3296'>mpc_new</a>          3296 mpc/mpc.c        GrammarTotal = mpc_new("grammar_total");</span>
+<span class='curline'><a href='../S/48.html#L3297'>mpc_new</a>          3297 mpc/mpc.c        Grammar = mpc_new("grammar");</span>
+<span class='curline'><a href='../S/48.html#L3298'>mpc_new</a>          3298 mpc/mpc.c        Term = mpc_new("term");</span>
+<span class='curline'><a href='../S/48.html#L3299'>mpc_new</a>          3299 mpc/mpc.c        Factor = mpc_new("factor");</span>
+<span class='curline'><a href='../S/48.html#L3300'>mpc_new</a>          3300 mpc/mpc.c        Base = mpc_new("base");</span>
+<span class='curline'><a href='../S/48.html#L3451'>mpc_new</a>          3451 mpc/mpc.c        Lang    = mpc_new("lang");</span>
+<span class='curline'><a href='../S/48.html#L3452'>mpc_new</a>          3452 mpc/mpc.c        Stmt    = mpc_new("stmt");</span>
+<span class='curline'><a href='../S/48.html#L3453'>mpc_new</a>          3453 mpc/mpc.c        Grammar = mpc_new("grammar");</span>
+<span class='curline'><a href='../S/48.html#L3454'>mpc_new</a>          3454 mpc/mpc.c        Term    = mpc_new("term");</span>
+<span class='curline'><a href='../S/48.html#L3455'>mpc_new</a>          3455 mpc/mpc.c        Factor  = mpc_new("factor");</span>
+<span class='curline'><a href='../S/48.html#L3456'>mpc_new</a>          3456 mpc/mpc.c        Base    = mpc_new("base");</span>
+<span class='curline'><a href='../S/49.html#L88'>mpc_new</a>            88 mpc/mpc.h      mpc_parser_t *mpc_new(const char *name);</span>
+<span class='curline'><a href='../S/51.html#L41'>mpc_new</a>            41 mpc/tests/core.c   Expr   = mpc_new("expr");</span>
+<span class='curline'><a href='../S/51.html#L42'>mpc_new</a>            42 mpc/tests/core.c   Factor = mpc_new("factor");</span>
+<span class='curline'><a href='../S/51.html#L43'>mpc_new</a>            43 mpc/tests/core.c   Term   = mpc_new("term");</span>
+<span class='curline'><a href='../S/51.html#L44'>mpc_new</a>            44 mpc/tests/core.c   Maths  = mpc_new("maths");</span>
+<span class='curline'><a href='../S/52.html#L9'>mpc_new</a>             9 mpc/tests/grammar.c   Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/52.html#L10'>mpc_new</a>            10 mpc/tests/grammar.c   Prod  = mpc_new("product");</span>
+<span class='curline'><a href='../S/52.html#L11'>mpc_new</a>            11 mpc/tests/grammar.c   Value = mpc_new("value");</span>
+<span class='curline'><a href='../S/52.html#L12'>mpc_new</a>            12 mpc/tests/grammar.c   Maths = mpc_new("maths");</span>
+<span class='curline'><a href='../S/52.html#L64'>mpc_new</a>            64 mpc/tests/grammar.c   Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/52.html#L65'>mpc_new</a>            65 mpc/tests/grammar.c   Prod  = mpc_new("product");</span>
+<span class='curline'><a href='../S/52.html#L66'>mpc_new</a>            66 mpc/tests/grammar.c   Value = mpc_new("value");</span>
+<span class='curline'><a href='../S/52.html#L67'>mpc_new</a>            67 mpc/tests/grammar.c   Maths = mpc_new("maths");</span>
+<span class='curline'><a href='../S/52.html#L83'>mpc_new</a>            83 mpc/tests/grammar.c   Expr  = mpc_new("expression");</span>
+<span class='curline'><a href='../S/52.html#L84'>mpc_new</a>            84 mpc/tests/grammar.c   Prod  = mpc_new("product");</span>
+<span class='curline'><a href='../S/52.html#L85'>mpc_new</a>            85 mpc/tests/grammar.c   Value = mpc_new("value");</span>
+<span class='curline'><a href='../S/52.html#L86'>mpc_new</a>            86 mpc/tests/grammar.c   Maths = mpc_new("maths");</span>
+<span class='curline'><a href='../S/52.html#L97'>mpc_new</a>            97 mpc/tests/grammar.c   mpc_parser_t* Adjective = mpc_new("adjective");</span>
+<span class='curline'><a href='../S/52.html#L98'>mpc_new</a>            98 mpc/tests/grammar.c   mpc_parser_t* Noun      = mpc_new("noun");</span>
+<span class='curline'><a href='../S/52.html#L99'>mpc_new</a>            99 mpc/tests/grammar.c   mpc_parser_t* Phrase    = mpc_new("phrase");</span>
+<span class='curline'><a href='../S/52.html#L100'>mpc_new</a>           100 mpc/tests/grammar.c   mpc_parser_t* Doge      = mpc_new("doge");</span>
+<span class='curline'><a href='../S/52.html#L136'>mpc_new</a>           136 mpc/tests/grammar.c   mpc_parser_t *Line = mpc_new("line");</span>
+<span class='curline'><a href='../S/52.html#L137'>mpc_new</a>           137 mpc/tests/grammar.c   mpc_parser_t *Number = mpc_new("number");</span>
+<span class='curline'><a href='../S/52.html#L138'>mpc_new</a>           138 mpc/tests/grammar.c   mpc_parser_t *QuotedString = mpc_new("quoted_string");</span>
+<span class='curline'><a href='../S/52.html#L139'>mpc_new</a>           139 mpc/tests/grammar.c   mpc_parser_t *LinePragma = mpc_new("linepragma");</span>
+<span class='curline'><a href='../S/52.html#L140'>mpc_new</a>           140 mpc/tests/grammar.c   mpc_parser_t *Parser = mpc_new("parser");</span>
+<span class='curline'><a href='../S/52.html#L173'>mpc_new</a>           173 mpc/tests/grammar.c   mpc_parser_t *Qscript = mpc_new("qscript");</span>
+<span class='curline'><a href='../S/52.html#L174'>mpc_new</a>           174 mpc/tests/grammar.c   mpc_parser_t *Comment = mpc_new("comment");</span>
+<span class='curline'><a href='../S/52.html#L175'>mpc_new</a>           175 mpc/tests/grammar.c   mpc_parser_t *Resource = mpc_new("resource");</span>
+<span class='curline'><a href='../S/52.html#L176'>mpc_new</a>           176 mpc/tests/grammar.c   mpc_parser_t *Rtype = mpc_new("rtype");</span>
+<span class='curline'><a href='../S/52.html#L177'>mpc_new</a>           177 mpc/tests/grammar.c   mpc_parser_t *Rname = mpc_new("rname");</span>
+<span class='curline'><a href='../S/52.html#L178'>mpc_new</a>           178 mpc/tests/grammar.c   mpc_parser_t *InnerBlock = mpc_new("inner_block");</span>
+<span class='curline'><a href='../S/52.html#L179'>mpc_new</a>           179 mpc/tests/grammar.c   mpc_parser_t *Statement = mpc_new("statement");</span>
+<span class='curline'><a href='../S/52.html#L180'>mpc_new</a>           180 mpc/tests/grammar.c   mpc_parser_t *Function = mpc_new("function");</span>
+<span class='curline'><a href='../S/52.html#L181'>mpc_new</a>           181 mpc/tests/grammar.c   mpc_parser_t *Parameter = mpc_new("parameter");</span>
+<span class='curline'><a href='../S/52.html#L182'>mpc_new</a>           182 mpc/tests/grammar.c   mpc_parser_t *Literal = mpc_new("literal");</span>
+<span class='curline'><a href='../S/52.html#L183'>mpc_new</a>           183 mpc/tests/grammar.c   mpc_parser_t *Block = mpc_new("block");</span>
+<span class='curline'><a href='../S/52.html#L184'>mpc_new</a>           184 mpc/tests/grammar.c   mpc_parser_t *Seperator = mpc_new("seperator");</span>
+<span class='curline'><a href='../S/52.html#L185'>mpc_new</a>           185 mpc/tests/grammar.c   mpc_parser_t *Qstring = mpc_new("qstring");</span>
+<span class='curline'><a href='../S/52.html#L186'>mpc_new</a>           186 mpc/tests/grammar.c   mpc_parser_t *SimpleStr = mpc_new("simplestr");</span>
+<span class='curline'><a href='../S/52.html#L187'>mpc_new</a>           187 mpc/tests/grammar.c   mpc_parser_t *ComplexStr = mpc_new("complexstr");</span>
+<span class='curline'><a href='../S/52.html#L188'>mpc_new</a>           188 mpc/tests/grammar.c   mpc_parser_t *Number = mpc_new("number");</span>
+<span class='curline'><a href='../S/52.html#L189'>mpc_new</a>           189 mpc/tests/grammar.c   mpc_parser_t *Float = mpc_new("float");</span>
+<span class='curline'><a href='../S/52.html#L190'>mpc_new</a>           190 mpc/tests/grammar.c   mpc_parser_t *Int = mpc_new("int");</span>
+<span class='curline'><a href='../S/52.html#L262'>mpc_new</a>           262 mpc/tests/grammar.c   mpc_parser_t *Parser = mpc_new("parser");</span>
 </pre>
 </body>
 </html>

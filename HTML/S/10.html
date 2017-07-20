@@ -1,33 +1,47 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>include/helper_function.h</title>
+<title>include/character.h</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
 <link rel='stylesheet' type='text/css' href='../style.css' />
 </head>
 <body>
-<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/58.html'>include</a>/helper_function.h</h2>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/60.html'>include</a>/character.h</h2>
 <em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
 <hr />
-<h2 class='header'><a href='../J/9.html' title='Multiple included from 4 places.'>INCLUDED FROM</a></h2>
+<h2 class='header'><a href='../J/6.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
 <hr />
 <pre>
-<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/10.html#L2' title='Defined at 2 in include/helper_function.h.'>HEADER_SETUP_CONFIG</a>
-<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/10.html#L1' title='Referred from 1 in include/helper_function.h.'>HEADER_SETUP_CONFIG</a>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/10.html#L2' title='Defined at 2 in include/character.h.'>HEADER_CHARACTER</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/10.html#L1' title='Referred from 1 in include/character.h.'>HEADER_CHARACTER</a>
 <a id='L3' name='L3'></a>   3 
-<a id='L4' name='L4'></a>   4 <em class='sharp'>#define</em> BELONG(<a href='../Y/558.html' title='Multiple used in 2 places.'>val</a>, <a href='../Y/546.html' title='Multiple used in 119 places.'>type</a>) <a href='../Y/546.html' title='Multiple used in 119 places.'>type</a> ##_##<a href='../Y/558.html' title='Multiple used in 2 places.'>val</a>
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> &lt;stdbool.h&gt;
 <a id='L5' name='L5'></a>   5 
-<a id='L6' name='L6'></a>   6 <em class='sharp'>#define</em> <a href='../R/27.html' title='Multiple referred from 3 places.'>GENERIC_POOL</a>(<a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>, <a href='../Y/516.html' title='Multiple used in 2 places.'>struct_name</a>) <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em> \
-<a id='L7' name='L7'></a>   7   <a href='../Y/516.html' title='Multiple used in 2 places.'>struct_name</a> <a href='../Y/425.html' title='Multiple used in 31 places.'>pool</a>; \
-<a id='L8' name='L8'></a>   8   <a href='../Y/550.html' title='Multiple used in 39 places.'>uint8_t</a> <a href='../Y/356.html' title='Multiple used in 26 places.'>max_size</a>; \
-<a id='L9' name='L9'></a>   9   <a href='../Y/550.html' title='Multiple used in 39 places.'>uint8_t</a> <a href='../Y/240.html' title='Multiple used in 30 places.'>current_size</a>; \
-<a id='L10' name='L10'></a>  10 <em class='brace'>}</em> <a href='../S/7.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>
-<a id='L11' name='L11'></a>  11 
-<a id='L12' name='L12'></a>  12 <em class='sharp'>#define</em> <a href='../R/106.html' title='Multiple referred from 11 places.'>STRCMP</a>(<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>) !<a href='../R/513.html' title='Multiple referred from 26 places.'>strcmp</a>(<a href='../Y/571.html' title='Multiple used in 433 places.'>x</a>, <a href='../Y/573.html' title='Multiple used in 113 places.'>y</a>)
-<a id='L13' name='L13'></a>  13 
-<a id='L14' name='L14'></a>  14 <em class='sharp'>#endif</em>
+<a id='L6' name='L6'></a>   6 <em class='sharp'>#include</em> "<a href='9.html'>base_type.h</a>"
+<a id='L7' name='L7'></a>   7 <em class='sharp'>#include</em> "<a href='19.html'>string_pool.h</a>"
+<a id='L8' name='L8'></a>   8 <em class='sharp'>#include</em> "<a href='12.html'>graphic.h</a>"
+<a id='L9' name='L9'></a>   9 
+<a id='L10' name='L10'></a>  10 
+<a id='L11' name='L11'></a>  11 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <a href='../R/10.html' title='Multiple referred from 2 places.'>Character_Base</a> <em class='brace'>{</em>
+<a id='L12' name='L12'></a>  12   <a href='../S/19.html#L5' title='Defined at 5 in include/string_pool.h.'>String</a> <a href='../S/5.html#L12' title='Defined at 12 in include/ada_style.h.'>name</a>;
+<a id='L13' name='L13'></a>  13   <a href='../S/12.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> <a href='../Y/71.html' title='Multiple used in 7 places.'>Mark</a>;
+<a id='L14' name='L14'></a>  14   <a href='../S/9.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/90.html' title='Multiple used in 18 places.'>Real_Position</a>;
+<a id='L15' name='L15'></a>  15   <a href='../S/9.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/42.html' title='Multiple used in 11 places.'>Graph_Position</a>;
+<a id='L16' name='L16'></a>  16   <a href='../S/9.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../Y/245.html' title='Multiple used in 5 places.'>crossable</a>;
+<a id='L17' name='L17'></a>  17   <a href='../S/9.html#L22' title='Defined at 22 in include/base_type.h.'>Yes_No</a> <a href='../Y/196.html' title='Multiple used in 4 places.'>attackable</a>;
+<a id='L18' name='L18'></a>  18   <a href='../Y/200.html' title='Multiple used in 15 places.'>bool</a> <a href='../Y/337.html' title='Multiple used in 4 places.'>is_alive</a>;
+<a id='L19' name='L19'></a>  19   <a href='../S/9.html#L17' title='Defined at 17 in include/base_type.h.'>Use_Type</a> <a href='../Y/518.html' title='Multiple used in 26 places.'>status</a>;
+<a id='L20' name='L20'></a>  20 
+<a id='L21' name='L21'></a>  21   <strong class='reserved'>void</strong> (*<a href='../S/23.html#L4' title='Defined at 4 in src/character.c.'>release</a>)(<strong class='reserved'>struct</strong> <a href='../S/10.html#L11' title='Defined at 11 in include/character.h.'>Character_Base</a> *);
+<a id='L22' name='L22'></a>  22   <strong class='reserved'>void</strong> (*<a href='../Y/239.html' title='Multiple used in 10 places.'>copy</a>)(<strong class='reserved'>struct</strong> <a href='../S/10.html#L11' title='Defined at 11 in include/character.h.'>Character_Base</a> *, <strong class='reserved'>struct</strong> <a href='../S/10.html#L11' title='Defined at 11 in include/character.h.'>Character_Base</a> *);
+<a id='L23' name='L23'></a>  23 <em class='brace'>}</em> <a href='../R/13.html' title='Multiple referred from 2 places.'>Character_Base_Type</a>;
+<a id='L24' name='L24'></a>  24 <strong class='reserved'>typedef</strong> <a href='../S/10.html#L23' title='Defined at 23 in include/character.h.'>Character_Base_Type</a> * <a href='../R/11.html' title='Multiple referred from 11 places.'>Character_Base_Access</a>;
+<a id='L25' name='L25'></a>  25 
+<a id='L26' name='L26'></a>  26 
+<a id='L27' name='L27'></a>  27 <strong class='reserved'>void</strong> <a href='../S/23.html#L23' title='Defined at 23 in src/character.c.'>character_base_init</a>(<a href='../S/10.html#L24' title='Defined at 24 in include/character.h.'>Character_Base_Access</a>);
+<a id='L28' name='L28'></a>  28 <em class='sharp'>#endif</em>
 </pre>
 <hr />
 <a id='BOTTOM' name='BOTTOM'></a>

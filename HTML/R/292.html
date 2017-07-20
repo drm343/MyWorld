@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_parse</title>
+<title>mpc_mem_ptr</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,22 +9,9 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/35.html#L16'>mpc_parse</a>          16 mpc/examples/foobar.c     if (mpc_parse("&lt;stdin&gt;", argv[1], Foobar, &amp;r)) {</span>
-<span class='curline'><a href='../S/45.html#L2210'>mpc_parse</a>        2210 mpc/mpc.c        if(!mpc_parse("&lt;mpc_re_compiler&gt;", re, RegexEnclose, &amp;r)) {</span>
-<span class='curline'><a href='../S/45.html#L2619'>mpc_parse</a>        2619 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
-<span class='curline'><a href='../S/45.html#L2642'>mpc_parse</a>        2642 mpc/mpc.c        if (mpc_parse("&lt;test&gt;", s, p, &amp;r)) {</span>
-<span class='curline'><a href='../S/45.html#L3340'>mpc_parse</a>        3340 mpc/mpc.c        if(!mpc_parse("&lt;mpc_grammar_compiler&gt;", grammar, GrammarTotal, &amp;r)) {</span>
-<span class='curline'><a href='../S/46.html#L67'>mpc_parse</a>          67 mpc/mpc.h      int mpc_parse(const char *filename, const char *string, mpc_parser_t *p, mpc_result_t *r);</span>
-<span class='curline'><a href='../S/48.html#L94'>mpc_parse</a>          94 mpc/tests/core.c   success = mpc_parse("test", "046", p, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L99'>mpc_parse</a>          99 mpc/tests/core.c   success = mpc_parse("test", "046aa", p, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L104'>mpc_parse</a>         104 mpc/tests/core.c   success = mpc_parse("test", "04632", p, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L109'>mpc_parse</a>         109 mpc/tests/core.c   success = mpc_parse("test", "04", p, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L124'>mpc_parse</a>         124 mpc/tests/core.c   success = mpc_parse("test", "aa", q, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L129'>mpc_parse</a>         129 mpc/tests/core.c   success = mpc_parse("test", "bb", q, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L134'>mpc_parse</a>         134 mpc/tests/core.c   success = mpc_parse("test", "ab", q, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L139'>mpc_parse</a>         139 mpc/tests/core.c   success = mpc_parse("test", "ba", q, &amp;r);</span>
-<span class='curline'><a href='../S/48.html#L144'>mpc_parse</a>         144 mpc/tests/core.c   success = mpc_parse("test", "c", p, &amp;r);</span>
-<span class='curline'><a href='../S/49.html#L270'>mpc_parse</a>         270 mpc/tests/grammar.c   result = mpc_parse("&lt;stdin&gt;", "test", Parser, &amp;r);</span>
+<span class='curline'><a href='../S/48.html#L263'>mpc_mem_ptr</a>       263 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { free(p); return; }</span>
+<span class='curline'><a href='../S/48.html#L272'>mpc_mem_ptr</a>       272 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { return realloc(p, n); }</span>
+<span class='curline'><a href='../S/48.html#L286'>mpc_mem_ptr</a>       286 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { return p; }</span>
 </pre>
 </body>
 </html>

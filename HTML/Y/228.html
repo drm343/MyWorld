@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>comp</title>
+<title>cnode</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L2103'>comp</a>             2103 mpc/mpc.c        int comp = s[0] == '^' ? 1 : 0;</span>
-<span class='curline'><a href='../S/46.html#L2110'>comp</a>             2110 mpc/mpc.c        for (i = comp; i &lt; strlen(s); i++){</span>
-<span class='curline'><a href='../S/46.html#L2151'>comp</a>             2151 mpc/mpc.c        out = comp == 1 ? mpc_noneof(range) : mpc_oneof(range);</span>
+<span class='curline'><a href='../S/48.html#L2862'>cnode</a>            2862 mpc/mpc.c        mpc_ast_t *cnode = ast;</span>
+<span class='curline'><a href='../S/48.html#L2866'>cnode</a>            2866 mpc/mpc.c        trav-&gt;curr_node = cnode;</span>
+<span class='curline'><a href='../S/48.html#L2878'>cnode</a>            2878 mpc/mpc.c            while(cnode-&gt;children_num &gt; 0) {</span>
+<span class='curline'><a href='../S/48.html#L2879'>cnode</a>            2879 mpc/mpc.c              cnode = cnode-&gt;children[0];</span>
+<span class='curline'><a href='../S/48.html#L2882'>cnode</a>            2882 mpc/mpc.c              n_trav-&gt;curr_node = cnode;</span>
 </pre>
 </body>
 </html>

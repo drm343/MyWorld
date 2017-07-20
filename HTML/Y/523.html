@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>suite_passing</title>
+<title>stop</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,11 +9,29 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/52.html#L24'>suite_passing</a>      24 mpc/tests/ptest.c static int suite_passing = 0;</span>
-<span class='curline'><a href='../S/52.html#L272'>suite_passing</a>     272 mpc/tests/ptest.c         if (suite_passing) {</span>
-<span class='curline'><a href='../S/52.html#L279'>suite_passing</a>     279 mpc/tests/ptest.c       suite_passing = 1;</span>
-<span class='curline'><a href='../S/52.html#L295'>suite_passing</a>     295 mpc/tests/ptest.c     suite_passing = suite_passing &amp;&amp; test_passing;</span>
-<span class='curline'><a href='../S/52.html#L311'>suite_passing</a>     311 mpc/tests/ptest.c   if (suite_passing) {</span>
+<span class='curline'><a href='../S/13.html#L28'>stop</a>               28 include/character-pool.h   void (*stop)(Character_Pool_Access);</span>
+<span class='curline'><a href='../S/8.html#L31'>stop</a>               31 include/character-skill.h   void (*stop)(Skill_Pool_Access);</span>
+<span class='curline'><a href='../S/17.html#L33'>stop</a>               33 include/graphic-camera.h   void (*stop)(Camera_Access);</span>
+<span class='curline'><a href='../S/18.html#L25'>stop</a>               25 include/graphic-message.h   void (*stop)(Message_Box_Access);</span>
+<span class='curline'><a href='../S/12.html#L41'>stop</a>               41 include/graphic.h   void (*stop)(Style_Pool_Access);</span>
+<span class='curline'><a href='../S/14.html#L173'>stop</a>              173 include/main_set_character.h     string_pool.stop(npc_string_pool);</span>
+<span class='curline'><a href='../S/19.html#L15'>stop</a>               15 include/string_pool.h   void (*stop)(String_Pool_Access);</span>
+<span class='curline'><a href='../S/25.html#L167'>stop</a>              167 src/character-pool.c   .stop = pool_stop,</span>
+<span class='curline'><a href='../S/21.html#L76'>stop</a>               76 src/character-skill.c   .stop = pool_stop,</span>
+<span class='curline'><a href='../S/30.html#L269'>stop</a>              269 src/graphic-camera.c   string_pool.stop(tmp_pool);</span>
+<span class='curline'><a href='../S/30.html#L314'>stop</a>              314 src/graphic-camera.c   .stop = camera_stop,</span>
+<span class='curline'><a href='../S/29.html#L71'>stop</a>               71 src/graphic-message.c   string_pool.stop(access-&gt;pool_1);</span>
+<span class='curline'><a href='../S/29.html#L72'>stop</a>               72 src/graphic-message.c   string_pool.stop(access-&gt;pool_2);</span>
+<span class='curline'><a href='../S/29.html#L83'>stop</a>               83 src/graphic-message.c   .stop = message_box_stop,</span>
+<span class='curline'><a href='../S/26.html#L85'>stop</a>               85 src/graphic.c  static void SELF(stop) (Style_Pool_Access pool_access) {</span>
+<span class='curline'><a href='../S/26.html#L92'>stop</a>               92 src/graphic.c    .stop = SELF(stop),</span>
+<span class='curline'><a href='../S/31.html#L208'>stop</a>              208 src/main.c       message_box.stop(box_1);</span>
+<span class='curline'><a href='../S/31.html#L209'>stop</a>              209 src/main.c       camera.stop(camera_1);</span>
+<span class='curline'><a href='../S/31.html#L210'>stop</a>              210 src/main.c       character_pool.stop(character_use_pool);</span>
+<span class='curline'><a href='../S/31.html#L211'>stop</a>              211 src/main.c       character_pool.stop(character_prepare_pool);</span>
+<span class='curline'><a href='../S/31.html#L212'>stop</a>              212 src/main.c       Style_Pool_Interface.stop(style_pool);</span>
+<span class='curline'><a href='../S/31.html#L213'>stop</a>              213 src/main.c       string_pool.stop(config_pool);</span>
+<span class='curline'><a href='../S/27.html#L46'>stop</a>               46 src/string_pool.c   .stop = pool_stop_heap,</span>
 </pre>
 </body>
 </html>

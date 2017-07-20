@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>camera_1</title>
+<title>box_array</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,19 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/27.html#L14'>camera_1</a>           14 src/main.c     Camera_Access camera_1 = NULL;</span>
-<span class='curline'><a href='../S/27.html#L31'>camera_1</a>           31 src/main.c       position.x = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.x;</span>
-<span class='curline'><a href='../S/27.html#L32'>camera_1</a>           32 src/main.c       position.y = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.y;</span>
-<span class='curline'><a href='../S/27.html#L33'>camera_1</a>           33 src/main.c       SDL_RenderCopy(render, camera_1-&gt;player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
-<span class='curline'><a href='../S/27.html#L40'>camera_1</a>           40 src/main.c           if (!Point.eq(&amp;(npc-&gt;base-&gt;Real_Position), &amp;(camera_1-&gt;player-&gt;base-&gt;Real_Position))) {</span>
-<span class='curline'><a href='../S/27.html#L77'>camera_1</a>           77 src/main.c       character.set_style(camera_1-&gt;player, result);</span>
-<span class='curline'><a href='../S/27.html#L80'>camera_1</a>           80 src/main.c       camera.set_dead_style(camera_1, dead);</span>
-<span class='curline'><a href='../S/27.html#L95'>camera_1</a>           95 src/main.c       camera_1 = camera.start();</span>
-<span class='curline'><a href='../S/27.html#L103'>camera_1</a>          103 src/main.c       camera.set_player(camera_1, Player);</span>
-<span class='curline'><a href='../S/27.html#L121'>camera_1</a>          121 src/main.c       camera.set_map(camera_1, &amp;map_1);</span>
-<span class='curline'><a href='../S/27.html#L122'>camera_1</a>          122 src/main.c       use_npc("goblin", "random-name", camera_1-&gt;map);</span>
-<span class='curline'><a href='../S/27.html#L140'>camera_1</a>          140 src/main.c               running = camera.take(camera_1, character_use_pool, &amp;event);</span>
-<span class='curline'><a href='../S/27.html#L160'>camera_1</a>          160 src/main.c       camera.stop(camera_1);</span>
+<span class='curline'><a href='../S/29.html#L3'>box_array</a>           3 src/graphic-message.c static SDL_Point box_array[5] = {</span>
+<span class='curline'><a href='../S/29.html#L15'>box_array</a>          15 src/graphic-message.c   box_array[0].x = start_x;</span>
+<span class='curline'><a href='../S/29.html#L16'>box_array</a>          16 src/graphic-message.c   box_array[0].y = start_y;</span>
+<span class='curline'><a href='../S/29.html#L17'>box_array</a>          17 src/graphic-message.c   box_array[4].x = start_x;</span>
+<span class='curline'><a href='../S/29.html#L18'>box_array</a>          18 src/graphic-message.c   box_array[4].y = start_y;</span>
+<span class='curline'><a href='../S/29.html#L19'>box_array</a>          19 src/graphic-message.c   box_array[1].x = start_x;</span>
+<span class='curline'><a href='../S/29.html#L20'>box_array</a>          20 src/graphic-message.c   box_array[1].y = start_y + height;</span>
+<span class='curline'><a href='../S/29.html#L21'>box_array</a>          21 src/graphic-message.c   box_array[2].x = start_x + width;</span>
+<span class='curline'><a href='../S/29.html#L22'>box_array</a>          22 src/graphic-message.c   box_array[2].y = start_y + height;</span>
+<span class='curline'><a href='../S/29.html#L23'>box_array</a>          23 src/graphic-message.c   box_array[3].x = start_x + width;</span>
+<span class='curline'><a href='../S/29.html#L24'>box_array</a>          24 src/graphic-message.c   box_array[3].y = start_y;</span>
+<span class='curline'><a href='../S/29.html#L60'>box_array</a>          60 src/graphic-message.c   access-&gt;box = box_array;</span>
 </pre>
 </body>
 </html>

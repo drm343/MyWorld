@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>fflush</title>
+<title>expect</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,36 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/19.html#L197'>fflush</a>            197 include/main_set_character.h     fflush(stdout);</span>
-<span class='curline'><a href='../S/52.html#L152'>fflush</a>            152 mpc/tests/ptest.c   fflush(stdout);</span>
-<span class='curline'><a href='../S/52.html#L291'>fflush</a>            291 mpc/tests/ptest.c     fflush(stdout);</span>
+<span class='curline'><a href='../S/48.html#L779'>expect</a>            779 mpc/mpc.c        char *expect = NULL;</span>
+<span class='curline'><a href='../S/48.html#L784'>expect</a>            784 mpc/mpc.c          expect = mpc_calloc(i, 1, 1);</span>
+<span class='curline'><a href='../S/48.html#L787'>expect</a>            787 mpc/mpc.c          x-&gt;expected[0] = expect;</span>
+<span class='curline'><a href='../S/48.html#L792'>expect</a>            792 mpc/mpc.c          expect = mpc_malloc(i, strlen(prefix) + strlen(x-&gt;expected[0]) + 1);</span>
+<span class='curline'><a href='../S/48.html#L793'>expect</a>            793 mpc/mpc.c          strcpy(expect, prefix);</span>
+<span class='curline'><a href='../S/48.html#L794'>expect</a>            794 mpc/mpc.c          strcat(expect, x-&gt;expected[0]);</span>
+<span class='curline'><a href='../S/48.html#L796'>expect</a>            796 mpc/mpc.c          x-&gt;expected[0] = expect;</span>
+<span class='curline'><a href='../S/48.html#L810'>expect</a>            810 mpc/mpc.c          expect = mpc_malloc(i, l + 1);</span>
+<span class='curline'><a href='../S/48.html#L812'>expect</a>            812 mpc/mpc.c          strcpy(expect, prefix);</span>
+<span class='curline'><a href='../S/48.html#L814'>expect</a>            814 mpc/mpc.c            strcat(expect, x-&gt;expected[j]); strcat(expect, ", ");</span>
+<span class='curline'><a href='../S/48.html#L816'>expect</a>            816 mpc/mpc.c          strcat(expect, x-&gt;expected[x-&gt;expected_num-2]);</span>
+<span class='curline'><a href='../S/48.html#L817'>expect</a>            817 mpc/mpc.c          strcat(expect, " or ");</span>
+<span class='curline'><a href='../S/48.html#L818'>expect</a>            818 mpc/mpc.c          strcat(expect, x-&gt;expected[x-&gt;expected_num-1]);</span>
+<span class='curline'><a href='../S/48.html#L824'>expect</a>            824 mpc/mpc.c          x-&gt;expected[0] = expect;</span>
+<span class='curline'><a href='../S/48.html#L907'>expect</a>            907 mpc/mpc.c        mpc_pdata_expect_t expect;</span>
+<span class='curline'><a href='../S/48.html#L1056'>expect</a>           1056 mpc/mpc.c            if (mpc_parse_run(i, p-&gt;data.expect.x, r, e)) {</span>
+<span class='curline'><a href='../S/48.html#L1061'>expect</a>           1061 mpc/mpc.c              MPC_FAILURE(mpc_err_new(i, p-&gt;data.expect.m));</span>
+<span class='curline'><a href='../S/48.html#L1348'>expect</a>           1348 mpc/mpc.c            mpc_undefine_unretained(p-&gt;data.expect.x, 0);</span>
+<span class='curline'><a href='../S/48.html#L1349'>expect</a>           1349 mpc/mpc.c            free(p-&gt;data.expect.m);</span>
+<span class='curline'><a href='../S/48.html#L1446'>expect</a>           1446 mpc/mpc.c            p-&gt;data.expect.x = mpc_copy(a-&gt;data.expect.x);</span>
+<span class='curline'><a href='../S/48.html#L1447'>expect</a>           1447 mpc/mpc.c            p-&gt;data.expect.m = malloc(strlen(a-&gt;data.expect.m)+1);</span>
+<span class='curline'><a href='../S/48.html#L1448'>expect</a>           1448 mpc/mpc.c            strcpy(p-&gt;data.expect.m, a-&gt;data.expect.m);</span>
+<span class='curline'><a href='../S/48.html#L1600'>expect</a>           1600 mpc/mpc.c        p-&gt;data.expect.x = a;</span>
+<span class='curline'><a href='../S/48.html#L1601'>expect</a>           1601 mpc/mpc.c        p-&gt;data.expect.m = malloc(strlen(expected) + 1);</span>
+<span class='curline'><a href='../S/48.html#L1602'>expect</a>           1602 mpc/mpc.c        strcpy(p-&gt;data.expect.m, expected);</span>
+<span class='curline'><a href='../S/48.html#L1639'>expect</a>           1639 mpc/mpc.c        p-&gt;data.expect.x = a;</span>
+<span class='curline'><a href='../S/48.html#L1640'>expect</a>           1640 mpc/mpc.c        p-&gt;data.expect.m = buffer;</span>
+<span class='curline'><a href='../S/48.html#L2500'>expect</a>           2500 mpc/mpc.c          printf("%s", p-&gt;data.expect.m);</span>
+<span class='curline'><a href='../S/48.html#L3621'>expect</a>           3621 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_EXPECT) { return 1 + mpc_nodecount_unretained(p-&gt;data.expect.x, 0); }</span>
+<span class='curline'><a href='../S/48.html#L3669'>expect</a>           3669 mpc/mpc.c        if (p-&gt;type == MPC_TYPE_EXPECT)   { mpc_optimise_unretained(p-&gt;data.expect.x, 0); }</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>grammar</title>
+<title>free</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,19 +9,195 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L3289'>grammar</a>          3289 mpc/mpc.c      mpc_parser_t *mpca_grammar_st(const char *grammar, mpca_grammar_st_t *st) {</span>
-<span class='curline'><a href='../S/46.html#L3340'>grammar</a>          3340 mpc/mpc.c        if(!mpc_parse("&lt;mpc_grammar_compiler&gt;", grammar, GrammarTotal, &amp;r)) {</span>
-<span class='curline'><a href='../S/46.html#L3356'>grammar</a>          3356 mpc/mpc.c      mpc_parser_t *mpca_grammar(int flags, const char *grammar, ...) {</span>
-<span class='curline'><a href='../S/46.html#L3360'>grammar</a>          3360 mpc/mpc.c        va_start(va, grammar);</span>
-<span class='curline'><a href='../S/46.html#L3367'>grammar</a>          3367 mpc/mpc.c        res = mpca_grammar_st(grammar, &amp;st);  </span>
-<span class='curline'><a href='../S/46.html#L3376'>grammar</a>          3376 mpc/mpc.c        mpc_parser_t *grammar;</span>
-<span class='curline'><a href='../S/46.html#L3383'>grammar</a>          3383 mpc/mpc.c        stmt-&gt;grammar = ((mpc_parser_t**)xs)[3];</span>
-<span class='curline'><a href='../S/46.html#L3412'>grammar</a>          3412 mpc/mpc.c          mpc_soft_delete(stmt-&gt;grammar);</span>
-<span class='curline'><a href='../S/46.html#L3430'>grammar</a>          3430 mpc/mpc.c          if (st-&gt;flags &amp; MPCA_LANG_PREDICTIVE) { stmt-&gt;grammar = mpc_predictive(stmt-&gt;grammar); }</span>
-<span class='curline'><a href='../S/46.html#L3431'>grammar</a>          3431 mpc/mpc.c          if (stmt-&gt;name) { stmt-&gt;grammar = mpc_expect(stmt-&gt;grammar, stmt-&gt;name); }</span>
-<span class='curline'><a href='../S/46.html#L3432'>grammar</a>          3432 mpc/mpc.c          mpc_optimise(stmt-&gt;grammar);</span>
-<span class='curline'><a href='../S/46.html#L3433'>grammar</a>          3433 mpc/mpc.c          mpc_define(left, stmt-&gt;grammar);</span>
-<span class='curline'><a href='../S/47.html#L340'>grammar</a>           340 mpc/mpc.h      mpc_parser_t *mpca_grammar(int flags, const char *grammar, ...);</span>
+<span class='curline'><a href='../S/48.html#L219'>free</a>              219 mpc/mpc.c        free(i-&gt;filename);</span>
+<span class='curline'><a href='../S/48.html#L221'>free</a>              221 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_STRING) { free(i-&gt;string); }</span>
+<span class='curline'><a href='../S/48.html#L222'>free</a>              222 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE) { free(i-&gt;buffer); }</span>
+<span class='curline'><a href='../S/48.html#L224'>free</a>              224 mpc/mpc.c        free(i-&gt;marks);</span>
+<span class='curline'><a href='../S/48.html#L225'>free</a>              225 mpc/mpc.c        free(i-&gt;lasts);</span>
+<span class='curline'><a href='../S/48.html#L226'>free</a>              226 mpc/mpc.c        free(i);</span>
+<span class='curline'><a href='../S/48.html#L263'>free</a>              263 mpc/mpc.c        if (!mpc_mem_ptr(i, p)) { free(p); return; }</span>
+<span class='curline'><a href='../S/48.html#L336'>free</a>              336 mpc/mpc.c          free(i-&gt;buffer);</span>
+<span class='curline'><a href='../S/48.html#L551'>free</a>              551 mpc/mpc.c        for (i = 0; i &lt; x-&gt;expected_num; i++) { free(x-&gt;expected[i]); }</span>
+<span class='curline'><a href='../S/48.html#L552'>free</a>              552 mpc/mpc.c        free(x-&gt;expected);</span>
+<span class='curline'><a href='../S/48.html#L553'>free</a>              553 mpc/mpc.c        free(x-&gt;filename);</span>
+<span class='curline'><a href='../S/48.html#L554'>free</a>              554 mpc/mpc.c        free(x-&gt;failure);</span>
+<span class='curline'><a href='../S/48.html#L555'>free</a>              555 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L565'>free</a>              565 mpc/mpc.c        free(str);</span>
+<span class='curline'><a href='../S/48.html#L995'>free</a>              995 mpc/mpc.c        if (d == free) { mpc_free(i, x); return; }</span>
+<span class='curline'><a href='../S/48.html#L1309'>free</a>             1309 mpc/mpc.c        free(p-&gt;data.or.xs);</span>
+<span class='curline'><a href='../S/48.html#L1319'>free</a>             1319 mpc/mpc.c        free(p-&gt;data.and.xs);</span>
+<span class='curline'><a href='../S/48.html#L1320'>free</a>             1320 mpc/mpc.c        free(p-&gt;data.and.dxs);</span>
+<span class='curline'><a href='../S/48.html#L1330'>free</a>             1330 mpc/mpc.c          case MPC_TYPE_FAIL: free(p-&gt;data.fail.m); break;</span>
+<span class='curline'><a href='../S/48.html#L1335'>free</a>             1335 mpc/mpc.c            free(p-&gt;data.string.x); </span>
+<span class='curline'><a href='../S/48.html#L1349'>free</a>             1349 mpc/mpc.c            free(p-&gt;data.expect.m);</span>
+<span class='curline'><a href='../S/48.html#L1365'>free</a>             1365 mpc/mpc.c          free(p-&gt;name);</span>
+<span class='curline'><a href='../S/48.html#L1366'>free</a>             1366 mpc/mpc.c          free(p);</span>
+<span class='curline'><a href='../S/48.html#L1378'>free</a>             1378 mpc/mpc.c          free(p-&gt;name);</span>
+<span class='curline'><a href='../S/48.html#L1379'>free</a>             1379 mpc/mpc.c          free(p);</span>
+<span class='curline'><a href='../S/48.html#L1496'>free</a>             1496 mpc/mpc.c          free(a2);</span>
+<span class='curline'><a href='../S/48.html#L1499'>free</a>             1499 mpc/mpc.c        free(a);</span>
+<span class='curline'><a href='../S/48.html#L1514'>free</a>             1514 mpc/mpc.c        free(list);</span>
+<span class='curline'><a href='../S/48.html#L1854'>free</a>             1854 mpc/mpc.c      mpc_parser_t *mpc_escape(void) { return mpc_and(2, mpcf_strfold, mpc_char('\\'), mpc_any(), free); }</span>
+<span class='curline'><a href='../S/48.html#L1882'>free</a>             1882 mpc/mpc.c        p2 = mpc_maybe_lift(mpc_and(2, mpcf_strfold, mpc_char('.'), mpc_digits(), free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1886'>free</a>             1886 mpc/mpc.c        p3 = mpc_maybe_lift(mpc_and(3, mpcf_strfold, p30, p31, p32, free, free), mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L1888'>free</a>             1888 mpc/mpc.c        return mpc_expect(mpc_and(4, mpcf_strfold, p0, p1, p2, p3, free, free, free), "real");</span>
+<span class='curline'><a href='../S/48.html#L1897'>free</a>             1897 mpc/mpc.c        return mpc_expect(mpc_between(mpc_or(2, mpc_escape(), mpc_any()), free, "'", "'"), "char");</span>
+<span class='curline'><a href='../S/48.html#L1902'>free</a>             1902 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, strchar), free, "\"", "\""), "string");</span>
+<span class='curline'><a href='../S/48.html#L1907'>free</a>             1907 mpc/mpc.c        return mpc_expect(mpc_between(mpc_many(mpcf_strfold, regexchar), free, "/", "/"), "regex");</span>
+<span class='curline'><a href='../S/48.html#L1914'>free</a>             1914 mpc/mpc.c        return mpc_and(2, mpcf_strfold, p0, p1, free);</span>
+<span class='curline'><a href='../S/48.html#L1936'>free</a>             1936 mpc/mpc.c          free, ad);</span>
+<span class='curline'><a href='../S/48.html#L1947'>free</a>             1947 mpc/mpc.c          free, ad);</span>
+<span class='curline'><a href='../S/48.html#L2015'>free</a>             2015 mpc/mpc.c          p = mpc_and(2, mpcf_strfold, p, xs[i], free);</span>
+<span class='curline'><a href='../S/48.html#L2024'>free</a>             2024 mpc/mpc.c        if (strcmp(xs[1], "*") == 0) { free(xs[1]); return mpc_many(mpcf_strfold, xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L2025'>free</a>             2025 mpc/mpc.c        if (strcmp(xs[1], "+") == 0) { free(xs[1]); return mpc_many1(mpcf_strfold, xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L2026'>free</a>             2026 mpc/mpc.c        if (strcmp(xs[1], "?") == 0) { free(xs[1]); return mpc_maybe_lift(xs[0], mpcf_ctor_str); }</span>
+<span class='curline'><a href='../S/48.html#L2028'>free</a>             2028 mpc/mpc.c        free(xs[1]);</span>
+<span class='curline'><a href='../S/48.html#L2030'>free</a>             2030 mpc/mpc.c        return mpc_count(num, mpcf_strfold, xs[0], free);</span>
+<span class='curline'><a href='../S/48.html#L2041'>free</a>             2041 mpc/mpc.c          case 'b': return mpc_and(2, mpcf_snd, mpc_boundary(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2042'>free</a>             2042 mpc/mpc.c          case 'B': return mpc_not_lift(mpc_boundary(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2043'>free</a>             2043 mpc/mpc.c          case 'A': return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2044'>free</a>             2044 mpc/mpc.c          case 'Z': return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free);</span>
+<span class='curline'><a href='../S/48.html#L2046'>free</a>             2046 mpc/mpc.c          case 'D': return mpc_not_lift(mpc_digit(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2048'>free</a>             2048 mpc/mpc.c          case 'S': return mpc_not_lift(mpc_whitespace(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2050'>free</a>             2050 mpc/mpc.c          case 'W': return mpc_not_lift(mpc_alphanum(), free, mpcf_ctor_str);</span>
+<span class='curline'><a href='../S/48.html#L2061'>free</a>             2061 mpc/mpc.c        if (s[0] == '.') { free(s); return mpc_any(); }</span>
+<span class='curline'><a href='../S/48.html#L2062'>free</a>             2062 mpc/mpc.c        if (s[0] == '^') { free(s); return mpc_and(2, mpcf_snd, mpc_soi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/48.html#L2063'>free</a>             2063 mpc/mpc.c        if (s[0] == '$') { free(s); return mpc_and(2, mpcf_snd, mpc_eoi(), mpc_lift(mpcf_ctor_str), free); }</span>
+<span class='curline'><a href='../S/48.html#L2069'>free</a>             2069 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/48.html#L2075'>free</a>             2075 mpc/mpc.c        free(s);</span>
+<span class='curline'><a href='../S/48.html#L2106'>free</a>             2106 mpc/mpc.c        if (s[0] == '\0') { free(x); return mpc_fail("Invalid Regex Range Expression"); } </span>
+<span class='curline'><a href='../S/48.html#L2108'>free</a>             2108 mpc/mpc.c            s[1] == '\0') { free(x); return mpc_fail("Invalid Regex Range Expression"); }</span>
+<span class='curline'><a href='../S/48.html#L2153'>free</a>             2153 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2154'>free</a>             2154 mpc/mpc.c        free(range);</span>
+<span class='curline'><a href='../S/48.html#L2174'>free</a>             2174 mpc/mpc.c          mpc_maybe(mpc_and(2, mpcf_snd_free, mpc_char('|'), Regex, free)),</span>
+<span class='curline'><a href='../S/48.html#L2184'>free</a>             2184 mpc/mpc.c            mpc_brackets(mpc_int(), free),</span>
+<span class='curline'><a href='../S/48.html#L2214'>free</a>             2214 mpc/mpc.c          free(err_msg);</span>
+<span class='curline'><a href='../S/48.html#L2234'>free</a>             2234 mpc/mpc.c      mpc_val_t *mpcf_free(mpc_val_t *x) { free(x); return NULL; }</span>
+<span class='curline'><a href='../S/48.html#L2239'>free</a>             2239 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2246'>free</a>             2246 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2253'>free</a>             2253 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2260'>free</a>             2260 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2380'>free</a>             2380 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2386'>free</a>             2386 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2392'>free</a>             2392 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2398'>free</a>             2398 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2404'>free</a>             2404 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2410'>free</a>             2410 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2416'>free</a>             2416 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2422'>free</a>             2422 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L2434'>free</a>             2434 mpc/mpc.c          if (i != x) { free(xs[i]); }</span>
+<span class='curline'><a href='../S/48.html#L2454'>free</a>             2454 mpc/mpc.c          strcat(xs[0], xs[i]); free(xs[i]);</span>
+<span class='curline'><a href='../S/48.html#L2470'>free</a>             2470 mpc/mpc.c        free(xs[1]); free(xs[2]);</span>
+<span class='curline'><a href='../S/48.html#L2514'>free</a>             2514 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/48.html#L2529'>free</a>             2529 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/48.html#L2530'>free</a>             2530 mpc/mpc.c          free(e);</span>
+<span class='curline'><a href='../S/48.html#L2539'>free</a>             2539 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/48.html#L2548'>free</a>             2548 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/48.html#L2557'>free</a>             2557 mpc/mpc.c          free(s);</span>
+<span class='curline'><a href='../S/48.html#L2678'>free</a>             2678 mpc/mpc.c        free(a-&gt;children);</span>
+<span class='curline'><a href='../S/48.html#L2679'>free</a>             2679 mpc/mpc.c        free(a-&gt;tag);</span>
+<span class='curline'><a href='../S/48.html#L2680'>free</a>             2680 mpc/mpc.c        free(a-&gt;contents);</span>
+<span class='curline'><a href='../S/48.html#L2681'>free</a>             2681 mpc/mpc.c        free(a);</span>
+<span class='curline'><a href='../S/48.html#L2686'>free</a>             2686 mpc/mpc.c        free(a-&gt;children);</span>
+<span class='curline'><a href='../S/48.html#L2687'>free</a>             2687 mpc/mpc.c        free(a-&gt;tag);</span>
+<span class='curline'><a href='../S/48.html#L2688'>free</a>             2688 mpc/mpc.c        free(a-&gt;contents);</span>
+<span class='curline'><a href='../S/48.html#L2689'>free</a>             2689 mpc/mpc.c        free(a);</span>
+<span class='curline'><a href='../S/48.html#L2918'>free</a>             2918 mpc/mpc.c              free(to_free);</span>
+<span class='curline'><a href='../S/48.html#L2948'>free</a>             2948 mpc/mpc.c            free(to_free);</span>
+<span class='curline'><a href='../S/48.html#L2989'>free</a>             2989 mpc/mpc.c            free(*trav);</span>
+<span class='curline'><a href='../S/48.html#L3034'>free</a>             3034 mpc/mpc.c        free(c);</span>
+<span class='curline'><a href='../S/48.html#L3043'>free</a>             3043 mpc/mpc.c        free(s);</span>
+<span class='curline'><a href='../S/48.html#L3048'>free</a>             3048 mpc/mpc.c        return mpc_and(2, mpcf_state_ast, mpc_state(), a, free);</span>
+<span class='curline'><a href='../S/48.html#L3187'>free</a>             3187 mpc/mpc.c        if (strcmp(xs[1], "*") == 0) { free(xs[1]); return mpca_many(xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L3188'>free</a>             3188 mpc/mpc.c        if (strcmp(xs[1], "+") == 0) { free(xs[1]); return mpca_many1(xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L3189'>free</a>             3189 mpc/mpc.c        if (strcmp(xs[1], "?") == 0) { free(xs[1]); return mpca_maybe(xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L3190'>free</a>             3190 mpc/mpc.c        if (strcmp(xs[1], "!") == 0) { free(xs[1]); return mpca_not(xs[0]); }</span>
+<span class='curline'><a href='../S/48.html#L3192'>free</a>             3192 mpc/mpc.c        free(xs[1]);</span>
+<span class='curline'><a href='../S/48.html#L3200'>free</a>             3200 mpc/mpc.c        free(y);</span>
+<span class='curline'><a href='../S/48.html#L3208'>free</a>             3208 mpc/mpc.c        free(y);</span>
+<span class='curline'><a href='../S/48.html#L3216'>free</a>             3216 mpc/mpc.c        free(y);</span>
+<span class='curline'><a href='../S/48.html#L3280'>free</a>             3280 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L3308'>free</a>             3308 mpc/mpc.c          mpc_maybe(mpc_and(2, mpcf_snd_free, mpc_sym("|"), Grammar, free)),</span>
+<span class='curline'><a href='../S/48.html#L3321'>free</a>             3321 mpc/mpc.c              mpc_tok_brackets(mpc_int(), free),</span>
+<span class='curline'><a href='../S/48.html#L3330'>free</a>             3330 mpc/mpc.c          mpc_apply_to(mpc_tok_braces(mpc_or(2, mpc_digits(), mpc_ident()), free), mpcaf_grammar_id, st),</span>
+<span class='curline'><a href='../S/48.html#L3344'>free</a>             3344 mpc/mpc.c          free(err_msg);</span>
+<span class='curline'><a href='../S/48.html#L3368'>free</a>             3368 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/48.html#L3385'>free</a>             3385 mpc/mpc.c        free(((char**)xs)[2]);</span>
+<span class='curline'><a href='../S/48.html#L3386'>free</a>             3386 mpc/mpc.c        free(((char**)xs)[4]);</span>
+<span class='curline'><a href='../S/48.html#L3410'>free</a>             3410 mpc/mpc.c          free(stmt-&gt;ident);</span>
+<span class='curline'><a href='../S/48.html#L3411'>free</a>             3411 mpc/mpc.c          free(stmt-&gt;name);</span>
+<span class='curline'><a href='../S/48.html#L3413'>free</a>             3413 mpc/mpc.c          free(stmt);  </span>
+<span class='curline'><a href='../S/48.html#L3416'>free</a>             3416 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L3434'>free</a>             3434 mpc/mpc.c          free(stmt-&gt;ident);</span>
+<span class='curline'><a href='../S/48.html#L3435'>free</a>             3435 mpc/mpc.c          free(stmt-&gt;name);</span>
+<span class='curline'><a href='../S/48.html#L3436'>free</a>             3436 mpc/mpc.c          free(stmt);</span>
+<span class='curline'><a href='../S/48.html#L3440'>free</a>             3440 mpc/mpc.c        free(x);</span>
+<span class='curline'><a href='../S/48.html#L3465'>free</a>             3465 mpc/mpc.c          free, free, free, mpc_soft_delete</span>
+<span class='curline'><a href='../S/48.html#L3470'>free</a>             3470 mpc/mpc.c            mpc_maybe(mpc_and(2, mpcf_snd_free, mpc_sym("|"), Grammar, free)),</span>
+<span class='curline'><a href='../S/48.html#L3483'>free</a>             3483 mpc/mpc.c              mpc_tok_brackets(mpc_int(), free),</span>
+<span class='curline'><a href='../S/48.html#L3492'>free</a>             3492 mpc/mpc.c          mpc_apply_to(mpc_tok_braces(mpc_or(2, mpc_digits(), mpc_ident()), free), mpcaf_grammar_id, st),</span>
+<span class='curline'><a href='../S/48.html#L3531'>free</a>             3531 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/48.html#L3553'>free</a>             3553 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/48.html#L3576'>free</a>             3576 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/48.html#L3607'>free</a>             3607 mpc/mpc.c        free(st.parsers);</span>
+<span class='curline'><a href='../S/48.html#L3704'>free</a>             3704 mpc/mpc.c            free(t-&gt;data.or.xs); free(t-&gt;name); free(t);</span>
+<span class='curline'><a href='../S/48.html#L3718'>free</a>             3718 mpc/mpc.c            free(t-&gt;data.or.xs); free(t-&gt;name); free(t);</span>
+<span class='curline'><a href='../S/48.html#L3730'>free</a>             3730 mpc/mpc.c            free(p-&gt;data.and.xs); free(p-&gt;data.and.dxs); free(p-&gt;name);</span>
+<span class='curline'><a href='../S/48.html#L3732'>free</a>             3732 mpc/mpc.c            free(t);</span>
+<span class='curline'><a href='../S/48.html#L3750'>free</a>             3750 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/48.html#L3767'>free</a>             3767 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/48.html#L3780'>free</a>             3780 mpc/mpc.c            free(p-&gt;data.and.xs); free(p-&gt;data.and.dxs); free(p-&gt;name);</span>
+<span class='curline'><a href='../S/48.html#L3782'>free</a>             3782 mpc/mpc.c            free(t);</span>
+<span class='curline'><a href='../S/48.html#L3799'>free</a>             3799 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = free; }</span>
+<span class='curline'><a href='../S/48.html#L3800'>free</a>             3800 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/48.html#L3816'>free</a>             3816 mpc/mpc.c            for (i = 0; i &lt; p-&gt;data.and.n-1; i++) { p-&gt;data.and.dxs[i] = free; }</span>
+<span class='curline'><a href='../S/48.html#L3817'>free</a>             3817 mpc/mpc.c            free(t-&gt;data.and.xs); free(t-&gt;data.and.dxs); free(t-&gt;name); free(t); </span>
+<span class='curline'><a href='../S/51.html#L20'>free</a>               20 mpc/tests/core.c       free),</span>
+<span class='curline'><a href='../S/51.html#L21'>free</a>               21 mpc/tests/core.c     free</span>
+<span class='curline'><a href='../S/51.html#L24'>free</a>               24 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Ident, "test", "test", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L25'>free</a>               25 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Ident, "  blah", "", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L26'>free</a>               26 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Ident, "anoth21er", "anoth21er", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L27'>free</a>               27 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Ident, "du__de", "du__de", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L28'>free</a>               28 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Ident, "some spaces", "", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L29'>free</a>               29 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Ident, "", "", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L30'>free</a>               30 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Ident, "18nums", "", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L47'>free</a>               47 mpc/tests/core.c     mpc_and(3, mpcf_maths, Factor, mpc_oneof("*/"), Factor, free, free),</span>
+<span class='curline'><a href='../S/51.html#L52'>free</a>               52 mpc/tests/core.c     mpc_and(3, mpcf_maths, Term, mpc_oneof("+-"), Term, free, free),</span>
+<span class='curline'><a href='../S/51.html#L58'>free</a>               58 mpc/tests/core.c     mpc_parens(Expr, free)</span>
+<span class='curline'><a href='../S/51.html#L61'>free</a>               61 mpc/tests/core.c   mpc_define(Maths, mpc_whole(Expr, free));</span>
+<span class='curline'><a href='../S/51.html#L63'>free</a>               63 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "1", &amp;r0, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/51.html#L64'>free</a>               64 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(5)", &amp;r1, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/51.html#L65'>free</a>               65 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Maths, "(4*2)+5", &amp;r2, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/51.html#L66'>free</a>               66 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Maths, "a", &amp;r3, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/51.html#L67'>free</a>               67 mpc/tests/core.c   PT_ASSERT(mpc_test_fail(Maths, "2b+4", &amp;r4, int_eq, free, int_print));</span>
+<span class='curline'><a href='../S/51.html#L78'>free</a>               78 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Stripperl, " asdmlm dasd  ", "asdmlm dasd  ", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L79'>free</a>               79 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Stripperr, " asdmlm dasd  ", " asdmlm dasd", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L80'>free</a>               80 mpc/tests/core.c   PT_ASSERT(mpc_test_pass(Stripper,  " asdmlm dasd  ", "asdmlm dasd", streq, free, strprint));</span>
+<span class='curline'><a href='../S/51.html#L92'>free</a>               92 mpc/tests/core.c   mpc_parser_t *p = mpc_count(3, mpcf_strfold, mpc_digit(), free);</span>
+<span class='curline'><a href='../S/51.html#L97'>free</a>               97 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/51.html#L102'>free</a>              102 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/51.html#L107'>free</a>              107 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/51.html#L122'>free</a>              122 mpc/tests/core.c   mpc_parser_t* q = mpc_and(2, mpcf_strfold, p, mpc_copy(p), free);</span>
+<span class='curline'><a href='../S/51.html#L127'>free</a>              127 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/51.html#L132'>free</a>              132 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/51.html#L137'>free</a>              137 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/51.html#L142'>free</a>              142 mpc/tests/core.c   free(r.output);</span>
+<span class='curline'><a href='../S/56.html#L11'>free</a>               11 mpc/tests/regex.c   return mpc_test_pass(p, value, match, string_eq, free, string_print);</span>
+<span class='curline'><a href='../S/56.html#L15'>free</a>               15 mpc/tests/regex.c   return mpc_test_fail(p, value, match, string_eq, free, string_print);</span>
+<span class='curline'><a href='../S/25.html#L39'>free</a>               39 src/character-pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/25.html#L40'>free</a>               40 src/character-pool.c   free(pool_access);</span>
+<span class='curline'><a href='../S/25.html#L44'>free</a>               44 src/character-pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/25.html#L45'>free</a>               45 src/character-pool.c   free(pool_access);</span>
+<span class='curline'><a href='../S/25.html#L51'>free</a>               51 src/character-pool.c   free(pool_access);</span>
+<span class='curline'><a href='../S/21.html#L34'>free</a>               34 src/character-skill.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/21.html#L35'>free</a>               35 src/character-skill.c   free(pool_access);</span>
+<span class='curline'><a href='../S/30.html#L268'>free</a>              268 src/graphic-camera.c   free(access);</span>
+<span class='curline'><a href='../S/29.html#L73'>free</a>               73 src/graphic-message.c   free(access-&gt;history);</span>
+<span class='curline'><a href='../S/29.html#L74'>free</a>               74 src/graphic-message.c   free(access);</span>
+<span class='curline'><a href='../S/26.html#L86'>free</a>               86 src/graphic.c    free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/26.html#L87'>free</a>               87 src/graphic.c    free(pool_access);</span>
+<span class='curline'><a href='../S/27.html#L25'>free</a>               25 src/string_pool.c   free(pool_access-&gt;pool);</span>
+<span class='curline'><a href='../S/27.html#L26'>free</a>               26 src/string_pool.c   free(pool_access);</span>
 </pre>
 </body>
 </html>

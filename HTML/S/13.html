@@ -1,64 +1,58 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>include/graphic-camera.h</title>
+<title>include/character-pool.h</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
 <link rel='stylesheet' type='text/css' href='../style.css' />
 </head>
 <body>
-<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/58.html'>include</a>/graphic-camera.h</h2>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/60.html'>include</a>/character-pool.h</h2>
 <em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
 <hr />
-<h2 class='header'><a href='../J/7.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
+<h2 class='header'><a href='../J/3.html' title='Multiple included from 3 places.'>INCLUDED FROM</a></h2>
 <hr />
 <pre>
-<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/13.html#L2' title='Defined at 2 in include/graphic-camera.h.'>HEADER_GRAPHIC_CAMERA</a>
-<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/13.html#L1' title='Referred from 1 in include/graphic-camera.h.'>HEADER_GRAPHIC_CAMERA</a>
-<a id='L3' name='L3'></a>   3 
-<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> "<a href='14.html'>character-pool.h</a>"
-<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> "<a href='9.html'>map_system.h</a>"
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/13.html#L2' title='Defined at 2 in include/character-pool.h.'>HEADER_CHARACTER_POOL</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/13.html#L1' title='Referred from 1 in include/character-pool.h.'>HEADER_CHARACTER_POOL</a>
+<a id='L3' name='L3'></a>   3 <em class='sharp'>#include</em> "<a href='8.html'>character-skill.h</a>"
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> "<a href='7.html'>helper_function.h</a>"
+<a id='L5' name='L5'></a>   5 
 <a id='L6' name='L6'></a>   6 
-<a id='L7' name='L7'></a>   7 
-<a id='L8' name='L8'></a>   8 <strong class='reserved'>typedef</strong> <strong class='reserved'>enum</strong> <em class='brace'>{</em>
-<a id='L9' name='L9'></a>   9   <a href='../R/4.html' title='Multiple referred from 2 places.'>CAMERA_UNDEFINE</a>,
-<a id='L10' name='L10'></a>  10   <a href='../R/2.html' title='Multiple referred from 4 places.'>CAMERA_FIX</a>,
-<a id='L11' name='L11'></a>  11   <a href='../R/3.html' title='Multiple referred from 7 places.'>CAMERA_MOVE</a>,
-<a id='L12' name='L12'></a>  12 <em class='brace'>}</em> <a href='../R/6.html' title='Multiple referred from 3 places.'>Camera_Mode</a>;
-<a id='L13' name='L13'></a>  13 
+<a id='L7' name='L7'></a>   7 <strong class='reserved'>typedef</strong> <strong class='reserved'>enum</strong> <em class='brace'>{</em>
+<a id='L8' name='L8'></a>   8   <a href='../R/94.html' title='Multiple referred from 2 places.'>NOT_FOUND</a> = 0,
+<a id='L9' name='L9'></a>   9   <a href='../R/24.html' title='Multiple referred from 3 places.'>FOUND</a>
+<a id='L10' name='L10'></a>  10 <em class='brace'>}</em> <a href='../R/26.html' title='Multiple referred from 4 places.'>Found_Result</a>;
+<a id='L11' name='L11'></a>  11 
+<a id='L12' name='L12'></a>  12 <a href='../S/7.html#L6' title='Defined at 6 in include/helper_function.h.'>GENERIC_POOL</a>(<a href='../Y/149.html' title='Multiple used in 3 places.'>Status_Pool</a>, <a href='../S/11.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a>);
+<a id='L13' name='L13'></a>  13 <strong class='reserved'>typedef</strong> <a href='../Y/149.html' title='Multiple used in 3 places.'>Status_Pool</a> * <a href='../R/120.html' title='Multiple referred from 6 places.'>Status_Pool_Access</a>;
 <a id='L14' name='L14'></a>  14 
-<a id='L15' name='L15'></a>  15 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
-<a id='L16' name='L16'></a>  16   <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> <a href='../Y/421.html' title='Multiple used in 14 places.'>player</a>;
-<a id='L17' name='L17'></a>  17   <a href='../S/11.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a> <a href='../Y/247.html' title='Multiple used in 6 places.'>dead</a>;
-<a id='L18' name='L18'></a>  18   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/206.html' title='Multiple used in 20 places.'>center</a>;
-<a id='L19' name='L19'></a>  19   <a href='../Y/320.html' title='Multiple used in 11 places.'>int64_t</a> <a href='../Y/357.html' title='Multiple used in 4 places.'>max_x</a>; <em class='comment'>// 25</em>
-<a id='L20' name='L20'></a>  20   <a href='../Y/320.html' title='Multiple used in 11 places.'>int64_t</a> <a href='../Y/358.html' title='Multiple used in 4 places.'>max_y</a>; <em class='comment'>// 20</em>
-<a id='L21' name='L21'></a>  21   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>;
-<a id='L22' name='L22'></a>  22   <a href='../S/15.html#L27' title='Defined at 27 in include/base_type.h.'>Point_Type</a> <a href='../Y/259.html' title='Multiple used in 30 places.'>end</a>;
-<a id='L23' name='L23'></a>  23   <a href='../S/13.html#L12' title='Defined at 12 in include/graphic-camera.h.'>Camera_Mode</a> <a href='../Y/311.html' title='Multiple used in 9 places.'>horizon</a>;
-<a id='L24' name='L24'></a>  24   <a href='../S/13.html#L12' title='Defined at 12 in include/graphic-camera.h.'>Camera_Mode</a> <a href='../Y/562.html' title='Multiple used in 7 places.'>vertical</a>;
-<a id='L25' name='L25'></a>  25   <a href='../S/9.html#L10' title='Defined at 10 in include/map_system.h.'>Map_Access</a> <a href='../Y/347.html' title='Multiple used in 23 places.'>map</a>;
-<a id='L26' name='L26'></a>  26 <em class='brace'>}</em> <a href='../R/7.html' title='Multiple referred from 2 places.'>Camera_Type</a>;
-<a id='L27' name='L27'></a>  27 <strong class='reserved'>typedef</strong> <a href='../S/13.html#L26' title='Defined at 26 in include/graphic-camera.h.'>Camera_Type</a> * <a href='../R/5.html' title='Multiple referred from 23 places.'>Camera_Access</a>;
-<a id='L28' name='L28'></a>  28 
-<a id='L29' name='L29'></a>  29 
-<a id='L30' name='L30'></a>  30 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
-<a id='L31' name='L31'></a>  31   <a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a> (*<a href='../Y/494.html' title='Multiple used in 40 places.'>start</a>)(<strong class='reserved'>void</strong>);
-<a id='L32' name='L32'></a>  32   <strong class='reserved'>void</strong> (*<a href='../Y/501.html' title='Multiple used in 18 places.'>stop</a>)(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a>);
+<a id='L15' name='L15'></a>  15 <a href='../S/7.html#L6' title='Defined at 6 in include/helper_function.h.'>GENERIC_POOL</a>(<a href='../Y/16.html' title='Multiple used in 3 places.'>Character_Base_Pool</a>, <a href='../S/10.html#L24' title='Defined at 24 in include/character.h.'>Character_Base_Access</a>);
+<a id='L16' name='L16'></a>  16 <strong class='reserved'>typedef</strong> <a href='../Y/16.html' title='Multiple used in 3 places.'>Character_Base_Pool</a> * <a href='../R/12.html' title='Multiple referred from 6 places.'>Character_Base_Pool_Access</a>;
+<a id='L17' name='L17'></a>  17 
+<a id='L18' name='L18'></a>  18 
+<a id='L19' name='L19'></a>  19 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L20' name='L20'></a>  20   <a href='../S/13.html#L13' title='Defined at 13 in include/character-pool.h.'>Status_Pool_Access</a> <a href='../Y/518.html' title='Multiple used in 26 places.'>status</a>;
+<a id='L21' name='L21'></a>  21   <a href='../S/13.html#L16' title='Defined at 16 in include/character-pool.h.'>Character_Base_Pool_Access</a> <a href='../Y/199.html' title='Multiple used in 50 places.'>base</a>;
+<a id='L22' name='L22'></a>  22 <em class='brace'>}</em> <a href='../R/16.html' title='Multiple referred from 2 places.'>Character_Pool_Type</a>;
+<a id='L23' name='L23'></a>  23 <strong class='reserved'>typedef</strong> <a href='../S/13.html#L22' title='Defined at 22 in include/character-pool.h.'>Character_Pool_Type</a> * <a href='../R/15.html' title='Multiple referred from 20 places.'>Character_Pool_Access</a>;
+<a id='L24' name='L24'></a>  24 
+<a id='L25' name='L25'></a>  25 
+<a id='L26' name='L26'></a>  26 <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <em class='brace'>{</em>
+<a id='L27' name='L27'></a>  27   <a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a> (*<a href='../Y/514.html' title='Multiple used in 50 places.'>start</a>)(<a href='../Y/575.html' title='Multiple used in 42 places.'>uint8_t</a>);
+<a id='L28' name='L28'></a>  28   <strong class='reserved'>void</strong> (*<a href='../Y/523.html' title='Multiple used in 23 places.'>stop</a>)(<a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>);
+<a id='L29' name='L29'></a>  29   <a href='../S/11.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> (*<a href='../Y/361.html' title='Multiple used in 84 places.'>malloc</a>)(<a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>);
+<a id='L30' name='L30'></a>  30   <a href='../Y/200.html' title='Multiple used in 15 places.'>bool</a> (*<a href='../Y/239.html' title='Multiple used in 10 places.'>copy</a>)(<a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/19.html#L5' title='Defined at 5 in include/string_pool.h.'>String</a>);
+<a id='L31' name='L31'></a>  31   <a href='../S/13.html#L10' title='Defined at 10 in include/character-pool.h.'>Found_Result</a> (*<a href='../Y/298.html' title='Multiple used in 10 places.'>find</a>)(<a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/11.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> *, <a href='../S/19.html#L5' title='Defined at 5 in include/string_pool.h.'>String</a>);
+<a id='L32' name='L32'></a>  32   <a href='../S/13.html#L10' title='Defined at 10 in include/character-pool.h.'>Found_Result</a> (*<a href='../Y/299.html' title='Multiple used in 3 places.'>find_position</a>)(<a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../S/11.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a> *, <a href='../S/9.html#L28' title='Defined at 28 in include/base_type.h.'>Point_Access</a>);
 <a id='L33' name='L33'></a>  33 
-<a id='L34' name='L34'></a>  34   <strong class='reserved'>void</strong> (*<a href='../Y/476.html' title='Multiple used in 3 places.'>set_max_x</a>)(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a>, <strong class='reserved'>int</strong>);
-<a id='L35' name='L35'></a>  35   <strong class='reserved'>void</strong> (*<a href='../Y/477.html' title='Multiple used in 3 places.'>set_max_y</a>)(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a>, <strong class='reserved'>int</strong>);
-<a id='L36' name='L36'></a>  36   <strong class='reserved'>void</strong> (*<a href='../S/29.html#L281' title='Defined at 281 in src/graphic-camera.c.'>set_dead_style</a>)(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a>, <a href='../S/11.html#L24' title='Defined at 24 in include/graphic.h.'>Style_Access</a>);
-<a id='L37' name='L37'></a>  37 
-<a id='L38' name='L38'></a>  38   <strong class='reserved'>void</strong> (*<a href='../S/29.html#L260' title='Defined at 260 in src/graphic-camera.c.'>set_player</a>)(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a>, <a href='../S/18.html#L34' title='Defined at 34 in include/character-status.h.'>Status_Access</a>);
-<a id='L39' name='L39'></a>  39   <strong class='reserved'>void</strong> (*<a href='../S/29.html#L273' title='Defined at 273 in src/graphic-camera.c.'>set_map</a>)(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a>, <a href='../S/9.html#L10' title='Defined at 10 in include/map_system.h.'>Map_Access</a>);
-<a id='L40' name='L40'></a>  40 
-<a id='L41' name='L41'></a>  41   <a href='../Y/198.html' title='Multiple used in 15 places.'>bool</a> (*<a href='../Y/532.html' title='Multiple used in 3 places.'>take</a>)(<a href='../S/13.html#L27' title='Defined at 27 in include/graphic-camera.h.'>Camera_Access</a>, <a href='../S/14.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../Y/109.html' title='Multiple used in 4 places.'>SDL_Event</a> *);
-<a id='L42' name='L42'></a>  42 <em class='brace'>}</em> <a href='../R/29.html' title='Multiple referred from 2 places.'>Graphic_Camera_API</a>;
-<a id='L43' name='L43'></a>  43 
-<a id='L44' name='L44'></a>  44 <strong class='reserved'>extern</strong> <a href='../S/13.html#L42' title='Defined at 42 in include/graphic-camera.h.'>Graphic_Camera_API</a> <a href='../Y/203.html' title='Multiple used in 10 places.'>camera</a>;
-<a id='L45' name='L45'></a>  45 <em class='sharp'>#endif</em>
+<a id='L34' name='L34'></a>  34   <strong class='reserved'>void</strong> (*<a href='../S/25.html#L140' title='Defined at 140 in src/character-pool.c.'>reset_graph_position</a>)(<a href='../S/13.html#L23' title='Defined at 23 in include/character-pool.h.'>Character_Pool_Access</a>, <a href='../Y/335.html' title='Multiple used in 20 places.'>int64_t</a>, <a href='../Y/335.html' title='Multiple used in 20 places.'>int64_t</a>, <a href='../Y/335.html' title='Multiple used in 20 places.'>int64_t</a>, <a href='../Y/335.html' title='Multiple used in 20 places.'>int64_t</a>);
+<a id='L35' name='L35'></a>  35 <em class='brace'>}</em> <a href='../R/14.html' title='Multiple referred from 2 places.'>Character_Pool_API</a>;
+<a id='L36' name='L36'></a>  36 
+<a id='L37' name='L37'></a>  37 <strong class='reserved'>extern</strong> <a href='../S/13.html#L35' title='Defined at 35 in include/character-pool.h.'>Character_Pool_API</a> <a href='../Y/216.html' title='Multiple used in 13 places.'>character_pool</a>;
+<a id='L38' name='L38'></a>  38 
+<a id='L39' name='L39'></a>  39 <em class='sharp'>#endif</em>
 </pre>
 <hr />
 <a id='BOTTOM' name='BOTTOM'></a>

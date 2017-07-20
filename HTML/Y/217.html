@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>children</title>
+<title>character_prepare_pool</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,49 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/19.html#L71'>children</a>           71 include/main_set_character.h   mpc_ast_t* obj = t-&gt;children[1];</span>
-<span class='curline'><a href='../S/19.html#L77'>children</a>           77 include/main_set_character.h     mpc_ast_t* kv = obj-&gt;children[counter];</span>
-<span class='curline'><a href='../S/19.html#L80'>children</a>           80 include/main_set_character.h       mpc_ast_t* key = kv-&gt;children[0]-&gt;children[1];</span>
-<span class='curline'><a href='../S/19.html#L81'>children</a>           81 include/main_set_character.h       mpc_ast_t* value = kv-&gt;children[2];</span>
-<span class='curline'><a href='../S/19.html#L84'>children</a>           84 include/main_set_character.h         set_name(npc, value-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/19.html#L87'>children</a>           87 include/main_set_character.h         set_mark(npc, value-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/19.html#L90'>children</a>           90 include/main_set_character.h         set_race(npc, value-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/8.html#L36'>children</a>           36 include/main_set_config.h     if (STRCMP(t-&gt;children[0]-&gt;contents, "width")) {</span>
-<span class='curline'><a href='../S/8.html#L37'>children</a>           37 include/main_set_config.h       WIDTH = atoi(t-&gt;children[2]-&gt;children[0]-&gt;contents);</span>
-<span class='curline'><a href='../S/8.html#L39'>children</a>           39 include/main_set_config.h     else if (STRCMP(t-&gt;children[0]-&gt;contents, "height")) {</span>
-<span class='curline'><a href='../S/8.html#L40'>children</a>           40 include/main_set_config.h       HEIGHT = atoi(t-&gt;children[2]-&gt;children[0]-&gt;contents);</span>
-<span class='curline'><a href='../S/8.html#L42'>children</a>           42 include/main_set_config.h     else if (STRCMP(t-&gt;children[0]-&gt;contents, "font-family")) {</span>
-<span class='curline'><a href='../S/8.html#L43'>children</a>           43 include/main_set_config.h       FONT_FAMILY = use_path(t-&gt;children[2]-&gt;contents);</span>
-<span class='curline'><a href='../S/8.html#L45'>children</a>           45 include/main_set_config.h     else if (STRCMP(t-&gt;children[0]-&gt;contents, "title")) {</span>
-<span class='curline'><a href='../S/8.html#L46'>children</a>           46 include/main_set_config.h       GAME_TITLE = use_value(t-&gt;children[2]-&gt;contents);</span>
-<span class='curline'><a href='../S/8.html#L52'>children</a>           52 include/main_set_config.h   if (strstr(t-&gt;children[0]-&gt;tag, "element")) {</span>
-<span class='curline'><a href='../S/8.html#L53'>children</a>           53 include/main_set_config.h     if (STRCMP(t-&gt;children[0]-&gt;contents, "window")) {</span>
-<span class='curline'><a href='../S/8.html#L61'>children</a>           61 include/main_set_config.h     setup_window(t-&gt;children[counter]);</span>
-<span class='curline'><a href='../S/8.html#L68'>children</a>           68 include/main_set_config.h     String item = t-&gt;children[2]-&gt;contents;</span>
-<span class='curline'><a href='../S/8.html#L81'>children</a>           81 include/main_set_config.h   if (strstr(t-&gt;children[0]-&gt;tag, "id_selector")) {</span>
-<span class='curline'><a href='../S/8.html#L82'>children</a>           82 include/main_set_config.h     size_t key_len = strlen(t-&gt;children[0]-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/8.html#L84'>children</a>           84 include/main_set_config.h     strcpy(key, t-&gt;children[0]-&gt;children[1]-&gt;contents);</span>
-<span class='curline'><a href='../S/8.html#L94'>children</a>           94 include/main_set_config.h     setup_mark(t-&gt;children[counter], style_access);</span>
-<span class='curline'><a href='../S/8.html#L106'>children</a>          106 include/main_set_config.h     eval_set_config(t-&gt;children[counter]);</span>
-<span class='curline'><a href='../S/45.html#L44'>children</a>           44 mpc/examples/tree_traversal.c   tree = ast-&gt;children[1];</span>
-<span class='curline'><a href='../S/46.html#L2675'>children</a>         2675 mpc/mpc.c          mpc_ast_delete(a-&gt;children[i]);</span>
-<span class='curline'><a href='../S/46.html#L2678'>children</a>         2678 mpc/mpc.c        free(a-&gt;children);</span>
-<span class='curline'><a href='../S/46.html#L2686'>children</a>         2686 mpc/mpc.c        free(a-&gt;children);</span>
-<span class='curline'><a href='../S/46.html#L2705'>children</a>         2705 mpc/mpc.c        a-&gt;children = NULL;</span>
-<span class='curline'><a href='../S/46.html#L2750'>children</a>         2750 mpc/mpc.c          if (!mpc_ast_eq(a-&gt;children[i], b-&gt;children[i])) { return 0; }</span>
-<span class='curline'><a href='../S/46.html#L2758'>children</a>         2758 mpc/mpc.c        r-&gt;children = realloc(r-&gt;children, sizeof(mpc_ast_t*) * r-&gt;children_num);</span>
-<span class='curline'><a href='../S/46.html#L2759'>children</a>         2759 mpc/mpc.c        r-&gt;children[r-&gt;children_num-1] = a;</span>
-<span class='curline'><a href='../S/46.html#L2813'>children</a>         2813 mpc/mpc.c          mpc_ast_print_depth(a-&gt;children[i], d+1, fp);</span>
-<span class='curline'><a href='../S/46.html#L2834'>children</a>         2834 mpc/mpc.c          if(strcmp(ast-&gt;children[i]-&gt;tag, tag) == 0) {</span>
-<span class='curline'><a href='../S/46.html#L2850'>children</a>         2850 mpc/mpc.c          if(strcmp(ast-&gt;children[i]-&gt;tag, tag) == 0) {</span>
-<span class='curline'><a href='../S/46.html#L2851'>children</a>         2851 mpc/mpc.c            return ast-&gt;children[i];</span>
-<span class='curline'><a href='../S/46.html#L2879'>children</a>         2879 mpc/mpc.c              cnode = cnode-&gt;children[0];</span>
-<span class='curline'><a href='../S/46.html#L2930'>children</a>         2930 mpc/mpc.c            n_trav-&gt;curr_node = (*trav)-&gt;curr_node-&gt;children[cchild];</span>
-<span class='curline'><a href='../S/46.html#L2967'>children</a>         2967 mpc/mpc.c              n_trav-&gt;curr_node = (*trav)-&gt;curr_node-&gt;children[cchild];</span>
-<span class='curline'><a href='../S/46.html#L3014'>children</a>         3014 mpc/mpc.c            mpc_ast_add_child(r, mpc_ast_add_root_tag(as[i]-&gt;children[0], as[i]-&gt;tag));</span>
-<span class='curline'><a href='../S/46.html#L3018'>children</a>         3018 mpc/mpc.c              mpc_ast_add_child(r, as[i]-&gt;children[j]);</span>
-<span class='curline'><a href='../S/46.html#L3026'>children</a>         3026 mpc/mpc.c          r-&gt;state = r-&gt;children[0]-&gt;state;</span>
-<span class='curline'><a href='../S/47.html#L269'>children</a>          269 mpc/mpc.h        struct mpc_ast_t** children;</span>
+<span class='curline'><a href='../S/14.html#L3'>character_prepare_pool</a>    3 include/main_set_character.h Character_Pool_Access character_prepare_pool = NULL;</span>
+<span class='curline'><a href='../S/14.html#L72'>character_prepare_pool</a>   72 include/main_set_character.h   Status_Access npc = character_pool.malloc(character_prepare_pool);</span>
+<span class='curline'><a href='../S/14.html#L183'>character_prepare_pool</a>  183 include/main_set_character.h   bool result = character_pool.find(character_prepare_pool, &amp;origin_npc, race);</span>
+<span class='curline'><a href='../S/31.html#L140'>character_prepare_pool</a>  140 src/main.c       character_prepare_pool = character_pool.start(20);</span>
+<span class='curline'><a href='../S/31.html#L211'>character_prepare_pool</a>  211 src/main.c       character_pool.stop(character_prepare_pool);</span>
 </pre>
 </body>
 </html>

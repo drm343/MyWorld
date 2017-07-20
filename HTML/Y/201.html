@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>c</title>
+<title>box</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,68 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L373'>c</a>                 373 mpc/mpc.c        char c = '\0';</span>
-<span class='curline'><a href='../S/46.html#L378'>c</a>                 378 mpc/mpc.c          case MPC_INPUT_FILE: c = fgetc(i-&gt;file); return c;</span>
-<span class='curline'><a href='../S/46.html#L381'>c</a>                 381 mpc/mpc.c            if (!i-&gt;buffer) { c = getc(i-&gt;file); return c; }</span>
-<span class='curline'><a href='../S/46.html#L384'>c</a>                 384 mpc/mpc.c              c = mpc_input_buffer_get(i);</span>
-<span class='curline'><a href='../S/46.html#L385'>c</a>                 385 mpc/mpc.c              return c;</span>
-<span class='curline'><a href='../S/46.html#L387'>c</a>                 387 mpc/mpc.c              c = getc(i-&gt;file);</span>
-<span class='curline'><a href='../S/46.html#L388'>c</a>                 388 mpc/mpc.c              return c;</span>
-<span class='curline'><a href='../S/46.html#L391'>c</a>                 391 mpc/mpc.c          default: return c;</span>
-<span class='curline'><a href='../S/46.html#L397'>c</a>                 397 mpc/mpc.c        char c = '\0';</span>
-<span class='curline'><a href='../S/46.html#L403'>c</a>                 403 mpc/mpc.c            c = fgetc(i-&gt;file);</span>
-<span class='curline'><a href='../S/46.html#L407'>c</a>                 407 mpc/mpc.c            return c;</span>
-<span class='curline'><a href='../S/46.html#L412'>c</a>                 412 mpc/mpc.c              c = getc(i-&gt;file);</span>
-<span class='curline'><a href='../S/46.html#L414'>c</a>                 414 mpc/mpc.c              ungetc(c, i-&gt;file);</span>
-<span class='curline'><a href='../S/46.html#L415'>c</a>                 415 mpc/mpc.c              return c;</span>
-<span class='curline'><a href='../S/46.html#L421'>c</a>                 421 mpc/mpc.c              c = getc(i-&gt;file);</span>
-<span class='curline'><a href='../S/46.html#L423'>c</a>                 423 mpc/mpc.c              ungetc(c, i-&gt;file);</span>
-<span class='curline'><a href='../S/46.html#L424'>c</a>                 424 mpc/mpc.c              return c;</span>
-<span class='curline'><a href='../S/46.html#L427'>c</a>                 427 mpc/mpc.c          default: return c;</span>
-<span class='curline'><a href='../S/46.html#L432'>c</a>                 432 mpc/mpc.c      static int mpc_input_failure(mpc_input_t *i, char c) {</span>
-<span class='curline'><a href='../S/46.html#L439'>c</a>                 439 mpc/mpc.c            if (!i-&gt;buffer) { ungetc(c, i-&gt;file); break; }</span>
-<span class='curline'><a href='../S/46.html#L444'>c</a>                 444 mpc/mpc.c              ungetc(c, i-&gt;file); </span>
-<span class='curline'><a href='../S/46.html#L452'>c</a>                 452 mpc/mpc.c      static int mpc_input_success(mpc_input_t *i, char c, char **o) {</span>
-<span class='curline'><a href='../S/46.html#L458'>c</a>                 458 mpc/mpc.c          i-&gt;buffer[strlen(i-&gt;buffer) + 0] = c;</span>
-<span class='curline'><a href='../S/46.html#L461'>c</a>                 461 mpc/mpc.c        i-&gt;last = c;</span>
-<span class='curline'><a href='../S/46.html#L465'>c</a>                 465 mpc/mpc.c        if (c == '\n') {</span>
-<span class='curline'><a href='../S/46.html#L472'>c</a>                 472 mpc/mpc.c          (*o)[0] = c;</span>
-<span class='curline'><a href='../S/46.html#L485'>c</a>                 485 mpc/mpc.c      static int mpc_input_char(mpc_input_t *i, char c, char **o) {</span>
-<span class='curline'><a href='../S/46.html#L488'>c</a>                 488 mpc/mpc.c        return x == c ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);</span>
-<span class='curline'><a href='../S/46.html#L491'>c</a>                 491 mpc/mpc.c      static int mpc_input_range(mpc_input_t *i, char c, char d, char **o) {</span>
-<span class='curline'><a href='../S/46.html#L494'>c</a>                 494 mpc/mpc.c        return x &gt;= c &amp;&amp; x &lt;= d ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);  </span>
-<span class='curline'><a href='../S/46.html#L497'>c</a>                 497 mpc/mpc.c      static int mpc_input_oneof(mpc_input_t *i, const char *c, char **o) {</span>
-<span class='curline'><a href='../S/46.html#L500'>c</a>                 500 mpc/mpc.c        return strchr(c, x) != 0 ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);  </span>
-<span class='curline'><a href='../S/46.html#L503'>c</a>                 503 mpc/mpc.c      static int mpc_input_noneof(mpc_input_t *i, const char *c, char **o) {</span>
-<span class='curline'><a href='../S/46.html#L506'>c</a>                 506 mpc/mpc.c        return strchr(c, x) == 0 ? mpc_input_success(i, x, o) : mpc_input_failure(i, x);  </span>
-<span class='curline'><a href='../S/46.html#L515'>c</a>                 515 mpc/mpc.c      static int mpc_input_string(mpc_input_t *i, const char *c, char **o) {</span>
-<span class='curline'><a href='../S/46.html#L517'>c</a>                 517 mpc/mpc.c        const char *x = c;</span>
-<span class='curline'><a href='../S/46.html#L529'>c</a>                 529 mpc/mpc.c        *o = mpc_malloc(i, strlen(c) + 1);</span>
-<span class='curline'><a href='../S/46.html#L530'>c</a>                 530 mpc/mpc.c        strcpy(*o, c);</span>
-<span class='curline'><a href='../S/46.html#L580'>c</a>                 580 mpc/mpc.c      static const char *mpc_err_char_unescape(char c) {</span>
-<span class='curline'><a href='../S/46.html#L587'>c</a>                 587 mpc/mpc.c        switch (c) {</span>
-<span class='curline'><a href='../S/46.html#L598'>c</a>                 598 mpc/mpc.c            char_unescape_buffer[1] = c;</span>
-<span class='curline'><a href='../S/46.html#L978'>c</a>                 978 mpc/mpc.c      static mpc_val_t *mpcf_input_str_ast(mpc_input_t *i, mpc_val_t *c) {</span>
-<span class='curline'><a href='../S/46.html#L979'>c</a>                 979 mpc/mpc.c        mpc_ast_t *a = mpc_ast_new("", c);</span>
-<span class='curline'><a href='../S/46.html#L980'>c</a>                 980 mpc/mpc.c        mpc_free(i, c);</span>
-<span class='curline'><a href='../S/46.html#L1654'>c</a>                1654 mpc/mpc.c      mpc_parser_t *mpc_char(char c) {</span>
-<span class='curline'><a href='../S/46.html#L1657'>c</a>                1657 mpc/mpc.c        p-&gt;data.single.x = c;</span>
-<span class='curline'><a href='../S/46.html#L1658'>c</a>                1658 mpc/mpc.c        return mpc_expectf(p, "'%c'", c);</span>
-<span class='curline'><a href='../S/46.html#L1933'>c</a>                1933 mpc/mpc.c      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c) {</span>
-<span class='curline'><a href='../S/46.html#L1935'>c</a>                1935 mpc/mpc.c          mpc_string(o), a, mpc_string(c),</span>
-<span class='curline'><a href='../S/46.html#L1944'>c</a>                1944 mpc/mpc.c      mpc_parser_t *mpc_tok_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c) {</span>
-<span class='curline'><a href='../S/46.html#L1946'>c</a>                1946 mpc/mpc.c          mpc_sym(o), mpc_tok(a), mpc_sym(c),</span>
-<span class='curline'><a href='../S/46.html#L2033'>c</a>                2033 mpc/mpc.c      static mpc_parser_t *mpc_re_escape_char(char c) {</span>
-<span class='curline'><a href='../S/46.html#L2034'>c</a>                2034 mpc/mpc.c        switch (c) {</span>
-<span class='curline'><a href='../S/46.html#L2079'>c</a>                2079 mpc/mpc.c      static const char *mpc_re_range_escape_char(char c) {</span>
-<span class='curline'><a href='../S/46.html#L2080'>c</a>                2080 mpc/mpc.c        switch (c) {</span>
-<span class='curline'><a href='../S/46.html#L3032'>c</a>                3032 mpc/mpc.c      mpc_val_t *mpcf_str_ast(mpc_val_t *c) {</span>
-<span class='curline'><a href='../S/46.html#L3033'>c</a>                3033 mpc/mpc.c        mpc_ast_t *a = mpc_ast_new("", c);</span>
-<span class='curline'><a href='../S/46.html#L3034'>c</a>                3034 mpc/mpc.c        free(c);</span>
-<span class='curline'><a href='../S/47.html#L101'>c</a>                 101 mpc/mpc.h      mpc_parser_t *mpc_char(char c);</span>
-<span class='curline'><a href='../S/47.html#L202'>c</a>                 202 mpc/mpc.h      mpc_parser_t *mpc_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
-<span class='curline'><a href='../S/47.html#L208'>c</a>                 208 mpc/mpc.h      mpc_parser_t *mpc_tok_between(mpc_parser_t *a, mpc_dtor_t ad, const char *o, const char *c);</span>
-<span class='curline'><a href='../S/47.html#L315'>c</a>                 315 mpc/mpc.h      mpc_val_t *mpcf_str_ast(mpc_val_t *c);</span>
+<span class='curline'><a href='../S/18.html#L12'>box</a>                12 include/graphic-message.h   Message_Box_Points box;</span>
+<span class='curline'><a href='../S/29.html#L60'>box</a>                60 src/graphic-message.c   access-&gt;box = box_array;</span>
+<span class='curline'><a href='../S/31.html#L49'>box</a>                49 src/main.c         SDL_RenderDrawLines(render, box_1-&gt;box, 5);</span>
+<span class='curline'><a href='../S/31.html#L54'>box</a>                54 src/main.c           SDL_Rect box = {</span>
+<span class='curline'><a href='../S/31.html#L67'>box</a>                67 src/main.c           SDL_RenderCopy(render, access, NULL, &amp;(box));</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>character_pool</title>
+<title>camera_1</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,19 +9,19 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L37'>character_pool</a>     37 include/character-pool.h extern Character_Pool_API character_pool;</span>
-<span class='curline'><a href='../S/19.html#L72'>character_pool</a>     72 include/main_set_character.h   Status_Access npc = character_pool.malloc(character_prepare_pool);</span>
-<span class='curline'><a href='../S/19.html#L183'>character_pool</a>    183 include/main_set_character.h   bool result = character_pool.find(character_prepare_pool, &amp;origin_npc, race);</span>
-<span class='curline'><a href='../S/19.html#L186'>character_pool</a>    186 include/main_set_character.h     npc = character_pool.malloc(character_use_pool);</span>
-<span class='curline'><a href='../S/25.html#L92'>character_pool</a>     92 src/character-pool.c       to_status = character_pool.malloc(to);</span>
-<span class='curline'><a href='../S/25.html#L156'>character_pool</a>    156 src/character-pool.c Character_Pool_API character_pool = {</span>
-<span class='curline'><a href='../S/29.html#L31'>character_pool</a>     31 src/graphic-camera.c   if (character_pool.find_position(access, result, &amp;point) == FOUND) {</span>
-<span class='curline'><a href='../S/29.html#L217'>character_pool</a>    217 src/graphic-camera.c   character_pool.reset_graph_position(from_pool, access-&gt;start.x, access-&gt;start.y);</span>
-<span class='curline'><a href='../S/27.html#L93'>character_pool</a>     93 src/main.c       character_prepare_pool = character_pool.start(20);</span>
-<span class='curline'><a href='../S/27.html#L94'>character_pool</a>     94 src/main.c       character_use_pool = character_pool.start(100);</span>
-<span class='curline'><a href='../S/27.html#L102'>character_pool</a>    102 src/main.c       Status_Access Player = character_pool.malloc(character_use_pool);</span>
-<span class='curline'><a href='../S/27.html#L161'>character_pool</a>    161 src/main.c       character_pool.stop(character_use_pool);</span>
-<span class='curline'><a href='../S/27.html#L162'>character_pool</a>    162 src/main.c       character_pool.stop(character_prepare_pool);</span>
+<span class='curline'><a href='../S/31.html#L14'>camera_1</a>           14 src/main.c     Camera_Access camera_1 = NULL;</span>
+<span class='curline'><a href='../S/31.html#L78'>camera_1</a>           78 src/main.c       position.x = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.x;</span>
+<span class='curline'><a href='../S/31.html#L79'>camera_1</a>           79 src/main.c       position.y = GRID_LENGTH * camera_1-&gt;player-&gt;base-&gt;Graph_Position.y;</span>
+<span class='curline'><a href='../S/31.html#L80'>camera_1</a>           80 src/main.c       SDL_RenderCopy(render, camera_1-&gt;player-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(position));</span>
+<span class='curline'><a href='../S/31.html#L87'>camera_1</a>           87 src/main.c           if (!Point.eq(&amp;(npc-&gt;base-&gt;Real_Position), &amp;(camera_1-&gt;player-&gt;base-&gt;Real_Position))) {</span>
+<span class='curline'><a href='../S/31.html#L124'>camera_1</a>          124 src/main.c       character.set_style(camera_1-&gt;player, result);</span>
+<span class='curline'><a href='../S/31.html#L127'>camera_1</a>          127 src/main.c       camera.set_dead_style(camera_1, dead);</span>
+<span class='curline'><a href='../S/31.html#L142'>camera_1</a>          142 src/main.c       camera_1 = camera.start();</span>
+<span class='curline'><a href='../S/31.html#L151'>camera_1</a>          151 src/main.c       camera.set_player(camera_1, Player);</span>
+<span class='curline'><a href='../S/31.html#L169'>camera_1</a>          169 src/main.c       camera.set_map(camera_1, &amp;map_1);</span>
+<span class='curline'><a href='../S/31.html#L170'>camera_1</a>          170 src/main.c       use_npc("goblin", "random-name", camera_1-&gt;map);</span>
+<span class='curline'><a href='../S/31.html#L188'>camera_1</a>          188 src/main.c               running = camera.take(camera_1, character_use_pool, box_1, &amp;event);</span>
+<span class='curline'><a href='../S/31.html#L209'>camera_1</a>          209 src/main.c       camera.stop(camera_1);</span>
 </pre>
 </body>
 </html>

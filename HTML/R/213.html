@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_err_string</title>
+<title>mpc_copy</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,10 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/43.html#L563'>mpc_err_string</a>    563 mpc/mpc.c        char *str = mpc_err_string(x);</span>
-<span class='curline'><a href='../S/43.html#L2211'>mpc_err_string</a>   2211 mpc/mpc.c          err_msg = mpc_err_string(r.error);</span>
-<span class='curline'><a href='../S/43.html#L3341'>mpc_err_string</a>   3341 mpc/mpc.c          err_msg = mpc_err_string(r.error);</span>
-<span class='curline'><a href='../S/44.html#L49'>mpc_err_string</a>     49 mpc/mpc.h      char *mpc_err_string(mpc_err_t *e);</span>
+<span class='curline'><a href='../S/48.html#L1436'>mpc_copy</a>         1436 mpc/mpc.c          case MPC_TYPE_APPLY:    p-&gt;data.apply.x    = mpc_copy(a-&gt;data.apply.x);    break;</span>
+<span class='curline'><a href='../S/48.html#L1437'>mpc_copy</a>         1437 mpc/mpc.c          case MPC_TYPE_APPLY_TO: p-&gt;data.apply_to.x = mpc_copy(a-&gt;data.apply_to.x); break;</span>
+<span class='curline'><a href='../S/48.html#L1438'>mpc_copy</a>         1438 mpc/mpc.c          case MPC_TYPE_PREDICT:  p-&gt;data.predict.x  = mpc_copy(a-&gt;data.predict.x);  break;</span>
+<span class='curline'><a href='../S/48.html#L1442'>mpc_copy</a>         1442 mpc/mpc.c            p-&gt;data.not.x = mpc_copy(a-&gt;data.not.x);</span>
+<span class='curline'><a href='../S/48.html#L1446'>mpc_copy</a>         1446 mpc/mpc.c            p-&gt;data.expect.x = mpc_copy(a-&gt;data.expect.x);</span>
+<span class='curline'><a href='../S/48.html#L1454'>mpc_copy</a>         1454 mpc/mpc.c            p-&gt;data.repeat.x = mpc_copy(a-&gt;data.repeat.x);</span>
+<span class='curline'><a href='../S/48.html#L1460'>mpc_copy</a>         1460 mpc/mpc.c              p-&gt;data.or.xs[i] = mpc_copy(a-&gt;data.or.xs[i]);</span>
+<span class='curline'><a href='../S/48.html#L1466'>mpc_copy</a>         1466 mpc/mpc.c              p-&gt;data.and.xs[i] = mpc_copy(a-&gt;data.and.xs[i]);</span>
+<span class='curline'><a href='../S/49.html#L89'>mpc_copy</a>           89 mpc/mpc.h      mpc_parser_t *mpc_copy(mpc_parser_t *a);</span>
+<span class='curline'><a href='../S/51.html#L122'>mpc_copy</a>          122 mpc/tests/core.c   mpc_parser_t* q = mpc_and(2, mpcf_strfold, p, mpc_copy(p), free);</span>
+<span class='curline'><a href='../S/51.html#L148'>mpc_copy</a>          148 mpc/tests/core.c   mpc_delete(mpc_copy(p));</span>
+<span class='curline'><a href='../S/51.html#L149'>mpc_copy</a>          149 mpc/tests/core.c   mpc_delete(mpc_copy(q));</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>POINT_INTERFACE</title>
+<title>Message_Box_Access</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/15.html#L36'>POINT_INTERFACE</a>    36 include/base_type.h extern POINT_INTERFACE Point;</span>
-<span class='curline'><a href='../S/24.html#L20'>POINT_INTERFACE</a>    20 src/base_type.c POINT_INTERFACE Point = {</span>
+<span class='curline'><a href='../S/17.html#L42'>Message_Box_Access</a>   42 include/graphic-camera.h   bool (*take)(Camera_Access, Character_Pool_Access, Message_Box_Access, SDL_Event *);</span>
+<span class='curline'><a href='../S/18.html#L24'>Message_Box_Access</a>   24 include/graphic-message.h   Message_Box_Access (*start)(void);</span>
+<span class='curline'><a href='../S/18.html#L25'>Message_Box_Access</a>   25 include/graphic-message.h   void (*stop)(Message_Box_Access);</span>
+<span class='curline'><a href='../S/18.html#L26'>Message_Box_Access</a>   26 include/graphic-message.h   void (*set_box)(Message_Box_Access, int64_t, int64_t, int64_t, int64_t);</span>
+<span class='curline'><a href='../S/18.html#L27'>Message_Box_Access</a>   27 include/graphic-message.h   void (*add)(Message_Box_Access, String);</span>
+<span class='curline'><a href='../S/30.html#L148'>Message_Box_Access</a>  148 src/graphic-camera.c     Message_Box_Access box_access, SDL_Event *event) {</span>
+<span class='curline'><a href='../S/29.html#L12'>Message_Box_Access</a>   12 src/graphic-message.c static void set_box(Message_Box_Access box_1,</span>
+<span class='curline'><a href='../S/29.html#L28'>Message_Box_Access</a>   28 src/graphic-message.c static void add_message(Message_Box_Access access, String message) {</span>
+<span class='curline'><a href='../S/29.html#L58'>Message_Box_Access</a>   58 src/graphic-message.c static Message_Box_Access message_box_start(void) {</span>
+<span class='curline'><a href='../S/29.html#L59'>Message_Box_Access</a>   59 src/graphic-message.c   Message_Box_Access access = calloc(1, sizeof(Message_Box));</span>
+<span class='curline'><a href='../S/29.html#L70'>Message_Box_Access</a>   70 src/graphic-message.c static void message_box_stop(Message_Box_Access access) {</span>
+<span class='curline'><a href='../S/31.html#L15'>Message_Box_Access</a>   15 src/main.c     Message_Box_Access box_1 = NULL;</span>
 </pre>
 </body>
 </html>

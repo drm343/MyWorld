@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_escape_input_raw_re</title>
+<title>mem_full</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,14 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L2293'>mpc_escape_input_raw_re</a> 2293 mpc/mpc.c      static const char mpc_escape_input_raw_re[] = { '/' };</span>
-<span class='curline'><a href='../S/46.html#L2391'>mpc_escape_input_raw_re</a> 2391 mpc/mpc.c        mpc_val_t *y = mpcf_escape_new(x, mpc_escape_input_raw_re, mpc_escape_output_raw_re);</span>
-<span class='curline'><a href='../S/46.html#L2397'>mpc_escape_input_raw_re</a> 2397 mpc/mpc.c        mpc_val_t *y = mpcf_unescape_new(x, mpc_escape_input_raw_re, mpc_escape_output_raw_re);</span>
+<span class='curline'><a href='../S/48.html#L96'>mem_full</a>           96 mpc/mpc.c        char mem_full[MPC_INPUT_MEM_NUM];</span>
+<span class='curline'><a href='../S/48.html#L125'>mem_full</a>          125 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
+<span class='curline'><a href='../S/48.html#L155'>mem_full</a>          155 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
+<span class='curline'><a href='../S/48.html#L184'>mem_full</a>          184 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
+<span class='curline'><a href='../S/48.html#L212'>mem_full</a>          212 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
+<span class='curline'><a href='../S/48.html#L243'>mem_full</a>          243 mpc/mpc.c          if (!i-&gt;mem_full[i-&gt;mem_index]) {</span>
+<span class='curline'><a href='../S/48.html#L245'>mem_full</a>          245 mpc/mpc.c            i-&gt;mem_full[i-&gt;mem_index] = 1;</span>
+<span class='curline'><a href='../S/48.html#L265'>mem_full</a>          265 mpc/mpc.c        i-&gt;mem_full[j] = 0;</span>
 </pre>
 </body>
 </html>

@@ -9,16 +9,16 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/14.html#L27'>Character_Pool_Access</a>   27 include/character-pool.h   Character_Pool_Access (*start)(uint8_t);</span>
-<span class='curline'><a href='../S/14.html#L28'>Character_Pool_Access</a>   28 include/character-pool.h   void (*stop)(Character_Pool_Access);</span>
-<span class='curline'><a href='../S/14.html#L29'>Character_Pool_Access</a>   29 include/character-pool.h   Status_Access (*malloc)(Character_Pool_Access);</span>
-<span class='curline'><a href='../S/14.html#L30'>Character_Pool_Access</a>   30 include/character-pool.h   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);</span>
-<span class='curline'><a href='../S/14.html#L31'>Character_Pool_Access</a>   31 include/character-pool.h   Found_Result (*find)(Character_Pool_Access, Status_Access *, String);</span>
-<span class='curline'><a href='../S/14.html#L32'>Character_Pool_Access</a>   32 include/character-pool.h   Found_Result (*find_position)(Character_Pool_Access, Status_Access *, Point_Access);</span>
-<span class='curline'><a href='../S/14.html#L34'>Character_Pool_Access</a>   34 include/character-pool.h   void (*reset_graph_position)(Character_Pool_Access, int64_t, int64_t);</span>
-<span class='curline'><a href='../S/13.html#L41'>Character_Pool_Access</a>   41 include/graphic-camera.h   bool (*take)(Camera_Access, Character_Pool_Access, SDL_Event *);</span>
-<span class='curline'><a href='../S/19.html#L3'>Character_Pool_Access</a>    3 include/main_set_character.h Character_Pool_Access character_prepare_pool = NULL;</span>
-<span class='curline'><a href='../S/19.html#L4'>Character_Pool_Access</a>    4 include/main_set_character.h Character_Pool_Access character_use_pool = NULL;</span>
+<span class='curline'><a href='../S/13.html#L27'>Character_Pool_Access</a>   27 include/character-pool.h   Character_Pool_Access (*start)(uint8_t);</span>
+<span class='curline'><a href='../S/13.html#L28'>Character_Pool_Access</a>   28 include/character-pool.h   void (*stop)(Character_Pool_Access);</span>
+<span class='curline'><a href='../S/13.html#L29'>Character_Pool_Access</a>   29 include/character-pool.h   Status_Access (*malloc)(Character_Pool_Access);</span>
+<span class='curline'><a href='../S/13.html#L30'>Character_Pool_Access</a>   30 include/character-pool.h   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);</span>
+<span class='curline'><a href='../S/13.html#L31'>Character_Pool_Access</a>   31 include/character-pool.h   Found_Result (*find)(Character_Pool_Access, Status_Access *, String);</span>
+<span class='curline'><a href='../S/13.html#L32'>Character_Pool_Access</a>   32 include/character-pool.h   Found_Result (*find_position)(Character_Pool_Access, Status_Access *, Point_Access);</span>
+<span class='curline'><a href='../S/13.html#L34'>Character_Pool_Access</a>   34 include/character-pool.h   void (*reset_graph_position)(Character_Pool_Access, int64_t, int64_t, int64_t, int64_t);</span>
+<span class='curline'><a href='../S/17.html#L42'>Character_Pool_Access</a>   42 include/graphic-camera.h   bool (*take)(Camera_Access, Character_Pool_Access, Message_Box_Access, SDL_Event *);</span>
+<span class='curline'><a href='../S/14.html#L3'>Character_Pool_Access</a>    3 include/main_set_character.h Character_Pool_Access character_prepare_pool = NULL;</span>
+<span class='curline'><a href='../S/14.html#L4'>Character_Pool_Access</a>    4 include/main_set_character.h Character_Pool_Access character_use_pool = NULL;</span>
 <span class='curline'><a href='../S/25.html#L26'>Character_Pool_Access</a>   26 src/character-pool.c static Character_Pool_Access pool_start(uint8_t size) {</span>
 <span class='curline'><a href='../S/25.html#L30'>Character_Pool_Access</a>   30 src/character-pool.c   Character_Pool_Access pool_access = calloc(1, sizeof(Character_Pool_Type));</span>
 <span class='curline'><a href='../S/25.html#L48'>Character_Pool_Access</a>   48 src/character-pool.c static void pool_stop(Character_Pool_Access pool_access) {</span>
@@ -27,8 +27,8 @@
 <span class='curline'><a href='../S/25.html#L102'>Character_Pool_Access</a>  102 src/character-pool.c static Found_Result pool_find(Character_Pool_Access access, Status_Access *npc,</span>
 <span class='curline'><a href='../S/25.html#L119'>Character_Pool_Access</a>  119 src/character-pool.c static Found_Result pool_find_by_position(Character_Pool_Access access, Status_Access *npc,</span>
 <span class='curline'><a href='../S/25.html#L140'>Character_Pool_Access</a>  140 src/character-pool.c static void reset_graph_position(Character_Pool_Access access,</span>
-<span class='curline'><a href='../S/29.html#L29'>Character_Pool_Access</a>   29 src/graphic-camera.c static Yes_No occupy_position_by_others(Character_Pool_Access access,</span>
-<span class='curline'><a href='../S/29.html#L145'>Character_Pool_Access</a>  145 src/graphic-camera.c static bool key_process(Camera_Access access, Character_Pool_Access from_pool,</span>
+<span class='curline'><a href='../S/30.html#L31'>Character_Pool_Access</a>   31 src/graphic-camera.c static Yes_No occupy_position_by_others(Character_Pool_Access access,</span>
+<span class='curline'><a href='../S/30.html#L147'>Character_Pool_Access</a>  147 src/graphic-camera.c static bool key_process(Camera_Access access, Character_Pool_Access from_pool,</span>
 </pre>
 </body>
 </html>

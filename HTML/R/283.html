@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_maybe_lift</title>
+<title>mpc_int</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,13 +9,12 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1751'>mpc_maybe_lift</a>   1751 mpc/mpc.c        return mpc_maybe_lift(a, mpcf_ctor_null);</span>
-<span class='curline'><a href='../S/46.html#L1880'>mpc_maybe_lift</a>   1880 mpc/mpc.c        p0 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/46.html#L1882'>mpc_maybe_lift</a>   1882 mpc/mpc.c        p2 = mpc_maybe_lift(mpc_and(2, mpcf_strfold, mpc_char('.'), mpc_digits(), free), mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/46.html#L1884'>mpc_maybe_lift</a>   1884 mpc/mpc.c        p31 = mpc_maybe_lift(mpc_oneof("+-"), mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/46.html#L1886'>mpc_maybe_lift</a>   1886 mpc/mpc.c        p3 = mpc_maybe_lift(mpc_and(3, mpcf_strfold, p30, p31, p32, free, free), mpcf_ctor_str);</span>
-<span class='curline'><a href='../S/46.html#L2026'>mpc_maybe_lift</a>   2026 mpc/mpc.c        if (strcmp(xs[1], "?") == 0) { free(xs[1]); return mpc_maybe_lift(xs[0], mpcf_ctor_str); }</span>
-<span class='curline'><a href='../S/47.html#L132'>mpc_maybe_lift</a>    132 mpc/mpc.h      mpc_parser_t *mpc_maybe_lift(mpc_parser_t *a, mpc_ctor_t lf);</span>
+<span class='curline'><a href='../S/48.html#L1872'>mpc_int</a>          1872 mpc/mpc.c      mpc_parser_t *mpc_number(void) { return mpc_expect(mpc_or(3, mpc_int(), mpc_hex(), mpc_oct()), "number"); }</span>
+<span class='curline'><a href='../S/48.html#L2184'>mpc_int</a>          2184 mpc/mpc.c            mpc_brackets(mpc_int(), free),</span>
+<span class='curline'><a href='../S/48.html#L3321'>mpc_int</a>          3321 mpc/mpc.c              mpc_tok_brackets(mpc_int(), free),</span>
+<span class='curline'><a href='../S/48.html#L3483'>mpc_int</a>          3483 mpc/mpc.c              mpc_tok_brackets(mpc_int(), free),</span>
+<span class='curline'><a href='../S/49.html#L173'>mpc_int</a>           173 mpc/mpc.h      mpc_parser_t *mpc_int(void);</span>
+<span class='curline'><a href='../S/51.html#L57'>mpc_int</a>            57 mpc/tests/core.c     mpc_int(),</span>
 </pre>
 </body>
 </html>

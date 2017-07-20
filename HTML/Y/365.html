@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>memset</title>
+<title>marks</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,12 +9,18 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L125'>memset</a>            125 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/46.html#L155'>memset</a>            155 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/46.html#L184'>memset</a>            184 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/46.html#L212'>memset</a>            212 mpc/mpc.c        memset(i-&gt;mem_full, 0, sizeof(char) * MPC_INPUT_MEM_NUM);</span>
-<span class='curline'><a href='../S/46.html#L257'>memset</a>            257 mpc/mpc.c        memset(x, 0, n * m);</span>
-<span class='curline'><a href='../S/20.html#L18'>memset</a>             18 src/string_pool.c   memset(pool_access-&gt;pool, 0, pool_access-&gt;max_size);</span>
+<span class='curline'><a href='../S/48.html#L90'>marks</a>              90 mpc/mpc.c        mpc_state_t *marks;</span>
+<span class='curline'><a href='../S/48.html#L120'>marks</a>             120 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/48.html#L150'>marks</a>             150 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/48.html#L179'>marks</a>             179 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/48.html#L207'>marks</a>             207 mpc/mpc.c        i-&gt;marks = malloc(sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/48.html#L224'>marks</a>             224 mpc/mpc.c        free(i-&gt;marks);</span>
+<span class='curline'><a href='../S/48.html#L307'>marks</a>             307 mpc/mpc.c          i-&gt;marks = realloc(i-&gt;marks, sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/48.html#L311'>marks</a>             311 mpc/mpc.c        i-&gt;marks[i-&gt;marks_num-1] = i-&gt;state;</span>
+<span class='curline'><a href='../S/48.html#L331'>marks</a>             331 mpc/mpc.c          i-&gt;marks = realloc(i-&gt;marks, sizeof(mpc_state_t) * i-&gt;marks_slots);</span>
+<span class='curline'><a href='../S/48.html#L346'>marks</a>             346 mpc/mpc.c        i-&gt;state = i-&gt;marks[i-&gt;marks_num-1];</span>
+<span class='curline'><a href='../S/48.html#L357'>marks</a>             357 mpc/mpc.c        return i-&gt;state.pos &lt; (long)(strlen(i-&gt;buffer) + i-&gt;marks[0].pos);</span>
+<span class='curline'><a href='../S/48.html#L361'>marks</a>             361 mpc/mpc.c        return i-&gt;buffer[i-&gt;state.pos - i-&gt;marks[0].pos];</span>
 </pre>
 </body>
 </html>

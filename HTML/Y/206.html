@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>center</title>
+<title>buffer</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,26 +9,51 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/13.html#L18'>center</a>             18 include/graphic-camera.h   Point_Type center;</span>
-<span class='curline'><a href='../S/29.html#L44'>center</a>             44 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
-<span class='curline'><a href='../S/29.html#L54'>center</a>             54 src/graphic-camera.c   printf("[center](%d, %d)\n", center.x, center.y);</span>
-<span class='curline'><a href='../S/29.html#L59'>center</a>             59 src/graphic-camera.c       (point.x &gt; (center.x - 1)));</span>
-<span class='curline'><a href='../S/29.html#L61'>center</a>             61 src/graphic-camera.c       ((point.x + 1) &lt; (map-&gt;end.x - (center.x - 1))));</span>
-<span class='curline'><a href='../S/29.html#L67'>center</a>             67 src/graphic-camera.c       (point.y &gt; (center.y - 1)));</span>
-<span class='curline'><a href='../S/29.html#L69'>center</a>             69 src/graphic-camera.c       ((point.y + 1) &lt; (map-&gt;end.y - (center.y - 1))));</span>
-<span class='curline'><a href='../S/29.html#L79'>center</a>             79 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
-<span class='curline'><a href='../S/29.html#L87'>center</a>             87 src/graphic-camera.c   if ((point.x &gt; (center.x - 1))</span>
-<span class='curline'><a href='../S/29.html#L88'>center</a>             88 src/graphic-camera.c       &amp;&amp; ((point.x + 1)&lt; (map-&gt;end.x - (center.x - 1)))) {</span>
-<span class='curline'><a href='../S/29.html#L113'>center</a>            113 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
-<span class='curline'><a href='../S/29.html#L121'>center</a>            121 src/graphic-camera.c   if ((point.y &gt; (center.y - 1))</span>
-<span class='curline'><a href='../S/29.html#L122'>center</a>            122 src/graphic-camera.c       &amp;&amp; ((point.y + 1)&lt; (map-&gt;end.y - (center.y - 1)))) {</span>
-<span class='curline'><a href='../S/29.html#L249'>center</a>            249 src/graphic-camera.c   access-&gt;center.x = (x - 1) / 2;</span>
-<span class='curline'><a href='../S/29.html#L255'>center</a>            255 src/graphic-camera.c   access-&gt;center.y = (y - 1) / 2;</span>
-<span class='curline'><a href='../S/29.html#L261'>center</a>            261 src/graphic-camera.c   Point_Type center = access-&gt;center;</span>
-<span class='curline'><a href='../S/29.html#L263'>center</a>            263 src/graphic-camera.c   player-&gt;base-&gt;Real_Position.x = center.x;</span>
-<span class='curline'><a href='../S/29.html#L264'>center</a>            264 src/graphic-camera.c   player-&gt;base-&gt;Real_Position.y = center.y;</span>
-<span class='curline'><a href='../S/29.html#L266'>center</a>            266 src/graphic-camera.c   player-&gt;base-&gt;Graph_Position.x = center.x;</span>
-<span class='curline'><a href='../S/29.html#L267'>center</a>            267 src/graphic-camera.c   player-&gt;base-&gt;Graph_Position.y = center.y;</span>
+<span class='curline'><a href='../S/48.html#L83'>buffer</a>             83 mpc/mpc.c        char *buffer;</span>
+<span class='curline'><a href='../S/48.html#L113'>buffer</a>            113 mpc/mpc.c        i-&gt;buffer = NULL;</span>
+<span class='curline'><a href='../S/48.html#L143'>buffer</a>            143 mpc/mpc.c        i-&gt;buffer = NULL;</span>
+<span class='curline'><a href='../S/48.html#L172'>buffer</a>            172 mpc/mpc.c        i-&gt;buffer = NULL;</span>
+<span class='curline'><a href='../S/48.html#L200'>buffer</a>            200 mpc/mpc.c        i-&gt;buffer = NULL;</span>
+<span class='curline'><a href='../S/48.html#L222'>buffer</a>            222 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE) { free(i-&gt;buffer); }</span>
+<span class='curline'><a href='../S/48.html#L315'>buffer</a>            315 mpc/mpc.c          i-&gt;buffer = calloc(1, 1);</span>
+<span class='curline'><a href='../S/48.html#L336'>buffer</a>            336 mpc/mpc.c          free(i-&gt;buffer);</span>
+<span class='curline'><a href='../S/48.html#L337'>buffer</a>            337 mpc/mpc.c          i-&gt;buffer = NULL;</span>
+<span class='curline'><a href='../S/48.html#L357'>buffer</a>            357 mpc/mpc.c        return i-&gt;state.pos &lt; (long)(strlen(i-&gt;buffer) + i-&gt;marks[0].pos);</span>
+<span class='curline'><a href='../S/48.html#L361'>buffer</a>            361 mpc/mpc.c        return i-&gt;buffer[i-&gt;state.pos - i-&gt;marks[0].pos];</span>
+<span class='curline'><a href='../S/48.html#L381'>buffer</a>            381 mpc/mpc.c            if (!i-&gt;buffer) { c = getc(i-&gt;file); return c; }</span>
+<span class='curline'><a href='../S/48.html#L383'>buffer</a>            383 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
+<span class='curline'><a href='../S/48.html#L411'>buffer</a>            411 mpc/mpc.c            if (!i-&gt;buffer) {</span>
+<span class='curline'><a href='../S/48.html#L418'>buffer</a>            418 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
+<span class='curline'><a href='../S/48.html#L439'>buffer</a>            439 mpc/mpc.c            if (!i-&gt;buffer) { ungetc(c, i-&gt;file); break; }</span>
+<span class='curline'><a href='../S/48.html#L441'>buffer</a>            441 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
+<span class='curline'><a href='../S/48.html#L455'>buffer</a>            455 mpc/mpc.c        &amp;&amp;  i-&gt;buffer &amp;&amp; !mpc_input_buffer_in_range(i)) {</span>
+<span class='curline'><a href='../S/48.html#L456'>buffer</a>            456 mpc/mpc.c          i-&gt;buffer = realloc(i-&gt;buffer, strlen(i-&gt;buffer) + 2);</span>
+<span class='curline'><a href='../S/48.html#L457'>buffer</a>            457 mpc/mpc.c          i-&gt;buffer[strlen(i-&gt;buffer) + 1] = '\0';</span>
+<span class='curline'><a href='../S/48.html#L458'>buffer</a>            458 mpc/mpc.c          i-&gt;buffer[strlen(i-&gt;buffer) + 0] = c;</span>
+<span class='curline'><a href='../S/48.html#L568'>buffer</a>            568 mpc/mpc.c      static void mpc_err_string_cat(char *buffer, int *pos, int *max, char const *fmt, ...) {</span>
+<span class='curline'><a href='../S/48.html#L574'>buffer</a>            574 mpc/mpc.c        (*pos) += vsprintf(buffer + (*pos), fmt, va);</span>
+<span class='curline'><a href='../S/48.html#L609'>buffer</a>            609 mpc/mpc.c        char *buffer = calloc(1, 1024);</span>
+<span class='curline'><a href='../S/48.html#L612'>buffer</a>            612 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max,</span>
+<span class='curline'><a href='../S/48.html#L614'>buffer</a>            614 mpc/mpc.c          return buffer;</span>
+<span class='curline'><a href='../S/48.html#L617'>buffer</a>            617 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, </span>
+<span class='curline'><a href='../S/48.html#L620'>buffer</a>            620 mpc/mpc.c        if (x-&gt;expected_num == 0) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "ERROR: NOTHING EXPECTED"); }</span>
+<span class='curline'><a href='../S/48.html#L621'>buffer</a>            621 mpc/mpc.c        if (x-&gt;expected_num == 1) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s", x-&gt;expected[0]); }</span>
+<span class='curline'><a href='../S/48.html#L625'>buffer</a>            625 mpc/mpc.c            mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s, ", x-&gt;expected[i]);</span>
+<span class='curline'><a href='../S/48.html#L628'>buffer</a>            628 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s or %s", </span>
+<span class='curline'><a href='../S/48.html#L633'>buffer</a>            633 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, " at ");</span>
+<span class='curline'><a href='../S/48.html#L634'>buffer</a>            634 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, mpc_err_char_unescape(x-&gt;recieved));</span>
+<span class='curline'><a href='../S/48.html#L635'>buffer</a>            635 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, "\n");</span>
+<span class='curline'><a href='../S/48.html#L637'>buffer</a>            637 mpc/mpc.c        return realloc(buffer, strlen(buffer) + 1);</span>
+<span class='curline'><a href='../S/48.html#L1554'>buffer</a>           1554 mpc/mpc.c        char *buffer;</span>
+<span class='curline'><a href='../S/48.html#L1560'>buffer</a>           1560 mpc/mpc.c        buffer = malloc(2048);</span>
+<span class='curline'><a href='../S/48.html#L1561'>buffer</a>           1561 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
+<span class='curline'><a href='../S/48.html#L1564'>buffer</a>           1564 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
+<span class='curline'><a href='../S/48.html#L1565'>buffer</a>           1565 mpc/mpc.c        p-&gt;data.fail.m = buffer;</span>
+<span class='curline'><a href='../S/48.html#L1628'>buffer</a>           1628 mpc/mpc.c        char *buffer;</span>
+<span class='curline'><a href='../S/48.html#L1634'>buffer</a>           1634 mpc/mpc.c        buffer = malloc(2048);</span>
+<span class='curline'><a href='../S/48.html#L1635'>buffer</a>           1635 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
+<span class='curline'><a href='../S/48.html#L1638'>buffer</a>           1638 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
+<span class='curline'><a href='../S/48.html#L1640'>buffer</a>           1640 mpc/mpc.c        p-&gt;data.expect.m = buffer;</span>
 </pre>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>results</title>
+<title>range</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,45 +9,28 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L1013'>results</a>          1013 mpc/mpc.c        mpc_result_t *results;</span>
-<span class='curline'><a href='../S/46.html#L1104'>results</a>          1104 mpc/mpc.c            results = results_stk;</span>
-<span class='curline'><a href='../S/46.html#L1106'>results</a>          1106 mpc/mpc.c            while (mpc_parse_run(i, p-&gt;data.repeat.x, &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1110'>results</a>          1110 mpc/mpc.c                results = mpc_malloc(i, sizeof(mpc_result_t) * results_slots);</span>
-<span class='curline'><a href='../S/46.html#L1111'>results</a>          1111 mpc/mpc.c                memcpy(results, results_stk, sizeof(mpc_result_t) * MPC_PARSE_STACK_MIN);</span>
-<span class='curline'><a href='../S/46.html#L1114'>results</a>          1114 mpc/mpc.c                results = mpc_realloc(i, results, sizeof(mpc_result_t) * results_slots);</span>
-<span class='curline'><a href='../S/46.html#L1118'>results</a>          1118 mpc/mpc.c            *e = mpc_err_merge(i, *e, results[j].error);</span>
-<span class='curline'><a href='../S/46.html#L1120'>results</a>          1120 mpc/mpc.c              mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1121'>results</a>          1121 mpc/mpc.c              if (j &gt;= MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1125'>results</a>          1125 mpc/mpc.c            results = results_stk;</span>
-<span class='curline'><a href='../S/46.html#L1127'>results</a>          1127 mpc/mpc.c            while (mpc_parse_run(i, p-&gt;data.repeat.x, &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1131'>results</a>          1131 mpc/mpc.c                results = mpc_malloc(i, sizeof(mpc_result_t) * results_slots);</span>
-<span class='curline'><a href='../S/46.html#L1132'>results</a>          1132 mpc/mpc.c                memcpy(results, results_stk, sizeof(mpc_result_t) * MPC_PARSE_STACK_MIN);</span>
-<span class='curline'><a href='../S/46.html#L1135'>results</a>          1135 mpc/mpc.c                results = mpc_realloc(i, results, sizeof(mpc_result_t) * results_slots);</span>
-<span class='curline'><a href='../S/46.html#L1141'>results</a>          1141 mpc/mpc.c                mpc_err_many1(i, results[j].error);</span>
-<span class='curline'><a href='../S/46.html#L1142'>results</a>          1142 mpc/mpc.c                if (j &gt;= MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1144'>results</a>          1144 mpc/mpc.c              *e = mpc_err_merge(i, *e, results[j].error);</span>
-<span class='curline'><a href='../S/46.html#L1146'>results</a>          1146 mpc/mpc.c                mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1147'>results</a>          1147 mpc/mpc.c                if (j &gt;= MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1152'>results</a>          1152 mpc/mpc.c            results = p-&gt;data.repeat.n &gt; MPC_PARSE_STACK_MIN</span>
-<span class='curline'><a href='../S/46.html#L1156'>results</a>          1156 mpc/mpc.c            while (mpc_parse_run(i, p-&gt;data.repeat.x, &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1163'>results</a>          1163 mpc/mpc.c                mpc_parse_fold(i, p-&gt;data.repeat.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1164'>results</a>          1164 mpc/mpc.c                if (p-&gt;data.repeat.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1167'>results</a>          1167 mpc/mpc.c                mpc_parse_dtor(i, p-&gt;data.repeat.dx, results[k].output);</span>
-<span class='curline'><a href='../S/46.html#L1170'>results</a>          1170 mpc/mpc.c                mpc_err_count(i, results[j].error, p-&gt;data.repeat.n);</span>
-<span class='curline'><a href='../S/46.html#L1171'>results</a>          1171 mpc/mpc.c                if (p-&gt;data.repeat.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });  </span>
-<span class='curline'><a href='../S/46.html#L1180'>results</a>          1180 mpc/mpc.c            results = p-&gt;data.or.n &gt; MPC_PARSE_STACK_MIN</span>
-<span class='curline'><a href='../S/46.html#L1185'>results</a>          1185 mpc/mpc.c              if (mpc_parse_run(i, p-&gt;data.or.xs[j], &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1186'>results</a>          1186 mpc/mpc.c                MPC_SUCCESS(results[j].output;</span>
-<span class='curline'><a href='../S/46.html#L1187'>results</a>          1187 mpc/mpc.c                  if (p-&gt;data.or.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1189'>results</a>          1189 mpc/mpc.c                *e = mpc_err_merge(i, *e, results[j].error);</span>
-<span class='curline'><a href='../S/46.html#L1194'>results</a>          1194 mpc/mpc.c              if (p-&gt;data.or.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1200'>results</a>          1200 mpc/mpc.c            results = p-&gt;data.or.n &gt; MPC_PARSE_STACK_MIN</span>
-<span class='curline'><a href='../S/46.html#L1206'>results</a>          1206 mpc/mpc.c              if (!mpc_parse_run(i, p-&gt;data.and.xs[j], &amp;results[j], e)) {</span>
-<span class='curline'><a href='../S/46.html#L1209'>results</a>          1209 mpc/mpc.c                  mpc_parse_dtor(i, p-&gt;data.and.dxs[k], results[k].output);</span>
-<span class='curline'><a href='../S/46.html#L1211'>results</a>          1211 mpc/mpc.c                MPC_FAILURE(results[j].error;</span>
-<span class='curline'><a href='../S/46.html#L1212'>results</a>          1212 mpc/mpc.c                  if (p-&gt;data.or.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
-<span class='curline'><a href='../S/46.html#L1217'>results</a>          1217 mpc/mpc.c              mpc_parse_fold(i, p-&gt;data.and.f, j, (mpc_val_t**)results);</span>
-<span class='curline'><a href='../S/46.html#L1218'>results</a>          1218 mpc/mpc.c              if (p-&gt;data.or.n &gt; MPC_PARSE_STACK_MIN) { mpc_free(i, results); });</span>
+<span class='curline'><a href='../S/48.html#L910'>range</a>             910 mpc/mpc.c        mpc_pdata_range_t range;</span>
+<span class='curline'><a href='../S/48.html#L1022'>range</a>            1022 mpc/mpc.c          case MPC_TYPE_RANGE:   MPC_PRIMITIVE(mpc_input_range(i, p-&gt;data.range.x, p-&gt;data.range.y, (char**)&amp;r-&gt;output));</span>
+<span class='curline'><a href='../S/48.html#L1664'>range</a>            1664 mpc/mpc.c        p-&gt;data.range.x = s;</span>
+<span class='curline'><a href='../S/48.html#L1665'>range</a>            1665 mpc/mpc.c        p-&gt;data.range.y = e;</span>
+<span class='curline'><a href='../S/48.html#L2104'>range</a>            2104 mpc/mpc.c        char *range = calloc(1,1);</span>
+<span class='curline'><a href='../S/48.html#L2116'>range</a>            2116 mpc/mpc.c              range = realloc(range, strlen(range) + strlen(tmp) + 1);</span>
+<span class='curline'><a href='../S/48.html#L2117'>range</a>            2117 mpc/mpc.c              strcat(range, tmp);</span>
+<span class='curline'><a href='../S/48.html#L2119'>range</a>            2119 mpc/mpc.c              range = realloc(range, strlen(range) + 1 + 1);</span>
+<span class='curline'><a href='../S/48.html#L2120'>range</a>            2120 mpc/mpc.c              range[strlen(range) + 1] = '\0';</span>
+<span class='curline'><a href='../S/48.html#L2121'>range</a>            2121 mpc/mpc.c              range[strlen(range) + 0] = s[i+1];      </span>
+<span class='curline'><a href='../S/48.html#L2129'>range</a>            2129 mpc/mpc.c                range = realloc(range, strlen(range) + strlen("-") + 1);</span>
+<span class='curline'><a href='../S/48.html#L2130'>range</a>            2130 mpc/mpc.c                strcat(range, "-");</span>
+<span class='curline'><a href='../S/48.html#L2135'>range</a>            2135 mpc/mpc.c                range = realloc(range, strlen(range) + 1 + 1 + 1);</span>
+<span class='curline'><a href='../S/48.html#L2136'>range</a>            2136 mpc/mpc.c                range[strlen(range) + 1] = '\0';</span>
+<span class='curline'><a href='../S/48.html#L2137'>range</a>            2137 mpc/mpc.c                range[strlen(range) + 0] = (char)j;</span>
+<span class='curline'><a href='../S/48.html#L2144'>range</a>            2144 mpc/mpc.c            range = realloc(range, strlen(range) + 1 + 1);</span>
+<span class='curline'><a href='../S/48.html#L2145'>range</a>            2145 mpc/mpc.c            range[strlen(range) + 1] = '\0';</span>
+<span class='curline'><a href='../S/48.html#L2146'>range</a>            2146 mpc/mpc.c            range[strlen(range) + 0] = s[i];</span>
+<span class='curline'><a href='../S/48.html#L2151'>range</a>            2151 mpc/mpc.c        out = comp == 1 ? mpc_noneof(range) : mpc_oneof(range);</span>
+<span class='curline'><a href='../S/48.html#L2154'>range</a>            2154 mpc/mpc.c        free(range);</span>
+<span class='curline'><a href='../S/48.html#L2518'>range</a>            2518 mpc/mpc.c          buff[0] = p-&gt;data.range.x; buff[1] = '\0';</span>
+<span class='curline'><a href='../S/48.html#L2523'>range</a>            2523 mpc/mpc.c          buff[0] = p-&gt;data.range.y; buff[1] = '\0';</span>
 </pre>
 </body>
 </html>

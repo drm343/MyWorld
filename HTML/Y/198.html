@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>bool</title>
+<title>backtrack</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,21 +9,16 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/15.html#L32'>bool</a>               32 include/base_type.h   bool (*eq)(Point_Access, Point_Access);</span>
-<span class='curline'><a href='../S/14.html#L30'>bool</a>               30 include/character-pool.h   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);</span>
-<span class='curline'><a href='../S/12.html#L33'>bool</a>               33 include/character-skill.h   bool (*find)(Skill_Pool_Access, Status_Access, String, Skill_Access *);</span>
-<span class='curline'><a href='../S/16.html#L18'>bool</a>               18 include/character.h   bool is_alive;</span>
-<span class='curline'><a href='../S/13.html#L41'>bool</a>               41 include/graphic-camera.h   bool (*take)(Camera_Access, Character_Pool_Access, SDL_Event *);</span>
-<span class='curline'><a href='../S/19.html#L22'>bool</a>               22 include/main_set_character.h bool check_json(char *file_path) {</span>
-<span class='curline'><a href='../S/19.html#L183'>bool</a>              183 include/main_set_character.h   bool result = character_pool.find(character_prepare_pool, &amp;origin_npc, race);</span>
-<span class='curline'><a href='../S/8.html#L51'>bool</a>               51 include/main_set_config.h bool find_window(mpc_ast_t* t) {</span>
-<span class='curline'><a href='../S/8.html#L77'>bool</a>               77 include/main_set_config.h bool find_mark(mpc_ast_t* t) {</span>
-<span class='curline'><a href='../S/24.html#L5'>bool</a>                5 src/base_type.c static bool eq(Point_Access point_1, Point_Access point_2) {</span>
-<span class='curline'><a href='../S/24.html#L6'>bool</a>                6 src/base_type.c   bool result = false;</span>
-<span class='curline'><a href='../S/25.html#L81'>bool</a>               81 src/character-pool.c static bool pool_copy(Character_Pool_Access from, Character_Pool_Access to,</span>
-<span class='curline'><a href='../S/22.html#L48'>bool</a>               48 src/character-skill.c static bool pool_find(Skill_Pool_Access access, Status_Access owner,</span>
-<span class='curline'><a href='../S/29.html#L145'>bool</a>              145 src/graphic-camera.c static bool key_process(Camera_Access access, Character_Pool_Access from_pool,</span>
-<span class='curline'><a href='../S/27.html#L89'>bool</a>               89 src/main.c       bool running = true;</span>
+<span class='curline'><a href='../S/48.html#L87'>backtrack</a>          87 mpc/mpc.c        int backtrack;</span>
+<span class='curline'><a href='../S/48.html#L117'>backtrack</a>         117 mpc/mpc.c        i-&gt;backtrack = 1;</span>
+<span class='curline'><a href='../S/48.html#L147'>backtrack</a>         147 mpc/mpc.c        i-&gt;backtrack = 1;</span>
+<span class='curline'><a href='../S/48.html#L176'>backtrack</a>         176 mpc/mpc.c        i-&gt;backtrack = 1;</span>
+<span class='curline'><a href='../S/48.html#L204'>backtrack</a>         204 mpc/mpc.c        i-&gt;backtrack = 1;</span>
+<span class='curline'><a href='../S/48.html#L293'>backtrack</a>         293 mpc/mpc.c      static void mpc_input_backtrack_disable(mpc_input_t *i) { i-&gt;backtrack--; }</span>
+<span class='curline'><a href='../S/48.html#L294'>backtrack</a>         294 mpc/mpc.c      static void mpc_input_backtrack_enable(mpc_input_t *i) { i-&gt;backtrack++; }</span>
+<span class='curline'><a href='../S/48.html#L301'>backtrack</a>         301 mpc/mpc.c        if (i-&gt;backtrack &lt; 1) { return; }</span>
+<span class='curline'><a href='../S/48.html#L322'>backtrack</a>         322 mpc/mpc.c        if (i-&gt;backtrack &lt; 1) { return; }</span>
+<span class='curline'><a href='../S/48.html#L344'>backtrack</a>         344 mpc/mpc.c        if (i-&gt;backtrack &lt; 1) { return; }</span>
 </pre>
 </body>
 </html>

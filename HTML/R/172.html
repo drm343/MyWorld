@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>mpc_ast_add_tag</title>
+<title>mpc_anchor</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L3056'>mpc_ast_add_tag</a>  3056 mpc/mpc.c        return mpc_apply_to(a, (mpc_apply_to_t)mpc_ast_add_tag, (void*)t);</span>
-<span class='curline'><a href='../S/47.html#L276'>mpc_ast_add_tag</a>   276 mpc/mpc.h      mpc_ast_t *mpc_ast_add_tag(mpc_ast_t *a, const char *t);</span>
+<span class='curline'><a href='../S/48.html#L1832'>mpc_anchor</a>       1832 mpc/mpc.c      mpc_parser_t *mpc_soi(void) { return mpc_expect(mpc_anchor(mpc_soi_anchor), "start of input"); }</span>
+<span class='curline'><a href='../S/48.html#L1833'>mpc_anchor</a>       1833 mpc/mpc.c      mpc_parser_t *mpc_eoi(void) { return mpc_expect(mpc_anchor(mpc_eoi_anchor), "end of input"); }</span>
+<span class='curline'><a href='../S/48.html#L1846'>mpc_anchor</a>       1846 mpc/mpc.c      mpc_parser_t *mpc_boundary(void) { return mpc_expect(mpc_anchor(mpc_boundary_anchor), "boundary"); }</span>
+<span class='curline'><a href='../S/49.html#L117'>mpc_anchor</a>        117 mpc/mpc.h      mpc_parser_t *mpc_anchor(int(*f)(char,char));</span>
 </pre>
 </body>
 </html>

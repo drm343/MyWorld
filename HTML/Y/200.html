@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>buffer</title>
+<title>bool</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,51 +9,21 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/46.html#L83'>buffer</a>             83 mpc/mpc.c        char *buffer;</span>
-<span class='curline'><a href='../S/46.html#L113'>buffer</a>            113 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/46.html#L143'>buffer</a>            143 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/46.html#L172'>buffer</a>            172 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/46.html#L200'>buffer</a>            200 mpc/mpc.c        i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/46.html#L222'>buffer</a>            222 mpc/mpc.c        if (i-&gt;type == MPC_INPUT_PIPE) { free(i-&gt;buffer); }</span>
-<span class='curline'><a href='../S/46.html#L315'>buffer</a>            315 mpc/mpc.c          i-&gt;buffer = calloc(1, 1);</span>
-<span class='curline'><a href='../S/46.html#L336'>buffer</a>            336 mpc/mpc.c          free(i-&gt;buffer);</span>
-<span class='curline'><a href='../S/46.html#L337'>buffer</a>            337 mpc/mpc.c          i-&gt;buffer = NULL;</span>
-<span class='curline'><a href='../S/46.html#L357'>buffer</a>            357 mpc/mpc.c        return i-&gt;state.pos &lt; (long)(strlen(i-&gt;buffer) + i-&gt;marks[0].pos);</span>
-<span class='curline'><a href='../S/46.html#L361'>buffer</a>            361 mpc/mpc.c        return i-&gt;buffer[i-&gt;state.pos - i-&gt;marks[0].pos];</span>
-<span class='curline'><a href='../S/46.html#L381'>buffer</a>            381 mpc/mpc.c            if (!i-&gt;buffer) { c = getc(i-&gt;file); return c; }</span>
-<span class='curline'><a href='../S/46.html#L383'>buffer</a>            383 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/46.html#L411'>buffer</a>            411 mpc/mpc.c            if (!i-&gt;buffer) {</span>
-<span class='curline'><a href='../S/46.html#L418'>buffer</a>            418 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/46.html#L439'>buffer</a>            439 mpc/mpc.c            if (!i-&gt;buffer) { ungetc(c, i-&gt;file); break; }</span>
-<span class='curline'><a href='../S/46.html#L441'>buffer</a>            441 mpc/mpc.c            if (i-&gt;buffer &amp;&amp; mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/46.html#L455'>buffer</a>            455 mpc/mpc.c        &amp;&amp;  i-&gt;buffer &amp;&amp; !mpc_input_buffer_in_range(i)) {</span>
-<span class='curline'><a href='../S/46.html#L456'>buffer</a>            456 mpc/mpc.c          i-&gt;buffer = realloc(i-&gt;buffer, strlen(i-&gt;buffer) + 2);</span>
-<span class='curline'><a href='../S/46.html#L457'>buffer</a>            457 mpc/mpc.c          i-&gt;buffer[strlen(i-&gt;buffer) + 1] = '\0';</span>
-<span class='curline'><a href='../S/46.html#L458'>buffer</a>            458 mpc/mpc.c          i-&gt;buffer[strlen(i-&gt;buffer) + 0] = c;</span>
-<span class='curline'><a href='../S/46.html#L568'>buffer</a>            568 mpc/mpc.c      static void mpc_err_string_cat(char *buffer, int *pos, int *max, char const *fmt, ...) {</span>
-<span class='curline'><a href='../S/46.html#L574'>buffer</a>            574 mpc/mpc.c        (*pos) += vsprintf(buffer + (*pos), fmt, va);</span>
-<span class='curline'><a href='../S/46.html#L609'>buffer</a>            609 mpc/mpc.c        char *buffer = calloc(1, 1024);</span>
-<span class='curline'><a href='../S/46.html#L612'>buffer</a>            612 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max,</span>
-<span class='curline'><a href='../S/46.html#L614'>buffer</a>            614 mpc/mpc.c          return buffer;</span>
-<span class='curline'><a href='../S/46.html#L617'>buffer</a>            617 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, </span>
-<span class='curline'><a href='../S/46.html#L620'>buffer</a>            620 mpc/mpc.c        if (x-&gt;expected_num == 0) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "ERROR: NOTHING EXPECTED"); }</span>
-<span class='curline'><a href='../S/46.html#L621'>buffer</a>            621 mpc/mpc.c        if (x-&gt;expected_num == 1) { mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s", x-&gt;expected[0]); }</span>
-<span class='curline'><a href='../S/46.html#L625'>buffer</a>            625 mpc/mpc.c            mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s, ", x-&gt;expected[i]);</span>
-<span class='curline'><a href='../S/46.html#L628'>buffer</a>            628 mpc/mpc.c          mpc_err_string_cat(buffer, &amp;pos, &amp;max, "%s or %s", </span>
-<span class='curline'><a href='../S/46.html#L633'>buffer</a>            633 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, " at ");</span>
-<span class='curline'><a href='../S/46.html#L634'>buffer</a>            634 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, mpc_err_char_unescape(x-&gt;recieved));</span>
-<span class='curline'><a href='../S/46.html#L635'>buffer</a>            635 mpc/mpc.c        mpc_err_string_cat(buffer, &amp;pos, &amp;max, "\n");</span>
-<span class='curline'><a href='../S/46.html#L637'>buffer</a>            637 mpc/mpc.c        return realloc(buffer, strlen(buffer) + 1);</span>
-<span class='curline'><a href='../S/46.html#L1554'>buffer</a>           1554 mpc/mpc.c        char *buffer;</span>
-<span class='curline'><a href='../S/46.html#L1560'>buffer</a>           1560 mpc/mpc.c        buffer = malloc(2048);</span>
-<span class='curline'><a href='../S/46.html#L1561'>buffer</a>           1561 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
-<span class='curline'><a href='../S/46.html#L1564'>buffer</a>           1564 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
-<span class='curline'><a href='../S/46.html#L1565'>buffer</a>           1565 mpc/mpc.c        p-&gt;data.fail.m = buffer;</span>
-<span class='curline'><a href='../S/46.html#L1628'>buffer</a>           1628 mpc/mpc.c        char *buffer;</span>
-<span class='curline'><a href='../S/46.html#L1634'>buffer</a>           1634 mpc/mpc.c        buffer = malloc(2048);</span>
-<span class='curline'><a href='../S/46.html#L1635'>buffer</a>           1635 mpc/mpc.c        vsprintf(buffer, fmt, va);</span>
-<span class='curline'><a href='../S/46.html#L1638'>buffer</a>           1638 mpc/mpc.c        buffer = realloc(buffer, strlen(buffer) + 1);</span>
-<span class='curline'><a href='../S/46.html#L1640'>buffer</a>           1640 mpc/mpc.c        p-&gt;data.expect.m = buffer;</span>
+<span class='curline'><a href='../S/9.html#L32'>bool</a>               32 include/base_type.h   bool (*eq)(Point_Access, Point_Access);</span>
+<span class='curline'><a href='../S/13.html#L30'>bool</a>               30 include/character-pool.h   bool (*copy)(Character_Pool_Access, Character_Pool_Access, String);</span>
+<span class='curline'><a href='../S/8.html#L33'>bool</a>               33 include/character-skill.h   bool (*find)(Skill_Pool_Access, Status_Access, String, Skill_Access *);</span>
+<span class='curline'><a href='../S/10.html#L18'>bool</a>               18 include/character.h   bool is_alive;</span>
+<span class='curline'><a href='../S/17.html#L42'>bool</a>               42 include/graphic-camera.h   bool (*take)(Camera_Access, Character_Pool_Access, Message_Box_Access, SDL_Event *);</span>
+<span class='curline'><a href='../S/14.html#L22'>bool</a>               22 include/main_set_character.h bool check_json(char *file_path) {</span>
+<span class='curline'><a href='../S/14.html#L183'>bool</a>              183 include/main_set_character.h   bool result = character_pool.find(character_prepare_pool, &amp;origin_npc, race);</span>
+<span class='curline'><a href='../S/15.html#L52'>bool</a>               52 include/main_set_config.h bool find_window(mpc_ast_t* t) {</span>
+<span class='curline'><a href='../S/15.html#L78'>bool</a>               78 include/main_set_config.h bool find_mark(mpc_ast_t* t) {</span>
+<span class='curline'><a href='../S/22.html#L5'>bool</a>                5 src/base_type.c static bool eq(Point_Access point_1, Point_Access point_2) {</span>
+<span class='curline'><a href='../S/22.html#L6'>bool</a>                6 src/base_type.c   bool result = false;</span>
+<span class='curline'><a href='../S/25.html#L81'>bool</a>               81 src/character-pool.c static bool pool_copy(Character_Pool_Access from, Character_Pool_Access to,</span>
+<span class='curline'><a href='../S/21.html#L48'>bool</a>               48 src/character-skill.c static bool pool_find(Skill_Pool_Access access, Status_Access owner,</span>
+<span class='curline'><a href='../S/30.html#L147'>bool</a>              147 src/graphic-camera.c static bool key_process(Camera_Access access, Character_Pool_Access from_pool,</span>
+<span class='curline'><a href='../S/31.html#L136'>bool</a>              136 src/main.c       bool running = true;</span>
 </pre>
 </body>
 </html>

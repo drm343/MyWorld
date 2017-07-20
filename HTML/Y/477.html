@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>set_max_y</title>
+<title>rect</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.5.7' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/13.html#L35'>set_max_y</a>          35 include/graphic-camera.h   void (*set_max_y)(Camera_Access, int);</span>
-<span class='curline'><a href='../S/29.html#L228'>set_max_y</a>         228 src/graphic-camera.c   camera.set_max_y(access, MAX_Y);</span>
-<span class='curline'><a href='../S/29.html#L294'>set_max_y</a>         294 src/graphic-camera.c   .set_max_y = camera_set_max_y,</span>
+<span class='curline'><a href='../S/31.html#L74'>rect</a>               74 src/main.c       SDL_Rect rect = {.x = 0, .y = 0, .w = GRID_LENGTH, .h = GRID_LENGTH};</span>
+<span class='curline'><a href='../S/31.html#L88'>rect</a>               88 src/main.c             rect.x = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.x;</span>
+<span class='curline'><a href='../S/31.html#L89'>rect</a>               89 src/main.c             rect.y = GRID_LENGTH * npc-&gt;base-&gt;Graph_Position.y;</span>
+<span class='curline'><a href='../S/31.html#L90'>rect</a>               90 src/main.c             SDL_RenderCopy(render, npc-&gt;base-&gt;Mark-&gt;access, NULL, &amp;(rect));</span>
 </pre>
 </body>
 </html>
