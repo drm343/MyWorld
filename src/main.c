@@ -12,6 +12,7 @@ SDL_Rect position = {
   .h = 24
 };
 Camera_Access camera_1 = NULL;
+Message_Box_Access box_1 = NULL;
 Map_Type map_1 = {
   .start = {
     .x = 0,
@@ -24,38 +25,49 @@ Map_Type map_1 = {
 };
 TTF_Font* USE_FONT = NULL;
 
-void message_box(SDL_Renderer_Access render, String message) {
-  int const POINT_COUNT = 5;
-  SDL_Point points[5] = {
-    {0, 20 * 24},
-    {0, 600},
-    {799, 600},
-    {799, 20 * 24},
-    {0, 20 * 24}
-  };
-
-  SDL_SetRenderDrawColor(render, 255, 255, 255, 0);
-  SDL_RenderDrawLines(render, points, POINT_COUNT);
-
-
+void draw_message_box(SDL_Renderer_Access render) {
   SDL_Color white = {255, 255, 255};
+  String text = NULL;
 
-  SDL_Surface* surfaceMessage = NULL;
-  SDL_Rect box = {
-    .x = 0,
-    .y = 20 * 24,
-    .w = string.count_width(message, 24),
-    .h = 24
-  };
+  int current = box_1->current - 4;
+  if (current < 0) {
+    current += 10;
+  }
+  for (int counter = 0; counter < 5; counter++) {
+    if (current >= 1) {
+      text = box_1->history[current - 1];
+    }
+    else {
+      text = box_1->history[9];
+    }
+    current++;
+    if (current >= 10) {
+      current = 0;
+    }
 
-  surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-      message,
-      white);
-  SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);
-  SDL_FreeSurface(surfaceMessage);
+    SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
+    SDL_RenderDrawLines(render, box_1->box, 5);
 
-  SDL_RenderCopy(render, access, NULL, &(box));
-  SDL_DestroyTexture(access);
+    SDL_Surface* surfaceMessage = NULL;
+
+    if (text != NULL) {
+      SDL_Rect box = {
+        .x = 0,
+        .y = (20 + counter) * 24,
+        .w = string.count_width(text, 24),
+        .h = 24
+      };
+
+      surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
+          text,
+          white);
+      SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);
+      SDL_FreeSurface(surfaceMessage);
+
+      SDL_RenderCopy(render, access, NULL, &(box));
+      SDL_DestroyTexture(access);
+    }
+  }
 }
 
 void draw_view( SDL_Renderer_Access render) {
@@ -79,7 +91,7 @@ void draw_view( SDL_Renderer_Access render) {
       }
     }
   }
-  message_box(render, "hello world 中文");
+  draw_message_box(render);
 
   SDL_RenderPresent(render);
 }
@@ -128,6 +140,7 @@ int main(int argc, char *argv[]) {
   character_prepare_pool = character_pool.start(20);
   character_use_pool = character_pool.start(100);
   camera_1 = camera.start();
+  box_1 = message_box.start();
 
   SDL_Init(SDL_INIT_EVERYTHING);
   if (TTF_Init() != 0) {
@@ -172,12 +185,11 @@ int main(int argc, char *argv[]) {
           running = false;
           break;
         case SDL_KEYDOWN:
-          running = camera.take(camera_1, character_use_pool, &event);
+          running = camera.take(camera_1, character_use_pool, box_1, &event);
           break;
         default:
           break;
       }
-
       draw_view(render);
     }
   }
@@ -193,6 +205,7 @@ INIT_FAILED:
   SDL_Quit();
 
 DONE:
+  message_box.stop(box_1);
   camera.stop(camera_1);
   character_pool.stop(character_use_pool);
   character_pool.stop(character_prepare_pool);

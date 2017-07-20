@@ -1,8 +1,10 @@
 #include "graphic-camera.h"
-
+#include "string_pool.h"
 
 static int MAX_X = 0;
 static int MAX_Y = 0;
+
+static String_Pool_Access tmp_pool = NULL;
 
 
 static void print_mode(String str, Camera_Mode mode) {
@@ -143,7 +145,7 @@ static Yes_No can_move_vertical(Camera_Access access,
 }
 
 static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
-    SDL_Event *event) {
+    Message_Box_Access box_access, SDL_Event *event) {
   Status_Access Player = access->player;
   Status_Access npc = NULL;
   Style_Access dead = access->dead;
@@ -211,6 +213,27 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
   else {
     if (character.attack(Player, npc) == DEAD) {
       character.set_style(npc, dead);
+
+      char *a = " 死亡";
+      int64_t len = string.strlen_ascii(a);
+      len += string.strlen_ascii(npc->base->name);
+      String message = string_pool.malloc(tmp_pool, len);
+      strcpy(message, npc->base->name);
+      strcat(message, a);
+      message_box.add(box_access, message);
+      string_pool.reset(tmp_pool);
+    }
+    else {
+      char *a = "攻擊 ";
+      char *b = "，受到 1 點傷害";
+      int64_t len = string.strlen_ascii(a) + string.strlen_ascii(b);
+      len += string.strlen_ascii(npc->base->name);
+      String message = string_pool.malloc(tmp_pool, len);
+      strcpy(message, a);
+      strcat(message, npc->base->name);
+      strcat(message, b);
+      message_box.add(box_access, message);
+      string_pool.reset(tmp_pool);
     }
   }
   character_pool.reset_graph_position(from_pool,
@@ -236,12 +259,14 @@ static Camera_Access camera_start(void) {
   access->horizon = CAMERA_UNDEFINE;
   access->vertical = CAMERA_UNDEFINE;
   access->map = NULL;
+  tmp_pool = string_pool.start(200);
   return access;
 }
 
 
 static void camera_stop(Camera_Access access) {
   free(access);
+  string_pool.stop(tmp_pool);
 }
 
 

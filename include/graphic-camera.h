@@ -3,6 +3,7 @@
 
 #include "character-pool.h"
 #include "map_system.h"
+#include "graphic-message.h"
 
 
 typedef enum {
@@ -38,7 +39,7 @@ typedef struct {
   void (*set_player)(Camera_Access, Status_Access);
   void (*set_map)(Camera_Access, Map_Access);
 
-  bool (*take)(Camera_Access, Character_Pool_Access, SDL_Event *);
+  bool (*take)(Camera_Access, Character_Pool_Access, Message_Box_Access, SDL_Event *);
 } Graphic_Camera_API;
 
 extern Graphic_Camera_API camera;

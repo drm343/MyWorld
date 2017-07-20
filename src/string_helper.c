@@ -34,6 +34,10 @@ static size_t strlen_utf8(char *str) {
 }
 
 
+static size_t strlen_ascii(char *str) {
+  return strlen(str);
+}
+
 static size_t calculate_grid_width_utf8(char *str, int64_t full_size) {
   size_t max_counter = strlen(str);
   size_t index = 0;
@@ -89,5 +93,6 @@ static void remove_last(char **str) {
 String_API string = {
   .remove_last = remove_last,
   .strlen = strlen_utf8,
-  .count_width = calculate_grid_width_utf8
+  .count_width = calculate_grid_width_utf8,
+  .strlen_ascii = strlen_ascii
 };

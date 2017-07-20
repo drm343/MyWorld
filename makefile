@@ -27,6 +27,7 @@ AUTO_BUILD_DEP := $(OBJ)/base_type.o \
 	$(OBJ)/character-status.o \
 	$(OBJ)/character-skill.o \
 	$(OBJ)/graphic-camera.o \
+	$(OBJ)/graphic-message.o \
 	$(OBJ)/character-pool.o
 
 
