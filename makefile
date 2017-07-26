@@ -19,6 +19,9 @@ LIB_MY_WORLD=$(OBJ)/libmy_world.a
 DEBUG=
 
 
+CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
+
+
 AUTO_BUILD_DEP := $(OBJ)/base_type.o \
 	$(OBJ)/string_helper.o \
 	$(OBJ)/string_pool.o \
@@ -35,7 +38,7 @@ DEP := $(AUTO_BUILD_DEP) \
  	$(OBJ)/mpc.o
 
 .PHONY: clean html
-all: $(LIB_MY_WORLD)
+all: $(CHECK_DIR) $(LIB_MY_WORLD)
 	gcc $(DEBUG) $(PLATFORM) -o $(OBJ)/main.o -c -std=c11 $(INCLUDE) $(SRC)/main.c
 	gcc $(DEBUG) $(PLATFORM) $(OBJ)/main.o -s $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@sed -ie "s/APP_NAME=.*/APP_NAME=$(APP_NAME)/" $(CURREND)/app && rm $(CURREND)/appe && echo "sed done"
@@ -58,6 +61,10 @@ $(OBJ)/mpc.o:
 
 $(AUTO_BUILD_DEP):
 	gcc $(DEBUG) -o $@ -c -std=c11 $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
+
+
+$(CHECK_DIR):
+	mkdir -p $@
 
 clean:
 	rm bin/*
