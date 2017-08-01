@@ -67,8 +67,7 @@ $(CHECK_DIR):
 	mkdir -p $@
 
 clean:
-	rm bin/*
-	rm obj/*
+	rm -rf bin obj
 
 html:
 	cd $(CURREND) && htags -g -F && htags -Ffnsa
