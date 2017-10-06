@@ -10,7 +10,7 @@ BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
 INCLUDE=-I$(CURREND)/include -I$(CURREND)/mpc
-CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz
+CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
 LFLAGS=-L$(OBJ) -lmy_world
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a

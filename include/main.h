@@ -4,6 +4,8 @@
 #include <dirent.h>
 #include <time.h>
 
+#include <libconfig.h>
+
 #include "helper_function.h"
 #include "mpc.h"
 
