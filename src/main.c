@@ -1,27 +1,30 @@
 #include "main.h"
 
+extern void adainit (void);
+extern void adafinal (void);
+
 typedef SDL_Window * SDL_Window_Access;
 typedef SDL_Renderer * SDL_Renderer_Access;
 typedef SDL_Event * SDL_Event_Access;
 
 int GRID_LENGTH = 24;
 SDL_Rect position = {
-  .x = 0,
-  .y = 0,
-  .w = 24,
-  .h = 24
+		     .x = 0,
+		     .y = 0,
+		     .w = 24,
+		     .h = 24
 };
 Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
 Map_Type map_1 = {
-  .start = {
-    .x = 0,
-    .y = 0
-  },
-  .end = {
-    .x = 40,
-    .y = 30
-  }
+		  .start = {
+			    .x = 0,
+			    .y = 0
+		  },
+		  .end = {
+			  .x = 40,
+			  .y = 30
+		  }
 };
 TTF_Font* USE_FONT = NULL;
 
@@ -52,15 +55,15 @@ void draw_message_box(SDL_Renderer_Access render) {
 
     if (text != NULL) {
       SDL_Rect box = {
-        .x = 0,
-        .y = (20 + counter) * 24,
-        .w = string.count_width(text, 24),
-        .h = 24
+		      .x = 0,
+		      .y = (20 + counter) * 24,
+		      .w = string.count_width(text, 24),
+		      .h = 24
       };
 
       surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-          text,
-          white);
+					    text,
+					    white);
       SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);
       SDL_FreeSurface(surfaceMessage);
 
@@ -85,9 +88,9 @@ void draw_view( SDL_Renderer_Access render) {
 
     if (npc->base->status == IN_USE) {
       if (!Point.eq(&(npc->base->Real_Position), &(camera_1->player->base->Real_Position))) {
-        rect.x = GRID_LENGTH * npc->base->Graph_Position.x;
-        rect.y = GRID_LENGTH * npc->base->Graph_Position.y;
-        SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
+	rect.x = GRID_LENGTH * npc->base->Graph_Position.x;
+	rect.y = GRID_LENGTH * npc->base->Graph_Position.y;
+	SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
       }
     }
   }
@@ -111,8 +114,8 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 
   while (result != NULL) {
     surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-        result->mark,
-        white);
+					  result->mark,
+					  white);
     result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
 
     SDL_FreeSurface(surfaceMessage);
@@ -129,6 +132,7 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 }
 
 int main(int argc, char *argv[]) {
+  Execute_Result result = EXECUTE_FAILED;
   srand(time(NULL));
 
   SDL_Window_Access win;
@@ -156,15 +160,19 @@ int main(int argc, char *argv[]) {
     CONF_PATH = string_pool.malloc(config_pool, path_lang);
     strcpy(CONF_PATH, argv[1]);
 
-    char *CONFIG_NAME = "/config/init.css";
+    char *CONFIG_NAME = "/config/init.cfg";
     CONFIG_FILE = use_path(CONFIG_NAME);
     setup_character_config_path(argv[1]);
   }
   else {
-    goto DONE;
+    result = EXECUTE_FAILED;
   }
 
-  setup_style(CONFIG_FILE);
+  result = setup_style(CONFIG_FILE);
+
+  if (result == EXECUTE_FAILED) {
+    goto DONE;
+  }
   setup_npc_by_dir();
   camera.set_map(camera_1, &map_1);
   use_npc("goblin", "random-name", camera_1->map);
@@ -181,14 +189,14 @@ int main(int argc, char *argv[]) {
 
     while (SDL_PollEvent(&event)) {
       switch (event.type) {
-        case SDL_QUIT:
-          running = false;
-          break;
-        case SDL_KEYDOWN:
-          running = camera.take(camera_1, character_use_pool, box_1, &event);
-          break;
-        default:
-          break;
+	case SDL_QUIT:
+	  running = false;
+	  break;
+	case SDL_KEYDOWN:
+	  running = camera.take(camera_1, character_use_pool, box_1, &event);
+	  break;
+	default:
+	  break;
       }
       draw_view(render);
     }
@@ -200,11 +208,11 @@ int main(int argc, char *argv[]) {
   SDL_DestroyWindow(win);
   TTF_CloseFont(USE_FONT);
 
-INIT_FAILED:
+  INIT_FAILED:
   TTF_Quit();
   SDL_Quit();
 
-DONE:
+  DONE:
   message_box.stop(box_1);
   camera.stop(camera_1);
   character_pool.stop(character_use_pool);
