@@ -9,7 +9,7 @@ PACKAGE=$(CURREND)/../AppDir
 BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
-INCLUDE=-I$(CURREND)/include -I$(CURREND)/mpc
+INCLUDE=-I$(CURREND)/include
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
 LFLAGS=-L$(OBJ) -lmy_world
 
@@ -34,8 +34,7 @@ AUTO_BUILD_DEP := $(OBJ)/base_type.o \
 	$(OBJ)/character-pool.o
 
 
-DEP := $(AUTO_BUILD_DEP) \
- 	$(OBJ)/mpc.o
+DEP := $(AUTO_BUILD_DEP)
 
 .PHONY: clean html
 app:
@@ -58,9 +57,6 @@ $(PACKAGE):
 $(LIB_MY_WORLD): $(DEP)
 	ar cr $(LIB_MY_WORLD) $(DEP)
 	ranlib $(LIB_MY_WORLD)
-
-$(OBJ)/mpc.o:
-	gcc $(DEBUG) -o $@ -c -std=c11 $(INCLUDE) $(CURREND)/mpc/mpc.c
 
 $(AUTO_BUILD_DEP):
 	gcc $(DEBUG) -o $@ -c -std=c11 $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c

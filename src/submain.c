@@ -1,7 +1,8 @@
 #include "main.h"
 
-extern void adainit (void);
-extern void adafinal (void);
+extern void adainit(void);
+extern void adafinal(void);
+extern void get_dir(void);
 
 typedef SDL_Window * SDL_Window_Access;
 typedef SDL_Renderer * SDL_Renderer_Access;
@@ -131,7 +132,8 @@ Execute_Result init_view(SDL_Renderer_Access render) {
   return EXECUTE_SUCCESS;
 }
 
-int main(int argc, char *argv[]) {
+void submain(char *root_dir, char *init_cfg, char *npc_cfg) {
+  CONF_PATH = root_dir;
   Execute_Result result = EXECUTE_FAILED;
   srand(time(NULL));
 
@@ -150,30 +152,17 @@ int main(int argc, char *argv[]) {
   if (TTF_Init() != 0) {
     goto INIT_FAILED;
   }
-
   Status_Access Player = character_pool.malloc(character_use_pool);
   camera.set_player(camera_1, Player);
 
-  char *CONFIG_FILE = NULL;
-  if (argc >= 2) {
-    size_t path_lang = strlen(argv[1]);
-    CONF_PATH = string_pool.malloc(config_pool, path_lang);
-    strcpy(CONF_PATH, argv[1]);
-
-    char *CONFIG_NAME = "/config/init.cfg";
-    CONFIG_FILE = use_path(CONFIG_NAME);
-    setup_character_config_path(argv[1]);
-  }
-  else {
-    result = EXECUTE_FAILED;
-  }
-
-  result = setup_style(CONFIG_FILE);
+  result = setup_style(init_cfg);
 
   if (result == EXECUTE_FAILED) {
     goto DONE;
   }
-  setup_npc_by_dir();
+
+  setup_npc(npc_cfg);
+
   camera.set_map(camera_1, &map_1);
   use_npc("goblin", "random-name", camera_1->map);
 
@@ -201,7 +190,6 @@ int main(int argc, char *argv[]) {
       draw_view(render);
     }
   }
-
   Style_Pool_Interface.gc(style_pool);
 
   SDL_DestroyRenderer(render);

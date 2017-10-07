@@ -2,7 +2,7 @@
 Write a easy roguelike game with C.
 
 ## Dependence
-SDL2, SDL2-ttf, libconfig, mpc(will remove later).
+SDL2, SDL2-ttf, libconfig
 
 If you are windows user. Please consider to use "Bash on Ubuntu".
 
