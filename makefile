@@ -38,6 +38,9 @@ DEP := $(AUTO_BUILD_DEP) \
  	$(OBJ)/mpc.o
 
 .PHONY: clean html
+app:
+	gprbuild
+
 all: $(CHECK_DIR) $(LIB_MY_WORLD)
 	gcc $(DEBUG) $(PLATFORM) -o $(OBJ)/main.o -c -std=c11 $(INCLUDE) $(SRC)/main.c
 	gcc $(DEBUG) $(PLATFORM) $(OBJ)/main.o -s $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
