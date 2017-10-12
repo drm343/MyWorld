@@ -1,6 +1,6 @@
 #ifndef HEADER_CHARACTER_POOL
 #define HEADER_CHARACTER_POOL
-#include "character-skill.h"
+#include "character-npc.h"
 #include "helper_function.h"
 
 

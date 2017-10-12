@@ -1,8 +1,10 @@
 #ifndef HEADER_BASE_TYPE
 #define HEADER_BASE_TYPE
-
 #include <stdint.h>
 #include <stdbool.h>
+
+#import <Foundation/Foundation.h>
+
 
 typedef uint8_t Natural;
 
@@ -16,10 +18,7 @@ typedef enum {
   IN_USE
 } Use_Type;
 
-typedef enum {
-  NO = 0,
-  YES
-} Yes_No;
+typedef BOOL Yes_No;
 
 typedef struct {
   int32_t x;

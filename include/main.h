@@ -1,3 +1,6 @@
+#ifndef HEADER_SUBMAIN
+#define HEADER_SUBMAIN
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
@@ -16,3 +19,5 @@
 
 #include "main_set_config.h"
 #include "main_set_character.h"
+
+#endif

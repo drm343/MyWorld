@@ -68,7 +68,7 @@ void set_relation(char *key, Status_Access npc, Relation_Type relation) {
 }
 
 
-Execute_Result setup_npc(char *file_path) {
+Execute_Result setup_npc(const char *file_path) {
   Execute_Result result = EXECUTE_FAILED;
   config_t cfg;
   config_setting_t *setting;

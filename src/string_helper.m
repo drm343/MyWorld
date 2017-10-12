@@ -75,9 +75,9 @@ static size_t calculate_grid_width_utf8(char *str, int64_t full_size) {
 
 
 static void remove_last(char **str) {
-  size_t i = strlen(*str);
+  size_t i = 0;//strlen(*str);
 
-  for (i; i > 0; i--) {
+  for (i = strlen(*str); i > 0; i--) {
     unsigned char b = (unsigned char)((*str)[i - 1]) & 0b11000000;
 
     if (b == 0b10000000) {

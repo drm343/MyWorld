@@ -4,14 +4,16 @@ PLATFORM=-DLINUX_VERSION_FUNCTION=1
 #PLATFORM=-DMAXOS_VERSION_FUNCTION=1
 #PLATFORM=-DWINDOS_VERSION_FUNCTION=1
 
+COMPILER=gcc
+
 CURREND=`pwd`
 PACKAGE=$(CURREND)/../AppDir
 BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
-INCLUDE=-I$(CURREND)/include
+INCLUDE=-I $(CURREND)/include -I /usr/lib64/gcc/x86_64-slackware-linux/7.2.0/include -I `gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS`
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
-LFLAGS=-L$(OBJ) -lmy_world
+LFLAGS=-L$(OBJ) -lmy_world -L `gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES` -fconstant-string-class=NSConstantString -lobjc -lgnustep-base
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -29,6 +31,7 @@ AUTO_BUILD_DEP := $(OBJ)/base_type.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
 	$(OBJ)/character-skill.o \
+	$(OBJ)/character-npc.o \
 	$(OBJ)/graphic-camera.o \
 	$(OBJ)/graphic-message.o \
 	$(OBJ)/character-pool.o
@@ -36,14 +39,13 @@ AUTO_BUILD_DEP := $(OBJ)/base_type.o \
 
 DEP := $(AUTO_BUILD_DEP)
 
-.PHONY: clean html
-app:
-	gprbuild
 
+.PHONY: clean html app
 all: $(CHECK_DIR) $(LIB_MY_WORLD)
-	gcc $(DEBUG) $(PLATFORM) -o $(OBJ)/main.o -c -std=c11 $(INCLUDE) $(SRC)/main.c
-	gcc $(DEBUG) $(PLATFORM) $(OBJ)/main.o -s $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
-	@sed -ie "s/APP_NAME=.*/APP_NAME=$(APP_NAME)/" $(CURREND)/app && rm $(CURREND)/appe && echo "sed done"
+	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
+
+
+app: $(LIB_MY_WORLD)
 
 
 build: all $(PACKAGE)
@@ -59,7 +61,7 @@ $(LIB_MY_WORLD): $(DEP)
 	ranlib $(LIB_MY_WORLD)
 
 $(AUTO_BUILD_DEP):
-	gcc $(DEBUG) -o $@ -c -std=c11 $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
+	$(COMPILER) $(DEBUG) -o $@ -c -std=c11 $(INCLUDE) $(SRC)/$(basename $(notdir $@)).m
 
 
 $(CHECK_DIR):

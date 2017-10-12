@@ -1,6 +1,6 @@
 #define MAIN_STRING_malloc(len) string_pool.malloc(config_pool, len);
 
-char *CONF_PATH   = NULL;
+const char *CONF_PATH = NULL;
 
 int WIDTH = 800;
 int HEIGHT = 600;
@@ -83,7 +83,7 @@ void setup_mark(config_setting_t **setting) {
 
 // Default Execute_Result value is EXECUTE_FAILED.
 // Only run success will change the variable.
-Execute_Result setup_style(char *file_path) {
+Execute_Result setup_style(const char *file_path) {
   Execute_Result result = EXECUTE_FAILED;
   config_t cfg;
   config_setting_t *setting;

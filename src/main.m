@@ -1,8 +1,8 @@
+// 引入 Foundation.h
+#import <Foundation/Foundation.h>
+
 #include "main.h"
 
-extern void adainit(void);
-extern void adafinal(void);
-extern void get_dir(void);
 
 typedef SDL_Window * SDL_Window_Access;
 typedef SDL_Renderer * SDL_Renderer_Access;
@@ -74,7 +74,7 @@ void draw_message_box(SDL_Renderer_Access render) {
   }
 }
 
-void draw_view( SDL_Renderer_Access render) {
+void draw_view(SDL_Renderer_Access render) {
   SDL_Rect rect = {.x = 0, .y = 0, .w = GRID_LENGTH, .h = GRID_LENGTH};
   SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
   SDL_RenderClear(render);
@@ -132,7 +132,8 @@ Execute_Result init_view(SDL_Renderer_Access render) {
   return EXECUTE_SUCCESS;
 }
 
-void submain(char *root_dir, char *init_cfg, char *npc_cfg) {
+
+void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
   CONF_PATH = root_dir;
   Execute_Result result = EXECUTE_FAILED;
   srand(time(NULL));
@@ -207,4 +208,36 @@ void submain(char *root_dir, char *init_cfg, char *npc_cfg) {
   character_pool.stop(character_prepare_pool);
   Style_Pool_Interface.stop(style_pool);
   string_pool.stop(config_pool);
+}
+
+// 定義 main() 函數
+int main(int argc, char *argv[]) {
+    // 建立自動釋放池物件， alloc 為配置記憶體區域， init 為初始化物件
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+
+    // 建立 config file 的路徑
+    NSString *root_dir = [[[[[NSBundle mainBundle] bundlePath]
+      stringByDeletingLastPathComponent]
+      stringByDeletingLastPathComponent]
+      stringByDeletingLastPathComponent];
+    NSString *init_cfg = @"";
+    NSString *npc_cfg  = @"";
+
+    // 傳遞 autorelease 訊息給 NSString 字串物件
+    [init_cfg autorelease];
+    [npc_cfg autorelease];
+
+    init_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/init.cfg"];
+    npc_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/npc.cfg"];
+
+    submain(
+        [root_dir UTF8String],
+        [init_cfg UTF8String],
+        [npc_cfg UTF8String]);
+
+    // 傳遞 drain 訊息給自動釋放池物件
+    [pool drain];
+
+    // 程式結束，回傳整數 0 給作業系統
+    return 0;
 }
