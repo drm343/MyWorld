@@ -12,7 +12,6 @@
 #include "helper_function.h"
 #include "mpc.h"
 
-#include "string_pool.h"
 #include "string_helper.h"
 #include "character-pool.h"
 #include "graphic-camera.h"

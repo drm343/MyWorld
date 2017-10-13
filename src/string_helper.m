@@ -38,7 +38,7 @@ static size_t strlen_ascii(char *str) {
   return strlen(str);
 }
 
-static size_t calculate_grid_width_utf8(char *str, int64_t full_size) {
+static size_t calculate_grid_width_utf8(const char *str, int64_t full_size) {
   size_t max_counter = strlen(str);
   size_t index = 0;
   size_t move_position = 0;

@@ -4,7 +4,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-#include "string_pool.h"
+#include "base_type.h"
 
 typedef SDL_Texture * SDL_Texture_Access;
 
@@ -17,8 +17,8 @@ typedef struct {
 
 
 typedef struct {
-  String name;
-  String mark;
+  NSString *name;
+  NSString *mark;
   SDL_Texture_Access access;
 } Style;
 typedef Style * Style_Access;
@@ -34,7 +34,7 @@ typedef Style_Pool * Style_Pool_Access;
 
 typedef struct {
   Style_Access (*malloc)(Style_Pool_Access);
-  Style_Access (*find)(Style_Pool_Access, String);
+  Style_Access (*find)(Style_Pool_Access, NSString *);
   Style_Access (*next)(Style_Pool_Access, uint8_t *);
   void (*gc) (Style_Pool_Access);
   Style_Pool_Access (*start)(int);

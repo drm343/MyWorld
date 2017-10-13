@@ -1,13 +1,10 @@
 #include "graphic-camera.h"
-#include "string_pool.h"
 
 static int MAX_X = 0;
 static int MAX_Y = 0;
 
-static String_Pool_Access tmp_pool = NULL;
 
-
-static void print_mode(String str, Camera_Mode mode) {
+static void print_mode(char *str, Camera_Mode mode) {
   printf("%s", str);
   switch (mode) {
     case CAMERA_MOVE:
@@ -29,8 +26,8 @@ static void print_vertical_mode(Camera_Access access) {
 
 
 static Yes_No occupy_position_by_others(Character_Pool_Access access,
-    Point_Type point, Status_Access *result) {
-  if (character_pool.find_position(access, result, &point) == FOUND) {
+    Point_Access point, Status_Access *result) {
+  if ([access find_character: result with_position: point] == FOUND) {
     return YES;
   }
   else {
@@ -41,18 +38,18 @@ static Yes_No occupy_position_by_others(Character_Pool_Access access,
 
 static void debug(Camera_Access access) {
   Status_Access Player = access->player;
-  Point_Type point = Player->base->Real_Position;
+  Point_Access point = Player->base->Real_Position;
 
-  Point_Type center = access->center;
+  Point_Access center = access->center;
 
-  Point_Type from = access->start;
-  Point_Type to = access->end;
+  Point_Access from = access->start;
+  Point_Access to = access->end;
 
   Map_Access map = access->map;
   Yes_No result = YES;
 
   printf("------------------------\n");
-  printf("[map](%d, %d)\n", access->map->end.x, access->map->end.y);
+  printf("[map](%d, %d)\n", [map get_end_x], [map get_end_y]);
   printf("[center](%d, %d)\n", center.x, center.y);
   printf("[start](%d, %d)\n", from.x, from.y);
   printf("[end](%d, %d)\n", to.x, to.y);
@@ -60,34 +57,34 @@ static void debug(Camera_Access access) {
   printf("[left check] %d\n",
       (point.x > (center.x - 1)));
   printf("[right check] %d\n",
-      ((point.x + 1) < (map->end.x - (center.x - 1))));
+      ((point.x + 1) < ([map get_end_x] - (center.x - 1))));
   printf("[from end] %d\n",
       (from.x <= 0));
   printf("[to end] %d\n",
-      (to.x >= map->end.x));
+      (to.x >= [map get_end_x]));
   printf("[up check] %d\n",
       (point.y > (center.y - 1)));
   printf("[down check] %d\n",
-      ((point.y + 1) < (map->end.y - (center.y - 1))));
+      ((point.y + 1) < ([map get_end_y] - (center.y - 1))));
   printf("[from end] %d\n",
       (from.y <= 0));
   printf("[to end] %d\n",
-      (to.y >= map->end.y));
+      (to.y >= [map get_end_y]));
 }
 
 
 static Yes_No can_move_horizon(Camera_Access access,
-    Point_Type point) {
-  Point_Type center = access->center;
+    Point_Access point) {
+  Point_Access center = access->center;
 
-  Point_Type from = access->start;
-  Point_Type to = access->end;
+  Point_Access from = access->start;
+  Point_Access to = access->end;
 
   Map_Access map = access->map;
   Yes_No result = YES;
 
-  if ((point.x > (center.x - 1))
-      && ((point.x + 1)< (map->end.x - (center.x - 1)))) {
+  if (([point x] > ([center x] - 1))
+      && ((point.x + 1)< ([map get_end_x] - (center.x - 1)))) {
     access->horizon = CAMERA_MOVE;
   }
   else if (from.x <= 0) {
@@ -97,10 +94,10 @@ static Yes_No can_move_horizon(Camera_Access access,
       result = NO;
     }
   }
-  else if (to.x >= map->end.x) {
+  else if (to.x >= [map get_end_x]) {
     access->horizon = CAMERA_FIX;
 
-    if (point.x >= map->end.x) {
+    if (point.x >= [map get_end_x]) {
       result = NO;
     }
   }
@@ -111,17 +108,17 @@ static Yes_No can_move_horizon(Camera_Access access,
 }
 
 static Yes_No can_move_vertical(Camera_Access access,
-    Point_Type point) {
-  Point_Type center = access->center;
+    Point_Access point) {
+  Point_Access center = access->center;
 
-  Point_Type from = access->start;
-  Point_Type to = access->end;
+  Point_Access from = access->start;
+  Point_Access to = access->end;
 
   Map_Access map = access->map;
   Yes_No result = YES;
 
-  if ((point.y > (center.y - 1))
-      && ((point.y + 1)< (map->end.y - (center.y - 1)))) {
+  if (([point y] > ([center y] - 1))
+      && ((point.y + 1)< ([map get_end_y] - (center.y - 1)))) {
     access->vertical = CAMERA_MOVE;
   }
   else if (from.y <= 0) {
@@ -131,10 +128,10 @@ static Yes_No can_move_vertical(Camera_Access access,
       result = NO;
     }
   }
-  else if (to.y >= map->end.y) {
+  else if (to.y >= [map get_end_y]) {
     access->vertical = CAMERA_FIX;
 
-    if (point.y >= map->end.y) {
+    if (point.y >= [map get_end_y]) {
       result = NO;
     }
   }
@@ -150,12 +147,16 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
   Status_Access npc = NULL;
   Style_Access dead = access->dead;
 
-  Point_Type point = {
-    Player->base->Real_Position.x,
-    Player->base->Real_Position.y
-  };
+  Rectangle_Access rectangle = [Rectangle_Type create];
+  Point_Access max_point = [Point_Type create];
+  [max_point setX: access->max_x];
+  [max_point setY: access->max_y];
 
-  Point_Type vector = {0, 0};
+  Point_Access point = [Point_Type create];
+  [point setX: [Player->base->Real_Position x]];
+  [point setY: [Player->base->Real_Position y]];
+
+  Point_Access vector = [Point_Type create];
 
   if ((event->key).keysym.sym == SDLK_q) {
     return false;
@@ -163,82 +164,70 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
 
   switch ((event->key).keysym.sym) {
     case SDLK_UP:
-      point.y -= 1;
-      vector.y = -1;
+      [point addY: -1];
+      [vector setY: -1];
       break;
     case SDLK_DOWN:
-      point.y += 1;
-      vector.y = 1;
+      [point addY: 1];
+      [vector setY: 1];
       break;
     case SDLK_LEFT:
-      point.x -= 1;
-      vector.x = -1;
+      [point addX: -1];
+      [vector setX: -1];
       break;
     case SDLK_RIGHT:
-      point.x += 1;
-      vector.x = 1;
+      [point addX: 1];
+      [vector setX: 1];
       break;
     default:
       break;
   }
 
   if (occupy_position_by_others(from_pool, point, &npc) == NO) {
-    if ((vector.y != 0) && (can_move_vertical(access, point) == YES)) {
+    if (([vector y] != 0) && (can_move_vertical(access, point) == YES)) {
       switch (access->vertical) {
         case CAMERA_MOVE:
-          access->start.y = access->start.y + vector.y;
-          access->end.y = access->end.y + vector.y;
+          [access->start addY: [vector y]];
+          [access->end addY: [vector y]];
           break;
         default:
           break;
       }
 
-      Player->base->Real_Position.x = Player->base->Real_Position.x + vector.x;
-      Player->base->Real_Position.y = Player->base->Real_Position.y + vector.y;
+      [Player->base->Real_Position addX: [vector x]];
+      [Player->base->Real_Position addY: [vector y]];
     }
-    else if ((vector.x != 0) && (can_move_horizon(access, point) == YES)) {
+    else if (([vector x] != 0) && (can_move_horizon(access, point) == YES)) {
       switch (access->horizon) {
         case CAMERA_MOVE:
-          access->start.x = access->start.x + vector.x;
-          access->end.x = access->end.x + vector.x;
+          [access->start addX: [vector x]];
+          [access->end addX: [vector x]];
           break;
         default:
           break;
       }
 
-      Player->base->Real_Position.x = Player->base->Real_Position.x + vector.x;
-      Player->base->Real_Position.y = Player->base->Real_Position.y + vector.y;
+      [Player->base->Real_Position addX: [vector x]];
+      [Player->base->Real_Position addY: [vector y]];
     }
   }
   else {
+    NSString *message = NULL;
+
     if (character.attack(Player, npc) == DEAD) {
       character.set_style(npc, dead);
 
-      char *a = " 死亡";
-      int64_t len = string.strlen_ascii(a);
-      len += string.strlen_ascii(npc->base->name);
-      String message = string_pool.malloc(tmp_pool, len);
-      strcpy(message, npc->base->name);
-      strcat(message, a);
-      message_box.add(box_access, message);
-      string_pool.reset(tmp_pool);
+      message = [NSString stringWithFormat: @"%@ %@", npc->base->name, @"死亡"];
     }
     else {
-      char *a = "攻擊 ";
-      char *b = "，造成 1 點傷害";
-      int64_t len = string.strlen_ascii(a) + string.strlen_ascii(b);
-      len += string.strlen_ascii(npc->base->name);
-      String message = string_pool.malloc(tmp_pool, len);
-      strcpy(message, a);
-      strcat(message, npc->base->name);
-      strcat(message, b);
-      message_box.add(box_access, message);
-      string_pool.reset(tmp_pool);
+      message = [NSString stringWithFormat: @"%@ %@%@", @"攻擊", npc->base->name, @"，造成 1 點傷害"];
     }
+    message_box.add(box_access, message);
   }
-  character_pool.reset_graph_position(from_pool,
-      access->start.x, access->start.y,
-      access->max_x, access->max_y);
+
+  [rectangle set_top_left_point: access->start];
+  [rectangle set_down_right_point: max_point];
+  [from_pool calculate_graph_position: rectangle];
   return true;
 }
 
@@ -247,58 +236,58 @@ static Camera_Access camera_start(void) {
   Camera_Access access = calloc(1, sizeof(Camera_Type));
   MAX_X = 25;
   MAX_Y = 21;
+  access->start = [Point_Type create];
+  access->end = [Point_Type create];
+  access->center = [Point_Type create];
 
   camera.set_max_x(access, MAX_X);
   camera.set_max_y(access, MAX_Y);
 
-  access->start.x = 0;
-  access->start.y = 0;
-  access->end.x = MAX_X - 1;
-  access->end.y = MAX_Y - 1;
+  [access->start setX: 0];
+  [access->start setY: 0];
+  [access->end setX: MAX_X - 1];
+  [access->end setY: MAX_Y - 1];
 
   access->horizon = CAMERA_UNDEFINE;
   access->vertical = CAMERA_UNDEFINE;
   access->map = NULL;
-  tmp_pool = string_pool.start(200);
   return access;
 }
 
 
 static void camera_stop(Camera_Access access) {
   free(access);
-  string_pool.stop(tmp_pool);
 }
 
 
 static void camera_set_max_x(Camera_Access access, int x) {
   access->max_x = x;
-  access->center.x = (x - 1) / 2;
+  [access->center setX: (x - 1) / 2];
   MAX_X = x;
 }
 
 static void camera_set_max_y(Camera_Access access, int y) {
   access->max_y = y;
-  access->center.y = (y - 1) / 2;
+  [access->center setY: (y - 1) / 2];
   MAX_Y = y;
 }
 
 
 static void set_player(Camera_Access access, Status_Access player) {
-  Point_Type center = access->center;
+  Point_Access center = access->center;
 
-  player->base->Real_Position.x = center.x;
-  player->base->Real_Position.y = center.y;
+  [player->base->Real_Position setX: [center x]];
+  [player->base->Real_Position setY: [center y]];
 
-  player->base->Graph_Position.x = center.x;
-  player->base->Graph_Position.y = center.y;
+  [player->base->Graph_Position setX: [center x]];
+  [player->base->Graph_Position setY: [center y]];
 
   access->player = player;
 }
 
 
 static void set_map(Camera_Access access, Map_Access map) {
-  map->end.x -= 1;
-  map->end.y -= 1;
+  [map add_end_x: -1 and_y: -1];
 
   access->map = map;
 }

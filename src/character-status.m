@@ -44,11 +44,11 @@ static Is_Alive attack_character(Status_Access from, Status_Access to) {
 // -----------------------------------------
 // SET BASE VALUE
 // -----------------------------------------
-static void set_base_name(Status_Access access, String name) {
+static void set_base_name(Status_Access access, NSString *name) {
   access->base->name = name;
 }
 
-static void set_race(Status_Access access, String race) {
+static void set_race(Status_Access access, NSString *race) {
   access->race = race;
 }
 
@@ -56,15 +56,15 @@ static void set_base_style(Status_Access access, Style_Access style) {
   access->base->Mark = style;
 }
 
-static void set_base_mark(Status_Access access, String mark) {
+static void set_base_mark(Status_Access access, NSString *mark) {
   access->base->Mark->mark = mark;
 }
 
 
 static void set_random_position(Status_Access access,
     int64_t max_x, int64_t max_y) {
-  access->base->Real_Position.x = rand() % max_x;
-  access->base->Real_Position.y = rand() % max_y;
+  [access->base->Real_Position setX: rand() % max_x];
+  [access->base->Real_Position setY: rand() % max_y];
 }
 
 

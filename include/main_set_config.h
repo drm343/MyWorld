@@ -1,36 +1,16 @@
-#define MAIN_STRING_malloc(len) string_pool.malloc(config_pool, len);
-
 const char *CONF_PATH = NULL;
 
 int WIDTH = 800;
 int HEIGHT = 600;
-char *FONT_FAMILY = NULL;
-char *GAME_TITLE = NULL;
+
+NSString *OBJC_FONT_FAMILY = NULL;
+const char *FONT_FAMILY = NULL;
+NSString *OBJC_GAME_TITLE = NULL;
+const char *GAME_TITLE = NULL;
 
 
 Style_Pool_Access style_pool = NULL;
-String_Pool_Access config_pool = NULL;
 
-
-char *use_value(const char *CONFIG_VALUE) {
-  char *result = NULL;
-  size_t len = strlen(CONFIG_VALUE);
-
-  result = string_pool.malloc(config_pool, len);
-  strcpy(result, CONFIG_VALUE);
-  return result;
-}
-
-char *use_path(const char *CONFIG_NAME) {
-  char *result = NULL;
-  size_t path_len = strlen(CONF_PATH);
-  size_t file_len = strlen(CONFIG_NAME);
-
-  result = string_pool.malloc(config_pool, path_len + file_len);
-  strcpy(result, CONF_PATH);
-  strcat(result, CONFIG_NAME);
-  return result;
-}
 
 void setup_window(config_setting_t **setting) {
   const char *font_family;
@@ -40,10 +20,12 @@ void setup_window(config_setting_t **setting) {
   config_setting_lookup_int(*setting, "height", &HEIGHT);
 
   config_setting_lookup_string(*setting, "font-family", &font_family);
-  FONT_FAMILY = use_path(font_family);
+  OBJC_FONT_FAMILY = [NSString stringWithFormat: @"%s%s", CONF_PATH, font_family];
+  FONT_FAMILY = [OBJC_FONT_FAMILY UTF8String];
 
   config_setting_lookup_string(*setting, "title", &title);
-  GAME_TITLE = use_value(title);
+  OBJC_GAME_TITLE = [NSString stringWithUTF8String: title];
+  GAME_TITLE = [OBJC_GAME_TITLE UTF8String];
 }
 
 
@@ -51,34 +33,22 @@ void setup_window(config_setting_t **setting) {
 void setup_mark(config_setting_t **setting) {
   const char *player;
   const char *dead;
-  String key = NULL;
-  String item = NULL;
+  NSString *key = NULL;
+  NSString *item = NULL;
   Style_Access style_access = NULL;
   size_t len;
 
   style_access = Style_Pool_Interface.malloc(style_pool);
-  len = strlen("player");
-  key = string_pool.malloc(config_pool, len);
-  strcpy(key, "player");
-  style_access->name = key;
+  style_access->name = @"player";
 
   config_setting_lookup_string(*setting, "player", &player);
-  len = strlen(player);
-  item = string_pool.malloc(config_pool, len);
-  strcpy(item, player);
-  style_access->mark = item;
+  style_access->mark = [NSString stringWithUTF8String: player];
 
   style_access = Style_Pool_Interface.malloc(style_pool);
-  len = strlen("dead");
-  key = string_pool.malloc(config_pool, len);
-  strcpy(key, "dead");
-  style_access->name = key;
+  style_access->name = @"dead";
 
   config_setting_lookup_string(*setting, "dead", &dead);
-  len = strlen(dead);
-  item = string_pool.malloc(config_pool, len);
-  strcpy(item, dead);
-  style_access->mark = item;
+  style_access->mark = [NSString stringWithUTF8String: dead];
 }
 
 // Default Execute_Result value is EXECUTE_FAILED.

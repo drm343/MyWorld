@@ -4,15 +4,14 @@
 #include <stdbool.h>
 
 #include "base_type.h"
-#include "string_pool.h"
 #include "graphic.h"
 
 
 typedef struct Character_Base {
-  String name;
+  NSString *name;
   Style_Access Mark;
-  Point_Type Real_Position;
-  Point_Type Graph_Position;
+  Point_Access Real_Position;
+  Point_Access Graph_Position;
   Yes_No crossable;
   Yes_No attackable;
   bool is_alive;

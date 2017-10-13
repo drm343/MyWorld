@@ -16,7 +16,7 @@ static Style_Access SELF(malloc) (Style_Pool_Access pool_access) {
   return result;
 }
 
-static Style_Access SELF(find) (Style_Pool_Access pool_access, String name) {
+static Style_Access SELF(find) (Style_Pool_Access pool_access, NSString *name) {
   uint8_t count = 0;
   uint8_t used = pool_access->max_size - pool_access->current_size;
   Style_Access result = NULL;
@@ -24,7 +24,7 @@ static Style_Access SELF(find) (Style_Pool_Access pool_access, String name) {
   for (count; count < used; count++) {
     result = &(pool_access->pool[count]);
 
-    if(STRCMP(result->name, name)) {
+    if ([result->name isEqualToString: name] == YES) {
       return result;
     }
   }

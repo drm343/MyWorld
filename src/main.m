@@ -17,44 +17,34 @@ SDL_Rect position = {
 };
 Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
-Map_Type map_1 = {
-		  .start = {
-			    .x = 0,
-			    .y = 0
-		  },
-		  .end = {
-			  .x = 40,
-			  .y = 30
-		  }
-};
+Map_Type *map_1;
+
+
 TTF_Font* USE_FONT = NULL;
 
 void draw_message_box(SDL_Renderer_Access render) {
   SDL_Color white = {255, 255, 255};
-  String text = NULL;
+  NSString *item = NULL;
+  const char *text = NULL;
 
-  int current = box_1->current - 4;
-  if (current < 0) {
-    current += 10;
-  }
+  int current = [box_1->history count];
   for (int counter = 0; counter < 5; counter++) {
     if (current >= 1) {
-      text = box_1->history[current - 1];
+      item = [box_1->history objectAtIndex: current - 1];
     }
     else {
-      text = box_1->history[9];
+      item = @"";
     }
-    current++;
-    if (current >= 10) {
-      current = 0;
-    }
+
+    current--;
 
     SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
     SDL_RenderDrawLines(render, box_1->box, 5);
 
     SDL_Surface* surfaceMessage = NULL;
 
-    if (text != NULL) {
+    if (item != NULL) {
+      text = [item UTF8String];
       SDL_Rect box = {
 		      .x = 0,
 		      .y = (20 + counter) * 24,
@@ -63,7 +53,7 @@ void draw_message_box(SDL_Renderer_Access render) {
       };
 
       surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-					    text,
+              text,
 					    white);
       SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);
       SDL_FreeSurface(surfaceMessage);
@@ -83,12 +73,12 @@ void draw_view(SDL_Renderer_Access render) {
   position.y = GRID_LENGTH * camera_1->player->base->Graph_Position.y;
   SDL_RenderCopy(render, camera_1->player->base->Mark->access, NULL, &(position));
 
-  uint8_t used = character_use_pool->status->max_size - character_use_pool->status->current_size;
+  uint8_t used = [character_pool instance_count];
   for (int next = 1; next < used; next++) {
-    Status_Access npc = &(character_use_pool->status->pool[next]);
+    Status_Access npc = [character_pool get_instance_by_index: next];
 
     if (npc->base->status == IN_USE) {
-      if (!Point.eq(&(npc->base->Real_Position), &(camera_1->player->base->Real_Position))) {
+      if (![npc->base->Real_Position eq: camera_1->player->base->Real_Position]) {
 	rect.x = GRID_LENGTH * npc->base->Graph_Position.x;
 	rect.y = GRID_LENGTH * npc->base->Graph_Position.y;
 	SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
@@ -115,7 +105,7 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 
   while (result != NULL) {
     surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-					  result->mark,
+					  [result->mark UTF8String],
 					  white);
     result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
 
@@ -124,10 +114,10 @@ Execute_Result init_view(SDL_Renderer_Access render) {
     result = Style_Pool_Interface.next(style_pool, &counter);
   }
 
-  result = Style_Pool_Interface.find(style_pool, "player");
+  result = Style_Pool_Interface.find(style_pool, @"player");
   character.set_style(camera_1->player, result);
 
-  Style_Access dead = Style_Pool_Interface.find(style_pool, "dead");
+  Style_Access dead = Style_Pool_Interface.find(style_pool, @"dead");
   camera.set_dead_style(camera_1, dead);
   return EXECUTE_SUCCESS;
 }
@@ -142,10 +132,8 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
   SDL_Renderer_Access render;
   bool running = true;
 
-  config_pool = string_pool.start(1000);
   style_pool = Style_Pool_Interface.start(256);
-  character_prepare_pool = character_pool.start(20);
-  character_use_pool = character_pool.start(100);
+  character_pool = [Character_Pool create: 20 with_instance_size: 100];
   camera_1 = camera.start();
   box_1 = message_box.start();
 
@@ -153,7 +141,7 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
   if (TTF_Init() != 0) {
     goto INIT_FAILED;
   }
-  Status_Access Player = character_pool.malloc(character_use_pool);
+  Status_Access Player = [character_pool use_player];
   camera.set_player(camera_1, Player);
 
   result = setup_style(init_cfg);
@@ -164,8 +152,13 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
 
   setup_npc(npc_cfg);
 
-  camera.set_map(camera_1, &map_1);
-  use_npc("goblin", "random-name", camera_1->map);
+  camera.set_map(camera_1, map_1);
+  [character_pool use_npc: @"goblin"
+   with_name: @"g 1"
+   and_map: camera_1->map];
+  [character_pool use_npc: @"goblin"
+   with_name: @"g 2"
+   and_map: camera_1->map];
 
   win = SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
   render = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
@@ -179,14 +172,14 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
 
     while (SDL_PollEvent(&event)) {
       switch (event.type) {
-	case SDL_QUIT:
-	  running = false;
-	  break;
-	case SDL_KEYDOWN:
-	  running = camera.take(camera_1, character_use_pool, box_1, &event);
-	  break;
-	default:
-	  break;
+        case SDL_QUIT:
+          running = false;
+          break;
+        case SDL_KEYDOWN:
+          running = camera.take(camera_1, character_pool, box_1, &event);
+          break;
+        default:
+          break;
       }
       draw_view(render);
     }
@@ -204,31 +197,24 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
   DONE:
   message_box.stop(box_1);
   camera.stop(camera_1);
-  character_pool.stop(character_use_pool);
-  character_pool.stop(character_prepare_pool);
   Style_Pool_Interface.stop(style_pool);
-  string_pool.stop(config_pool);
 }
 
 // 定義 main() 函數
 int main(int argc, char *argv[]) {
     // 建立自動釋放池物件， alloc 為配置記憶體區域， init 為初始化物件
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    map_1 = [Map_Type create];
+    [[map_1 init_start: 0 and: 0] init_end: 40 and: 30];
+
 
     // 建立 config file 的路徑
     NSString *root_dir = [[[[[NSBundle mainBundle] bundlePath]
       stringByDeletingLastPathComponent]
       stringByDeletingLastPathComponent]
       stringByDeletingLastPathComponent];
-    NSString *init_cfg = @"";
-    NSString *npc_cfg  = @"";
-
-    // 傳遞 autorelease 訊息給 NSString 字串物件
-    [init_cfg autorelease];
-    [npc_cfg autorelease];
-
-    init_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/init.cfg"];
-    npc_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/npc.cfg"];
+    NSString *init_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/init.cfg"];
+    NSString *npc_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/npc.cfg"];
 
     submain(
         [root_dir UTF8String],

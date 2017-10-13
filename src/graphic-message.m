@@ -25,30 +25,8 @@ static void set_box(Message_Box_Access box_1,
 }
 
 
-static void add_message(Message_Box_Access access, String message) {
-  String_Pool_Access pool = NULL;
-
-  if (access->current_pool == 0) {
-      pool = access->pool_1;
-  }
-  else {
-      pool = access->pool_2;
-  }
-  String new_message = string_pool.malloc(pool, string.strlen_ascii(message));
-  strcpy(new_message, message);
-
-  access->history[access->current] = new_message;
-  access->current = access->current + 1;
-
-  if (access->current >= 10) {
-    access->current = 0;
-  }
-
-  access->counter = access->counter + 1;
-  if (access->counter > 20) {
-    access->current_pool = !(access->current_pool);
-    access->counter = 0;
-  }
+static void add_message(Message_Box_Access access, NSString *message) {
+  [access->history addObject: message];
 }
 
 
@@ -58,19 +36,12 @@ static void add_message(Message_Box_Access access, String message) {
 static Message_Box_Access message_box_start(void) {
   Message_Box_Access access = calloc(1, sizeof(Message_Box));
   access->box = box_array;
-  access->pool_1 = string_pool.start(1000);
-  access->pool_2 = string_pool.start(1000);
-  access->current_pool = 0;
-  access->history = calloc(10, sizeof(String));
-  access->current = 0;
+  access->history = [[[NSMutableArray alloc] init] autorelease];
   return access;
 }
 
 
 static void message_box_stop(Message_Box_Access access) {
-  string_pool.stop(access->pool_1);
-  string_pool.stop(access->pool_2);
-  free(access->history);
   free(access);
 }
 

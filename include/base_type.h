@@ -20,18 +20,37 @@ typedef enum {
 
 typedef BOOL Yes_No;
 
-typedef struct {
+
+@interface Point_Type : NSObject {
   int32_t x;
   int32_t y;
-} Point_Type;
+}
+
+@property (assign) int32_t x;
+@property (assign) int32_t y;
+
++ (id) create;
+- (id) init;
+- (id) addX: (int32_t) value;
+- (id) addY: (int32_t) value;
+- (bool) eq: (Point_Type *) other;
+- (void) print;
+@end
 typedef Point_Type * Point_Access;
 
 
-typedef struct {
-  bool (*eq)(Point_Access, Point_Access);
-  void (*print)(Point_Access);
-} POINT_INTERFACE;
+@interface Rectangle_Type : NSObject {
+  Point_Type *top_left_point;
+  Point_Type *down_right_point;
+}
 
-extern POINT_INTERFACE Point;
++ (id) create;
+- (id) init;
+- (Point_Access) top_left_point;
+- (id) set_top_left_point: (Point_Access) point;
+- (Point_Access) down_right_point;
+- (id) set_down_right_point: (Point_Access) point;
+@end
+typedef Rectangle_Type * Rectangle_Access;
 
 #endif

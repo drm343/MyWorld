@@ -16,11 +16,11 @@ typedef enum {
 typedef struct {
   Status_Access player;
   Style_Access dead;
-  Point_Type center;
+  Point_Access center;
   int64_t max_x; // 25
   int64_t max_y; // 21
-  Point_Type start;
-  Point_Type end;
+  Point_Access start;
+  Point_Access end;
   Camera_Mode horizon;
   Camera_Mode vertical;
   Map_Access map;

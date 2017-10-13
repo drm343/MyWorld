@@ -27,7 +27,7 @@ typedef enum {
 typedef struct Character {
   Character_Base_Access base;
 
-  String race;
+  NSString *race;
   Faction_Type faction;
   Natural damage;
 } Status;
@@ -38,10 +38,10 @@ typedef struct {
   void (*init)(Status_Access);
   void (*copy)(Status_Access, Status_Access);
   void (*print_status)(Status_Access);
-  void (*set_name)(Status_Access, String);
-  void (*set_race)(Status_Access, String);
+  void (*set_name)(Status_Access, NSString *);
+  void (*set_race)(Status_Access, NSString *);
   void (*set_style)(Status_Access, Style_Access);
-  void (*set_mark)(Status_Access, String);
+  void (*set_mark)(Status_Access, NSString *);
 
   Relation_Type (*get_relation)(Status_Access);
   void (*set_relation_ally)(Status_Access);
