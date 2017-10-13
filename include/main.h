@@ -10,7 +10,6 @@
 #include <libconfig.h>
 
 #include "helper_function.h"
-#include "mpc.h"
 
 #include "string_helper.h"
 #include "character-pool.h"
