@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point_5ftype',['Point_Type',['../class_point___type.html',1,'']]]
+  ['rectangle_5ftype',['Rectangle_Type',['../class_rectangle___type.html',1,'']]]
 ];

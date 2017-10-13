@@ -1,5 +1,6 @@
 <map id="include/graphic&#45;message.h" name="include/graphic&#45;message.h">
-<area shape="rect" id="node2" href="$graphic_8h.html" title="graphic.h" alt="" coords="173,80,248,107"/>
-<area shape="rect" id="node5" href="$string__pool_8h.html" title="string_pool.h" alt="" coords="264,155,360,181"/>
-<area shape="rect" id="node7" href="$string__helper_8h.html" title="string_helper.h" alt="" coords="412,80,519,107"/>
+<area shape="rect" id="node2" href="$graphic_8h.html" title="graphic.h" alt="" coords="199,80,273,107"/>
+<area shape="rect" id="node9" href="$string__helper_8h.html" title="string_helper.h" alt="" coords="440,80,547,107"/>
+<area shape="rect" id="node13" href="$string__pool_8h.html" title="string_pool.h" alt="" coords="631,80,727,107"/>
+<area shape="rect" id="node5" href="$base__type_8h.html" title="base_type.h" alt="" coords="125,155,219,181"/>
 </map>

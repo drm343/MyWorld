@@ -1,3 +1,6 @@
 <map id="圖形化之類別階層" name="圖形化之類別階層">
-<area shape="rect" id="node1" href="$struct_character___pool___a_p_i.html" title="Character_Pool_API" alt="" coords="5,5,147,32"/>
+<area shape="rect" id="node2" href="$class_character___pool.html" title="Character_Pool" alt="" coords="135,5,247,32"/>
+<area shape="rect" id="node3" href="$class_map___type.html" title="Map_Type" alt="" coords="149,56,232,83"/>
+<area shape="rect" id="node4" href="$class_point___type.html" title="Point_Type" alt="" coords="147,107,235,133"/>
+<area shape="rect" id="node5" href="$class_rectangle___type.html" title="Rectangle_Type" alt="" coords="132,157,249,184"/>
 </map>

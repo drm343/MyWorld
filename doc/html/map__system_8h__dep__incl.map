@@ -1,7 +1,9 @@
 <map id="include/map_system.h" name="include/map_system.h">
 <area shape="rect" id="node2" href="$map__system_8m.html" title="src/map_system.m" alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="164,80,331,107"/>
-<area shape="rect" id="node4" href="$graphic-camera_8m.html" title="src/graphic&#45;camera.m" alt="" coords="97,155,245,181"/>
-<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="270,155,377,181"/>
-<area shape="rect" id="node6" href="$main_8m.html" title="src/main.m" alt="" coords="280,229,367,256"/>
+<area shape="rect" id="node3" href="$character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="165,80,325,107"/>
+<area shape="rect" id="node5" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="281,155,448,181"/>
+<area shape="rect" id="node4" href="$character-pool_8m.html" title="src/character&#45;pool.m" alt="" coords="65,155,206,181"/>
+<area shape="rect" id="node7" href="$main_8h.html" title="include/main.h" alt="" coords="190,229,297,256"/>
+<area shape="rect" id="node6" href="$graphic-camera_8m.html" title="src/graphic&#45;camera.m" alt="" coords="321,229,469,256"/>
+<area shape="rect" id="node8" href="$main_8m.html" title="src/main.m" alt="" coords="200,304,287,331"/>
 </map>
