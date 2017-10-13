@@ -1,0 +1,25 @@
+var annotated =
+[
+    [ "Camera_Type", "struct_camera___type.html", "struct_camera___type" ],
+    [ "Character", "struct_character.html", "struct_character" ],
+    [ "Character_API", "struct_character___a_p_i.html", "struct_character___a_p_i" ],
+    [ "Character_Base", "struct_character___base.html", "struct_character___base" ],
+    [ "Character_Pool_API", "struct_character___pool___a_p_i.html", "struct_character___pool___a_p_i" ],
+    [ "Character_Pool_Type", "struct_character___pool___type.html", "struct_character___pool___type" ],
+    [ "FontConfig", "struct_font_config.html", "struct_font_config" ],
+    [ "Graphic_Camera_API", "struct_graphic___camera___a_p_i.html", "struct_graphic___camera___a_p_i" ],
+    [ "Map_Type", "class_map___type.html", "class_map___type" ],
+    [ "Message_Box", "struct_message___box.html", "struct_message___box" ],
+    [ "Message_Box_API", "struct_message___box___a_p_i.html", "struct_message___box___a_p_i" ],
+    [ "NPC", "interface_n_p_c.html", "interface_n_p_c" ],
+    [ "Point_Type", "class_point___type.html", "class_point___type" ],
+    [ "Skill", "struct_skill.html", "struct_skill" ],
+    [ "Skill_API", "struct_skill___a_p_i.html", "struct_skill___a_p_i" ],
+    [ "Skill_Pool_API", "struct_skill___pool___a_p_i.html", "struct_skill___pool___a_p_i" ],
+    [ "String_API", "struct_string___a_p_i.html", "struct_string___a_p_i" ],
+    [ "String_Pool_API", "struct_string___pool___a_p_i.html", "struct_string___pool___a_p_i" ],
+    [ "String_Pool_Origin", "struct_string___pool___origin.html", "struct_string___pool___origin" ],
+    [ "Style", "struct_style.html", "struct_style" ],
+    [ "Style_Pool", "struct_style___pool.html", "struct_style___pool" ],
+    [ "STYLE_POOL_INTERFACE", "struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html", "struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e" ]
+];
