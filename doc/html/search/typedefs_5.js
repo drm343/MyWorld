@@ -9,10 +9,7 @@ var searchData=
   ['status',['Status',['../character-status_8h.html#aeabbbd9c500d08b0a792a839100fad12',1,'character-status.h']]],
   ['status_5faccess',['Status_Access',['../character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109',1,'character-status.h']]],
   ['status_5fpool_5faccess',['Status_Pool_Access',['../character-pool_8h.html#acca027566f2600e224d19503496965e9',1,'character-pool.h']]],
-  ['string',['String',['../string__pool_8h.html#a2efe6d463d80744789f228f5dc4baa39',1,'string_pool.h']]],
   ['string_5faccess',['String_Access',['../graphic-message_8h.html#a136239131e53d4617ae6e7c21797be06',1,'graphic-message.h']]],
-  ['string_5fpool',['String_Pool',['../string__pool_8h.html#a73c92ee9ccf9f88835d922b415f31a31',1,'string_pool.h']]],
-  ['string_5fpool_5faccess',['String_Pool_Access',['../string__pool_8h.html#ad5ddcd1aeeec3ed2667b967a5ccb09cb',1,'string_pool.h']]],
   ['style_5faccess',['Style_Access',['../graphic_8h.html#af50ddf12d464cb9d156ecde0fc80cb1c',1,'graphic.h']]],
   ['style_5fpool_5faccess',['Style_Pool_Access',['../graphic_8h.html#a831461837be60b6f95510a35a6dafb9e',1,'graphic.h']]]
 ];

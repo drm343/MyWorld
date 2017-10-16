@@ -93,77 +93,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">    7</a></span>&#160;<span class="keyword">typedef</span> uint8_t <a class="code" href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a>;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">    9</a></span>&#160;<span class="keyword">typedef</span> uint8_t <a class="code" href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">   11</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">   12</a></span>&#160;  <a class="code" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a> = 0,</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">   13</a></span>&#160;  <a class="code" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a>,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;} <a class="code" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">   17</a></span>&#160;  <a class="code" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a>,</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">   18</a></span>&#160;  <a class="code" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} <a class="code" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="base__type_8h.html#a1ab654e377a209035714c1c5f6e6ba99">   21</a></span>&#160;<span class="keyword">typedef</span> BOOL <a class="code" href="base__type_8h.html#a1ab654e377a209035714c1c5f6e6ba99">Yes_No</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">@interface </span><a class="code" href="class_point___type.html">Point_Type</a> : NSObject {</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_point___type.html#af6d3062751bd565decb1a2cd3b63bdb2">   25</a></span>&#160;  int32_t <a class="code" href="class_point___type.html#af6d3062751bd565decb1a2cd3b63bdb2">x</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_point___type.html#af64066d134a77e01b3d6eb8da813627a">   26</a></span>&#160;  int32_t <a class="code" href="class_point___type.html#af64066d134a77e01b3d6eb8da813627a">y</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@property</span> (assign) int32_t x;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@property</span> (assign) int32_t y;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;+ (id) create;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;- (id) init;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;- (id) addX: (int32_t) value;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;- (id) addY: (int32_t) value;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;- (bool) eq: (<a class="code" href="class_point___type.html">Point_Type</a> *) other;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;- (void) print;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="base__type_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">   39</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="class_point___type.html">Point_Type</a> * <a class="code" href="base__type_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">@interface </span><a class="code" href="class_rectangle___type.html">Rectangle_Type</a> : NSObject {</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_rectangle___type.html#a50111ae00e21573c23b5543fdbbdc461">   43</a></span>&#160;  <a class="code" href="class_point___type.html">Point_Type</a> *<a class="code" href="class_rectangle___type.html#a50111ae00e21573c23b5543fdbbdc461">top_left_point</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_rectangle___type.html#a5dbc48fcfa6c0f1fc30b4d9691a1c9f8">   44</a></span>&#160;  <a class="code" href="class_point___type.html">Point_Type</a> *<a class="code" href="class_rectangle___type.html#a5dbc48fcfa6c0f1fc30b4d9691a1c9f8">down_right_point</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;+ (id) create;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;- (id) init;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;- (<a class="code" href="class_point___type.html">Point_Access</a>) top_left_point;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;- (id) set_top_left_point: (<a class="code" href="class_point___type.html">Point_Access</a>) point;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;- (<a class="code" href="class_point___type.html">Point_Access</a>) down_right_point;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;- (id) set_down_right_point: (<a class="code" href="class_point___type.html">Point_Access</a>) point;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="base__type_8h.html#abb459e8fed480e794c0ed67b6f350221">   54</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="class_rectangle___type.html">Rectangle_Type</a> * <a class="code" href="base__type_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_rectangle___type_html"><div class="ttname"><a href="class_rectangle___type.html">Rectangle_Type</a></div><div class="ttdef"><b>Definition:</b> base_type.m:50</div></div>
-<div class="ttc" id="base__type_8h_html_ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8"><div class="ttname"><a href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a></div><div class="ttdef"><b>Definition:</b> base_type.h:13</div></div>
-<div class="ttc" id="class_rectangle___type_html_a50111ae00e21573c23b5543fdbbdc461"><div class="ttname"><a href="class_rectangle___type.html#a50111ae00e21573c23b5543fdbbdc461">Rectangle_Type::top_left_point</a></div><div class="ttdeci">Point_Type * top_left_point</div><div class="ttdef"><b>Definition:</b> base_type.h:43</div></div>
-<div class="ttc" id="base__type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568"><div class="ttname"><a href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a></div><div class="ttdef"><b>Definition:</b> base_type.h:17</div></div>
-<div class="ttc" id="class_point___type_html_af64066d134a77e01b3d6eb8da813627a"><div class="ttname"><a href="class_point___type.html#af64066d134a77e01b3d6eb8da813627a">Point_Type::y</a></div><div class="ttdeci">int32_t y</div><div class="ttdef"><b>Definition:</b> base_type.h:26</div></div>
-<div class="ttc" id="base__type_8h_html_a1ab654e377a209035714c1c5f6e6ba99"><div class="ttname"><a href="base__type_8h.html#a1ab654e377a209035714c1c5f6e6ba99">Yes_No</a></div><div class="ttdeci">BOOL Yes_No</div><div class="ttdef"><b>Definition:</b> base_type.h:21</div></div>
-<div class="ttc" id="base__type_8h_html_ac174637f2f335bc1ba1bc16a4f433911"><div class="ttname"><a href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a></div><div class="ttdeci">Execute_Result</div><div class="ttdef"><b>Definition:</b> base_type.h:11</div></div>
-<div class="ttc" id="base__type_8h_html_ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff"><div class="ttname"><a href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a></div><div class="ttdef"><b>Definition:</b> base_type.h:12</div></div>
-<div class="ttc" id="base__type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423"><div class="ttname"><a href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div><div class="ttdef"><b>Definition:</b> base_type.h:18</div></div>
-<div class="ttc" id="class_rectangle___type_html_a5dbc48fcfa6c0f1fc30b4d9691a1c9f8"><div class="ttname"><a href="class_rectangle___type.html#a5dbc48fcfa6c0f1fc30b4d9691a1c9f8">Rectangle_Type::down_right_point</a></div><div class="ttdeci">Point_Type * down_right_point</div><div class="ttdef"><b>Definition:</b> base_type.h:44</div></div>
-<div class="ttc" id="class_point___type_html"><div class="ttname"><a href="class_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> base_type.m:5</div></div>
-<div class="ttc" id="base__type_8h_html_a09c068f2f9eb2f2f675d6d195858d68c"><div class="ttname"><a href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a></div><div class="ttdeci">uint8_t Natural</div><div class="ttdef"><b>Definition:</b> base_type.h:9</div></div>
-<div class="ttc" id="class_point___type_html_af6d3062751bd565decb1a2cd3b63bdb2"><div class="ttname"><a href="class_point___type.html#af6d3062751bd565decb1a2cd3b63bdb2">Point_Type::x</a></div><div class="ttdeci">int32_t x</div><div class="ttdef"><b>Definition:</b> base_type.h:25</div></div>
-<div class="ttc" id="base__type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6"><div class="ttname"><a href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a></div><div class="ttdeci">Use_Type</div><div class="ttdef"><b>Definition:</b> base_type.h:16</div></div>
-<div class="ttc" id="base__type_8h_html_a2e21dd3f36bfcac17204d0ffb51b3f03"><div class="ttname"><a href="base__type_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a></div><div class="ttdeci">Point_Type * Point_Access</div><div class="ttdef"><b>Definition:</b> base_type.h:39</div></div>
-<div class="ttc" id="base__type_8h_html_abb459e8fed480e794c0ed67b6f350221"><div class="ttname"><a href="base__type_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a></div><div class="ttdeci">Rectangle_Type * Rectangle_Access</div><div class="ttdef"><b>Definition:</b> base_type.h:54</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">    9</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">   10</a></span>&#160;  <a class="code" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a> = 0,</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">   11</a></span>&#160;  <a class="code" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;} <a class="code" href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">   15</a></span>&#160;  <a class="code" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a>,</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">   16</a></span>&#160;  <a class="code" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;} <a class="code" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#undef NO</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#undef YES</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">   26</a></span>&#160;  <a class="code" href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">NO</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">   27</a></span>&#160;  <a class="code" href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">YES</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <a class="code" href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="base__type_8h_html_ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8"><div class="ttname"><a href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a></div><div class="ttdef"><b>Definition:</b> base_type.h:11</div></div>
+<div class="ttc" id="base__type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568"><div class="ttname"><a href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a></div><div class="ttdef"><b>Definition:</b> base_type.h:15</div></div>
+<div class="ttc" id="base__type_8h_html_aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6"><div class="ttname"><a href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">YES</a></div><div class="ttdef"><b>Definition:</b> base_type.h:27</div></div>
+<div class="ttc" id="base__type_8h_html_ac174637f2f335bc1ba1bc16a4f433911"><div class="ttname"><a href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a></div><div class="ttdeci">Execute_Result</div><div class="ttdef"><b>Definition:</b> base_type.h:9</div></div>
+<div class="ttc" id="base__type_8h_html_ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff"><div class="ttname"><a href="base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a></div><div class="ttdef"><b>Definition:</b> base_type.h:10</div></div>
+<div class="ttc" id="base__type_8h_html_aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31"><div class="ttname"><a href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">NO</a></div><div class="ttdef"><b>Definition:</b> base_type.h:26</div></div>
+<div class="ttc" id="base__type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423"><div class="ttname"><a href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div><div class="ttdef"><b>Definition:</b> base_type.h:16</div></div>
+<div class="ttc" id="base__type_8h_html_a09c068f2f9eb2f2f675d6d195858d68c"><div class="ttname"><a href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a></div><div class="ttdeci">uint8_t Natural</div><div class="ttdef"><b>Definition:</b> base_type.h:7</div></div>
+<div class="ttc" id="base__type_8h_html_aef70d5719063dfab39816702cdd282b6"><div class="ttname"><a href="base__type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a></div><div class="ttdeci">Yes_No</div><div class="ttdef"><b>Definition:</b> base_type.h:25</div></div>
+<div class="ttc" id="base__type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6"><div class="ttname"><a href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a></div><div class="ttdeci">Use_Type</div><div class="ttdef"><b>Definition:</b> base_type.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月14日 星期六 02:18:03, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月16日 星期一 20:09:42, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

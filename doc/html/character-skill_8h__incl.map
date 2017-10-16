@@ -1,8 +1,9 @@
 <map id="include/character&#45;skill.h" name="include/character&#45;skill.h">
-<area shape="rect" id="node2" href="$character-status_8h.html" title="character&#45;status.h" alt="" coords="163,80,290,107"/>
-<area shape="rect" id="node12" href="$helper__function_8h.html" title="helper_function.h" alt="" coords="314,80,435,107"/>
-<area shape="rect" id="node3" href="$character_8h.html" title="character.h" alt="" coords="183,155,270,181"/>
-<area shape="rect" id="node5" href="$base__type_8h.html" title="base_type.h" alt="" coords="140,304,233,331"/>
-<area shape="rect" id="node8" href="$string__pool_8h.html" title="string_pool.h" alt="" coords="221,229,317,256"/>
-<area shape="rect" id="node9" href="$graphic_8h.html" title="graphic.h" alt="" coords="341,229,416,256"/>
+<area shape="rect" id="node2" href="$character-status_8h.html" title="character&#45;status.h" alt="" coords="359,80,486,107"/>
+<area shape="rect" id="node13" href="$helper__function_8h.html" title="helper_function.h" alt="" coords="557,80,678,107"/>
+<area shape="rect" id="node3" href="$character_8h.html" title="character.h" alt="" coords="247,155,334,181"/>
+<area shape="rect" id="node12" href="$message__base_8h.html" title="message_base.h" alt="" coords="362,155,483,181"/>
+<area shape="rect" id="node5" href="$base__type_8h.html" title="base_type.h" alt="" coords="39,304,132,331"/>
+<area shape="rect" id="node7" href="$graphic_8h.html" title="graphic.h" alt="" coords="253,229,328,256"/>
+<area shape="rect" id="node11" href="$point_8h.html" title="object/point.h" alt="" coords="422,229,522,256"/>
 </map>

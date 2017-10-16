@@ -1,12 +1,13 @@
 var searchData=
 [
+  ['parse_5fnpc_5fconfig_3awith_5fstyle_3a',['parse_npc_config:with_style:',['../class_character___pool.html#a80fe5df6ae5881f03ba0e4acbfa1d89c',1,'Character_Pool']]],
   ['player',['player',['../struct_camera___type.html#ae271f3040d01366952b3603495591e4e',1,'Camera_Type']]],
-  ['point_5faccess',['Point_Access',['../base__type_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03',1,'base_type.h']]],
+  ['point_2eh',['point.h',['../point_8h.html',1,'']]],
+  ['point_5faccess',['Point_Access',['../point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03',1,'point.h']]],
   ['point_5ftype',['Point_Type',['../class_point___type.html',1,'']]],
-  ['pool',['pool',['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool::pool()'],['../struct_string___pool___origin.html#a9c24b602b58522616b52e20e1713cdab',1,'String_Pool_Origin::pool()']]],
-  ['pool_5fmalloc',['pool_malloc',['../string__pool_8m.html#a757c6b115cb7dc4c0a2162ec9283edbc',1,'string_pool.m']]],
-  ['pool_5freset',['pool_reset',['../string__pool_8m.html#a809a20918ddd7c0aa2751bb8d73644d9',1,'string_pool.m']]],
-  ['pool_5fstop_5fheap',['pool_stop_heap',['../string__pool_8m.html#af9a34e5e64c5e8a8fa3d5cc0f23976d9',1,'string_pool.m']]],
+  ['point_5ftype_28process_5fc_5fmessage_29',['Point_Type(Process_C_Message)',['../category_point___type_07_process___c___message_08.html',1,'']]],
+  ['pool',['pool',['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool']]],
+  ['pool_2eh',['pool.h',['../pool_8h.html',1,'']]],
   ['position',['position',['../main_8m.html#ac06cf6a292dc0e70e28b394fa481aef2',1,'main.m']]],
   ['prepare',['prepare',['../class_character___pool.html#a369f161da1bf52bb4eaa70d83c3c2d34',1,'Character_Pool::prepare()'],['../class_character___pool.html#ade1c4ce962e9729724ea1adfc6c7b23c',1,'Character_Pool::prepare()']]],
   ['print',['print',['../class_point___type.html#a388f572c62279f839ee138a9afbdeeb5',1,'Point_Type']]],

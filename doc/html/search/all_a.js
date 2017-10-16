@@ -3,11 +3,8 @@ var searchData=
   ['main',['main',['../main_8m.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.m']]],
   ['main_2eh',['main.h',['../main_8h.html',1,'']]],
   ['main_2em',['main.m',['../main_8m.html',1,'']]],
-  ['main_5fnpc_5fstring_5fmalloc',['MAIN_NPC_STRING_malloc',['../main__set__character_8h.html#a07d7222909b0dd348704bdb1549857b9',1,'main_set_character.h']]],
-  ['main_5fset_5fcharacter_2eh',['main_set_character.h',['../main__set__character_8h.html',1,'']]],
   ['main_5fset_5fconfig_2eh',['main_set_config.h',['../main__set__config_8h.html',1,'']]],
-  ['main_5fstring_5fmalloc',['MAIN_STRING_malloc',['../main__set__config_8h.html#ae5f9d622399c18ea9cb2c1b25174ff00',1,'main_set_config.h']]],
-  ['malloc',['malloc',['../struct_skill___pool___a_p_i.html#a7034642f2384e3eb18b7a25cfb126163',1,'Skill_Pool_API::malloc()'],['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#ae2b85a17e426c45cb1f2ca85fd21ca64',1,'STYLE_POOL_INTERFACE::malloc()'],['../struct_string___pool___a_p_i.html#ae15b77c7759dc65b7a8dce59b53a1f39',1,'String_Pool_API::malloc()']]],
+  ['malloc',['malloc',['../struct_skill___pool___a_p_i.html#a7034642f2384e3eb18b7a25cfb126163',1,'Skill_Pool_API::malloc()'],['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#ae2b85a17e426c45cb1f2ca85fd21ca64',1,'STYLE_POOL_INTERFACE::malloc()']]],
   ['malloc_3a',['malloc:',['../class_character___pool.html#a289f4b22e81626658f88bbd4abdd16de',1,'Character_Pool']]],
   ['map',['map',['../struct_camera___type.html#a640cc1af457ace9df546269c45b5aadd',1,'Camera_Type']]],
   ['map_5f1',['map_1',['../main_8m.html#a35b8c6d32d16b3b85fd2191e792a31f4',1,'main.m']]],
@@ -16,11 +13,13 @@ var searchData=
   ['map_5fsystem_2em',['map_system.m',['../map__system_8m.html',1,'']]],
   ['map_5ftype',['Map_Type',['../class_map___type.html',1,'']]],
   ['mark',['mark',['../struct_style.html#a45c6ed086e2a1955a5b334487c59baeb',1,'Style::mark()'],['../struct_character___base.html#a788afe6b7e6ef6059f5a98bce8f44116',1,'Character_Base::Mark()']]],
-  ['max_5fsize',['max_size',['../struct_style___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Style_Pool::max_size()'],['../struct_string___pool___origin.html#ad314ea4a6edab10b7ef7c2c9d5124b47',1,'String_Pool_Origin::max_size()']]],
+  ['max_5fsize',['max_size',['../struct_style___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Style_Pool']]],
   ['max_5fx',['max_x',['../struct_camera___type.html#ad66fbe9a05e38a665bca7c0c8f8aeb95',1,'Camera_Type']]],
   ['max_5fy',['max_y',['../struct_camera___type.html#a0f3bad2e52c06e81c537558cdab93887',1,'Camera_Type']]],
+  ['message_5fbase_2eh',['message_base.h',['../message__base_8h.html',1,'']]],
   ['message_5fbox',['Message_Box',['../struct_message___box.html',1,'Message_Box'],['../graphic-message_8m.html#a0bb37f13e049458b238a88279910be23',1,'message_box():&#160;graphic-message.m'],['../graphic-message_8h.html#a0bb37f13e049458b238a88279910be23',1,'message_box():&#160;graphic-message.m']]],
   ['message_5fbox_5faccess',['Message_Box_Access',['../graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309',1,'graphic-message.h']]],
   ['message_5fbox_5fapi',['Message_Box_API',['../struct_message___box___a_p_i.html',1,'']]],
-  ['message_5fbox_5fpoints',['Message_Box_Points',['../graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00',1,'graphic-message.h']]]
+  ['message_5fbox_5fpoints',['Message_Box_Points',['../graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00',1,'graphic-message.h']]],
+  ['message_5ftype',['Message_Type',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160',1,'message_base.h']]]
 ];
