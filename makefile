@@ -26,9 +26,8 @@ DEBUG=
 CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
 
 
-AUTO_BUILD_DEP := $(OBJ)/base_type.o \
+AUTO_BUILD_DEP := $(OBJ)/object_point.o \
 	$(OBJ)/string_helper.o \
-	$(OBJ)/string_pool.o \
 	$(OBJ)/graphic.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
@@ -42,12 +41,13 @@ AUTO_BUILD_DEP := $(OBJ)/base_type.o \
 DEP := $(AUTO_BUILD_DEP)
 
 
-.PHONY: clean html app
+.PHONY: clean doc app
 all: $(CHECK_DIR) $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) $(OBJC_FLAGS) -o $(BIN)/$(APP_NAME)
 
 
-app: $(LIB_MY_WORLD)
+app:
+	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) examples/container.c $(CFLAGS) $(LFLAGS) -o $(BIN)/app
 
 
 build: all $(PACKAGE)
@@ -72,5 +72,5 @@ $(CHECK_DIR):
 clean:
 	rm -rf bin obj
 
-html:
-	cd $(CURREND) && htags -g -F && htags -Ffnsa
+doc:
+	doxygen

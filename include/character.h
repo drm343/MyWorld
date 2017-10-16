@@ -6,6 +6,8 @@
 #include "base_type.h"
 #include "graphic.h"
 
+#import "object/point.h"
+
 
 typedef struct Character_Base {
   NSString *name;

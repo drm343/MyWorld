@@ -1,6 +1,8 @@
 #ifndef HEADER_MAP_SYSTEM
 #define HEADER_MAP_SYSTEM
+
 #include "base_type.h"
+#import "object/point.h"
 
 
 @interface Map_Type : NSObject {

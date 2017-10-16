@@ -18,6 +18,7 @@ SDL_Rect position = {
 Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
 Map_Type *map_1;
+Character_Pool *character_pool = NULL;
 
 
 TTF_Font* USE_FONT = NULL;
@@ -124,6 +125,9 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 
 
 void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
+  Status_Access current = NULL;camera_1->player;
+  Message_Type message = DO_NOTHING;
+
   CONF_PATH = root_dir;
   Execute_Result result = EXECUTE_FAILED;
   srand(time(NULL));
@@ -142,6 +146,7 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
     goto INIT_FAILED;
   }
   Status_Access Player = [character_pool use_player];
+  character.set_name(Player, @"雜魚");
   camera.set_player(camera_1, Player);
 
   result = setup_style(init_cfg);
@@ -150,13 +155,13 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
     goto DONE;
   }
 
-  setup_npc(npc_cfg);
+  [character_pool parse_npc_config: npc_cfg with_style: style_pool];
 
   camera.set_map(camera_1, map_1);
-  [character_pool use_npc: @"goblin"
+  [character_pool use_enemy: @"goblin"
    with_name: @"g 1"
    and_map: camera_1->map];
-  [character_pool use_npc: @"goblin"
+  [character_pool use_enemy: @"goblin"
    with_name: @"g 2"
    and_map: camera_1->map];
 
@@ -167,22 +172,34 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
     goto INIT_FAILED;
   }
 
+  uint8_t instance_count = [character_pool instance_count];
+  uint8_t index = instance_count;
   while (running) {
-    SDL_Event event;
+    current = camera_1->player;
+    message = [character_pool action: current];
 
-    while (SDL_PollEvent(&event)) {
-      switch (event.type) {
-        case SDL_QUIT:
-          running = false;
-          break;
-        case SDL_KEYDOWN:
-          running = camera.take(camera_1, character_pool, box_1, &event);
-          break;
-        default:
-          break;
-      }
-      draw_view(render);
+    switch (message) {
+      case QUIT:
+        running = false;
+      case DO_NOTHING:
+        index = instance_count + 1;
+        break;
+      default:
+        index = 1;
+        running = camera.take(camera_1, character_pool, box_1, current, message);
+        break;
     }
+
+    for (index; index < instance_count; index++) {
+      current = [character_pool get_instance_by_index: index];
+
+      if (current->base->is_alive == false) {
+        continue;
+      }
+      message = [character_pool action: current];
+      running = camera.take(camera_1, character_pool, box_1, current, message);
+    }
+    draw_view(render);
   }
   Style_Pool_Interface.gc(style_pool);
 
@@ -190,11 +207,11 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
   SDL_DestroyWindow(win);
   TTF_CloseFont(USE_FONT);
 
-  INIT_FAILED:
+INIT_FAILED:
   TTF_Quit();
   SDL_Quit();
 
-  DONE:
+DONE:
   message_box.stop(box_1);
   camera.stop(camera_1);
   Style_Pool_Interface.stop(style_pool);

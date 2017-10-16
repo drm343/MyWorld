@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-#include <dirent.h>
 #include <time.h>
 
 #include <libconfig.h>
@@ -16,6 +15,5 @@
 #include "graphic-camera.h"
 
 #include "main_set_config.h"
-#include "main_set_character.h"
 
 #endif

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "base_type.h"
+#include "object/point.h"
 
 
 @implementation Point_Type
@@ -34,7 +34,7 @@
 - (bool) eq: (Point_Type *) other {
   bool result = false;
 
-  if([self x] == [other x] && [self y] == [other y]) {
+  if ([self x] == [other x] && [self y] == [other y]) {
     result = true;
   }
   return result;

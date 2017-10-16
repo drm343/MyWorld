@@ -13,6 +13,7 @@ static void print_status(Status_Access access) {
 
 static void character_init(Status_Access access) {
   character_base_init(access->base);
+  access->faction = FACTION_NEUTRAL;
 }
 
 
@@ -22,6 +23,16 @@ static void character_copy(Status_Access access, Status_Access from) {
 
   access->faction = from->faction;
   access->damage = from->damage;
+}
+
+
+static Is_Alive is_alive(Status_Access access) {
+  if (access->base->is_alive == true) {
+    return ALIVE;
+  }
+  else {
+    return DEAD;
+  }
 }
 
 
@@ -42,7 +53,7 @@ static Is_Alive attack_character(Status_Access from, Status_Access to) {
 
 
 // -----------------------------------------
-// SET BASE VALUE
+// GET or SET BASE VALUE
 // -----------------------------------------
 static void set_base_name(Status_Access access, NSString *name) {
   access->base->name = name;
@@ -90,16 +101,50 @@ static Relation_Type get_relation(Status_Access access) {
   return access->faction;
 }
 
+static NSString *get_relation_string(Status_Access access) {
+  NSString *result;
+
+  switch (access->faction) {
+  case FACTION_ALLY:
+    result = @"ally";
+    break;
+  case FACTION_ENEMY:
+    result = @"enemy";
+    break;
+  case FACTION_NEUTRAL:
+    result = @"neutral";
+    break;
+  default:
+    result = @"player";
+    break;
+  }
+  return result;
+}
+
 static void set_ally(Status_Access access) {
-  access->faction = RELATION_ALLY;
+  if (access->faction != FACTION_PLAYER) {
+    access->faction = RELATION_ALLY;
+  }
 }
 
 static void set_enemy(Status_Access access) {
-  access->faction = RELATION_ENEMY;
+  if (access->faction != FACTION_PLAYER) {
+    access->faction = RELATION_ENEMY;
+  }
 }
 
 static void set_neutral(Status_Access access) {
-  access->faction = RELATION_NEUTRAL;
+  if (access->faction != FACTION_PLAYER) {
+    access->faction = RELATION_NEUTRAL;
+  }
+}
+
+
+// -----------------------------------------
+// POSITION
+// -----------------------------------------
+Point_Access get_position(Status_Access access) {
+  return access->base->Real_Position;
 }
 
 
@@ -110,6 +155,7 @@ Character_API character = {
   .init = character_init,
   .copy = character_copy,
   .print_status = print_status,
+
   .set_name = set_base_name,
   .set_race = set_race,
   .set_style = set_base_style,
@@ -117,10 +163,15 @@ Character_API character = {
   .set_random_position = set_random_position,
   .set_random_relation = set_random_relation,
 
+  .is_alive = is_alive,
+
   .get_relation = get_relation,
+  .get_relation_string = get_relation_string,
   .set_relation_ally = set_ally,
   .set_relation_enemy = set_enemy,
   .set_relation_neutral = set_neutral,
 
-  .attack = attack_character
+  .attack = attack_character,
+
+  .get_position = get_position
 };

@@ -73,77 +73,118 @@ static void debug(Camera_Access access) {
 }
 
 
-static Yes_No can_move_horizon(Camera_Access access,
-    Point_Access point) {
+// --------------------------------------------------
+// Setup camera mode
+// --------------------------------------------------
+static void camera_horizon_mode_setup(Camera_Access access,
+    Point_Access point,
+    int32_t x) {
   Point_Access center = access->center;
 
   Point_Access from = access->start;
   Point_Access to = access->end;
 
   Map_Access map = access->map;
-  Yes_No result = YES;
 
   if (([point x] > ([center x] - 1))
-      && ((point.x + 1)< ([map get_end_x] - (center.x - 1)))) {
+      && (([point x] + 1) < ([map get_end_x] - ([center x] - 1)))) {
     access->horizon = CAMERA_MOVE;
-  }
-  else if (from.x <= 0) {
-    access->horizon = CAMERA_FIX;
 
-    if (point.x < 0) {
-      result = NO;
-    }
+    [access->start addX: x];
+    [access->end addX: x];
   }
-  else if (to.x >= [map get_end_x]) {
+  else if ([from x] <= 0) {
     access->horizon = CAMERA_FIX;
-
-    if (point.x >= [map get_end_x]) {
-      result = NO;
-    }
+  }
+  else if ([to x] >= [map get_end_x]) {
+    access->horizon = CAMERA_FIX;
   }
   else {
     access->horizon = CAMERA_MOVE;
+
+    [access->start addX: x];
+    [access->end addX: x];
+  }
+}
+
+
+static void camera_vertical_mode_setup(Camera_Access access,
+    Point_Access point,
+    int32_t y) {
+  Point_Access center = access->center;
+
+  Point_Access from = access->start;
+  Point_Access to = access->end;
+
+  Map_Access map = access->map;
+
+  if (([point y] > ([center y] - 1))
+      && (([point y] + 1) < ([map get_end_y] - ([center y] - 1)))) {
+    access->vertical = CAMERA_MOVE;
+
+    [access->start addY: y];
+    [access->end addY: y];
+  }
+  else if ([from y] <= 0) {
+    access->vertical = CAMERA_FIX;
+  }
+  else if ([to y] >= [map get_end_y]) {
+    access->vertical = CAMERA_FIX;
+  }
+  else {
+    access->vertical = CAMERA_MOVE;
+
+    [access->start addY: y];
+    [access->end addY: y];
+  }
+}
+
+
+// --------------------------------------------------
+// Check move status
+// --------------------------------------------------
+static Yes_No can_move_horizon(Camera_Access access,
+    Point_Access point) {
+  Point_Access from = access->start;
+  Point_Access to = access->end;
+
+  Map_Access map = access->map;
+  Yes_No result = YES;
+
+  if ((from.x <= 0) && (point.x < 0)) {
+    result = NO;
+  }
+  else if ((to.x >= [map get_end_x])
+   && (point.x >= [map get_end_x])) {
+    result = NO;
   }
   return result;
 }
+
 
 static Yes_No can_move_vertical(Camera_Access access,
     Point_Access point) {
-  Point_Access center = access->center;
-
   Point_Access from = access->start;
   Point_Access to = access->end;
 
   Map_Access map = access->map;
   Yes_No result = YES;
 
-  if (([point y] > ([center y] - 1))
-      && ((point.y + 1)< ([map get_end_y] - (center.y - 1)))) {
-    access->vertical = CAMERA_MOVE;
+  if ((from.y <= 0) && (point.y < 0)) {
+    result = NO;
   }
-  else if (from.y <= 0) {
-    access->vertical = CAMERA_FIX;
-
-    if (point.y < 0) {
-      result = NO;
-    }
-  }
-  else if (to.y >= [map get_end_y]) {
-    access->vertical = CAMERA_FIX;
-
-    if (point.y >= [map get_end_y]) {
-      result = NO;
-    }
-  }
-  else {
-    access->vertical = CAMERA_MOVE;
+  else if ((to.y >= [map get_end_y]) && (point.y >= [map get_end_y])) {
+    result = NO;
   }
   return result;
 }
 
-static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
-    Message_Box_Access box_access, SDL_Event *event) {
-  Status_Access Player = access->player;
+
+static bool message_process(Camera_Access access,
+                            Character_Pool_Access from_pool,
+                            Message_Box_Access box_access,
+                            Status_Access current,
+                            Message_Type message) {
   Status_Access npc = NULL;
   Style_Access dead = access->dead;
 
@@ -153,76 +194,72 @@ static bool key_process(Camera_Access access, Character_Pool_Access from_pool,
   [max_point setY: access->max_y];
 
   Point_Access point = [Point_Type create];
-  [point setX: [Player->base->Real_Position x]];
-  [point setY: [Player->base->Real_Position y]];
+  [point setX: [current->base->Real_Position x]];
+  [point setY: [current->base->Real_Position y]];
 
   Point_Access vector = [Point_Type create];
 
-  if ((event->key).keysym.sym == SDLK_q) {
-    return false;
-  }
-
-  switch ((event->key).keysym.sym) {
-    case SDLK_UP:
+  switch (message) {
+    case TOP:
       [point addY: -1];
       [vector setY: -1];
       break;
-    case SDLK_DOWN:
+    case DOWN:
       [point addY: 1];
       [vector setY: 1];
       break;
-    case SDLK_LEFT:
+    case LEFT:
       [point addX: -1];
       [vector setX: -1];
       break;
-    case SDLK_RIGHT:
+    case RIGHT:
       [point addX: 1];
       [vector setX: 1];
       break;
     default:
+      return true;
       break;
   }
 
-  if (occupy_position_by_others(from_pool, point, &npc) == NO) {
+  Found_Result result = occupy_position_by_others(from_pool, point, &npc);
+  if (result == NO) {
     if (([vector y] != 0) && (can_move_vertical(access, point) == YES)) {
-      switch (access->vertical) {
-        case CAMERA_MOVE:
-          [access->start addY: [vector y]];
-          [access->end addY: [vector y]];
-          break;
-        default:
-          break;
+      if (current->faction == FACTION_PLAYER) {
+        camera_vertical_mode_setup(access, point, [vector y]);
       }
 
-      [Player->base->Real_Position addX: [vector x]];
-      [Player->base->Real_Position addY: [vector y]];
+      [current->base->Real_Position addX: [vector x]];
+      [current->base->Real_Position addY: [vector y]];
     }
-    else if (([vector x] != 0) && (can_move_horizon(access, point) == YES)) {
-      switch (access->horizon) {
-        case CAMERA_MOVE:
-          [access->start addX: [vector x]];
-          [access->end addX: [vector x]];
-          break;
-        default:
-          break;
+    else if (([vector x] != 0)
+        && (can_move_horizon(access, point) == YES)) {
+      if (current->faction == FACTION_PLAYER) {
+        camera_horizon_mode_setup(access, point, [vector x]);
       }
 
-      [Player->base->Real_Position addX: [vector x]];
-      [Player->base->Real_Position addY: [vector y]];
+      [current->base->Real_Position addX: [vector x]];
+      [current->base->Real_Position addY: [vector y]];
     }
   }
   else {
-    NSString *message = NULL;
+    NSString *box_message = NULL;
 
-    if (character.attack(Player, npc) == DEAD) {
+    if (character.attack(current, npc) == DEAD) {
       character.set_style(npc, dead);
 
-      message = [NSString stringWithFormat: @"%@ %@", npc->base->name, @"死亡"];
+      if (npc->faction == FACTION_PLAYER) {
+        box_message = [NSString stringWithFormat: @"%@ 已死亡，任意按鍵離開遊戲", npc->base->name];
+      }
+      else {
+        box_message = [NSString stringWithFormat: @"%@ 死亡", npc->base->name];
+      }
     }
     else {
-      message = [NSString stringWithFormat: @"%@ %@%@", @"攻擊", npc->base->name, @"，造成 1 點傷害"];
+      box_message = [NSString stringWithFormat: @"%@ 攻擊 %@(%@)，造成 1 點傷害",
+                  current->base->name,
+                  npc->base->name, character.get_relation_string(npc)];
     }
-    message_box.add(box_access, message);
+    message_box.add(box_access, box_message);
   }
 
   [rectangle set_top_left_point: access->start];
@@ -309,5 +346,5 @@ Graphic_Camera_API camera = {
   .set_max_y = camera_set_max_y,
   .set_dead_style = set_dead_style,
 
-  .take = key_process
+  .take = message_process
 };
