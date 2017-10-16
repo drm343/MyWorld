@@ -41,12 +41,20 @@ AUTO_BUILD_DEP := $(OBJ)/object_point.o \
 DEP := $(AUTO_BUILD_DEP)
 
 
-.PHONY: clean doc app
+.PHONY: clean doc examples app
 all: $(CHECK_DIR) $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) $(OBJC_FLAGS) -o $(BIN)/$(APP_NAME)
 
 
-app:
+app: $(CHECK_DIR)
+	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) -I intern intern/block.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/block.o
+	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) -I intern intern/strings.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/strings.o
+	ar cr $(OBJ)/libstrings.a $(OBJ)/block.o $(OBJ)/strings.o
+	ranlib $(OBJ)/libstrings.a
+	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) -I intern examples/check_strings.c $(CFLAGS) -L $(OBJ) -lstrings -o $(BIN)/app
+
+
+examples:
 	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) examples/container.c $(CFLAGS) $(LFLAGS) -o $(BIN)/app
 
 
