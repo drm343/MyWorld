@@ -5,6 +5,7 @@
 
 #include "character-skill.h"
 #include "helper_function.h"
+#include "container/list.h"
 
 #import "map_system.h"
 
@@ -15,11 +16,12 @@ typedef enum {
 
 
 @interface Point_Type (Process_C_Message)
-- (Message_Type) compare: (Point_Type *) other;
+- (Message_Type) over_there: (Point_Type *) other;
+- (Message_Type) near_by: (Point_Type *) other;
 @end
 
 
-GENERIC_ARRAY(Status_Array, Status);
+CONTAINER_LIST(Status_List, Status);
 
 
 GENERIC_POOL(Status_Pool, Status_Access);
@@ -40,9 +42,9 @@ typedef Character_Pool_Type * Character_Pool_Type_Access;
 @interface Character_Pool: NSObject {
   Character_Pool_Type *prepare;
   Character_Pool_Type *used;
-  Status_Array_Access ally;
-  Status_Array_Access enemy;
-  Status_Array_Access neutral;
+  Status_List *ally;
+  Status_List *enemy;
+  Status_List *neutral;
 }
 
 + (id) create: (uint8_t) max_config_size with_instance_size: (uint8_t) max_instance_size;

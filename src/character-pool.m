@@ -3,10 +3,11 @@
 #include <time.h>
 
 
-GENERIC_ARRAY_FUNCTIONS(Status_Array, Status)
+CONTAINER_LIST_FUNCTIONS(Status_List, Status)
+
 
 @implementation Point_Type (Process_C_Message)
-- (Message_Type) compare: (Point_Type *) other {
+- (Message_Type) over_there: (Point_Type *) other {
   Message_Type result = DO_NOTHING;
 
   int32_t diff_x = [self x] - [other x];
@@ -30,6 +31,58 @@ GENERIC_ARRAY_FUNCTIONS(Status_Array, Status)
       result = DOWN;
     }
   }
+  return result;
+}
+
+- (Message_Type) near_by: (Point_Type *) other {
+  Message_Type result = DO_NOTHING;
+
+  int32_t diff_x = [self x] - [other x];
+  int32_t diff_y = [self y] - [other y];
+  int32_t abs_x = abs(diff_x);
+  int32_t abs_y = abs(diff_y);
+
+  if (abs_x >= abs_y) {
+    if (diff_x >= 2) {
+      result = LEFT;
+    }
+    else if (diff_x <= -2) {
+      result = RIGHT;
+    }
+    else {
+      goto RANDOM_POSITION;
+    }
+  }
+  else {
+    if (diff_y >= 2) {
+      result = TOP;
+    }
+    else if (diff_y <= -2) {
+      result = DOWN;
+    }
+    else {
+      goto RANDOM_POSITION;
+    }
+  }
+  goto DONE;
+
+RANDOM_POSITION:
+  switch (rand() % 4) {
+    case 1:
+      result = TOP;
+      break;
+    case 2:
+      result = DOWN;
+      break;
+    case 3:
+      result = LEFT;
+      break;
+    default:
+      result = RIGHT;
+      break;
+  }
+
+DONE:
   return result;
 }
 @end
@@ -266,39 +319,25 @@ DONE:
 }
 
 
-static Message_Type faction_neutral_reaction(void) {
-  Message_Type result = DO_NOTHING;
+static Message_Type faction_neutral_reaction(Point_Access self, Point_Access player) {
+  Message_Type result = [self near_by: player];
 
-  switch (rand() % 4) {
-    case 1:
-      result = TOP;
-      break;
-    case 2:
-      result = DOWN;
-      break;
-    case 3:
-      result = LEFT;
-      break;
-    default:
-      result = RIGHT;
-      break;
-  }
   return result;
 }
 
 
-static Message_Type npc_reaction(Status *self, Status_Array_Access enemy_group) {
-  uint8_t used = enemy_group->used;
+static Message_Type npc_reaction(Status *self, Status_List *enemy_group) {
+  uint8_t used = enemy_group->instance_counter;
 
   if (used <= 0) {
     return DO_NOTHING;
   }
 
   uint8_t target_number = rand() % used;
-  Status *target = enemy_group->pool[target_number - 1];
+  Status *target = Status_List_get_by_index(enemy_group, target_number);
   Point_Access target_position = character.get_position(target);
   Point_Access self_position = character.get_position(self);
-  return [self_position compare: target_position];
+  return [self_position over_there: target_position];
 }
 
 
@@ -461,27 +500,26 @@ DONE:
 - (id) set_ally: (uint8_t) max_size {
   if (ally) {
     if (max_size >= ally->max_size) {
-      Status_Array_Access tmp_array = Status_Array_start(max_size);
-      Status_Array_copy(ally, tmp_array);
-      Status_Array_stop(ally);
-      ally = tmp_array;
+      Status_List *tmp_list = Status_List_start(max_size);
+      Status_List_copy_all(ally, tmp_list);
+      Status_List_stop(ally);
+      ally = tmp_list;
     }
   }
   else {
-    ally = Status_Array_start(max_size);
+    ally = Status_List_start(max_size);
   }
   return self;
 }
 
 
 - (id) add_ally: (Status_Access) npc {
-  uint8_t array_used = ally->used;
   uint8_t max_size = ally->max_size;
 
-  if (array_used >= max_size) {
-    [self set_ally: array_used + 10];
+  if (Status_List_insert(ally, npc) < 0) {
+    [self set_ally: max_size + 10];
+    Status_List_insert(ally, npc);
   }
-  Status_Array_add(ally, npc);
   return self;
 }
 
@@ -489,27 +527,26 @@ DONE:
 - (id) set_enemy: (uint8_t) max_size {
   if (enemy) {
     if (max_size >= enemy->max_size) {
-      Status_Array_Access tmp_array = Status_Array_start(max_size);
-      Status_Array_copy(enemy, tmp_array);
-      Status_Array_stop(enemy);
-      enemy = tmp_array;
+      Status_List *tmp_list = Status_List_start(max_size);
+      Status_List_copy_all(enemy, tmp_list);
+      Status_List_stop(enemy);
+      enemy = tmp_list;
     }
   }
   else {
-    enemy = Status_Array_start(max_size);
+    enemy = Status_List_start(max_size);
   }
   return self;
 }
 
 
 - (id) add_enemy: (Status_Access) npc {
-  uint8_t array_used = enemy->used;
   uint8_t max_size = enemy->max_size;
 
-  if (array_used >= max_size) {
-    [self set_enemy: array_used + 10];
+  if (Status_List_insert(enemy, npc) < 0) {
+    [self set_enemy: max_size + 10];
+    Status_List_insert(enemy, npc);
   }
-  Status_Array_add(enemy, npc);
   return self;
 }
 
@@ -517,27 +554,26 @@ DONE:
 - (id) set_neutral: (uint8_t) max_size {
   if (neutral) {
     if (max_size >= neutral->max_size) {
-      Status_Array_Access tmp_array = Status_Array_start(max_size);
-      Status_Array_copy(neutral, tmp_array);
-      Status_Array_stop(neutral);
-      neutral = tmp_array;
+      Status_List *tmp_list = Status_List_start(max_size);
+      Status_List_copy_all(neutral, tmp_list);
+      Status_List_stop(neutral);
+      neutral = tmp_list;
     }
   }
   else {
-    neutral = Status_Array_start(max_size);
+    neutral = Status_List_start(max_size);
   }
   return self;
 }
 
 
 - (id) add_neutral: (Status_Access) npc {
-  uint8_t array_used = neutral->used;
   uint8_t max_size = neutral->max_size;
 
-  if (array_used >= max_size) {
-    [self set_neutral: array_used + 10];
+  if (Status_List_insert(neutral, npc) < 0) {
+    [self set_neutral: max_size + 10];
+    Status_List_insert(neutral, npc);
   }
-  Status_Array_add(neutral, npc);
   return self;
 }
 
@@ -641,32 +677,50 @@ DONE:
   uint8_t target_group_number;
   bool is_alive = current_character->base->is_alive;
 
+  uint8_t total_target_number = 1;
+  uint8_t neutral_target_number = 0;
+  uint8_t ally_target_number = 0;
+  uint8_t weigh_value = 0;
+  uint8_t neutral_weigh_value = 0;
+  uint8_t ally_weigh_value = 0;
+
+  Status_Access target = NULL;
+  Point_Access target_position = NULL;
+  Point_Access self_position = NULL;
+
   switch (current_character->faction) {
     case FACTION_ALLY:
       result = npc_reaction(current_character, enemy);
       break;
     case FACTION_ENEMY:
       target_group_number = rand() % 100;
+      ally_target_number = ally->instance_counter;
+      neutral_target_number = neutral->instance_counter;
 
-      /*
-      if (target_group_number >= 67) {
+      total_target_number = 1 + ally_target_number
+        + neutral_target_number;
+      weigh_value = 80 / total_target_number;
+      neutral_weigh_value = 100 - neutral_target_number * weigh_value;
+      ally_weigh_value = 100 - neutral_weigh_value - ally_target_number * weigh_value;
+
+      if (target_group_number >= neutral_weigh_value) {
         result = npc_reaction(current_character, neutral);
       }
-      else if (target_group_number >= 33) {
+      else if (target_group_number >= ally_weigh_value) {
         result = npc_reaction(current_character, ally);
       }
       else {
-      */
-        Status_Access target = [self get_instance_by_index: 0];
-        Point_Access target_position = character.get_position(target);
-        Point_Access self_position = character.get_position(current_character);
-        result = [self_position compare: target_position];
-        /*
+        target = [self get_instance_by_index: 0];
+        target_position = character.get_position(target);
+        self_position = character.get_position(current_character);
+        result = [self_position over_there: target_position];
       }
-  */
       break;
     case FACTION_NEUTRAL:
-      result = faction_neutral_reaction();
+      target = [self get_instance_by_index: 0];
+      target_position = character.get_position(target);
+      self_position = character.get_position(current_character);
+      result = faction_neutral_reaction(self_position, target_position);
       break;
     default:
       result = player_reaction(is_alive);

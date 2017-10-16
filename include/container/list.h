@@ -168,6 +168,30 @@ static void name##_remove(name *access, struct_name *item) { \
     } \
     current = next; \
   } \
+} \
+\
+static struct_name* name##_get_by_index(name *access, uint8_t index) { \
+  struct_name##_Node *current = access->first; \
+  struct_name##_Node *next = NULL; \
+\
+  for (uint8_t counter = 0; counter < index; counter++) { \
+    next = current->next; \
+    current = next; \
+  } \
+  return current->content; \
+} \
+\
+static void name##_copy_all(name *from, name *to) { \
+  uint8_t used = from->instance_counter; \
+\
+  struct_name##_Node *current = from->first; \
+  struct_name##_Node *next = NULL; \
+\
+  for (uint8_t index = 0; index < used; index++) { \
+    next = current->next; \
+    name##_insert(to, current->content); \
+    current = next; \
+  } \
 }
 
 #endif

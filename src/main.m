@@ -164,6 +164,12 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
   [character_pool use_enemy: @"goblin"
    with_name: @"g 2"
    and_map: camera_1->map];
+  [character_pool use_neutral: @"villager"
+   with_name: @"v 1"
+   and_map: camera_1->map];
+  [character_pool use_neutral: @"villager"
+   with_name: @"v 2"
+   and_map: camera_1->map];
 
   win = SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
   render = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
