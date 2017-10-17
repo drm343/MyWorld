@@ -1,4 +1,4 @@
 [submodule "intern"]
 	path = intern
-	url = git@github.com:chriso/intern.git
+  url = https://github.com/chriso/intern.git
 	branch = remove-objc-string
