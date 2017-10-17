@@ -31,6 +31,7 @@ AUTO_BUILD_DEP := $(OBJ)/object_point.o \
 	$(OBJ)/graphic.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
+	$(OBJ)/status_list.o \
 	$(OBJ)/character-skill.o \
 	$(OBJ)/map_system.o \
 	$(OBJ)/graphic-camera.o \
@@ -41,12 +42,27 @@ AUTO_BUILD_DEP := $(OBJ)/object_point.o \
 DEP := $(AUTO_BUILD_DEP)
 
 
-.PHONY: clean doc examples app
-all: $(CHECK_DIR) $(LIB_MY_WORLD)
+.PHONY: clean doc gen_list examples strings app
+all: $(CHECK_DIR) gen_list $(LIB_MY_WORLD) doc
+
+
+app: $(CHECK_DIR) gen_list $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) $(OBJC_FLAGS) -o $(BIN)/$(APP_NAME)
 
 
-app: $(CHECK_DIR)
+gen_list: 
+	gcc tools/gen_list.c -lconfig -o $(BIN)/gen_list
+	$(BIN)/gen_list
+
+
+test:
+	$(COMPILER) $(DEBUG) -std=c11 a.c -c -o $(OBJ)/a.o
+	ar cr $(OBJ)/liba.a $(OBJ)/a.o
+	ranlib $(OBJ)/liba.a
+	$(COMPILER) $(DEBUG) -std=c11 -I intern hello.c -L $(OBJ) -la -o $(BIN)/app
+
+
+strings: $(CHECK_DIR)
 	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) -I intern intern/block.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/block.o
 	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) -I intern intern/strings.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/strings.o
 	ar cr $(OBJ)/libstrings.a $(OBJ)/block.o $(OBJ)/strings.o
@@ -72,7 +88,6 @@ $(LIB_MY_WORLD): $(DEP)
 
 $(AUTO_BUILD_DEP):
 	$(COMPILER) $(DEBUG) -o $@ -c -std=c11 $(INCLUDE) $(OBJC_FLAGS) $(SRC)/$(basename $(notdir $@)).m
-
 
 $(CHECK_DIR):
 	mkdir -p $@

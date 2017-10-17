@@ -3,9 +3,6 @@
 #include <time.h>
 
 
-CONTAINER_LIST_FUNCTIONS(Status_List, Status)
-
-
 @implementation Point_Type (Process_C_Message)
 - (Message_Type) over_there: (Point_Type *) other {
   Message_Type result = DO_NOTHING;

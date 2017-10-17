@@ -5,8 +5,9 @@
 
 #include "character-skill.h"
 #include "helper_function.h"
-#include "container/list.h"
+//#include "container/list.h"
 
+#include "container/Status_List.h"
 #import "map_system.h"
 
 typedef enum {
@@ -19,9 +20,6 @@ typedef enum {
 - (Message_Type) over_there: (Point_Type *) other;
 - (Message_Type) near_by: (Point_Type *) other;
 @end
-
-
-CONTAINER_LIST(Status_List, Status);
 
 
 GENERIC_POOL(Status_Pool, Status_Access);
