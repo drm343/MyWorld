@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['objc_5ffont_5ffamily',['OBJC_FONT_FAMILY',['../main__set__config_8h.html#a0afa1d1e9442d639724671cb8de215cf',1,'main_set_config.h']]],
-  ['objc_5fgame_5ftitle',['OBJC_GAME_TITLE',['../main__set__config_8h.html#ad4dd4fd858b6cc6cb394707897635ba5',1,'main_set_config.h']]],
-  ['owner',['owner',['../struct_skill.html#a53d54fd6b3d68b923ee1e7a2be5c9ffa',1,'Skill']]]
+  ['name',['name',['../struct_skill.html#a4b93d352d2fca75b34e1b5a50e03f587',1,'Skill::name()'],['../struct_character___base.html#a4b93d352d2fca75b34e1b5a50e03f587',1,'Character_Base::name()'],['../struct_style.html#a4b93d352d2fca75b34e1b5a50e03f587',1,'Style::name()']]],
+  ['neutral',['neutral',['../class_character___pool.html#ad8bb425656fddf12aad8600ea1f37fbe',1,'Character_Pool']]],
+  ['next',['next',['../struct___status___node.html#a428da69b217bc2f542585dabbe45cc96',1,'_Status_Node::next()'],['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#af22cd7b2d8b2749795f7d42789ef5546',1,'STYLE_POOL_INTERFACE::next()']]]
 ];

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['race',['race',['../struct_character.html#aa3138a1328cb209a4833602a2c628945',1,'Character']]],
-  ['real_5fposition',['Real_Position',['../struct_character___base.html#a1680bfe1928e5db9e928c0eecd8803bc',1,'Character_Base']]],
-  ['release',['release',['../struct_character___base.html#a77da690937cc0e4f1568a2436c513eb1',1,'Character_Base']]],
-  ['remove',['remove',['../struct_skill___a_p_i.html#ae051dc72b0e6a4616fb0eadeafd139f4',1,'Skill_API']]],
-  ['remove_5flast',['remove_last',['../struct_string___a_p_i.html#a4f5caa4903cde980f732e6270855d71b',1,'String_API']]]
+  ['player',['player',['../struct_camera___type.html#ae271f3040d01366952b3603495591e4e',1,'Camera_Type']]],
+  ['pool',['pool',['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool']]],
+  ['position',['position',['../main_8m.html#ac06cf6a292dc0e70e28b394fa481aef2',1,'main.m']]],
+  ['prepare',['prepare',['../class_character___pool.html#a369f161da1bf52bb4eaa70d83c3c2d34',1,'Character_Pool']]],
+  ['previous',['previous',['../struct___status___node.html#afc7492628abcb777f2fb97ef2176b0f3',1,'_Status_Node']]],
+  ['print_5fstatus',['print_status',['../struct_character___a_p_i.html#a17dcff7cf1edbd5172d2717c4086cbcb',1,'Character_API']]]
 ];

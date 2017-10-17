@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['player',['player',['../struct_camera___type.html#ae271f3040d01366952b3603495591e4e',1,'Camera_Type']]],
-  ['pool',['pool',['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool']]],
-  ['position',['position',['../main_8m.html#ac06cf6a292dc0e70e28b394fa481aef2',1,'main.m']]],
-  ['prepare',['prepare',['../class_character___pool.html#a369f161da1bf52bb4eaa70d83c3c2d34',1,'Character_Pool']]],
-  ['print_5fstatus',['print_status',['../struct_character___a_p_i.html#a17dcff7cf1edbd5172d2717c4086cbcb',1,'Character_API']]]
+  ['objc_5ffont_5ffamily',['OBJC_FONT_FAMILY',['../main__set__config_8h.html#a0afa1d1e9442d639724671cb8de215cf',1,'main_set_config.h']]],
+  ['objc_5fgame_5ftitle',['OBJC_GAME_TITLE',['../main__set__config_8h.html#ad4dd4fd858b6cc6cb394707897635ba5',1,'main_set_config.h']]],
+  ['owner',['owner',['../struct_skill.html#a53d54fd6b3d68b923ee1e7a2be5c9ffa',1,'Skill']]]
 ];

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>MyWorld: include/container/Status_List.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>主頁面</span></a></li>
+      <li><a href="annotated.html"><span>資料結構</span></a></li>
+      <li class="current"><a href="files.html"><span>檔案</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>檔案列表</span></a></li>
+      <li><a href="globals.html"><span>全域資料</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_e0f5f6345e438c73b9ae78ec2940718c.html">container</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Status_List.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_status___list_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_CONTAINER_LIST_Status_List</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_CONTAINER_LIST_Status_List</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*** \file</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="character-status_8h.html">character-status.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct___status___node.html">   11</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___status___node.html">_Status_Node</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct___status___node.html#a428da69b217bc2f542585dabbe45cc96">   12</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="struct___status___node.html">_Status_Node</a> *<a class="code" href="struct___status___node.html#a428da69b217bc2f542585dabbe45cc96">next</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct___status___node.html#afc7492628abcb777f2fb97ef2176b0f3">   13</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="struct___status___node.html">_Status_Node</a> *<a class="code" href="struct___status___node.html#afc7492628abcb777f2fb97ef2176b0f3">previous</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6">   14</a></span>&#160;  <a class="code" href="struct_character.html">Status</a> *<a class="code" href="struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6">content</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;} <a class="code" href="_status___list_8h.html#a58e07211320796ecc78fb380e3b0310c">Status_Node</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_status___list.html">   17</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_status___list.html#af7855d6f8b8c7202d79384f5ed9bd9af">   18</a></span>&#160;  <a class="code" href="struct___status___node.html">Status_Node</a> *<a class="code" href="struct_status___list.html#af7855d6f8b8c7202d79384f5ed9bd9af">list</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_status___list.html#aafbb8d0fa7101a65447b6ede877c39d4">   19</a></span>&#160;  uint8_t <a class="code" href="struct_status___list.html#aafbb8d0fa7101a65447b6ede877c39d4">max_size</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_status___list.html#a4b1141237b480e4c38afe96a59ca4cad">   20</a></span>&#160;  uint8_t <a class="code" href="struct_status___list.html#a4b1141237b480e4c38afe96a59ca4cad">used</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_status___list.html#adfc9a8b4783d1efb0214b432f06d5793">   21</a></span>&#160;  uint8_t <a class="code" href="struct_status___list.html#adfc9a8b4783d1efb0214b432f06d5793">instance_counter</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_status___list.html#a4531329391a79a477f18abf12dbff769">   22</a></span>&#160;  <a class="code" href="struct___status___node.html">Status_Node</a> *<a class="code" href="struct_status___list.html#a4531329391a79a477f18abf12dbff769">first</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_status___list.html#a5d48bd9216cdeb1e254e97605b792cc2">   23</a></span>&#160;  <a class="code" href="struct___status___node.html">Status_Node</a> *<a class="code" href="struct_status___list.html#a5d48bd9216cdeb1e254e97605b792cc2">last</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <a class="code" href="struct_status___list.html">Status_List</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="struct_status___list.html">Status_List</a>* <a class="code" href="_status___list_8h.html#a16687a54b6e438ac05e1fae28829c5e1">Status_List_start</a>(uint8_t max_size);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_status___list_8h.html#ab560b43ba0116e8abb330541d1da3567">Status_List_stop</a>(<a class="code" href="struct_status___list.html">Status_List</a> *access);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_status___list_8h.html#ae9398edfe72533de105202897d17e0c7">Status_List_gc</a>(<a class="code" href="struct_status___list.html">Status_List</a> *access);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;uint8_t <a class="code" href="_status___list_8h.html#a831b3a411254fe5e25e117784c7e85ae">Status_List_insert</a>(<a class="code" href="struct_status___list.html">Status_List</a> *access, <a class="code" href="struct_character.html">Status</a> *item);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_status___list_8h.html#a9dbd550bf001e860e07e6ea163c0af34">Status_List_remove</a>(<a class="code" href="struct_status___list.html">Status_List</a> *access, <a class="code" href="struct_character.html">Status</a> *item);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="struct_character.html">Status</a>* <a class="code" href="_status___list_8h.html#a8c82df1e4913e1373199c71d3b3a2c49">Status_List_get_by_index</a>(<a class="code" href="struct_status___list.html">Status_List</a> *access, uint8_t index);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_status___list_8h.html#a26ca7929b358046c4d39113e7b6996bd">Status_List_copy_all</a>(<a class="code" href="struct_status___list.html">Status_List</a> *from, <a class="code" href="struct_status___list.html">Status_List</a> *to);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="struct_status___list_html_a4b1141237b480e4c38afe96a59ca4cad"><div class="ttname"><a href="struct_status___list.html#a4b1141237b480e4c38afe96a59ca4cad">Status_List::used</a></div><div class="ttdeci">uint8_t used</div><div class="ttdef"><b>Definition:</b> Status_List.h:20</div></div>
+<div class="ttc" id="struct_status___list_html_aafbb8d0fa7101a65447b6ede877c39d4"><div class="ttname"><a href="struct_status___list.html#aafbb8d0fa7101a65447b6ede877c39d4">Status_List::max_size</a></div><div class="ttdeci">uint8_t max_size</div><div class="ttdef"><b>Definition:</b> Status_List.h:19</div></div>
+<div class="ttc" id="_status___list_8h_html_a8c82df1e4913e1373199c71d3b3a2c49"><div class="ttname"><a href="_status___list_8h.html#a8c82df1e4913e1373199c71d3b3a2c49">Status_List_get_by_index</a></div><div class="ttdeci">Status * Status_List_get_by_index(Status_List *access, uint8_t index)</div><div class="ttdef"><b>Definition:</b> status_list.m:152</div></div>
+<div class="ttc" id="struct_character_html"><div class="ttname"><a href="struct_character.html">Character</a></div><div class="ttdef"><b>Definition:</b> character-status.h:28</div></div>
+<div class="ttc" id="struct___status___node_html_a428da69b217bc2f542585dabbe45cc96"><div class="ttname"><a href="struct___status___node.html#a428da69b217bc2f542585dabbe45cc96">_Status_Node::next</a></div><div class="ttdeci">struct _Status_Node * next</div><div class="ttdef"><b>Definition:</b> Status_List.h:12</div></div>
+<div class="ttc" id="_status___list_8h_html_a9dbd550bf001e860e07e6ea163c0af34"><div class="ttname"><a href="_status___list_8h.html#a9dbd550bf001e860e07e6ea163c0af34">Status_List_remove</a></div><div class="ttdeci">void Status_List_remove(Status_List *access, Status *item)</div><div class="ttdef"><b>Definition:</b> status_list.m:112</div></div>
+<div class="ttc" id="struct___status___node_html"><div class="ttname"><a href="struct___status___node.html">_Status_Node</a></div><div class="ttdef"><b>Definition:</b> Status_List.h:11</div></div>
+<div class="ttc" id="struct___status___node_html_afc7492628abcb777f2fb97ef2176b0f3"><div class="ttname"><a href="struct___status___node.html#afc7492628abcb777f2fb97ef2176b0f3">_Status_Node::previous</a></div><div class="ttdeci">struct _Status_Node * previous</div><div class="ttdef"><b>Definition:</b> Status_List.h:13</div></div>
+<div class="ttc" id="_status___list_8h_html_a26ca7929b358046c4d39113e7b6996bd"><div class="ttname"><a href="_status___list_8h.html#a26ca7929b358046c4d39113e7b6996bd">Status_List_copy_all</a></div><div class="ttdeci">void Status_List_copy_all(Status_List *from, Status_List *to)</div><div class="ttdef"><b>Definition:</b> status_list.m:163</div></div>
+<div class="ttc" id="_status___list_8h_html_a831b3a411254fe5e25e117784c7e85ae"><div class="ttname"><a href="_status___list_8h.html#a831b3a411254fe5e25e117784c7e85ae">Status_List_insert</a></div><div class="ttdeci">uint8_t Status_List_insert(Status_List *access, Status *item)</div><div class="ttdef"><b>Definition:</b> status_list.m:73</div></div>
+<div class="ttc" id="_status___list_8h_html_ab560b43ba0116e8abb330541d1da3567"><div class="ttname"><a href="_status___list_8h.html#ab560b43ba0116e8abb330541d1da3567">Status_List_stop</a></div><div class="ttdeci">void Status_List_stop(Status_List *access)</div><div class="ttdef"><b>Definition:</b> status_list.m:16</div></div>
+<div class="ttc" id="struct_status___list_html_a5d48bd9216cdeb1e254e97605b792cc2"><div class="ttname"><a href="struct_status___list.html#a5d48bd9216cdeb1e254e97605b792cc2">Status_List::last</a></div><div class="ttdeci">Status_Node * last</div><div class="ttdef"><b>Definition:</b> Status_List.h:23</div></div>
+<div class="ttc" id="character-status_8h_html"><div class="ttname"><a href="character-status_8h.html">character-status.h</a></div></div>
+<div class="ttc" id="struct_status___list_html_a4531329391a79a477f18abf12dbff769"><div class="ttname"><a href="struct_status___list.html#a4531329391a79a477f18abf12dbff769">Status_List::first</a></div><div class="ttdeci">Status_Node * first</div><div class="ttdef"><b>Definition:</b> Status_List.h:22</div></div>
+<div class="ttc" id="struct_status___list_html_af7855d6f8b8c7202d79384f5ed9bd9af"><div class="ttname"><a href="struct_status___list.html#af7855d6f8b8c7202d79384f5ed9bd9af">Status_List::list</a></div><div class="ttdeci">Status_Node * list</div><div class="ttdef"><b>Definition:</b> Status_List.h:18</div></div>
+<div class="ttc" id="struct_status___list_html"><div class="ttname"><a href="struct_status___list.html">Status_List</a></div><div class="ttdef"><b>Definition:</b> Status_List.h:17</div></div>
+<div class="ttc" id="_status___list_8h_html_a58e07211320796ecc78fb380e3b0310c"><div class="ttname"><a href="_status___list_8h.html#a58e07211320796ecc78fb380e3b0310c">Status_Node</a></div><div class="ttdeci">struct _Status_Node Status_Node</div></div>
+<div class="ttc" id="_status___list_8h_html_ae9398edfe72533de105202897d17e0c7"><div class="ttname"><a href="_status___list_8h.html#ae9398edfe72533de105202897d17e0c7">Status_List_gc</a></div><div class="ttdeci">void Status_List_gc(Status_List *access)</div><div class="ttdef"><b>Definition:</b> status_list.m:21</div></div>
+<div class="ttc" id="_status___list_8h_html_a16687a54b6e438ac05e1fae28829c5e1"><div class="ttname"><a href="_status___list_8h.html#a16687a54b6e438ac05e1fae28829c5e1">Status_List_start</a></div><div class="ttdeci">Status_List * Status_List_start(uint8_t max_size)</div><div class="ttdef"><b>Definition:</b> status_list.m:3</div></div>
+<div class="ttc" id="struct_status___list_html_adfc9a8b4783d1efb0214b432f06d5793"><div class="ttname"><a href="struct_status___list.html#adfc9a8b4783d1efb0214b432f06d5793">Status_List::instance_counter</a></div><div class="ttdeci">uint8_t instance_counter</div><div class="ttdef"><b>Definition:</b> Status_List.h:21</div></div>
+<div class="ttc" id="struct___status___node_html_aa4c42e448a9cce08dc6a0a13a96aa0a6"><div class="ttname"><a href="struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6">_Status_Node::content</a></div><div class="ttdeci">Status * content</div><div class="ttdef"><b>Definition:</b> Status_List.h:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2017年10月18日 星期三 00:02:21, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

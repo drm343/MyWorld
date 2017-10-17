@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['use_5ffont',['USE_FONT',['../main_8m.html#aaf2a8166f1757d55942d9624ef7c514c',1,'main.m']]],
-  ['used',['used',['../class_character___pool.html#a9c55605cf2f69adaeb09ccb2c3ca1f58',1,'Character_Pool']]]
+  ['take',['take',['../struct_graphic___camera___a_p_i.html#a55f6989f437285da93b11fa532067118',1,'Graphic_Camera_API']]],
+  ['top_5fleft_5fpoint',['top_left_point',['../class_rectangle___type.html#a50111ae00e21573c23b5543fdbbdc461',1,'Rectangle_Type']]]
 ];

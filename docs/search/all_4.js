@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['efficacy',['efficacy',['../struct_skill.html#a002d9dd9a754b753d24242eba79167b4',1,'Skill']]],
-  ['else',['ELSE',['../ada__style_8h.html#a0a70ee0cbf5b1738be4c9463c529ce72',1,'ada_style.h']]],
-  ['elseif',['ELSEIF',['../ada__style_8h.html#a9cd8bdd349a8c9604630be628156d152',1,'ada_style.h']]],
-  ['end',['end',['../struct_camera___type.html#a46e5791a9969c47511302c17a9246375',1,'Camera_Type::end()'],['../class_map___type.html#ac256a80b6d6dd0d826fa0ac2cc2d133b',1,'Map_Type::end()'],['../ada__style_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f',1,'END():&#160;ada_style.h']]],
-  ['end_5fwhen',['END_WHEN',['../ada__style_8h.html#a9de19cd62ffe0399d1f7c2d008cd2680',1,'ada_style.h']]],
-  ['enemy',['enemy',['../class_character___pool.html#ae8bac27aa4d6f6499694fcd62d3e4a7d',1,'Character_Pool']]],
-  ['eq_3a',['eq:',['../class_point___type.html#a7ee22c7a7f7b88a9681cfe129f791bb2',1,'Point_Type']]],
-  ['execute_5ffailed',['EXECUTE_FAILED',['../base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8',1,'base_type.h']]],
-  ['execute_5fresult',['Execute_Result',['../base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911',1,'base_type.h']]],
-  ['execute_5fsuccess',['EXECUTE_SUCCESS',['../base__type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff',1,'base_type.h']]]
+  ['damage',['damage',['../struct_character.html#ae6d3b45ea23da90a0a72f4f2163045cd',1,'Character']]],
+  ['dead',['dead',['../struct_camera___type.html#acdf4b5173be19457f884590b7009df6d',1,'Camera_Type::dead()'],['../character-status_8h.html#a80aecc9fb5465212d8d153dee04a2427a11fd9ca455f92c69c084484d5cd803c2',1,'DEAD():&#160;character-status.h']]],
+  ['dealloc',['dealloc',['../class_character___pool.html#a76a8a57a5f60bd35e9bde38ca48b50b3',1,'Character_Pool']]],
+  ['debug',['debug',['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#a163f51be14ef60589d3a4d159a46aebd',1,'STYLE_POOL_INTERFACE']]],
+  ['default',['DEFAULT',['../ada__style_8h.html#a3da44afeba217135a680a7477b5e3ce3',1,'ada_style.h']]],
+  ['do_5fnothing',['DO_NOTHING',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160aa3c06bc7e4d652a970cab72026c6fed1',1,'message_base.h']]],
+  ['down',['DOWN',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160a9b0b4a95b99523966e0e34ffdadac9da',1,'message_base.h']]],
+  ['down_5fright_5fpoint',['down_right_point',['../class_rectangle___type.html#a5dbc48fcfa6c0f1fc30b4d9691a1c9f8',1,'Rectangle_Type::down_right_point()'],['../class_rectangle___type.html#a97cbc4eea843a7166e38a6b2c8db200d',1,'Rectangle_Type::down_right_point()']]],
+  ['draw_5fmessage_5fbox',['draw_message_box',['../main_8m.html#a9648115768e789177690d9e3524d3c05',1,'main.m']]],
+  ['draw_5fview',['draw_view',['../main_8m.html#a801ece22789ef1004d7731f4ba982c0d',1,'main.m']]]
 ];

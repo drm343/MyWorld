@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['point_5ftype',['Point_Type',['../class_point___type.html',1,'']]],
-  ['point_5ftype_28process_5fc_5fmessage_29',['Point_Type(Process_C_Message)',['../category_point___type_07_process___c___message_08.html',1,'']]]
+  ['map_5ftype',['Map_Type',['../class_map___type.html',1,'']]],
+  ['message_5fbox',['Message_Box',['../struct_message___box.html',1,'']]],
+  ['message_5fbox_5fapi',['Message_Box_API',['../struct_message___box___a_p_i.html',1,'']]]
 ];

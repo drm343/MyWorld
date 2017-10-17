@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['unuse',['UNUSE',['../base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568',1,'base_type.h']]],
-  ['use_5fally_3awith_5fname_3aand_5fmap_3a',['use_ally:with_name:and_map:',['../class_character___pool.html#a1b39fb6dcb2e0f9a5f3ecf33bfe6a7b2',1,'Character_Pool']]],
-  ['use_5fenemy_3awith_5fname_3aand_5fmap_3a',['use_enemy:with_name:and_map:',['../class_character___pool.html#a82d4e47859b033a254a1c9c50ffd155f',1,'Character_Pool']]],
-  ['use_5ffont',['USE_FONT',['../main_8m.html#aaf2a8166f1757d55942d9624ef7c514c',1,'main.m']]],
-  ['use_5fneutral_3awith_5fname_3aand_5fmap_3a',['use_neutral:with_name:and_map:',['../class_character___pool.html#a0afc6b2108364c5f18ce1c39204c8d35',1,'Character_Pool']]],
-  ['use_5fnpc_3awith_5fname_3aand_5fmap_3a',['use_npc:with_name:and_map:',['../class_character___pool.html#ac0ad72fe93ff19355b4231a50a56cccd',1,'Character_Pool']]],
-  ['use_5fplayer',['use_player',['../class_character___pool.html#a41b3a009267827933fb714ebc4b16723',1,'Character_Pool']]],
-  ['use_5ftype',['Use_Type',['../base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6',1,'base_type.h']]],
-  ['used',['used',['../class_character___pool.html#a9c55605cf2f69adaeb09ccb2c3ca1f58',1,'Character_Pool::used()'],['../class_character___pool.html#a80ba8bdd4623ead06bea686705ca7663',1,'Character_Pool::used()']]]
+  ['take',['take',['../struct_graphic___camera___a_p_i.html#a55f6989f437285da93b11fa532067118',1,'Graphic_Camera_API']]],
+  ['then',['THEN',['../ada__style_8h.html#ad9884c43f4f50a5852711a614f2343ac',1,'ada_style.h']]],
+  ['top',['TOP',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160a0ad44897a70fba309c24a5b6007de3e3',1,'message_base.h']]],
+  ['top_5fleft_5fpoint',['top_left_point',['../class_rectangle___type.html#a50111ae00e21573c23b5543fdbbdc461',1,'Rectangle_Type::top_left_point()'],['../class_rectangle___type.html#a7ad40583fb24e8803f6829ca1cfe30dd',1,'Rectangle_Type::top_left_point()']]]
 ];
