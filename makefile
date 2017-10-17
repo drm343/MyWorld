@@ -98,3 +98,4 @@ clean:
 doc:
 	-rm -rf docs/*
 	@doxygen && cd docs && mv html/* . && rm -rf html
+	touch docs/.nojekyll
