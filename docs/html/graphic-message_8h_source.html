@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>MyWorld: include/graphic-message.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>主頁面</span></a></li>
+      <li><a href="annotated.html"><span>資料結構</span></a></li>
+      <li class="current"><a href="files.html"><span>檔案</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>檔案列表</span></a></li>
+      <li><a href="globals.html"><span>全域資料</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">graphic-message.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="graphic-message_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_GRAPHIC_MESSAGE</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_GRAPHIC_MESSAGE</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graphic_8h.html">graphic.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string__helper_8h.html">string_helper.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="graphic-message_8h.html#a136239131e53d4617ae6e7c21797be06">    6</a></span>&#160;<span class="keyword">typedef</span> NSString * <a class="code" href="graphic-message_8h.html#a136239131e53d4617ae6e7c21797be06">String_Access</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00">    7</a></span>&#160;<span class="keyword">typedef</span> SDL_Point * <a class="code" href="graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00">Message_Box_Points</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="struct_message___box.html">    8</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_message___box.html#a9731b6d64fecd6a78ef9c9cfafc9a810">    9</a></span>&#160;  int8_t <a class="code" href="struct_message___box.html#a9731b6d64fecd6a78ef9c9cfafc9a810">grid_width</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="struct_message___box.html#ad66c03c008287120bf4ab1fb0c45cc99">   10</a></span>&#160;  int8_t <a class="code" href="struct_message___box.html#ad66c03c008287120bf4ab1fb0c45cc99">grid_heigth</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_message___box.html#ab68b1b30cb346ecae0c6c8fc38c62383">   11</a></span>&#160;  <a class="code" href="graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00">Message_Box_Points</a> <a class="code" href="struct_message___box.html#ab68b1b30cb346ecae0c6c8fc38c62383">box</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_message___box.html#a4c1750981301670ed38376846fd4aa39">   12</a></span>&#160;  NSMutableArray *<a class="code" href="struct_message___box.html#a4c1750981301670ed38376846fd4aa39">history</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;} <a class="code" href="struct_message___box.html">Message_Box</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">   14</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_message___box.html">Message_Box</a> * <a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html">   17</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#a881dbc2e216e620ea668c822505c1d5b">   18</a></span>&#160;  <a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a> (*start)(void);</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#afd74f42e302c4c3ba2a470b89d26b020">   19</a></span>&#160;  void (*stop)(<a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#a95d44a5fc0f03d7fcd9d1bf896e0a7a0">   20</a></span>&#160;  void (*set_box)(<a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>, int64_t, int64_t, int64_t, int64_t);</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#aac825ed4489fc0a8b385024d3ed539d7">   21</a></span>&#160;  void (*add)(<a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>, NSString *);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="struct_message___box___a_p_i.html">Message_Box_API</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_message___box___a_p_i.html">Message_Box_API</a> <a class="code" href="graphic-message_8h.html#a0bb37f13e049458b238a88279910be23">message_box</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="struct_message___box_html_ad66c03c008287120bf4ab1fb0c45cc99"><div class="ttname"><a href="struct_message___box.html#ad66c03c008287120bf4ab1fb0c45cc99">Message_Box::grid_heigth</a></div><div class="ttdeci">int8_t grid_heigth</div><div class="ttdef"><b>Definition:</b> graphic-message.h:10</div></div>
+<div class="ttc" id="struct_message___box_html_a9731b6d64fecd6a78ef9c9cfafc9a810"><div class="ttname"><a href="struct_message___box.html#a9731b6d64fecd6a78ef9c9cfafc9a810">Message_Box::grid_width</a></div><div class="ttdeci">int8_t grid_width</div><div class="ttdef"><b>Definition:</b> graphic-message.h:9</div></div>
+<div class="ttc" id="struct_message___box_html"><div class="ttname"><a href="struct_message___box.html">Message_Box</a></div><div class="ttdef"><b>Definition:</b> graphic-message.h:8</div></div>
+<div class="ttc" id="graphic-message_8h_html_a136239131e53d4617ae6e7c21797be06"><div class="ttname"><a href="graphic-message_8h.html#a136239131e53d4617ae6e7c21797be06">String_Access</a></div><div class="ttdeci">NSString * String_Access</div><div class="ttdef"><b>Definition:</b> graphic-message.h:6</div></div>
+<div class="ttc" id="graphic-message_8h_html_a5753da02e4dadace26ecdb99bcbb7309"><div class="ttname"><a href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a></div><div class="ttdeci">Message_Box * Message_Box_Access</div><div class="ttdef"><b>Definition:</b> graphic-message.h:14</div></div>
+<div class="ttc" id="graphic_8h_html"><div class="ttname"><a href="graphic_8h.html">graphic.h</a></div></div>
+<div class="ttc" id="graphic-message_8h_html_ad9811a1699f493218618303ddb9fbd00"><div class="ttname"><a href="graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00">Message_Box_Points</a></div><div class="ttdeci">SDL_Point * Message_Box_Points</div><div class="ttdef"><b>Definition:</b> graphic-message.h:7</div></div>
+<div class="ttc" id="struct_message___box_html_a4c1750981301670ed38376846fd4aa39"><div class="ttname"><a href="struct_message___box.html#a4c1750981301670ed38376846fd4aa39">Message_Box::history</a></div><div class="ttdeci">NSMutableArray * history</div><div class="ttdef"><b>Definition:</b> graphic-message.h:12</div></div>
+<div class="ttc" id="struct_message___box_html_ab68b1b30cb346ecae0c6c8fc38c62383"><div class="ttname"><a href="struct_message___box.html#ab68b1b30cb346ecae0c6c8fc38c62383">Message_Box::box</a></div><div class="ttdeci">Message_Box_Points box</div><div class="ttdef"><b>Definition:</b> graphic-message.h:11</div></div>
+<div class="ttc" id="string__helper_8h_html"><div class="ttname"><a href="string__helper_8h.html">string_helper.h</a></div></div>
+<div class="ttc" id="graphic-message_8h_html_a0bb37f13e049458b238a88279910be23"><div class="ttname"><a href="graphic-message_8h.html#a0bb37f13e049458b238a88279910be23">message_box</a></div><div class="ttdeci">Message_Box_API message_box</div><div class="ttdef"><b>Definition:</b> graphic-message.m:52</div></div>
+<div class="ttc" id="struct_message___box___a_p_i_html"><div class="ttname"><a href="struct_message___box___a_p_i.html">Message_Box_API</a></div><div class="ttdef"><b>Definition:</b> graphic-message.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2017年10月17日 星期二 15:50:07, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

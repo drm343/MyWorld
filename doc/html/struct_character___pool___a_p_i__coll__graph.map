@@ -1,7 +1,0 @@
-<map id="Character_Pool_API" name="Character_Pool_API">
-<area shape="rect" id="node2" href="$struct_character.html" title="Character" alt="" coords="70,275,149,301"/>
-<area shape="rect" id="node3" href="$struct_character___base.html" title="Character_Base" alt="" coords="51,185,167,212"/>
-<area shape="rect" id="node4" href="$class_point___type.html" title="Point_Type" alt="" coords="5,81,93,108"/>
-<area shape="rect" id="node6" href="$struct_style.html" title="Style" alt="" coords="143,81,195,108"/>
-<area shape="rect" id="node7" href="$struct_character___pool___type.html" title="Character_Pool_Type" alt="" coords="173,275,321,301"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="include/character&#45;npc.h" name="include/character&#45;npc.h">
-<area shape="rect" id="node2" href="$character-npc_8m.html" title="src/character&#45;npc.m" alt="" coords="12,80,151,107"/>
-<area shape="rect" id="node3" href="$character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="175,80,335,107"/>
-<area shape="rect" id="node4" href="$character-pool_8m.html" title="src/character&#45;pool.m" alt="" coords="5,155,147,181"/>
-<area shape="rect" id="node5" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="171,155,338,181"/>
-<area shape="rect" id="node7" href="$main_8h.html" title="include/main.h" alt="" coords="323,229,429,256"/>
-<area shape="rect" id="node6" href="$graphic-camera_8m.html" title="src/graphic&#45;camera.m" alt="" coords="150,229,298,256"/>
-<area shape="rect" id="node8" href="$main_8m.html" title="src/main.m" alt="" coords="333,304,419,331"/>
-</map>
