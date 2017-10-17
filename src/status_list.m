@@ -1,4 +1,8 @@
 #include "container/Status_List.h"
+/** \file
+ * 
+ * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。
+ */
 
 Status_List* Status_List_start(uint8_t max_size) {
   Status_List *result = calloc(1, sizeof(Status_List));

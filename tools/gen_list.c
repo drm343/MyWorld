@@ -14,13 +14,14 @@ void gen_header(void) {
   char *format = "\
 #ifndef HEADER_CONTAINER_LIST_%s\n\
 #define HEADER_CONTAINER_LIST_%s\n\
-/*** \\file\n\
- * \n\
- * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。\n\
- */\n\
 \n\
 #include <stdint.h>\n\
 #include \"%s\"\n\
+\n\
+/** \\file\n\
+ * \n\
+ * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。\n\
+ */\n\
 \n\
 typedef struct _%s_Node {\n\
   struct _%s_Node *next;\n\
@@ -93,7 +94,12 @@ void %s_copy_all(%s *from, %s *to);\n\
 
 void gen_function_include(void) {
   char *format= "\
-#include \"%s\"\n\n";
+#include \"%s\"\
+\n\
+/** \\file\n\
+ * \n\
+ * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。\n\
+ */\n\n";
 
   int counter = snprintf(NULL, 0, format,
       include_header_file_name);

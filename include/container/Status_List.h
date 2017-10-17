@@ -1,12 +1,13 @@
 #ifndef HEADER_CONTAINER_LIST_Status_List
 #define HEADER_CONTAINER_LIST_Status_List
-/*** \file
- * 
- * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。
- */
 
 #include <stdint.h>
 #include "character-status.h"
+
+/** \file
+ * 
+ * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。
+ */
 
 typedef struct _Status_Node {
   struct _Status_Node *next;
