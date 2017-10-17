@@ -81,4 +81,5 @@ clean:
 	rm -rf bin obj
 
 doc:
-	doxygen
+	-rm -rf docs/*
+	@doxygen && cd docs && mv html/* . && rm -rf html

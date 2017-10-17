@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>MyWorld: include/map_system.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>主頁面</span></a></li>
+      <li><a href="annotated.html"><span>資料結構</span></a></li>
+      <li class="current"><a href="files.html"><span>檔案</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>檔案列表</span></a></li>
+      <li><a href="globals.html"><span>全域資料</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">map_system.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="map__system_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_MAP_SYSTEM</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_MAP_SYSTEM</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__type_8h.html">base_type.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#import &quot;<a class="code" href="point_8h.html">object/point.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">@interface </span><a class="code" href="class_map___type.html">Map_Type</a> : NSObject {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_map___type.html#a651b4c067e1e58ec278eff06925877df">    9</a></span>&#160;  <a class="code" href="class_point___type.html">Point_Type</a> *<a class="code" href="class_map___type.html#a651b4c067e1e58ec278eff06925877df">start</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_map___type.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">   10</a></span>&#160;  <a class="code" href="class_point___type.html">Point_Type</a> *<a class="code" href="class_map___type.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">end</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">@property</span> (nonatomic, assign) <a class="code" href="class_point___type.html">Point_Type</a> *start;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">@property</span> (nonatomic, assign) <a class="code" href="class_point___type.html">Point_Type</a> *end;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;+ (id) create;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;- (id) init;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;- (id) init_start: (int32_t) x and: (int32_t) y;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;- (id) init_end: (int32_t) x and: (int32_t) y;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;- (int32_t) get_start_x;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;- (int32_t) get_start_y;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;- (int32_t) get_end_x;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;- (int32_t) get_end_y;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;- (id) add_start_x: (int32_t) x and_y: (int32_t) y;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;- (id) add_end_x: (int32_t) x and_y: (int32_t) y;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;- (id) add_start_x: (int32_t) x;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;- (id) add_start_y: (int32_t) y;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;- (id) add_end_x: (int32_t) x;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;- (id) add_end_y: (int32_t) y;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">   31</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="class_map___type.html">Map_Type</a> * <a class="code" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="point_8h_html"><div class="ttname"><a href="point_8h.html">point.h</a></div></div>
+<div class="ttc" id="map__system_8h_html_a57a6976d6a3130e3c74d247740ca436e"><div class="ttname"><a href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a></div><div class="ttdeci">Map_Type * Map_Access</div><div class="ttdef"><b>Definition:</b> map_system.h:31</div></div>
+<div class="ttc" id="class_map___type_html_a651b4c067e1e58ec278eff06925877df"><div class="ttname"><a href="class_map___type.html#a651b4c067e1e58ec278eff06925877df">Map_Type::start</a></div><div class="ttdeci">Point_Type * start</div><div class="ttdef"><b>Definition:</b> map_system.h:9</div></div>
+<div class="ttc" id="class_map___type_html"><div class="ttname"><a href="class_map___type.html">Map_Type</a></div><div class="ttdef"><b>Definition:</b> map_system.m:3</div></div>
+<div class="ttc" id="class_point___type_html"><div class="ttname"><a href="class_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> object_point.m:5</div></div>
+<div class="ttc" id="base__type_8h_html"><div class="ttname"><a href="base__type_8h.html">base_type.h</a></div></div>
+<div class="ttc" id="class_map___type_html_ac256a80b6d6dd0d826fa0ac2cc2d133b"><div class="ttname"><a href="class_map___type.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">Map_Type::end</a></div><div class="ttdeci">Point_Type * end</div><div class="ttdef"><b>Definition:</b> map_system.h:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2017年10月17日 星期二 16:21:59, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>
