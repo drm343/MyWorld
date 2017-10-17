@@ -243,8 +243,33 @@ static bool message_process(Camera_Access access,
   }
   else {
     NSString *box_message = NULL;
+    Is_Alive is_alive = ALIVE;
 
-    if (character.attack(current, npc) == DEAD) {
+    box_message = [NSString stringWithFormat: @"%@(%@) 攻擊 %@(%@)，造成 1 點傷害",
+                  current->base->name,
+                  character.get_relation_string(current),
+                  npc->base->name,
+                  character.get_relation_string(npc)];
+    message_box.add(box_access, box_message);
+
+    switch (npc->faction) {
+      case FACTION_PLAYER:
+        is_alive = [from_pool attack_player_by: current];
+        break;
+      case FACTION_ALLY:
+        is_alive = [from_pool attack_ally_by: current with_target: npc];
+        break;
+      case FACTION_ENEMY:
+        is_alive = [from_pool attack_enemy_by: current with_target: npc];
+        break;
+      case FACTION_NEUTRAL:
+        is_alive = [from_pool attack_neutral_by: current with_target: npc];
+        break;
+      default:
+        break;
+    }
+
+    if (is_alive == DEAD) {
       character.set_style(npc, dead);
 
       if (npc->faction == FACTION_PLAYER) {
@@ -253,13 +278,8 @@ static bool message_process(Camera_Access access,
       else {
         box_message = [NSString stringWithFormat: @"%@ 死亡", npc->base->name];
       }
+      message_box.add(box_access, box_message);
     }
-    else {
-      box_message = [NSString stringWithFormat: @"%@ 攻擊 %@(%@)，造成 1 點傷害",
-                  current->base->name,
-                  npc->base->name, character.get_relation_string(npc)];
-    }
-    message_box.add(box_access, box_message);
   }
 
   [rectangle set_top_left_point: access->start];

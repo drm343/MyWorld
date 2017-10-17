@@ -38,24 +38,24 @@ static Is_Alive is_alive(Status_Access access) {
 
 static Is_Alive attack_character(Status_Access from, Status_Access to) {
   to->damage += 1;
+  switch (from->faction) {
+    case FACTION_PLAYER:
+      character.set_relation_enemy(to);
+      break;
+    case FACTION_ALLY:
+      character.set_relation_enemy(to);
+      break;
+    case FACTION_ENEMY:
+      character.set_relation_ally(to);
+      break;
+    case FACTION_NEUTRAL:
+      character.set_relation_enemy(to);
+      break;
+    default:
+      break;
+  }
 
   if (to->damage >= 3) {
-    switch (from->faction) {
-      case FACTION_PLAYER:
-        character.set_relation_enemy(to);
-        break;
-      case FACTION_ALLY:
-        character.set_relation_enemy(to);
-        break;
-      case FACTION_ENEMY:
-        character.set_relation_ally(to);
-        break;
-      case FACTION_NEUTRAL:
-        character.set_relation_enemy(to);
-        break;
-      default:
-        break;
-    }
     to->base->is_alive = false;
     to->base->crossable = true;
     to->base->attackable = false;

@@ -77,6 +77,11 @@ typedef Character_Pool_Type * Character_Pool_Type_Access;
 - (Status_Access) get_instance_by_index: (int) index;
 
 - (Message_Type) action: (Status_Access) current_character;
+
+- (Is_Alive) attack_enemy_by: (Status_Access) current with_target: (Status_Access) target;
+- (Is_Alive) attack_ally_by: (Status_Access) current with_target: (Status_Access) target;
+- (Is_Alive) attack_neutral_by: (Status_Access) current with_target: (Status_Access) target;
+- (Is_Alive) attack_player_by: (Status_Access) current;
 @end
 typedef Character_Pool * Character_Pool_Access;
 

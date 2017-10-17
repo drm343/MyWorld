@@ -701,7 +701,7 @@ DONE:
         + neutral_target_number;
       weigh_value = 80 / total_target_number;
       neutral_weigh_value = 100 - neutral_target_number * weigh_value;
-      ally_weigh_value = 100 - neutral_weigh_value - ally_target_number * weigh_value;
+      ally_weigh_value = 100 - (neutral_target_number + ally_target_number) * weigh_value;
 
       if (target_group_number >= neutral_weigh_value) {
         result = npc_reaction(current_character, neutral);
@@ -729,4 +729,98 @@ DONE:
   return result;
 }
 
+
+  /** @brief 攻擊敵方角色
+   * @param current 進行攻擊的角色
+   * @param target 被攻擊的敵方角色
+   * @return 目標的生存狀況
+   *
+   * 執行 character.attack 後，NPC 會改變立場，但 character-pool 內也有
+   * 記錄角色立場的欄位，直接呼叫 character.attack 不會改變 pool 內的立
+   * 場，因此必須透過 pool 轉呼叫。
+  */
+- (Is_Alive) attack_enemy_by: (Status_Access) current with_target: (Status_Access) target {
+  Is_Alive result = character.attack(current, target);
+  Status_List_remove(enemy, target);
+
+  switch (target->faction) {
+    case FACTION_ENEMY:
+      [self add_enemy: target];
+      break;
+    case FACTION_ALLY:
+      [self add_ally: target];
+      break;
+    default:
+      [self add_neutral: target];
+      break;
+  }
+  return result;
+}
+
+
+  /** @brief 攻擊友軍角色
+   * @param current 進行攻擊的角色
+   * @param target 被攻擊的友軍角色
+   * @return 目標的生存狀況
+   *
+   * 執行 character.attack 後，NPC 會改變立場，但 character-pool 內也有
+   * 記錄角色立場的欄位，直接呼叫 character.attack 不會改變 pool 內的立
+   * 場，因此必須透過 pool 轉呼叫。
+  */
+- (Is_Alive) attack_ally_by: (Status_Access) current with_target: (Status_Access) target {
+  Is_Alive result = character.attack(current, target);
+  Status_List_remove(ally, target);
+
+  switch (target->faction) {
+    case FACTION_ENEMY:
+      [self add_enemy: target];
+      break;
+    case FACTION_ALLY:
+      [self add_ally: target];
+      break;
+    default:
+      [self add_neutral: target];
+      break;
+  }
+  return result;
+}
+
+
+  /** @brief 攻擊中立角色
+   * @param current 進行攻擊的角色
+   * @param target 被攻擊的中立角色
+   * @return 目標的生存狀況
+   *
+   * 執行 character.attack 後，NPC 會改變立場，但 character-pool 內也有
+   * 記錄角色立場的欄位，直接呼叫 character.attack 不會改變 pool 內的立
+   * 場，因此必須透過 pool 轉呼叫。
+  */
+- (Is_Alive) attack_neutral_by: (Status_Access) current with_target: (Status_Access) target {
+  Is_Alive result = character.attack(current, target);
+  Status_List_remove(neutral, target);
+
+  switch (target->faction) {
+    case FACTION_ENEMY:
+      [self add_enemy: target];
+      break;
+    case FACTION_ALLY:
+      [self add_ally: target];
+      break;
+    default:
+      [self add_neutral: target];
+      break;
+  }
+  return result;
+}
+
+
+  /** @brief 攻擊玩家角色
+   * @param current 進行攻擊的角色
+   * @return 目標的生存狀況
+  */
+- (Is_Alive) attack_player_by: (Status_Access) current {
+  Status_Access target = [self get_instance_by_index: 0];
+  Is_Alive result = character.attack(current, target);
+  return result;
+}
 @end
