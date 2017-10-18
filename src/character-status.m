@@ -11,8 +11,17 @@ static void print_status(Status_Access access) {
 }
 
 
+// -----------------------------------
+// Init and free
+// -----------------------------------
 static void character_init(Status_Access access) {
-  character_base_init(access->base);
+  Character_Base_init(access->base);
+  access->faction = FACTION_NEUTRAL;
+}
+
+
+static void character_free(Status_Access access) {
+  Character_Base_free(access->base);
   access->faction = FACTION_NEUTRAL;
 }
 
@@ -89,8 +98,9 @@ static void set_base_mark(Status_Access access, NSString *mark) {
 
 static void set_random_position(Status_Access access,
     int64_t max_x, int64_t max_y) {
-  [access->base->Real_Position setX: rand() % max_x];
-  [access->base->Real_Position setY: rand() % max_y];
+      Point_Access_change(access->base->Real_Position);
+      Point_Access_set_x(rand() % max_x);
+      Point_Access_set_y(rand() % max_y);
 }
 
 
@@ -168,6 +178,7 @@ Point_Access get_position(Status_Access access) {
 // -----------------------------------------
 Character_API character = {
   .init = character_init,
+  .free = character_free,
   .copy = character_copy,
   .print_status = print_status,
 

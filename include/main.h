@@ -11,7 +11,6 @@
 #include "helper_function.h"
 
 #include "string_helper.h"
-#include "character-pool.h"
 #include "graphic-camera.h"
 
 #include "main_set_config.h"

@@ -5,10 +5,11 @@
 
 #include "character-skill.h"
 #include "helper_function.h"
-//#include "container/list.h"
 
 #include "container/Status_List.h"
-#import "map_system.h"
+#include "map_system.h"
+#include "instance/rectangle.h"
+
 
 typedef enum {
   NOT_FOUND = 0,
@@ -16,10 +17,8 @@ typedef enum {
 } Found_Result;
 
 
-@interface Point_Type (Process_C_Message)
-- (Message_Type) over_there: (Point_Type *) other;
-- (Message_Type) near_by: (Point_Type *) other;
-@end
+Message_Type Point_Type_over_there(Point_Type *self, Point_Type *other);
+Message_Type Point_Type_near_by(Point_Type *self, Point_Type *other);
 
 
 GENERIC_POOL(Status_Pool, Status_Access);

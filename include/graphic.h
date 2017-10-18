@@ -7,8 +7,6 @@
 #include "base_type.h"
 
 #import <Foundation/Foundation.h>
-
-
 typedef SDL_Texture * SDL_Texture_Access;
 
 typedef struct {

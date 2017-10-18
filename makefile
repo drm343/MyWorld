@@ -15,7 +15,7 @@ SRC=$(CURREND)/src
 INCLUDE=-I $(CURREND)/include -I /usr/lib64/gcc/x86_64-slackware-linux/7.2.0/include -I `gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS`
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
 LFLAGS=-L$(OBJ) -lmy_world
-OBJC_FLAGS=-L `gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES` -fconstant-string-class=NSConstantString -lobjc -lgnustep-base
+OBJC_FLAGS=-Werror -L `gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES` -fconstant-string-class=NSConstantString -lobjc -lgnustep-base
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -26,7 +26,11 @@ DEBUG=
 CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
 
 
-AUTO_BUILD_DEP := $(OBJ)/object_point.o \
+#AUTO_BUILD_DEP := $(OBJ)/object_point.o
+AUTO_BUILD_DEP := $(OBJ)/point_type.o \
+    $(OBJ)/point_access.o \
+    $(OBJ)/rectangle_type.o \
+    $(OBJ)/rectangle_access.o \
 	$(OBJ)/string_helper.o \
 	$(OBJ)/graphic.o \
 	$(OBJ)/character.o \
@@ -38,28 +42,28 @@ AUTO_BUILD_DEP := $(OBJ)/object_point.o \
 	$(OBJ)/graphic-message.o \
 	$(OBJ)/character-pool.o
 
-
 DEP := $(AUTO_BUILD_DEP)
 
 
-.PHONY: clean doc gen_list examples strings app
-all: $(CHECK_DIR) gen_list $(LIB_MY_WORLD) doc
+AUTO_BUILD_TOOLS := $(BIN)/gen_list \
+	$(BIN)/gen_pool
+
+TOOLS := $(AUTO_BUILD_TOOLS)
 
 
-app: $(CHECK_DIR) gen_list $(LIB_MY_WORLD)
+.PHONY: clean doc examples strings app test
+all: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) doc
+
+
+app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) -std=c11 $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) $(OBJC_FLAGS) -o $(BIN)/$(APP_NAME)
 
 
-gen_list: 
-	gcc tools/gen_list.c -lconfig -o $(BIN)/gen_list
-	$(BIN)/gen_list
+%(TOOLS): $(AUTO_BUILD_TOOLS)
 
-
-test:
-	$(COMPILER) $(DEBUG) -std=c11 a.c -c -o $(OBJ)/a.o
-	ar cr $(OBJ)/liba.a $(OBJ)/a.o
-	ranlib $(OBJ)/liba.a
-	$(COMPILER) $(DEBUG) -std=c11 -I intern hello.c -L $(OBJ) -la -o $(BIN)/app
+$(AUTO_BUILD_TOOLS):
+	gcc tools/$(basename $(notdir $@)).c -lconfig -o $@
+	$@
 
 
 strings: $(CHECK_DIR)

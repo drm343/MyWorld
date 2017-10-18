@@ -37,6 +37,8 @@ typedef Status * Status_Access;
 
 typedef struct {
   void (*init)(Status_Access);
+  void (*free)(Status_Access);
+
   void (*copy)(Status_Access, Status_Access);
   void (*print_status)(Status_Access);
 

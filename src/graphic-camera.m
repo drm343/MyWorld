@@ -50,26 +50,26 @@ static void debug(Camera_Access access) {
 
   printf("------------------------\n");
   printf("[map](%d, %d)\n", [map get_end_x], [map get_end_y]);
-  printf("[center](%d, %d)\n", center.x, center.y);
-  printf("[start](%d, %d)\n", from.x, from.y);
-  printf("[end](%d, %d)\n", to.x, to.y);
-  printf("[position](%d, %d)\n", point.x, point.y);
+  printf("[center](%d, %d)\n", center->x, center->y);
+  printf("[start](%d, %d)\n", from->x, from->y);
+  printf("[end](%d, %d)\n", to->x, to->y);
+  printf("[position](%d, %d)\n", point->x, point->y);
   printf("[left check] %d\n",
-      (point.x > (center.x - 1)));
+      (point->x > (center->x - 1)));
   printf("[right check] %d\n",
-      ((point.x + 1) < ([map get_end_x] - (center.x - 1))));
+      ((point->x + 1) < ([map get_end_x] - (center->x - 1))));
   printf("[from end] %d\n",
-      (from.x <= 0));
+      (from->x <= 0));
   printf("[to end] %d\n",
-      (to.x >= [map get_end_x]));
+      (to->x >= [map get_end_x]));
   printf("[up check] %d\n",
-      (point.y > (center.y - 1)));
+      (point->y > (center->y - 1)));
   printf("[down check] %d\n",
-      ((point.y + 1) < ([map get_end_y] - (center.y - 1))));
+      ((point->y + 1) < ([map get_end_y] - (center->y - 1))));
   printf("[from end] %d\n",
-      (from.y <= 0));
+      (from->y <= 0));
   printf("[to end] %d\n",
-      (to.y >= [map get_end_y]));
+      (to->y >= [map get_end_y]));
 }
 
 
@@ -86,24 +86,24 @@ static void camera_horizon_mode_setup(Camera_Access access,
 
   Map_Access map = access->map;
 
-  if (([point x] > ([center x] - 1))
-      && (([point x] + 1) < ([map get_end_x] - ([center x] - 1)))) {
+  if ((point->x > (center->x - 1))
+      && ((point->x + 1) < ([map get_end_x] - (center->x - 1)))) {
     access->horizon = CAMERA_MOVE;
 
-    [access->start addX: x];
-    [access->end addX: x];
+    Point_Type_add_x(access->start, x);
+    Point_Type_add_x(access->end, x);
   }
-  else if ([from x] <= 0) {
+  else if (from->x <= 0) {
     access->horizon = CAMERA_FIX;
   }
-  else if ([to x] >= [map get_end_x]) {
+  else if (to->x >= [map get_end_x]) {
     access->horizon = CAMERA_FIX;
   }
   else {
     access->horizon = CAMERA_MOVE;
 
-    [access->start addX: x];
-    [access->end addX: x];
+    Point_Type_add_x(access->start, x);
+    Point_Type_add_x(access->end, x);
   }
 }
 
@@ -118,24 +118,24 @@ static void camera_vertical_mode_setup(Camera_Access access,
 
   Map_Access map = access->map;
 
-  if (([point y] > ([center y] - 1))
-      && (([point y] + 1) < ([map get_end_y] - ([center y] - 1)))) {
+  if ((point->y > (center->y - 1))
+      && ((point->y + 1) < ([map get_end_y] - (center->y - 1)))) {
     access->vertical = CAMERA_MOVE;
 
-    [access->start addY: y];
-    [access->end addY: y];
+    Point_Type_add_y(access->start, y);
+    Point_Type_add_y(access->end, y);
   }
-  else if ([from y] <= 0) {
+  else if (from->y <= 0) {
     access->vertical = CAMERA_FIX;
   }
-  else if ([to y] >= [map get_end_y]) {
+  else if (to->y >= [map get_end_y]) {
     access->vertical = CAMERA_FIX;
   }
   else {
     access->vertical = CAMERA_MOVE;
 
-    [access->start addY: y];
-    [access->end addY: y];
+    Point_Type_add_y(access->start, y);
+    Point_Type_add_y(access->end, y);
   }
 }
 
@@ -151,11 +151,11 @@ static Yes_No can_move_horizon(Camera_Access access,
   Map_Access map = access->map;
   Yes_No result = YES;
 
-  if ((from.x <= 0) && (point.x < 0)) {
+  if ((from->x <= 0) && (point->x < 0)) {
     result = NO;
   }
-  else if ((to.x >= [map get_end_x])
-   && (point.x >= [map get_end_x])) {
+  else if ((to->x >= [map get_end_x])
+   && (point->x >= [map get_end_x])) {
     result = NO;
   }
   return result;
@@ -170,10 +170,10 @@ static Yes_No can_move_vertical(Camera_Access access,
   Map_Access map = access->map;
   Yes_No result = YES;
 
-  if ((from.y <= 0) && (point.y < 0)) {
+  if ((from->y <= 0) && (point->y < 0)) {
     result = NO;
   }
-  else if ((to.y >= [map get_end_y]) && (point.y >= [map get_end_y])) {
+  else if ((to->y >= [map get_end_y]) && (point->y >= [map get_end_y])) {
     result = NO;
   }
   return result;
@@ -188,57 +188,63 @@ static bool message_process(Camera_Access access,
   Status_Access npc = NULL;
   Style_Access dead = access->dead;
 
-  Rectangle_Access rectangle = [Rectangle_Type create];
-  Point_Access max_point = [Point_Type create];
-  [max_point setX: access->max_x];
-  [max_point setY: access->max_y];
+  Rectangle_Access rectangle = Rectangle_Type_create();
+  Point_Access max_point = Point_Type_create();
+  Point_Access_change(max_point);
+  Point_Access_set_x(access->max_x);
+  Point_Access_set_y(access->max_y);
 
-  Point_Access point = [Point_Type create];
-  [point setX: [current->base->Real_Position x]];
-  [point setY: [current->base->Real_Position y]];
+  Point_Access point = Point_Type_create();
+  Point_Access_change(point);
+  Point_Access_set_x(Point_Type_x(current->base->Real_Position));
+  Point_Access_set_y(Point_Type_y(current->base->Real_Position));
 
-  Point_Access vector = [Point_Type create];
+  Point_Access vector = Point_Type_create();
 
   switch (message) {
     case TOP:
-      [point addY: -1];
-      [vector setY: -1];
+      Point_Type_add_y(point, -1);
+      Point_Type_set_y(vector, -1);
       break;
     case DOWN:
-      [point addY: 1];
-      [vector setY: 1];
+      Point_Type_add_y(point, 1);
+      Point_Type_set_y(vector, 1);
       break;
     case LEFT:
-      [point addX: -1];
-      [vector setX: -1];
+      Point_Type_add_x(point, -1);
+      Point_Type_set_x(vector, -1);
       break;
     case RIGHT:
-      [point addX: 1];
-      [vector setX: 1];
+      Point_Type_add_x(point, 1);
+      Point_Type_set_x(vector, 1);
       break;
     default:
-      return true;
+      goto DONE;
       break;
   }
 
   Found_Result result = occupy_position_by_others(from_pool, point, &npc);
   if (result == NO) {
-    if (([vector y] != 0) && (can_move_vertical(access, point) == YES)) {
+    int32_t y = Point_Type_y(vector);
+
+    if ((y != 0) && (can_move_vertical(access, point) == YES)) {
       if (current->faction == FACTION_PLAYER) {
-        camera_vertical_mode_setup(access, point, [vector y]);
+        camera_vertical_mode_setup(access, point, y);
       }
 
-      [current->base->Real_Position addX: [vector x]];
-      [current->base->Real_Position addY: [vector y]];
+      Point_Access_change(current->base->Real_Position);
+      Point_Access_add_x(Point_Type_x(vector));
+      Point_Access_add_y(y);
     }
-    else if (([vector x] != 0)
+    else if ((Point_Type_x(vector) != 0)
         && (can_move_horizon(access, point) == YES)) {
       if (current->faction == FACTION_PLAYER) {
-        camera_horizon_mode_setup(access, point, [vector x]);
+        camera_horizon_mode_setup(access, point, Point_Type_x(vector));
       }
 
-      [current->base->Real_Position addX: [vector x]];
-      [current->base->Real_Position addY: [vector y]];
+      Point_Access_change(current->base->Real_Position);
+      Point_Access_add_x(Point_Type_x(vector));
+      Point_Access_add_y(Point_Type_y(vector));
     }
   }
   else {
@@ -282,9 +288,16 @@ static bool message_process(Camera_Access access,
     }
   }
 
-  [rectangle set_top_left_point: access->start];
-  [rectangle set_down_right_point: max_point];
+  Rectangle_Access_change(rectangle);
+  Rectangle_Access_set_top_left_point(access->start);
+  Rectangle_Access_set_down_right_point(max_point);
   [from_pool calculate_graph_position: rectangle];
+
+DONE:
+  Point_Type_free(vector);
+  Point_Type_free(point);
+  Point_Type_free(max_point);
+  Rectangle_Type_free(rectangle);
   return true;
 }
 
@@ -293,17 +306,20 @@ static Camera_Access camera_start(void) {
   Camera_Access access = calloc(1, sizeof(Camera_Type));
   MAX_X = 25;
   MAX_Y = 21;
-  access->start = [Point_Type create];
-  access->end = [Point_Type create];
-  access->center = [Point_Type create];
+  access->start = Point_Type_create();
+  access->end = Point_Type_create();
+  access->center = Point_Type_create();
 
   camera.set_max_x(access, MAX_X);
   camera.set_max_y(access, MAX_Y);
 
-  [access->start setX: 0];
-  [access->start setY: 0];
-  [access->end setX: MAX_X - 1];
-  [access->end setY: MAX_Y - 1];
+  Point_Access_change(access->start);
+  Point_Access_set_x(0);
+  Point_Access_set_y(0);
+
+  Point_Access_change(access->end);
+  Point_Access_set_x(MAX_X - 1);
+  Point_Access_set_y(MAX_Y - 1);
 
   access->horizon = CAMERA_UNDEFINE;
   access->vertical = CAMERA_UNDEFINE;
@@ -313,31 +329,38 @@ static Camera_Access camera_start(void) {
 
 
 static void camera_stop(Camera_Access access) {
+  Point_Type_free(access->start);
+  Point_Type_free(access->end);
+  Point_Type_free(access->center);
   free(access);
 }
 
 
 static void camera_set_max_x(Camera_Access access, int x) {
   access->max_x = x;
-  [access->center setX: (x - 1) / 2];
+  Point_Type_set_x(access->center, (x - 1) / 2);
   MAX_X = x;
 }
 
 static void camera_set_max_y(Camera_Access access, int y) {
   access->max_y = y;
-  [access->center setY: (y - 1) / 2];
+  Point_Type_set_y(access->center, (y - 1) / 2);
   MAX_Y = y;
 }
 
 
 static void set_player(Camera_Access access, Status_Access player) {
   Point_Access center = access->center;
+  int32_t x = Point_Type_x(center);
+  int32_t y = Point_Type_y(center);
 
-  [player->base->Real_Position setX: [center x]];
-  [player->base->Real_Position setY: [center y]];
+  Point_Access_change(player->base->Real_Position);
+  Point_Access_set_x(x);
+  Point_Access_set_y(y);
 
-  [player->base->Graph_Position setX: [center x]];
-  [player->base->Graph_Position setY: [center y]];
+  Point_Access_change(player->base->Graph_Position);
+  Point_Access_set_x(x);
+  Point_Access_set_y(y);
 
   access->player = player;
 }

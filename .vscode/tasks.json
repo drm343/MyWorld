@@ -6,7 +6,12 @@
         {
             "taskName": "all",
             "type": "shell",
-            "command": "make",
+            "command": "make"
+        },
+        {
+            "taskName": "app",
+            "type": "shell",
+            "command": "make app",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -15,7 +20,7 @@
         {
             "taskName": "doc",
             "type": "shell",
-            "command": "doxygen"
+            "command": "make doc"
         },
         {
             "taskName": "test",

@@ -3,10 +3,9 @@
 
 #include <stdbool.h>
 
-#include "base_type.h"
 #include "graphic.h"
 
-#import "object/point.h"
+#include "instance/point.h"
 
 
 typedef struct Character_Base {
@@ -19,11 +18,11 @@ typedef struct Character_Base {
   bool is_alive;
   Use_Type status;
 
-  void (*release)(struct Character_Base *);
   void (*copy)(struct Character_Base *, struct Character_Base *);
 } Character_Base_Type;
 typedef Character_Base_Type * Character_Base_Access;
 
 
-void character_base_init(Character_Base_Access);
+void Character_Base_init(Character_Base_Type *);
+void Character_Base_free(Character_Base_Type *);
 #endif

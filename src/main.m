@@ -70,8 +70,9 @@ void draw_view(SDL_Renderer_Access render) {
   SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
   SDL_RenderClear(render);
 
-  position.x = GRID_LENGTH * camera_1->player->base->Graph_Position.x;
-  position.y = GRID_LENGTH * camera_1->player->base->Graph_Position.y;
+  Point_Access_change(camera_1->player->base->Graph_Position);
+  position.x = GRID_LENGTH * Point_Access_x();
+  position.y = GRID_LENGTH * Point_Access_y();
   SDL_RenderCopy(render, camera_1->player->base->Mark->access, NULL, &(position));
 
   uint8_t used = [character_pool instance_count];
@@ -79,9 +80,12 @@ void draw_view(SDL_Renderer_Access render) {
     Status_Access npc = [character_pool get_instance_by_index: next];
 
     if (npc->base->status == IN_USE) {
-      if (![npc->base->Real_Position eq: camera_1->player->base->Real_Position]) {
-	rect.x = GRID_LENGTH * npc->base->Graph_Position.x;
-	rect.y = GRID_LENGTH * npc->base->Graph_Position.y;
+      if (!Point_Type_eq(
+        npc->base->Real_Position,
+        camera_1->player->base->Real_Position)) {
+  Point_Access_change(npc->base->Graph_Position);
+	rect.x = GRID_LENGTH * Point_Access_x();
+	rect.y = GRID_LENGTH * Point_Access_y();
 	SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
       }
     }

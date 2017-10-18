@@ -3,12 +3,11 @@
 #include <time.h>
 
 
-@implementation Point_Type (Process_C_Message)
-- (Message_Type) over_there: (Point_Type *) other {
+Message_Type Point_Type_over_there(Point_Type *self, Point_Type *other) {
   Message_Type result = DO_NOTHING;
 
-  int32_t diff_x = [self x] - [other x];
-  int32_t diff_y = [self y] - [other y];
+  int32_t diff_x = Point_Type_x(self) - Point_Type_x(other);
+  int32_t diff_y = Point_Type_y(self) - Point_Type_y(other);
   int32_t abs_x = abs(diff_x);
   int32_t abs_y = abs(diff_y);
 
@@ -31,11 +30,11 @@
   return result;
 }
 
-- (Message_Type) near_by: (Point_Type *) other {
+Message_Type Point_Type_near_by(Point_Type *self, Point_Type *other) {
   Message_Type result = DO_NOTHING;
 
-  int32_t diff_x = [self x] - [other x];
-  int32_t diff_y = [self y] - [other y];
+  int32_t diff_x = Point_Type_x(self) - Point_Type_x(other);
+  int32_t diff_y = Point_Type_y(self) - Point_Type_y(other);
   int32_t abs_x = abs(diff_x);
   int32_t abs_y = abs(diff_y);
 
@@ -82,7 +81,6 @@ RANDOM_POSITION:
 DONE:
   return result;
 }
-@end
 
 
 static Status_Pool_Access status_pool_start(uint8_t size) {
@@ -221,7 +219,7 @@ static Found_Result pool_find_by_position(Character_Pool_Type_Access access,
     Faction_Type faction = character.get_relation(*npc);
     Point_Access npc_position = character.get_position(*npc);
 
-    if ([point eq: (*npc)->base->Real_Position]) {
+    if (Point_Type_eq(point, (*npc)->base->Real_Position)) {
       if ((*npc)->base->crossable == NO) {
         return FOUND;
       }
@@ -234,14 +232,17 @@ static Found_Result pool_find_by_position(Character_Pool_Type_Access access,
 
 static void reset_graph_position(Character_Pool_Type_Access access,
     Rectangle_Access rectangle) {
-  Point_Access start_point = [rectangle top_left_point];
-  Point_Access end_point = [rectangle down_right_point];
+  Rectangle_Access_change(rectangle);
+  Point_Access start_point = Rectangle_Access_top_left_point();
+  Point_Access end_point =  Rectangle_Access_down_right_point();
 
-  int64_t x = [start_point x];
-  int64_t y = [start_point y];
+  Point_Access_change(start_point);
+  int64_t x = Point_Access_x();
+  int64_t y = Point_Access_y();
 
-  int64_t max_x = [end_point x];
-  int64_t max_y = [end_point y];
+  Point_Access_change(end_point);
+  int64_t max_x = Point_Access_x();
+  int64_t max_y = Point_Access_y();
 
   uint8_t count = 0;
   uint8_t used = access->status->max_size - access->status->current_size;
@@ -252,17 +253,19 @@ static void reset_graph_position(Character_Pool_Type_Access access,
   for (count; count < used; count++) {
     npc = &(access->status->pool[count]);
 
-    counter_x = npc->base->Real_Position.x - x;
-    counter_y = npc->base->Real_Position.y - y;
+    counter_x = npc->base->Real_Position->x - x;
+    counter_y = npc->base->Real_Position->y - y;
 
     if (((counter_x >= 0) || (counter_y >= 0)) &&
         ((counter_x < max_x) && (counter_y < max_y - 1))) {
-      npc->base->Graph_Position.x = counter_x;
-      npc->base->Graph_Position.y = counter_y;
+      Point_Access_change(npc->base->Graph_Position);
+      Point_Access_set_x(counter_x);
+      Point_Access_set_y(counter_y);
     }
     else {
-      npc->base->Graph_Position.x = -1;
-      npc->base->Graph_Position.y = -1;
+      Point_Access_change(npc->base->Graph_Position);
+      Point_Access_set_x(-1);
+      Point_Access_set_y(-1);
     }
   }
 }
@@ -317,9 +320,7 @@ DONE:
 
 
 static Message_Type faction_neutral_reaction(Point_Access self, Point_Access player) {
-  Message_Type result = [self near_by: player];
-
-  return result;
+  return Point_Type_near_by(self, player);
 }
 
 
@@ -334,7 +335,7 @@ static Message_Type npc_reaction(Status *self, Status_List *enemy_group) {
   Status *target = Status_List_get_by_index(enemy_group, target_number);
   Point_Access target_position = character.get_position(target);
   Point_Access self_position = character.get_position(self);
-  return [self_position over_there: target_position];
+  return  Point_Type_over_there(self_position, target_position);
 }
 
 
@@ -710,7 +711,7 @@ DONE:
         target = [self get_instance_by_index: 0];
         target_position = character.get_position(target);
         self_position = character.get_position(current_character);
-        result = [self_position over_there: target_position];
+        result = Point_Type_over_there(self_position, target_position);
       }
       break;
     case FACTION_NEUTRAL:
