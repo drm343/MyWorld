@@ -4,6 +4,9 @@ PLATFORM=-DLINUX_VERSION_FUNCTION=1
 #PLATFORM=-DMAXOS_VERSION_FUNCTION=1
 #PLATFORM=-DWINDOS_VERSION_FUNCTION=1
 
+INDENT_NUMBER=4
+CASE_INDENT_NUMBER=4
+
 COMPILER=gcc
 #COMPILER=clang-5.0-32 -ferror-limit=1
 
@@ -49,13 +52,31 @@ LIBSTRINGS := $(OBJ)/block.o \
 DEP := $(LIBSTRINGS) $(AUTO_BUILD_DEP)
 
 
+AUTO_INDENT := $(SRC)/point_type.m \
+	$(SRC)/point_access.m \
+	$(SRC)/rectangle_type.m \
+	$(SRC)/rectangle_access.m \
+	$(SRC)/helper_function-strings.m \
+	$(SRC)/strings-instance.m \
+	$(SRC)/graphic.m \
+	$(SRC)/character.m \
+	$(SRC)/character-status.m \
+	$(SRC)/status_list.m \
+	$(SRC)/character-skill.m \
+	$(SRC)/map_system.m \
+	$(SRC)/graphic-camera.m \
+	$(SRC)/graphic-message.m \
+	$(SRC)/character-pool.m \
+	$(SRC)/main.m
+
+
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
 	$(BIN)/gen_pool
 
 TOOLS := $(AUTO_BUILD_TOOLS)
 
 
-.PHONY: clean doc examples strings app test
+.PHONY: clean doc examples strings app test indent
 app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) $(OBJC_FLAGS) -o $(BIN)/$(APP_NAME)
 
@@ -65,10 +86,15 @@ all: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) doc
 
 %(TOOLS): $(AUTO_BUILD_TOOLS)
 
+
 $(AUTO_BUILD_TOOLS):
 	gcc tools/$(basename $(notdir $@)).c -lconfig -o $@
 	$@
 
+
+indent: $(AUTO_INDENT)
+$(AUTO_INDENT):
+	indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut $@
 
 strings: $(CHECK_DIR)
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) intern/block.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/block.o

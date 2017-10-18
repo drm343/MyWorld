@@ -7,10 +7,11 @@ static String_Intern self = NULL;
  * @param repo string intern 的 repo
  * @return 舊的 intern
  */
-String_Intern String_Repo_change(String_Intern repo) {
-  String_Intern origin = self;
-  self = repo;
-  return origin;
+String_Intern String_Repo_change(String_Intern repo)
+{
+    String_Intern origin = self;
+    self = repo;
+    return origin;
 }
 
 
@@ -18,7 +19,8 @@ String_Intern String_Repo_change(String_Intern repo) {
  * @param 想註冊的 String
  * @return 註冊後的 Access
  */
-const char * String_Repo_sign_in(const char *str) {
-  uint32_t str_id = strings_intern(self, str);
-  return strings_lookup_id(self, str_id);
+const char *String_Repo_sign_in(const char *str)
+{
+    uint32_t str_id = strings_intern(self, str);
+    return strings_lookup_id(self, str_id);
 }

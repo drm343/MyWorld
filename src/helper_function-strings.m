@@ -5,37 +5,33 @@
  * @param str 想求長度的 String 物件
  * @return 長度
  */
-size_t String_length(const char *str) {
-  size_t max_counter = strlen(str);
-  size_t move_position = 0;
-  int64_t len = 0;
-  unsigned char check = 0;
+size_t String_length(const char *str)
+{
+    size_t max_counter = strlen(str);
+    size_t move_position = 0;
+    int64_t len = 0;
+    unsigned char check = 0;
 
-  for (size_t index = 0; index < max_counter; index += move_position) {
-    check = str[index];
-    len++;
+    for (size_t index = 0; index < max_counter; index += move_position) {
+        check = str[index];
+        len++;
 
-    if (check < 0b11000000) {
-      move_position = 1;
+        if (check < 0 b11000000) {
+            move_position = 1;
+        } else if (check < 0 b11100000 && check > 0 b11000000) {
+            move_position = 2;
+        } else if (check < 0 b11110000 && check > 0 b11100000) {
+            move_position = 3;
+        } else if (check > 0 b11110000) {
+            move_position = 4;
+        } else if (check == 0) {
+            break;
+        } else {
+            printf("bug\n");
+            break;
+        }
     }
-    else if (check < 0b11100000 && check > 0b11000000) {
-      move_position = 2;
-    }
-    else if (check < 0b11110000 && check > 0b11100000) {
-      move_position = 3;
-    }
-    else if (check > 0b11110000) {
-      move_position = 4;
-    }
-    else if (check == 0) {
-      break;
-    }
-    else {
-      printf("bug\n");
-      break;
-    }
-  }
-  return len;
+    return len;
 }
 
 
@@ -43,8 +39,9 @@ size_t String_length(const char *str) {
  * @param str 想求長度的 String 物件
  * @return 長度
  */
-size_t String_ascii_length(const char *str) {
-  return strlen(str);
+size_t String_ascii_length(const char *str)
+{
+    return strlen(str);
 }
 
 
@@ -53,37 +50,33 @@ size_t String_ascii_length(const char *str) {
  * @param full_size 一個全形文字的長度
  * @return 長度
  */
-size_t String_width_length(const char *str, int64_t full_size) {
-  size_t max_counter = strlen(str);
-  size_t index = 0;
-  size_t move_position = 0;
-  int64_t len = 0;
-  unsigned char check = 0;
+size_t String_width_length(const char *str, int64_t full_size)
+{
+    size_t max_counter = strlen(str);
+    size_t index = 0;
+    size_t move_position = 0;
+    int64_t len = 0;
+    unsigned char check = 0;
 
-  for (index = 0; index < max_counter; index += move_position) {
-    check = str[index];
-    len += 2;
+    for (index = 0; index < max_counter; index += move_position) {
+        check = str[index];
+        len += 2;
 
-    if (check < 0b11000000) {
-      move_position = 1;
-      len--;
+        if (check < 0 b11000000) {
+            move_position = 1;
+            len--;
+        } else if (check < 0 b11100000 && check > 0 b11000000) {
+            move_position = 2;
+        } else if (check < 0 b11110000 && check > 0 b11100000) {
+            move_position = 3;
+        } else if (check > 0 b11110000) {
+            move_position = 4;
+        } else if (check == 0) {
+            break;
+        } else {
+            printf("bug\n");
+            break;
+        }
     }
-    else if (check < 0b11100000 && check > 0b11000000) {
-      move_position = 2;
-    }
-    else if (check < 0b11110000 && check > 0b11100000) {
-      move_position = 3;
-    }
-    else if (check > 0b11110000) {
-      move_position = 4;
-    }
-    else if (check == 0) {
-      break;
-    }
-    else {
-      printf("bug\n");
-      break;
-    }
-  }
-  return len * (full_size / 2);
+    return len * (full_size / 2);
 }

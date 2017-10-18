@@ -18,6 +18,11 @@
             }
         },
         {
+            "taskName": "indent",
+            "type": "shell",
+            "command": "make indent"
+        },
+        {
             "taskName": "doc",
             "type": "shell",
             "command": "make doc"
