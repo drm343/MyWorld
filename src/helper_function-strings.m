@@ -5,7 +5,7 @@
  * @param str 想求長度的 String 物件
  * @return 長度
  */
-size_t String_length(char *str) {
+size_t String_length(const char *str) {
   size_t max_counter = strlen(str);
   size_t move_position = 0;
   int64_t len = 0;
@@ -43,7 +43,7 @@ size_t String_length(char *str) {
  * @param str 想求長度的 String 物件
  * @return 長度
  */
-size_t String_ascii_length(char *str) {
+size_t String_ascii_length(const char *str) {
   return strlen(str);
 }
 

@@ -6,18 +6,24 @@
 #include <string.h>
 
 
+#include "strings.h"
+
+
+typedef struct strings * String_Intern;
+
+
 /** @brief 求出 UTF8 版本的 string 長度
  * @param str 想求長度的 String 物件
  * @return 長度
  */
-size_t String_length(char *str);
+size_t String_length(const char *str);
 
 
 /** @brief 求出 ascii 版本的 string 長度
  * @param str 想求長度的 String 物件
  * @return 長度
  */
-size_t String_ascii_length(char *str);
+size_t String_ascii_length(const char *str);
 
 
 /** @brief 求出顯示在螢幕所需要的長度

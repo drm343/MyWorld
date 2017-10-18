@@ -248,15 +248,22 @@ static bool message_process(Camera_Access access,
     }
   }
   else {
-    NSString *box_message = NULL;
     Is_Alive is_alive = ALIVE;
 
-    box_message = [NSString stringWithFormat: @"%@(%@) 攻擊 %@(%@)，造成 1 點傷害",
-                  current->base->name,
-                  character.get_relation_string(current),
-                  npc->base->name,
-                  character.get_relation_string(npc)];
-    message_box.add(box_access, box_message);
+    char *format = "%s(%s) 攻擊 %s(%s),造成 1 點傷害";
+    int counter = snprintf(NULL, 0, format,
+        current->base->name,
+        character.get_relation_string(current),
+        npc->base->name,
+        character.get_relation_string(npc));
+
+    char attack_message[counter];
+    snprintf(attack_message, counter + 1, format,
+        current->base->name,
+        character.get_relation_string(current),
+        npc->base->name,
+        character.get_relation_string(npc));
+    message_box.add(box_access, attack_message);
 
     switch (npc->faction) {
       case FACTION_PLAYER:
@@ -278,13 +285,21 @@ static bool message_process(Camera_Access access,
     if (is_alive == DEAD) {
       character.set_style(npc, dead);
 
+      counter = String_ascii_length(npc->base->name);
+
       if (npc->faction == FACTION_PLAYER) {
-        box_message = [NSString stringWithFormat: @"%@ 已死亡，任意按鍵離開遊戲", npc->base->name];
+        format = " 已死亡，任意按鍵離開遊戲";
+        counter = counter + String_ascii_length(format);
       }
       else {
-        box_message = [NSString stringWithFormat: @"%@ 死亡", npc->base->name];
+        format = " 死亡";
+        counter = counter + String_ascii_length(format);
       }
-      message_box.add(box_access, box_message);
+      char death_message[counter];
+      snprintf(death_message, counter + 1, "%s%s",
+          npc->base->name,
+          format);
+      message_box.add(box_access, death_message);
     }
   }
 

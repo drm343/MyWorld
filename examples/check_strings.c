@@ -11,6 +11,7 @@ int main(void) {
   uint32_t a = strings_intern(repo, "hello");
   uint32_t b = strings_intern(repo, "world");
   uint32_t c = strings_intern(repo, "hello");
+  printf("%d %d %d %d\n", a, b, c, strings_count(repo));
 
   const char *hello = strings_lookup_id(repo, a);
   printf("%s\n", hello);

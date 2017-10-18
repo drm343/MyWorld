@@ -25,8 +25,8 @@ static void set_box(Message_Box_Access box_1,
 }
 
 
-static void add_message(Message_Box_Access access, NSString *message) {
-  [access->history addObject: message];
+static void add_message(Message_Box_Access access, char *message) {
+  strings_intern(access->history, message);
 }
 
 
@@ -36,12 +36,13 @@ static void add_message(Message_Box_Access access, NSString *message) {
 static Message_Box_Access message_box_start(void) {
   Message_Box_Access access = calloc(1, sizeof(Message_Box));
   access->box = box_array;
-  access->history = [[[NSMutableArray alloc] init] autorelease];
+  access->history = strings_new();
   return access;
 }
 
 
 static void message_box_stop(Message_Box_Access access) {
+  strings_free(access->history);
   free(access);
 }
 

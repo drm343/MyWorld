@@ -13,7 +13,7 @@ BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
 STD=-std=gnu11
-INCLUDE=-I $(CURREND)/include -I /usr/lib64/gcc/x86_64-slackware-linux/7.2.0/include -I `gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS`
+INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern -I /usr/lib64/gcc/x86_64-slackware-linux/7.2.0/include -I `gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS`
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
 LFLAGS=-L$(OBJ) -lmy_world
 OBJC_FLAGS=-Werror -L `gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES` -fconstant-string-class=NSConstantString -lobjc -lgnustep-base
@@ -27,12 +27,12 @@ DEBUG=
 CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
 
 
-#AUTO_BUILD_DEP := $(OBJ)/object_point.o
 AUTO_BUILD_DEP := $(OBJ)/point_type.o \
 	$(OBJ)/point_access.o \
 	$(OBJ)/rectangle_type.o \
 	$(OBJ)/rectangle_access.o \
 	$(OBJ)/helper_function-strings.o \
+	$(OBJ)/strings-instance.m \
 	$(OBJ)/graphic.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
@@ -43,7 +43,10 @@ AUTO_BUILD_DEP := $(OBJ)/point_type.o \
 	$(OBJ)/graphic-message.o \
 	$(OBJ)/character-pool.o
 
-DEP := $(AUTO_BUILD_DEP)
+LIBSTRINGS := $(OBJ)/block.o \
+	$(OBJ)/strings.o
+
+DEP := $(LIBSTRINGS) $(AUTO_BUILD_DEP)
 
 
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
@@ -68,11 +71,11 @@ $(AUTO_BUILD_TOOLS):
 
 
 strings: $(CHECK_DIR)
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) -I intern intern/block.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/block.o
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) -I intern intern/strings.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/strings.o
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) intern/block.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/block.o
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) intern/strings.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/strings.o
 	ar cr $(OBJ)/libstrings.a $(OBJ)/block.o $(OBJ)/strings.o
 	ranlib $(OBJ)/libstrings.a
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) -I intern examples/check_strings.c $(CFLAGS) -L $(OBJ) -lstrings -o $(BIN)/app
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) examples/check_strings.c $(CFLAGS) -L $(OBJ) -lstrings -o $(BIN)/app
 
 
 examples:
@@ -93,6 +96,10 @@ $(LIB_MY_WORLD): $(DEP)
 
 $(AUTO_BUILD_DEP):
 	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(OBJC_FLAGS) $(SRC)/$(basename $(notdir $@)).m
+
+$(LIBSTRINGS):
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(CFLAGS) $(LFLAGS) intern/$(basename $(notdir $@)).c
+
 
 $(CHECK_DIR):
 	mkdir -p $@

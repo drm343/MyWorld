@@ -3,7 +3,7 @@
 // ------------------------------------
 // Skill API
 // ------------------------------------
-static void set_skill_name(Skill_Access access, NSString *name) {
+static void set_skill_name(Skill_Access access, char *name) {
   access->name = name;
 }
 
@@ -46,7 +46,7 @@ static Skill_Access pool_malloc(Skill_Pool_Access pool_access, Status_Access own
 }
 
 static bool pool_find(Skill_Pool_Access access, Status_Access owner,
-    NSString *name, Skill_Access * result) {
+    char *name, Skill_Access * result) {
   uint8_t count = 0;
   uint8_t used = access->max_size - access->current_size;
   *result = NULL;
@@ -54,8 +54,8 @@ static bool pool_find(Skill_Pool_Access access, Status_Access owner,
   for (count; count < used; count++) {
     *result = &(access->pool[count]);
 
-    if ([(*result)->name isEqualToString: name] == YES
-      && (*result)->owner == owner) {
+    if (((*result)->name == name)
+      && ((*result)->owner == owner)) {
       return true;
     }
   }

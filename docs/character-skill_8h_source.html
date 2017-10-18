@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="struct_skill.html">    8</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_skill.html#a4b93d352d2fca75b34e1b5a50e03f587">    9</a></span>&#160;  NSString *<a class="code" href="struct_skill.html#a4b93d352d2fca75b34e1b5a50e03f587">name</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_skill.html#a5ac083a645d964373f022d03df4849c8">    9</a></span>&#160;  <span class="keywordtype">char</span> *<a class="code" href="struct_skill.html#a5ac083a645d964373f022d03df4849c8">name</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="struct_skill.html#a002d9dd9a754b753d24242eba79167b4">   10</a></span>&#160;  uint8_t <a class="code" href="struct_skill.html#a002d9dd9a754b753d24242eba79167b4">efficacy</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_skill.html#a53d54fd6b3d68b923ee1e7a2be5c9ffa">   11</a></span>&#160;  <a class="code" href="struct_character.html">Status_Access</a> <a class="code" href="struct_skill.html#a53d54fd6b3d68b923ee1e7a2be5c9ffa">owner</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_skill.html#a9597bd41e83fe98fc4d5b8a7387f7ae2">   12</a></span>&#160;  <a class="code" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a> <a class="code" href="struct_skill.html#a9597bd41e83fe98fc4d5b8a7387f7ae2">status</a>;</div>
@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_skill___a_p_i.html">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_skill___a_p_i.html#aeab6b93151e51affe76eaa50cf9478f2">   21</a></span>&#160;  void (*set_name)(<a class="code" href="character-skill_8h.html#a23384531887ef895c534efb2fe1eed9e">Skill_Access</a>, NSString *);</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_skill___a_p_i.html#a85126764a7d0d0aa59ee462cc67e59c6">   21</a></span>&#160;  void (*set_name)(<a class="code" href="character-skill_8h.html#a23384531887ef895c534efb2fe1eed9e">Skill_Access</a>, <span class="keywordtype">char</span> *);</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_skill___a_p_i.html#ae71b01e092b2bf3aa5ad088f7908a2c4">   22</a></span>&#160;  void (*set_efficacy)(<a class="code" href="character-skill_8h.html#a23384531887ef895c534efb2fe1eed9e">Skill_Access</a>, uint8_t);</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_skill___a_p_i.html#ae051dc72b0e6a4616fb0eadeafd139f4">   23</a></span>&#160;  void (*<span class="keyword">remove</span>)(<a class="code" href="character-skill_8h.html#a23384531887ef895c534efb2fe1eed9e">Skill_Access</a>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <a class="code" href="struct_skill___a_p_i.html">Skill_API</a>;</div>
@@ -120,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_skill___pool___a_p_i.html#a1b77fc2a38bdfe1ddb82a7c35c6be9ea">   30</a></span>&#160;  <a class="code" href="character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20">Skill_Pool_Access</a> (*start)(uint8_t);</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_skill___pool___a_p_i.html#acfeb168899dad275055319328bc49801">   31</a></span>&#160;  void (*stop)(<a class="code" href="character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20">Skill_Pool_Access</a>);</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct_skill___pool___a_p_i.html#a7034642f2384e3eb18b7a25cfb126163">   32</a></span>&#160;  <a class="code" href="character-skill_8h.html#a23384531887ef895c534efb2fe1eed9e">Skill_Access</a> (*malloc)(<a class="code" href="character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20">Skill_Pool_Access</a>, <a class="code" href="character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109">Status_Access</a>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_skill___pool___a_p_i.html#a6e7e99e9a13466144a8bd649e1a6ddef">   33</a></span>&#160;  bool (*find)(<a class="code" href="character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20">Skill_Pool_Access</a>, <a class="code" href="character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109">Status_Access</a>, NSString *, <a class="code" href="struct_skill.html">Skill_Access</a> *);</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_skill___pool___a_p_i.html#ad34efc0efcfb0e98f1faaadea7652bae">   33</a></span>&#160;  bool (*find)(<a class="code" href="character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20">Skill_Pool_Access</a>, <a class="code" href="character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109">Status_Access</a>, <span class="keywordtype">char</span> *, <a class="code" href="struct_skill.html">Skill_Access</a> *);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <a class="code" href="struct_skill___pool___a_p_i.html">Skill_Pool_API</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_skill___pool___a_p_i.html">Skill_Pool_API</a> <a class="code" href="character-skill_8h.html#a59ff30a84d369e13e21886781c935fe8">skill_pool</a>;</div>
@@ -130,8 +130,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="ttc" id="struct_skill___a_p_i_html"><div class="ttname"><a href="struct_skill___a_p_i.html">Skill_API</a></div><div class="ttdef"><b>Definition:</b> character-skill.h:20</div></div>
 <div class="ttc" id="character-skill_8h_html_a6e216d645dd4ffb8b351927b3dea3b20"><div class="ttname"><a href="character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20">Skill_Pool_Access</a></div><div class="ttdeci">Skill_Pool * Skill_Pool_Access</div><div class="ttdef"><b>Definition:</b> character-skill.h:17</div></div>
 <div class="ttc" id="character-status_8h_html_ac92a7769b13bc8b69f84f1251ac59109"><div class="ttname"><a href="character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109">Status_Access</a></div><div class="ttdeci">Status * Status_Access</div><div class="ttdef"><b>Definition:</b> character-status.h:35</div></div>
-<div class="ttc" id="struct_skill_html_a4b93d352d2fca75b34e1b5a50e03f587"><div class="ttname"><a href="struct_skill.html#a4b93d352d2fca75b34e1b5a50e03f587">Skill::name</a></div><div class="ttdeci">NSString * name</div><div class="ttdef"><b>Definition:</b> character-skill.h:9</div></div>
 <div class="ttc" id="generic__function_8h_html"><div class="ttname"><a href="generic__function_8h.html">generic_function.h</a></div></div>
+<div class="ttc" id="struct_skill_html_a5ac083a645d964373f022d03df4849c8"><div class="ttname"><a href="struct_skill.html#a5ac083a645d964373f022d03df4849c8">Skill::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> character-skill.h:9</div></div>
 <div class="ttc" id="character-skill_8h_html_a67c933a1eead57732778ffc366896171"><div class="ttname"><a href="character-skill_8h.html#a67c933a1eead57732778ffc366896171">skill</a></div><div class="ttdeci">Skill_API skill</div></div>
 <div class="ttc" id="character-status_8h_html"><div class="ttname"><a href="character-status_8h.html">character-status.h</a></div></div>
 <div class="ttc" id="struct_skill_html"><div class="ttname"><a href="struct_skill.html">Skill</a></div><div class="ttdef"><b>Definition:</b> character-skill.h:8</div></div>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月18日 星期三 23:29:37, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月19日 星期四 02:03:18, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

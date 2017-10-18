@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['race',['race',['../struct_character.html#aa3138a1328cb209a4833602a2c628945',1,'Character']]],
+  ['race',['race',['../struct_character.html#a910b1052b0b286486af6624e24413cdf',1,'Character']]],
   ['real_5fposition',['Real_Position',['../struct_character___base.html#a1680bfe1928e5db9e928c0eecd8803bc',1,'Character_Base']]],
   ['record_5ftype',['RECORD_TYPE',['../ada__style_8h.html#a56121050113db5806899926d45e7a392',1,'ada_style.h']]],
   ['rectangle_2eh',['rectangle.h',['../instance_2rectangle_8h.html',1,'']]],

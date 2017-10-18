@@ -5,7 +5,7 @@ var searchData=
   ['access_5ftype',['ACCESS_TYPE',['../ada__style_8h.html#acd2a0154366edbb107c5dd4b96d3b61c',1,'ada_style.h']]],
   ['action_3a',['action:',['../interface_character___pool.html#a7123b2eeca10ef25ae41b691403824cc',1,'Character_Pool']]],
   ['ada_5fstyle_2eh',['ada_style.h',['../ada__style_8h.html',1,'']]],
-  ['add',['add',['../struct_message___box___a_p_i.html#aac825ed4489fc0a8b385024d3ed539d7',1,'Message_Box_API']]],
+  ['add',['add',['../struct_message___box___a_p_i.html#afe5c8364c24835fac37d23549201a629',1,'Message_Box_API']]],
   ['add_5fally_3a',['add_ally:',['../interface_character___pool.html#a4d8f879d4193ab6325e572eafb0e764a',1,'Character_Pool']]],
   ['add_5fend_5fx_3a',['add_end_x:',['../interface_map___type.html#aa9f60a710d69e5e1a80bce59387003b0',1,'Map_Type']]],
   ['add_5fend_5fx_3aand_5fy_3a',['add_end_x:and_y:',['../interface_map___type.html#ad00936d44d2e38dab54c268a955b2161',1,'Map_Type']]],

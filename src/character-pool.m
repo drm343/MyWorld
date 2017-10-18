@@ -153,8 +153,9 @@ static Character_Base_Access base_pool_malloc(Character_Base_Pool_Access pool_ac
 }
 
 
+/*
 static bool pool_copy(Character_Pool_Type_Access from, Character_Pool_Type_Access to,
-    NSString *name) {
+    char *name) {
   uint8_t count = 0;
   uint8_t used = from->status->max_size - from->status->current_size;
   Status_Access from_status = NULL;
@@ -172,6 +173,7 @@ static bool pool_copy(Character_Pool_Type_Access from, Character_Pool_Type_Acces
   }
   return false;
 }
+*/
 
 
 static bool pool_all_copy(Character_Pool_Type_Access from, Character_Pool_Type_Access to) {
@@ -191,14 +193,14 @@ static bool pool_all_copy(Character_Pool_Type_Access from, Character_Pool_Type_A
 
 
 static Found_Result pool_find(Character_Pool_Type_Access access, Status_Access *npc,
-    NSString *race) {
+    const char *race) {
   uint8_t count = 0;
   uint8_t used = access->status->max_size - access->status->current_size;
 
   for (count; count < used; count++) {
     *npc = &(access->status->pool[count]);
 
-    if ([(*npc)->race isEqualToString: race] == YES) {
+    if ((*npc)->race == race) {
       return FOUND;
     }
   }
@@ -384,8 +386,7 @@ static Message_Type npc_reaction(Status *self, Status_List *enemy_group) {
   if (setting != NULL) {
     int total_counter = config_setting_length(setting);
     int counter;
-    const char *c_value;
-    NSString *value;
+    const char *value;
 
     /* setup npc status with list */
     for (counter = 0; counter < total_counter; counter++) {
@@ -396,16 +397,16 @@ static Message_Type npc_reaction(Status *self, Status_List *enemy_group) {
 
       character.set_style(npc, style_access);
 
-      config_setting_lookup_string(npc_setting, "name", &c_value);
-      value = [NSString  stringWithUTF8String: c_value];
+      config_setting_lookup_string(npc_setting, "name", &value);
+      value = String_Repo_sign_in(value);
       character.set_name(npc, value);
 
-      config_setting_lookup_string(npc_setting, "mark", &c_value);
-      value = [NSString  stringWithUTF8String: c_value];
+      config_setting_lookup_string(npc_setting, "mark", &value);
+      value = String_Repo_sign_in(value);
       character.set_mark(npc, value);
 
-      config_setting_lookup_string(npc_setting, "race", &c_value);
-      value = [NSString  stringWithUTF8String: c_value];
+      config_setting_lookup_string(npc_setting, "race", &value);
+      value = String_Repo_sign_in(value);
       character.set_race(npc, value);
     }
   }
@@ -576,8 +577,8 @@ DONE:
 }
 
 
-- (Status_Access) use_ally: (NSString *) race
-                  with_name: (NSString *) name
+- (Status_Access) use_ally: (const char *) race
+                  with_name: (const char *) name
                   and_map: (Map_Access) map {
   Status_Access npc = [self use_npc: race with_name: name and_map: map];
 
@@ -589,8 +590,8 @@ DONE:
 }
 
 
-- (Status_Access) use_enemy: (NSString *) race
-                  with_name: (NSString *) name
+- (Status_Access) use_enemy: (const char *) race
+                  with_name: (const char *) name
                   and_map: (Map_Access) map {
   Status_Access npc = [self use_npc: race with_name: name and_map: map];
 
@@ -602,8 +603,8 @@ DONE:
 }
 
 
-- (Status_Access) use_neutral: (NSString *) race
-                  with_name: (NSString *) name
+- (Status_Access) use_neutral: (const char *) race
+                  with_name: (const char *) name
                   and_map: (Map_Access) map {
   Status_Access npc = [self use_npc: race with_name: name and_map: map];
 
@@ -615,8 +616,8 @@ DONE:
 }
 
 
-- (Status_Access) use_npc: (NSString *) race
-                  with_name: (NSString *) name
+- (Status_Access) use_npc: (const char *) race
+                  with_name: (const char *) name
                   and_map: (Map_Access) map {
   Status_Access origin_npc = NULL;
   Status_Access npc = NULL;

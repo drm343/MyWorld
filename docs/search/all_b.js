@@ -8,7 +8,7 @@ var searchData=
   ['map_5faccess',['Map_Access',['../map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e',1,'map_system.h']]],
   ['map_5fsystem_2eh',['map_system.h',['../map__system_8h.html',1,'']]],
   ['map_5ftype',['Map_Type',['../interface_map___type.html',1,'']]],
-  ['mark',['Mark',['../struct_character___base.html#a788afe6b7e6ef6059f5a98bce8f44116',1,'Character_Base::Mark()'],['../struct_style.html#a45c6ed086e2a1955a5b334487c59baeb',1,'Style::mark()']]],
+  ['mark',['Mark',['../struct_character___base.html#a788afe6b7e6ef6059f5a98bce8f44116',1,'Character_Base::Mark()'],['../struct_style.html#ace1031a31baef29d4b110f360fe90cf7',1,'Style::mark()']]],
   ['max_5fsize',['max_size',['../struct_status___list.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Status_List::max_size()'],['../struct_status___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Status_Pool::max_size()'],['../struct_style___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Style_Pool::max_size()']]],
   ['max_5fx',['max_x',['../struct_camera___type.html#ad66fbe9a05e38a665bca7c0c8f8aeb95',1,'Camera_Type']]],
   ['max_5fy',['max_y',['../struct_camera___type.html#a0f3bad2e52c06e81c537558cdab93887',1,'Camera_Type']]],

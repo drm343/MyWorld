@@ -9,7 +9,7 @@
 
 
 typedef struct Character_Base {
-  NSString *name;
+  const char *name;
   Style_Access Mark;
   Point_Access Real_Position;
   Point_Access Graph_Position;

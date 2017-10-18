@@ -18,22 +18,22 @@ Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
 Map_Type *map_1;
 Character_Pool *character_pool = NULL;
+struct strings *global_repo = NULL;
 
 
 TTF_Font* USE_FONT = NULL;
 
 void draw_message_box(SDL_Renderer_Access render) {
   SDL_Color white = {255, 255, 255};
-  NSString *item = NULL;
-  const char *text = NULL;
+  const char *item = NULL;
 
-  int current = [box_1->history count];
+  int current = strings_count(box_1->history);
   for (int counter = 0; counter < 5; counter++) {
     if (current >= 1) {
-      item = [box_1->history objectAtIndex: current - 1];
+      item = strings_lookup_id(box_1->history, current);
     }
     else {
-      item = @"";
+      item = "";
     }
 
     current--;
@@ -44,16 +44,15 @@ void draw_message_box(SDL_Renderer_Access render) {
     SDL_Surface* surfaceMessage = NULL;
 
     if (item != NULL) {
-      text = [item UTF8String];
       SDL_Rect box = {
         .x = 0,
         .y = (20 + counter) * 24,
-        .w = String_width_length(text, 24),
+        .w = String_width_length(item, 24),
         .h = 24
       };
 
       surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-          text,
+          item,
           white);
       SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);
       SDL_FreeSurface(surfaceMessage);
@@ -109,7 +108,7 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 
   while (result != NULL) {
     surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-        [result->mark UTF8String],
+        result->mark,
         white);
     result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
 
@@ -118,10 +117,10 @@ Execute_Result init_view(SDL_Renderer_Access render) {
     result = Style_Pool_Interface.next(style_pool, &counter);
   }
 
-  result = Style_Pool_Interface.find(style_pool, @"player");
+  result = Style_Pool_Interface.find(style_pool, "player");
   character.set_style(camera_1->player, result);
 
-  Style_Access dead = Style_Pool_Interface.find(style_pool, @"dead");
+  Style_Access dead = Style_Pool_Interface.find(style_pool, "dead");
   camera.set_dead_style(camera_1, dead);
   return EXECUTE_SUCCESS;
 }
@@ -149,7 +148,7 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
     goto INIT_FAILED;
   }
   Status_Access Player = [character_pool use_player];
-  character.set_name(Player, @"雜魚");
+  character.set_name(Player, "雜魚");
   camera.set_player(camera_1, Player);
 
   result = setup_style(init_cfg);
@@ -161,17 +160,17 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
   [character_pool parse_npc_config: npc_cfg with_style: style_pool];
 
   camera.set_map(camera_1, map_1);
-  [character_pool use_enemy: @"goblin"
-                  with_name: @"g 1"
+  [character_pool use_enemy: "goblin"
+                  with_name: "g 1"
                     and_map: camera_1->map];
-  [character_pool use_enemy: @"goblin"
-                  with_name: @"g 2"
+  [character_pool use_enemy: "goblin"
+                  with_name: "g 2"
                     and_map: camera_1->map];
-  [character_pool use_neutral: @"villager"
-                    with_name: @"v 1"
+  [character_pool use_neutral: "villager"
+                    with_name: "v 1"
                       and_map: camera_1->map];
-  [character_pool use_neutral: @"villager"
-                    with_name: @"v 2"
+  [character_pool use_neutral: "villager"
+                    with_name: "v 2"
                       and_map: camera_1->map];
 
   win = SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
@@ -228,6 +227,10 @@ DONE:
 
 
 int main(int argc, char *argv[]) {
+  global_repo = strings_new();
+  String_Repo_change(global_repo);
+
+  // 求出執行檔所在位置，根據此位置求出 root_dir
   char execution_path[1024];
   char *exist;
   exist = realpath(argv[0], execution_path);
@@ -244,8 +247,9 @@ int main(int argc, char *argv[]) {
 
   char *root_dir = dirname(dirname(exist));
   int counter = String_ascii_length(root_dir);
-  int total = counter + String_ascii_length(init_cfg_path);
 
+  // 在 Stack 分配固定長度的空間來初始化字串
+  int total = counter + String_ascii_length(init_cfg_path);
   char init_cfg[total];
   snprintf(init_cfg, total + 1, "%s%s", root_dir, init_cfg_path);
 
@@ -259,6 +263,5 @@ int main(int argc, char *argv[]) {
   // 傳遞 drain 訊息給自動釋放池物件
   [pool drain];
 
-  // 程式結束，回傳整數 0 給作業系統
-  return 0;
+  strings_free(global_repo);
 }

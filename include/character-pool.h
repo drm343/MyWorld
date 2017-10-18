@@ -9,6 +9,7 @@
 #include "container/Status_List.h"
 #include "map_system.h"
 #include "instance/rectangle.h"
+#include "instance/strings.h"
 
 
 typedef enum {
@@ -55,18 +56,18 @@ typedef Character_Pool_Type * Character_Pool_Type_Access;
 - (Status_Access) sign_in;
 - (Found_Result) find_character: (Status_Access *) npc with_position: (Point_Access) point;
 - (id) calculate_graph_position: (Rectangle_Access) rectangle;
-- (Status_Access) use_npc: (NSString *) race with_name: (NSString *) name and_map: (Map_Access) map;
+- (Status_Access) use_npc: (const char *) race with_name: (const char *) name and_map: (Map_Access) map;
 
 - (id) set_ally: (uint8_t) max_size;
-- (Status_Access) use_ally: (NSString *) race with_name: (NSString *) name and_map: (Map_Access) map;
+- (Status_Access) use_ally: (const char *) race with_name: (const char *) name and_map: (Map_Access) map;
 - (id) add_ally: (Status_Access) npc;
 
 - (id) set_enemy: (uint8_t) max_size;
-- (Status_Access) use_enemy: (NSString *) race with_name: (NSString *) name and_map: (Map_Access) map;
+- (Status_Access) use_enemy: (const char *) race with_name: (const char *) name and_map: (Map_Access) map;
 - (id) add_enemy: (Status_Access) npc;
 
 - (id) set_neutral: (uint8_t) max_size;
-- (Status_Access) use_neutral: (NSString *) race with_name: (NSString *) name and_map: (Map_Access) map;
+- (Status_Access) use_neutral: (const char *) race with_name: (const char *) name and_map: (Map_Access) map;
 - (id) add_neutral: (Status_Access) npc;
 
 - (Status_Access) use_player;

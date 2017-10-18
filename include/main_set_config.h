@@ -3,9 +3,7 @@ const char *CONF_PATH = NULL;
 int WIDTH = 800;
 int HEIGHT = 600;
 
-NSString *OBJC_FONT_FAMILY = NULL;
 const char *FONT_FAMILY = NULL;
-NSString *OBJC_GAME_TITLE = NULL;
 const char *GAME_TITLE = NULL;
 
 
@@ -13,19 +11,19 @@ Style_Pool_Access style_pool = NULL;
 
 
 void setup_window(config_setting_t **setting) {
-  const char *font_family;
-  const char *title;
+  const char *tmp;
 
   config_setting_lookup_int(*setting, "width", &WIDTH);
   config_setting_lookup_int(*setting, "height", &HEIGHT);
 
-  config_setting_lookup_string(*setting, "font-family", &font_family);
-  OBJC_FONT_FAMILY = [NSString stringWithFormat: @"%s%s", CONF_PATH, font_family];
-  FONT_FAMILY = [OBJC_FONT_FAMILY UTF8String];
+  config_setting_lookup_string(*setting, "font-family", &tmp);
+  int counter = snprintf(NULL, 0, "%s%s", CONF_PATH, tmp);
+  char font_family[counter];
+  snprintf(font_family, counter + 1, "%s%s", CONF_PATH, tmp);
+  FONT_FAMILY = String_Repo_sign_in(font_family);
 
-  config_setting_lookup_string(*setting, "title", &title);
-  OBJC_GAME_TITLE = [NSString stringWithUTF8String: title];
-  GAME_TITLE = [OBJC_GAME_TITLE UTF8String];
+  config_setting_lookup_string(*setting, "title", &tmp);
+  GAME_TITLE = String_Repo_sign_in(tmp);
 }
 
 
@@ -33,22 +31,22 @@ void setup_window(config_setting_t **setting) {
 void setup_mark(config_setting_t **setting) {
   const char *player;
   const char *dead;
-  NSString *key = NULL;
-  NSString *item = NULL;
+  const char *key = NULL;
+  const char *item = NULL;
   Style_Access style_access = NULL;
   size_t len;
 
   style_access = Style_Pool_Interface.malloc(style_pool);
-  style_access->name = @"player";
+  style_access->name = "player";
 
   config_setting_lookup_string(*setting, "player", &player);
-  style_access->mark = [NSString stringWithUTF8String: player];
+  style_access->mark = String_Repo_sign_in(player);
 
   style_access = Style_Pool_Interface.malloc(style_pool);
-  style_access->name = @"dead";
+  style_access->name = "dead";
 
   config_setting_lookup_string(*setting, "dead", &dead);
-  style_access->mark = [NSString stringWithUTF8String: dead];
+  style_access->mark = String_Repo_sign_in(dead);
 }
 
 // Default Execute_Result value is EXECUTE_FAILED.

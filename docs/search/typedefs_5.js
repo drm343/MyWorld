@@ -8,7 +8,8 @@ var searchData=
   ['status_5fitem',['Status_Item',['../_status___pool_8h.html#a5818280a139f59599d5d234372b88282',1,'Status_Pool.h']]],
   ['status_5fnode',['Status_Node',['../_status___list_8h.html#a58e07211320796ecc78fb380e3b0310c',1,'Status_List.h']]],
   ['status_5fpool_5faccess',['Status_Pool_Access',['../character-pool_8h.html#acca027566f2600e224d19503496965e9',1,'character-pool.h']]],
-  ['string_5faccess',['String_Access',['../graphic-message_8h.html#a136239131e53d4617ae6e7c21797be06',1,'graphic-message.h']]],
+  ['string_5faccess',['String_Access',['../graphic-message_8h.html#a0c313c4952cb30f3a37ecb77e40f2a16',1,'graphic-message.h']]],
+  ['string_5fintern',['String_Intern',['../helper__function_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562',1,'strings.h']]],
   ['style_5faccess',['Style_Access',['../graphic_8h.html#af50ddf12d464cb9d156ecde0fc80cb1c',1,'graphic.h']]],
   ['style_5fpool_5faccess',['Style_Pool_Access',['../graphic_8h.html#a831461837be60b6f95510a35a6dafb9e',1,'graphic.h']]]
 ];

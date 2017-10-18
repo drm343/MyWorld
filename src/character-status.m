@@ -79,11 +79,11 @@ static Is_Alive attack_character(Status_Access from, Status_Access to) {
 // -----------------------------------------
 // GET or SET BASE VALUE
 // -----------------------------------------
-static void set_base_name(Status_Access access, NSString *name) {
+static void set_base_name(Status_Access access, const char *name) {
   access->base->name = name;
 }
 
-static void set_race(Status_Access access, NSString *race) {
+static void set_race(Status_Access access, const char *race) {
   access->race = race;
 }
 
@@ -91,7 +91,7 @@ static void set_base_style(Status_Access access, Style_Access style) {
   access->base->Mark = style;
 }
 
-static void set_base_mark(Status_Access access, NSString *mark) {
+static void set_base_mark(Status_Access access, const char *mark) {
   access->base->Mark->mark = mark;
 }
 
@@ -126,21 +126,21 @@ static Relation_Type get_relation(Status_Access access) {
   return access->faction;
 }
 
-static NSString *get_relation_string(Status_Access access) {
-  NSString *result;
+static char *get_relation_string(Status_Access access) {
+  char *result;
 
   switch (access->faction) {
   case FACTION_ALLY:
-    result = @"ally";
+    result = "ally";
     break;
   case FACTION_ENEMY:
-    result = @"enemy";
+    result = "enemy";
     break;
   case FACTION_NEUTRAL:
-    result = @"neutral";
+    result = "neutral";
     break;
   default:
-    result = @"player";
+    result = "player";
     break;
   }
   return result;

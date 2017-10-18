@@ -18,8 +18,8 @@ typedef struct {
 
 
 typedef struct {
-  NSString *name;
-  NSString *mark;
+  const char *name;
+  const char *mark;
   SDL_Texture_Access access;
 } Style;
 typedef Style * Style_Access;
@@ -35,7 +35,7 @@ typedef Style_Pool * Style_Pool_Access;
 
 typedef struct {
   Style_Access (*malloc)(Style_Pool_Access);
-  Style_Access (*find)(Style_Pool_Access, NSString *);
+  Style_Access (*find)(Style_Pool_Access, const char *);
   Style_Access (*next)(Style_Pool_Access, uint8_t *);
   void (*gc) (Style_Pool_Access);
   Style_Pool_Access (*start)(int);
