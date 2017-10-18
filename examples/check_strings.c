@@ -4,6 +4,8 @@
 
 int main(void) {
   char buffer[20];
+  const char *a_s = NULL;
+  const char *b_s = NULL;
 
   struct strings *repo = strings_new();
   uint32_t a = strings_intern(repo, "hello");
@@ -14,7 +16,9 @@ int main(void) {
   printf("%s\n", hello);
   hello = strings_lookup_id(repo, b);
   printf("%s\n", hello);
-  sprintf(buffer, "%s %s", strings_lookup_id(repo, a), strings_lookup_id(repo, b));
+  a_s = strings_lookup_id(repo, a);
+  b_s = strings_lookup_id(repo, b);
+  sprintf(buffer, "%s %s", a_s, b_s);
   printf("%s\n", buffer);
   strings_free(repo);
 }
