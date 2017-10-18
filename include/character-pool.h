@@ -4,7 +4,7 @@
 #include <libconfig.h>
 
 #include "character-skill.h"
-#include "helper_function.h"
+#include "helper_function/generic_function.h"
 
 #include "container/Status_List.h"
 #include "map_system.h"

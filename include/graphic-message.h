@@ -1,7 +1,7 @@
 #ifndef HEADER_GRAPHIC_MESSAGE
 #define HEADER_GRAPHIC_MESSAGE
 #include "graphic.h"
-#include "string_helper.h"
+#include "helper_function/strings.h"
 
 typedef NSString * String_Access;
 typedef SDL_Point * Message_Box_Points;

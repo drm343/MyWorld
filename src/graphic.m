@@ -3,7 +3,7 @@
 #include <string.h>
 
 #include "graphic.h"
-#include "helper_function.h"
+#include "helper_function/generic_function.h"
 
 
 #define SELF(name) GRAPHIC_##name

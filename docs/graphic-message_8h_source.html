@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <a href="graphic-message_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_GRAPHIC_MESSAGE</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_GRAPHIC_MESSAGE</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graphic_8h.html">graphic.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string__helper_8h.html">string_helper.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="strings_8h.html">helper_function/strings.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="graphic-message_8h.html#a136239131e53d4617ae6e7c21797be06">    6</a></span>&#160;<span class="keyword">typedef</span> NSString * <a class="code" href="graphic-message_8h.html#a136239131e53d4617ae6e7c21797be06">String_Access</a>;</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00">    7</a></span>&#160;<span class="keyword">typedef</span> SDL_Point * <a class="code" href="graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00">Message_Box_Points</a>;</div>
@@ -112,6 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="struct_message___box___a_p_i.html">Message_Box_API</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_message___box___a_p_i.html">Message_Box_API</a> <a class="code" href="graphic-message_8h.html#a0bb37f13e049458b238a88279910be23">message_box</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="strings_8h_html"><div class="ttname"><a href="strings_8h.html">strings.h</a></div></div>
 <div class="ttc" id="struct_message___box_html_ad66c03c008287120bf4ab1fb0c45cc99"><div class="ttname"><a href="struct_message___box.html#ad66c03c008287120bf4ab1fb0c45cc99">Message_Box::grid_heigth</a></div><div class="ttdeci">int8_t grid_heigth</div><div class="ttdef"><b>Definition:</b> graphic-message.h:10</div></div>
 <div class="ttc" id="struct_message___box_html_a9731b6d64fecd6a78ef9c9cfafc9a810"><div class="ttname"><a href="struct_message___box.html#a9731b6d64fecd6a78ef9c9cfafc9a810">Message_Box::grid_width</a></div><div class="ttdeci">int8_t grid_width</div><div class="ttdef"><b>Definition:</b> graphic-message.h:9</div></div>
 <div class="ttc" id="struct_message___box_html"><div class="ttname"><a href="struct_message___box.html">Message_Box</a></div><div class="ttdef"><b>Definition:</b> graphic-message.h:8</div></div>
@@ -121,13 +122,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="ttc" id="graphic-message_8h_html_ad9811a1699f493218618303ddb9fbd00"><div class="ttname"><a href="graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00">Message_Box_Points</a></div><div class="ttdeci">SDL_Point * Message_Box_Points</div><div class="ttdef"><b>Definition:</b> graphic-message.h:7</div></div>
 <div class="ttc" id="struct_message___box_html_a4c1750981301670ed38376846fd4aa39"><div class="ttname"><a href="struct_message___box.html#a4c1750981301670ed38376846fd4aa39">Message_Box::history</a></div><div class="ttdeci">NSMutableArray * history</div><div class="ttdef"><b>Definition:</b> graphic-message.h:12</div></div>
 <div class="ttc" id="struct_message___box_html_ab68b1b30cb346ecae0c6c8fc38c62383"><div class="ttname"><a href="struct_message___box.html#ab68b1b30cb346ecae0c6c8fc38c62383">Message_Box::box</a></div><div class="ttdeci">Message_Box_Points box</div><div class="ttdef"><b>Definition:</b> graphic-message.h:11</div></div>
-<div class="ttc" id="string__helper_8h_html"><div class="ttname"><a href="string__helper_8h.html">string_helper.h</a></div></div>
 <div class="ttc" id="graphic-message_8h_html_a0bb37f13e049458b238a88279910be23"><div class="ttname"><a href="graphic-message_8h.html#a0bb37f13e049458b238a88279910be23">message_box</a></div><div class="ttdeci">Message_Box_API message_box</div></div>
 <div class="ttc" id="struct_message___box___a_p_i_html"><div class="ttname"><a href="struct_message___box___a_p_i.html">Message_Box_API</a></div><div class="ttdef"><b>Definition:</b> graphic-message.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月18日 星期三 20:40:48, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月18日 星期三 23:29:37, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

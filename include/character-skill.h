@@ -2,7 +2,7 @@
 #define HEADER_CHARACTER_SKILL
 
 #include "character-status.h"
-#include "helper_function.h"
+#include "helper_function/generic_function.h"
 
 
 typedef struct {

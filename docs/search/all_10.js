@@ -23,6 +23,5 @@ var searchData=
   ['relation_5fneutral',['RELATION_NEUTRAL',['../character-status_8h.html#a418c1dcd8805ec9527985a86e0d494d7a9c23995f21a34f53560c887d7f4ab4f2',1,'character-status.h']]],
   ['relation_5ftype',['Relation_Type',['../character-status_8h.html#a418c1dcd8805ec9527985a86e0d494d7',1,'character-status.h']]],
   ['remove',['remove',['../struct_skill___a_p_i.html#ae051dc72b0e6a4616fb0eadeafd139f4',1,'Skill_API']]],
-  ['remove_5flast',['remove_last',['../struct_string___a_p_i.html#a4f5caa4903cde980f732e6270855d71b',1,'String_API']]],
   ['right',['RIGHT',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160aec8379af7490bb9eaaf579cf17876f38',1,'message_base.h']]]
 ];

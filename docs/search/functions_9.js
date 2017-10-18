@@ -18,5 +18,8 @@ var searchData=
   ['status_5flist_5fstop',['Status_List_stop',['../_status___list_8h.html#ab560b43ba0116e8abb330541d1da3567',1,'Status_List.h']]],
   ['status_5fpool_5fmalloc',['Status_Pool_malloc',['../_status___pool_8h.html#a80e69e34f21810bf4ef9277df6d17f22',1,'Status_Pool.h']]],
   ['status_5fpool_5fstart',['Status_Pool_start',['../_status___pool_8h.html#a3deb92152f26b151472b1e93576f6f0a',1,'Status_Pool.h']]],
-  ['status_5fpool_5fstop',['Status_Pool_stop',['../_status___pool_8h.html#a09691fb602fa561e06fffe3e8e4cd893',1,'Status_Pool.h']]]
+  ['status_5fpool_5fstop',['Status_Pool_stop',['../_status___pool_8h.html#a09691fb602fa561e06fffe3e8e4cd893',1,'Status_Pool.h']]],
+  ['string_5fascii_5flength',['String_ascii_length',['../strings_8h.html#abaf674b358d71bbb7938cb71640eef57',1,'strings.h']]],
+  ['string_5flength',['String_length',['../strings_8h.html#ae87399903ad8b43110ca78c7db763622',1,'strings.h']]],
+  ['string_5fwidth_5flength',['String_width_length',['../strings_8h.html#a3466c562ebd9f656dab84e8e347e507d',1,'strings.h']]]
 ];

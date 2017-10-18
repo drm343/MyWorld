@@ -7,7 +7,6 @@ var searchData=
   ['conf_5fpath',['CONF_PATH',['../main__set__config_8h.html#a4bb0d0741a12449e56d19d1202214ae6',1,'main_set_config.h']]],
   ['content',['content',['../struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Node::content()'],['../struct___status___item.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Item::content()']]],
   ['copy',['copy',['../struct_character___a_p_i.html#a715ae4b96c252967ee78c7e7d43032c3',1,'Character_API::copy()'],['../struct_character___base.html#a6659da6b1f1a5b213fbec6dfdd16fa92',1,'Character_Base::copy()']]],
-  ['count_5fwidth',['count_width',['../struct_string___a_p_i.html#a1b45d7c7e2a511c04dc0e6e5e11080d1',1,'String_API']]],
   ['crossable',['crossable',['../struct_character___base.html#a39b1af64a01fe21b7484882119105129',1,'Character_Base']]],
   ['current_5fsize',['current_size',['../struct_style___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Style_Pool']]]
 ];

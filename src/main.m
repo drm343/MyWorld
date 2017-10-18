@@ -1,4 +1,3 @@
-// 引入 Foundation.h
 #import <Foundation/Foundation.h>
 
 #include "main.h"
@@ -10,10 +9,10 @@ typedef SDL_Event * SDL_Event_Access;
 
 int GRID_LENGTH = 24;
 SDL_Rect position = {
-		     .x = 0,
-		     .y = 0,
-		     .w = 24,
-		     .h = 24
+  .x = 0,
+  .y = 0,
+  .w = 24,
+  .h = 24
 };
 Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
@@ -47,15 +46,15 @@ void draw_message_box(SDL_Renderer_Access render) {
     if (item != NULL) {
       text = [item UTF8String];
       SDL_Rect box = {
-		      .x = 0,
-		      .y = (20 + counter) * 24,
-		      .w = string.count_width(text, 24),
-		      .h = 24
+        .x = 0,
+        .y = (20 + counter) * 24,
+        .w = String_width_length(text, 24),
+        .h = 24
       };
 
       surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-              text,
-					    white);
+          text,
+          white);
       SDL_Texture_Access access = SDL_CreateTextureFromSurface(render, surfaceMessage);
       SDL_FreeSurface(surfaceMessage);
 
@@ -81,12 +80,12 @@ void draw_view(SDL_Renderer_Access render) {
 
     if (npc->base->status == IN_USE) {
       if (!Point_Type_eq(
-        npc->base->Real_Position,
-        camera_1->player->base->Real_Position)) {
-  Point_Access_change(npc->base->Graph_Position);
-	rect.x = GRID_LENGTH * Point_Access_x();
-	rect.y = GRID_LENGTH * Point_Access_y();
-	SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
+            npc->base->Real_Position,
+            camera_1->player->base->Real_Position)) {
+        Point_Access_change(npc->base->Graph_Position);
+        rect.x = GRID_LENGTH * Point_Access_x();
+        rect.y = GRID_LENGTH * Point_Access_y();
+        SDL_RenderCopy(render, npc->base->Mark->access, NULL, &(rect));
       }
     }
   }
@@ -110,8 +109,8 @@ Execute_Result init_view(SDL_Renderer_Access render) {
 
   while (result != NULL) {
     surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-					  [result->mark UTF8String],
-					  white);
+        [result->mark UTF8String],
+        white);
     result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
 
     SDL_FreeSurface(surfaceMessage);
@@ -163,17 +162,17 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg) {
 
   camera.set_map(camera_1, map_1);
   [character_pool use_enemy: @"goblin"
-   with_name: @"g 1"
-   and_map: camera_1->map];
+                  with_name: @"g 1"
+                    and_map: camera_1->map];
   [character_pool use_enemy: @"goblin"
-   with_name: @"g 2"
-   and_map: camera_1->map];
+                  with_name: @"g 2"
+                    and_map: camera_1->map];
   [character_pool use_neutral: @"villager"
-   with_name: @"v 1"
-   and_map: camera_1->map];
+                    with_name: @"v 1"
+                      and_map: camera_1->map];
   [character_pool use_neutral: @"villager"
-   with_name: @"v 2"
-   and_map: camera_1->map];
+                    with_name: @"v 2"
+                      and_map: camera_1->map];
 
   win = SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
   render = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
@@ -227,30 +226,39 @@ DONE:
   Style_Pool_Interface.stop(style_pool);
 }
 
-// 定義 main() 函數
+
 int main(int argc, char *argv[]) {
-    // 建立自動釋放池物件， alloc 為配置記憶體區域， init 為初始化物件
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    map_1 = [Map_Type create];
-    [[map_1 init_start: 0 and: 0] init_end: 40 and: 30];
+  char execution_path[1024];
+  char *exist;
+  exist = realpath(argv[0], execution_path);
+
+  // 建立自動釋放池物件， alloc 為配置記憶體區域， init 為初始化物件
+  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+  map_1 = [Map_Type create];
+  [[map_1 init_start: 0 and: 0] init_end: 40 and: 30];
 
 
-    // 建立 config file 的路徑
-    NSString *root_dir = [[[[[NSBundle mainBundle] bundlePath]
-      stringByDeletingLastPathComponent]
-      stringByDeletingLastPathComponent]
-      stringByDeletingLastPathComponent];
-    NSString *init_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/init.cfg"];
-    NSString *npc_cfg = [NSString stringWithFormat:@"%@/%@", root_dir, @"config/npc.cfg"];
+  // 建立 config file 的路徑
+  char *init_cfg_path = "/config/init.cfg";
+  char *npc_cfg_path = "/config/npc.cfg";
 
-    submain(
-        [root_dir UTF8String],
-        [init_cfg UTF8String],
-        [npc_cfg UTF8String]);
+  char *root_dir = dirname(dirname(exist));
+  int counter = String_ascii_length(root_dir);
+  int total = counter + String_ascii_length(init_cfg_path);
 
-    // 傳遞 drain 訊息給自動釋放池物件
-    [pool drain];
+  char init_cfg[total];
+  snprintf(init_cfg, total + 1, "%s%s", root_dir, init_cfg_path);
 
-    // 程式結束，回傳整數 0 給作業系統
-    return 0;
+  total = counter + String_ascii_length(npc_cfg_path);
+  char npc_cfg[total];
+  snprintf(npc_cfg, total + 1, "%s%s", root_dir, npc_cfg_path);
+
+  submain(root_dir, init_cfg, npc_cfg);
+
+
+  // 傳遞 drain 訊息給自動釋放池物件
+  [pool drain];
+
+  // 程式結束，回傳整數 0 給作業系統
+  return 0;
 }
