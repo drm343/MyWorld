@@ -99,14 +99,14 @@ Status_List.h的包含相依圖:</div>
 <div class="dyncontent">
 <div class="center"><img src="_status___list_8h__incl.png" border="0" usemap="#include_2container_2_status___list_8h" alt=""/></div>
 <map name="include_2container_2_status___list_8h" id="include_2container_2_status___list_8h">
-<area shape="rect" id="node3" href="character-status_8h.html" title="character&#45;status.h" alt="" coords="75,95,202,121"/><area shape="rect" id="node4" href="character_8h.html" title="character.h" alt="" coords="250,169,337,196"/><area shape="rect" id="node12" href="message__base_8h.html" title="message_base.h" alt="" coords="78,169,199,196"/><area shape="rect" id="node6" href="base__type_8h.html" title="base_type.h" alt="" coords="43,319,136,345"/><area shape="rect" id="node7" href="graphic_8h.html" title="graphic.h" alt="" coords="256,244,331,271"/><area shape="rect" id="node11" href="point_8h.html" title="object/point.h" alt="" coords="403,244,503,271"/></map>
+<area shape="rect" id="node3" href="character-status_8h.html" title="character&#45;status.h" alt="" coords="247,95,374,121"/><area shape="rect" id="node4" href="character_8h.html" title="character.h" alt="" coords="517,169,603,196"/><area shape="rect" id="node15" href="message__base_8h.html" title="message_base.h" alt="" coords="250,169,371,196"/><area shape="rect" id="node6" href="graphic_8h.html" title="graphic.h" alt="" coords="344,244,419,271"/><area shape="rect" id="node11" href="instance_2point_8h.html" title="instance/point.h" alt="" coords="659,244,773,271"/><area shape="rect" id="node9" href="base__type_8h.html" title="base_type.h" alt="" coords="43,319,136,345"/><area shape="rect" id="node12" href="object_2point_8h.html" title="object/point.h" alt="" coords="662,319,762,345"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 本圖顯示出哪些檔案直接或間接include本檔 :</div>
 <div class="dyncontent">
 <div class="center"><img src="_status___list_8h__dep__incl.png" border="0" usemap="#include_2container_2_status___list_8hdep" alt=""/></div>
 <map name="include_2container_2_status___list_8hdep" id="include_2container_2_status___list_8hdep">
-<area shape="rect" id="node2" href="status__list_8m.html" title="src/status_list.m" alt="" coords="33,95,151,121"/><area shape="rect" id="node3" href="character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="175,95,335,121"/><area shape="rect" id="node4" href="character-pool_8m.html" title="src/character&#45;pool.m" alt="" coords="5,169,147,196"/><area shape="rect" id="node5" href="graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="171,169,338,196"/><area shape="rect" id="node7" href="main_8h.html" title="include/main.h" alt="" coords="323,244,429,271"/><area shape="rect" id="node6" href="graphic-camera_8m.html" title="src/graphic&#45;camera.m" alt="" coords="150,244,298,271"/><area shape="rect" id="node8" href="main_8m.html" title="src/main.m" alt="" coords="333,319,419,345"/></map>
+<area shape="rect" id="node2" href="character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="9,95,169,121"/><area shape="rect" id="node3" href="graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="5,169,172,196"/><area shape="rect" id="node4" href="main_8h.html" title="include/main.h" alt="" coords="35,244,142,271"/></map>
 </div>
 </div>
 <p><a href="_status___list_8h_source.html">查看本檔案的原始碼.</a></p>
@@ -156,26 +156,32 @@ Status_List.h的包含相依圖:</div>
 </div>
 </div>
 <h2 class="groupheader">函式說明文件</h2>
-<a class="anchor" id="a26ca7929b358046c4d39113e7b6996bd"></a>
+<a class="anchor" id="a16687a54b6e438ac05e1fae28829c5e1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Status_List_copy_all </td>
+          <td class="memname"><a class="el" href="struct_status___list.html">Status_List</a>* Status_List_start </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>max_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab560b43ba0116e8abb330541d1da3567"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Status_List_stop </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_status___list.html">Status_List</a> *&#160;</td>
-          <td class="paramname"><em>from</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>access</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_status___list.html">Status_List</a> *&#160;</td>
-          <td class="paramname"><em>to</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -192,32 +198,6 @@ Status_List.h的包含相依圖:</div>
           <td class="paramtype"><a class="el" href="struct_status___list.html">Status_List</a> *&#160;</td>
           <td class="paramname"><em>access</em></td><td>)</td>
           <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8c82df1e4913e1373199c71d3b3a2c49"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="character-status_8h.html#aeabbbd9c500d08b0a792a839100fad12">Status</a>* Status_List_get_by_index </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_status___list.html">Status_List</a> *&#160;</td>
-          <td class="paramname"><em>access</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -276,32 +256,52 @@ Status_List.h的包含相依圖:</div>
 
 </div>
 </div>
-<a class="anchor" id="a16687a54b6e438ac05e1fae28829c5e1"></a>
+<a class="anchor" id="a8c82df1e4913e1373199c71d3b3a2c49"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_status___list.html">Status_List</a>* Status_List_start </td>
+          <td class="memname"><a class="el" href="character-status_8h.html#aeabbbd9c500d08b0a792a839100fad12">Status</a>* Status_List_get_by_index </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>max_size</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_status___list.html">Status_List</a> *&#160;</td>
+          <td class="paramname"><em>access</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ab560b43ba0116e8abb330541d1da3567"></a>
+<a class="anchor" id="a26ca7929b358046c4d39113e7b6996bd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Status_List_stop </td>
+          <td class="memname">void Status_List_copy_all </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_status___list.html">Status_List</a> *&#160;</td>
-          <td class="paramname"><em>access</em></td><td>)</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct_status___list.html">Status_List</a> *&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -311,7 +311,7 @@ Status_List.h的包含相依圖:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月18日 星期三 00:56:35, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月18日 星期三 20:40:48, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

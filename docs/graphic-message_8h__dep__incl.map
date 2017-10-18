@@ -1,7 +1,4 @@
 <map id="include/graphic&#45;message.h" name="include/graphic&#45;message.h">
-<area shape="rect" id="node2" href="$graphic-message_8m.html" title="src/graphic&#45;message.m" alt="" coords="5,80,164,107"/>
-<area shape="rect" id="node3" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="188,80,355,107"/>
-<area shape="rect" id="node4" href="$graphic-camera_8m.html" title="src/graphic&#45;camera.m" alt="" coords="121,155,269,181"/>
-<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="294,155,401,181"/>
-<area shape="rect" id="node6" href="$main_8m.html" title="src/main.m" alt="" coords="304,229,391,256"/>
+<area shape="rect" id="node2" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="11,80,177,107"/>
+<area shape="rect" id="node3" href="$main_8h.html" title="include/main.h" alt="" coords="41,155,147,181"/>
 </map>

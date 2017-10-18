@@ -1,7 +1,7 @@
 <map id="Camera_Type" name="Camera_Type">
-<area shape="rect" id="node2" href="$class_point___type.html" title="Point_Type" alt="" coords="186,81,274,108"/>
-<area shape="rect" id="node6" href="$struct_character___base.html" title="Character_Base" alt="" coords="59,185,175,212"/>
-<area shape="rect" id="node7" href="$class_map___type.html" title="Map_Type" alt="" coords="263,185,346,212"/>
-<area shape="rect" id="node4" href="$struct_style.html" title="Style" alt="" coords="5,81,57,108"/>
-<area shape="rect" id="node5" href="$struct_character.html" title="Character" alt="" coords="101,304,180,331"/>
+<area shape="rect" id="node2" href="$struct_point___type.html" title="Point_Type" alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node5" href="$struct_character___base.html" title="Character_Base" alt="" coords="39,109,155,136"/>
+<area shape="rect" id="node6" href="$interface_map___type.html" title="Map_Type" alt="" coords="180,109,263,136"/>
+<area shape="rect" id="node3" href="$struct_style.html" title="Style" alt="" coords="283,5,335,32"/>
+<area shape="rect" id="node4" href="$struct_character.html" title="Character" alt="" coords="79,228,158,255"/>
 </map>

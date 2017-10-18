@@ -7,6 +7,5 @@ var searchData=
   ['get_5frelation_5fstring',['get_relation_string',['../struct_character___a_p_i.html#a0cda54b0a3501812c87909654fdbf63c',1,'Character_API']]],
   ['graph_5fposition',['Graph_Position',['../struct_character___base.html#af18c67394b93c3a701147e0e95d7486a',1,'Character_Base']]],
   ['grid_5fheigth',['grid_heigth',['../struct_message___box.html#ad66c03c008287120bf4ab1fb0c45cc99',1,'Message_Box']]],
-  ['grid_5flength',['GRID_LENGTH',['../main_8m.html#a68e9eb79296c8b620f039397d869e121',1,'main.m']]],
   ['grid_5fwidth',['grid_width',['../struct_message___box.html#a9731b6d64fecd6a78ef9c9cfafc9a810',1,'Message_Box']]]
 ];

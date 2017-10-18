@@ -1,5 +1,6 @@
 <map id="include/character.h" name="include/character.h">
-<area shape="rect" id="node3" href="$base__type_8h.html" title="base_type.h" alt="" coords="80,155,173,181"/>
-<area shape="rect" id="node5" href="$graphic_8h.html" title="graphic.h" alt="" coords="208,80,283,107"/>
-<area shape="rect" id="node9" href="$point_8h.html" title="object/point.h" alt="" coords="398,80,498,107"/>
+<area shape="rect" id="node3" href="$graphic_8h.html" title="graphic.h" alt="" coords="260,80,334,107"/>
+<area shape="rect" id="node9" href="$instance_2point_8h.html" title="instance/point.h" alt="" coords="506,80,621,107"/>
+<area shape="rect" id="node6" href="$base__type_8h.html" title="base_type.h" alt="" coords="22,155,116,181"/>
+<area shape="rect" id="node10" href="$object_2point_8h.html" title="object/point.h" alt="" coords="588,155,688,181"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="Skill_Pool_API" name="Skill_Pool_API">
-<area shape="rect" id="node2" href="$struct_skill.html" title="Skill" alt="" coords="86,364,133,391"/>
-<area shape="rect" id="node3" href="$struct_character.html" title="Character" alt="" coords="70,275,149,301"/>
-<area shape="rect" id="node4" href="$struct_character___base.html" title="Character_Base" alt="" coords="51,185,167,212"/>
-<area shape="rect" id="node5" href="$class_point___type.html" title="Point_Type" alt="" coords="5,81,93,108"/>
-<area shape="rect" id="node7" href="$struct_style.html" title="Style" alt="" coords="143,81,195,108"/>
+<area shape="rect" id="node2" href="$struct_skill.html" title="Skill" alt="" coords="86,288,133,315"/>
+<area shape="rect" id="node3" href="$struct_character.html" title="Character" alt="" coords="70,199,149,225"/>
+<area shape="rect" id="node4" href="$struct_character___base.html" title="Character_Base" alt="" coords="51,109,167,136"/>
+<area shape="rect" id="node5" href="$struct_point___type.html" title="Point_Type" alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node6" href="$struct_style.html" title="Style" alt="" coords="143,5,195,32"/>
 </map>

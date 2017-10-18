@@ -1,9 +1,5 @@
 <map id="include/container/Status_List.h" name="include/container/Status_List.h">
-<area shape="rect" id="node2" href="$status__list_8m.html" title="src/status_list.m" alt="" coords="33,95,151,121"/>
-<area shape="rect" id="node3" href="$character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="175,95,335,121"/>
-<area shape="rect" id="node4" href="$character-pool_8m.html" title="src/character&#45;pool.m" alt="" coords="5,169,147,196"/>
-<area shape="rect" id="node5" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="171,169,338,196"/>
-<area shape="rect" id="node7" href="$main_8h.html" title="include/main.h" alt="" coords="323,244,429,271"/>
-<area shape="rect" id="node6" href="$graphic-camera_8m.html" title="src/graphic&#45;camera.m" alt="" coords="150,244,298,271"/>
-<area shape="rect" id="node8" href="$main_8m.html" title="src/main.m" alt="" coords="333,319,419,345"/>
+<area shape="rect" id="node2" href="$character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="9,95,169,121"/>
+<area shape="rect" id="node3" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="5,169,172,196"/>
+<area shape="rect" id="node4" href="$main_8h.html" title="include/main.h" alt="" coords="35,244,142,271"/>
 </map>
