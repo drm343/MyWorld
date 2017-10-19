@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['point_2eh',['point.h',['../instance_2point_8h.html',1,'']]],
-  ['point_2eh',['point.h',['../object_2point_8h.html',1,'']]]
+  ['point_2duse_5fself_2eh',['point-use_self.h',['../point-use__self_8h.html',1,'']]],
+  ['point_2eh',['point.h',['../point_8h.html',1,'']]]
 ];

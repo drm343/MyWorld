@@ -1,14 +1,9 @@
 var searchData=
 [
-  ['set_5fally',['set_ally',['../character__pool_8h.html#a855b9ec4983b29965c164bef8071c5fe',1,'character_pool.h']]],
-  ['set_5fenemy',['set_enemy',['../character__pool_8h.html#a269fcce6d9b94a7faca1f1fd47021956',1,'character_pool.h']]],
-  ['set_5fneutral',['set_neutral',['../character__pool_8h.html#a50633c23d60eedafb23046c7dd93ff1a',1,'character_pool.h']]],
-  ['set_5fprepare',['set_prepare',['../character__pool_8h.html#ab5368a5eaa2ebfcd8b8a51c835b1ad6b',1,'character_pool.h']]],
-  ['set_5fused',['set_used',['../character__pool_8h.html#a57fd6ad466eee8942e313e419865f6fb',1,'character_pool.h']]],
   ['setup_5fmark',['setup_mark',['../main__set__config_8h.html#ae6ad63c22cf04abb77813e184c3b4d52',1,'main_set_config.h']]],
   ['setup_5fstyle',['setup_style',['../main__set__config_8h.html#a34037616a5e1d73d6c5e92f0507ed888',1,'main_set_config.h']]],
   ['setup_5fwindow',['setup_window',['../main__set__config_8h.html#a23e7b035380399d4c5ba41232c69e5b9',1,'main_set_config.h']]],
-  ['sign_5fin',['sign_in',['../character__pool_8h.html#ab4b0068c03103aeac05a821e8725d4e2',1,'character_pool.h']]],
+  ['sign_5fin',['sign_in',['../character__pool-use__self_8h.html#ae22919931129be2de4914cb388c13947',1,'sign_in(void):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a043adf3b76712fbc65133bda210c4e08',1,'sign_in(Character_Pool *access):&#160;character_pool.h']]],
   ['status_5flist_5fcopy_5fall',['Status_List_copy_all',['../_status___list_8h.html#a26ca7929b358046c4d39113e7b6996bd',1,'Status_List.h']]],
   ['status_5flist_5fgc',['Status_List_gc',['../_status___list_8h.html#ae9398edfe72533de105202897d17e0c7',1,'Status_List.h']]],
   ['status_5flist_5fget_5fby_5findex',['Status_List_get_by_index',['../_status___list_8h.html#a8c82df1e4913e1373199c71d3b3a2c49',1,'Status_List.h']]],

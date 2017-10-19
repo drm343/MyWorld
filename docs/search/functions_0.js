@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['action',['action',['../character__pool_8h.html#a77fc1639b6e0c0a799200e5542ebc693',1,'character_pool.h']]],
-  ['add_5fally',['add_ally',['../character__pool_8h.html#af8de8649ab42d988c7443921aec520c7',1,'character_pool.h']]],
-  ['add_5fenemy',['add_enemy',['../character__pool_8h.html#a92bffe65d766d5179098c21186c5ffbd',1,'character_pool.h']]],
-  ['add_5fneutral',['add_neutral',['../character__pool_8h.html#a3565693430eb17498c35d7b9c4cd4ec6',1,'character_pool.h']]],
-  ['attack_5fally_5fby',['attack_ally_by',['../character__pool_8h.html#aad9df271a8210d214f35e53336f9b047',1,'character_pool.h']]],
-  ['attack_5fenemy_5fby',['attack_enemy_by',['../character__pool_8h.html#a36818c97f30ae0e5508c8da640a0d7ae',1,'character_pool.h']]],
-  ['attack_5fneutral_5fby',['attack_neutral_by',['../character__pool_8h.html#a8b2036f29f099711508058085b68b0f4',1,'character_pool.h']]],
-  ['attack_5fplayer_5fby',['attack_player_by',['../character__pool_8h.html#adabd5967722ce7405d34c36eb7e6672f',1,'character_pool.h']]]
+  ['action',['action',['../character__pool-use__self_8h.html#a1c1f7abc7281ec8201543986e03e9e18',1,'action(Status_Access current_character):&#160;character_pool-use_self.h'],['../character__pool_8h.html#ab99f75b900122c3e391c59e5e461b2ba',1,'action(Character_Pool *access, Status_Access current_character):&#160;character_pool.h']]],
+  ['attack_5fally_5fby',['attack_ally_by',['../character__pool-use__self_8h.html#aa404cffcef36cf544c01e57925db5305',1,'attack_ally_by(Status_Access current, Status_Access target):&#160;character_pool-use_self.h'],['../character__pool_8h.html#ae790455faa6e343e9e68fe47c85c0491',1,'attack_ally_by(Character_Pool *access, Status_Access current, Status_Access target):&#160;character_pool.h']]],
+  ['attack_5fenemy_5fby',['attack_enemy_by',['../character__pool-use__self_8h.html#a91ee98b2254fb996c26b539500e887b3',1,'attack_enemy_by(Status_Access current, Status_Access target):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a471233e68b3b49072691c3512708a022',1,'attack_enemy_by(Character_Pool *access, Status_Access current, Status_Access target):&#160;character_pool.h']]],
+  ['attack_5fneutral_5fby',['attack_neutral_by',['../character__pool-use__self_8h.html#ab458d800bff89f05a1de0e1e11d719bb',1,'attack_neutral_by(Status_Access current, Status_Access target):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a8b92e5321bbcda4d60f575b3d3de87f8',1,'attack_neutral_by(Character_Pool *access, Status_Access current, Status_Access target):&#160;character_pool.h']]],
+  ['attack_5fplayer_5fby',['attack_player_by',['../character__pool-use__self_8h.html#a7e893d12c5ea65243e6c2da0fb951149',1,'attack_player_by(Status_Access current):&#160;character_pool-use_self.h'],['../character__pool_8h.html#af9aa583ba72b115105447c21e3af3d36',1,'attack_player_by(Character_Pool *access, Status_Access current):&#160;character_pool.h']]]
 ];
