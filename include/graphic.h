@@ -4,11 +4,10 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-#include "helper_function/debug.h"
 
 #include "base_type.h"
 
-#import <Foundation/Foundation.h>
+
 typedef SDL_Texture *SDL_Texture_Access;
 
 typedef struct {
