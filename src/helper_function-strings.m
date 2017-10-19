@@ -16,13 +16,13 @@ size_t String_length(const char *str)
         check = str[index];
         len++;
 
-        if (check < 0 b11000000) {
+        if (check < 0b11000000) {
             move_position = 1;
-        } else if (check < 0 b11100000 && check > 0 b11000000) {
+        } else if (check < 0b11100000 && check > 0b11000000) {
             move_position = 2;
-        } else if (check < 0 b11110000 && check > 0 b11100000) {
+        } else if (check < 0b11110000 && check > 0b11100000) {
             move_position = 3;
-        } else if (check > 0 b11110000) {
+        } else if (check > 0b11110000) {
             move_position = 4;
         } else if (check == 0) {
             break;
@@ -62,14 +62,14 @@ size_t String_width_length(const char *str, int64_t full_size)
         check = str[index];
         len += 2;
 
-        if (check < 0 b11000000) {
+        if (check < 0b11000000) {
             move_position = 1;
             len--;
-        } else if (check < 0 b11100000 && check > 0 b11000000) {
+        } else if (check < 0b11100000 && check > 0b11000000) {
             move_position = 2;
-        } else if (check < 0 b11110000 && check > 0 b11100000) {
+        } else if (check < 0b11110000 && check > 0b11100000) {
             move_position = 3;
-        } else if (check > 0 b11110000) {
+        } else if (check > 0b11110000) {
             move_position = 4;
         } else if (check == 0) {
             break;

@@ -56,7 +56,6 @@ AUTO_INDENT := $(SRC)/point_type.m \
 	$(SRC)/point_access.m \
 	$(SRC)/rectangle_type.m \
 	$(SRC)/rectangle_access.m \
-	$(SRC)/helper_function-strings.m \
 	$(SRC)/strings-instance.m \
 	$(SRC)/graphic.m \
 	$(SRC)/character.m \
