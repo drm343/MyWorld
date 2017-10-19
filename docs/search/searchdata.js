@@ -2,14 +2,13 @@ var indexSectionsWithContent =
 {
   0: "_abcdefghilmnopqrstuvwxy",
   1: "_cfgmprs",
-  2: "abcgmprs",
-  3: "acdfgimprsu",
+  2: "abcdgmprs",
+  3: "acfgiprsu",
   4: "abcdefghilmnoprstuvwxy",
   5: "cmnprs",
   6: "cefimruy",
   7: "acdefilnqrtuy",
-  8: "es",
-  9: "abcdefgiloprstw"
+  8: "abcdefgiloprstw"
 };
 
 var indexSectionNames =
@@ -22,8 +21,7 @@ var indexSectionNames =
   5: "typedefs",
   6: "enums",
   7: "enumvalues",
-  8: "properties",
-  9: "defines"
+  8: "defines"
 };
 
 var indexSectionLabels =
@@ -36,7 +34,6 @@ var indexSectionLabels =
   5: "型態定義",
   6: "列舉型態",
   7: "列舉值",
-  8: "屬性(properties)",
-  9: "定義"
+  8: "定義"
 };
 

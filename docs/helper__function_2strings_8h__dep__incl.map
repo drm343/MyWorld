@@ -1,7 +1,8 @@
 <map id="include/helper_function/strings.h" name="include/helper_function/strings.h">
 <area shape="rect" id="node2" href="$instance_2strings_8h.html" title="include/instance/strings.h" alt="" coords="36,95,207,121"/>
-<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="288,319,395,345"/>
-<area shape="rect" id="node6" href="$graphic-message_8h.html" title="include/graphic&#45;message.h" alt="" coords="190,169,367,196"/>
+<area shape="rect" id="node6" href="$main_8h.html" title="include/main.h" alt="" coords="288,408,395,435"/>
+<area shape="rect" id="node7" href="$graphic-message_8h.html" title="include/graphic&#45;message.h" alt="" coords="190,169,367,196"/>
 <area shape="rect" id="node3" href="$character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="5,169,165,196"/>
-<area shape="rect" id="node4" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="195,244,362,271"/>
+<area shape="rect" id="node4" href="$character__pool_8h.html" title="include/object/character\l_pool.h" alt="" coords="44,244,204,285"/>
+<area shape="rect" id="node5" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="195,333,362,360"/>
 </map>

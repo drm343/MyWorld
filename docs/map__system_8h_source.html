@@ -97,44 +97,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="instance_2point_8h.html">instance/point.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="interface_map___type.html">   10</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_map___type.html">Map_Type</a> : NSObject {</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="interface_map___type.html#afc2f8f314a8320f679b970103148f22e">   11</a></span>&#160;  <a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="interface_map___type.html#afc2f8f314a8320f679b970103148f22e">start</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="interface_map___type.html#a46e5791a9969c47511302c17a9246375">   12</a></span>&#160;  <a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="interface_map___type.html#a46e5791a9969c47511302c17a9246375">end</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;@ <span class="keyword">interface </span>Map_Type:NSObject {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="map__system_8h.html#acdb235aafb417efb1f168ddda5a4d0e8">start</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="map__system_8h.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">   12</a></span>&#160;    <a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="map__system_8h.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">end</a>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="interface_map___type.html#acdb235aafb417efb1f168ddda5a4d0e8">   15</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) <a class="code" href="struct_point___type.html">Point_Type</a> *start;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="interface_map___type.html#a5cc981b26e5e3f802a3ed90477c360e0">   16</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) <a class="code" href="struct_point___type.html">Point_Type</a> *end;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;+ (id) create;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;- (id) init;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;- (void) dealloc;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;- (id) init_start: (int32_t) x and: (int32_t) y;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;- (id) init_end: (int32_t) x and: (int32_t) y;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;- (int32_t) get_start_x;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;- (int32_t) get_start_y;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;- (int32_t) get_end_x;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;- (int32_t) get_end_y;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;- (id) add_start_x: (int32_t) x and_y: (int32_t) y;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;- (id) add_end_x: (int32_t) x and_y: (int32_t) y;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;- (id) add_start_x: (int32_t) x;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;- (id) add_start_y: (int32_t) y;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;- (id) add_end_x: (int32_t) x;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;- (id) add_end_y: (int32_t) y;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">   34</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="interface_map___type.html">Map_Type</a> * <a class="code" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="interface_map___type_html"><div class="ttname"><a href="interface_map___type.html">Map_Type</a></div><div class="ttdef"><b>Definition:</b> map_system.h:10</div></div>
-<div class="ttc" id="interface_map___type_html_a46e5791a9969c47511302c17a9246375"><div class="ttname"><a href="interface_map___type.html#a46e5791a9969c47511302c17a9246375">Map_Type::end</a></div><div class="ttdeci">Point_Access end</div><div class="ttdef"><b>Definition:</b> map_system.h:12</div></div>
-<div class="ttc" id="interface_map___type_html_afc2f8f314a8320f679b970103148f22e"><div class="ttname"><a href="interface_map___type.html#afc2f8f314a8320f679b970103148f22e">Map_Type::start</a></div><div class="ttdeci">Point_Access start</div><div class="ttdef"><b>Definition:</b> map_system.h:11</div></div>
-<div class="ttc" id="map__system_8h_html_a57a6976d6a3130e3c74d247740ca436e"><div class="ttname"><a href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a></div><div class="ttdeci">Map_Type * Map_Access</div><div class="ttdef"><b>Definition:</b> map_system.h:34</div></div>
-<div class="ttc" id="struct_point___type_html"><div class="ttname"><a href="struct_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> point.h:10</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">@property</span>(nonatomic, assign)</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="map__system_8h.html#acdb235aafb417efb1f168ddda5a4d0e8">   16</a></span>&#160;<a class="code" href="struct_point___type.html">Point_Type</a> *<a class="code" href="map__system_8h.html#acdb235aafb417efb1f168ddda5a4d0e8">start</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">@property</span>(nonatomic, assign)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="struct_point___type.html">Point_Type</a> *<a class="code" href="map__system_8h.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">end</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="map__system_8h.html#a44169981cd9f8087e73a197b4b95ae25">   20</a></span>&#160;+(id) <a class="code" href="map__system_8h.html#a44169981cd9f8087e73a197b4b95ae25">create</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="map__system_8h.html#a172b80424792de3083ee82758dd5ed4e">   21</a></span>&#160;-(id) <a class="code" href="map__system_8h.html#a172b80424792de3083ee82758dd5ed4e">init</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="map__system_8h.html#a52325d318dfbd00d27c4b788b9b7fb47">   22</a></span>&#160;-(void) <a class="code" href="map__system_8h.html#a52325d318dfbd00d27c4b788b9b7fb47">dealloc</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;-(id) <a class="code" href="map__system_8h.html#adacd02b1e798dce5b368d9e18d395c88">init_start</a>:(int32_t)</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="map__system_8h.html#adacd02b1e798dce5b368d9e18d395c88">   24</a></span>&#160;x and:(int32_t) y;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;-(id) <a class="code" href="map__system_8h.html#a3d14900030b50f3a1cdc797234d0a811">init_end</a>:(int32_t)</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="map__system_8h.html#a3d14900030b50f3a1cdc797234d0a811">   26</a></span>&#160;x and:(int32_t) y;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="map__system_8h.html#a31ff590a63eaa24eaa468d45a14c4ebb">   27</a></span>&#160;-(int32_t) <a class="code" href="map__system_8h.html#a31ff590a63eaa24eaa468d45a14c4ebb">get_start_x</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="map__system_8h.html#ac72f60a42584467b89338cb23c8d8be7">   28</a></span>&#160;-(int32_t) <a class="code" href="map__system_8h.html#ac72f60a42584467b89338cb23c8d8be7">get_start_y</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="map__system_8h.html#a11dd23d463ba187a63ff19435e4f45a5">   29</a></span>&#160;-(int32_t) <a class="code" href="map__system_8h.html#a11dd23d463ba187a63ff19435e4f45a5">get_end_x</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="map__system_8h.html#a88cf24282f49d26ad709b90540a19f7e">   30</a></span>&#160;-(int32_t) <a class="code" href="map__system_8h.html#a88cf24282f49d26ad709b90540a19f7e">get_end_y</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(id) <a class="code" href="map__system_8h.html#a746a4ea6b5ce4fd600162b8213c4f933">add_start_x</a>:(int32_t)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="map__system_8h.html#a746a4ea6b5ce4fd600162b8213c4f933">   32</a></span>&#160;x and_y:(int32_t) y;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;-(id) <a class="code" href="map__system_8h.html#ac18b373191ffd78a6a7522f10b222639">add_end_x</a>:(int32_t)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="map__system_8h.html#ac18b373191ffd78a6a7522f10b222639">   34</a></span>&#160;x and_y:(int32_t) y;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;-(id) <a class="code" href="map__system_8h.html#a746a4ea6b5ce4fd600162b8213c4f933">add_start_x</a>:(int32_t) x;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="map__system_8h.html#a6154266ed9c4fbaccc229f47a040e67b">   36</a></span>&#160;-(id) <a class="code" href="map__system_8h.html#a6154266ed9c4fbaccc229f47a040e67b">add_start_y</a>:(int32_t) y;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(id) <a class="code" href="map__system_8h.html#ac18b373191ffd78a6a7522f10b222639">add_end_x</a>:(int32_t) x;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="map__system_8h.html#ab09d07f1f75eaf76361491110651a8f3">   38</a></span>&#160;-(id) <a class="code" href="map__system_8h.html#ab09d07f1f75eaf76361491110651a8f3">add_end_y</a>:(int32_t) y;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="map__system_8h.html#aa046800b7cea60bfa17422d0eb827c4c">   39</a></span>&#160;<span class="keyword">@end</span> <span class="keyword">typedef</span> Map_Type *<a class="code" href="map__system_8h.html#aa046800b7cea60bfa17422d0eb827c4c">Map_Access</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="map__system_8h_html_a88cf24282f49d26ad709b90540a19f7e"><div class="ttname"><a href="map__system_8h.html#a88cf24282f49d26ad709b90540a19f7e">get_end_y</a></div><div class="ttdeci">int32_t get_end_y</div><div class="ttdef"><b>Definition:</b> map_system.h:30</div></div>
+<div class="ttc" id="map__system_8h_html_aa046800b7cea60bfa17422d0eb827c4c"><div class="ttname"><a href="map__system_8h.html#aa046800b7cea60bfa17422d0eb827c4c">Map_Access</a></div><div class="ttdeci">end typedef Map_Type * Map_Access</div><div class="ttdef"><b>Definition:</b> map_system.h:39</div></div>
+<div class="ttc" id="map__system_8h_html_ac72f60a42584467b89338cb23c8d8be7"><div class="ttname"><a href="map__system_8h.html#ac72f60a42584467b89338cb23c8d8be7">get_start_y</a></div><div class="ttdeci">int32_t get_start_y</div><div class="ttdef"><b>Definition:</b> map_system.h:28</div></div>
+<div class="ttc" id="map__system_8h_html_acdb235aafb417efb1f168ddda5a4d0e8"><div class="ttname"><a href="map__system_8h.html#acdb235aafb417efb1f168ddda5a4d0e8">start</a></div><div class="ttdeci">Point_Type * start</div><div class="ttdef"><b>Definition:</b> map_system.h:16</div></div>
+<div class="ttc" id="map__system_8h_html_a52325d318dfbd00d27c4b788b9b7fb47"><div class="ttname"><a href="map__system_8h.html#a52325d318dfbd00d27c4b788b9b7fb47">dealloc</a></div><div class="ttdeci">void dealloc</div><div class="ttdef"><b>Definition:</b> map_system.h:22</div></div>
+<div class="ttc" id="map__system_8h_html_a11dd23d463ba187a63ff19435e4f45a5"><div class="ttname"><a href="map__system_8h.html#a11dd23d463ba187a63ff19435e4f45a5">get_end_x</a></div><div class="ttdeci">int32_t get_end_x</div><div class="ttdef"><b>Definition:</b> map_system.h:29</div></div>
+<div class="ttc" id="map__system_8h_html_adacd02b1e798dce5b368d9e18d395c88"><div class="ttname"><a href="map__system_8h.html#adacd02b1e798dce5b368d9e18d395c88">init_start</a></div><div class="ttdeci">id init_start</div><div class="ttdef"><b>Definition:</b> map_system.h:24</div></div>
+<div class="ttc" id="struct_point___type_html"><div class="ttname"><a href="struct_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> point.h:12</div></div>
+<div class="ttc" id="map__system_8h_html_ac256a80b6d6dd0d826fa0ac2cc2d133b"><div class="ttname"><a href="map__system_8h.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">end</a></div><div class="ttdeci">Point_Access end</div><div class="ttdef"><b>Definition:</b> map_system.h:12</div></div>
+<div class="ttc" id="map__system_8h_html_a44169981cd9f8087e73a197b4b95ae25"><div class="ttname"><a href="map__system_8h.html#a44169981cd9f8087e73a197b4b95ae25">create</a></div><div class="ttdeci">id create</div><div class="ttdef"><b>Definition:</b> map_system.h:20</div></div>
+<div class="ttc" id="map__system_8h_html_ac18b373191ffd78a6a7522f10b222639"><div class="ttname"><a href="map__system_8h.html#ac18b373191ffd78a6a7522f10b222639">add_end_x</a></div><div class="ttdeci">id add_end_x</div><div class="ttdef"><b>Definition:</b> map_system.h:34</div></div>
+<div class="ttc" id="map__system_8h_html_a172b80424792de3083ee82758dd5ed4e"><div class="ttname"><a href="map__system_8h.html#a172b80424792de3083ee82758dd5ed4e">init</a></div><div class="ttdeci">id init</div><div class="ttdef"><b>Definition:</b> map_system.h:21</div></div>
+<div class="ttc" id="map__system_8h_html_a6154266ed9c4fbaccc229f47a040e67b"><div class="ttname"><a href="map__system_8h.html#a6154266ed9c4fbaccc229f47a040e67b">add_start_y</a></div><div class="ttdeci">id add_start_y</div><div class="ttdef"><b>Definition:</b> map_system.h:36</div></div>
+<div class="ttc" id="map__system_8h_html_ab09d07f1f75eaf76361491110651a8f3"><div class="ttname"><a href="map__system_8h.html#ab09d07f1f75eaf76361491110651a8f3">add_end_y</a></div><div class="ttdeci">id add_end_y</div><div class="ttdef"><b>Definition:</b> map_system.h:38</div></div>
+<div class="ttc" id="map__system_8h_html_a31ff590a63eaa24eaa468d45a14c4ebb"><div class="ttname"><a href="map__system_8h.html#a31ff590a63eaa24eaa468d45a14c4ebb">get_start_x</a></div><div class="ttdeci">int32_t get_start_x</div><div class="ttdef"><b>Definition:</b> map_system.h:27</div></div>
+<div class="ttc" id="map__system_8h_html_a3d14900030b50f3a1cdc797234d0a811"><div class="ttname"><a href="map__system_8h.html#a3d14900030b50f3a1cdc797234d0a811">init_end</a></div><div class="ttdeci">id init_end</div><div class="ttdef"><b>Definition:</b> map_system.h:26</div></div>
 <div class="ttc" id="base__type_8h_html"><div class="ttname"><a href="base__type_8h.html">base_type.h</a></div></div>
 <div class="ttc" id="instance_2point_8h_html"><div class="ttname"><a href="instance_2point_8h.html">point.h</a></div></div>
+<div class="ttc" id="map__system_8h_html_a746a4ea6b5ce4fd600162b8213c4f933"><div class="ttname"><a href="map__system_8h.html#a746a4ea6b5ce4fd600162b8213c4f933">add_start_x</a></div><div class="ttdeci">id add_start_x</div><div class="ttdef"><b>Definition:</b> map_system.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月19日 星期四 19:29:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月20日 星期五 00:40:19, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

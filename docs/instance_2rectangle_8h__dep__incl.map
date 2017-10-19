@@ -1,5 +1,6 @@
 <map id="include/instance/rectangle.h" name="include/instance/rectangle.h">
 <area shape="rect" id="node2" href="$character-pool_8h.html" title="include/character&#45;pool.h" alt="" coords="17,80,177,107"/>
-<area shape="rect" id="node3" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="14,155,181,181"/>
-<area shape="rect" id="node4" href="$main_8h.html" title="include/main.h" alt="" coords="44,229,151,256"/>
+<area shape="rect" id="node3" href="$character__pool_8h.html" title="include/object/character\l_pool.h" alt="" coords="17,155,177,196"/>
+<area shape="rect" id="node4" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="14,244,181,271"/>
+<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="44,319,151,345"/>
 </map>

@@ -1,7 +1,24 @@
 var searchData=
 [
-  ['init',['init',['../interface_map___type.html#a4213bb26f5207ee3f402fe463badc691',1,'Map_Type']]],
-  ['init_5fend_3aand_3a',['init_end:and:',['../interface_map___type.html#a4e74c01a3fec2c50971b177575caa11d',1,'Map_Type']]],
-  ['init_5fstart_3aand_3a',['init_start:and:',['../interface_map___type.html#aa41a91590b9207abccf77979b8c37657',1,'Map_Type']]],
-  ['instance_5fcount',['instance_count',['../interface_character___pool.html#af7341c54434fa088e806ecf5cf2a4488',1,'Character_Pool']]]
+  ['parse_5fnpc_5fconfig',['parse_npc_config',['../character__pool_8h.html#a08a52a94972d66b770388e66ad6e8c1d',1,'character_pool.h']]],
+  ['point_5faccess_5fadd_5fx',['Point_Access_add_x',['../instance_2point_8h.html#a6ce4eec5e1fc58a21aaaf7c4c6bd908e',1,'point.h']]],
+  ['point_5faccess_5fadd_5fy',['Point_Access_add_y',['../instance_2point_8h.html#ac4be07c4221cfe1aa3291c0790d68e73',1,'point.h']]],
+  ['point_5faccess_5fchange',['Point_Access_change',['../instance_2point_8h.html#a3a173b68c5c3fd14cc75cbeea760551a',1,'point.h']]],
+  ['point_5faccess_5feq',['Point_Access_eq',['../instance_2point_8h.html#abc2efb2c98ccc79d19a3c576821b1e4a',1,'point.h']]],
+  ['point_5faccess_5fset_5fx',['Point_Access_set_x',['../instance_2point_8h.html#aed767eee36fe502ddd3cd21420ae07bc',1,'point.h']]],
+  ['point_5faccess_5fset_5fy',['Point_Access_set_y',['../instance_2point_8h.html#a9559d97c53e09c59533a597260ff739e',1,'point.h']]],
+  ['point_5faccess_5fx',['Point_Access_x',['../instance_2point_8h.html#af655fc7df450bb326583eb68efe1344b',1,'point.h']]],
+  ['point_5faccess_5fy',['Point_Access_y',['../instance_2point_8h.html#a0bcaad281448bc21089689ecf60bc4ea',1,'point.h']]],
+  ['point_5ftype_5fadd_5fx',['Point_Type_add_x',['../object_2point_8h.html#aa4960b2349cc053129f9c1a60e947bef',1,'point.h']]],
+  ['point_5ftype_5fadd_5fy',['Point_Type_add_y',['../object_2point_8h.html#ae340cbdda86738b9754a43f57846601c',1,'point.h']]],
+  ['point_5ftype_5fcreate',['Point_Type_create',['../object_2point_8h.html#a489d4c0191c6c5855052717aaf0b3cc4',1,'point.h']]],
+  ['point_5ftype_5feq',['Point_Type_eq',['../object_2point_8h.html#ab22c2bff8e77851404cbf5a38f85673c',1,'point.h']]],
+  ['point_5ftype_5ffree',['Point_Type_free',['../object_2point_8h.html#aaee2f9e0def1e6760a2f668a39d20168',1,'point.h']]],
+  ['point_5ftype_5fnear_5fby',['Point_Type_near_by',['../character-pool_8h.html#aa500eea78b7b5ad67dba8f8f18827b41',1,'character-pool.h']]],
+  ['point_5ftype_5fover_5fthere',['Point_Type_over_there',['../character-pool_8h.html#ab25b7f9e5ec2bb6441efb4a2e6458fc3',1,'character-pool.h']]],
+  ['point_5ftype_5fset_5fx',['Point_Type_set_x',['../object_2point_8h.html#a1b02c731729a475adc8337ec40a1f25f',1,'point.h']]],
+  ['point_5ftype_5fset_5fy',['Point_Type_set_y',['../object_2point_8h.html#a4534a2ef4122d3dff80b63b3229dbd4b',1,'point.h']]],
+  ['point_5ftype_5fx',['Point_Type_x',['../object_2point_8h.html#a90528fff9d63330ae35dbc9d82565b0c',1,'point.h']]],
+  ['point_5ftype_5fy',['Point_Type_y',['../object_2point_8h.html#abb28b97e139c670819dd7bc91d883bb9',1,'point.h']]],
+  ['prepare',['prepare',['../character__pool_8h.html#a96599d401e0bc61c9bfd45e4ed8549a1',1,'character_pool.h']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['calculate_5fgraph_5fposition_3a',['calculate_graph_position:',['../interface_character___pool.html#a50cee314fa3eff258573ef6e903e208f',1,'Character_Pool']]],
+  ['calculate_5fgraph_5fposition',['calculate_graph_position',['../character__pool_8h.html#a5edf00253415cfeb0845a7242bf08097',1,'character_pool.h']]],
   ['camera',['camera',['../graphic-camera_8h.html#a8fb94233717f24ff3a74f0d529b7723a',1,'graphic-camera.h']]],
   ['camera_5faccess',['Camera_Access',['../graphic-camera_8h.html#a74bec5e06fbe1ecd18a4ac7bc6de9247',1,'graphic-camera.h']]],
   ['camera_5ffix',['CAMERA_FIX',['../graphic-camera_8h.html#aa1c976a9da4de67904792a6902f941efae98a333448699568855afcda2fbc95fd',1,'graphic-camera.h']]],
@@ -22,16 +22,17 @@ var searchData=
   ['character_5fbase_5finit',['Character_Base_init',['../character_8h.html#adcf24ad6587d14ede5fd0a210137ef82',1,'character.h']]],
   ['character_5fbase_5fpool_5faccess',['Character_Base_Pool_Access',['../character-pool_8h.html#a1eef122e16b63b7cd55770a7c0ed16c1',1,'character-pool.h']]],
   ['character_5fbase_5ftype',['Character_Base_Type',['../character_8h.html#a5a4d1a9a8e1bc686c0b47c5f17ef6133',1,'character.h']]],
-  ['character_5fpool',['Character_Pool',['../interface_character___pool.html',1,'']]],
-  ['character_5fpool_5faccess',['Character_Pool_Access',['../character-pool_8h.html#aa2e621322f8cb6c9d7232ef54c227ed3',1,'character-pool.h']]],
+  ['character_5fpool',['Character_Pool',['../struct_character___pool.html',1,'']]],
+  ['character_5fpool_2eh',['character_pool.h',['../character__pool_8h.html',1,'']]],
+  ['character_5fpool_5faccess',['Character_Pool_Access',['../character__pool_8h.html#aa2e621322f8cb6c9d7232ef54c227ed3',1,'character_pool.h']]],
   ['character_5fpool_5ftype',['Character_Pool_Type',['../struct_character___pool___type.html',1,'']]],
   ['character_5fpool_5ftype_5faccess',['Character_Pool_Type_Access',['../character-pool_8h.html#af01d179ba2e448f14b9805dd95fbe573',1,'character-pool.h']]],
+  ['character_5fpool_5ftype_5fmalloc',['Character_Pool_Type_malloc',['../character-pool_8h.html#a54fd5ce4bf2709cd452ba6f8b99d86d1',1,'character-pool.h']]],
   ['color',['color',['../struct_font_config.html#a5d4bf4af47a2396f00e16ad1d967995d',1,'FontConfig']]],
   ['conf_5fpath',['CONF_PATH',['../main__set__config_8h.html#a4bb0d0741a12449e56d19d1202214ae6',1,'main_set_config.h']]],
   ['content',['content',['../struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Node::content()'],['../struct___status___item.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Item::content()']]],
   ['copy',['copy',['../struct_character___a_p_i.html#a715ae4b96c252967ee78c7e7d43032c3',1,'Character_API::copy()'],['../struct_character___base.html#a6659da6b1f1a5b213fbec6dfdd16fa92',1,'Character_Base::copy()']]],
-  ['create',['create',['../interface_map___type.html#a43b5be02aa354d314b2283eba413ee3e',1,'Map_Type']]],
-  ['create_3awith_5finstance_5fsize_3a',['create:with_instance_size:',['../interface_character___pool.html#a96ea4f2b25ace5adda5e4b09532bfa4c',1,'Character_Pool']]],
+  ['create',['create',['../map__system_8h.html#a44169981cd9f8087e73a197b4b95ae25',1,'create():&#160;map_system.h'],['../character__pool_8h.html#af971d90ae6174c13bfc19c99aa457c4a',1,'create(uint8_t max_config_size, uint8_t max_instance_size):&#160;character_pool.h']]],
   ['crossable',['crossable',['../struct_character___base.html#a39b1af64a01fe21b7484882119105129',1,'Character_Base']]],
   ['current_5fsize',['current_size',['../struct_style___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Style_Pool']]]
 ];

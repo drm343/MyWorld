@@ -1,0 +1,11 @@
+<map id="Character_Pool" name="Character_Pool">
+<area shape="rect" id="node2" href="$struct_status___list.html" title="Status_List" alt="" coords="19,460,107,487"/>
+<area shape="rect" id="node3" href="$struct___status___node.html" title="_Status_Node" alt="" coords="5,340,111,367"/>
+<area shape="rect" id="node4" href="$struct_character.html" title="Character" alt="" coords="169,199,248,225"/>
+<area shape="rect" id="node9" href="$struct_status___pool.html" title="Status_Pool" alt="" coords="162,401,255,427"/>
+<area shape="rect" id="node10" href="$struct___status___item.html" title="_Status_Item" alt="" coords="263,288,363,315"/>
+<area shape="rect" id="node5" href="$struct_character___base.html" title="Character_Base" alt="" coords="151,109,267,136"/>
+<area shape="rect" id="node6" href="$struct_point___type.html" title="Point_Type" alt="" coords="105,5,193,32"/>
+<area shape="rect" id="node7" href="$struct_style.html" title="Style" alt="" coords="243,5,295,32"/>
+<area shape="rect" id="node8" href="$struct_character___pool___type.html" title="Character_Pool_Type" alt="" coords="135,519,283,546"/>
+</map>

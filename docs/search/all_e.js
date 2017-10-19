@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parse_5fnpc_5fconfig_3awith_5fstyle_3a',['parse_npc_config:with_style:',['../interface_character___pool.html#a80fe5df6ae5881f03ba0e4acbfa1d89c',1,'Character_Pool']]],
+  ['parse_5fnpc_5fconfig',['parse_npc_config',['../character__pool_8h.html#a08a52a94972d66b770388e66ad6e8c1d',1,'character_pool.h']]],
   ['player',['player',['../struct_camera___type.html#ae271f3040d01366952b3603495591e4e',1,'Camera_Type']]],
   ['point_2eh',['point.h',['../instance_2point_8h.html',1,'']]],
   ['point_2eh',['point.h',['../object_2point_8h.html',1,'']]],
@@ -9,7 +9,6 @@ var searchData=
   ['point_5faccess_5fadd_5fy',['Point_Access_add_y',['../instance_2point_8h.html#ac4be07c4221cfe1aa3291c0790d68e73',1,'point.h']]],
   ['point_5faccess_5fchange',['Point_Access_change',['../instance_2point_8h.html#a3a173b68c5c3fd14cc75cbeea760551a',1,'point.h']]],
   ['point_5faccess_5feq',['Point_Access_eq',['../instance_2point_8h.html#abc2efb2c98ccc79d19a3c576821b1e4a',1,'point.h']]],
-  ['point_5faccess_5fprint',['Point_Access_print',['../instance_2point_8h.html#acdaecd51093c99070cef2d4aa6f1fece',1,'point.h']]],
   ['point_5faccess_5fset_5fx',['Point_Access_set_x',['../instance_2point_8h.html#aed767eee36fe502ddd3cd21420ae07bc',1,'point.h']]],
   ['point_5faccess_5fset_5fy',['Point_Access_set_y',['../instance_2point_8h.html#a9559d97c53e09c59533a597260ff739e',1,'point.h']]],
   ['point_5faccess_5fx',['Point_Access_x',['../instance_2point_8h.html#af655fc7df450bb326583eb68efe1344b',1,'point.h']]],
@@ -22,14 +21,12 @@ var searchData=
   ['point_5ftype_5ffree',['Point_Type_free',['../object_2point_8h.html#aaee2f9e0def1e6760a2f668a39d20168',1,'point.h']]],
   ['point_5ftype_5fnear_5fby',['Point_Type_near_by',['../character-pool_8h.html#aa500eea78b7b5ad67dba8f8f18827b41',1,'character-pool.h']]],
   ['point_5ftype_5fover_5fthere',['Point_Type_over_there',['../character-pool_8h.html#ab25b7f9e5ec2bb6441efb4a2e6458fc3',1,'character-pool.h']]],
-  ['point_5ftype_5fprint',['Point_Type_print',['../object_2point_8h.html#a339970ff39d568aa4f7482a1d0020c58',1,'point.h']]],
   ['point_5ftype_5fset_5fx',['Point_Type_set_x',['../object_2point_8h.html#a1b02c731729a475adc8337ec40a1f25f',1,'point.h']]],
   ['point_5ftype_5fset_5fy',['Point_Type_set_y',['../object_2point_8h.html#a4534a2ef4122d3dff80b63b3229dbd4b',1,'point.h']]],
   ['point_5ftype_5fx',['Point_Type_x',['../object_2point_8h.html#a90528fff9d63330ae35dbc9d82565b0c',1,'point.h']]],
   ['point_5ftype_5fy',['Point_Type_y',['../object_2point_8h.html#abb28b97e139c670819dd7bc91d883bb9',1,'point.h']]],
   ['pool',['pool',['../struct_status___pool.html#a9eb8f8804bb30a92b4075219d52399c8',1,'Status_Pool::pool()'],['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool::pool()']]],
-  ['prepare',['prepare',['../interface_character___pool.html#a369f161da1bf52bb4eaa70d83c3c2d34',1,'Character_Pool::prepare()'],['../interface_character___pool.html#ade1c4ce962e9729724ea1adfc6c7b23c',1,'Character_Pool::prepare()']]],
+  ['prepare',['prepare',['../struct_character___pool.html#a369f161da1bf52bb4eaa70d83c3c2d34',1,'Character_Pool::prepare()'],['../character__pool_8h.html#a96599d401e0bc61c9bfd45e4ed8549a1',1,'prepare():&#160;character_pool.h']]],
   ['previous',['previous',['../struct___status___node.html#afc7492628abcb777f2fb97ef2176b0f3',1,'_Status_Node']]],
-  ['print_5fstatus',['print_status',['../struct_character___a_p_i.html#a17dcff7cf1edbd5172d2717c4086cbcb',1,'Character_API']]],
   ['procedure',['PROCEDURE',['../ada__style_8h.html#aca2d184953d5f9a712d177da873a411d',1,'ada_style.h']]]
 ];

@@ -1,7 +1,10 @@
 <map id="include/object" name="include/object">
 <area shape="rect" id="node1" href="dir_23d5af2e228901f93ce64754cbbfed9f.html" title="object" alt="" coords="27,52,99,100"/>
-<area shape="rect" id="node2" href="dir_d14c92730fe240d9bd0e353b5afa614f.html" title="instance" alt="" coords="27,148,99,196"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000004_000003.html" title="1" alt="" coords="58,121,66,136"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000003_000004.html" title="2" alt="" coords="59,112,67,126"/>
+<area shape="rect" id="node2" href="dir_d14c92730fe240d9bd0e353b5afa614f.html" title="instance" alt="" coords="123,52,195,100"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000004_000003.html" title="1" alt="" coords="100,60,108,75"/>
+<area shape="rect" id="node3" href="dir_5aca9d21608229580d4979eae38b8e18.html" title="helper_function" alt="" coords="55,148,166,196"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000004_000002.html" title="1" alt="" coords="94,120,102,135"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000003_000004.html" title="2" alt="" coords="113,77,121,92"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000003_000002.html" title="1" alt="" coords="135,128,143,142"/>
 <area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,109,111"/>
 </map>

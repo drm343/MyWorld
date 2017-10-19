@@ -1,8 +1,9 @@
 <map id="include/character&#45;status.h" name="include/character&#45;status.h">
-<area shape="rect" id="node2" href="$character_8h.html" title="character.h" alt="" coords="254,80,340,107"/>
-<area shape="rect" id="node14" href="$message__base_8h.html" title="message_base.h" alt="" coords="364,80,486,107"/>
-<area shape="rect" id="node4" href="$graphic_8h.html" title="graphic.h" alt="" coords="260,155,334,181"/>
-<area shape="rect" id="node10" href="$instance_2point_8h.html" title="instance/point.h" alt="" coords="506,155,621,181"/>
-<area shape="rect" id="node7" href="$base__type_8h.html" title="base_type.h" alt="" coords="22,229,116,256"/>
-<area shape="rect" id="node11" href="$object_2point_8h.html" title="object/point.h" alt="" coords="588,229,688,256"/>
+<area shape="rect" id="node2" href="$character_8h.html" title="character.h" alt="" coords="205,80,291,107"/>
+<area shape="rect" id="node15" href="$message__base_8h.html" title="message_base.h" alt="" coords="315,80,437,107"/>
+<area shape="rect" id="node4" href="$graphic_8h.html" title="graphic.h" alt="" coords="356,155,431,181"/>
+<area shape="rect" id="node12" href="$instance_2point_8h.html" title="instance/point.h" alt="" coords="191,155,305,181"/>
+<area shape="rect" id="node7" href="$debug_8h.html" title="helper_function/debug.h" alt="" coords="333,304,493,331"/>
+<area shape="rect" id="node9" href="$base__type_8h.html" title="base_type.h" alt="" coords="80,229,173,256"/>
+<area shape="rect" id="node13" href="$object_2point_8h.html" title="object/point.h" alt="" coords="198,229,298,256"/>
 </map>
