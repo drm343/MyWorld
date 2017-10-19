@@ -7,9 +7,10 @@
 
 
 #include "strings.h"
+#include "helper_function/debug.h"
 
 
-typedef struct strings * String_Intern;
+typedef struct strings *String_Intern;
 
 
 /** @brief 求出 UTF8 版本的 string 長度

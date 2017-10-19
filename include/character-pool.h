@@ -13,29 +13,29 @@
 
 
 typedef enum {
-  NOT_FOUND = 0,
-  FOUND
+    NOT_FOUND = 0,
+    FOUND
 } Found_Result;
 
 
-Message_Type Point_Type_over_there(Point_Type *self, Point_Type *other);
-Message_Type Point_Type_near_by(Point_Type *self, Point_Type *other);
+Message_Type Point_Type_over_there(Point_Type * self, Point_Type * other);
+Message_Type Point_Type_near_by(Point_Type * self, Point_Type * other);
 
 
 GENERIC_POOL(Status_Pool, Status_Access);
-typedef Status_Pool * Status_Pool_Access;
+typedef Status_Pool *Status_Pool_Access;
 
 
 GENERIC_POOL(Character_Base_Pool, Character_Base_Access);
-typedef Character_Base_Pool * Character_Base_Pool_Access;
+typedef Character_Base_Pool *Character_Base_Pool_Access;
 
 
 typedef struct {
-  Status_Pool_Access status;
-  Character_Base_Pool_Access base;
+    Status_Pool_Access status;
+    Character_Base_Pool_Access base;
 } Character_Pool_Type;
-typedef Character_Pool_Type * Character_Pool_Type_Access;
+typedef Character_Pool_Type *Character_Pool_Type_Access;
 
 
-Status_Access Character_Pool_Type_malloc(Character_Pool_Type *access);
+Status_Access Character_Pool_Type_malloc(Character_Pool_Type * access);
 #endif

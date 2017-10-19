@@ -1,15 +1,15 @@
 #include "character-status.h"
 
 
+#ifdef DEBUG
 static void print_status(Status_Access access)
 {
     Character_Base_Access base = access->base;
-
-    printf("--------- status -------\n");
-    printf("%s : %s\n", base->name, access->race);
-    printf("Mark: %s\n", base->Mark->mark);
-    printf("Damage: %d\n", access->damage);
+    DEBUG_PRINT("%s : %s\n", base->name, access->race);
+    DEBUG_PRINT("Mark: %s\n", base->Mark->mark);
+    DEBUG_PRINT("Damage: %d\n", access->damage);
 }
+#endif
 
 
 // -----------------------------------
@@ -194,7 +194,9 @@ Character_API character = {
     .init = character_init,
     .free = character_free,
     .copy = character_copy,
+#ifdef DEBUG
     .print_status = print_status,
+#endif
 
     .set_name = set_base_name,
     .set_race = set_race,

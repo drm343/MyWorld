@@ -1,9 +1,5 @@
 APP_NAME=rogue
 
-PLATFORM=-DLINUX_VERSION_FUNCTION=1
-#PLATFORM=-DMAXOS_VERSION_FUNCTION=1
-#PLATFORM=-DWINDOS_VERSION_FUNCTION=1
-
 INDENT_NUMBER=4
 CASE_INDENT_NUMBER=4
 
@@ -23,7 +19,7 @@ OBJC_FLAGS=-Werror -L `gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES` -fcon
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
-#DEBUG=-g
+#DEBUG=-DDEBUG
 DEBUG=
 
 
@@ -44,29 +40,12 @@ AUTO_BUILD_DEP := $(OBJ)/point_type.o \
 	$(OBJ)/map_system.o \
 	$(OBJ)/graphic-camera.o \
 	$(OBJ)/graphic-message.o \
-	$(OBJ)/character-pool.o
+	$(OBJ)/character_pool.o
 
 LIBSTRINGS := $(OBJ)/block.o \
 	$(OBJ)/strings.o
 
 DEP := $(LIBSTRINGS) $(AUTO_BUILD_DEP)
-
-
-AUTO_INDENT := $(SRC)/point_type.m \
-	$(SRC)/point_access.m \
-	$(SRC)/rectangle_type.m \
-	$(SRC)/rectangle_access.m \
-	$(SRC)/strings-instance.m \
-	$(SRC)/graphic.m \
-	$(SRC)/character.m \
-	$(SRC)/character-status.m \
-	$(SRC)/status_list.m \
-	$(SRC)/character-skill.m \
-	$(SRC)/map_system.m \
-	$(SRC)/graphic-camera.m \
-	$(SRC)/graphic-message.m \
-	$(SRC)/character-pool.m \
-	$(SRC)/main.m
 
 
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
@@ -78,9 +57,11 @@ TOOLS := $(AUTO_BUILD_TOOLS)
 .PHONY: clean doc examples strings app test indent
 app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) $(OBJC_FLAGS) -o $(BIN)/$(APP_NAME)
+	@echo "build app done"
 
 
 all: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) doc
+	@echo "build all done"
 
 
 %(TOOLS): $(AUTO_BUILD_TOOLS)
@@ -91,9 +72,9 @@ $(AUTO_BUILD_TOOLS):
 	$@
 
 
-indent: $(AUTO_INDENT)
-$(AUTO_INDENT):
-	indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut $@
+indent:
+	find $(CURREND)/include -name '*.h' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
+
 
 strings: $(CHECK_DIR)
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) intern/block.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/block.o

@@ -7,13 +7,13 @@
 typedef uint8_t Natural;
 
 typedef enum {
-  EXECUTE_SUCCESS = 0,
-  EXECUTE_FAILED,
+    EXECUTE_SUCCESS = 0,
+    EXECUTE_FAILED,
 } Execute_Result;
 
 typedef enum {
-  UNUSE,
-  IN_USE
+    UNUSE,
+    IN_USE
 } Use_Type;
 
 /**
@@ -23,7 +23,7 @@ typedef enum {
 #undef YES
 
 typedef enum {
-  NO,
-  YES
+    NO,
+    YES
 } Yes_No;
 #endif

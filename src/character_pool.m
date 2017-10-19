@@ -415,11 +415,11 @@ Execute_Result SELF(parse_npc_config) (Character_Pool * access,
 
     /* Read the file. If there is an error, report it and exit. */
     if (!config_read_file(&cfg, file_path)) {
-       #ifdef DEBUG
-    DEBUG_PRINT
-        ("%s:%d - %s\n", config_error_file(&cfg),
-                config_error_line(&cfg), config_error_text(&cfg));
-       #endif
+#ifdef DEBUG
+        DEBUG_PRINT
+            ("%s:%d - %s\n", config_error_file(&cfg),
+             config_error_line(&cfg), config_error_text(&cfg));
+#endif
 
         goto DONE;
     }
@@ -779,16 +779,17 @@ Status_Access SELF(use_npc) (Character_Pool * access, const char *race,
    * @return 回傳玩家角色已供後續設定
    */
 Status_Access SELF(use_player) (Character_Pool * access) {
-    #ifdef DEBUG
+#ifdef DEBUG
     DEBUG_PRINT("access is null? %s\n", BOOL_STRING(access == NULL));
-    DEBUG_PRINT("access->used is null? %s\n", BOOL_STRING(access->used == NULL));
-    #endif
+    DEBUG_PRINT("access->used is null? %s\n",
+                BOOL_STRING(access->used == NULL));
+#endif
 
     Status_Access player = Character_Pool_Type_malloc(access->used);
 
-    #ifdef DEBUG
+#ifdef DEBUG
     DEBUG_PRINT("player init failed? %s\n", BOOL_STRING(player == NULL));
-    #endif
+#endif
 
     player->faction = FACTION_PLAYER;
     return player;

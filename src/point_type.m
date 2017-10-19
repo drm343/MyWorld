@@ -87,10 +87,12 @@ bool Point_Type_eq(Point_Type * self, Point_Type * other)
     return false;
 }
 
+#ifdef DEBUG
 /** @brief 顯示內容
  * @param self Point_Type 物件的 Access
  */
 void Point_Type_print(Point_Type * self)
 {
-    printf("[point type] x:%d y:%d\n", self->x, self->y);
+    DEBUG_PRINT("[point type] x:%d y:%d\n", self->x, self->y);
 }
+#endif

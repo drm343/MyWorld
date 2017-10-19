@@ -104,9 +104,9 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
     USE_FONT = TTF_OpenFont(FONT_FAMILY, 512);
     if (!USE_FONT) {
-        #ifdef DEBUG
+#ifdef DEBUG
         DEBUG_PRINT("TTF_OpenFont: %s\n", TTF_GetError());
-        #endif
+#endif
         return EXECUTE_FAILED;
     }
 

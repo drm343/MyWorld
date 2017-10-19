@@ -40,12 +40,13 @@ static void print_graph(Style_Pool_Access pool_access)
     uint8_t used = pool_access->max_size - pool_access->current_size;
     Style_Access result = NULL;
 
-    printf("---- graph ----\n");
+#ifdef DEBUG
+    DEBUG_PRINT("style is null? %s\n", BOOL_STRING(result));
     for (count; count < used; count++) {
         result = &(pool_access->pool[count]);
-        printf("%s : %s\n", result->name, result->mark);
+        DEBUG_PRINT("%s : %s\n", result->name, result->mark);
     }
-    printf("---- graph done ----\n");
+#endif
 }
 
 static Style_Access SELF(next) (Style_Pool_Access pool_access,

@@ -4,15 +4,15 @@ static int MAX_X = 0;
 static int MAX_Y = 0;
 
 
+#ifdef DEBUG
 static void print_mode(char *str, Camera_Mode mode)
 {
-    printf("%s", str);
     switch (mode) {
         case CAMERA_MOVE:
-            printf("MOVE\n");
+            DEBUG_PRINT("%s MOVE\n", str);
             break;
         default:
-            printf("FIX\n");
+            DEBUG_PRINT("%s FIX\n", str);
             break;
     }
 }
@@ -26,49 +26,21 @@ static void print_vertical_mode(Camera_Access access)
 {
     print_mode("vertical: ", access->horizon);
 }
+#endif
 
 
 static Yes_No occupy_position_by_others(Character_Pool_Access access,
                                         Point_Access point,
                                         Status_Access * result)
 {
-  if ([access find_character: result with_position:point] == FOUND) {
+#define POOL(function) Character_Pool_##function
+
+    if (POOL(find_character) (access, result, point) == FOUND) {
         return YES;
     } else {
         return NO;
     }
-}
-
-
-static void debug(Camera_Access access)
-{
-    Status_Access Player = access->player;
-    Point_Access point = Player->base->Real_Position;
-
-    Point_Access center = access->center;
-
-    Point_Access from = access->start;
-    Point_Access to = access->end;
-
-    Map_Access map = access->map;
-    Yes_No result = YES;
-
-    printf("------------------------\n");
-    printf("[map](%d, %d)\n",[map get_end_x],[map get_end_y]);
-    printf("[center](%d, %d)\n", center->x, center->y);
-    printf("[start](%d, %d)\n", from->x, from->y);
-    printf("[end](%d, %d)\n", to->x, to->y);
-    printf("[position](%d, %d)\n", point->x, point->y);
-    printf("[left check] %d\n", (point->x > (center->x - 1)));
-    printf("[right check] %d\n",
-           ((point->x + 1) < ([map get_end_x] - (center->x - 1))));
-    printf("[from end] %d\n", (from->x <= 0));
-    printf("[to end] %d\n", (to->x >=[map get_end_x]));
-    printf("[up check] %d\n", (point->y > (center->y - 1)));
-    printf("[down check] %d\n",
-           ((point->y + 1) < ([map get_end_y] - (center->y - 1))));
-    printf("[from end] %d\n", (from->y <= 0));
-    printf("[to end] %d\n", (to->y >=[map get_end_y]));
+#undef POOL
 }
 
 
@@ -255,22 +227,25 @@ static bool message_process(Camera_Access access,
                  npc->base->name, character.get_relation_string(npc));
         message_box.add(box_access, attack_message);
 
+#define PKG(function) Character_Pool_##function
         switch (npc->faction) {
             case FACTION_PLAYER:
-              is_alive =[from_pool attack_player_by:current];
+                is_alive = PKG(attack_player_by) (from_pool, current);
                 break;
             case FACTION_ALLY:
-              is_alive =[from_pool attack_ally_by: current with_target:npc];
+                is_alive = PKG(attack_ally_by) (from_pool, current, npc);
                 break;
             case FACTION_ENEMY:
-              is_alive =[from_pool attack_enemy_by: current with_target:npc];
+                is_alive = PKG(attack_enemy_by) (from_pool, current, npc);
                 break;
             case FACTION_NEUTRAL:
-              is_alive =[from_pool attack_neutral_by: current with_target:npc];
+                is_alive =
+                    PKG(attack_neutral_by) (from_pool, current, npc);
                 break;
             default:
                 break;
         }
+#undef PKG
 
         if (is_alive == DEAD) {
             character.set_style(npc, dead);
@@ -294,7 +269,8 @@ static bool message_process(Camera_Access access,
     Rectangle_Access_change(rectangle);
     Rectangle_Access_set_top_left_point(access->start);
     Rectangle_Access_set_down_right_point(max_point);
-  [from_pool calculate_graph_position:rectangle];
+
+    Character_Pool_calculate_graph_position(from_pool, rectangle);
 
   DONE:
     Point_Type_free(vector);

@@ -49,8 +49,11 @@ void Point_Access_add_y(int32_t y);
  */
 bool Point_Access_eq(Point_Access other);
 
+
+#ifdef DEBUG
 /** @brief 顯示 Point_Type 內容
  */
 void Point_Access_print(void);
+#endif
 
 #endif

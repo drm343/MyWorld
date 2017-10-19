@@ -27,7 +27,9 @@ size_t String_length(const char *str)
         } else if (check == 0) {
             break;
         } else {
-            printf("bug\n");
+            #ifdef DEBUG
+            DEBUG_PRINT("%s is not utf8 string or bug\n", str);
+            #endif
             break;
         }
     }
@@ -74,7 +76,9 @@ size_t String_width_length(const char *str, int64_t full_size)
         } else if (check == 0) {
             break;
         } else {
-            printf("bug\n");
+            #ifdef DEBUG
+            DEBUG_PRINT("%s is not utf8 string or bug\n", str);
+            #endif
             break;
         }
     }

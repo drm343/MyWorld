@@ -98,6 +98,8 @@ bool Point_Access_eq(Point_Access other)
     return false;
 }
 
+
+#ifdef DEBUG
 /** @brief 顯示 Point_Type 內容
  */
 void Point_Access_print(void)
@@ -106,3 +108,4 @@ void Point_Access_print(void)
         Point_Type_print(self);
     }
 }
+#endif
