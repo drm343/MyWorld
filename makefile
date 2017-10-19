@@ -40,7 +40,9 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/map_system.o \
 	$(OBJ)/graphic-camera.o \
 	$(OBJ)/graphic-message.o \
-	$(OBJ)/character_pool.o
+	$(OBJ)/character_pool.o \
+	$(OBJ)/character_pool-use_self.o
+
 
 LIBSTRINGS := $(OBJ)/block.o \
 	$(OBJ)/strings.o

@@ -1,7 +1,7 @@
 #ifndef HEADER_GRAPHIC_CAMERA
 #define HEADER_GRAPHIC_CAMERA
 
-#include "object/character_pool.h"
+#include "character_pool-use_self.h"
 #include "map_system.h"
 #include "graphic-message.h"
 

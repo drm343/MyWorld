@@ -2,7 +2,9 @@
 
 #include "main.h"
 
-#define CP(name) Character_Pool_##name
+#define CP(name) Character_Pool_Access_##name
+#define CP_SUPER(name) Character_Pool_##name
+
 
 typedef SDL_Window *SDL_Window_Access;
 typedef SDL_Renderer *SDL_Renderer_Access;
@@ -76,11 +78,11 @@ void draw_view(SDL_Renderer_Access render)
     SDL_RenderCopy(render, camera_1->player->base->Mark->access, NULL,
                    &(position));
 
-    uint8_t used = CP(instance_count) (character_pool);
+    uint8_t used = CP(instance_count) ();
 
     for (int next = 1; next < used; next++) {
         Status_Access npc =
-            CP(get_instance_by_index) (character_pool, next);
+            CP(get_instance_by_index) (next);
 
         if (npc->base->status == IN_USE) {
             if (!Point_Type_eq(npc->base->Real_Position,
@@ -104,9 +106,9 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
     USE_FONT = TTF_OpenFont(FONT_FAMILY, 512);
     if (!USE_FONT) {
-#ifdef DEBUG
+        #ifdef DEBUG
         DEBUG_PRINT("TTF_OpenFont: %s\n", TTF_GetError());
-#endif
+        #endif
         return EXECUTE_FAILED;
     }
 
@@ -150,7 +152,8 @@ void submain(const char *root_dir, const char *init_cfg,
     bool running = true;
 
     style_pool = Style_Pool_Interface.start(256);
-    character_pool = CP(create) (20, 100);
+    character_pool = CP_SUPER(create) (20, 100);
+    CP(change)(character_pool);
     camera_1 = camera.start();
     box_1 = message_box.start();
 
@@ -161,7 +164,7 @@ void submain(const char *root_dir, const char *init_cfg,
     if (character_pool == NULL) {
         goto INIT_FAILED;
     }
-    Status_Access Player = CP(use_player) (character_pool);
+    Status_Access Player = CP(use_player) ();
     character.set_name(Player, "雜魚");
     camera.set_player(camera_1, Player);
 
@@ -171,14 +174,14 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
 
-    CP(parse_npc_config) (character_pool, npc_cfg, style_pool);
+    CP(parse_npc_config) (npc_cfg, style_pool);
 
     camera.set_map(camera_1, map_1);
 
-    CP(use_enemy) (character_pool, "goblin", "g 1", camera_1->map);
-    CP(use_enemy) (character_pool, "goblin", "g 2", camera_1->map);
-    CP(use_neutral) (character_pool, "villager", "v 1", camera_1->map);
-    CP(use_neutral) (character_pool, "villager", "v 2", camera_1->map);
+    CP(use_enemy) ("goblin", "g 1", camera_1->map);
+    CP(use_enemy) ("goblin", "g 2", camera_1->map);
+    CP(use_neutral) ("villager", "v 1", camera_1->map);
+    CP(use_neutral) ("villager", "v 2", camera_1->map);
 
     win =
         SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT,
@@ -192,11 +195,11 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
 
-    uint8_t instance_count = CP(instance_count) (character_pool);
+    uint8_t instance_count = CP(instance_count) ();
     uint8_t index = instance_count;
     while (running) {
         current = camera_1->player;
-        message = CP(action) (character_pool, current);
+        message = CP(action) (current);
 
         switch (message) {
             case QUIT:
@@ -213,12 +216,12 @@ void submain(const char *root_dir, const char *init_cfg,
         }
 
         for (index; index < instance_count; index++) {
-            current = CP(get_instance_by_index) (character_pool, index);
+            current = CP(get_instance_by_index) (index);
 
             if (current->base->is_alive == false) {
                 continue;
             }
-            message = CP(action) (character_pool, current);
+            message = CP(action) (current);
             running =
                 camera.take(camera_1, character_pool, box_1, current,
                             message);
@@ -238,6 +241,7 @@ void submain(const char *root_dir, const char *init_cfg,
   DONE:
     message_box.stop(box_1);
     camera.stop(camera_1);
+    CP_SUPER(free)(character_pool);
     Style_Pool_Interface.stop(style_pool);
 }
 
