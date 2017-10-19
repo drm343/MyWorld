@@ -4,8 +4,7 @@
  * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。
  */
 
-Status_List *Status_List_start(uint8_t max_size)
-{
+Status_List* Status_List_start(uint8_t max_size) {
     Status_List *result = calloc(1, sizeof(Status_List));
     Status_Node *list = calloc(max_size, sizeof(Status_Node));
 
@@ -18,14 +17,12 @@ Status_List *Status_List_start(uint8_t max_size)
     return result;
 }
 
-void Status_List_stop(Status_List * access)
-{
+void Status_List_stop(Status_List *access) {
     free(access->list);
     free(access);
 }
 
-void Status_List_gc(Status_List * access)
-{
+void Status_List_gc(Status_List *access) {
     uint8_t used = access->used;
     uint8_t instance_used = access->instance_counter;
     Status_Node *unused_node = NULL;
@@ -42,7 +39,8 @@ void Status_List_gc(Status_List * access)
 
             if (unused_node == current) {
                 break;
-            } else if (unused_node->content == NULL) {
+            }
+            else if (unused_node->content == NULL) {
                 unused_node->content = current->content;
                 unused_node->next = NULL;
                 unused_node->previous = NULL;
@@ -59,25 +57,23 @@ void Status_List_gc(Status_List * access)
                 if (previous != NULL) {
                     previous->next = unused_node;
                     current->previous = NULL;
-                    unused_node->previous = previous;
+                    unused_node ->previous = previous;
                 }
 
                 if (next != NULL) {
                     next->previous = unused_node;
                     current->next = NULL;
                     unused_node->next = next;
-                }
-                break;
-            }
+                 }
+                 break;
+             }
         }
-
         current = next;
     }
     access->used = instance_used;
 }
 
-uint8_t Status_List_insert(Status_List * access, Status * item)
-{
+uint8_t Status_List_insert(Status_List *access, Status *item) {
     uint8_t used = access->used;
     uint8_t max_size = access->max_size;
 
@@ -101,7 +97,8 @@ uint8_t Status_List_insert(Status_List * access, Status * item)
 
         if (last == NULL) {
             access->last = node;
-        } else {
+        }
+        else {
             last->next = node;
             node->previous = last;
             access->last = node;
@@ -109,13 +106,13 @@ uint8_t Status_List_insert(Status_List * access, Status * item)
         access->used = used + 1;
         access->instance_counter = access->instance_counter + 1;
         return used;
-    } else {
+    }
+    else {
         return -1;
     }
 }
 
-void Status_List_remove(Status_List * access, Status * item)
-{
+void Status_List_remove(Status_List *access, Status *item) {
     Status_Node *current = access->first;
     Status_Node *next = NULL;
     Status_Node *previous = NULL;
@@ -144,7 +141,8 @@ void Status_List_remove(Status_List * access, Status * item)
 
             if (current == access->first) {
                 access->first = next;
-            } else if (current == access->last) {
+            }
+            else if (current == access->last) {
                 access->last = previous;
             }
             access->instance_counter = access->instance_counter - 1;
@@ -154,8 +152,7 @@ void Status_List_remove(Status_List * access, Status * item)
     }
 }
 
-Status *Status_List_get_by_index(Status_List * access, uint8_t index)
-{
+Status* Status_List_get_by_index(Status_List *access, uint8_t index) {
     Status_Node *current = access->first;
     Status_Node *next = NULL;
 
@@ -166,8 +163,7 @@ Status *Status_List_get_by_index(Status_List * access, uint8_t index)
     return current->content;
 }
 
-void Status_List_copy_all(Status_List * from, Status_List * to)
-{
+void Status_List_copy_all(Status_List *from, Status_List *to) {
     uint8_t used = from->instance_counter;
 
     Status_Node *current = from->first;
