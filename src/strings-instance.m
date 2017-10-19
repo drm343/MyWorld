@@ -24,3 +24,17 @@ const char *String_Repo_sign_in(const char *str)
     uint32_t str_id = strings_intern(self, str);
     return strings_lookup_id(self, str_id);
 }
+
+
+/** @brief 從 repo 中取出對應 string 的 Access
+ * @param 想取出的 String
+ * @return Repo 中的 Access
+ *
+ * Repo 中完全相同的 String 只會有一個 address，因此取出後的 address
+ * 可以用來驗證兩個 String 是否相等。
+ */
+const char *String_Repo_search(const char *str)
+{
+    uint32_t str_id = strings_lookup(self, str);
+    return strings_lookup_id(self, str_id);
+}

@@ -205,6 +205,7 @@ static Found_Result pool_find(Character_Pool_Type_Access access,
 {
     uint8_t count = 0;
     uint8_t used = access->status->max_size - access->status->current_size;
+    race = String_Repo_search(race);
 
     for (count; count < used; count++) {
         *npc = &(access->status->pool[count]);
@@ -612,7 +613,6 @@ name and_map:(Map_Access) map
     if (npc != NULL) {
         character.set_relation_enemy(npc);
       [self add_enemy:npc];
-    }
     return npc;
 }
 
