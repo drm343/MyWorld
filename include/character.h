@@ -5,7 +5,7 @@
 
 #include "graphic.h"
 
-#include "instance/point.h"
+#include "point-use_self.h"
 
 
 typedef struct Character_Base {

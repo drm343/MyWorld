@@ -1,4 +1,4 @@
-#include "object/point.h"
+#include "point.h"
 
 
 /** @brief 建立新的 Point_Type 物件

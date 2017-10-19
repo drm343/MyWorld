@@ -1,7 +1,7 @@
 #ifndef HEADER_OBJECT_NEW_POINT_ACCESS
 #define HEADER_OBJECT_NEW_POINT_ACCESS
 
-#include "object/point.h"
+#include "point.h"
 
 
 /** @brief 替換程式內部 Point_Type 物件

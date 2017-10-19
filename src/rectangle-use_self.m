@@ -1,4 +1,4 @@
-#include "instance/rectangle.h"
+#include "rectangle-use_this.h"
 
 static Rectangle_Access self = NULL;
 
@@ -40,7 +40,7 @@ Point_Access Rectangle_Access_top_left_point(void)
 
 /** @brief 存入 Rectangle 左上角的 Point_Type 物件
  * @param point Point_Type 物件的 Access
- * 
+ *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
 void Rectangle_Access_set_top_left_point(Point_Access point)
@@ -65,7 +65,7 @@ Point_Access Rectangle_Access_down_right_point(void)
 
 /** @brief 存入 Rectangle 右下角的 Point_Type 物件
  * @param point Point_Type 物件的 Access
- * 
+ *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
 void Rectangle_Access_set_down_right_point(Point_Access point)

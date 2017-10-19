@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 
 #include "base_type.h"
-#include "instance/point.h"
+#include "point-use_self.h"
 
 
 @ interface Map_Type:NSObject {

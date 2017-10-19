@@ -1,4 +1,4 @@
-#include "instance/point.h"
+#include "point-use_self.h"
 
 static Point_Access self = NULL;
 

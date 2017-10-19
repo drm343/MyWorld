@@ -26,10 +26,10 @@ DEBUG=
 CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
 
 
-AUTO_BUILD_DEP := $(OBJ)/point_type.o \
-	$(OBJ)/point_access.o \
-	$(OBJ)/rectangle_type.o \
-	$(OBJ)/rectangle_access.o \
+AUTO_BUILD_DEP := $(OBJ)/point.o \
+	$(OBJ)/point-use_self.o \
+	$(OBJ)/rectangle.o \
+	$(OBJ)/rectangle-use_self.o \
 	$(OBJ)/helper_function-strings.o \
 	$(OBJ)/strings-instance.m \
 	$(OBJ)/graphic.o \
