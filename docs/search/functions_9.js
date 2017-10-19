@@ -22,6 +22,7 @@ var searchData=
   ['string_5fascii_5flength',['String_ascii_length',['../helper__function_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44',1,'strings.h']]],
   ['string_5flength',['String_length',['../helper__function_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f',1,'strings.h']]],
   ['string_5frepo_5fchange',['String_Repo_change',['../instance_2strings_8h.html#aa9bf7b1a78b925968b5df81ccbc80d40',1,'strings.h']]],
+  ['string_5frepo_5fsearch',['String_Repo_search',['../instance_2strings_8h.html#a5254359e0781e4db1c2566815f183703',1,'strings.h']]],
   ['string_5frepo_5fsign_5fin',['String_Repo_sign_in',['../instance_2strings_8h.html#abeb28601916d425fd421abb216589437',1,'strings.h']]],
   ['string_5fwidth_5flength',['String_width_length',['../helper__function_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d',1,'strings.h']]]
 ];

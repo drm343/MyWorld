@@ -116,6 +116,9 @@ strings.h的包含相依圖:</div>
 <tr class="memitem:abeb28601916d425fd421abb216589437"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instance_2strings_8h.html#abeb28601916d425fd421abb216589437">String_Repo_sign_in</a> (const char *str)</td></tr>
 <tr class="memdesc:abeb28601916d425fd421abb216589437"><td class="mdescLeft">&#160;</td><td class="mdescRight">註冊 String 到 repo 中，然後回傳註冊後的新 Access  <a href="#abeb28601916d425fd421abb216589437">更多...</a><br /></td></tr>
 <tr class="separator:abeb28601916d425fd421abb216589437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5254359e0781e4db1c2566815f183703"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instance_2strings_8h.html#a5254359e0781e4db1c2566815f183703">String_Repo_search</a> (const char *str)</td></tr>
+<tr class="memdesc:a5254359e0781e4db1c2566815f183703"><td class="mdescLeft">&#160;</td><td class="mdescRight">從 repo 中取出對應 string 的 Access  <a href="#a5254359e0781e4db1c2566815f183703">更多...</a><br /></td></tr>
+<tr class="separator:a5254359e0781e4db1c2566815f183703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">函式說明文件</h2>
 <a class="anchor" id="aa9bf7b1a78b925968b5df81ccbc80d40"></a>
@@ -168,10 +171,36 @@ strings.h的包含相依圖:</div>
 
 </div>
 </div>
+<a class="anchor" id="a5254359e0781e4db1c2566815f183703"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* String_Repo_search </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>從 repo 中取出對應 string 的 Access </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">想取出的</td><td>String </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>Repo 中的 Access</dd></dl>
+<p>Repo 中完全相同的 String 只會有一個 address，因此取出後的 address 可以用來驗證兩個 String 是否相等。 </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月19日 星期四 02:03:18, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月19日 星期四 19:29:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
