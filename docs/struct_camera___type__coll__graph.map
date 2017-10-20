@@ -1,6 +1,6 @@
 <map id="Camera_Type" name="Camera_Type">
 <area shape="rect" id="node2" href="$struct_point___type.html" title="Point_Type" alt="" coords="5,5,93,32"/>
-<area shape="rect" id="node5" href="$struct_character___base.html" title="Character_Base" alt="" coords="77,109,193,136"/>
+<area shape="rect" id="node5" href="$struct_character___base.html" title="基本角色資料 " alt="" coords="77,109,193,136"/>
 <area shape="rect" id="node3" href="$struct_style.html" title="Style" alt="" coords="191,5,243,32"/>
 <area shape="rect" id="node4" href="$struct_character.html" title="Character" alt="" coords="95,228,174,255"/>
 </map>

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['race',['race',['../struct_character.html#a910b1052b0b286486af6624e24413cdf',1,'Character']]],
+  ['read_5fonly',['READ_ONLY',['../parameter_8h.html#a4211a20c23bd733b2e73c920a18660c0',1,'parameter.h']]],
+  ['read_5fwrite',['READ_WRITE',['../parameter_8h.html#aaceb6044c6c92222a19fb3b8cc14327b',1,'parameter.h']]],
   ['real_5fposition',['Real_Position',['../struct_character___base.html#a1680bfe1928e5db9e928c0eecd8803bc',1,'Character_Base']]],
   ['record_5ftype',['RECORD_TYPE',['../ada__style_8h.html#a56121050113db5806899926d45e7a392',1,'ada_style.h']]],
   ['rectangle_2duse_5fthis_2eh',['rectangle-use_this.h',['../rectangle-use__this_8h.html',1,'']]],

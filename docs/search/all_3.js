@@ -18,8 +18,6 @@ var searchData=
   ['character_5fapi',['Character_API',['../struct_character___a_p_i.html',1,'']]],
   ['character_5fbase',['Character_Base',['../struct_character___base.html',1,'']]],
   ['character_5fbase_5faccess',['Character_Base_Access',['../character_8h.html#a78a651266f3a2614cf9ebb596f331031',1,'character.h']]],
-  ['character_5fbase_5ffree',['Character_Base_free',['../character_8h.html#a4de251f95f31d837c8942930c9645ccf',1,'character.h']]],
-  ['character_5fbase_5finit',['Character_Base_init',['../character_8h.html#adcf24ad6587d14ede5fd0a210137ef82',1,'character.h']]],
   ['character_5fbase_5ftype',['Character_Base_Type',['../character_8h.html#a5a4d1a9a8e1bc686c0b47c5f17ef6133',1,'character.h']]],
   ['character_5fpool',['Character_Pool',['../character__pool_8h.html#a8cbd9a471a3892a8e855b7791a1ccf43',1,'character_pool.h']]],
   ['character_5fpool_2duse_5fself_2eh',['character_pool-use_self.h',['../character__pool-use__self_8h.html',1,'']]],
@@ -28,7 +26,7 @@ var searchData=
   ['color',['color',['../struct_font_config.html#a5d4bf4af47a2396f00e16ad1d967995d',1,'FontConfig']]],
   ['conf_5fpath',['CONF_PATH',['../main__set__config_8h.html#a4bb0d0741a12449e56d19d1202214ae6',1,'main_set_config.h']]],
   ['content',['content',['../struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Node::content()'],['../struct___status___item.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Item::content()']]],
-  ['copy',['copy',['../struct_character___a_p_i.html#a715ae4b96c252967ee78c7e7d43032c3',1,'Character_API::copy()'],['../struct_character___base.html#a6659da6b1f1a5b213fbec6dfdd16fa92',1,'Character_Base::copy()']]],
+  ['copy',['copy',['../struct_character___a_p_i.html#a715ae4b96c252967ee78c7e7d43032c3',1,'Character_API::copy()'],['../character_8h.html#ae8f0c871813d34bcaafe9da293a5838e',1,'copy():&#160;character.h']]],
   ['create',['create',['../character__pool_8h.html#a89b1cc96fd78219184c74be935a11236',1,'create(uint8_t max_config_size, uint8_t max_instance_size):&#160;character_pool.h'],['../map__system_8h.html#ad28a1fdcdd43d538c23c1d7bd8e7f659',1,'create(void):&#160;map_system.h'],['../rectangle_8h.html#ac48ca2dbbf01967a2d65a171f2b8e06d',1,'create(void):&#160;rectangle.h'],['../two__point_8h.html#a1671262a3ed360785ac24f67bf275235',1,'create(void):&#160;two_point.h']]],
   ['crossable',['crossable',['../struct_character___base.html#a39b1af64a01fe21b7484882119105129',1,'Character_Base']]],
   ['current_5fsize',['current_size',['../struct_style___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Style_Pool']]]

@@ -88,6 +88,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!--header-->
 <div class="contents">
 
+<p>基本角色資料  
+ <a href="struct_character___base.html#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="character_8h_source.html">character.h</a>&gt;</code></p>
 <div class="dynheader">
 Character_Base的合作圖:</div>
@@ -115,10 +118,11 @@ Character_Base的合作圖:</div>
 <tr class="separator:aed817fc6d112672f2233bde49f822e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9597bd41e83fe98fc4d5b8a7387f7ae2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base__type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_character___base.html#a9597bd41e83fe98fc4d5b8a7387f7ae2">status</a></td></tr>
 <tr class="separator:a9597bd41e83fe98fc4d5b8a7387f7ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6659da6b1f1a5b213fbec6dfdd16fa92"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_character___base.html#a6659da6b1f1a5b213fbec6dfdd16fa92">copy</a> )(struct <a class="el" href="struct_character___base.html">Character_Base</a> *, struct <a class="el" href="struct_character___base.html">Character_Base</a> *)</td></tr>
-<tr class="separator:a6659da6b1f1a5b213fbec6dfdd16fa92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">欄位說明文件</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳細描述</h2>
+<div class="textblock"><p>基本角色資料 </p>
+<p>後續可能會將這個結構跟 Character_Type 合併，並且改成 Container。 </p>
+</div><h2 class="groupheader">欄位說明文件</h2>
 <a class="anchor" id="a8f8f80d37794cde9472343e4487ba3eb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -128,6 +132,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>角色名稱 </p>
 
 </div>
 </div>
@@ -140,6 +145,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>角色使用的顯示圖形 Access </p>
 
 </div>
 </div>
@@ -152,6 +158,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>角色的真實座標 </p>
 
 </div>
 </div>
@@ -164,6 +171,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>顯示在畫面上的座標 </p>
 
 </div>
 </div>
@@ -176,6 +184,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>可不可以跨過去，後續會修改 </p>
 
 </div>
 </div>
@@ -188,6 +197,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>可不可以被攻擊，後續會修改 </p>
 
 </div>
 </div>
@@ -200,6 +210,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>角色是否還存活，可以依靠此資訊取代 crossable </p>
 
 </div>
 </div>
@@ -212,18 +223,7 @@ Character_Base的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6659da6b1f1a5b213fbec6dfdd16fa92"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void(* copy) (struct <a class="el" href="struct_character___base.html">Character_Base</a> *, struct <a class="el" href="struct_character___base.html">Character_Base</a> *)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>是否使用中，可以依靠 Character_Pool 來分辨，後續會移除 </p>
 
 </div>
 </div>
@@ -233,7 +233,7 @@ Character_Base的合作圖:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月20日 星期五 18:59:22, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月21日 星期六 02:35:44, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

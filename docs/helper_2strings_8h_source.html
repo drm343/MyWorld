@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>MyWorld: include/helper_function/strings.h 原始程式檔</title>
+<title>MyWorld: include/helper/strings.h 原始程式檔</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_5aca9d21608229580d4979eae38b8e18.html">helper_function</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_523818b7cdc8406cfe3ab8cb52314c0b.html">helper</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="title">strings.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="helper__function_2strings_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_STRING_HELPER</span></div>
+<a href="helper_2strings_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_STRING_HELPER</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_STRING_HELPER</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
@@ -96,31 +96,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper__function_2strings_8h.html">strings.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html">helper_function/debug.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_2strings_8h.html">strings.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html">helper/debug.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="helper__function_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>strings *<a class="code" href="helper__function_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>strings *<a class="code" href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper__function_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f">String_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f">String_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper__function_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44">String_ascii_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44">String_ascii_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper__function_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d">String_width_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, int64_t full_size);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d">String_width_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, int64_t full_size);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="debug_8h_html"><div class="ttname"><a href="debug_8h.html">debug.h</a></div></div>
-<div class="ttc" id="helper__function_2strings_8h_html_a3466c562ebd9f656dab84e8e347e507d"><div class="ttname"><a href="helper__function_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d">String_width_length</a></div><div class="ttdeci">size_t String_width_length(const char *str, int64_t full_size)</div><div class="ttdoc">求出顯示在螢幕所需要的長度 </div></div>
-<div class="ttc" id="helper__function_2strings_8h_html_aa0497d0b1b8b6c751aeda054e8873562"><div class="ttname"><a href="helper__function_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a></div><div class="ttdeci">struct strings * String_Intern</div><div class="ttdef"><b>Definition:</b> strings.h:13</div></div>
-<div class="ttc" id="helper__function_2strings_8h_html"><div class="ttname"><a href="helper__function_2strings_8h.html">strings.h</a></div></div>
-<div class="ttc" id="helper__function_2strings_8h_html_afc75f1d965e0694a1a15d6169f0d0a44"><div class="ttname"><a href="helper__function_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44">String_ascii_length</a></div><div class="ttdeci">size_t String_ascii_length(const char *str)</div><div class="ttdoc">求出 ascii 版本的 string 長度 </div></div>
-<div class="ttc" id="helper__function_2strings_8h_html_a0e7a8182f928757f28aee0871ceb768f"><div class="ttname"><a href="helper__function_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f">String_length</a></div><div class="ttdeci">size_t String_length(const char *str)</div><div class="ttdoc">求出 UTF8 版本的 string 長度 </div></div>
+<div class="ttc" id="helper_2strings_8h_html_afc75f1d965e0694a1a15d6169f0d0a44"><div class="ttname"><a href="helper_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44">String_ascii_length</a></div><div class="ttdeci">size_t String_ascii_length(const char *str)</div><div class="ttdoc">求出 ascii 版本的 string 長度 </div></div>
+<div class="ttc" id="helper_2strings_8h_html"><div class="ttname"><a href="helper_2strings_8h.html">strings.h</a></div></div>
+<div class="ttc" id="helper_2strings_8h_html_aa0497d0b1b8b6c751aeda054e8873562"><div class="ttname"><a href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a></div><div class="ttdeci">struct strings * String_Intern</div><div class="ttdef"><b>Definition:</b> strings.h:13</div></div>
+<div class="ttc" id="helper_2strings_8h_html_a3466c562ebd9f656dab84e8e347e507d"><div class="ttname"><a href="helper_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d">String_width_length</a></div><div class="ttdeci">size_t String_width_length(const char *str, int64_t full_size)</div><div class="ttdoc">求出顯示在螢幕所需要的長度 </div></div>
+<div class="ttc" id="helper_2strings_8h_html_a0e7a8182f928757f28aee0871ceb768f"><div class="ttname"><a href="helper_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f">String_length</a></div><div class="ttdeci">size_t String_length(const char *str)</div><div class="ttdoc">求出 UTF8 版本的 string 長度 </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月20日 星期五 18:59:22, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月21日 星期六 02:35:44, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
