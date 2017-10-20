@@ -1,7 +1,7 @@
 #ifndef HEADER_GRAPHIC_MESSAGE
 #define HEADER_GRAPHIC_MESSAGE
 #include "graphic.h"
-#include "helper_function/strings.h"
+#include "helper/strings.h"
 
 
 typedef char *String_Access;

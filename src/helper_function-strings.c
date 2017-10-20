@@ -1,4 +1,4 @@
-#include "helper_function/strings.h"
+#include "helper/strings.h"
 
 
 /** @brief 求出 UTF8 版本的 string 長度

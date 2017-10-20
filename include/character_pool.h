@@ -5,7 +5,7 @@
 #include <time.h>
 
 #include "character-skill.h"
-#include "helper_function/generic_function.h"
+#include "helper/generic_function.h"
 
 #include "container/Status_List.h"
 #include "map_system.h"
@@ -17,19 +17,19 @@
 
 
 /** @brief 角色池基本定義
- * 
+ *
  * 建議不要直接使用本結構名稱，而是改用 Character_Pool。
  */
 struct _Character_Pool;
 
 /** @brief 角色池基本定義
- * 
+ *
  * 建議使用本名稱，僅提供 API 供使用者操作本結構。
  */
 typedef struct _Character_Pool Character_Pool;
 
 /** @brief 角色池 Access
- * 
+ *
  * 僅提供 API 供使用者操作本結構。
  */
 typedef Character_Pool *Character_Pool_Access;

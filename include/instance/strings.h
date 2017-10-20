@@ -1,7 +1,7 @@
 #ifndef HEADER_STRINGS_REPO_ACCESS
 #define HEADER_STRINGS_REPO_ACCESS
 
-#include "helper_function/strings.h"
+#include "helper/strings.h"
 
 
 /** @brief 設定 strings intern 的 repo

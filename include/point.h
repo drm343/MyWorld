@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "helper_function/debug.h"
+#include "helper/debug.h"
 
 
 typedef struct {

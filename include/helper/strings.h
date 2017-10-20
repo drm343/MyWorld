@@ -7,7 +7,7 @@
 
 
 #include "strings.h"
-#include "helper_function/debug.h"
+#include "helper/debug.h"
 
 
 typedef struct strings *String_Intern;

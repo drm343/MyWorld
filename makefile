@@ -12,7 +12,6 @@ BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
 STD=-std=gnu11
-#INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern -I /usr/lib64/gcc/x86_64-slackware-linux/7.2.0/include
 INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
 LFLAGS=-Werror -L$(OBJ) -lmy_world

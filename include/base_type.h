@@ -24,11 +24,6 @@ typedef enum {
     IN_USE
 } Use_Type;
 
-/**
- * Remove Ojbective-C version's BOOL type
- */
-#undef NO
-#undef YES
 
 typedef enum {
     NO,

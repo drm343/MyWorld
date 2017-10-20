@@ -12,7 +12,7 @@
 
 #include <libconfig.h>
 
-#include "helper_function/strings.h"
+#include "helper/strings.h"
 #include "graphic-camera.h"
 
 #include "main_set_config.h"
