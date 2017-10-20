@@ -539,7 +539,7 @@ Execute_Result EXPORT(parse_npc_config) (Character_Pool * access,
 
             Status_Access npc = EXPORT(sign_in) (access);
             Style_Access style_access =
-                Style_Pool_Interface.malloc(style_pool);
+                Style_Pool_malloc(style_pool);
 
             character.set_style(npc, style_access);
 

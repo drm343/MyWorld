@@ -1,11 +1,6 @@
 #include "main.h"
 
 
-#define MAP(name) Map_Type_##name
-#define CP(name) Character_Pool_Access_##name
-#define CP_SUPER(name) Character_Pool_##name
-
-
 typedef SDL_Window *SDL_Window_Access;
 typedef SDL_Renderer *SDL_Renderer_Access;
 typedef SDL_Event *SDL_Event_Access;
@@ -114,7 +109,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
     SDL_Surface *surfaceMessage = NULL;
     uint8_t counter = 0;
-    Style_Access result = Style_Pool_Interface.next(style_pool, &counter);
+    Style_Access result = SP(next)(style_pool, &counter);
 
     while (result != NULL) {
         surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
@@ -124,13 +119,13 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
         SDL_FreeSurface(surfaceMessage);
 
-        result = Style_Pool_Interface.next(style_pool, &counter);
+        result = SP(next)(style_pool, &counter);
     }
 
-    result = Style_Pool_Interface.find(style_pool, "player");
+    result = SP(find)(style_pool, "player");
     character.set_style(camera_1->player, result);
 
-    Style_Access dead = Style_Pool_Interface.find(style_pool, "dead");
+    Style_Access dead = SP(find)(style_pool, "dead");
     camera.set_dead_style(camera_1, dead);
     return EXECUTE_SUCCESS;
 }
@@ -151,7 +146,7 @@ void submain(const char *root_dir, const char *init_cfg,
     SDL_Renderer_Access render;
     bool running = true;
 
-    style_pool = Style_Pool_Interface.start(256);
+    style_pool = SP(start)(256);
     character_pool = CP_SUPER(create) (20, 100);
     CP(change)(character_pool);
     camera_1 = camera.start();
@@ -228,7 +223,7 @@ void submain(const char *root_dir, const char *init_cfg,
         }
         draw_view(render);
     }
-    Style_Pool_Interface.gc(style_pool);
+    SP(free_texture)(style_pool);
 
     SDL_DestroyRenderer(render);
     SDL_DestroyWindow(win);
@@ -242,7 +237,7 @@ void submain(const char *root_dir, const char *init_cfg,
     message_box.stop(box_1);
     camera.stop(camera_1);
     CP_SUPER(free)(character_pool);
-    Style_Pool_Interface.stop(style_pool);
+    SP(stop)(style_pool);
 }
 
 
