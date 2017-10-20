@@ -27,7 +27,10 @@ var searchData=
   ['conf_5fpath',['CONF_PATH',['../main__set__config_8h.html#a4bb0d0741a12449e56d19d1202214ae6',1,'main_set_config.h']]],
   ['content',['content',['../struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Node::content()'],['../struct___status___item.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Item::content()']]],
   ['copy',['copy',['../struct_character___a_p_i.html#a715ae4b96c252967ee78c7e7d43032c3',1,'Character_API::copy()'],['../character_8h.html#ae8f0c871813d34bcaafe9da293a5838e',1,'copy():&#160;character.h']]],
+  ['cp',['CP',['../main_8h.html#a6898a2c9c983312569a56a14796fe7e5',1,'main.h']]],
+  ['cp_5fsuper',['CP_SUPER',['../main_8h.html#a1dc57d36f46f25187ac4b0173d35334f',1,'main.h']]],
   ['create',['create',['../character__pool_8h.html#a89b1cc96fd78219184c74be935a11236',1,'create(uint8_t max_config_size, uint8_t max_instance_size):&#160;character_pool.h'],['../map__system_8h.html#ad28a1fdcdd43d538c23c1d7bd8e7f659',1,'create(void):&#160;map_system.h'],['../rectangle_8h.html#ac48ca2dbbf01967a2d65a171f2b8e06d',1,'create(void):&#160;rectangle.h'],['../two__point_8h.html#a1671262a3ed360785ac24f67bf275235',1,'create(void):&#160;two_point.h']]],
   ['crossable',['crossable',['../struct_character___base.html#a39b1af64a01fe21b7484882119105129',1,'Character_Base']]],
-  ['current_5fsize',['current_size',['../struct_style___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Style_Pool']]]
+  ['current_5fsize',['current_size',['../struct_style___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Style_Pool']]],
+  ['create_20your_20own_20roguelike_20in_20c',['Create your own roguelike in C',['../index.html',1,'']]]
 ];

@@ -36,7 +36,8 @@ var searchData=
   ['skill_5fpool',['skill_pool',['../character-skill_8h.html#a59ff30a84d369e13e21886781c935fe8',1,'character-skill.h']]],
   ['skill_5fpool_5faccess',['Skill_Pool_Access',['../character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20',1,'character-skill.h']]],
   ['skill_5fpool_5fapi',['Skill_Pool_API',['../struct_skill___pool___a_p_i.html',1,'']]],
-  ['start',['start',['../struct_skill___pool___a_p_i.html#a1b77fc2a38bdfe1ddb82a7c35c6be9ea',1,'Skill_Pool_API::start()'],['../struct_camera___type.html#afc2f8f314a8320f679b970103148f22e',1,'Camera_Type::start()'],['../struct_graphic___camera___a_p_i.html#ab1e9d62e18cbffbfcab058fda00cf851',1,'Graphic_Camera_API::start()'],['../struct_message___box___a_p_i.html#a881dbc2e216e620ea668c822505c1d5b',1,'Message_Box_API::start()'],['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#a7be899e888185025aa240c7103d5292b',1,'STYLE_POOL_INTERFACE::start()']]],
+  ['sp',['SP',['../main_8h.html#ad8b446ae30ed6acaa213141cbf64dd17',1,'main.h']]],
+  ['start',['start',['../struct_skill___pool___a_p_i.html#a1b77fc2a38bdfe1ddb82a7c35c6be9ea',1,'Skill_Pool_API::start()'],['../struct_camera___type.html#afc2f8f314a8320f679b970103148f22e',1,'Camera_Type::start()'],['../struct_graphic___camera___a_p_i.html#ab1e9d62e18cbffbfcab058fda00cf851',1,'Graphic_Camera_API::start()'],['../struct_message___box___a_p_i.html#a881dbc2e216e620ea668c822505c1d5b',1,'Message_Box_API::start()'],['../graphic_8h.html#af750d14b48eca23cf3d542f1c6d5da3f',1,'start():&#160;graphic.h']]],
   ['status',['status',['../struct_skill.html#a9597bd41e83fe98fc4d5b8a7387f7ae2',1,'Skill::status()'],['../struct_character___base.html#a9597bd41e83fe98fc4d5b8a7387f7ae2',1,'Character_Base::status()'],['../character-status_8h.html#aeabbbd9c500d08b0a792a839100fad12',1,'Status():&#160;character-status.h']]],
   ['status_5faccess',['Status_Access',['../character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109',1,'character-status.h']]],
   ['status_5fitem',['Status_Item',['../_status___pool_8h.html#a5818280a139f59599d5d234372b88282',1,'Status_Pool.h']]],
@@ -55,7 +56,7 @@ var searchData=
   ['status_5fpool_5fmalloc',['Status_Pool_malloc',['../_status___pool_8h.html#a80e69e34f21810bf4ef9277df6d17f22',1,'Status_Pool.h']]],
   ['status_5fpool_5fstart',['Status_Pool_start',['../_status___pool_8h.html#a3deb92152f26b151472b1e93576f6f0a',1,'Status_Pool.h']]],
   ['status_5fpool_5fstop',['Status_Pool_stop',['../_status___pool_8h.html#a09691fb602fa561e06fffe3e8e4cd893',1,'Status_Pool.h']]],
-  ['stop',['stop',['../struct_skill___pool___a_p_i.html#acfeb168899dad275055319328bc49801',1,'Skill_Pool_API::stop()'],['../struct_graphic___camera___a_p_i.html#a203b3c0da34013ffc21d205605534da8',1,'Graphic_Camera_API::stop()'],['../struct_message___box___a_p_i.html#afd74f42e302c4c3ba2a470b89d26b020',1,'Message_Box_API::stop()'],['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#ab868876b4bd6413a6138951b3eb27ee2',1,'STYLE_POOL_INTERFACE::stop()']]],
+  ['stop',['stop',['../struct_skill___pool___a_p_i.html#acfeb168899dad275055319328bc49801',1,'Skill_Pool_API::stop()'],['../struct_graphic___camera___a_p_i.html#a203b3c0da34013ffc21d205605534da8',1,'Graphic_Camera_API::stop()'],['../struct_message___box___a_p_i.html#afd74f42e302c4c3ba2a470b89d26b020',1,'Message_Box_API::stop()'],['../graphic_8h.html#ab03f3dddc5c79b4011e6092c8d19c5e3',1,'stop():&#160;graphic.h']]],
   ['strcmp',['STRCMP',['../generic__function_8h.html#a494f7bf55d0c5a9e41592c0ed48e8b43',1,'generic_function.h']]],
   ['string_5faccess',['String_Access',['../graphic-message_8h.html#a0c313c4952cb30f3a37ecb77e40f2a16',1,'graphic-message.h']]],
   ['string_5fascii_5flength',['String_ascii_length',['../helper_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44',1,'strings.h']]],
@@ -70,6 +71,5 @@ var searchData=
   ['style',['Style',['../struct_style.html',1,'']]],
   ['style_5faccess',['Style_Access',['../graphic_8h.html#af50ddf12d464cb9d156ecde0fc80cb1c',1,'graphic.h']]],
   ['style_5fpool',['Style_Pool',['../struct_style___pool.html',1,'Style_Pool'],['../main__set__config_8h.html#ac137a596979b0394ce1388b7d6a46ff2',1,'style_pool():&#160;main_set_config.h']]],
-  ['style_5fpool_5faccess',['Style_Pool_Access',['../graphic_8h.html#a831461837be60b6f95510a35a6dafb9e',1,'graphic.h']]],
-  ['style_5fpool_5finterface',['STYLE_POOL_INTERFACE',['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html',1,'STYLE_POOL_INTERFACE'],['../graphic_8h.html#aea195e5089a65cbfb5812646c8cc05d6',1,'Style_Pool_Interface():&#160;graphic.h']]]
+  ['style_5fpool_5faccess',['Style_Pool_Access',['../graphic_8h.html#a831461837be60b6f95510a35a6dafb9e',1,'graphic.h']]]
 ];

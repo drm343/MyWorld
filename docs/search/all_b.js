@@ -2,8 +2,8 @@ var searchData=
 [
   ['main_2eh',['main.h',['../main_8h.html',1,'']]],
   ['main_5fset_5fconfig_2eh',['main_set_config.h',['../main__set__config_8h.html',1,'']]],
-  ['malloc',['malloc',['../struct_skill___pool___a_p_i.html#a7034642f2384e3eb18b7a25cfb126163',1,'Skill_Pool_API::malloc()'],['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#ae2b85a17e426c45cb1f2ca85fd21ca64',1,'STYLE_POOL_INTERFACE::malloc()']]],
-  ['map',['map',['../struct_camera___type.html#a640cc1af457ace9df546269c45b5aadd',1,'Camera_Type']]],
+  ['malloc',['malloc',['../struct_skill___pool___a_p_i.html#a7034642f2384e3eb18b7a25cfb126163',1,'Skill_Pool_API::malloc()'],['../graphic_8h.html#a1991906e50f41af1ff0a0f6d01d34953',1,'malloc():&#160;graphic.h']]],
+  ['map',['map',['../struct_camera___type.html#a640cc1af457ace9df546269c45b5aadd',1,'Camera_Type::map()'],['../main_8h.html#a98cc3560292a6de44a5fca5916774927',1,'MAP():&#160;main.h']]],
   ['map_5faccess',['Map_Access',['../map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e',1,'map_system.h']]],
   ['map_5fsystem_2eh',['map_system.h',['../map__system_8h.html',1,'']]],
   ['map_5ftype',['Map_Type',['../map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f',1,'map_system.h']]],

@@ -1,7 +1,6 @@
 var searchData=
 [
   ['game_5ftitle',['GAME_TITLE',['../main__set__config_8h.html#ac0e86d6e761574373738afd3e18f85a4',1,'main_set_config.h']]],
-  ['gc',['gc',['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#a8a6d9f6d1efa001c3a53e55459314913',1,'STYLE_POOL_INTERFACE']]],
   ['generic_5farray',['GENERIC_ARRAY',['../generic__function_8h.html#a965ad7aedd5747e0fe06bcf06c2ca7f5',1,'generic_function.h']]],
   ['generic_5farray_5ffunctions',['GENERIC_ARRAY_FUNCTIONS',['../generic__function_8h.html#a01f1878e9d90e5f574d19e592ed853e5',1,'generic_function.h']]],
   ['generic_5ffunction_2eh',['generic_function.h',['../generic__function_8h.html',1,'']]],

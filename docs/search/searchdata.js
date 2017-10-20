@@ -3,12 +3,13 @@ var indexSectionsWithContent =
   0: "_abcdefghilmnopqrstuvwxy",
   1: "_cfgmps",
   2: "abcdgmprst",
-  3: "abcdfgimprstu",
+  3: "abcdfgimnprstu",
   4: "abcdefghilmnoprstuvwxy",
   5: "cmnprst",
   6: "cefimruy",
   7: "acdefilnqrtuy",
-  8: "abcdefgiloprstw"
+  8: "abcdefgilmoprstw",
+  9: "c"
 };
 
 var indexSectionNames =
@@ -21,7 +22,8 @@ var indexSectionNames =
   5: "typedefs",
   6: "enums",
   7: "enumvalues",
-  8: "defines"
+  8: "defines",
+  9: "pages"
 };
 
 var indexSectionLabels =
@@ -34,6 +36,7 @@ var indexSectionLabels =
   5: "型態定義",
   6: "列舉型態",
   7: "列舉值",
-  8: "定義"
+  8: "定義",
+  9: "頁面"
 };
 

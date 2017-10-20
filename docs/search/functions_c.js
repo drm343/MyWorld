@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['use_5fally',['use_ally',['../character__pool-use__self_8h.html#a9e590a8fd353e7d867d115d2b25a1e02',1,'use_ally(const char *race, const char *name, Map_Access map):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a7ddef6946924a895edddce2937bf231c',1,'use_ally(Character_Pool *access, const char *race, const char *name, Map_Access map):&#160;character_pool.h']]],
-  ['use_5fenemy',['use_enemy',['../character__pool-use__self_8h.html#a96435c225be919e7bd3d140c12f7a68d',1,'use_enemy(const char *race, const char *name, Map_Access map):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a0e6c112c4ec5f38a8382f6ae69c6511b',1,'use_enemy(Character_Pool *access, const char *race, const char *name, Map_Access map):&#160;character_pool.h']]],
-  ['use_5fneutral',['use_neutral',['../character__pool-use__self_8h.html#a2240d5088fb6cc25c21a2252a5208dbb',1,'use_neutral(const char *race, const char *name, Map_Access map):&#160;character_pool-use_self.h'],['../character__pool_8h.html#af509473af3d09b2b3d4bd5a94c4e1111',1,'use_neutral(Character_Pool *access, const char *race, const char *name, Map_Access map):&#160;character_pool.h']]],
-  ['use_5fplayer',['use_player',['../character__pool-use__self_8h.html#aea66eb597498b3f81368991c89419b67',1,'use_player(void):&#160;character_pool-use_self.h'],['../character__pool_8h.html#aa8e49d54b7cccd81925e4fab4dee6356',1,'use_player(Character_Pool *access):&#160;character_pool.h']]]
+  ['top_5fleft',['top_left',['../map__system_8h.html#ac5e8f8150c32e1525abee8dc7f681ac4',1,'map_system.h']]],
+  ['top_5fleft_5fpoint',['top_left_point',['../rectangle_8h.html#aafe75449ce2c536d10d6298ba2675cae',1,'rectangle.h']]],
+  ['top_5fleft_5fx',['top_left_x',['../map__system_8h.html#a0dd8bddd92c32f6cde77887ba122483c',1,'map_system.h']]],
+  ['top_5fleft_5fy',['top_left_y',['../map__system_8h.html#aa3e8b29bbd236df53ea2d5549f5f6b67',1,'map_system.h']]]
 ];
