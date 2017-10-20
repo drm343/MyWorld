@@ -28,6 +28,7 @@ CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
 
 AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/point-use_self.o \
+	$(OBJ)/two_point.o \
 	$(OBJ)/rectangle.o \
 	$(OBJ)/rectangle-use_self.o \
 	$(OBJ)/helper_function-strings.o \
@@ -76,6 +77,8 @@ $(AUTO_BUILD_TOOLS):
 
 indent:
 	find $(CURREND)/include -name '*.h' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
+	find $(CURREND)/include -name *~ -exec rm {} \;
+	find $(CURREND)/src -name *~ -exec rm {} \;
 
 
 strings: $(CHECK_DIR)
