@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['generic_5fpool',['GENERIC_POOL',['../character-skill_8h.html#a8f6b9f47987f9073e537e0ff7f55604e',1,'character-skill.h']]],
-  ['get_5finstance_5fby_5findex',['get_instance_by_index',['../character__pool-use__self_8h.html#a09752bc5e77641ee8c50e7e10c5d8f72',1,'get_instance_by_index(int index):&#160;character_pool-use_self.h'],['../character__pool_8h.html#aec81527882b6e6496e675fe055ead9ea',1,'get_instance_by_index(Character_Pool *access, int index):&#160;character_pool.h']]]
+  ['find_5fcharacter',['find_character',['../character__pool-use__self_8h.html#a7dfefbd41cce3108aeb510a4fcd47091',1,'find_character(Status_Access *npc, Point_Access point):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a97a1eb8ba262db0ec92c18e1e3561b02',1,'find_character(Character_Pool *access, Status_Access *npc, Point_Access point):&#160;character_pool.h']]],
+  ['free',['free',['../character__pool_8h.html#a91cef5d7d90daea82a078fa30fde4da4',1,'free(Character_Pool *access):&#160;character_pool.h'],['../rectangle_8h.html#ad39f81ebbe8f8f5526a35227d7d30203',1,'free(Rectangle_Type *self):&#160;rectangle.h'],['../two__point_8h.html#afd40f7bb84018b787e31cda25aca76a9',1,'free(Two_Point *self):&#160;two_point.h']]]
 ];

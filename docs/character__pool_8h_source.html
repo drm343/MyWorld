@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                     <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">void</span> <a class="code" href="character__pool_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="character__pool_8h.html#ae11ad90c3130234445dd1b38c42c344b">calculate_graph_position</a>) (<a class="code" href="character__pool_8h.html#a8cbd9a471a3892a8e855b7791a1ccf43">Character_Pool</a> * access,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                       <a class="code" href="struct_rectangle___type.html">Rectangle_Access</a> rectangle);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                       <a class="code" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a> rectangle);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<a class="code" href="struct_character.html">Status_Access</a> <a class="code" href="character__pool_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="character__pool_8h.html#a7ddef6946924a895edddce2937bf231c">use_ally</a>) (<a class="code" href="character__pool_8h.html#a8cbd9a471a3892a8e855b7791a1ccf43">Character_Pool</a> * access, <span class="keyword">const</span> <span class="keywordtype">char</span> *race,</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <a class="code" href="map__system_8h.html#aa046800b7cea60bfa17422d0eb827c4c">Map_Access</a> map);</div>
@@ -196,9 +196,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="ttc" id="character__pool_8h_html_a97a1eb8ba262db0ec92c18e1e3561b02"><div class="ttname"><a href="character__pool_8h.html#a97a1eb8ba262db0ec92c18e1e3561b02">find_character</a></div><div class="ttdeci">Found_Result EXPORT() find_character(Character_Pool *access, Status_Access *npc, Point_Access point)</div><div class="ttdoc">尋找該位置是否有任何角色 </div></div>
 <div class="ttc" id="struct_style___pool_html"><div class="ttname"><a href="struct_style___pool.html">Style_Pool</a></div><div class="ttdef"><b>Definition:</b> graphic.h:29</div></div>
 <div class="ttc" id="character-status_8h_html_a80aecc9fb5465212d8d153dee04a2427"><div class="ttname"><a href="character-status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a></div><div class="ttdeci">Is_Alive</div><div class="ttdef"><b>Definition:</b> character-status.h:7</div></div>
+<div class="ttc" id="rectangle_8h_html_abb459e8fed480e794c0ed67b6f350221"><div class="ttname"><a href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a></div><div class="ttdeci">Rectangle_Type * Rectangle_Access</div><div class="ttdef"><b>Definition:</b> rectangle.h:11</div></div>
 <div class="ttc" id="character__pool_8h_html_a4fe932c6483a71ec8f5f6e2bcd6b33aa"><div class="ttname"><a href="character__pool_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a></div><div class="ttdeci">#define EXPORT(name)</div><div class="ttdef"><b>Definition:</b> character_pool.h:16</div></div>
 <div class="ttc" id="character__pool_8h_html_af509473af3d09b2b3d4bd5a94c4e1111"><div class="ttname"><a href="character__pool_8h.html#af509473af3d09b2b3d4bd5a94c4e1111">use_neutral</a></div><div class="ttdeci">Status_Access EXPORT() use_neutral(Character_Pool *access, const char *race, const char *name, Map_Access map)</div><div class="ttdoc">實體化中立角色 </div></div>
-<div class="ttc" id="struct_rectangle___type_html"><div class="ttname"><a href="struct_rectangle___type.html">Rectangle_Type</a></div><div class="ttdef"><b>Definition:</b> rectangle.h:6</div></div>
 <div class="ttc" id="character__pool_8h_html_aa2e621322f8cb6c9d7232ef54c227ed3"><div class="ttname"><a href="character__pool_8h.html#aa2e621322f8cb6c9d7232ef54c227ed3">Character_Pool_Access</a></div><div class="ttdeci">Character_Pool * Character_Pool_Access</div><div class="ttdoc">角色池 Access </div><div class="ttdef"><b>Definition:</b> character_pool.h:35</div></div>
 <div class="ttc" id="instance_2strings_8h_html"><div class="ttname"><a href="instance_2strings_8h.html">strings.h</a></div></div>
 <div class="ttc" id="_status___list_8h_html"><div class="ttname"><a href="_status___list_8h.html">Status_List.h</a></div></div>
@@ -206,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月20日 星期五 03:22:47, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月20日 星期五 15:34:22, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

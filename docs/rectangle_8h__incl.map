@@ -1,5 +1,6 @@
 <map id="include/rectangle.h" name="include/rectangle.h">
-<area shape="rect" id="node2" href="$point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="92,80,207,107"/>
-<area shape="rect" id="node3" href="$point_8h.html" title="point.h" alt="" coords="119,155,180,181"/>
-<area shape="rect" id="node8" href="$debug_8h.html" title="helper_function/debug.h" alt="" coords="301,229,461,256"/>
+<area shape="rect" id="node2" href="$two__point_8h.html" title="two_point.h" alt="" coords="105,80,194,107"/>
+<area shape="rect" id="node3" href="$point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="92,155,207,181"/>
+<area shape="rect" id="node4" href="$point_8h.html" title="point.h" alt="" coords="119,229,180,256"/>
+<area shape="rect" id="node9" href="$debug_8h.html" title="helper_function/debug.h" alt="" coords="301,304,461,331"/>
 </map>
