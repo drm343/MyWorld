@@ -85,20 +85,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#var-members">變數</a>  </div>
+<a href="#define-members">定義</a> &#124;
+<a href="#typedef-members">型態定義</a> &#124;
+<a href="#func-members">函式</a>  </div>
   <div class="headertitle">
 <div class="title">map_system.h 檔案參考文件</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#import &lt;Foundation/Foundation.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="base__type_8h_source.html">base_type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="point-use__self_8h_source.html">point-use_self.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="base__type_8h_source.html">base_type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="two__point_8h_source.html">two_point.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 map_system.h的包含相依圖:</div>
 <div class="dyncontent">
 <div class="center"><img src="map__system_8h__incl.png" border="0" usemap="#include_2map__system_8h" alt=""/></div>
 <map name="include_2map__system_8h" id="include_2map__system_8h">
-<area shape="rect" id="node3" href="base__type_8h.html" title="base_type.h" alt="" coords="155,155,248,181"/><area shape="rect" id="node6" href="point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="257,80,372,107"/><area shape="rect" id="node7" href="point_8h.html" title="point.h" alt="" coords="289,155,351,181"/><area shape="rect" id="node10" href="debug_8h.html" title="helper_function/debug.h" alt="" coords="259,229,419,256"/></map>
+<area shape="rect" id="node2" href="base__type_8h.html" title="base_type.h" alt="" coords="34,229,127,256"/><area shape="rect" id="node5" href="two__point_8h.html" title="two_point.h" alt="" coords="127,80,216,107"/><area shape="rect" id="node6" href="point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="122,155,237,181"/><area shape="rect" id="node7" href="point_8h.html" title="point.h" alt="" coords="151,229,213,256"/><area shape="rect" id="node9" href="debug_8h.html" title="helper_function/debug.h" alt="" coords="282,304,442,331"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 本圖顯示出哪些檔案直接或間接include本檔 :</div>
@@ -110,254 +111,468 @@ map_system.h的包含相依圖:</div>
 </div>
 <p><a href="map__system_8h_source.html">查看本檔案的原始碼.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-變數</h2></td></tr>
-<tr class="memitem:aa046800b7cea60bfa17422d0eb827c4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="map__system_8h.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">end</a> typedef Map_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#aa046800b7cea60bfa17422d0eb827c4c">Map_Access</a></td></tr>
-<tr class="separator:aa046800b7cea60bfa17422d0eb827c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac256a80b6d6dd0d826fa0ac2cc2d133b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">end</a></td></tr>
-<tr class="separator:ac256a80b6d6dd0d826fa0ac2cc2d133b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdb235aafb417efb1f168ddda5a4d0e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_point___type.html">Point_Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#acdb235aafb417efb1f168ddda5a4d0e8">start</a></td></tr>
-<tr class="separator:acdb235aafb417efb1f168ddda5a4d0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44169981cd9f8087e73a197b4b95ae25"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a44169981cd9f8087e73a197b4b95ae25">create</a></td></tr>
-<tr class="separator:a44169981cd9f8087e73a197b4b95ae25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a172b80424792de3083ee82758dd5ed4e"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a172b80424792de3083ee82758dd5ed4e">init</a></td></tr>
-<tr class="separator:a172b80424792de3083ee82758dd5ed4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52325d318dfbd00d27c4b788b9b7fb47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a52325d318dfbd00d27c4b788b9b7fb47">dealloc</a></td></tr>
-<tr class="separator:a52325d318dfbd00d27c4b788b9b7fb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adacd02b1e798dce5b368d9e18d395c88"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#adacd02b1e798dce5b368d9e18d395c88">init_start</a></td></tr>
-<tr class="separator:adacd02b1e798dce5b368d9e18d395c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d14900030b50f3a1cdc797234d0a811"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a3d14900030b50f3a1cdc797234d0a811">init_end</a></td></tr>
-<tr class="separator:a3d14900030b50f3a1cdc797234d0a811"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31ff590a63eaa24eaa468d45a14c4ebb"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a31ff590a63eaa24eaa468d45a14c4ebb">get_start_x</a></td></tr>
-<tr class="separator:a31ff590a63eaa24eaa468d45a14c4ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac72f60a42584467b89338cb23c8d8be7"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ac72f60a42584467b89338cb23c8d8be7">get_start_y</a></td></tr>
-<tr class="separator:ac72f60a42584467b89338cb23c8d8be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11dd23d463ba187a63ff19435e4f45a5"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a11dd23d463ba187a63ff19435e4f45a5">get_end_x</a></td></tr>
-<tr class="separator:a11dd23d463ba187a63ff19435e4f45a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88cf24282f49d26ad709b90540a19f7e"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a88cf24282f49d26ad709b90540a19f7e">get_end_y</a></td></tr>
-<tr class="separator:a88cf24282f49d26ad709b90540a19f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746a4ea6b5ce4fd600162b8213c4f933"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a746a4ea6b5ce4fd600162b8213c4f933">add_start_x</a></td></tr>
-<tr class="separator:a746a4ea6b5ce4fd600162b8213c4f933"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac18b373191ffd78a6a7522f10b222639"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ac18b373191ffd78a6a7522f10b222639">add_end_x</a></td></tr>
-<tr class="separator:ac18b373191ffd78a6a7522f10b222639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6154266ed9c4fbaccc229f47a040e67b"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a6154266ed9c4fbaccc229f47a040e67b">add_start_y</a></td></tr>
-<tr class="separator:a6154266ed9c4fbaccc229f47a040e67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09d07f1f75eaf76361491110651a8f3"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ab09d07f1f75eaf76361491110651a8f3">add_end_y</a></td></tr>
-<tr class="separator:ab09d07f1f75eaf76361491110651a8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+定義</h2></td></tr>
+<tr class="memitem:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(name)&#160;&#160;&#160;Map_Type_##name</td></tr>
+<tr class="memdesc:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace Map_Type_.  <a href="#a4fe932c6483a71ec8f5f6e2bcd6b33aa">更多...</a><br /></td></tr>
+<tr class="separator:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+型態定義</h2></td></tr>
+<tr class="memitem:afb03cbc473090af9d4f446901cee7e6f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a></td></tr>
+<tr class="separator:afb03cbc473090af9d4f446901cee7e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a6976d6a3130e3c74d247740ca436e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a></td></tr>
+<tr class="separator:a57a6976d6a3130e3c74d247740ca436e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:ad28a1fdcdd43d538c23c1d7bd8e7f659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *<a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ad28a1fdcdd43d538c23c1d7bd8e7f659">create</a> (void)</td></tr>
+<tr class="memdesc:ad28a1fdcdd43d538c23c1d7bd8e7f659"><td class="mdescLeft">&#160;</td><td class="mdescRight">建立地圖系統  <a href="#ad28a1fdcdd43d538c23c1d7bd8e7f659">更多...</a><br /></td></tr>
+<tr class="separator:ad28a1fdcdd43d538c23c1d7bd8e7f659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8efbac118e4d7e21b34aba8706a1df9"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ac8efbac118e4d7e21b34aba8706a1df9">free</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self)</td></tr>
+<tr class="memdesc:ac8efbac118e4d7e21b34aba8706a1df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">釋放地圖系統  <a href="#ac8efbac118e4d7e21b34aba8706a1df9">更多...</a><br /></td></tr>
+<tr class="separator:ac8efbac118e4d7e21b34aba8706a1df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd17c78bbcc96117238363f3a2dad61a"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#afd17c78bbcc96117238363f3a2dad61a">set_top_left</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self, int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:afd17c78bbcc96117238363f3a2dad61a"><td class="mdescLeft">&#160;</td><td class="mdescRight">設定左上角的點座標  <a href="#afd17c78bbcc96117238363f3a2dad61a">更多...</a><br /></td></tr>
+<tr class="separator:afd17c78bbcc96117238363f3a2dad61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e8f8150c32e1525abee8dc7f681ac4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ac5e8f8150c32e1525abee8dc7f681ac4">top_left</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self)</td></tr>
+<tr class="memdesc:ac5e8f8150c32e1525abee8dc7f681ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">取出左上角的點物件  <a href="#ac5e8f8150c32e1525abee8dc7f681ac4">更多...</a><br /></td></tr>
+<tr class="separator:ac5e8f8150c32e1525abee8dc7f681ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac043731d7c6f86194399c55b85e6596a"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#ac043731d7c6f86194399c55b85e6596a">set_bottom_right</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self, int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:ac043731d7c6f86194399c55b85e6596a"><td class="mdescLeft">&#160;</td><td class="mdescRight">設定右下角的點座標  <a href="#ac043731d7c6f86194399c55b85e6596a">更多...</a><br /></td></tr>
+<tr class="separator:ac043731d7c6f86194399c55b85e6596a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e7d7668a7b9a95295ae865e31c3cfa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a1e7d7668a7b9a95295ae865e31c3cfa3">bottom_right</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self)</td></tr>
+<tr class="memdesc:a1e7d7668a7b9a95295ae865e31c3cfa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">取出右下角的點物件  <a href="#a1e7d7668a7b9a95295ae865e31c3cfa3">更多...</a><br /></td></tr>
+<tr class="separator:a1e7d7668a7b9a95295ae865e31c3cfa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd8bddd92c32f6cde77887ba122483c"><td class="memItemLeft" align="right" valign="top">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a0dd8bddd92c32f6cde77887ba122483c">top_left_x</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self)</td></tr>
+<tr class="memdesc:a0dd8bddd92c32f6cde77887ba122483c"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得左上角的 X 座標  <a href="#a0dd8bddd92c32f6cde77887ba122483c">更多...</a><br /></td></tr>
+<tr class="separator:a0dd8bddd92c32f6cde77887ba122483c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e8b29bbd236df53ea2d5549f5f6b67"><td class="memItemLeft" align="right" valign="top">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#aa3e8b29bbd236df53ea2d5549f5f6b67">top_left_y</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self)</td></tr>
+<tr class="memdesc:aa3e8b29bbd236df53ea2d5549f5f6b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得左上角的 Y 座標  <a href="#aa3e8b29bbd236df53ea2d5549f5f6b67">更多...</a><br /></td></tr>
+<tr class="separator:aa3e8b29bbd236df53ea2d5549f5f6b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81fe13c5f4bbf07137f2b0a07600efa"><td class="memItemLeft" align="right" valign="top">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#af81fe13c5f4bbf07137f2b0a07600efa">bottom_right_x</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self)</td></tr>
+<tr class="memdesc:af81fe13c5f4bbf07137f2b0a07600efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得右下角的 X 座標  <a href="#af81fe13c5f4bbf07137f2b0a07600efa">更多...</a><br /></td></tr>
+<tr class="separator:af81fe13c5f4bbf07137f2b0a07600efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db0b81c207be97bc026aef12258166b"><td class="memItemLeft" align="right" valign="top">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a1db0b81c207be97bc026aef12258166b">bottom_right_y</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self)</td></tr>
+<tr class="memdesc:a1db0b81c207be97bc026aef12258166b"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得右下角的 Y 座標  <a href="#a1db0b81c207be97bc026aef12258166b">更多...</a><br /></td></tr>
+<tr class="separator:a1db0b81c207be97bc026aef12258166b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91619ff970f7af8efb9295a713d3291b"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a91619ff970f7af8efb9295a713d3291b">move_top_left</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self, int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:a91619ff970f7af8efb9295a713d3291b"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動左上角的點座標  <a href="#a91619ff970f7af8efb9295a713d3291b">更多...</a><br /></td></tr>
+<tr class="separator:a91619ff970f7af8efb9295a713d3291b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258930317437242ada8744f686184806"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map__system_8h.html#a258930317437242ada8744f686184806">move_bottom_right</a> (<a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *self, int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:a258930317437242ada8744f686184806"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動右下角的點座標  <a href="#a258930317437242ada8744f686184806">更多...</a><br /></td></tr>
+<tr class="separator:a258930317437242ada8744f686184806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">變數說明文件</h2>
-<a class="anchor" id="aa046800b7cea60bfa17422d0eb827c4c"></a>
+<h2 class="groupheader">定義巨集說明文件</h2>
+<a class="anchor" id="a4fe932c6483a71ec8f5f6e2bcd6b33aa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="map__system_8h.html#ac256a80b6d6dd0d826fa0ac2cc2d133b">end</a> typedef Map_Type* Map_Access</td>
+          <td class="memname">#define EXPORT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name</td><td>)</td>
+          <td>&#160;&#160;&#160;Map_Type_##name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Namespace Map_Type_. </p>
+<p>當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。</p>
+<p>例如 create 必須寫成 Map_Type_create，如果外部程式要簡化呼叫， 可以在程式中自行定義新的 macro，例如下面範例。</p>
+<p>#define MAP(name) Map_Type_##name<br />
+ Map_Type *self = MAP(create)(); </p>
+
+</div>
+</div>
+<h2 class="groupheader">型態定義說明文件</h2>
+<a class="anchor" id="afb03cbc473090af9d4f446901cee7e6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> <a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ac256a80b6d6dd0d826fa0ac2cc2d133b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_point___type.html">Point_Type</a> * end</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="acdb235aafb417efb1f168ddda5a4d0e8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_point___type.html">Point_Type</a>* start</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a44169981cd9f8087e73a197b4b95ae25"></a>
+<a class="anchor" id="a57a6976d6a3130e3c74d247740ca436e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id create</td>
+          <td class="memname">typedef <a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a>* <a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a172b80424792de3083ee82758dd5ed4e"></a>
+<h2 class="groupheader">函式說明文件</h2>
+<a class="anchor" id="ad28a1fdcdd43d538c23c1d7bd8e7f659"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id init</td>
+          <td class="memname"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a>* <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() create </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>建立地圖系統 </p>
+<dl class="section return"><dt>傳回值</dt><dd>地圖物件 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a52325d318dfbd00d27c4b788b9b7fb47"></a>
+<a class="anchor" id="ac8efbac118e4d7e21b34aba8706a1df9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void dealloc</td>
+          <td class="memname">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>釋放地圖系統 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="adacd02b1e798dce5b368d9e18d395c88"></a>
+<a class="anchor" id="afd17c78bbcc96117238363f3a2dad61a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id init_start</td>
+          <td class="memname">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() set_top_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>設定左上角的點座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+    <tr><td class="paramname">x</td><td>X 座標位置 </td></tr>
+    <tr><td class="paramname">y</td><td>Y 座標位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="a3d14900030b50f3a1cdc797234d0a811"></a>
+<a class="anchor" id="ac5e8f8150c32e1525abee8dc7f681ac4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id init_end</td>
+          <td class="memname"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() top_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>取出左上角的點物件 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>請不要釋放回傳的物件 </p>
+
 </div>
 </div>
-<a class="anchor" id="a31ff590a63eaa24eaa468d45a14c4ebb"></a>
+<a class="anchor" id="ac043731d7c6f86194399c55b85e6596a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t get_start_x</td>
+          <td class="memname">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() set_bottom_right </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>設定右下角的點座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+    <tr><td class="paramname">x</td><td>X 座標位置 </td></tr>
+    <tr><td class="paramname">y</td><td>Y 座標位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="ac72f60a42584467b89338cb23c8d8be7"></a>
+<a class="anchor" id="a1e7d7668a7b9a95295ae865e31c3cfa3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t get_start_y</td>
+          <td class="memname"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() bottom_right </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>取出右下角的點物件 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>請不要釋放回傳的物件 </p>
+
 </div>
 </div>
-<a class="anchor" id="a11dd23d463ba187a63ff19435e4f45a5"></a>
+<a class="anchor" id="a0dd8bddd92c32f6cde77887ba122483c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t get_end_x</td>
+          <td class="memname">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() top_left_x </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>取得左上角的 X 座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="a88cf24282f49d26ad709b90540a19f7e"></a>
+<a class="anchor" id="aa3e8b29bbd236df53ea2d5549f5f6b67"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t get_end_y</td>
+          <td class="memname">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() top_left_y </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>取得左上角的 Y 座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="a746a4ea6b5ce4fd600162b8213c4f933"></a>
+<a class="anchor" id="af81fe13c5f4bbf07137f2b0a07600efa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id add_start_x</td>
+          <td class="memname">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() bottom_right_x </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>取得右下角的 X 座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="ac18b373191ffd78a6a7522f10b222639"></a>
+<a class="anchor" id="a1db0b81c207be97bc026aef12258166b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id add_end_x</td>
+          <td class="memname">int32_t <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() bottom_right_y </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>取得右下角的 Y 座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="a6154266ed9c4fbaccc229f47a040e67b"></a>
+<a class="anchor" id="a91619ff970f7af8efb9295a713d3291b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id add_start_y</td>
+          <td class="memname">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() move_top_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>移動左上角的點座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+    <tr><td class="paramname">x</td><td>需要移動的 X 值 </td></tr>
+    <tr><td class="paramname">y</td><td>需要移動的 Y 值 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a class="anchor" id="ab09d07f1f75eaf76361491110651a8f3"></a>
+<a class="anchor" id="a258930317437242ada8744f686184806"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">id add_end_y</td>
+          <td class="memname">void <a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>() move_bottom_right </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f">Map_Type</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>移動右下角的點座標 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>地圖物件 </td></tr>
+    <tr><td class="paramname">x</td><td>需要移動的 X 值 </td></tr>
+    <tr><td class="paramname">y</td><td>需要移動的 Y 值 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月20日 星期五 15:34:22, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月20日 星期五 18:59:22, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

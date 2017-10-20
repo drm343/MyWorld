@@ -4,8 +4,9 @@ var searchData=
   ['main_5fset_5fconfig_2eh',['main_set_config.h',['../main__set__config_8h.html',1,'']]],
   ['malloc',['malloc',['../struct_skill___pool___a_p_i.html#a7034642f2384e3eb18b7a25cfb126163',1,'Skill_Pool_API::malloc()'],['../struct_s_t_y_l_e___p_o_o_l___i_n_t_e_r_f_a_c_e.html#ae2b85a17e426c45cb1f2ca85fd21ca64',1,'STYLE_POOL_INTERFACE::malloc()']]],
   ['map',['map',['../struct_camera___type.html#a640cc1af457ace9df546269c45b5aadd',1,'Camera_Type']]],
-  ['map_5faccess',['Map_Access',['../map__system_8h.html#aa046800b7cea60bfa17422d0eb827c4c',1,'map_system.h']]],
+  ['map_5faccess',['Map_Access',['../map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e',1,'map_system.h']]],
   ['map_5fsystem_2eh',['map_system.h',['../map__system_8h.html',1,'']]],
+  ['map_5ftype',['Map_Type',['../map__system_8h.html#afb03cbc473090af9d4f446901cee7e6f',1,'map_system.h']]],
   ['mark',['mark',['../struct_style.html#ace1031a31baef29d4b110f360fe90cf7',1,'Style::mark()'],['../struct_character___base.html#a788afe6b7e6ef6059f5a98bce8f44116',1,'Character_Base::Mark()']]],
   ['max_5fsize',['max_size',['../struct_status___list.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Status_List::max_size()'],['../struct_status___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Status_Pool::max_size()'],['../struct_style___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Style_Pool::max_size()']]],
   ['max_5fx',['max_x',['../struct_camera___type.html#ad66fbe9a05e38a665bca7c0c8f8aeb95',1,'Camera_Type']]],
@@ -15,5 +16,7 @@ var searchData=
   ['message_5fbox_5faccess',['Message_Box_Access',['../graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309',1,'graphic-message.h']]],
   ['message_5fbox_5fapi',['Message_Box_API',['../struct_message___box___a_p_i.html',1,'']]],
   ['message_5fbox_5fpoints',['Message_Box_Points',['../graphic-message_8h.html#ad9811a1699f493218618303ddb9fbd00',1,'graphic-message.h']]],
-  ['message_5ftype',['Message_Type',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160',1,'message_base.h']]]
+  ['message_5ftype',['Message_Type',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160',1,'message_base.h']]],
+  ['move_5fbottom_5fright',['move_bottom_right',['../map__system_8h.html#a258930317437242ada8744f686184806',1,'map_system.h']]],
+  ['move_5ftop_5fleft',['move_top_left',['../map__system_8h.html#a91619ff970f7af8efb9295a713d3291b',1,'map_system.h']]]
 ];

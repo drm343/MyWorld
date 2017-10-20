@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['find_5fcharacter',['find_character',['../character__pool-use__self_8h.html#a7dfefbd41cce3108aeb510a4fcd47091',1,'find_character(Status_Access *npc, Point_Access point):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a97a1eb8ba262db0ec92c18e1e3561b02',1,'find_character(Character_Pool *access, Status_Access *npc, Point_Access point):&#160;character_pool.h']]],
-  ['free',['free',['../character__pool_8h.html#a91cef5d7d90daea82a078fa30fde4da4',1,'free(Character_Pool *access):&#160;character_pool.h'],['../rectangle_8h.html#ad39f81ebbe8f8f5526a35227d7d30203',1,'free(Rectangle_Type *self):&#160;rectangle.h'],['../two__point_8h.html#afd40f7bb84018b787e31cda25aca76a9',1,'free(Two_Point *self):&#160;two_point.h']]]
+  ['down_5fright_5fpoint',['down_right_point',['../rectangle_8h.html#ae181b41c83e7d24342e5bf5871f9399a',1,'rectangle.h']]]
 ];
