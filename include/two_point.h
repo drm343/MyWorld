@@ -55,6 +55,15 @@ Point_Access EXPORT(get_start) (Two_Point * self);
  */
 void EXPORT(set_start) (Two_Point * self, Point_Access point);
 
+/** @brief 存入 Point 到 start
+ * @param self Two_Point 物件的 Access
+ * @param x X 座標位置
+ * @param y Y 座標位置
+ *
+ * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
+ */
+void EXPORT(set_start_x_and_y) (Two_Point * self, int32_t x, int32_t y);
+
 /** @brief 取出 Two_Point 的 end Point
  * @param self Two_Point 物件的 Access
  * @return end Point
@@ -70,6 +79,15 @@ Point_Access EXPORT(get_end) (Two_Point * self);
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
 void EXPORT(set_end) (Two_Point * self, Point_Access point);
+
+/** @brief 存入 Point 到 end
+ * @param self Two_Point 物件的 Access
+ * @param x X 座標位置
+ * @param y Y 座標位置
+ *
+ * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
+ */
+void EXPORT(set_end_x_and_y) (Two_Point * self, int32_t x, int32_t y);
 
 #undef EXPORT
 #endif

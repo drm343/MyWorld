@@ -1,7 +1,6 @@
 #ifndef HEADER_OBJECT_NEW_POINT_TYPE
 #define HEADER_OBJECT_NEW_POINT_TYPE
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>

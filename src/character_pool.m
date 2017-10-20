@@ -1,6 +1,6 @@
 #include "character_pool.h"
 
-
+#define MAP(name) Map_Type_##name
 #define EXPORT(name) Character_Pool_##name
 
 
@@ -836,7 +836,8 @@ static Status_Access use_npc (Character_Pool * access, const char *race,
 
         character.set_name(npc, name);
 
-        character.set_random_position(npc,[map get_end_x],[map get_end_y]);
+        Point_Access_change(MAP(bottom_right)(map));
+        character.set_random_position(npc, Point_Access_x(), Point_Access_y());
     }
     return npc;
 }
@@ -1075,3 +1076,4 @@ Is_Alive EXPORT(attack_player_by) (Character_Pool * access,
 }
 
 #undef EXPORT
+#undef MAP

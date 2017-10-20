@@ -12,10 +12,10 @@ BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
 STD=-std=gnu11
-INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern -I /usr/lib64/gcc/x86_64-slackware-linux/7.2.0/include -I `gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS`
+#INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern -I /usr/lib64/gcc/x86_64-slackware-linux/7.2.0/include
+INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
-LFLAGS=-L$(OBJ) -lmy_world
-OBJC_FLAGS=-Werror -L `gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES` -fconstant-string-class=NSConstantString -lobjc -lgnustep-base
+LFLAGS=-Werror -L$(OBJ) -lmy_world
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -59,7 +59,7 @@ TOOLS := $(AUTO_BUILD_TOOLS)
 
 .PHONY: clean doc examples strings app test indent
 app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD)
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) $(OBJC_FLAGS) -o $(BIN)/$(APP_NAME)
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@echo "build app done"
 
 
@@ -106,7 +106,7 @@ $(LIB_MY_WORLD): $(DEP)
 	ranlib $(LIB_MY_WORLD)
 
 $(AUTO_BUILD_DEP):
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(OBJC_FLAGS) $(SRC)/$(basename $(notdir $@)).m
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).m
 
 $(LIBSTRINGS):
 	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(CFLAGS) $(LFLAGS) intern/$(basename $(notdir $@)).c

@@ -1,7 +1,7 @@
-#import <Foundation/Foundation.h>
-
 #include "main.h"
 
+
+#define MAP(name) Map_Type_##name
 #define CP(name) Character_Pool_Access_##name
 #define CP_SUPER(name) Character_Pool_##name
 
@@ -256,10 +256,9 @@ int main(int argc, char *argv[])
     char *exist;
     exist = realpath(argv[0], execution_path);
 
-    // 建立自動釋放池物件， alloc 為配置記憶體區域， init 為初始化物件
-    NSAutoreleasePool *pool =[[NSAutoreleasePool alloc] init];
-    map_1 =[Map_Type create];
-  [[map_1 init_start: 0 and: 0] init_end: 40 and:30];
+    map_1 = MAP(create)();
+    MAP(set_top_left)(map_1, 0, 0);
+    MAP(set_bottom_right)(map_1, 40, 30);
 
 
     // 建立 config file 的路徑
@@ -280,9 +279,6 @@ int main(int argc, char *argv[])
 
     submain(root_dir, init_cfg, npc_cfg);
 
-
-    // 傳遞 drain 訊息給自動釋放池物件
-    [pool drain];
-
+    MAP(free)(map_1);
     strings_free(global_repo);
 }

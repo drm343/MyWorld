@@ -1,5 +1,8 @@
 #include "graphic-camera.h"
 
+#define MAP(name) Map_Type_##name
+
+
 static int MAX_X = 0;
 static int MAX_Y = 0;
 
@@ -56,16 +59,17 @@ static void camera_horizon_mode_setup(Camera_Access access,
     Point_Access to = access->end;
 
     Map_Access map = access->map;
+    int32_t map_end_x = MAP(bottom_right_x)(map);
 
     if ((point->x > (center->x - 1))
-        && ((point->x + 1) < ([map get_end_x] - (center->x - 1)))) {
+        && ((point->x + 1) < (map_end_x - (center->x - 1)))) {
         access->horizon = CAMERA_MOVE;
 
         Point_Type_add_x(access->start, x);
         Point_Type_add_x(access->end, x);
     } else if (from->x <= 0) {
         access->horizon = CAMERA_FIX;
-    } else if (to->x >=[map get_end_x]) {
+    } else if (to->x >= map_end_x) {
         access->horizon = CAMERA_FIX;
     } else {
         access->horizon = CAMERA_MOVE;
@@ -85,16 +89,17 @@ static void camera_vertical_mode_setup(Camera_Access access,
     Point_Access to = access->end;
 
     Map_Access map = access->map;
+    int32_t map_end_y = MAP(bottom_right_y)(map);
 
     if ((point->y > (center->y - 1))
-        && ((point->y + 1) < ([map get_end_y] - (center->y - 1)))) {
+        && ((point->y + 1) < (map_end_y - (center->y - 1)))) {
         access->vertical = CAMERA_MOVE;
 
         Point_Type_add_y(access->start, y);
         Point_Type_add_y(access->end, y);
     } else if (from->y <= 0) {
         access->vertical = CAMERA_FIX;
-    } else if (to->y >=[map get_end_y]) {
+    } else if (to->y >= map_end_y) {
         access->vertical = CAMERA_FIX;
     } else {
         access->vertical = CAMERA_MOVE;
@@ -114,12 +119,13 @@ static Yes_No can_move_horizon(Camera_Access access, Point_Access point)
     Point_Access to = access->end;
 
     Map_Access map = access->map;
+    int32_t map_end_x = MAP(bottom_right_x)(map);
     Yes_No result = YES;
 
     if ((from->x <= 0) && (point->x < 0)) {
         result = NO;
-    } else if ((to->x >=[map get_end_x])
-               && (point->x >=[map get_end_x])) {
+    } else if ((to->x >= map_end_x)
+               && (point->x >= map_end_x)) {
         result = NO;
     }
     return result;
@@ -132,11 +138,12 @@ static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
     Point_Access to = access->end;
 
     Map_Access map = access->map;
+    int32_t map_end_y = MAP(bottom_right_y)(map);
     Yes_No result = YES;
 
     if ((from->y <= 0) && (point->y < 0)) {
         result = NO;
-    } else if ((to->y >=[map get_end_y]) && (point->y >=[map get_end_y])) {
+    } else if ((to->y >= map_end_y) && (point->y >= map_end_y)) {
         result = NO;
     }
     return result;
@@ -352,8 +359,7 @@ static void set_player(Camera_Access access, Status_Access player)
 
 static void set_map(Camera_Access access, Map_Access map)
 {
-  [map add_end_x: -1 and_y:-1];
-
+    MAP(move_bottom_right)(map, -1, -1);
     access->map = map;
 }
 
@@ -377,3 +383,5 @@ Graphic_Camera_API camera = {
 
     .take = message_process
 };
+
+#undef MAP

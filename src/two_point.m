@@ -18,8 +18,8 @@ typedef struct _Two_Point {
  */
 Two_Point *EXPORT(create)(void) {
     Two_Point *self = calloc(1, sizeof(Two_Point));
-    EXPORT(set_start)(self, Point_Type_create());
-    EXPORT(set_end)(self, Point_Type_create());
+    self->start = Point_Type_create();
+    self->end = Point_Type_create();
     return self;
 }
 
@@ -53,18 +53,23 @@ Point_Access EXPORT(get_start)(Two_Point * self) {
  */
 void EXPORT(set_start)(Two_Point * self,
                          Point_Access point) {
-    #ifdef DEBUG
-    DEBUG_PRINT("self is null? %s\n", BOOL_STRING(self == NULL));
-    DEBUG_PRINT("self->start is null? %s\n", BOOL_STRING(self->start == NULL));
-    #endif
-
-    if (self->start == NULL) {
-        self->start = Point_Type_create();
-    }
-
     Point_Access_change(self->start);
     Point_Access_set_x(point->x);
     Point_Access_set_y(point->y);
+}
+
+
+/** @brief 存入 Point 到 start
+ * @param self Two_Point 物件的 Access
+ * @param x X 座標位置
+ * @param y Y 座標位置
+ *
+ * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
+ */
+void EXPORT(set_start_x_and_y) (Two_Point * self, int32_t x, int32_t y) {
+    Point_Access_change(self->start);
+    Point_Access_set_x(x);
+    Point_Access_set_y(y);
 }
 
 
@@ -85,17 +90,22 @@ Point_Access EXPORT(get_end)(Two_Point * self) {
  */
 void EXPORT(set_end)(Two_Point * self,
                    Point_Access point) {
-    #ifdef DEBUG
-    DEBUG_PRINT("self is null? %s\n", BOOL_STRING(self == NULL));
-    DEBUG_PRINT("self->end is null? %s\n", BOOL_STRING(self->end == NULL));
-    #endif
-
-    if (self->end == NULL) {
-        self->end = Point_Type_create();
-    }
-
     Point_Access_change(self->end);
     Point_Access_set_x(point->x);
     Point_Access_set_y(point->y);
+}
+
+
+/** @brief 存入 Point 到 end
+ * @param self Two_Point 物件的 Access
+ * @param x X 座標位置
+ * @param y Y 座標位置
+ *
+ * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
+ */
+void EXPORT(set_end_x_and_y) (Two_Point * self, int32_t x, int32_t y) {
+    Point_Access_change(self->end);
+    Point_Access_set_x(x);
+    Point_Access_set_y(y);
 }
 #undef EXPORT

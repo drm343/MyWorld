@@ -1,98 +1,132 @@
 #import "map_system.h"
 
-@ implementation Map_Type @ synthesize start;
-@synthesize end;
 
-+(id) create {
-    Map_Access map =[[Map_Type alloc] init];
-    return[map autorelease];
-}
+#define SUPER(name) Two_Point_##name
+#define EXPORT(name) Map_Type_##name
 
--(id) init {
-    self =[super init];
-    if (self) {
-      [self setStart:Point_Type_create()];
-      [self setEnd:Point_Type_create()];
-    }
-    return self;
-}
 
--(void) dealloc {
-    Point_Type_free(start);
-    Point_Type_free(end);
-    [super dealloc];
-}
-
--(id) init_start:(int32_t)
-x and:(int32_t) y
+/** @brief 建立地圖系統
+ * @return 地圖物件
+ */
+Map_Type * EXPORT(create)(void)
 {
-    Point_Access_change(start);
-    Point_Access_set_x(x);
-    Point_Access_set_y(y);
-    return self;
+    Map_Type *map = SUPER(create)();
+    return map;
 }
 
--(id) init_end:(int32_t)
-x and:(int32_t) y
+
+/** @brief 釋放地圖系統
+ * @param self 地圖物件
+ */
+void EXPORT(free)(Map_Type *self) {
+    SUPER(free)(self);
+}
+
+
+/** @brief 設定左上角的點座標
+ * @param self 地圖物件
+ * @param x X 座標位置
+ * @param y Y 座標位置
+ */
+void EXPORT(set_top_left)(Map_Type *self, int32_t x, int32_t y)
 {
-    Point_Access_change(end);
-    Point_Access_set_x(x);
-    Point_Access_set_y(y);
-    return self;
+    SUPER(set_start_x_and_y)(self, x, y);
 }
 
--(int32_t) get_start_x {
-    return Point_Type_x(start);
-}
 
--(int32_t) get_start_y {
-    return Point_Type_y(start);
-}
-
--(int32_t) get_end_x {
-    return Point_Type_x(end);
-}
-
--(int32_t) get_end_y {
-    return Point_Type_y(end);
-}
-
--(id) add_start_x:(int32_t)
-x and_y:(int32_t) y
+/** @brief 取出左上角的點物件
+ * @param self 地圖物件
+ * 
+ * 請不要釋放回傳的物件
+ */
+Point_Access EXPORT(top_left)(Map_Type *self)
 {
-    Point_Access_change(start);
+    return SUPER(get_start)(self);
+}
+
+
+/** @brief 設定右下角的點座標
+ * @param self 地圖物件
+ * @param x X 座標位置
+ * @param y Y 座標位置
+ */
+void EXPORT(set_bottom_right)(Map_Type *self, int32_t x, int32_t y)
+{
+    SUPER(set_end_x_and_y)(self, x, y);
+}
+
+
+/** @brief 取出右下角的點物件
+ * @param self 地圖物件
+ * 
+ * 請不要釋放回傳的物件
+ */
+Point_Access EXPORT(bottom_right)(Map_Type *self)
+{
+    return SUPER(get_end)(self);
+}
+
+
+/** @brief 取得左上角的 X 座標
+ * @param self 地圖物件
+ */
+int32_t EXPORT(top_left_x)(Map_Type *self)
+{
+    return Point_Type_x(SUPER(get_start)(self));
+}
+
+
+/** @brief 取得左上角的 Y 座標
+ * @param self 地圖物件
+ */
+int32_t EXPORT(top_left_y)(Map_Type *self)
+{
+    return Point_Type_y(SUPER(get_start)(self));
+}
+
+
+/** @brief 取得右下角的 X 座標
+ * @param self 地圖物件
+ */
+int32_t EXPORT(bottom_right_x)(Map_Type *self)
+{
+    return Point_Type_x(SUPER(get_end)(self));
+}
+
+
+/** @brief 取得右下角的 Y 座標
+ * @param self 地圖物件
+ */
+int32_t EXPORT(bottom_right_y)(Map_Type *self)
+{
+    return Point_Type_y(SUPER(get_end)(self));
+}
+
+
+/** @brief 移動左上角的點座標
+ * @param self 地圖物件
+ * @param x 需要移動的 X 值
+ * @param y 需要移動的 Y 值
+ */
+void EXPORT(move_top_left)(Map_Type *self, int32_t x, int32_t y)
+{
+    Point_Access_change(SUPER(get_start)(self));
     Point_Access_add_x(x);
     Point_Access_add_y(y);
-    return self;
 }
 
--(id) add_end_x:(int32_t)
-x and_y:(int32_t) y
+
+/** @brief 移動右下角的點座標
+ * @param self 地圖物件
+ * @param x 需要移動的 X 值
+ * @param y 需要移動的 Y 值
+ */
+void EXPORT(move_bottom_right)(Map_Type *self, int32_t x, int32_t y)
 {
-    Point_Access_change(end);
+    Point_Access_change(SUPER(get_end)(self));
     Point_Access_add_x(x);
     Point_Access_add_y(y);
-    return self;
 }
 
--(id) add_start_x:(int32_t) x {
-    Point_Type_add_x(start, x);
-    return self;
-}
-
--(id) add_start_y:(int32_t) y {
-    Point_Type_add_y(start, y);
-    return self;
-}
-
--(id) add_end_x:(int32_t) x {
-    Point_Type_add_x(end, x);
-    return self;
-}
-
--(id) add_end_y:(int32_t) y {
-    Point_Type_add_y(end, y);
-    return self;
-}
-
-@end
+#undef EXPORT
+#undef SUPER
