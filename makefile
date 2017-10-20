@@ -32,7 +32,7 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/rectangle.o \
 	$(OBJ)/rectangle-use_self.o \
 	$(OBJ)/helper_function-strings.o \
-	$(OBJ)/strings-instance.m \
+	$(OBJ)/strings-instance.o \
 	$(OBJ)/graphic.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
@@ -58,8 +58,8 @@ TOOLS := $(AUTO_BUILD_TOOLS)
 
 
 .PHONY: clean doc examples strings app test indent
-app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD)
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.m $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
+app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) indent
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@echo "build app done"
 
 
@@ -106,7 +106,7 @@ $(LIB_MY_WORLD): $(DEP)
 	ranlib $(LIB_MY_WORLD)
 
 $(AUTO_BUILD_DEP):
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).m
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
 
 $(LIBSTRINGS):
 	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(CFLAGS) $(LFLAGS) intern/$(basename $(notdir $@)).c

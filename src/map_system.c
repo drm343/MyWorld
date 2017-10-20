@@ -1,4 +1,4 @@
-#import "map_system.h"
+#include "map_system.h"
 
 
 #define SUPER(name) Two_Point_##name
@@ -36,7 +36,7 @@ void EXPORT(set_top_left)(Map_Type *self, int32_t x, int32_t y)
 
 /** @brief 取出左上角的點物件
  * @param self 地圖物件
- * 
+ *
  * 請不要釋放回傳的物件
  */
 Point_Access EXPORT(top_left)(Map_Type *self)
@@ -58,7 +58,7 @@ void EXPORT(set_bottom_right)(Map_Type *self, int32_t x, int32_t y)
 
 /** @brief 取出右下角的點物件
  * @param self 地圖物件
- * 
+ *
  * 請不要釋放回傳的物件
  */
 Point_Access EXPORT(bottom_right)(Map_Type *self)

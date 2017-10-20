@@ -27,7 +27,7 @@ typedef struct _%s_Node {\n\
     struct _%s_Node *next;\n\
     struct _%s_Node *previous;\n\
     %s *content;\n\
-  } %s_Node;\n\
+} %s_Node;\n\
 \n\
 typedef struct {\n\
     %s_Node *list;\n\
