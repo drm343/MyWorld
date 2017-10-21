@@ -76,6 +76,8 @@ $(AUTO_BUILD_TOOLS):
 
 indent:
 	find $(CURREND)/include -name '*.h' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
+	find $(CURREND)/src -name '*.c' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
+	git checkout $(SRC)/
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 

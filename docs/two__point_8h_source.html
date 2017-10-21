@@ -96,45 +96,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">   17</a></span>&#160;<span class="preprocessor">#define EXPORT(name) Two_Point_##name</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">struct </span>_Two_Point;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="two__point_8h.html#a76f904489186891c66aca78134f477df">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>_Two_Point <a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> *<a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#a1671262a3ed360785ac24f67bf275235">create</a>) (void);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#afd40f7bb84018b787e31cda25aca76a9">free</a>) (<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> * <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//struct Two_Point;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//typedef struct Two_Point Two_Point;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct_two___point.html">   36</a></span>&#160;<span class="comment"></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_two___point.html">Two_Point</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_two___point.html#acdb235aafb417efb1f168ddda5a4d0e8">   37</a></span>&#160;    <a class="code" href="struct_point___type.html">Point_Type</a> *<a class="code" href="struct_two___point.html#acdb235aafb417efb1f168ddda5a4d0e8">start</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_two___point.html#a5cc981b26e5e3f802a3ed90477c360e0">   38</a></span>&#160;    <a class="code" href="struct_point___type.html">Point_Type</a> *<a class="code" href="struct_two___point.html#a5cc981b26e5e3f802a3ed90477c360e0">end</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <a class="code" href="two__point_8h.html#a389b3a5347d9dc60758dafac21957476">Two_Point</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#ad1c6339ff4093b15b74a2723d90e3b50">get_start</a>) (<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#a63e4e9c72028755f0b015cd6698d4903">set_start</a>) (<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> * <span class="keyword">self</span>, <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#a0e02082b98dadd2e5c8fd9fa63c86179">set_start_x_and_y</a>) (<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#a558956cd36d6934c76458020b9b4a161">get_end</a>) (<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#adf684645cd2c3d34ad332f44e26955ec">set_end</a>) (<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> * <span class="keyword">self</span>, <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(<a class="code" href="two__point_8h.html#a738ce0ab62e024763358ac9b2cab5d31">set_end_x_and_y</a>) (<a class="code" href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#undef EXPORT</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="two__point_8h_html_a558956cd36d6934c76458020b9b4a161"><div class="ttname"><a href="two__point_8h.html#a558956cd36d6934c76458020b9b4a161">get_end</a></div><div class="ttdeci">Point_Access EXPORT() get_end(Two_Point *self)</div><div class="ttdoc">取出 Two_Point 的 end Point </div></div>
-<div class="ttc" id="two__point_8h_html_a1671262a3ed360785ac24f67bf275235"><div class="ttname"><a href="two__point_8h.html#a1671262a3ed360785ac24f67bf275235">create</a></div><div class="ttdeci">Two_Point *EXPORT() create(void)</div><div class="ttdoc">建立新的 Two_Point 物件 </div></div>
-<div class="ttc" id="two__point_8h_html_afd40f7bb84018b787e31cda25aca76a9"><div class="ttname"><a href="two__point_8h.html#afd40f7bb84018b787e31cda25aca76a9">free</a></div><div class="ttdeci">void EXPORT() free(Two_Point *self)</div><div class="ttdoc">釋放 Two_Point 物件 </div></div>
-<div class="ttc" id="two__point_8h_html_a76f904489186891c66aca78134f477df"><div class="ttname"><a href="two__point_8h.html#a76f904489186891c66aca78134f477df">Two_Point</a></div><div class="ttdeci">struct _Two_Point Two_Point</div><div class="ttdoc">Virtual Point System. </div><div class="ttdef"><b>Definition:</b> two_point.h:29</div></div>
-<div class="ttc" id="two__point_8h_html_ad1c6339ff4093b15b74a2723d90e3b50"><div class="ttname"><a href="two__point_8h.html#ad1c6339ff4093b15b74a2723d90e3b50">get_start</a></div><div class="ttdeci">Point_Access EXPORT() get_start(Two_Point *self)</div><div class="ttdoc">取出 Two_Point 的 start Point </div></div>
-<div class="ttc" id="two__point_8h_html_adf684645cd2c3d34ad332f44e26955ec"><div class="ttname"><a href="two__point_8h.html#adf684645cd2c3d34ad332f44e26955ec">set_end</a></div><div class="ttdeci">void EXPORT() set_end(Two_Point *self, Point_Access point)</div><div class="ttdoc">存入 Point 到 end </div></div>
-<div class="ttc" id="two__point_8h_html_a0e02082b98dadd2e5c8fd9fa63c86179"><div class="ttname"><a href="two__point_8h.html#a0e02082b98dadd2e5c8fd9fa63c86179">set_start_x_and_y</a></div><div class="ttdeci">void EXPORT() set_start_x_and_y(Two_Point *self, int32_t x, int32_t y)</div><div class="ttdoc">存入 Point 到 start </div></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="struct_two___point.html">Two_Point</a> *<a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(create) (void);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(free) (<a class="code" href="struct_two___point.html">Two_Point</a> * <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(get_start) (<a class="code" href="struct_two___point.html">Two_Point</a> * <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_start) (<a class="code" href="struct_two___point.html">Two_Point</a> * <span class="keyword">self</span>, <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_start_x_and_y) (<a class="code" href="struct_two___point.html">Two_Point</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(get_end) (<a class="code" href="struct_two___point.html">Two_Point</a> * <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_end) (<a class="code" href="struct_two___point.html">Two_Point</a> * <span class="keyword">self</span>, <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_end_x_and_y) (<a class="code" href="struct_two___point.html">Two_Point</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#undef EXPORT</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="struct_two___point_html"><div class="ttname"><a href="struct_two___point.html">Two_Point</a></div><div class="ttdoc">Virtual Point System. </div><div class="ttdef"><b>Definition:</b> two_point.h:36</div></div>
+<div class="ttc" id="two__point_8h_html_a389b3a5347d9dc60758dafac21957476"><div class="ttname"><a href="two__point_8h.html#a389b3a5347d9dc60758dafac21957476">Two_Point</a></div><div class="ttdeci">struct Two_Point Two_Point</div><div class="ttdoc">Virtual Point System. </div></div>
 <div class="ttc" id="struct_point___type_html"><div class="ttname"><a href="struct_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> point.h:11</div></div>
 <div class="ttc" id="two__point_8h_html_a4fe932c6483a71ec8f5f6e2bcd6b33aa"><div class="ttname"><a href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a></div><div class="ttdeci">#define EXPORT(name)</div><div class="ttdoc">Namespace Two_Point_. </div><div class="ttdef"><b>Definition:</b> two_point.h:17</div></div>
+<div class="ttc" id="struct_two___point_html_a5cc981b26e5e3f802a3ed90477c360e0"><div class="ttname"><a href="struct_two___point.html#a5cc981b26e5e3f802a3ed90477c360e0">Two_Point::end</a></div><div class="ttdeci">Point_Type * end</div><div class="ttdef"><b>Definition:</b> two_point.h:38</div></div>
 <div class="ttc" id="point-use__self_8h_html"><div class="ttname"><a href="point-use__self_8h.html">point-use_self.h</a></div></div>
-<div class="ttc" id="two__point_8h_html_a63e4e9c72028755f0b015cd6698d4903"><div class="ttname"><a href="two__point_8h.html#a63e4e9c72028755f0b015cd6698d4903">set_start</a></div><div class="ttdeci">void EXPORT() set_start(Two_Point *self, Point_Access point)</div><div class="ttdoc">存入 Point 到 start </div></div>
-<div class="ttc" id="two__point_8h_html_a738ce0ab62e024763358ac9b2cab5d31"><div class="ttname"><a href="two__point_8h.html#a738ce0ab62e024763358ac9b2cab5d31">set_end_x_and_y</a></div><div class="ttdeci">void EXPORT() set_end_x_and_y(Two_Point *self, int32_t x, int32_t y)</div><div class="ttdoc">存入 Point 到 end </div></div>
+<div class="ttc" id="struct_two___point_html_acdb235aafb417efb1f168ddda5a4d0e8"><div class="ttname"><a href="struct_two___point.html#acdb235aafb417efb1f168ddda5a4d0e8">Two_Point::start</a></div><div class="ttdeci">Point_Type * start</div><div class="ttdef"><b>Definition:</b> two_point.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 04:06:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

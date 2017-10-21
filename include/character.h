@@ -12,7 +12,7 @@
  * 例如 init 必須寫成 Character_Base_init，如果外部程式要簡化呼叫，
  * 可以在程式中自行定義新的 macro，例如下面範例。
  *
- * #define CHARA_BASE(name) Character_Base_##name<br>
+ * \#define CHARA_BASE(name) Character_Base_#\#name<br>
  * CHARA_BASE(init)(self);
  */
 #define EXPORT(name) Character_Base_##name

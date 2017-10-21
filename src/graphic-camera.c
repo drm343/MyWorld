@@ -289,7 +289,6 @@ bool EXPORT(take) (Camera_Access self,
     Status_Access npc = NULL;
     Style_Access dead = self->dead;
 
-    Rectangle_Access rectangle = Rectangle_Type_create();
     Point_Access max_point = Point_Type_create();
     Point_Access_change(max_point);
     Point_Access_set_x(self->max_x);
@@ -402,18 +401,17 @@ bool EXPORT(take) (Camera_Access self,
         }
     }
 
-    Rectangle_Access_change(rectangle);
+    Rectangle_Access_auto_create(rectangle, origin);
     Rectangle_Access_set_top_left_point(self->start);
     Rectangle_Access_set_down_right_point(max_point);
 
-    CP(calculate_graph_position) (from_pool, rectangle);
+    CP(calculate_graph_position) (from_pool, &rectangle);
 #undef CP
 
   DONE:
     Point_Type_free(vector);
     Point_Type_free(point);
     Point_Type_free(max_point);
-    Rectangle_Type_free(rectangle);
     return true;
 }
 

@@ -46,7 +46,7 @@ typedef Camera_Type *Camera_Access;
  * 例如 start 必須寫成 Graphic_Camera_start，如果外部程式要簡化呼叫，
  * 可以在程式中自行定義新的 macro，例如下面範例。
  *
- * #define G_C(name) Graphic_Camera_##name<br>
+ * \#define G_C(name) Graphic_Camera_#\#name<br>
  * G_C(init)(self);
  */
 #define EXPORT(name) Graphic_Camera_##name
@@ -113,9 +113,9 @@ void EXPORT(set_map) (Camera_Access self, Map_Access map);
    * @return 當前必定回傳 true
   */
 bool EXPORT(take) (Camera_Access self,
-                   Character_Pool_Access character_pool,
+                   Character_Pool_Access from_pool,
                    Message_Box_Access box_access,
-                   Status_Access status_access, Message_Type message);
+                   Status_Access current, Message_Type message);
 
 #undef EXPORT
 #endif

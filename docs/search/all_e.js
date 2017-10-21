@@ -1,7 +1,6 @@
 var searchData=
 [
   ['parameter_2eh',['parameter.h',['../parameter_8h.html',1,'']]],
-  ['parse_5fnpc_5fconfig',['parse_npc_config',['../character__pool-use__self_8h.html#ad01d3d2e938376cd7b41bcc13b7eebfc',1,'parse_npc_config(const char *file_path, Style_Pool_Access style_pool):&#160;character_pool-use_self.h'],['../character__pool_8h.html#ad1a58a05e58cdc0fd017652d5b12b00e',1,'parse_npc_config(Character_Pool *access, const char *file_path, Style_Pool_Access style_pool):&#160;character_pool.h']]],
   ['player',['player',['../struct_camera___type.html#ae271f3040d01366952b3603495591e4e',1,'Camera_Type']]],
   ['point_2duse_5fself_2eh',['point-use_self.h',['../point-use__self_8h.html',1,'']]],
   ['point_2eh',['point.h',['../point_8h.html',1,'']]],
@@ -24,7 +23,7 @@ var searchData=
   ['point_5ftype_5fset_5fy',['Point_Type_set_y',['../point_8h.html#a4534a2ef4122d3dff80b63b3229dbd4b',1,'point.h']]],
   ['point_5ftype_5fx',['Point_Type_x',['../point_8h.html#a90528fff9d63330ae35dbc9d82565b0c',1,'point.h']]],
   ['point_5ftype_5fy',['Point_Type_y',['../point_8h.html#abb28b97e139c670819dd7bc91d883bb9',1,'point.h']]],
-  ['pool',['pool',['../struct_status___pool.html#a9eb8f8804bb30a92b4075219d52399c8',1,'Status_Pool::pool()'],['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool::pool()']]],
+  ['pool',['pool',['../struct_skill___pool.html#ab0dc4b321d9a6d7564c9b74b83d92787',1,'Skill_Pool::pool()'],['../struct_status___pool.html#a9eb8f8804bb30a92b4075219d52399c8',1,'Status_Pool::pool()'],['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool::pool()']]],
   ['previous',['previous',['../struct___status___node.html#afc7492628abcb777f2fb97ef2176b0f3',1,'_Status_Node']]],
   ['procedure',['PROCEDURE',['../ada__style_8h.html#aca2d184953d5f9a712d177da873a411d',1,'ada_style.h']]]
 ];

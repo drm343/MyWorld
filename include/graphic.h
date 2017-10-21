@@ -29,7 +29,7 @@ typedef struct {
 typedef Style *Style_Access;
 
 
-/** @brief Style_Pool
+/** @brief 圖形池，用來儲存可以顯在畫面上的圖形
  */
 typedef struct {
     Style_Access pool; /**< 可分配出去的 Style 儲存位置 */
@@ -46,7 +46,7 @@ typedef Style_Pool *Style_Pool_Access;
  * 例如 start 必須寫成 Style_Pool_start，如果外部程式要簡化呼叫，
  * 可以在程式中自行定義新的 macro，例如下面範例。
  *
- * #define SP(name) Style_Pool_##name<br>
+ * \#define SP(name) Style_Pool_#\#name<br>
  * Style_Pool_Access pool = SP(start)(20);
  */
 #define EXPORT(name) Style_Pool_##name

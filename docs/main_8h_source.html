@@ -91,36 +91,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <a href="main_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_MAIN</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_MAIN</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;libgen.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;libgen.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;libconfig.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;libconfig.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_2strings_8h.html">helper/strings.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graphic-camera_8h.html">graphic-camera.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="main_8h.html#ad8b446ae30ed6acaa213141cbf64dd17">   19</a></span>&#160;<span class="preprocessor">#define SP(name) Style_Pool_##name</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main__set__config_8h.html">main_set_config.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="main_8h.html#a98cc3560292a6de44a5fca5916774927">   22</a></span>&#160;<span class="preprocessor">#define MAP(name) Map_Type_##name</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="main_8h.html#a6898a2c9c983312569a56a14796fe7e5">   23</a></span>&#160;<span class="preprocessor">#define CP(name) Character_Pool_Access_##name</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="main_8h.html#a1dc57d36f46f25187ac4b0173d35334f">   24</a></span>&#160;<span class="preprocessor">#define CP_SUPER(name) Character_Pool_##name</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_2strings_8h.html">helper/strings.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graphic-camera_8h.html">graphic-camera.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="main_8h.html#ad8b446ae30ed6acaa213141cbf64dd17">   17</a></span>&#160;<span class="preprocessor">#define SP(name) Style_Pool_##name</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main__set__config_8h.html">main_set_config.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="main_8h.html#a98cc3560292a6de44a5fca5916774927">   20</a></span>&#160;<span class="preprocessor">#define MAP(name) Map_Type_##name</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="main_8h.html#a6898a2c9c983312569a56a14796fe7e5">   21</a></span>&#160;<span class="preprocessor">#define CP(name) Character_Pool_Access_##name</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="main_8h.html#a1dc57d36f46f25187ac4b0173d35334f">   22</a></span>&#160;<span class="preprocessor">#define CP_SUPER(name) Character_Pool_##name</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="main_8h.html#ad5e86394ab6561112b9306e5b676406a">   23</a></span>&#160;<span class="preprocessor">#define CAMERA(name) Graphic_Camera_##name</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="ttc" id="helper_2strings_8h_html"><div class="ttname"><a href="helper_2strings_8h.html">strings.h</a></div></div>
 <div class="ttc" id="main__set__config_8h_html"><div class="ttname"><a href="main__set__config_8h.html">main_set_config.h</a></div></div>
 <div class="ttc" id="graphic-camera_8h_html"><div class="ttname"><a href="graphic-camera_8h.html">graphic-camera.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 04:06:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -1,7 +1,29 @@
 var searchData=
 [
-  ['generic_5fpool',['GENERIC_POOL',['../character-skill_8h.html#a8f6b9f47987f9073e537e0ff7f55604e',1,'character-skill.h']]],
-  ['get_5fend',['get_end',['../two__point_8h.html#a558956cd36d6934c76458020b9b4a161',1,'two_point.h']]],
-  ['get_5finstance_5fby_5findex',['get_instance_by_index',['../character__pool-use__self_8h.html#a09752bc5e77641ee8c50e7e10c5d8f72',1,'get_instance_by_index(int index):&#160;character_pool-use_self.h'],['../character__pool_8h.html#aec81527882b6e6496e675fe055ead9ea',1,'get_instance_by_index(Character_Pool *access, int index):&#160;character_pool.h']]],
-  ['get_5fstart',['get_start',['../two__point_8h.html#ad1c6339ff4093b15b74a2723d90e3b50',1,'two_point.h']]]
+  ['setup_5fmark',['setup_mark',['../main__set__config_8h.html#ae6ad63c22cf04abb77813e184c3b4d52',1,'main_set_config.h']]],
+  ['setup_5fstyle',['setup_style',['../main__set__config_8h.html#a34037616a5e1d73d6c5e92f0507ed888',1,'main_set_config.h']]],
+  ['setup_5fwindow',['setup_window',['../main__set__config_8h.html#a23e7b035380399d4c5ba41232c69e5b9',1,'main_set_config.h']]],
+  ['status_5flist_5fcopy_5fall',['Status_List_copy_all',['../_status___list_8h.html#a26ca7929b358046c4d39113e7b6996bd',1,'Status_List.h']]],
+  ['status_5flist_5fgc',['Status_List_gc',['../_status___list_8h.html#ae9398edfe72533de105202897d17e0c7',1,'Status_List.h']]],
+  ['status_5flist_5fget_5fby_5findex',['Status_List_get_by_index',['../_status___list_8h.html#a8c82df1e4913e1373199c71d3b3a2c49',1,'Status_List.h']]],
+  ['status_5flist_5finsert',['Status_List_insert',['../_status___list_8h.html#a831b3a411254fe5e25e117784c7e85ae',1,'Status_List.h']]],
+  ['status_5flist_5fremove',['Status_List_remove',['../_status___list_8h.html#a9dbd550bf001e860e07e6ea163c0af34',1,'Status_List.h']]],
+  ['status_5flist_5fstart',['Status_List_start',['../_status___list_8h.html#a16687a54b6e438ac05e1fae28829c5e1',1,'Status_List.h']]],
+  ['status_5flist_5fstop',['Status_List_stop',['../_status___list_8h.html#ab560b43ba0116e8abb330541d1da3567',1,'Status_List.h']]],
+  ['status_5fpool_5fmalloc',['Status_Pool_malloc',['../_status___pool_8h.html#a80e69e34f21810bf4ef9277df6d17f22',1,'Status_Pool.h']]],
+  ['status_5fpool_5fstart',['Status_Pool_start',['../_status___pool_8h.html#a3deb92152f26b151472b1e93576f6f0a',1,'Status_Pool.h']]],
+  ['status_5fpool_5fstop',['Status_Pool_stop',['../_status___pool_8h.html#a09691fb602fa561e06fffe3e8e4cd893',1,'Status_Pool.h']]],
+  ['string_5fascii_5flength',['String_ascii_length',['../helper_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44',1,'strings.h']]],
+  ['string_5flength',['String_length',['../helper_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f',1,'strings.h']]],
+  ['string_5frepo_5fchange',['String_Repo_change',['../instance_2strings_8h.html#aa9bf7b1a78b925968b5df81ccbc80d40',1,'strings.h']]],
+  ['string_5frepo_5fsearch',['String_Repo_search',['../instance_2strings_8h.html#a5254359e0781e4db1c2566815f183703',1,'strings.h']]],
+  ['string_5frepo_5fsign_5fin',['String_Repo_sign_in',['../instance_2strings_8h.html#abeb28601916d425fd421abb216589437',1,'strings.h']]],
+  ['string_5fwidth_5flength',['String_width_length',['../helper_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d',1,'strings.h']]],
+  ['style_5fpool_5fdebug',['Style_Pool_debug',['../graphic_8h.html#a2993f03409e7b360028d900cd973f89b',1,'graphic.h']]],
+  ['style_5fpool_5ffind',['Style_Pool_find',['../graphic_8h.html#a6579df63804074f6bc41b99358681d20',1,'graphic.h']]],
+  ['style_5fpool_5ffree_5ftexture',['Style_Pool_free_texture',['../graphic_8h.html#a5ab58111c70543f0206401bf74c2de6a',1,'graphic.h']]],
+  ['style_5fpool_5fmalloc',['Style_Pool_malloc',['../graphic_8h.html#aaf93ee152762c18e30793687b4db73d9',1,'graphic.h']]],
+  ['style_5fpool_5fnext',['Style_Pool_next',['../graphic_8h.html#a7a5bb954948641e473298e8e78f08c84',1,'graphic.h']]],
+  ['style_5fpool_5fstart',['Style_Pool_start',['../graphic_8h.html#a7979e596b99a8620cd905fbf97dd7e04',1,'graphic.h']]],
+  ['style_5fpool_5fstop',['Style_Pool_stop',['../graphic_8h.html#af24b3c146fdb176a97914a9f46ea8d61',1,'graphic.h']]]
 ];

@@ -4,6 +4,16 @@
 #include "rectangle.h"
 
 
+/** @brief 建立新的 Rectangle_Type 物件
+ * @return 物件的 Access
+ */
+#define Rectangle_Access_auto_create(name, return_name) \
+  Point_Type auto_create_##name##_1 = {}; \
+  Point_Type auto_create_##name##_2 = {}; \
+  Rectangle_Type name = {.start = &auto_create_##name##_1, .end = &auto_create_##name##_2}; \
+  Rectangle_Access return_name = Rectangle_Access_change(&name)
+
+
 /** @brief 替換程式內部 Rectangle_Type 物件
  * @param this 需要使用的新物件
  * @return 回傳原物件的 Access
@@ -12,6 +22,7 @@
  * 物件 Access 回傳出來。
  */
 Rectangle_Access Rectangle_Access_change(Rectangle_Access this);
+
 
 /** @brief 取出 Rectangle 左上角的 Point_Type 物件
  * @return 左上角的座標

@@ -16,6 +16,7 @@ typedef Rectangle_Type *Rectangle_Access;
  */
 Rectangle_Type *EXPORT(create) (void);
 
+
 /** @brief 釋放 Rectangle_Type 物件
  * @param self Rectangle_Type 物件的 Access
  */

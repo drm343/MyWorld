@@ -107,20 +107,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#a881dbc2e216e620ea668c822505c1d5b">   20</a></span>&#160;    <a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>(*<a class="code" href="graphic_8h.html#af750d14b48eca23cf3d542f1c6d5da3f">start</a>) (void);</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#afd74f42e302c4c3ba2a470b89d26b020">   21</a></span>&#160;    void (*<a class="code" href="graphic_8h.html#ab03f3dddc5c79b4011e6092c8d19c5e3">stop</a>) (<a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#a881dbc2e216e620ea668c822505c1d5b">   20</a></span>&#160;    <a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>(*start) (void);</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#afd74f42e302c4c3ba2a470b89d26b020">   21</a></span>&#160;    void (*stop) (<a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#a95d44a5fc0f03d7fcd9d1bf896e0a7a0">   22</a></span>&#160;    void (*set_box) (<a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>, int64_t, int64_t, int64_t,</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                     int64_t);</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_message___box___a_p_i.html#afe5c8364c24835fac37d23549201a629">   24</a></span>&#160;    void (*add) (<a class="code" href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a>, <span class="keywordtype">char</span> *);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;} <a class="code" href="struct_message___box___a_p_i.html">Message_Box_API</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_message___box___a_p_i.html">Message_Box_API</a> <a class="code" href="graphic-message_8h.html#a0bb37f13e049458b238a88279910be23">message_box</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="graphic_8h_html_ab03f3dddc5c79b4011e6092c8d19c5e3"><div class="ttname"><a href="graphic_8h.html#ab03f3dddc5c79b4011e6092c8d19c5e3">stop</a></div><div class="ttdeci">void EXPORT() stop(Style_Pool_Access self)</div><div class="ttdoc">要釋放的 Style_Pool 物件 </div></div>
 <div class="ttc" id="struct_message___box_html_ab4953f7bee58598dc37a0820dd3299b9"><div class="ttname"><a href="struct_message___box.html#ab4953f7bee58598dc37a0820dd3299b9">Message_Box::history</a></div><div class="ttdeci">String_Intern history</div><div class="ttdef"><b>Definition:</b> graphic-message.h:14</div></div>
 <div class="ttc" id="struct_message___box_html_ad66c03c008287120bf4ab1fb0c45cc99"><div class="ttname"><a href="struct_message___box.html#ad66c03c008287120bf4ab1fb0c45cc99">Message_Box::grid_heigth</a></div><div class="ttdeci">int8_t grid_heigth</div><div class="ttdef"><b>Definition:</b> graphic-message.h:12</div></div>
 <div class="ttc" id="struct_message___box_html_a9731b6d64fecd6a78ef9c9cfafc9a810"><div class="ttname"><a href="struct_message___box.html#a9731b6d64fecd6a78ef9c9cfafc9a810">Message_Box::grid_width</a></div><div class="ttdeci">int8_t grid_width</div><div class="ttdef"><b>Definition:</b> graphic-message.h:11</div></div>
 <div class="ttc" id="graphic-message_8h_html_a0c313c4952cb30f3a37ecb77e40f2a16"><div class="ttname"><a href="graphic-message_8h.html#a0c313c4952cb30f3a37ecb77e40f2a16">String_Access</a></div><div class="ttdeci">char * String_Access</div><div class="ttdef"><b>Definition:</b> graphic-message.h:7</div></div>
-<div class="ttc" id="graphic_8h_html_af750d14b48eca23cf3d542f1c6d5da3f"><div class="ttname"><a href="graphic_8h.html#af750d14b48eca23cf3d542f1c6d5da3f">start</a></div><div class="ttdeci">Style_Pool_Access EXPORT() start(int size)</div><div class="ttdoc">建立 Style_Pool 物件 </div></div>
 <div class="ttc" id="struct_message___box_html"><div class="ttname"><a href="struct_message___box.html">Message_Box</a></div><div class="ttdef"><b>Definition:</b> graphic-message.h:10</div></div>
 <div class="ttc" id="graphic-message_8h_html_a5753da02e4dadace26ecdb99bcbb7309"><div class="ttname"><a href="graphic-message_8h.html#a5753da02e4dadace26ecdb99bcbb7309">Message_Box_Access</a></div><div class="ttdeci">Message_Box * Message_Box_Access</div><div class="ttdef"><b>Definition:</b> graphic-message.h:16</div></div>
 <div class="ttc" id="graphic_8h_html"><div class="ttname"><a href="graphic_8h.html">graphic.h</a></div></div>
@@ -133,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 04:06:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

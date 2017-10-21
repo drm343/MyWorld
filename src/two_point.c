@@ -3,16 +3,6 @@
 #define EXPORT(name) Two_Point_##name
 
 
-/** @brief Virtual Point System
- *
- * 虛擬結構，用來實作其他可以用兩個點表示的系統。
- */
-typedef struct _Two_Point {
-    Point_Type *start;
-    Point_Type *end;
-} Two_Point;
-
-
 /** @brief 建立新的 Two_Point 物件
  * @return 物件的 Access
  */

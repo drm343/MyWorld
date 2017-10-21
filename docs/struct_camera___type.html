@@ -88,13 +88,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!--header-->
 <div class="contents">
 
+<p>Camera 物件定義  
+ <a href="struct_camera___type.html#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="graphic-camera_8h_source.html">graphic-camera.h</a>&gt;</code></p>
 <div class="dynheader">
 Camera_Type的合作圖:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_camera___type__coll__graph.png" border="0" usemap="#_camera___type_coll__map" alt="Collaboration graph"/></div>
 <map name="_camera___type_coll__map" id="_camera___type_coll__map">
-<area shape="rect" id="node2" href="struct_point___type.html" title="Point_Type" alt="" coords="5,5,93,32"/><area shape="rect" id="node5" href="struct_character___base.html" title="基本角色資料 " alt="" coords="77,109,193,136"/><area shape="rect" id="node3" href="struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="191,5,243,32"/><area shape="rect" id="node4" href="struct_character.html" title="Character" alt="" coords="95,228,174,255"/></map>
+<area shape="rect" id="node2" href="struct_point___type.html" title="Point_Type" alt="" coords="25,5,113,32"/><area shape="rect" id="node3" href="struct_two___point.html" title="Virtual Point System. " alt="" coords="67,169,151,195"/><area shape="rect" id="node6" href="struct_character___base.html" title="基本角色資料 " alt="" coords="144,109,260,136"/><area shape="rect" id="node4" href="struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="247,5,299,32"/><area shape="rect" id="node5" href="struct_character.html" title="Character" alt="" coords="163,228,242,255"/></map>
 <center><span class="legend">[<a href="graph_legend.html">圖示</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -120,7 +123,11 @@ Camera_Type的合作圖:</div>
 <tr class="memitem:a640cc1af457ace9df546269c45b5aadd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_camera___type.html#a640cc1af457ace9df546269c45b5aadd">map</a></td></tr>
 <tr class="separator:a640cc1af457ace9df546269c45b5aadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">欄位說明文件</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳細描述</h2>
+<div class="textblock"><p>Camera 物件定義 </p>
+<p>為了簡化操作，所以這邊有儲存玩家資料，但真正需要用到角色資料時，可以從外部傳入，因此 player 後續可以拿掉。</p>
+<p>start 跟 end 這兩個資料後續可以用 Rectangle 或 <a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 處理。 </p>
+</div><h2 class="groupheader">欄位說明文件</h2>
 <a class="anchor" id="ae271f3040d01366952b3603495591e4e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -130,6 +137,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>玩家角色資料 </p>
 
 </div>
 </div>
@@ -142,6 +150,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>死亡用圖形 </p>
 
 </div>
 </div>
@@ -154,6 +163,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>中心位置 </p>
 
 </div>
 </div>
@@ -166,6 +176,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>最大 x 值，預設為 25 </p>
 
 </div>
 </div>
@@ -178,6 +189,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>最大 y 值，預設為 21 </p>
 
 </div>
 </div>
@@ -190,6 +202,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>攝影機左上角位置 </p>
 
 </div>
 </div>
@@ -202,6 +215,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>攝影機右下角位置 </p>
 
 </div>
 </div>
@@ -214,6 +228,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>攝影機水平方向模式 </p>
 
 </div>
 </div>
@@ -226,6 +241,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>攝影機垂直方向模式 </p>
 
 </div>
 </div>
@@ -238,6 +254,7 @@ Camera_Type的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>地圖物件 </p>
 
 </div>
 </div>
@@ -247,7 +264,7 @@ Camera_Type的合作圖:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 04:06:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -1,7 +1,14 @@
 var searchData=
 [
-  ['find',['find',['../graphic_8h.html#a3a59c73310affd14667e1907eac57edc',1,'graphic.h']]],
-  ['find_5fcharacter',['find_character',['../character__pool-use__self_8h.html#a7dfefbd41cce3108aeb510a4fcd47091',1,'find_character(Status_Access *npc, Point_Access point):&#160;character_pool-use_self.h'],['../character__pool_8h.html#a97a1eb8ba262db0ec92c18e1e3561b02',1,'find_character(Character_Pool *access, Status_Access *npc, Point_Access point):&#160;character_pool.h']]],
-  ['free',['free',['../character_8h.html#a276a18de37cce5941aa8191398463e4e',1,'free(Character_Base_Type *self):&#160;character.h'],['../character__pool_8h.html#a91cef5d7d90daea82a078fa30fde4da4',1,'free(Character_Pool *access):&#160;character_pool.h'],['../map__system_8h.html#ac8efbac118e4d7e21b34aba8706a1df9',1,'free(Map_Type *self):&#160;map_system.h'],['../rectangle_8h.html#ad39f81ebbe8f8f5526a35227d7d30203',1,'free(Rectangle_Type *self):&#160;rectangle.h'],['../two__point_8h.html#afd40f7bb84018b787e31cda25aca76a9',1,'free(Two_Point *self):&#160;two_point.h']]],
-  ['free_5ftexture',['free_texture',['../graphic_8h.html#aac6d303873a08fd8159f8afafc6e1d66',1,'graphic.h']]]
+  ['rectangle_5faccess_5fchange',['Rectangle_Access_change',['../rectangle-use__this_8h.html#ac1b28f1ee96b23ebb2e63b6d7107b4c8',1,'rectangle-use_this.h']]],
+  ['rectangle_5faccess_5fdown_5fright_5fpoint',['Rectangle_Access_down_right_point',['../rectangle-use__this_8h.html#a3d3933d38451a7b5255f79d8a5f15902',1,'rectangle-use_this.h']]],
+  ['rectangle_5faccess_5fset_5fdown_5fright_5fpoint',['Rectangle_Access_set_down_right_point',['../rectangle-use__this_8h.html#a7c75c8533b9c3a3a9c52376fce5461aa',1,'rectangle-use_this.h']]],
+  ['rectangle_5faccess_5fset_5ftop_5fleft_5fpoint',['Rectangle_Access_set_top_left_point',['../rectangle-use__this_8h.html#a70af40f4e31914030d9567ba0505d60e',1,'rectangle-use_this.h']]],
+  ['rectangle_5faccess_5ftop_5fleft_5fpoint',['Rectangle_Access_top_left_point',['../rectangle-use__this_8h.html#abc3db172c116099f6755d1a2d5a2dfbc',1,'rectangle-use_this.h']]],
+  ['rectangle_5ftype_5fcreate',['Rectangle_Type_create',['../rectangle_8h.html#a22074994d000ad96bf61104f8f4d0c4d',1,'rectangle.h']]],
+  ['rectangle_5ftype_5fdown_5fright_5fpoint',['Rectangle_Type_down_right_point',['../rectangle_8h.html#a46977292607ebfdd9c4382f02cb920a4',1,'rectangle.h']]],
+  ['rectangle_5ftype_5ffree',['Rectangle_Type_free',['../rectangle_8h.html#afbd19f8f6c016a59b6b29fb2ab5a5b85',1,'rectangle.h']]],
+  ['rectangle_5ftype_5fset_5fdown_5fright_5fpoint',['Rectangle_Type_set_down_right_point',['../rectangle_8h.html#ab4c6c02de76f6b78d66b257f47a8b656',1,'rectangle.h']]],
+  ['rectangle_5ftype_5fset_5ftop_5fleft_5fpoint',['Rectangle_Type_set_top_left_point',['../rectangle_8h.html#ae338b6803291ca08e6dca53f669110c7',1,'rectangle.h']]],
+  ['rectangle_5ftype_5ftop_5fleft_5fpoint',['Rectangle_Type_top_left_point',['../rectangle_8h.html#a44507170abcd28b1ea1cb592c897815f',1,'rectangle.h']]]
 ];

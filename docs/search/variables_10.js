@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['take',['take',['../struct_graphic___camera___a_p_i.html#a55f6989f437285da93b11fa532067118',1,'Graphic_Camera_API']]]
+  ['used',['used',['../struct_status___list.html#a4b1141237b480e4c38afe96a59ca4cad',1,'Status_List']]]
 ];

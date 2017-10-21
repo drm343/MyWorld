@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">定義</a> &#124;
 <a href="#func-members">函式</a>  </div>
   <div class="headertitle">
 <div class="title">rectangle-use_this.h 檔案參考文件</div>  </div>
@@ -108,6 +109,12 @@ rectangle-use_this.h的包含相依圖:</div>
 </div>
 <p><a href="rectangle-use__this_8h_source.html">查看本檔案的原始碼.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+定義</h2></td></tr>
+<tr class="memitem:aa260a859bfdec611d33c36eec375a0ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rectangle-use__this_8h.html#aa260a859bfdec611d33c36eec375a0ef">Rectangle_Access_auto_create</a>(name,  return_name)</td></tr>
+<tr class="memdesc:aa260a859bfdec611d33c36eec375a0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">建立新的 Rectangle_Type 物件  <a href="#aa260a859bfdec611d33c36eec375a0ef">更多...</a><br /></td></tr>
+<tr class="separator:aa260a859bfdec611d33c36eec375a0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 函式</h2></td></tr>
 <tr class="memitem:ac1b28f1ee96b23ebb2e63b6d7107b4c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rectangle-use__this_8h.html#ac1b28f1ee96b23ebb2e63b6d7107b4c8">Rectangle_Access_change</a> (<a class="el" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a> this)</td></tr>
@@ -126,6 +133,45 @@ rectangle-use_this.h的包含相依圖:</div>
 <tr class="memdesc:a7c75c8533b9c3a3a9c52376fce5461aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Rectangle 右下角的 <a class="el" href="struct_point___type.html">Point_Type</a> 物件  <a href="#a7c75c8533b9c3a3a9c52376fce5461aa">更多...</a><br /></td></tr>
 <tr class="separator:a7c75c8533b9c3a3a9c52376fce5461aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">定義巨集說明文件</h2>
+<a class="anchor" id="aa260a859bfdec611d33c36eec375a0ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Rectangle_Access_auto_create</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">return_name&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>巨集內容:</b><div class="fragment"><div class="line"><a class="code" href="struct_point___type.html">Point_Type</a> auto_create_##name##_1 = {}; \</div>
+<div class="line">  Point_Type auto_create_##name##_2 = {}; <a class="code" href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">\</a></div>
+<div class="line"><a class="code" href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">  Rectangle_Type</a> name = {.<a class="code" href="struct_two___point.html#acdb235aafb417efb1f168ddda5a4d0e8">start</a> = &amp;auto_create_##name##_1, .end = &amp;auto_create_##name##_2}; <a class="code" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">\</a></div>
+<div class="line"><a class="code" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">  Rectangle_Access</a> return_name = <a class="code" href="rectangle-use__this_8h.html#ac1b28f1ee96b23ebb2e63b6d7107b4c8">Rectangle_Access_change</a>(&amp;name)</div>
+<div class="ttc" id="rectangle_8h_html_a0070e31ecbe3ebf9b358b4e66d8546c5"><div class="ttname"><a href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">Rectangle_Type</a></div><div class="ttdeci">Two_Point Rectangle_Type</div><div class="ttdef"><b>Definition:</b> rectangle.h:10</div></div>
+<div class="ttc" id="struct_point___type_html"><div class="ttname"><a href="struct_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> point.h:11</div></div>
+<div class="ttc" id="rectangle-use__this_8h_html_ac1b28f1ee96b23ebb2e63b6d7107b4c8"><div class="ttname"><a href="rectangle-use__this_8h.html#ac1b28f1ee96b23ebb2e63b6d7107b4c8">Rectangle_Access_change</a></div><div class="ttdeci">Rectangle_Access Rectangle_Access_change(Rectangle_Access this)</div><div class="ttdoc">替換程式內部 Rectangle_Type 物件 </div></div>
+<div class="ttc" id="rectangle_8h_html_abb459e8fed480e794c0ed67b6f350221"><div class="ttname"><a href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a></div><div class="ttdeci">Rectangle_Type * Rectangle_Access</div><div class="ttdef"><b>Definition:</b> rectangle.h:11</div></div>
+<div class="ttc" id="struct_two___point_html_acdb235aafb417efb1f168ddda5a4d0e8"><div class="ttname"><a href="struct_two___point.html#acdb235aafb417efb1f168ddda5a4d0e8">Two_Point::start</a></div><div class="ttdeci">Point_Type * start</div><div class="ttdef"><b>Definition:</b> two_point.h:37</div></div>
+</div><!-- fragment -->
+<p>建立新的 Rectangle_Type 物件 </p>
+<dl class="section return"><dt>傳回值</dt><dd>物件的 Access </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">函式說明文件</h2>
 <a class="anchor" id="ac1b28f1ee96b23ebb2e63b6d7107b4c8"></a>
 <div class="memitem">
@@ -244,7 +290,7 @@ rectangle-use_this.h的包含相依圖:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 04:06:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

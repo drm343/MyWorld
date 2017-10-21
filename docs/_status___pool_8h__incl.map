@@ -1,10 +1,10 @@
 <map id="include/container/Status_Pool.h" name="include/container/Status_Pool.h">
 <area shape="rect" id="node3" href="$base__type_8h.html" title="base_type.h" alt="" coords="43,319,136,345"/>
-<area shape="rect" id="node5" href="$character-status_8h.html" title="character&#45;status.h" alt="" coords="155,95,282,121"/>
-<area shape="rect" id="node6" href="$character_8h.html" title="character.h" alt="" coords="175,169,262,196"/>
-<area shape="rect" id="node15" href="$message__base_8h.html" title="message_base.h" alt="" coords="286,169,407,196"/>
-<area shape="rect" id="node7" href="$graphic_8h.html" title="graphic.h" alt="" coords="216,244,291,271"/>
-<area shape="rect" id="node10" href="$point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="379,244,493,271"/>
-<area shape="rect" id="node11" href="$point_8h.html" title="point.h" alt="" coords="469,319,531,345"/>
-<area shape="rect" id="node13" href="$debug_8h.html" title="helper/debug.h" alt="" coords="501,393,608,420"/>
+<area shape="rect" id="node5" href="$character-status_8h.html" title="character&#45;status.h" alt="" coords="154,95,281,121"/>
+<area shape="rect" id="node6" href="$character_8h.html" title="character.h" alt="" coords="174,169,261,196"/>
+<area shape="rect" id="node15" href="$message__base_8h.html" title="message_base.h" alt="" coords="285,169,406,196"/>
+<area shape="rect" id="node7" href="$graphic_8h.html" title="graphic.h" alt="" coords="180,244,255,271"/>
+<area shape="rect" id="node10" href="$point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="335,244,449,271"/>
+<area shape="rect" id="node11" href="$point_8h.html" title="point.h" alt="" coords="419,319,480,345"/>
+<area shape="rect" id="node13" href="$debug_8h.html" title="helper/debug.h" alt="" coords="451,393,557,420"/>
 </map>
