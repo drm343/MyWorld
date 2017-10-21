@@ -9,8 +9,7 @@
    *
    * 請確保傳進去的物件不是 NULL
   */
-void EXPORT(init)(Character_Base_Type * self)
-{
+void EXPORT(init) (Character_Base_Type * self) {
     self->Real_Position = Point_Type_create();
     self->Graph_Position = Point_Type_create();
 
@@ -34,8 +33,7 @@ void EXPORT(init)(Character_Base_Type * self)
    *
    * 請確保傳進去的物件不是 NULL。
   */
-void EXPORT(free)(Character_Base_Type * access)
-{
+void EXPORT(free) (Character_Base_Type * access) {
     Point_Type_free(access->Real_Position);
     Point_Type_free(access->Graph_Position);
     access->status = UNUSE;
@@ -50,9 +48,8 @@ void EXPORT(free)(Character_Base_Type * access)
    *
    * 由於 name、Mark 皆為不會變動的指標，因此可以放心複製。
   */
-void EXPORT(copy)(Character_Base_Access access,
-                           Character_Base_Access from)
-{
+void EXPORT(copy) (Character_Base_Access access,
+                   Character_Base_Access from) {
     access->name = from->name;
     access->Mark = from->Mark;
 
@@ -61,4 +58,5 @@ void EXPORT(copy)(Character_Base_Access access,
     access->is_alive = true;
     access->status = IN_USE;
 }
+
 #undef EXPORT

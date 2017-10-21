@@ -59,7 +59,7 @@ static void camera_horizon_mode_setup(Camera_Access access,
     Point_Access to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_x = MAP(bottom_right_x)(map);
+    int32_t map_end_x = MAP(bottom_right_x) (map);
 
     if ((point->x > (center->x - 1))
         && ((point->x + 1) < (map_end_x - (center->x - 1)))) {
@@ -89,7 +89,7 @@ static void camera_vertical_mode_setup(Camera_Access access,
     Point_Access to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_y = MAP(bottom_right_y)(map);
+    int32_t map_end_y = MAP(bottom_right_y) (map);
 
     if ((point->y > (center->y - 1))
         && ((point->y + 1) < (map_end_y - (center->y - 1)))) {
@@ -119,7 +119,7 @@ static Yes_No can_move_horizon(Camera_Access access, Point_Access point)
     Point_Access to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_x = MAP(bottom_right_x)(map);
+    int32_t map_end_x = MAP(bottom_right_x) (map);
     Yes_No result = YES;
 
     if ((from->x <= 0) && (point->x < 0)) {
@@ -138,7 +138,7 @@ static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
     Point_Access to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_y = MAP(bottom_right_y)(map);
+    int32_t map_end_y = MAP(bottom_right_y) (map);
     Yes_No result = YES;
 
     if ((from->y <= 0) && (point->y < 0)) {
@@ -173,8 +173,7 @@ static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
    * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 EXPORT(set_max_x) 跟 EXPORT(set_max_y)
    * 來修改。
   */
-Camera_Access EXPORT(start)(void)
-{
+Camera_Access EXPORT(start) (void) {
     Camera_Access access = calloc(1, sizeof(Camera_Type));
     MAX_X = 25;
     MAX_Y = 21;
@@ -182,8 +181,8 @@ Camera_Access EXPORT(start)(void)
     access->end = Point_Type_create();
     access->center = Point_Type_create();
 
-    EXPORT(set_max_x)(access, MAX_X);
-    EXPORT(set_max_y)(access, MAX_Y);
+    EXPORT(set_max_x) (access, MAX_X);
+    EXPORT(set_max_y) (access, MAX_Y);
 
     Point_Access_change(access->start);
     Point_Access_set_x(0);
@@ -203,8 +202,7 @@ Camera_Access EXPORT(start)(void)
   /** @brief 釋放 Camera 物件
    * @param self 要釋放的角色物件
   */
-void EXPORT(stop)(Camera_Access self)
-{
+void EXPORT(stop) (Camera_Access self) {
     Point_Type_free(self->start);
     Point_Type_free(self->end);
     Point_Type_free(self->center);
@@ -216,8 +214,7 @@ void EXPORT(stop)(Camera_Access self)
    * @param self Camera 物件
    * @param x 要設定的 max 值
   */
-void EXPORT(set_max_x)(Camera_Access self, int x)
-{
+void EXPORT(set_max_x) (Camera_Access self, int x) {
     self->max_x = x;
     Point_Type_set_x(self->center, (x - 1) / 2);
     MAX_X = x;
@@ -228,8 +225,7 @@ void EXPORT(set_max_x)(Camera_Access self, int x)
    * @param self Camera 物件
    * @param y 要設定的 max 值
   */
-void EXPORT(set_max_y)(Camera_Access self, int y)
-{
+void EXPORT(set_max_y) (Camera_Access self, int y) {
     self->max_y = y;
     Point_Type_set_y(self->center, (y - 1) / 2);
     MAX_Y = y;
@@ -242,8 +238,7 @@ void EXPORT(set_max_y)(Camera_Access self, int y)
    *
    * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
   */
-void EXPORT(set_player)(Camera_Access self, Status_Access player)
-{
+void EXPORT(set_player) (Camera_Access self, Status_Access player) {
     Point_Access center = self->center;
     int32_t x = Point_Type_x(center);
     int32_t y = Point_Type_y(center);
@@ -264,8 +259,7 @@ void EXPORT(set_player)(Camera_Access self, Status_Access player)
    * @param self Camera 物件
    * @param dead 指定的圖形
   */
-void EXPORT(set_dead_style)(Camera_Access self, Style_Access dead)
-{
+void EXPORT(set_dead_style) (Camera_Access self, Style_Access dead) {
     self->dead = dead;
 }
 
@@ -274,9 +268,8 @@ void EXPORT(set_dead_style)(Camera_Access self, Style_Access dead)
    * @param self Camera 物件
    * @param map 指定的地圖物件
   */
-void EXPORT(set_map)(Camera_Access self, Map_Access map)
-{
-    MAP(move_bottom_right)(map, -1, -1);
+void EXPORT(set_map) (Camera_Access self, Map_Access map) {
+    MAP(move_bottom_right) (map, -1, -1);
     self->map = map;
 }
 
@@ -290,11 +283,9 @@ void EXPORT(set_map)(Camera_Access self, Map_Access map)
    * @return 當前必定回傳 true
   */
 bool EXPORT(take) (Camera_Access self,
-     Character_Pool_Access from_pool,
-     Message_Box_Access box_access,
-     Status_Access current,
-      Message_Type message)
-{
+                   Character_Pool_Access from_pool,
+                   Message_Box_Access box_access,
+                   Status_Access current, Message_Type message) {
     Status_Access npc = NULL;
     Style_Access dead = self->dead;
 
@@ -386,8 +377,7 @@ bool EXPORT(take) (Camera_Access self,
                 is_alive = CP(attack_enemy_by) (from_pool, current, npc);
                 break;
             case FACTION_NEUTRAL:
-                is_alive =
-                    CP(attack_neutral_by) (from_pool, current, npc);
+                is_alive = CP(attack_neutral_by) (from_pool, current, npc);
                 break;
             default:
                 break;
@@ -416,7 +406,7 @@ bool EXPORT(take) (Camera_Access self,
     Rectangle_Access_set_top_left_point(self->start);
     Rectangle_Access_set_down_right_point(max_point);
 
-    CP(calculate_graph_position)(from_pool, rectangle);
+    CP(calculate_graph_position) (from_pool, rectangle);
 #undef CP
 
   DONE:

@@ -86,8 +86,7 @@ Style_Access EXPORT(malloc) (Style_Pool_Access self) {
    * @param name 要尋找的名稱
    * @return Style 物件的 Access，沒找到則會回傳 NULL
   */
-Style_Access EXPORT(find) (Style_Pool_Access pool_access,
-                                const char *name) {
+Style_Access EXPORT(find) (Style_Pool_Access pool_access, const char *name) {
     uint8_t count = 0;
     uint8_t used = pool_access->max_size - pool_access->current_size;
     Style_Access result = NULL;
@@ -113,7 +112,7 @@ Style_Access EXPORT(find) (Style_Pool_Access pool_access,
    * 請不要從外部手動修改 current_counter，後續可自行撰寫 macro 簡化成 foreach-like 型式。
   */
 Style_Access EXPORT(next) (Style_Pool_Access self,
-                                uint8_t * current_counter) {
+                           uint8_t * current_counter) {
     uint8_t counter = *current_counter;
     uint8_t used = self->max_size - self->current_size;
     Style_Access result = NULL;
@@ -132,8 +131,7 @@ Style_Access EXPORT(next) (Style_Pool_Access self,
    *
    * 請開啟 DEBUG 參數來讓本函數可以運作。
   */
-void EXPORT(debug)(Style_Pool_Access self)
-{
+void EXPORT(debug) (Style_Pool_Access self) {
 #ifdef DEBUG
     uint8_t count = 0;
     uint8_t used = self->max_size - self->current_size;

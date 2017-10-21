@@ -1,8 +1,6 @@
 #ifndef HEADER_CHARACTER
 #define HEADER_CHARACTER
 
-#include <stdbool.h>
-
 #include "graphic.h"
 #include "point-use_self.h"
 
@@ -39,7 +37,7 @@ typedef Character_Base_Type *Character_Base_Access;
 
   /** @brief 初始化角色基本資料
    * @param self 要初始化的角色物件
-   * 
+   *
    * 請確保傳進去的物件不是 NULL
   */
 void EXPORT(init) (Character_Base_Type * self);
@@ -47,7 +45,7 @@ void EXPORT(init) (Character_Base_Type * self);
 
   /** @brief 釋放角色基本資料
    * @param self 要釋放的角色物件
-   * 
+   *
    * 請確保傳進去的物件不是 NULL。
   */
 void EXPORT(free) (Character_Base_Type * self);
@@ -56,9 +54,9 @@ void EXPORT(free) (Character_Base_Type * self);
   /** @brief 複製角色基本資料
    * @param self 目標
    * @param origin 要被複製的角色物件
-   * 
+   *
    * 請確保傳進去的物件不是 NULL。
-   * 
+   *
    * 由於 name、Mark 皆為不會變動的指標，因此可以放心複製。
   */
 void EXPORT(copy) (Character_Base_Type * self,

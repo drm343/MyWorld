@@ -30,8 +30,8 @@ Character_Pool_Access EXPORT(change) (Character_Pool_Access this) {
    * @return 設定結果
   */
 Execute_Result EXPORT(parse_npc_config) (const char *file_path,
-                                       Style_Pool_Access style_pool) {
-    return SUPER(parse_npc_config)(self, file_path, style_pool);
+                                         Style_Pool_Access style_pool) {
+    return SUPER(parse_npc_config) (self, file_path, style_pool);
 }
 
 
@@ -39,7 +39,7 @@ Execute_Result EXPORT(parse_npc_config) (const char *file_path,
    * @return 待設定的種族資料
   */
 Status_Access EXPORT(sign_in) (void) {
-    return SUPER(sign_in)(self);
+    return SUPER(sign_in) (self);
 }
 
 
@@ -52,8 +52,8 @@ Status_Access EXPORT(sign_in) (void) {
    * Address，該 npc 變數即可在函數外部使用。
   */
 Found_Result EXPORT(find_character) (Status_Access * npc,
-                                   Point_Access point) {
-    return SUPER(find_character)(self, npc, point);
+                                     Point_Access point) {
+    return SUPER(find_character) (self, npc, point);
 }
 
 
@@ -63,7 +63,7 @@ Found_Result EXPORT(find_character) (Status_Access * npc,
    * 根據方形的兩個點重新計算角色位置。
    */
 void EXPORT(calculate_graph_position) (Rectangle_Access rectangle) {
-    SUPER(calculate_graph_position)(self, rectangle);
+    SUPER(calculate_graph_position) (self, rectangle);
 }
 
 
@@ -77,8 +77,8 @@ void EXPORT(calculate_graph_position) (Rectangle_Access rectangle) {
    * 設定。
    */
 Status_Access EXPORT(use_ally) (const char *race,
-                              const char *name, Map_Access map) {
-    return SUPER(use_ally)(self, race, name, map);
+                                const char *name, Map_Access map) {
+    return SUPER(use_ally) (self, race, name, map);
 }
 
 
@@ -92,8 +92,8 @@ Status_Access EXPORT(use_ally) (const char *race,
    * 設定。
    */
 Status_Access EXPORT(use_enemy) (const char *race,
-                               const char *name, Map_Access map) {
-    return SUPER(use_enemy)(self, race, name, map);
+                                 const char *name, Map_Access map) {
+    return SUPER(use_enemy) (self, race, name, map);
 }
 
 
@@ -107,8 +107,8 @@ Status_Access EXPORT(use_enemy) (const char *race,
    * 設定。
    */
 Status_Access EXPORT(use_neutral) (const char *race, const char *name,
-                                 Map_Access map) {
-    return SUPER(use_neutral)(self, race, name, map);
+                                   Map_Access map) {
+    return SUPER(use_neutral) (self, race, name, map);
 }
 
 
@@ -116,7 +116,7 @@ Status_Access EXPORT(use_neutral) (const char *race, const char *name,
    * @return 回傳玩家角色已供後續設定
    */
 Status_Access EXPORT(use_player) (void) {
-    return SUPER(use_player)(self);
+    return SUPER(use_player) (self);
 }
 
 
@@ -124,7 +124,7 @@ Status_Access EXPORT(use_player) (void) {
    * @return 回傳總和數值
    */
 uint8_t EXPORT(instance_count) (void) {
-    return SUPER(instance_count)(self);
+    return SUPER(instance_count) (self);
 }
 
 
@@ -133,7 +133,7 @@ uint8_t EXPORT(instance_count) (void) {
    * @return 回傳角色
    */
 Status_Access EXPORT(get_instance_by_index) (int index) {
-    return SUPER(get_instance_by_index)(self, index);
+    return SUPER(get_instance_by_index) (self, index);
 }
 
 
@@ -156,7 +156,7 @@ Status_Access EXPORT(get_instance_by_index) (int index) {
    *  隨機移動
   */
 Message_Type EXPORT(action) (Status_Access current_character) {
-    return SUPER(action)(self, current_character);
+    return SUPER(action) (self, current_character);
 }
 
 
@@ -170,8 +170,8 @@ Message_Type EXPORT(action) (Status_Access current_character) {
    * 場，因此必須透過 pool 轉呼叫。
   */
 Is_Alive EXPORT(attack_enemy_by) (Status_Access current,
-                                Status_Access target) {
-    return SUPER(attack_enemy_by)(self, current, target);
+                                  Status_Access target) {
+    return SUPER(attack_enemy_by) (self, current, target);
 }
 
 
@@ -185,8 +185,8 @@ Is_Alive EXPORT(attack_enemy_by) (Status_Access current,
    * 場，因此必須透過 pool 轉呼叫。
   */
 Is_Alive EXPORT(attack_ally_by) (Status_Access current,
-                               Status_Access target) {
-    return SUPER(attack_ally_by)(self, current, target);
+                                 Status_Access target) {
+    return SUPER(attack_ally_by) (self, current, target);
 }
 
 
@@ -200,8 +200,8 @@ Is_Alive EXPORT(attack_ally_by) (Status_Access current,
    * 場，因此必須透過 pool 轉呼叫。
   */
 Is_Alive EXPORT(attack_neutral_by) (Status_Access current,
-                                  Status_Access target) {
-    return SUPER(attack_neutral_by)(self, current, target);
+                                    Status_Access target) {
+    return SUPER(attack_neutral_by) (self, current, target);
 }
 
 
@@ -210,7 +210,7 @@ Is_Alive EXPORT(attack_neutral_by) (Status_Access current,
    * @return 目標的生存狀況
   */
 Is_Alive EXPORT(attack_player_by) (Status_Access current) {
-    return SUPER(attack_player_by)(self, current);
+    return SUPER(attack_player_by) (self, current);
 }
 
 #undef EXPORT

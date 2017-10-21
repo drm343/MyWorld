@@ -76,8 +76,7 @@ void draw_view(SDL_Renderer_Access render)
     uint8_t used = CP(instance_count) ();
 
     for (int next = 1; next < used; next++) {
-        Status_Access npc =
-            CP(get_instance_by_index) (next);
+        Status_Access npc = CP(get_instance_by_index) (next);
 
         if (npc->base->status == IN_USE) {
             if (!Point_Type_eq(npc->base->Real_Position,
@@ -101,15 +100,15 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
     USE_FONT = TTF_OpenFont(FONT_FAMILY, 512);
     if (!USE_FONT) {
-        #ifdef DEBUG
+#ifdef DEBUG
         DEBUG_PRINT("TTF_OpenFont: %s\n", TTF_GetError());
-        #endif
+#endif
         return EXECUTE_FAILED;
     }
 
     SDL_Surface *surfaceMessage = NULL;
     uint8_t counter = 0;
-    Style_Access result = SP(next)(style_pool, &counter);
+    Style_Access result = SP(next) (style_pool, &counter);
 
     while (result != NULL) {
         surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
@@ -119,14 +118,14 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
         SDL_FreeSurface(surfaceMessage);
 
-        result = SP(next)(style_pool, &counter);
+        result = SP(next) (style_pool, &counter);
     }
 
-    result = SP(find)(style_pool, "player");
+    result = SP(find) (style_pool, "player");
     character.set_style(camera_1->player, result);
 
-    Style_Access dead = SP(find)(style_pool, "dead");
-    CAMERA(set_dead_style)(camera_1, dead);
+    Style_Access dead = SP(find) (style_pool, "dead");
+    CAMERA(set_dead_style) (camera_1, dead);
     return EXECUTE_SUCCESS;
 }
 
@@ -146,10 +145,10 @@ void submain(const char *root_dir, const char *init_cfg,
     SDL_Renderer_Access render;
     bool running = true;
 
-    style_pool = SP(start)(256);
+    style_pool = SP(start) (256);
     character_pool = CP_SUPER(create) (20, 100);
-    CP(change)(character_pool);
-    camera_1 = CAMERA(start)();
+    CP(change) (character_pool);
+    camera_1 = CAMERA(start) ();
     box_1 = message_box.start();
 
     SDL_Init(SDL_INIT_EVERYTHING);
@@ -161,7 +160,7 @@ void submain(const char *root_dir, const char *init_cfg,
     }
     Status_Access Player = CP(use_player) ();
     character.set_name(Player, "雜魚");
-    CAMERA(set_player)(camera_1, Player);
+    CAMERA(set_player) (camera_1, Player);
 
     result = setup_style(init_cfg);
 
@@ -171,7 +170,7 @@ void submain(const char *root_dir, const char *init_cfg,
 
     CP(parse_npc_config) (npc_cfg, style_pool);
 
-    CAMERA(set_map)(camera_1, map_1);
+    CAMERA(set_map) (camera_1, map_1);
 
     CP(use_enemy) ("goblin", "g 1", camera_1->map);
     CP(use_enemy) ("goblin", "g 2", camera_1->map);
@@ -205,8 +204,8 @@ void submain(const char *root_dir, const char *init_cfg,
             default:
                 index = 1;
                 running =
-                    CAMERA(take)(camera_1, character_pool, box_1, current,
-                                message);
+                    CAMERA(take) (camera_1, character_pool, box_1, current,
+                                  message);
                 break;
         }
 
@@ -218,12 +217,12 @@ void submain(const char *root_dir, const char *init_cfg,
             }
             message = CP(action) (current);
             running =
-                CAMERA(take)(camera_1, character_pool, box_1, current,
-                            message);
+                CAMERA(take) (camera_1, character_pool, box_1, current,
+                              message);
         }
         draw_view(render);
     }
-    SP(free_texture)(style_pool);
+    SP(free_texture) (style_pool);
 
     SDL_DestroyRenderer(render);
     SDL_DestroyWindow(win);
@@ -235,9 +234,9 @@ void submain(const char *root_dir, const char *init_cfg,
 
   DONE:
     message_box.stop(box_1);
-    CAMERA(stop)(camera_1);
-    CP_SUPER(free)(character_pool);
-    SP(stop)(style_pool);
+    CAMERA(stop) (camera_1);
+    CP_SUPER(free) (character_pool);
+    SP(stop) (style_pool);
 }
 
 
@@ -251,9 +250,9 @@ int main(int argc, char *argv[])
     char *exist;
     exist = realpath(argv[0], execution_path);
 
-    map_1 = MAP(create)();
-    MAP(set_top_left)(map_1, 0, 0);
-    MAP(set_bottom_right)(map_1, 40, 30);
+    map_1 = MAP(create) ();
+    MAP(set_top_left) (map_1, 0, 0);
+    MAP(set_bottom_right) (map_1, 40, 30);
 
 
     // 建立 config file 的路徑
@@ -274,6 +273,6 @@ int main(int argc, char *argv[])
 
     submain(root_dir, init_cfg, npc_cfg);
 
-    MAP(free)(map_1);
+    MAP(free) (map_1);
     strings_free(global_repo);
 }

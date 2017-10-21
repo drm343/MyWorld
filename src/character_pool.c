@@ -29,11 +29,11 @@ typedef Base_Pool_Type *Base_Pool_Access;
  * Status_List 只儲存實體化角色的 Access。
  */
 typedef struct _Character_Pool {
-    Base_Pool_Access prepare; // 種族池
-    Base_Pool_Access used; // 實體化角色
-    Status_List *ally; // 盟友
-    Status_List *enemy; // 敵人
-    Status_List *neutral; // 中立
+    Base_Pool_Access prepare;   // 種族池
+    Base_Pool_Access used;      // 實體化角色
+    Status_List *ally;          // 盟友
+    Status_List *enemy;         // 敵人
+    Status_List *neutral;       // 中立
 } Character_Pool;
 
 
@@ -44,13 +44,13 @@ typedef struct _Character_Pool {
    * @param access 要使用的 Character_Pool
    * @param max_size 想設定的最大值
   */
-static void set_prepare (Character_Pool * access, uint8_t max_size);
+static void set_prepare(Character_Pool * access, uint8_t max_size);
 
   /** @brief 設定實體化的角色池最大值
    * @param access 要使用的 Character_Pool
    * @param max_size 想設定的最大值
   */
-static void set_used (Character_Pool * access, uint8_t max_size);
+static void set_used(Character_Pool * access, uint8_t max_size);
 
   /** @brief 分配一個半完成初始化的角色實體
    * @param access 要使用的 Character_Pool
@@ -62,25 +62,25 @@ static void set_used (Character_Pool * access, uint8_t max_size);
    * 本函數會根據角色種族來實體化角色資料，並回傳 Access，請使用該 Access 進行後續
    * 設定。
    */
-static Status_Access use_npc (Character_Pool * access, const char *race,
+static Status_Access use_npc(Character_Pool * access, const char *race,
                              const char *name, Map_Access map);
   /** @brief 設定友方角色總量的上限值
    * @param access 要使用的 Character_Pool
    * @param max_size List 的最大值
    */
-static void set_ally (Character_Pool * access, uint8_t max_size);
+static void set_ally(Character_Pool * access, uint8_t max_size);
 
   /** @brief 設定敵方角色總量的上限值
    * @param access 要使用的 Character_Pool
    * @param max_size List 的最大值
    */
-static void set_enemy (Character_Pool * access, uint8_t max_size);
+static void set_enemy(Character_Pool * access, uint8_t max_size);
 
   /** @brief 設定中立角色總量的上限值
    * @param access 要使用的 Character_Pool
    * @param max_size List 的最大值
    */
-static void set_neutral (Character_Pool * access, uint8_t max_size);
+static void set_neutral(Character_Pool * access, uint8_t max_size);
 
   /** @brief 設定 NPC 為敵方角色
    * @param access 要使用的 Character_Pool
@@ -92,13 +92,13 @@ static void add_enemy(Character_Pool * access, Status_Access npc);
    * @param access 要使用的 Character_Pool
    * @param npc 要設定的角色
    */
-static void add_ally (Character_Pool * access, Status_Access npc);
+static void add_ally(Character_Pool * access, Status_Access npc);
 
   /** @brief 設定 NPC 為中立角色
    * @param access 要使用的 Character_Pool
    * @param npc 要設定的角色
    */
-static void add_neutral (Character_Pool * access, Status_Access npc);
+static void add_neutral(Character_Pool * access, Status_Access npc);
 
 
 // ----------------------------------------------
@@ -209,8 +209,7 @@ static Base_Pool_Access pool_start(uint8_t size)
     Status_Pool_Access status = status_pool_start(size);
     Character_Base_Pool_Access base = base_pool_start(size);
 
-    Base_Pool_Access pool_access =
-        calloc(1, sizeof(Base_Pool_Access));
+    Base_Pool_Access pool_access = calloc(1, sizeof(Base_Pool_Access));
 
     pool_access->status = status;
     pool_access->base = base;
@@ -294,8 +293,7 @@ static bool pool_copy(Base_Pool_Access from, Base_Pool_Access to,
 */
 
 
-static bool pool_all_copy(Base_Pool_Access from,
-                          Base_Pool_Access to)
+static bool pool_all_copy(Base_Pool_Access from, Base_Pool_Access to)
 {
     uint8_t count = 0;
     uint8_t used = from->status->max_size - from->status->current_size;
@@ -473,13 +471,13 @@ static Message_Type npc_reaction(Status * self, Status_List * enemy_group)
    * @return 新的 Character_Pool 物件
   */
 Character_Pool *EXPORT(create) (uint8_t max_config_size,
-                              uint8_t max_instance_size) {
+                                uint8_t max_instance_size) {
     Character_Pool *object = calloc(1, sizeof(Character_Pool));
-    set_prepare (object, max_config_size);
-    set_used (object, max_instance_size);
-    set_ally (object, 10);
-    set_enemy (object, 10);
-    set_neutral (object, 10);
+    set_prepare(object, max_config_size);
+    set_used(object, max_instance_size);
+    set_ally(object, 10);
+    set_enemy(object, 10);
+    set_neutral(object, 10);
     return object;
 }
 
@@ -504,8 +502,8 @@ void EXPORT(free) (Character_Pool * access) {
    * @return 設定結果
   */
 Execute_Result EXPORT(parse_npc_config) (Character_Pool * access,
-                                       const char *file_path,
-                                       Style_Pool_Access style_pool) {
+                                         const char *file_path,
+                                         Style_Pool_Access style_pool) {
     Execute_Result result = EXECUTE_FAILED;
     config_t cfg;
     config_setting_t *setting;
@@ -538,8 +536,7 @@ Execute_Result EXPORT(parse_npc_config) (Character_Pool * access,
                 config_setting_get_elem(setting, counter);
 
             Status_Access npc = EXPORT(sign_in) (access);
-            Style_Access style_access =
-                Style_Pool_malloc(style_pool);
+            Style_Access style_access = Style_Pool_malloc(style_pool);
 
             character.set_style(npc, style_access);
 
@@ -569,7 +566,8 @@ Execute_Result EXPORT(parse_npc_config) (Character_Pool * access,
    * @param access 要使用的 Character_Pool
    * @param max_size 想設定的最大值
   */
-static void set_prepare (Character_Pool * access, uint8_t max_size) {
+static void set_prepare(Character_Pool * access, uint8_t max_size)
+{
     Base_Pool_Type *prepare = access->prepare;
 
     if (prepare) {
@@ -589,7 +587,8 @@ static void set_prepare (Character_Pool * access, uint8_t max_size) {
    * @param access 要使用的 Character_Pool
    * @param max_size 想設定的最大值
   */
-static void set_used (Character_Pool * access, uint8_t max_size) {
+static void set_used(Character_Pool * access, uint8_t max_size)
+{
     Base_Pool_Type *used = access->used;
 
     if (used) {
@@ -624,8 +623,8 @@ Status_Access EXPORT(sign_in) (Character_Pool * access) {
    * Address，該 npc 變數即可在函數外部使用。
   */
 Found_Result EXPORT(find_character) (Character_Pool * access,
-                                   Status_Access * npc,
-                                   Point_Access point) {
+                                     Status_Access * npc,
+                                     Point_Access point) {
     Found_Result result = pool_find_by_position(access->used, npc, point);
     return result;
 }
@@ -638,7 +637,7 @@ Found_Result EXPORT(find_character) (Character_Pool * access,
    * 根據方形的兩個點重新計算角色位置。
    */
 void EXPORT(calculate_graph_position) (Character_Pool * access,
-                                     Rectangle_Access rectangle) {
+                                       Rectangle_Access rectangle) {
     reset_graph_position(access->used, rectangle);
 }
 
@@ -647,7 +646,8 @@ void EXPORT(calculate_graph_position) (Character_Pool * access,
    * @param access 要使用的 Character_Pool
    * @param max_size List 的最大值
    */
-static void set_ally (Character_Pool * access, uint8_t max_size) {
+static void set_ally(Character_Pool * access, uint8_t max_size)
+{
     Status_List *ally = access->ally;
 
     if (ally) {
@@ -674,8 +674,8 @@ static void set_ally (Character_Pool * access, uint8_t max_size) {
    * 設定。
    */
 Status_Access EXPORT(use_ally) (Character_Pool * access, const char *race,
-                              const char *name, Map_Access map) {
-    Status_Access npc = use_npc (access, race, name, map);
+                                const char *name, Map_Access map) {
+    Status_Access npc = use_npc(access, race, name, map);
 
     if (npc != NULL) {
         character.set_relation_ally(npc);
@@ -689,12 +689,13 @@ Status_Access EXPORT(use_ally) (Character_Pool * access, const char *race,
    * @param access 要使用的 Character_Pool
    * @param npc 要設定的角色
    */
-static void add_ally (Character_Pool * access, Status_Access npc) {
+static void add_ally(Character_Pool * access, Status_Access npc)
+{
     Status_List *ally = access->ally;
     uint8_t max_size = ally->max_size;
 
     if (Status_List_insert(ally, npc) < 0) {
-        set_ally (access, max_size + 10);
+        set_ally(access, max_size + 10);
         Status_List_insert(ally, npc);
     }
 }
@@ -704,7 +705,8 @@ static void add_ally (Character_Pool * access, Status_Access npc) {
    * @param access 要使用的 Character_Pool
    * @param max_size List 的最大值
    */
-static void set_enemy (Character_Pool * access, uint8_t max_size) {
+static void set_enemy(Character_Pool * access, uint8_t max_size)
+{
     Status_List *enemy = access->enemy;
 
     if (enemy) {
@@ -731,12 +733,12 @@ static void set_enemy (Character_Pool * access, uint8_t max_size) {
    * 設定。
    */
 Status_Access EXPORT(use_enemy) (Character_Pool * access, const char *race,
-                               const char *name, Map_Access map) {
-    Status_Access npc = use_npc (access, race, name, map);
+                                 const char *name, Map_Access map) {
+    Status_Access npc = use_npc(access, race, name, map);
 
     if (npc != NULL) {
         character.set_relation_enemy(npc);
-        add_enemy (access, npc);
+        add_enemy(access, npc);
     }
     return npc;
 }
@@ -745,12 +747,13 @@ Status_Access EXPORT(use_enemy) (Character_Pool * access, const char *race,
    * @param access 要使用的 Character_Pool
    * @param npc 要設定的角色
    */
-static void add_enemy (Character_Pool * access, Status_Access npc) {
+static void add_enemy(Character_Pool * access, Status_Access npc)
+{
     Status_List *enemy = access->enemy;
     uint8_t max_size = enemy->max_size;
 
     if (Status_List_insert(enemy, npc) < 0) {
-        set_enemy (access, max_size + 10);
+        set_enemy(access, max_size + 10);
         Status_List_insert(enemy, npc);
     }
 }
@@ -760,7 +763,8 @@ static void add_enemy (Character_Pool * access, Status_Access npc) {
    * @param access 要使用的 Character_Pool
    * @param max_size List 的最大值
    */
-static void set_neutral (Character_Pool * access, uint8_t max_size) {
+static void set_neutral(Character_Pool * access, uint8_t max_size)
+{
     Status_List *neutral = access->neutral;
 
     if (neutral) {
@@ -787,13 +791,13 @@ static void set_neutral (Character_Pool * access, uint8_t max_size) {
    * 設定。
    */
 Status_Access EXPORT(use_neutral) (Character_Pool * access,
-                                 const char *race, const char *name,
-                                 Map_Access map) {
-    Status_Access npc = use_npc (access, race, name, map);
+                                   const char *race, const char *name,
+                                   Map_Access map) {
+    Status_Access npc = use_npc(access, race, name, map);
 
     if (npc != NULL) {
         character.set_relation_neutral(npc);
-        add_neutral (access, npc);
+        add_neutral(access, npc);
     }
     return npc;
 }
@@ -802,12 +806,13 @@ Status_Access EXPORT(use_neutral) (Character_Pool * access,
    * @param access 要使用的 Character_Pool
    * @param npc 要設定的角色
    */
-static void add_neutral (Character_Pool * access, Status_Access npc) {
+static void add_neutral(Character_Pool * access, Status_Access npc)
+{
     Status_List *neutral = access->neutral;
     uint8_t max_size = neutral->max_size;
 
     if (Status_List_insert(neutral, npc) < 0) {
-        set_neutral (access, max_size + 10);
+        set_neutral(access, max_size + 10);
         Status_List_insert(neutral, npc);
     }
 }
@@ -823,8 +828,9 @@ static void add_neutral (Character_Pool * access, Status_Access npc) {
    * 本函數會根據角色種族來實體化角色資料，並回傳 Access，請使用該 Access 進行後續
    * 設定。
    */
-static Status_Access use_npc (Character_Pool * access, const char *race,
-                             const char *name, Map_Access map) {
+static Status_Access use_npc(Character_Pool * access, const char *race,
+                             const char *name, Map_Access map)
+{
     Status_Access origin_npc = NULL;
     Status_Access npc = NULL;
 
@@ -836,8 +842,9 @@ static Status_Access use_npc (Character_Pool * access, const char *race,
 
         character.set_name(npc, name);
 
-        Point_Access_change(MAP(bottom_right)(map));
-        character.set_random_position(npc, Point_Access_x(), Point_Access_y());
+        Point_Access_change(MAP(bottom_right) (map));
+        character.set_random_position(npc, Point_Access_x(),
+                                      Point_Access_y());
     }
     return npc;
 }
@@ -881,7 +888,7 @@ uint8_t EXPORT(instance_count) (Character_Pool * access) {
    * @return 回傳角色
    */
 Status_Access EXPORT(get_instance_by_index) (Character_Pool * access,
-                                           int index) {
+                                             int index) {
     return &(access->used->status->pool[index]);
 }
 
@@ -906,7 +913,7 @@ Status_Access EXPORT(get_instance_by_index) (Character_Pool * access,
    *  隨機移動
   */
 Message_Type EXPORT(action) (Character_Pool * access,
-                           Status_Access current_character) {
+                             Status_Access current_character) {
     Message_Type result = DO_NOTHING;
     uint8_t target_group_number;
     bool is_alive = current_character->base->is_alive;
@@ -978,21 +985,21 @@ Message_Type EXPORT(action) (Character_Pool * access,
    * 場，因此必須透過 pool 轉呼叫。
   */
 Is_Alive EXPORT(attack_enemy_by) (Character_Pool * access,
-                                Status_Access current,
-                                Status_Access target) {
+                                  Status_Access current,
+                                  Status_Access target) {
     Is_Alive result = character.attack(current, target);
     Status_List *enemy = access->enemy;
     Status_List_remove(enemy, target);
 
     switch (target->faction) {
         case FACTION_ENEMY:
-            add_enemy (access, target);
+            add_enemy(access, target);
             break;
         case FACTION_ALLY:
-            add_ally (access, target);
+            add_ally(access, target);
             break;
         default:
-            add_neutral (access, target);
+            add_neutral(access, target);
             break;
     }
     return result;
@@ -1010,21 +1017,21 @@ Is_Alive EXPORT(attack_enemy_by) (Character_Pool * access,
    * 場，因此必須透過 pool 轉呼叫。
   */
 Is_Alive EXPORT(attack_ally_by) (Character_Pool * access,
-                               Status_Access current,
-                               Status_Access target) {
+                                 Status_Access current,
+                                 Status_Access target) {
     Is_Alive result = character.attack(current, target);
     Status_List *ally = access->ally;
     Status_List_remove(ally, target);
 
     switch (target->faction) {
         case FACTION_ENEMY:
-            add_enemy (access, target);
+            add_enemy(access, target);
             break;
         case FACTION_ALLY:
-            add_ally (access, target);
+            add_ally(access, target);
             break;
         default:
-            add_neutral (access, target);
+            add_neutral(access, target);
             break;
     }
     return result;
@@ -1042,21 +1049,21 @@ Is_Alive EXPORT(attack_ally_by) (Character_Pool * access,
    * 場，因此必須透過 pool 轉呼叫。
   */
 Is_Alive EXPORT(attack_neutral_by) (Character_Pool * access,
-                                  Status_Access current,
-                                  Status_Access target) {
+                                    Status_Access current,
+                                    Status_Access target) {
     Is_Alive result = character.attack(current, target);
     Status_List *neutral = access->neutral;
     Status_List_remove(neutral, target);
 
     switch (target->faction) {
         case FACTION_ENEMY:
-            add_enemy (access, target);
+            add_enemy(access, target);
             break;
         case FACTION_ALLY:
-            add_ally (access, target);
+            add_ally(access, target);
             break;
         default:
-            add_neutral (access, target);
+            add_neutral(access, target);
             break;
     }
     return result;
@@ -1069,7 +1076,7 @@ Is_Alive EXPORT(attack_neutral_by) (Character_Pool * access,
    * @return 目標的生存狀況
   */
 Is_Alive EXPORT(attack_player_by) (Character_Pool * access,
-                                 Status_Access current) {
+                                   Status_Access current) {
     Status_Access target = EXPORT(get_instance_by_index) (access, 0);
     Is_Alive result = character.attack(current, target);
     return result;

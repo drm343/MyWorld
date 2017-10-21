@@ -18,26 +18,27 @@ static void print_status(Status_Access access)
 #define SUPER(name) Character_Base_##name
 static void character_init(Status_Access access)
 {
-    SUPER(init)(access->base);
+    SUPER(init) (access->base);
     access->faction = FACTION_NEUTRAL;
 }
 
 
 static void character_free(Status_Access access)
 {
-    SUPER(free)(access->base);
+    SUPER(free) (access->base);
     access->faction = FACTION_NEUTRAL;
 }
 
 
 static void character_copy(Status_Access access, Status_Access from)
 {
-    SUPER(copy)(access->base, from->base);
+    SUPER(copy) (access->base, from->base);
     access->race = from->race;
 
     access->faction = from->faction;
     access->damage = from->damage;
 }
+
 #undef SUPER
 
 
