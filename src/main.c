@@ -126,7 +126,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
     character.set_style(camera_1->player, result);
 
     Style_Access dead = SP(find)(style_pool, "dead");
-    camera.set_dead_style(camera_1, dead);
+    CAMERA(set_dead_style)(camera_1, dead);
     return EXECUTE_SUCCESS;
 }
 
@@ -149,7 +149,7 @@ void submain(const char *root_dir, const char *init_cfg,
     style_pool = SP(start)(256);
     character_pool = CP_SUPER(create) (20, 100);
     CP(change)(character_pool);
-    camera_1 = camera.start();
+    camera_1 = CAMERA(start)();
     box_1 = message_box.start();
 
     SDL_Init(SDL_INIT_EVERYTHING);
@@ -161,7 +161,7 @@ void submain(const char *root_dir, const char *init_cfg,
     }
     Status_Access Player = CP(use_player) ();
     character.set_name(Player, "雜魚");
-    camera.set_player(camera_1, Player);
+    CAMERA(set_player)(camera_1, Player);
 
     result = setup_style(init_cfg);
 
@@ -171,7 +171,7 @@ void submain(const char *root_dir, const char *init_cfg,
 
     CP(parse_npc_config) (npc_cfg, style_pool);
 
-    camera.set_map(camera_1, map_1);
+    CAMERA(set_map)(camera_1, map_1);
 
     CP(use_enemy) ("goblin", "g 1", camera_1->map);
     CP(use_enemy) ("goblin", "g 2", camera_1->map);
@@ -205,7 +205,7 @@ void submain(const char *root_dir, const char *init_cfg,
             default:
                 index = 1;
                 running =
-                    camera.take(camera_1, character_pool, box_1, current,
+                    CAMERA(take)(camera_1, character_pool, box_1, current,
                                 message);
                 break;
         }
@@ -218,7 +218,7 @@ void submain(const char *root_dir, const char *init_cfg,
             }
             message = CP(action) (current);
             running =
-                camera.take(camera_1, character_pool, box_1, current,
+                CAMERA(take)(camera_1, character_pool, box_1, current,
                             message);
         }
         draw_view(render);
@@ -235,7 +235,7 @@ void submain(const char *root_dir, const char *init_cfg,
 
   DONE:
     message_box.stop(box_1);
-    camera.stop(camera_1);
+    CAMERA(stop)(camera_1);
     CP_SUPER(free)(character_pool);
     SP(stop)(style_pool);
 }

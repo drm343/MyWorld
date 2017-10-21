@@ -150,19 +150,159 @@ static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
 }
 
 
-static bool message_process(Camera_Access access,
-                            Character_Pool_Access from_pool,
-                            Message_Box_Access box_access,
-                            Status_Access current, Message_Type message)
+
+// ---------------------------------------------------
+// Export API
+// ---------------------------------------------------
+/** @brief Namespace Graphic_Camera_
+ *
+ * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
+ *
+ * 例如 start 必須寫成 Graphic_Camera_start，如果外部程式要簡化呼叫，
+ * 可以在程式中自行定義新的 macro，例如下面範例。
+ *
+ * #define G_C(name) Graphic_Camera_##name<br>
+ * G_C(init)(self);
+ */
+#define EXPORT(name) Graphic_Camera_##name
+
+
+  /** @brief 建立新的 Camera 物件
+   * @return Camera 物件
+   *
+   * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 EXPORT(set_max_x) 跟 EXPORT(set_max_y)
+   * 來修改。
+  */
+Camera_Access EXPORT(start)(void)
+{
+    Camera_Access access = calloc(1, sizeof(Camera_Type));
+    MAX_X = 25;
+    MAX_Y = 21;
+    access->start = Point_Type_create();
+    access->end = Point_Type_create();
+    access->center = Point_Type_create();
+
+    EXPORT(set_max_x)(access, MAX_X);
+    EXPORT(set_max_y)(access, MAX_Y);
+
+    Point_Access_change(access->start);
+    Point_Access_set_x(0);
+    Point_Access_set_y(0);
+
+    Point_Access_change(access->end);
+    Point_Access_set_x(MAX_X - 1);
+    Point_Access_set_y(MAX_Y - 1);
+
+    access->horizon = CAMERA_UNDEFINE;
+    access->vertical = CAMERA_UNDEFINE;
+    access->map = NULL;
+    return access;
+}
+
+
+  /** @brief 釋放 Camera 物件
+   * @param self 要釋放的角色物件
+  */
+void EXPORT(stop)(Camera_Access self)
+{
+    Point_Type_free(self->start);
+    Point_Type_free(self->end);
+    Point_Type_free(self->center);
+    free(self);
+}
+
+
+  /** @brief 重設 max_x 的值
+   * @param self Camera 物件
+   * @param x 要設定的 max 值
+  */
+void EXPORT(set_max_x)(Camera_Access self, int x)
+{
+    self->max_x = x;
+    Point_Type_set_x(self->center, (x - 1) / 2);
+    MAX_X = x;
+}
+
+
+  /** @brief 重設 max_y 的值
+   * @param self Camera 物件
+   * @param y 要設定的 max 值
+  */
+void EXPORT(set_max_y)(Camera_Access self, int y)
+{
+    self->max_y = y;
+    Point_Type_set_y(self->center, (y - 1) / 2);
+    MAX_Y = y;
+}
+
+
+  /** @brief 設定玩家角色
+   * @param self Camera 物件
+   * @param player 指定的玩家物件
+   *
+   * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
+  */
+void EXPORT(set_player)(Camera_Access self, Status_Access player)
+{
+    Point_Access center = self->center;
+    int32_t x = Point_Type_x(center);
+    int32_t y = Point_Type_y(center);
+
+    Point_Access_change(player->base->Real_Position);
+    Point_Access_set_x(x);
+    Point_Access_set_y(y);
+
+    Point_Access_change(player->base->Graph_Position);
+    Point_Access_set_x(x);
+    Point_Access_set_y(y);
+
+    self->player = player;
+}
+
+
+  /** @brief 設定死亡時顯示的圖形
+   * @param self Camera 物件
+   * @param dead 指定的圖形
+  */
+void EXPORT(set_dead_style)(Camera_Access self, Style_Access dead)
+{
+    self->dead = dead;
+}
+
+
+  /** @brief 設定地圖物件
+   * @param self Camera 物件
+   * @param map 指定的地圖物件
+  */
+void EXPORT(set_map)(Camera_Access self, Map_Access map)
+{
+    MAP(move_bottom_right)(map, -1, -1);
+    self->map = map;
+}
+
+
+  /** @brief 處理訊息並更改角色資料
+   * @param self Camera 物件
+   * @param from_pool 角色池
+   * @param box_access 訊息視窗
+   * @param current 當前發出訊息的角色
+   * @param message 角色發出的訊息
+   * @return 當前必定回傳 true
+  */
+bool EXPORT(take) (Camera_Access self,
+     Character_Pool_Access from_pool,
+     Message_Box_Access box_access,
+     Status_Access current,
+      Message_Type message)
 {
     Status_Access npc = NULL;
-    Style_Access dead = access->dead;
+    Style_Access dead = self->dead;
 
     Rectangle_Access rectangle = Rectangle_Type_create();
     Point_Access max_point = Point_Type_create();
     Point_Access_change(max_point);
-    Point_Access_set_x(access->max_x);
-    Point_Access_set_y(access->max_y);
+    Point_Access_set_x(self->max_x);
+    Point_Access_set_y(self->max_y);
 
     Point_Access point = Point_Type_create();
     Point_Access_change(point);
@@ -198,18 +338,18 @@ static bool message_process(Camera_Access access,
     if (result == NO) {
         int32_t y = Point_Type_y(vector);
 
-        if ((y != 0) && (can_move_vertical(access, point) == YES)) {
+        if ((y != 0) && (can_move_vertical(self, point) == YES)) {
             if (current->faction == FACTION_PLAYER) {
-                camera_vertical_mode_setup(access, point, y);
+                camera_vertical_mode_setup(self, point, y);
             }
 
             Point_Access_change(current->base->Real_Position);
             Point_Access_add_x(Point_Type_x(vector));
             Point_Access_add_y(y);
         } else if ((Point_Type_x(vector) != 0)
-                   && (can_move_horizon(access, point) == YES)) {
+                   && (can_move_horizon(self, point) == YES)) {
             if (current->faction == FACTION_PLAYER) {
-                camera_horizon_mode_setup(access, point,
+                camera_horizon_mode_setup(self, point,
                                           Point_Type_x(vector));
             }
 
@@ -234,25 +374,24 @@ static bool message_process(Camera_Access access,
                  npc->base->name, character.get_relation_string(npc));
         message_box.add(box_access, attack_message);
 
-#define PKG(function) Character_Pool_##function
+#define CP(function) Character_Pool_##function
         switch (npc->faction) {
             case FACTION_PLAYER:
-                is_alive = PKG(attack_player_by) (from_pool, current);
+                is_alive = CP(attack_player_by) (from_pool, current);
                 break;
             case FACTION_ALLY:
-                is_alive = PKG(attack_ally_by) (from_pool, current, npc);
+                is_alive = CP(attack_ally_by) (from_pool, current, npc);
                 break;
             case FACTION_ENEMY:
-                is_alive = PKG(attack_enemy_by) (from_pool, current, npc);
+                is_alive = CP(attack_enemy_by) (from_pool, current, npc);
                 break;
             case FACTION_NEUTRAL:
                 is_alive =
-                    PKG(attack_neutral_by) (from_pool, current, npc);
+                    CP(attack_neutral_by) (from_pool, current, npc);
                 break;
             default:
                 break;
         }
-#undef PKG
 
         if (is_alive == DEAD) {
             character.set_style(npc, dead);
@@ -274,10 +413,11 @@ static bool message_process(Camera_Access access,
     }
 
     Rectangle_Access_change(rectangle);
-    Rectangle_Access_set_top_left_point(access->start);
+    Rectangle_Access_set_top_left_point(self->start);
     Rectangle_Access_set_down_right_point(max_point);
 
-    Character_Pool_calculate_graph_position(from_pool, rectangle);
+    CP(calculate_graph_position)(from_pool, rectangle);
+#undef CP
 
   DONE:
     Point_Type_free(vector);
@@ -286,102 +426,5 @@ static bool message_process(Camera_Access access,
     Rectangle_Type_free(rectangle);
     return true;
 }
-
-
-static Camera_Access camera_start(void)
-{
-    Camera_Access access = calloc(1, sizeof(Camera_Type));
-    MAX_X = 25;
-    MAX_Y = 21;
-    access->start = Point_Type_create();
-    access->end = Point_Type_create();
-    access->center = Point_Type_create();
-
-    camera.set_max_x(access, MAX_X);
-    camera.set_max_y(access, MAX_Y);
-
-    Point_Access_change(access->start);
-    Point_Access_set_x(0);
-    Point_Access_set_y(0);
-
-    Point_Access_change(access->end);
-    Point_Access_set_x(MAX_X - 1);
-    Point_Access_set_y(MAX_Y - 1);
-
-    access->horizon = CAMERA_UNDEFINE;
-    access->vertical = CAMERA_UNDEFINE;
-    access->map = NULL;
-    return access;
-}
-
-
-static void camera_stop(Camera_Access access)
-{
-    Point_Type_free(access->start);
-    Point_Type_free(access->end);
-    Point_Type_free(access->center);
-    free(access);
-}
-
-
-static void camera_set_max_x(Camera_Access access, int x)
-{
-    access->max_x = x;
-    Point_Type_set_x(access->center, (x - 1) / 2);
-    MAX_X = x;
-}
-
-static void camera_set_max_y(Camera_Access access, int y)
-{
-    access->max_y = y;
-    Point_Type_set_y(access->center, (y - 1) / 2);
-    MAX_Y = y;
-}
-
-
-static void set_player(Camera_Access access, Status_Access player)
-{
-    Point_Access center = access->center;
-    int32_t x = Point_Type_x(center);
-    int32_t y = Point_Type_y(center);
-
-    Point_Access_change(player->base->Real_Position);
-    Point_Access_set_x(x);
-    Point_Access_set_y(y);
-
-    Point_Access_change(player->base->Graph_Position);
-    Point_Access_set_x(x);
-    Point_Access_set_y(y);
-
-    access->player = player;
-}
-
-
-static void set_map(Camera_Access access, Map_Access map)
-{
-    MAP(move_bottom_right)(map, -1, -1);
-    access->map = map;
-}
-
-
-static void set_dead_style(Camera_Access access, Style_Access style)
-{
-    access->dead = style;
-}
-
-
-Graphic_Camera_API camera = {
-    .start = camera_start,
-    .stop = camera_stop,
-
-    .set_player = set_player,
-    .set_map = set_map,
-
-    .set_max_x = camera_set_max_x,
-    .set_max_y = camera_set_max_y,
-    .set_dead_style = set_dead_style,
-
-    .take = message_process
-};
 
 #undef MAP
