@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['character_5fbase_5fcopy',['Character_Base_copy',['../character_8h.html#a5e6227c7d4d2b8dbacc62db68f8562f9',1,'character.h']]],
-  ['character_5fbase_5ffree',['Character_Base_free',['../character_8h.html#aa14fb14701deb9cfcf6f9c5400dfd762',1,'character.h']]],
-  ['character_5fbase_5finit',['Character_Base_init',['../character_8h.html#a3f109404f4038b812a81cf967e9e050e',1,'character.h']]],
+  ['character_5fbase_5fcopy',['Character_Base_copy',['../character_8h.html#af658cb7f64f4a50461deb8a0f77aeddc',1,'character.h']]],
+  ['character_5fbase_5ffree',['Character_Base_free',['../character_8h.html#ac4f7b0eef46fff2dac2ecd4c6604369c',1,'character.h']]],
+  ['character_5fbase_5finit',['Character_Base_init',['../character_8h.html#a96a8b0d898a4b6a60a8802623ff55c5f',1,'character.h']]],
   ['character_5fpool_5faccess_5faction',['Character_Pool_Access_action',['../character__pool-use__self_8h.html#a1c0e7dcc178458544e6f9e346e33df8a',1,'character_pool-use_self.h']]],
   ['character_5fpool_5faccess_5fattack_5fally_5fby',['Character_Pool_Access_attack_ally_by',['../character__pool-use__self_8h.html#a41c44002d1fc9706870ea72e320e0793',1,'character_pool-use_self.h']]],
   ['character_5fpool_5faccess_5fattack_5fenemy_5fby',['Character_Pool_Access_attack_enemy_by',['../character__pool-use__self_8h.html#affe3949b9da65fd8b85d252dc63e127a',1,'character_pool-use_self.h']]],
@@ -24,7 +24,7 @@ var searchData=
   ['character_5fpool_5fattack_5fenemy_5fby',['Character_Pool_attack_enemy_by',['../character__pool_8h.html#a5e6b076d3d2edd5261974a8c3ba29298',1,'character_pool.h']]],
   ['character_5fpool_5fattack_5fneutral_5fby',['Character_Pool_attack_neutral_by',['../character__pool_8h.html#a1c128271e58ff06b8eb5584515e5ad24',1,'character_pool.h']]],
   ['character_5fpool_5fattack_5fplayer_5fby',['Character_Pool_attack_player_by',['../character__pool_8h.html#aa138eb00b77ffbc465cc0348feb010e9',1,'character_pool.h']]],
-  ['character_5fpool_5fcalculate_5fgraph_5fposition',['Character_Pool_calculate_graph_position',['../character__pool_8h.html#a569169d8e98a9a017e67f58dad7f1dca',1,'character_pool.h']]],
+  ['character_5fpool_5fcalculate_5fgraph_5fposition',['Character_Pool_calculate_graph_position',['../character__pool_8h.html#aa3c70f3c709b5f78eb1e30a5a9f77057',1,'character_pool.h']]],
   ['character_5fpool_5fcreate',['Character_Pool_create',['../character__pool_8h.html#ae75962b4a6dc80c9149ff196f4320028',1,'character_pool.h']]],
   ['character_5fpool_5ffind_5fcharacter',['Character_Pool_find_character',['../character__pool_8h.html#a40ffbcd4ef16647f77e41a98e3b3571e',1,'character_pool.h']]],
   ['character_5fpool_5ffree',['Character_Pool_free',['../character__pool_8h.html#a8720122382d0271fa912afb9cc19c7ae',1,'character_pool.h']]],

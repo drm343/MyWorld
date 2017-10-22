@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['faction',['faction',['../struct_character.html#a65755da588d2388244037920d9fb4fee',1,'Character']]],
+  ['faction',['faction',['../struct_status.html#a65755da588d2388244037920d9fb4fee',1,'Status']]],
   ['faction_5fally',['FACTION_ALLY',['../character-status_8h.html#a5564bc4562b93ff73873e24496993138a3cba2d184c3cd58c384b92a0bb9e6cd0',1,'character-status.h']]],
   ['faction_5fenemy',['FACTION_ENEMY',['../character-status_8h.html#a5564bc4562b93ff73873e24496993138ae62d2dd3a02e86f7653b7b246472ab97',1,'character-status.h']]],
   ['faction_5fneutral',['FACTION_NEUTRAL',['../character-status_8h.html#a5564bc4562b93ff73873e24496993138ad3a82608e2e8110f920b4caabf717f98',1,'character-status.h']]],

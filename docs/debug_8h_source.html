@@ -96,18 +96,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="debug_8h.html#aed581de90eb37c5e3a311b1936e7f0d6">    7</a></span>&#160;<span class="preprocessor">#define DEBUG_PRINT(fmt, ...) \</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">do { if (DEBUG) fprintf(stderr, &quot;[%s:%d]\n%s() -&gt; &quot; fmt, __FILE__, \</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">                        __LINE__, __func__, __VA_ARGS__); } while (0)</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="debug_8h.html#a0ee30bef129130d19b9ea7f69bcbe7bd">   11</a></span>&#160;<span class="preprocessor">#define DEBUG_MESSAGE(fmt) \</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">{ if (DEBUG) fprintf(stderr, &quot;[%s:%d]\n%s() -&gt; &quot; fmt, __FILE__, \</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">                        __LINE__, __func__); }</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="debug_8h.html#ab5765f7c998315b334699ec9390daa15">   15</a></span>&#160;<span class="preprocessor">#define BOOL_STRING(result) result ? &quot;true&quot; : &quot;false&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">                        __LINE__, __func__, __VA_ARGS__); } while (0) \</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="debug_8h.html#a0ee30bef129130d19b9ea7f69bcbe7bd">   12</a></span>&#160;<span class="preprocessor">#define DEBUG_MESSAGE(fmt) \</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">{ if (DEBUG) fprintf(stderr, &quot;[%s:%d]\n%s() -&gt; &quot; fmt, __FILE__, \</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">                        __LINE__, __func__); }</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="debug_8h.html#ab5765f7c998315b334699ec9390daa15">   16</a></span>&#160;<span class="preprocessor">#define BOOL_STRING(result) result ? &quot;true&quot; : &quot;false&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月22日 星期日 23:43:58, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

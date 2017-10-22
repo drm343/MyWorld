@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['faction',['faction',['../struct_character.html#a65755da588d2388244037920d9fb4fee',1,'Character']]],
+  ['faction',['faction',['../struct_status.html#a65755da588d2388244037920d9fb4fee',1,'Status']]],
   ['find',['find',['../struct_skill___pool___a_p_i.html#ad34efc0efcfb0e98f1faaadea7652bae',1,'Skill_Pool_API']]],
   ['first',['first',['../struct_status___list.html#a4531329391a79a477f18abf12dbff769',1,'Status_List']]],
   ['font',['font',['../struct_font_config.html#abf5bfa705e66ffc1ddaa6ce46c960873',1,'FontConfig']]],

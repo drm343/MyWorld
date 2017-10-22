@@ -744,7 +744,7 @@ static void add_neutral(Character_Pool * access, Status_Access npc)
 
 
   /** @brief 分配一個半完成初始化的角色實體
-   * @param access 要使用的 Character_Pool
+   * @param self 要使用的 Character_Pool
    * @param race 角色種族
    * @param name 角色名稱
    * @param map 使用的地圖
@@ -753,16 +753,16 @@ static void add_neutral(Character_Pool * access, Status_Access npc)
    * 本函數會根據角色種族來實體化角色資料，並回傳 Access，請使用該 Access 進行後續
    * 設定。
    */
-static Status_Access use_npc(Character_Pool * access, const char *race,
+static Status_Access use_npc(Character_Pool * self, const char *race,
                              const char *name, Map_Access map)
 {
     Status_Access origin_npc = NULL;
     Status_Access npc = NULL;
 
-    Found_Result result = pool_find(access->prepare, &origin_npc, race);
+    Found_Result result = pool_find(self->prepare, &origin_npc, race);
 
     if (result == FOUND) {
-        npc = Status_Pool_malloc(access->used_pool);
+        npc = Status_Pool_malloc(self->used_pool);
         character.init(npc);
         character.copy(npc, origin_npc);
 
@@ -772,7 +772,7 @@ static Status_Access use_npc(Character_Pool * access, const char *race,
         character.set_random_position(npc, Point_Access_x(),
                                       Point_Access_y());
 
-        Status_List_insert(access->used, npc);
+        Status_List_insert(self->used, npc);
     }
     return npc;
 }

@@ -97,6 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <code>#include &quot;<a class="el" href="character-skill_8h_source.html">character-skill.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generic__function_8h_source.html">helper/generic_function.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_status___list_8h_source.html">container/Status_List.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_status___pool_8h_source.html">container/Status_Pool.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="map__system_8h_source.html">map_system.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="rectangle-use__this_8h_source.html">rectangle-use_this.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="instance_2strings_8h_source.html">instance/strings.h</a>&quot;</code><br />
@@ -105,7 +106,7 @@ character_pool.h的包含相依圖:</div>
 <div class="dyncontent">
 <div class="center"><img src="character__pool_8h__incl.png" border="0" usemap="#include_2character__pool_8h" alt=""/></div>
 <map name="include_2character__pool_8h" id="include_2character__pool_8h">
-<area shape="rect" id="node4" href="character-skill_8h.html" title="character&#45;skill.h" alt="" coords="375,80,490,107"/><area shape="rect" id="node19" href="generic__function_8h.html" title="helper/generic_function.h" alt="" coords="415,229,581,256"/><area shape="rect" id="node20" href="_status___list_8h.html" title="container/Status_List.h" alt="" coords="195,80,351,107"/><area shape="rect" id="node21" href="map__system_8h.html" title="map_system.h" alt="" coords="565,155,673,181"/><area shape="rect" id="node23" href="rectangle-use__this_8h.html" title="rectangle&#45;use_this.h" alt="" coords="665,80,803,107"/><area shape="rect" id="node25" href="instance_2strings_8h.html" title="instance/strings.h" alt="" coords="813,155,938,181"/><area shape="rect" id="node5" href="character-status_8h.html" title="character&#45;status.h" alt="" coords="260,155,387,181"/><area shape="rect" id="node6" href="character_8h.html" title="character.h" alt="" coords="304,229,391,256"/><area shape="rect" id="node18" href="message__base_8h.html" title="message_base.h" alt="" coords="159,229,280,256"/><area shape="rect" id="node7" href="graphic_8h.html" title="graphic.h" alt="" coords="338,304,413,331"/><area shape="rect" id="node13" href="point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="641,304,755,331"/><area shape="rect" id="node10" href="base__type_8h.html" title="base_type.h" alt="" coords="541,379,634,405"/><area shape="rect" id="node14" href="point_8h.html" title="point.h" alt="" coords="667,379,729,405"/><area shape="rect" id="node16" href="debug_8h.html" title="helper/debug.h" alt="" coords="654,453,761,480"/><area shape="rect" id="node22" href="two__point_8h.html" title="two_point.h" alt="" coords="657,229,747,256"/><area shape="rect" id="node24" href="rectangle_8h.html" title="rectangle.h" alt="" coords="697,155,784,181"/><area shape="rect" id="node26" href="helper_2strings_8h.html" title="helper/strings.h" alt="" coords="831,379,941,405"/></map>
+<area shape="rect" id="node4" href="character-skill_8h.html" title="character&#45;skill.h" alt="" coords="561,80,675,107"/><area shape="rect" id="node19" href="generic__function_8h.html" title="helper/generic_function.h" alt="" coords="629,229,796,256"/><area shape="rect" id="node20" href="_status___list_8h.html" title="container/Status_List.h" alt="" coords="195,80,351,107"/><area shape="rect" id="node21" href="_status___pool_8h.html" title="container/Status_Pool.h" alt="" coords="375,80,536,107"/><area shape="rect" id="node22" href="map__system_8h.html" title="map_system.h" alt="" coords="751,155,859,181"/><area shape="rect" id="node24" href="rectangle-use__this_8h.html" title="rectangle&#45;use_this.h" alt="" coords="839,80,978,107"/><area shape="rect" id="node26" href="instance_2strings_8h.html" title="instance/strings.h" alt="" coords="994,155,1119,181"/><area shape="rect" id="node5" href="character-status_8h.html" title="character&#45;status.h" alt="" coords="392,155,519,181"/><area shape="rect" id="node6" href="character_8h.html" title="character.h" alt="" coords="467,229,553,256"/><area shape="rect" id="node18" href="message__base_8h.html" title="message_base.h" alt="" coords="321,229,443,256"/><area shape="rect" id="node7" href="graphic_8h.html" title="graphic.h" alt="" coords="471,304,546,331"/><area shape="rect" id="node13" href="point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="778,304,893,331"/><area shape="rect" id="node10" href="base__type_8h.html" title="base_type.h" alt="" coords="631,379,725,405"/><area shape="rect" id="node14" href="point_8h.html" title="point.h" alt="" coords="802,379,863,405"/><area shape="rect" id="node16" href="debug_8h.html" title="helper/debug.h" alt="" coords="779,453,886,480"/><area shape="rect" id="node23" href="two__point_8h.html" title="two_point.h" alt="" coords="872,229,961,256"/><area shape="rect" id="node25" href="rectangle_8h.html" title="rectangle.h" alt="" coords="883,155,969,181"/><area shape="rect" id="node27" href="helper_2strings_8h.html" title="helper/strings.h" alt="" coords="968,379,1079,405"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 本圖顯示出哪些檔案直接或間接include本檔 :</div>
@@ -148,9 +149,9 @@ character_pool.h的包含相依圖:</div>
 <tr class="memitem:a40ffbcd4ef16647f77e41a98e3b3571e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base__type_8h.html#a81c7d09b805c146131afef23d04eee1f">Found_Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character__pool_8h.html#a40ffbcd4ef16647f77e41a98e3b3571e">Character_Pool_find_character</a> (<a class="el" href="character__pool_8h.html#a0fa9cfbabebb9f84b6123f997df5a142">Character_Pool</a> *self, <a class="el" href="character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109">Status_Access</a> *npc, <a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> point)</td></tr>
 <tr class="memdesc:a40ffbcd4ef16647f77e41a98e3b3571e"><td class="mdescLeft">&#160;</td><td class="mdescRight">尋找該位置是否有任何角色  <a href="#a40ffbcd4ef16647f77e41a98e3b3571e">更多...</a><br /></td></tr>
 <tr class="separator:a40ffbcd4ef16647f77e41a98e3b3571e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a569169d8e98a9a017e67f58dad7f1dca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character__pool_8h.html#a569169d8e98a9a017e67f58dad7f1dca">Character_Pool_calculate_graph_position</a> (<a class="el" href="character__pool_8h.html#a0fa9cfbabebb9f84b6123f997df5a142">Character_Pool</a> *access, <a class="el" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a> rectangle)</td></tr>
-<tr class="memdesc:a569169d8e98a9a017e67f58dad7f1dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">重新計算所有角色在畫面上的顯示位置  <a href="#a569169d8e98a9a017e67f58dad7f1dca">更多...</a><br /></td></tr>
-<tr class="separator:a569169d8e98a9a017e67f58dad7f1dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c70f3c709b5f78eb1e30a5a9f77057"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character__pool_8h.html#aa3c70f3c709b5f78eb1e30a5a9f77057">Character_Pool_calculate_graph_position</a> (<a class="el" href="character__pool_8h.html#a0fa9cfbabebb9f84b6123f997df5a142">Character_Pool</a> *self, <a class="el" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a> rectangle)</td></tr>
+<tr class="memdesc:aa3c70f3c709b5f78eb1e30a5a9f77057"><td class="mdescLeft">&#160;</td><td class="mdescRight">重新計算所有角色在畫面上的顯示位置  <a href="#aa3c70f3c709b5f78eb1e30a5a9f77057">更多...</a><br /></td></tr>
+<tr class="separator:aa3c70f3c709b5f78eb1e30a5a9f77057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a437aa8411d0a36de2db762fa56330f9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109">Status_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character__pool_8h.html#a437aa8411d0a36de2db762fa56330f9b">Character_Pool_use_ally</a> (<a class="el" href="character__pool_8h.html#a0fa9cfbabebb9f84b6123f997df5a142">Character_Pool</a> *self, const char *race, const char *name, <a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a> map)</td></tr>
 <tr class="memdesc:a437aa8411d0a36de2db762fa56330f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">實體化友方角色  <a href="#a437aa8411d0a36de2db762fa56330f9b">更多...</a><br /></td></tr>
 <tr class="separator:a437aa8411d0a36de2db762fa56330f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -406,7 +407,7 @@ character_pool.h的包含相依圖:</div>
 
 </div>
 </div>
-<a class="anchor" id="a569169d8e98a9a017e67f58dad7f1dca"></a>
+<a class="anchor" id="aa3c70f3c709b5f78eb1e30a5a9f77057"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -414,7 +415,7 @@ character_pool.h的包含相依圖:</div>
           <td class="memname">void Character_Pool_calculate_graph_position </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="character__pool_8h.html#a0fa9cfbabebb9f84b6123f997df5a142">Character_Pool</a> *&#160;</td>
-          <td class="paramname"><em>access</em>, </td>
+          <td class="paramname"><em>self</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -900,7 +901,7 @@ character_pool.h的包含相依圖:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月22日 星期日 23:43:58, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -84,7 +84,7 @@ Found_Result EXPORT(find_character) (Character_Pool * self,
    *
    * 根據方形的兩個點重新計算角色位置。
    */
-void EXPORT(calculate_graph_position) (Character_Pool * access,
+void EXPORT(calculate_graph_position) (Character_Pool * self,
                                        Rectangle_Access rectangle);
 
 

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>MyWorld: Character  結構 參考文件</title>
+<title>MyWorld: Status  結構 參考文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,40 +84,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
   <div class="summary">
 <a href="#pub-attribs">資料欄位</a>  </div>
   <div class="headertitle">
-<div class="title">Character 結構 參考文件</div>  </div>
+<div class="title">Status 結構 參考文件</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>角色結構  
+ <a href="struct_status.html#details">更多...</a></p>
+
 <p><code>#include &lt;<a class="el" href="character-status_8h_source.html">character-status.h</a>&gt;</code></p>
 <div class="dynheader">
-Character的合作圖:</div>
+Status的合作圖:</div>
 <div class="dyncontent">
-<div class="center"><img src="struct_character__coll__graph.png" border="0" usemap="#_character_coll__map" alt="Collaboration graph"/></div>
-<map name="_character_coll__map" id="_character_coll__map">
-<area shape="rect" id="node2" href="struct_character___base.html" title="基本角色資料 " alt="" coords="51,109,167,136"/><area shape="rect" id="node3" href="struct_point___type.html" title="Point_Type" alt="" coords="5,5,93,32"/><area shape="rect" id="node4" href="struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="143,5,195,32"/></map>
+<div class="center"><img src="struct_status__coll__graph.png" border="0" usemap="#_status_coll__map" alt="Collaboration graph"/></div>
+<map name="_status_coll__map" id="_status_coll__map">
+<area shape="rect" id="node2" href="struct_character___base.html" title="角色基本資料結構 " alt="" coords="51,109,167,136"/><area shape="rect" id="node3" href="struct_point___type.html" title="Point_Type" alt="" coords="5,5,93,32"/><area shape="rect" id="node4" href="struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="143,5,195,32"/></map>
 <center><span class="legend">[<a href="graph_legend.html">圖示</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 資料欄位</h2></td></tr>
-<tr class="memitem:a93aa460e9631e527656e2e0c3f8865c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character_8h.html#a78a651266f3a2614cf9ebb596f331031">Character_Base_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_character.html#a93aa460e9631e527656e2e0c3f8865c0">base</a></td></tr>
-<tr class="separator:a93aa460e9631e527656e2e0c3f8865c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a910b1052b0b286486af6624e24413cdf"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_character.html#a910b1052b0b286486af6624e24413cdf">race</a></td></tr>
+<tr class="memitem:ad21e5bcf19fabc290fecf9fe3aed593f"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:ad9b720240acea71e5e62ecd8eca5805f"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="struct_status.html#ad9b720240acea71e5e62ecd8eca5805f">Character_Base</a></td></tr>
+<tr class="separator:ad9b720240acea71e5e62ecd8eca5805f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5163a6f1a4c93510d99735291980d856"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="struct_character___base.html">Character_Base</a>&#160;&#160;&#160;<a class="el" href="struct_status.html#a5163a6f1a4c93510d99735291980d856">base</a></td></tr>
+<tr class="separator:a5163a6f1a4c93510d99735291980d856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21e5bcf19fabc290fecf9fe3aed593f"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ad21e5bcf19fabc290fecf9fe3aed593f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a910b1052b0b286486af6624e24413cdf"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_status.html#a910b1052b0b286486af6624e24413cdf">race</a></td></tr>
 <tr class="separator:a910b1052b0b286486af6624e24413cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65755da588d2388244037920d9fb4fee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character-status_8h.html#a5564bc4562b93ff73873e24496993138">Faction_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_character.html#a65755da588d2388244037920d9fb4fee">faction</a></td></tr>
+<tr class="memitem:a65755da588d2388244037920d9fb4fee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character-status_8h.html#a5564bc4562b93ff73873e24496993138">Faction_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_status.html#a65755da588d2388244037920d9fb4fee">faction</a></td></tr>
 <tr class="separator:a65755da588d2388244037920d9fb4fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6d3b45ea23da90a0a72f4f2163045cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_character.html#ae6d3b45ea23da90a0a72f4f2163045cd">damage</a></td></tr>
+<tr class="memitem:ae6d3b45ea23da90a0a72f4f2163045cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_status.html#ae6d3b45ea23da90a0a72f4f2163045cd">damage</a></td></tr>
 <tr class="separator:ae6d3b45ea23da90a0a72f4f2163045cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">欄位說明文件</h2>
-<a class="anchor" id="a93aa460e9631e527656e2e0c3f8865c0"></a>
+<a name="details" id="details"></a><h2 class="groupheader">詳細描述</h2>
+<div class="textblock"><p>角色結構 </p>
+<dl class="section warning"><dt>警告</dt><dd>不要透過匿名結構同時使用有同名欄位的兩個結構，請確保只會單一繼承結構，如同 Objective-C。 </dd></dl>
+</div><h2 class="groupheader">欄位說明文件</h2>
+<a class="anchor" id="ad9b720240acea71e5e62ecd8eca5805f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="character_8h.html#a78a651266f3a2614cf9ebb596f331031">Character_Base_Access</a> base</td>
+          <td class="memname"><a class="el" href="struct_character___base.html">Character_Base</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5163a6f1a4c93510d99735291980d856"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_character___base.html">Character_Base</a> base</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad21e5bcf19fabc290fecf9fe3aed593f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... } </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>繼承基本角色資料</p>
+<p>使用了 C11 的匿名結構，在使用結構而未給予名稱的狀況下，新結構內部會把舊結構成員當 成自己的。</p>
+<p>透過 union 包覆兩個相同結構後，因為兩者結構相同，結構成員的 Access 一定會相同， 然後就能透過 self-&gt;base 的方式使用原結構的函數。</p>
+<p>如果不想用 union 處理 Access 問題，則必須自己手動轉型，或是開 plan9-extensions 來確保有正確轉型成舊結構的型別，但如果不能確保匿名結構一定會在結構開頭，或是用了兩個以上的匿名結構，還是建議採用 union 的做法。 </p>
 
 </div>
 </div>
@@ -130,6 +169,7 @@ Character的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>角色種族 </p>
 
 </div>
 </div>
@@ -142,6 +182,7 @@ Character的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>角色跟玩家的關係 </p>
 
 </div>
 </div>
@@ -154,6 +195,7 @@ Character的合作圖:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>目前受到的傷害 </p>
 
 </div>
 </div>
@@ -163,7 +205,7 @@ Character的合作圖:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月21日 星期六 23:48:12, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月22日 星期日 23:43:58, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
