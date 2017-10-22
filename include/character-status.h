@@ -25,16 +25,43 @@ typedef enum {
 } Relation_Type;
 
 
-typedef struct Character {
-    Character_Base_Access base;
+/** @brief 角色結構
+     *
+     * @warning 不要透過匿名結構同時使用有同名欄位的兩個結構，請確保只會單一繼承結構，如同 Objective-C。
+ */
+typedef struct Status {
+    /** 繼承基本角色資料
+     *
+     * 使用了 C11 的匿名結構，在使用結構而未給予名稱的狀況下，新結構內部會把舊結構成員當
+     * 成自己的。
+     *
+     * 透過 union 包覆兩個相同結構後，因為兩者結構相同，結構成員的 Access 一定會相同，
+     * 然後就能透過 self->base 的方式使用原結構的函數。
+     *
+     * 如果不想用 union 處理 Access 問題，則必須自己手動轉型，或是開 plan9-extensions 來確保有正確轉型成舊結構的型別，但如果不能確保匿名結構一定會在結構開頭，或是用了兩個以上的匿名結構，還是建議採用 union 的做法。
+     */
+    union {
+        Character_Base;
+        Character_Base base;
+    };
 
-    const char *race;
-    Faction_Type faction;
-    Natural damage;
+    const char *race; /**< 角色種族 */
+    Faction_Type faction; /**< 角色跟玩家的關係 */
+    Natural damage; /**< 目前受到的傷害 */
 } Status;
+
+
+/** @brief 角色物件
+ *
+ * 參數的傳入、傳出，都是透過物件進行，建議直接使用 Status_Access 取代 Status *。
+ */
 typedef Status *Status_Access;
 
 
+/** @brief 角色專用 api 變數結構
+ *
+ * @warning 之後會去掉變數結構改成純函數。
+ */
 typedef struct {
     void (*init) (Status_Access);
     void (*free) (Status_Access);

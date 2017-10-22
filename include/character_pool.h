@@ -8,6 +8,7 @@
 #include "helper/generic_function.h"
 
 #include "container/Status_List.h"
+#include "container/Status_Pool.h"
 #include "map_system.h"
 #include "rectangle-use_this.h"
 #include "instance/strings.h"

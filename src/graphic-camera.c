@@ -243,11 +243,11 @@ void EXPORT(set_player) (Camera_Access self, Status_Access player) {
     int32_t x = Point_Type_x(center);
     int32_t y = Point_Type_y(center);
 
-    Point_Access_change(player->base->Real_Position);
+    Point_Access_change(player->Real_Position);
     Point_Access_set_x(x);
     Point_Access_set_y(y);
 
-    Point_Access_change(player->base->Graph_Position);
+    Point_Access_change(player->Graph_Position);
     Point_Access_set_x(x);
     Point_Access_set_y(y);
 
@@ -296,8 +296,8 @@ bool EXPORT(take) (Camera_Access self,
 
     Point_Access point = Point_Type_create();
     Point_Access_change(point);
-    Point_Access_set_x(Point_Type_x(current->base->Real_Position));
-    Point_Access_set_y(Point_Type_y(current->base->Real_Position));
+    Point_Access_set_x(Point_Type_x(current->Real_Position));
+    Point_Access_set_y(Point_Type_y(current->Real_Position));
 
     Point_Access vector = Point_Type_create();
 
@@ -333,7 +333,7 @@ bool EXPORT(take) (Camera_Access self,
                 camera_vertical_mode_setup(self, point, y);
             }
 
-            Point_Access_change(current->base->Real_Position);
+            Point_Access_change(current->Real_Position);
             Point_Access_add_x(Point_Type_x(vector));
             Point_Access_add_y(y);
         } else if ((Point_Type_x(vector) != 0)
@@ -343,7 +343,7 @@ bool EXPORT(take) (Camera_Access self,
                                           Point_Type_x(vector));
             }
 
-            Point_Access_change(current->base->Real_Position);
+            Point_Access_change(current->Real_Position);
             Point_Access_add_x(Point_Type_x(vector));
             Point_Access_add_y(Point_Type_y(vector));
         }
@@ -352,16 +352,16 @@ bool EXPORT(take) (Camera_Access self,
 
         char *format = "%s(%s) 攻擊 %s(%s),造成 1 點傷害";
         int counter = snprintf(NULL, 0, format,
-                               current->base->name,
+                               current->name,
                                character.get_relation_string(current),
-                               npc->base->name,
+                               npc->name,
                                character.get_relation_string(npc));
 
         char attack_message[counter];
         snprintf(attack_message, counter + 1, format,
-                 current->base->name,
+                 current->name,
                  character.get_relation_string(current),
-                 npc->base->name, character.get_relation_string(npc));
+                 npc->name, character.get_relation_string(npc));
         message_box.add(box_access, attack_message);
 
 #define CP(function) Character_Pool_##function
@@ -385,7 +385,7 @@ bool EXPORT(take) (Camera_Access self,
         if (is_alive == DEAD) {
             character.set_style(npc, dead);
 
-            counter = String_ascii_length(npc->base->name);
+            counter = String_ascii_length(npc->name);
 
             if (npc->faction == FACTION_PLAYER) {
                 format = " 已死亡，任意按鍵離開遊戲";
@@ -396,7 +396,7 @@ bool EXPORT(take) (Camera_Access self,
             }
             char death_message[counter];
             snprintf(death_message, counter + 1, "%s%s",
-                     npc->base->name, format);
+                     npc->name, format);
             message_box.add(box_access, death_message);
         }
     }

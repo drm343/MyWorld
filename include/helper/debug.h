@@ -6,7 +6,8 @@
 
 #define DEBUG_PRINT(fmt, ...) \
 do { if (DEBUG) fprintf(stderr, "[%s:%d]\n%s() -> " fmt, __FILE__, \
-                        __LINE__, __func__, __VA_ARGS__); } while (0)
+                        __LINE__, __func__, __VA_ARGS__); } while (0) \
+
 
 #define DEBUG_MESSAGE(fmt) \
 { if (DEBUG) fprintf(stderr, "[%s:%d]\n%s() -> " fmt, __FILE__, \

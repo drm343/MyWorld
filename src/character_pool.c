@@ -1,5 +1,6 @@
 #include "character_pool.h"
 
+
 #define MAP(name) Map_Type_##name
 #define EXPORT(name) Character_Pool_##name
 
@@ -7,21 +8,6 @@
 // ----------------------------------------------
 // Internal Object Struct
 // ----------------------------------------------
-GENERIC_POOL(Status_Pool, Status_Access);
-typedef Status_Pool *Status_Pool_Access;
-
-
-GENERIC_POOL(Character_Base_Pool, Character_Base_Access);
-typedef Character_Base_Pool *Character_Base_Pool_Access;
-
-
-typedef struct {
-    Status_Pool_Access status;
-    Character_Base_Pool_Access base;
-} Base_Pool_Type;
-typedef Base_Pool_Type *Base_Pool_Access;
-
-
 /** @brief 角色池結構
  *
  * 建議直接使用結構名稱 Character_Pool，而不用 struct Character_Pool。
@@ -29,8 +15,9 @@ typedef Base_Pool_Type *Base_Pool_Access;
  * Status_List 只儲存實體化角色的 Access。
  */
 typedef struct Character_Pool {
-    Base_Pool_Access prepare;   /**< 種族池 */
-    Base_Pool_Access used;      /**< 實體化角色 */
+    Status_Pool *prepare;       /**< 種族池 */
+    Status_Pool *used_pool;     /**< 實體化角色用的角色池 */
+    Status_List *used;          /**< 實體化角色 */
     Status_List *ally;          /**< 盟友 */
     Status_List *enemy;         /**< 敵人 */
     Status_List *neutral;       /**< 中立 */
@@ -178,98 +165,6 @@ Message_Type Point_Type_near_by(Point_Type * self, Point_Type * other)
 }
 
 
-static Status_Pool_Access status_pool_start(uint8_t size)
-{
-    Status_Access memory = calloc(size, sizeof(Status));
-    Status_Pool_Access pool_access = calloc(1, sizeof(Status_Pool));
-
-    pool_access->pool = memory;
-    pool_access->max_size = size;
-    pool_access->current_size = size;
-
-    return pool_access;
-}
-
-static Character_Base_Pool_Access base_pool_start(uint8_t size)
-{
-    Character_Base_Access memory =
-        calloc(size, sizeof(Character_Base_Type));
-    Character_Base_Pool_Access pool_access =
-        calloc(1, sizeof(Character_Base_Pool));
-
-    pool_access->pool = memory;
-    pool_access->max_size = size;
-    pool_access->current_size = size;
-
-    return pool_access;
-}
-
-static Base_Pool_Access pool_start(uint8_t size)
-{
-    Status_Pool_Access status = status_pool_start(size);
-    Character_Base_Pool_Access base = base_pool_start(size);
-
-    Base_Pool_Access pool_access = calloc(1, sizeof(Base_Pool_Access));
-
-    pool_access->status = status;
-    pool_access->base = base;
-    return pool_access;
-}
-
-
-static void status_pool_stop(Status_Pool_Access pool_access)
-{
-    free(pool_access->pool);
-    free(pool_access);
-}
-
-
-static void base_pool_stop(Character_Base_Pool_Access pool_access)
-{
-    free(pool_access->pool);
-    free(pool_access);
-}
-
-
-static void pool_stop(Base_Pool_Access pool_access)
-{
-    status_pool_stop(pool_access->status);
-    base_pool_stop(pool_access->base);
-    free(pool_access);
-}
-
-
-static Status_Access status_pool_malloc(Status_Pool_Access pool_access)
-{
-    uint8_t start = pool_access->max_size - pool_access->current_size;
-    Status_Access result = &(pool_access->pool[start]);
-
-    pool_access->current_size -= 1;
-    return result;
-}
-
-static Character_Base_Access base_pool_malloc(Character_Base_Pool_Access
-                                              pool_access)
-{
-    uint8_t start = pool_access->max_size - pool_access->current_size;
-    Character_Base_Access result = &(pool_access->pool[start]);
-
-    pool_access->current_size -= 1;
-    return result;
-}
-
-
-static Status_Access Base_Pool_Type_malloc(Base_Pool_Type * access)
-{
-    Status_Access status = status_pool_malloc(access->status);
-    Character_Base_Access base = base_pool_malloc(access->base);
-
-    status->base = base;
-    character.init(status);
-    return status;
-}
-
-
 /*
 static bool pool_copy(Base_Pool_Access from, Base_Pool_Access to,
     char *name) {
@@ -281,7 +176,7 @@ static bool pool_copy(Base_Pool_Access from, Base_Pool_Access to,
   for (count; count < used; count++) {
     from_status = &(from->status->pool[count]);
 
-    if ([from_status->base->name isEqualToString: name] == YES) {
+    if ([from_status->name isEqualToString: name] == YES) {
       to_status = [Character_Pool malloc: to];
       character.copy(to_status, from_status);
       character.set_name(to_status, name);
@@ -293,57 +188,42 @@ static bool pool_copy(Base_Pool_Access from, Base_Pool_Access to,
 */
 
 
-static bool pool_all_copy(Base_Pool_Access from, Base_Pool_Access to)
+static bool pool_all_copy(Status_Pool * from, Status_Pool * to)
 {
-    uint8_t count = 0;
-    uint8_t used = from->status->max_size - from->status->current_size;
+    uint8_t used = from->max_size;
     Status_Access from_status = NULL;
     Status_Access to_status = NULL;
 
-    for (count; count < used; count++) {
-        from_status = &(from->status->pool[count]);
+    for (uint8_t count = 0; count < used; count++) {
+        Status_Item *from_item = &(from->pool[count]);
 
-        to_status = Base_Pool_Type_malloc(to);
-        character.copy(to_status, from_status);
+        if (from_item->is_used == IN_USE) {
+            Status *from_status = from_item->content;
+            Status *to_status = Status_Pool_malloc(to);
+            character.copy(to_status, from_status);
+        }
     }
     return false;
 }
 
 
-static Found_Result pool_find(Base_Pool_Access access,
+static Found_Result pool_find(Status_Pool * access,
                               Status_Access * npc, const char *race)
 {
-    uint8_t count = 0;
-    uint8_t used = access->status->max_size - access->status->current_size;
     race = String_Repo_search(race);
 
-    for (count; count < used; count++) {
-        *npc = &(access->status->pool[count]);
+    Status *content = NULL;
+    Status_Item *item = NULL;
 
-        if ((*npc)->race == race) {
-            return FOUND;
-        }
-    }
-    *npc = NULL;
-    return NOT_FOUND;
-}
+    uint8_t max_size = access->max_size;
 
+    for (uint8_t index = 0; index < max_size; index++) {
+        Status_Item *from_item = &(access->pool[index]);
 
-static Found_Result pool_find_by_position(Base_Pool_Access
-                                          access, Status_Access * npc,
-                                          Point_Access point)
-{
-    uint8_t count = 0;
-    uint8_t used = access->status->max_size - access->status->current_size;
+        if (from_item->is_used == IN_USE) {
+            *npc = from_item->content;
 
-    for (count; count < used; count++) {
-        *npc = &(access->status->pool[count]);
-
-        Faction_Type faction = character.get_relation(*npc);
-        Point_Access npc_position = character.get_position(*npc);
-
-        if (Point_Type_eq(point, (*npc)->base->Real_Position)) {
-            if ((*npc)->base->crossable == NO) {
+            if ((*npc)->race == race) {
                 return FOUND;
             }
         }
@@ -353,7 +233,30 @@ static Found_Result pool_find_by_position(Base_Pool_Access
 }
 
 
-static void reset_graph_position(Base_Pool_Access access,
+static Found_Result pool_find_by_position(Status_List *
+                                          access, Status_Access * npc,
+                                          Point_Access point)
+{
+    uint8_t used = access->instance_counter;
+
+    for (uint8_t count = 0; count < used; count++) {
+        *npc = Status_List_get_by_index(access, count);
+
+        Faction_Type faction = character.get_relation(*npc);
+        Point_Access npc_position = character.get_position(*npc);
+
+        if (Point_Type_eq(point, (*npc)->Real_Position)) {
+            if ((*npc)->crossable == NO) {
+                return FOUND;
+            }
+        }
+    }
+    *npc = NULL;
+    return NOT_FOUND;
+}
+
+
+static void reset_graph_position(Status_List * access,
                                  Rectangle_Access rectangle)
 {
     Rectangle_Access_change(rectangle);
@@ -368,25 +271,24 @@ static void reset_graph_position(Base_Pool_Access access,
     int64_t max_x = Point_Access_x();
     int64_t max_y = Point_Access_y();
 
-    uint8_t count = 0;
-    uint8_t used = access->status->max_size - access->status->current_size;
+    uint8_t used = access->instance_counter;
     Status_Access npc = NULL;
     int64_t counter_x = 0;
     int64_t counter_y = 0;
 
-    for (count; count < used; count++) {
-        npc = &(access->status->pool[count]);
+    for (uint8_t count = 0; count < used; count++) {
+        npc = Status_List_get_by_index(access, count);
 
-        counter_x = npc->base->Real_Position->x - x;
-        counter_y = npc->base->Real_Position->y - y;
+        counter_x = npc->Real_Position->x - x;
+        counter_y = npc->Real_Position->y - y;
 
         if (((counter_x >= 0) || (counter_y >= 0)) &&
             ((counter_x < max_x) && (counter_y < max_y - 1))) {
-            Point_Access_change(npc->base->Graph_Position);
+            Point_Access_change(npc->Graph_Position);
             Point_Access_set_x(counter_x);
             Point_Access_set_y(counter_y);
         } else {
-            Point_Access_change(npc->base->Graph_Position);
+            Point_Access_change(npc->Graph_Position);
             Point_Access_set_x(-1);
             Point_Access_set_y(-1);
         }
@@ -484,13 +386,17 @@ Character_Pool *EXPORT(create) (uint8_t max_config_size,
 
   /** @brief 結束角色池
    * @param self 要使用的角色池
+   *
+   * Status_Pool 擁有角色 Access 的管理權，因此必須比 Status_List 晚釋放。
   */
 void EXPORT(free) (Character_Pool * self) {
-    pool_stop(self->prepare);
-    pool_stop(self->used);
+    Status_List_stop(self->used);
     Status_List_stop(self->ally);
     Status_List_stop(self->neutral);
     Status_List_stop(self->enemy);
+
+    Status_Pool_stop(self->used_pool);
+    Status_Pool_stop(self->prepare);
     free(self);
 }
 
@@ -569,17 +475,17 @@ Execute_Result EXPORT(parse_npc_config) (Character_Pool * self,
   */
 static void set_prepare(Character_Pool * access, uint8_t max_size)
 {
-    Base_Pool_Type *prepare = access->prepare;
+    Status_Pool *prepare = access->prepare;
 
     if (prepare) {
-        if (max_size > prepare->status->max_size) {
-            Base_Pool_Access tmp_pool = pool_start(max_size);
+        if (max_size > prepare->max_size) {
+            Status_Pool *tmp_pool = Status_Pool_start(max_size);
             pool_all_copy(prepare, tmp_pool);
-            pool_stop(prepare);
+            Status_Pool_stop(prepare);
             access->prepare = tmp_pool;
         }
     } else {
-        access->prepare = pool_start(max_size);
+        access->prepare = Status_Pool_start(max_size);
     }
 }
 
@@ -590,17 +496,31 @@ static void set_prepare(Character_Pool * access, uint8_t max_size)
   */
 static void set_used(Character_Pool * access, uint8_t max_size)
 {
-    Base_Pool_Type *used = access->used;
+    Status_Pool *used_pool = access->used_pool;
 
-    if (used) {
-        if (max_size > used->status->max_size) {
-            Base_Pool_Access tmp_pool = pool_start(max_size);
-            pool_all_copy(used, tmp_pool);
-            pool_stop(used);
-            access->used = tmp_pool;
+    if (used_pool) {
+        if (max_size > used_pool->max_size) {
+            Status_Pool *tmp_pool = Status_Pool_start(max_size);
+            pool_all_copy(used_pool, tmp_pool);
+            Status_Pool_stop(used_pool);
+            access->used_pool = tmp_pool;
         }
     } else {
-        access->used = pool_start(max_size);
+        access->used_pool = Status_Pool_start(max_size);
+    }
+
+    Status_List *used = access->used;
+
+    if (used) {
+        if ((max_size > used->max_size) &&
+            (used->instance_counter >= used->max_size)) {
+            Status_List *tmp_list = Status_List_start(max_size);
+            Status_List_copy_all(used, tmp_list);
+            Status_List_stop(used);
+            access->used = tmp_list;
+        }
+    } else {
+        access->used = Status_List_start(max_size);
     }
 }
 
@@ -610,7 +530,9 @@ static void set_used(Character_Pool * access, uint8_t max_size)
    * @return 回傳待設定的種族資料 Access
   */
 Status_Access EXPORT(sign_in) (Character_Pool * self) {
-    return Base_Pool_Type_malloc(self->prepare);
+    Status_Access race = Status_Pool_malloc(self->prepare);
+    character.init(race);
+    return race;
 }
 
 
@@ -840,7 +762,8 @@ static Status_Access use_npc(Character_Pool * access, const char *race,
     Found_Result result = pool_find(access->prepare, &origin_npc, race);
 
     if (result == FOUND) {
-        npc = Base_Pool_Type_malloc(access->used);
+        npc = Status_Pool_malloc(access->used_pool);
+        character.init(npc);
         character.copy(npc, origin_npc);
 
         character.set_name(npc, name);
@@ -848,6 +771,8 @@ static Status_Access use_npc(Character_Pool * access, const char *race,
         Point_Access_change(MAP(bottom_right) (map));
         character.set_random_position(npc, Point_Access_x(),
                                       Point_Access_y());
+
+        Status_List_insert(access->used, npc);
     }
     return npc;
 }
@@ -858,19 +783,11 @@ static Status_Access use_npc(Character_Pool * access, const char *race,
    * @return 回傳玩家角色 Access 以供後續設定
    */
 Status_Access EXPORT(use_player) (Character_Pool * self) {
-#ifdef DEBUG
-    DEBUG_PRINT("self is null? %s\n", BOOL_STRING(self == NULL));
-    DEBUG_PRINT("self->used is null? %s\n",
-                BOOL_STRING(self->used == NULL));
-#endif
-
-    Status_Access player = Base_Pool_Type_malloc(self->used);
-
-#ifdef DEBUG
-    DEBUG_PRINT("player init failed? %s\n", BOOL_STRING(player == NULL));
-#endif
+    Status_Access player = Status_Pool_malloc(self->used_pool);
+    character.init(player);
 
     player->faction = FACTION_PLAYER;
+    Status_List_insert(self->used, player);
     return player;
 }
 
@@ -880,8 +797,7 @@ Status_Access EXPORT(use_player) (Character_Pool * self) {
    * @return 回傳總和數值
    */
 uint8_t EXPORT(instance_count) (Character_Pool * self) {
-    return self->used->status->max_size -
-        self->used->status->current_size;
+    return self->used->instance_counter;
 }
 
 
@@ -892,7 +808,7 @@ uint8_t EXPORT(instance_count) (Character_Pool * self) {
    */
 Status_Access EXPORT(get_instance_by_index) (Character_Pool * self,
                                              int index) {
-    return &(self->used->status->pool[index]);
+    return Status_List_get_by_index(self->used, index);
 }
 
 
@@ -919,7 +835,7 @@ Message_Type EXPORT(action) (Character_Pool * self,
                              Status_Access current_character) {
     Message_Type result = DO_NOTHING;
     uint8_t target_group_number;
-    bool is_alive = current_character->base->is_alive;
+    bool is_alive = current_character->is_alive;
 
     uint8_t total_target_number = 1;
     uint8_t neutral_target_number = 0;

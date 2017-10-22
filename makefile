@@ -3,21 +3,29 @@ APP_NAME=rogue
 INDENT_NUMBER=4
 CASE_INDENT_NUMBER=4
 
+# Compiler and Standard
 COMPILER=gcc
-#COMPILER=clang-5.0-32 -ferror-limit=1
 
+ # C11 only allow anonymous struct or union without a tag.
+ # Enable ms-extensions for named struct.
+C11=-std=gnu11 -fms-extensions
+STD=$(C11)
+
+ # Source and Include dir defined.
 CURREND=`pwd`
 PACKAGE=$(CURREND)/../AppDir
 BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
-STD=-std=gnu11
 INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
+
+# Compile flags
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
 LFLAGS=-Werror -L$(OBJ) -lmy_world
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
+# Use DEBUG=-DDEBUG will enable debug message.
 #DEBUG=-DDEBUG
 DEBUG=
 
@@ -36,6 +44,7 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
 	$(OBJ)/status_list.o \
+	$(OBJ)/status_pool.o \
 	$(OBJ)/character-skill.o \
 	$(OBJ)/map_system.o \
 	$(OBJ)/graphic-camera.o \
@@ -77,7 +86,7 @@ $(AUTO_BUILD_TOOLS):
 indent:
 	find $(CURREND)/include -name '*.h' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
 	find $(CURREND)/src -name '*.c' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
-	git checkout $(SRC)/
+	git checkout $(SRC)/helper_function-strings.c
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 

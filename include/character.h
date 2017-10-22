@@ -18,21 +18,20 @@
 #define EXPORT(name) Character_Base_##name
 
 
-/** @brief 基本角色資料
+/** @brief 角色基本資料結構
  *
- * 後續可能會將這個結構跟 Character_Type 合併，並且改成 Container。
+ * 可以考慮透過 C11 匿名結構的方式來新增自己需要的新資料。
  */
 typedef struct Character_Base {
     const char *name; /**< 角色名稱 */
-    Style_Access Mark; /**< 角色使用的顯示圖形 Access */
+    Style_Access Mark; /**< 角色圖形的 Access */
     Point_Access Real_Position; /**< 角色的真實座標 */
     Point_Access Graph_Position; /**< 顯示在畫面上的座標 */
     Yes_No crossable; /**< 可不可以跨過去，後續會修改 */
     Yes_No attackable; /**< 可不可以被攻擊，後續會修改 */
     bool is_alive; /**< 角色是否還存活，可以依靠此資訊取代 crossable */
     Use_Type status; /**< 是否使用中，可以依靠 Character_Pool 來分辨，後續會移除 */
-} Character_Base_Type;
-typedef Character_Base_Type *Character_Base_Access;
+} Character_Base;
 
 
   /** @brief 初始化角色基本資料
@@ -40,7 +39,7 @@ typedef Character_Base_Type *Character_Base_Access;
    *
    * 請確保傳進去的物件不是 NULL
   */
-void EXPORT(init) (Character_Base_Type * self);
+void EXPORT(init) (Character_Base * self);
 
 
   /** @brief 釋放角色基本資料
@@ -48,7 +47,7 @@ void EXPORT(init) (Character_Base_Type * self);
    *
    * 請確保傳進去的物件不是 NULL。
   */
-void EXPORT(free) (Character_Base_Type * self);
+void EXPORT(free) (Character_Base * self);
 
 
   /** @brief 複製角色基本資料
@@ -59,8 +58,7 @@ void EXPORT(free) (Character_Base_Type * self);
    *
    * 由於 name、Mark 皆為不會變動的指標，因此可以放心複製。
   */
-void EXPORT(copy) (Character_Base_Type * self,
-                   Character_Base_Type * origin);
+void EXPORT(copy) (Character_Base * self, Character_Base * origin);
 
 #undef EXPORT
 #endif

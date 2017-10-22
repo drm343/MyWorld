@@ -67,10 +67,10 @@ void draw_view(SDL_Renderer_Access render)
     SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(render);
 
-    Point_Access_change(camera_1->player->base->Graph_Position);
+    Point_Access_change(camera_1->player->Graph_Position);
     position.x = GRID_LENGTH * Point_Access_x();
     position.y = GRID_LENGTH * Point_Access_y();
-    SDL_RenderCopy(render, camera_1->player->base->Mark->access, NULL,
+    SDL_RenderCopy(render, camera_1->player->Mark->access, NULL,
                    &(position));
 
     uint8_t used = CP(instance_count) ();
@@ -78,14 +78,18 @@ void draw_view(SDL_Renderer_Access render)
     for (int next = 1; next < used; next++) {
         Status_Access npc = CP(get_instance_by_index) (next);
 
-        if (npc->base->status == IN_USE) {
-            if (!Point_Type_eq(npc->base->Real_Position,
-                               camera_1->player->base->Real_Position)) {
-                Point_Access_change(npc->base->Graph_Position);
+#ifdef DEBUG
+        DEBUG_PRINT("real position is not null %s\n",
+                    BOOL_STRING(camera_1->player->Real_Position));
+#endif
+
+        if (npc->status == IN_USE) {
+            if (!Point_Type_eq
+                (npc->Real_Position, camera_1->player->Real_Position)) {
+                Point_Access_change(npc->Graph_Position);
                 rect.x = GRID_LENGTH * Point_Access_x();
                 rect.y = GRID_LENGTH * Point_Access_y();
-                SDL_RenderCopy(render, npc->base->Mark->access, NULL,
-                               &(rect));
+                SDL_RenderCopy(render, npc->Mark->access, NULL, &(rect));
             }
         }
     }
@@ -147,7 +151,9 @@ void submain(const char *root_dir, const char *init_cfg,
 
     style_pool = SP(start) (256);
     character_pool = CP_SUPER(create) (20, 100);
+
     CP(change) (character_pool);
+
     camera_1 = CAMERA(start) ();
     box_1 = message_box.start();
 
@@ -162,9 +168,19 @@ void submain(const char *root_dir, const char *init_cfg,
     character.set_name(Player, "雜魚");
     CAMERA(set_player) (camera_1, Player);
 
+#ifdef DEBUG
+    DEBUG_PRINT("name %s\n", camera_1->player->name);
+    DEBUG_PRINT("real position is not null %s\n",
+                BOOL_STRING(camera_1->player->Real_Position != NULL));
+#endif
+
     result = setup_style(init_cfg);
 
     if (result == EXECUTE_FAILED) {
+#ifdef DEBUG
+        DEBUG_PRINT("config setup failed\n", NULL);
+#endif
+
         goto INIT_FAILED;
     }
 
@@ -212,7 +228,7 @@ void submain(const char *root_dir, const char *init_cfg,
         for (index; index < instance_count; index++) {
             current = CP(get_instance_by_index) (index);
 
-            if (current->base->is_alive == false) {
+            if (current->is_alive == false) {
                 continue;
             }
             message = CP(action) (current);

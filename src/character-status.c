@@ -4,9 +4,8 @@
 #ifdef DEBUG
 static void print_status(Status_Access access)
 {
-    Character_Base_Access base = access->base;
-    DEBUG_PRINT("%s : %s\n", base->name, access->race);
-    DEBUG_PRINT("Mark: %s\n", base->Mark->mark);
+    DEBUG_PRINT("%s : %s\n", access->name, access->race);
+    DEBUG_PRINT("Mark: %s\n", access->Mark->mark);
     DEBUG_PRINT("Damage: %d\n", access->damage);
 }
 #endif
@@ -18,23 +17,23 @@ static void print_status(Status_Access access)
 #define SUPER(name) Character_Base_##name
 static void character_init(Status_Access access)
 {
-    SUPER(init) (access->base);
+    SUPER(init) (&(access->base));
     access->faction = FACTION_NEUTRAL;
 }
 
 
 static void character_free(Status_Access access)
 {
-    SUPER(free) (access->base);
+    SUPER(free) (&(access->base));
     access->faction = FACTION_NEUTRAL;
 }
 
 
 static void character_copy(Status_Access access, Status_Access from)
 {
-    SUPER(copy) (access->base, from->base);
-    access->race = from->race;
+    SUPER(copy) (&(access->base), &(from->base));
 
+    access->race = from->race;
     access->faction = from->faction;
     access->damage = from->damage;
 }
@@ -44,7 +43,7 @@ static void character_copy(Status_Access access, Status_Access from)
 
 static Is_Alive is_alive(Status_Access access)
 {
-    if (access->base->is_alive == true) {
+    if (access->is_alive == true) {
         return ALIVE;
     } else {
         return DEAD;
@@ -73,9 +72,9 @@ static Is_Alive attack_character(Status_Access from, Status_Access to)
     }
 
     if (to->damage >= 3) {
-        to->base->is_alive = false;
-        to->base->crossable = true;
-        to->base->attackable = false;
+        to->is_alive = false;
+        to->crossable = true;
+        to->attackable = false;
         return DEAD;
     } else {
         return ALIVE;
@@ -88,7 +87,7 @@ static Is_Alive attack_character(Status_Access from, Status_Access to)
 // -----------------------------------------
 static void set_base_name(Status_Access access, const char *name)
 {
-    access->base->name = name;
+    access->name = name;
 }
 
 static void set_race(Status_Access access, const char *race)
@@ -98,19 +97,19 @@ static void set_race(Status_Access access, const char *race)
 
 static void set_base_style(Status_Access access, Style_Access style)
 {
-    access->base->Mark = style;
+    access->Mark = style;
 }
 
 static void set_base_mark(Status_Access access, const char *mark)
 {
-    access->base->Mark->mark = mark;
+    access->Mark->mark = mark;
 }
 
 
 static void set_random_position(Status_Access access,
                                 int64_t max_x, int64_t max_y)
 {
-    Point_Access_change(access->base->Real_Position);
+    Point_Access_change(access->Real_Position);
     Point_Access_set_x(rand() % max_x);
     Point_Access_set_y(rand() % max_y);
 }
@@ -186,7 +185,7 @@ static void set_neutral(Status_Access access)
 // -----------------------------------------
 Point_Access get_position(Status_Access access)
 {
-    return access->base->Real_Position;
+    return access->Real_Position;
 }
 
 
