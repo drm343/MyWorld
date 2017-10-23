@@ -1,7 +1,6 @@
 #include "graphic-camera.h"
 
 #define MAP(name) Map_Type_##name
-#define CP(name) Character_Pool_##name
 #define STATUS(name) Status_##name
 
 static int MAX_X = 0;
@@ -360,7 +359,7 @@ bool EXPORT(take) (Camera_Access self,
                  current->name,
                  STATUS(get_relation_string) (current),
                  npc->name, STATUS(get_relation_string) (npc));
-        message_box.add(box_access, attack_message);
+        BOX(add_message) (box_access, attack_message);
 
         switch (npc->faction) {
             case FACTION_PLAYER:
@@ -394,7 +393,7 @@ bool EXPORT(take) (Camera_Access self,
             char death_message[counter];
             snprintf(death_message, counter + 1, "%s%s",
                      npc->name, format);
-            message_box.add(box_access, death_message);
+            BOX(add_message) (box_access, death_message);
         }
     }
 
@@ -412,5 +411,4 @@ bool EXPORT(take) (Camera_Access self,
 }
 
 #undef STATUS
-#undef CP
 #undef MAP

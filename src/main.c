@@ -27,10 +27,10 @@ void draw_message_box(SDL_Renderer_Access render)
     SDL_Color white = { 255, 255, 255 };
     const char *item = NULL;
 
-    int current = strings_count(box_1->history);
+    int current = Message_Box_history_count(box_1);
     for (int counter = 0; counter < 5; counter++) {
         if (current >= 1) {
-            item = strings_lookup_id(box_1->history, current);
+            item = Message_Box_get_history_by_index(box_1, current);
         } else {
             item = "";
         }
@@ -38,7 +38,7 @@ void draw_message_box(SDL_Renderer_Access render)
         current--;
 
         SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
-        SDL_RenderDrawLines(render, box_1->box, 5);
+        SDL_RenderDrawLines(render, Message_Box_box(box_1), 5);
 
         SDL_Surface *surfaceMessage = NULL;
 
@@ -73,10 +73,10 @@ void draw_view(SDL_Renderer_Access render)
     SDL_RenderCopy(render, camera_1->player->Mark->access, NULL,
                    &(position));
 
-    uint8_t used = CP(instance_count) ();
+    uint8_t used = CP_OBJECT(instance_count) ();
 
     for (int next = 1; next < used; next++) {
-        Status_Access npc = CP(get_instance_by_index) (next);
+        Status_Access npc = CP_OBJECT(get_instance_by_index) (next);
 
 #ifdef DEBUG
         DEBUG_PRINT("real position is not null %s\n",
@@ -150,12 +150,12 @@ void submain(const char *root_dir, const char *init_cfg,
     bool running = true;
 
     style_pool = SP(start) (256);
-    character_pool = CP_SUPER(create) (20, 100);
+    character_pool = CP(create) (20, 100);
 
-    CP(change) (character_pool);
+    CP_OBJECT(change) (character_pool);
 
     camera_1 = CAMERA(start) ();
-    box_1 = message_box.start();
+    box_1 = BOX(start) ();
 
     SDL_Init(SDL_INIT_EVERYTHING);
     if (TTF_Init() != 0) {
@@ -164,7 +164,7 @@ void submain(const char *root_dir, const char *init_cfg,
     if (character_pool == NULL) {
         goto INIT_FAILED;
     }
-    Status_Access Player = CP(use_player) ();
+    Status_Access Player = CP_OBJECT(use_player) ();
     STATUS(set_name) (Player, "雜魚");
     CAMERA(set_player) (camera_1, Player);
 
@@ -184,14 +184,14 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
 
-    CP(parse_npc_config) (npc_cfg, style_pool);
+    CP_OBJECT(parse_npc_config) (npc_cfg, style_pool);
 
     CAMERA(set_map) (camera_1, map_1);
 
-    CP(use_enemy) ("goblin", "g 1", camera_1->map);
-    CP(use_enemy) ("goblin", "g 2", camera_1->map);
-    CP(use_neutral) ("villager", "v 1", camera_1->map);
-    CP(use_neutral) ("villager", "v 2", camera_1->map);
+    CP_OBJECT(use_enemy) ("goblin", "g 1", camera_1->map);
+    CP_OBJECT(use_enemy) ("goblin", "g 2", camera_1->map);
+    CP_OBJECT(use_neutral) ("villager", "v 1", camera_1->map);
+    CP_OBJECT(use_neutral) ("villager", "v 2", camera_1->map);
 
     win =
         SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT,
@@ -205,11 +205,11 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
 
-    uint8_t instance_count = CP(instance_count) ();
+    uint8_t instance_count = CP_OBJECT(instance_count) ();
     uint8_t index = instance_count;
     while (running) {
         current = camera_1->player;
-        message = CP(action) (current);
+        message = CP_OBJECT(action) (current);
 
         switch (message) {
             case QUIT:
@@ -226,12 +226,12 @@ void submain(const char *root_dir, const char *init_cfg,
         }
 
         for (index; index < instance_count; index++) {
-            current = CP(get_instance_by_index) (index);
+            current = CP_OBJECT(get_instance_by_index) (index);
 
             if (current->is_alive == false) {
                 continue;
             }
-            message = CP(action) (current);
+            message = CP_OBJECT(action) (current);
             running =
                 CAMERA(take) (camera_1, character_pool, box_1, current,
                               message);
@@ -249,9 +249,9 @@ void submain(const char *root_dir, const char *init_cfg,
     SDL_Quit();
 
   DONE:
-    message_box.stop(box_1);
+    BOX(stop) (box_1);
     CAMERA(stop) (camera_1);
-    CP_SUPER(free) (character_pool);
+    CP(free) (character_pool);
     SP(stop) (style_pool);
 }
 

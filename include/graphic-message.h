@@ -1,27 +1,87 @@
 #ifndef HEADER_GRAPHIC_MESSAGE
 #define HEADER_GRAPHIC_MESSAGE
+
+#include "namespace.h"
+
 #include "graphic.h"
 #include "helper/strings.h"
 
 
-typedef char *String_Access;
+/** @page 訊息欄
+ *
+ * 訊息欄的 Namespace 為 Message_Box_
+ */
 
-typedef SDL_Point *Message_Box_Points;
-typedef struct {
-    int8_t grid_width;
-    int8_t grid_heigth;
-    Message_Box_Points box;
-    String_Intern history;
-} Message_Box;
+
+  /** @brief 訊息欄結構
+   *
+   * 用來顯示訊息用，不限定實作方式，也不限定開發者的設計方式，可以直接
+   * 跟主遊戲畫面合在一起，如同目前的做法，也可以拆開讓訊息欄在外部作為
+   * 一個顯示器單獨存在或直接顯示在 terminal 也可。
+   *
+   * @warning 目前因為 histroy 的設計方式只會顯示一份，如果有相同文字
+   * 會顯示不出來，必須修改成 array 儲存數字的方式。
+  */
+typedef struct Message_Box Message_Box;
+
+
+  /** @brief 訊息欄物件
+   *
+   * 請參閱訊息欄結構。
+  */
 typedef Message_Box *Message_Box_Access;
 
 
-typedef struct {
-    Message_Box_Access(*start) (void);
-    void (*stop) (Message_Box_Access);
-    void (*set_box) (Message_Box_Access, int64_t, int64_t, int64_t,
-                     int64_t);
-    void (*add) (Message_Box_Access, char *);
-} Message_Box_API;
-extern Message_Box_API message_box;
+  /** @brief 啟動訊息欄
+   * @return 訊息欄的 Access
+  */
+Message_Box_Access BOX(start) (void);
+
+
+  /** @brief 釋放訊息欄
+   * @param self 要釋放的訊息欄
+  */
+void BOX(stop) (Message_Box_Access self);
+
+
+  /** @brief 取出畫面用的 box 點座標
+   * @param self 訊息欄
+   * @return 點座標
+  */
+SDL_Point *BOX(box) (Message_Box_Access self);
+
+
+  /** @brief 設定畫面用的 box 點座標
+   * @param self 訊息欄
+   * @param start_x 起始點 x 位置
+   * @param start_y 起始點 y 位置
+   * @param width 訊息欄寬度
+   * @param height 訊息欄高度
+  */
+void BOX(set_box) (Message_Box_Access self,
+                   int64_t start_x, int64_t start_y,
+                   int64_t width, int64_t height);
+
+
+  /** @brief 新增訊息到訊息欄
+   * @param self 訊息欄
+   * @param message 想加入的訊息
+  */
+void BOX(add_message) (Message_Box_Access self, char *message);
+
+
+  /** @brief 目前的歷史訊息總數
+   * @param self 訊息欄
+   * @return 歷史訊息總數
+  */
+int BOX(history_count) (Message_Box_Access self);
+
+
+  /** @brief 根據 index 取出對應的歷史訊息
+   * @param self 訊息欄
+   * @param index 想取出的訊息數字
+   * @return 歷史訊息
+  */
+const char *BOX(get_history_by_index) (Message_Box_Access self, int index);
+
 #endif
