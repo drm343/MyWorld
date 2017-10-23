@@ -2,8 +2,7 @@
 
 
 #define MAP(name) Map_Type_##name
-#define EXPORT(name) Character_Pool_##name
-
+#define STATUS(name) Status_##name
 
 // ----------------------------------------------
 // Internal Object Struct
@@ -200,7 +199,7 @@ static bool pool_all_copy(Status_Pool * from, Status_Pool * to)
         if (from_item->is_used == IN_USE) {
             Status *from_status = from_item->content;
             Status *to_status = Status_Pool_malloc(to);
-            character.copy(to_status, from_status);
+            STATUS(copy) (to_status, from_status);
         }
     }
     return false;
@@ -242,8 +241,9 @@ static Found_Result pool_find_by_position(Status_List *
     for (uint8_t count = 0; count < used; count++) {
         *npc = Status_List_get_by_index(access, count);
 
-        Faction_Type faction = character.get_relation(*npc);
-        Point_Access npc_position = character.get_position(*npc);
+        Faction_Type faction;
+        Status_get_relation(*npc, faction);
+        Point_Access npc_position = STATUS(get_position) (*npc);
 
         if (Point_Type_eq(point, (*npc)->Real_Position)) {
             if ((*npc)->crossable == NO) {
@@ -361,10 +361,14 @@ static Message_Type npc_reaction(Status * self, Status_List * enemy_group)
 
     uint8_t target_number = rand() % used;
     Status *target = Status_List_get_by_index(enemy_group, target_number);
-    Point_Access target_position = character.get_position(target);
-    Point_Access self_position = character.get_position(self);
+    Point_Access target_position = STATUS(get_position) (target);
+    Point_Access self_position = STATUS(get_position) (self);
     return Point_Type_over_there(self_position, target_position);
 }
+
+
+
+#define EXPORT(name) Character_Pool_##name
 
 
   /** @brief 產生角色池
@@ -444,19 +448,19 @@ Execute_Result EXPORT(parse_npc_config) (Character_Pool * self,
             Status_Access npc = EXPORT(sign_in) (self);
             Style_Access style_access = Style_Pool_malloc(style_pool);
 
-            character.set_style(npc, style_access);
+            STATUS(set_style) (npc, style_access);
 
             config_setting_lookup_string(npc_setting, "name", &value);
             value = String_Repo_sign_in(value);
-            character.set_name(npc, value);
+            STATUS(set_name) (npc, value);
 
             config_setting_lookup_string(npc_setting, "mark", &value);
             value = String_Repo_sign_in(value);
-            character.set_mark(npc, value);
+            STATUS(set_mark) (npc, value);
 
             config_setting_lookup_string(npc_setting, "race", &value);
             value = String_Repo_sign_in(value);
-            character.set_race(npc, value);
+            STATUS(set_race) (npc, value);
         }
     } else {
         goto DONE;
@@ -531,7 +535,7 @@ static void set_used(Character_Pool * access, uint8_t max_size)
   */
 Status_Access EXPORT(sign_in) (Character_Pool * self) {
     Status_Access race = Status_Pool_malloc(self->prepare);
-    character.init(race);
+    STATUS(init) (race);
     return race;
 }
 
@@ -601,7 +605,7 @@ Status_Access EXPORT(use_ally) (Character_Pool * self, const char *race,
     Status_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
-        character.set_relation_ally(npc);
+        STATUS(set_ally) (npc);
         add_ally(self, npc);
     }
     return npc;
@@ -660,7 +664,7 @@ Status_Access EXPORT(use_enemy) (Character_Pool * self, const char *race,
     Status_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
-        character.set_relation_enemy(npc);
+        STATUS(set_enemy) (npc);
         add_enemy(self, npc);
     }
     return npc;
@@ -720,7 +724,7 @@ Status_Access EXPORT(use_neutral) (Character_Pool * self,
     Status_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
-        character.set_relation_neutral(npc);
+        STATUS(set_neutral) (npc);
         add_neutral(self, npc);
     }
     return npc;
@@ -763,14 +767,14 @@ static Status_Access use_npc(Character_Pool * self, const char *race,
 
     if (result == FOUND) {
         npc = Status_Pool_malloc(self->used_pool);
-        character.init(npc);
-        character.copy(npc, origin_npc);
+        STATUS(init) (npc);
+        STATUS(copy) (npc, origin_npc);
 
-        character.set_name(npc, name);
+        STATUS(set_name) (npc, name);
 
         Point_Access_change(MAP(bottom_right) (map));
-        character.set_random_position(npc, Point_Access_x(),
-                                      Point_Access_y());
+        STATUS(set_random_position) (npc, Point_Access_x(),
+                                     Point_Access_y());
 
         Status_List_insert(self->used, npc);
     }
@@ -784,7 +788,7 @@ static Status_Access use_npc(Character_Pool * self, const char *race,
    */
 Status_Access EXPORT(use_player) (Character_Pool * self) {
     Status_Access player = Status_Pool_malloc(self->used_pool);
-    character.init(player);
+    STATUS(init) (player);
 
     player->faction = FACTION_PLAYER;
     Status_List_insert(self->used, player);
@@ -872,16 +876,16 @@ Message_Type EXPORT(action) (Character_Pool * self,
                 result = npc_reaction(current_character, self->ally);
             } else {
                 target = EXPORT(get_instance_by_index) (self, 0);
-                target_position = character.get_position(target);
-                self_position = character.get_position(current_character);
+                target_position = STATUS(get_position) (target);
+                self_position = STATUS(get_position) (current_character);
                 result =
                     Point_Type_over_there(self_position, target_position);
             }
             break;
         case FACTION_NEUTRAL:
             target = EXPORT(get_instance_by_index) (self, 0);
-            target_position = character.get_position(target);
-            self_position = character.get_position(current_character);
+            target_position = STATUS(get_position) (target);
+            self_position = STATUS(get_position) (current_character);
             result =
                 faction_neutral_reaction(self_position, target_position);
             break;
@@ -905,7 +909,7 @@ Message_Type EXPORT(action) (Character_Pool * self,
 Is_Alive EXPORT(attack_enemy_by) (Character_Pool * self,
                                   Status_Access current,
                                   Status_Access target) {
-    Is_Alive result = character.attack(current, target);
+    Is_Alive result = STATUS(attack) (current, target);
     Status_List *enemy = self->enemy;
     Status_List_remove(enemy, target);
 
@@ -936,7 +940,7 @@ Is_Alive EXPORT(attack_enemy_by) (Character_Pool * self,
 Is_Alive EXPORT(attack_ally_by) (Character_Pool * self,
                                  Status_Access current,
                                  Status_Access target) {
-    Is_Alive result = character.attack(current, target);
+    Is_Alive result = STATUS(attack) (current, target);
     Status_List *ally = self->ally;
     Status_List_remove(ally, target);
 
@@ -967,7 +971,7 @@ Is_Alive EXPORT(attack_ally_by) (Character_Pool * self,
 Is_Alive EXPORT(attack_neutral_by) (Character_Pool * self,
                                     Status_Access current,
                                     Status_Access target) {
-    Is_Alive result = character.attack(current, target);
+    Is_Alive result = STATUS(attack) (current, target);
     Status_List *neutral = self->neutral;
     Status_List_remove(neutral, target);
 
@@ -994,9 +998,10 @@ Is_Alive EXPORT(attack_neutral_by) (Character_Pool * self,
 Is_Alive EXPORT(attack_player_by) (Character_Pool * self,
                                    Status_Access current) {
     Status_Access target = EXPORT(get_instance_by_index) (self, 0);
-    Is_Alive result = character.attack(current, target);
+    Is_Alive result = STATUS(attack) (current, target);
     return result;
 }
 
-#undef EXPORT
+#undef STATUS
 #undef MAP
+#undef EXPORT

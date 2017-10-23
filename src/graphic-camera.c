@@ -1,7 +1,8 @@
 #include "graphic-camera.h"
 
 #define MAP(name) Map_Type_##name
-
+#define CP(name) Character_Pool_##name
+#define STATUS(name) Status_##name
 
 static int MAX_X = 0;
 static int MAX_Y = 0;
@@ -36,14 +37,11 @@ static Yes_No occupy_position_by_others(Character_Pool_Access access,
                                         Point_Access point,
                                         Status_Access * result)
 {
-#define POOL(function) Character_Pool_##function
-
-    if (POOL(find_character) (access, result, point) == FOUND) {
+    if (CP(find_character) (access, result, point) == FOUND) {
         return YES;
     } else {
         return NO;
     }
-#undef POOL
 }
 
 
@@ -353,18 +351,17 @@ bool EXPORT(take) (Camera_Access self,
         char *format = "%s(%s) 攻擊 %s(%s),造成 1 點傷害";
         int counter = snprintf(NULL, 0, format,
                                current->name,
-                               character.get_relation_string(current),
+                               STATUS(get_relation_string) (current),
                                npc->name,
-                               character.get_relation_string(npc));
+                               STATUS(get_relation_string) (npc));
 
         char attack_message[counter];
         snprintf(attack_message, counter + 1, format,
                  current->name,
-                 character.get_relation_string(current),
-                 npc->name, character.get_relation_string(npc));
+                 STATUS(get_relation_string) (current),
+                 npc->name, STATUS(get_relation_string) (npc));
         message_box.add(box_access, attack_message);
 
-#define CP(function) Character_Pool_##function
         switch (npc->faction) {
             case FACTION_PLAYER:
                 is_alive = CP(attack_player_by) (from_pool, current);
@@ -383,7 +380,7 @@ bool EXPORT(take) (Camera_Access self,
         }
 
         if (is_alive == DEAD) {
-            character.set_style(npc, dead);
+            STATUS(set_style) (npc, dead);
 
             counter = String_ascii_length(npc->name);
 
@@ -406,7 +403,6 @@ bool EXPORT(take) (Camera_Access self,
     Rectangle_Access_set_down_right_point(max_point);
 
     CP(calculate_graph_position) (from_pool, &rectangle);
-#undef CP
 
   DONE:
     Point_Type_free(vector);
@@ -415,4 +411,6 @@ bool EXPORT(take) (Camera_Access self,
     return true;
 }
 
+#undef STATUS
+#undef CP
 #undef MAP

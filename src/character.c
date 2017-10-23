@@ -56,8 +56,17 @@ void EXPORT(copy) (Character_Base * self, Character_Base * from) {
 
     self->crossable = from->crossable;
     self->attackable = from->attackable;
-    self->is_alive = true;
+    self->is_alive = ALIVE;
     self->status = IN_USE;
+}
+
+
+/** @brief 確認角色是否存活
+ * @param self 要顯示的角色
+ * @return 角色存活狀態
+ */
+Is_Alive EXPORT(is_alive) (Character_Base * self) {
+    return self->is_alive;
 }
 
 #undef EXPORT

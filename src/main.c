@@ -126,7 +126,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
     }
 
     result = SP(find) (style_pool, "player");
-    character.set_style(camera_1->player, result);
+    STATUS(set_style) (camera_1->player, result);
 
     Style_Access dead = SP(find) (style_pool, "dead");
     CAMERA(set_dead_style) (camera_1, dead);
@@ -165,7 +165,7 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
     Status_Access Player = CP(use_player) ();
-    character.set_name(Player, "雜魚");
+    STATUS(set_name) (Player, "雜魚");
     CAMERA(set_player) (camera_1, Player);
 
 #ifdef DEBUG

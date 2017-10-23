@@ -18,6 +18,16 @@
 #define EXPORT(name) Character_Base_##name
 
 
+/** @brief 角色生存狀態
+ *
+ * @note 未來可能需要加上 namespace。
+ */
+typedef enum {
+    DEAD,
+    ALIVE
+} Is_Alive;
+
+
 /** @brief 角色基本資料結構
  *
  * 可以考慮透過 C11 匿名結構的方式來新增自己需要的新資料。
@@ -29,7 +39,7 @@ typedef struct Character_Base {
     Point_Access Graph_Position; /**< 顯示在畫面上的座標 */
     Yes_No crossable; /**< 可不可以跨過去，後續會修改 */
     Yes_No attackable; /**< 可不可以被攻擊，後續會修改 */
-    bool is_alive; /**< 角色是否還存活，可以依靠此資訊取代 crossable */
+    Is_Alive is_alive; /**< 角色是否還存活，可以依靠此資訊取代 crossable */
     Use_Type status; /**< 是否使用中，可以依靠 Character_Pool 來分辨，後續會移除 */
 } Character_Base;
 
@@ -59,6 +69,13 @@ void EXPORT(free) (Character_Base * self);
    * 由於 name、Mark 皆為不會變動的指標，因此可以放心複製。
   */
 void EXPORT(copy) (Character_Base * self, Character_Base * origin);
+
+
+/** @brief 顯示角色部份訊息，Debug 用
+ * @param self 要顯示的角色
+ * @return 角色存活狀態
+ */
+Is_Alive EXPORT(is_alive) (Character_Base * self);
 
 #undef EXPORT
 #endif

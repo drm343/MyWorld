@@ -21,6 +21,7 @@
 #define CP(name) Character_Pool_Access_##name
 #define CP_SUPER(name) Character_Pool_##name
 #define CAMERA(name) Graphic_Camera_##name
+#define STATUS(name) Status_##name
 #endif
 
 /** @mainpage Create your own roguelike in C
