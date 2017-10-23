@@ -17,11 +17,13 @@
 #define SP(name) Style_Pool_##name
 #include "main_set_config.h"
 
+/*
 #define MAP(name) Map_Type_##name
-#define CP(name) Character_Pool_Access_##name
-#define CP_SUPER(name) Character_Pool_##name
+#define CP_OBJECT(name) Character_Pool_Access_##name
+#define CP(name) Character_Pool_##name
 #define CAMERA(name) Graphic_Camera_##name
 #define STATUS(name) Status_##name
+*/
 #endif
 
 /** @mainpage Create your own roguelike in C
@@ -86,4 +88,9 @@
  * 若沒有特別註解，則文件中的「地圖」皆代表 Map_Type 物件。
  *
  * @warning 關於地圖的結構，後續可能會修改。
+ *
+ * @subsection 訊息欄 Message_Box
+ *
+ * 用來顯示訊息的地方，預設使用 SDL 實作，原本在 Ada 中是打算 Generics 的方式來讓實作
+ * 跟定義分開，並且通用化，目前用 C 先不要考慮通用的問題。
  */
