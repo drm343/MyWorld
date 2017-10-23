@@ -16,7 +16,5 @@ var searchData=
   ['graphic_5fcamera_5fset_5fplayer',['Graphic_Camera_set_player',['../graphic-camera_8h.html#ae592ff8b701ff199d9e5b02e228e51b6',1,'graphic-camera.h']]],
   ['graphic_5fcamera_5fstart',['Graphic_Camera_start',['../graphic-camera_8h.html#a484f1dca7334078853e474eb33e52fd4',1,'graphic-camera.h']]],
   ['graphic_5fcamera_5fstop',['Graphic_Camera_stop',['../graphic-camera_8h.html#a2f2bfebabf9305175e1c1042a56920bb',1,'graphic-camera.h']]],
-  ['graphic_5fcamera_5ftake',['Graphic_Camera_take',['../graphic-camera_8h.html#a19ddb8e4224f04e7f894ebb418dd560a',1,'graphic-camera.h']]],
-  ['grid_5fheigth',['grid_heigth',['../struct_message___box.html#ad66c03c008287120bf4ab1fb0c45cc99',1,'Message_Box']]],
-  ['grid_5fwidth',['grid_width',['../struct_message___box.html#a9731b6d64fecd6a78ef9c9cfafc9a810',1,'Message_Box']]]
+  ['graphic_5fcamera_5ftake',['Graphic_Camera_take',['../graphic-camera_8h.html#a19ddb8e4224f04e7f894ebb418dd560a',1,'graphic-camera.h']]]
 ];

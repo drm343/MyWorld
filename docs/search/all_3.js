@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['camera',['CAMERA',['../main_8h.html#ad5e86394ab6561112b9306e5b676406a',1,'main.h']]],
+  ['camera',['CAMERA',['../namespace_8h.html#ad5e86394ab6561112b9306e5b676406a',1,'namespace.h']]],
   ['camera_5faccess',['Camera_Access',['../graphic-camera_8h.html#a74bec5e06fbe1ecd18a4ac7bc6de9247',1,'graphic-camera.h']]],
   ['camera_5ffix',['CAMERA_FIX',['../graphic-camera_8h.html#aa1c976a9da4de67904792a6902f941efae98a333448699568855afcda2fbc95fd',1,'graphic-camera.h']]],
   ['camera_5fmode',['Camera_Mode',['../graphic-camera_8h.html#aa1c976a9da4de67904792a6902f941ef',1,'graphic-camera.h']]],
@@ -57,8 +57,8 @@ var searchData=
   ['color',['color',['../struct_font_config.html#a5d4bf4af47a2396f00e16ad1d967995d',1,'FontConfig']]],
   ['conf_5fpath',['CONF_PATH',['../main__set__config_8h.html#a4bb0d0741a12449e56d19d1202214ae6',1,'main_set_config.h']]],
   ['content',['content',['../struct___status___node.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Node::content()'],['../struct___status___item.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Item::content()']]],
-  ['cp',['CP',['../main_8h.html#a6898a2c9c983312569a56a14796fe7e5',1,'main.h']]],
-  ['cp_5fsuper',['CP_SUPER',['../main_8h.html#a1dc57d36f46f25187ac4b0173d35334f',1,'main.h']]],
+  ['cp',['CP',['../namespace_8h.html#a6898a2c9c983312569a56a14796fe7e5',1,'namespace.h']]],
+  ['cp_5fobject',['CP_OBJECT',['../namespace_8h.html#a48b95107a1c5218b5dae7f626a92998c',1,'namespace.h']]],
   ['crossable',['crossable',['../struct_character___base.html#a39b1af64a01fe21b7484882119105129',1,'Character_Base']]],
   ['current_5fsize',['current_size',['../struct_skill___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Skill_Pool::current_size()'],['../struct_style___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Style_Pool::current_size()']]],
   ['create_20your_20own_20roguelike_20in_20c',['Create your own roguelike in C',['../index.html',1,'']]]
