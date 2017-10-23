@@ -53,6 +53,10 @@
  *
  * @note 要注意這是 C 不是 Ada，因此 Access 並沒有真的像 Ada 一樣有更多特性可以使用。
  *
+ * @subsection API
+ *
+ * 凡是以 API 做結尾的，都是早期的設計，將會被重構，請儘量不要使用。
+ *
  * @subsection 角色
  *
  * 若沒有特別註解，則文件中的「角色」皆代表 Character_Status 物件。
