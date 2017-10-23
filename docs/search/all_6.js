@@ -14,6 +14,5 @@ var searchData=
   ['fontconfig',['FontConfig',['../struct_font_config.html',1,'']]],
   ['found',['FOUND',['../base__type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154',1,'base_type.h']]],
   ['found_5fresult',['Found_Result',['../base__type_8h.html#a81c7d09b805c146131afef23d04eee1f',1,'base_type.h']]],
-  ['free',['free',['../struct_character___a_p_i.html#aba656a81cb13795c10a2e937e642635c',1,'Character_API']]],
   ['function',['FUNCTION',['../ada__style_8h.html#a92d01362ccf7351733dff31971f4dd1f',1,'ada_style.h']]]
 ];

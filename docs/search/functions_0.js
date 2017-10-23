@@ -3,6 +3,7 @@ var searchData=
   ['character_5fbase_5fcopy',['Character_Base_copy',['../character_8h.html#af658cb7f64f4a50461deb8a0f77aeddc',1,'character.h']]],
   ['character_5fbase_5ffree',['Character_Base_free',['../character_8h.html#ac4f7b0eef46fff2dac2ecd4c6604369c',1,'character.h']]],
   ['character_5fbase_5finit',['Character_Base_init',['../character_8h.html#a96a8b0d898a4b6a60a8802623ff55c5f',1,'character.h']]],
+  ['character_5fbase_5fis_5falive',['Character_Base_is_alive',['../character_8h.html#a519ff201bfeaf5b3ae318e3dbec8cad7',1,'character.h']]],
   ['character_5fpool_5faccess_5faction',['Character_Pool_Access_action',['../character__pool-use__self_8h.html#a1c0e7dcc178458544e6f9e346e33df8a',1,'character_pool-use_self.h']]],
   ['character_5fpool_5faccess_5fattack_5fally_5fby',['Character_Pool_Access_attack_ally_by',['../character__pool-use__self_8h.html#a41c44002d1fc9706870ea72e320e0793',1,'character_pool-use_self.h']]],
   ['character_5fpool_5faccess_5fattack_5fenemy_5fby',['Character_Pool_Access_attack_enemy_by',['../character__pool-use__self_8h.html#affe3949b9da65fd8b85d252dc63e127a',1,'character_pool-use_self.h']]],

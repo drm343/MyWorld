@@ -19,7 +19,7 @@ var searchData=
   ['map_5ftype_5ftop_5fleft',['Map_Type_top_left',['../map__system_8h.html#a1c2b824482e466dc2fc4c0ec205a1bf8',1,'map_system.h']]],
   ['map_5ftype_5ftop_5fleft_5fx',['Map_Type_top_left_x',['../map__system_8h.html#a298bd9b69ce83597508755b5930e08cd',1,'map_system.h']]],
   ['map_5ftype_5ftop_5fleft_5fy',['Map_Type_top_left_y',['../map__system_8h.html#a661f30de45404d7235dc2feed96075d2',1,'map_system.h']]],
-  ['mark',['mark',['../struct_style.html#ace1031a31baef29d4b110f360fe90cf7',1,'Style::mark()'],['../struct_character___base.html#a788afe6b7e6ef6059f5a98bce8f44116',1,'Character_Base::Mark()']]],
+  ['mark',['Mark',['../struct_character___base.html#a788afe6b7e6ef6059f5a98bce8f44116',1,'Character_Base::Mark()'],['../struct_style.html#ace1031a31baef29d4b110f360fe90cf7',1,'Style::mark()']]],
   ['max_5fsize',['max_size',['../struct_skill___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Skill_Pool::max_size()'],['../struct_status___list.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Status_List::max_size()'],['../struct_status___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Status_Pool::max_size()'],['../struct_style___pool.html#aafbb8d0fa7101a65447b6ede877c39d4',1,'Style_Pool::max_size()']]],
   ['max_5fx',['max_x',['../struct_camera___type.html#ad66fbe9a05e38a665bca7c0c8f8aeb95',1,'Camera_Type']]],
   ['max_5fy',['max_y',['../struct_camera___type.html#a0f3bad2e52c06e81c537558cdab93887',1,'Camera_Type']]],

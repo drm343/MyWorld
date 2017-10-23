@@ -88,6 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <a href="#nested-classes">資料結構</a> &#124;
 <a href="#define-members">定義</a> &#124;
 <a href="#typedef-members">型態定義</a> &#124;
+<a href="#enum-members">列舉型態</a> &#124;
 <a href="#func-members">函式</a>  </div>
   <div class="headertitle">
 <div class="title">character.h 檔案參考文件</div>  </div>
@@ -130,6 +131,14 @@ character.h的包含相依圖:</div>
 <tr class="memdesc:a079685e713c213f2f59e8505f13a02e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">角色基本資料結構  <a href="#a079685e713c213f2f59e8505f13a02e2">更多...</a><br /></td></tr>
 <tr class="separator:a079685e713c213f2f59e8505f13a02e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列舉型態</h2></td></tr>
+<tr class="memitem:a80aecc9fb5465212d8d153dee04a2427"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a> { <a class="el" href="character_8h.html#a80aecc9fb5465212d8d153dee04a2427a11fd9ca455f92c69c084484d5cd803c2">DEAD</a>, 
+<a class="el" href="character_8h.html#a80aecc9fb5465212d8d153dee04a2427a4f34c5c191d6e0d028ca831b6c0b1571">ALIVE</a>
+ }</td></tr>
+<tr class="memdesc:a80aecc9fb5465212d8d153dee04a2427"><td class="mdescLeft">&#160;</td><td class="mdescRight">角色生存狀態  <a href="character_8h.html#a80aecc9fb5465212d8d153dee04a2427">更多...</a><br /></td></tr>
+<tr class="separator:a80aecc9fb5465212d8d153dee04a2427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 函式</h2></td></tr>
 <tr class="memitem:a96a8b0d898a4b6a60a8802623ff55c5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character_8h.html#a96a8b0d898a4b6a60a8802623ff55c5f">Character_Base_init</a> (<a class="el" href="struct_character___base.html">Character_Base</a> *self)</td></tr>
@@ -141,6 +150,9 @@ character.h的包含相依圖:</div>
 <tr class="memitem:af658cb7f64f4a50461deb8a0f77aeddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character_8h.html#af658cb7f64f4a50461deb8a0f77aeddc">Character_Base_copy</a> (<a class="el" href="struct_character___base.html">Character_Base</a> *self, <a class="el" href="struct_character___base.html">Character_Base</a> *origin)</td></tr>
 <tr class="memdesc:af658cb7f64f4a50461deb8a0f77aeddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">複製角色基本資料  <a href="#af658cb7f64f4a50461deb8a0f77aeddc">更多...</a><br /></td></tr>
 <tr class="separator:af658cb7f64f4a50461deb8a0f77aeddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519ff201bfeaf5b3ae318e3dbec8cad7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="character_8h.html#a519ff201bfeaf5b3ae318e3dbec8cad7">Character_Base_is_alive</a> (<a class="el" href="struct_character___base.html">Character_Base</a> *self)</td></tr>
+<tr class="memdesc:a519ff201bfeaf5b3ae318e3dbec8cad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">顯示角色部份訊息，Debug 用  <a href="#a519ff201bfeaf5b3ae318e3dbec8cad7">更多...</a><br /></td></tr>
+<tr class="separator:a519ff201bfeaf5b3ae318e3dbec8cad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">定義巨集說明文件</h2>
 <a class="anchor" id="a4fe932c6483a71ec8f5f6e2bcd6b33aa"></a>
@@ -178,6 +190,28 @@ character.h的包含相依圖:</div>
 
 <p>角色基本資料結構 </p>
 <p>可以考慮透過 C11 匿名結構的方式來新增自己需要的新資料。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">列舉型態說明文件</h2>
+<a class="anchor" id="a80aecc9fb5465212d8d153dee04a2427"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="character_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>角色生存狀態 </p>
+<dl class="section note"><dt>註</dt><dd>未來可能需要加上 namespace。 </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">列舉值</th></tr><tr><td class="fieldname"><a class="anchor" id="a80aecc9fb5465212d8d153dee04a2427a11fd9ca455f92c69c084484d5cd803c2"></a>DEAD&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a80aecc9fb5465212d8d153dee04a2427a4f34c5c191d6e0d028ca831b6c0b1571"></a>ALIVE&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
 
 </div>
 </div>
@@ -269,10 +303,35 @@ character.h的包含相依圖:</div>
 
 </div>
 </div>
+<a class="anchor" id="a519ff201bfeaf5b3ae318e3dbec8cad7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="character_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a> Character_Base_is_alive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_character___base.html">Character_Base</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>顯示角色部份訊息，Debug 用 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要顯示的角色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>角色存活狀態 </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月23日 星期一 19:26:31, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月23日 星期一 21:41:24, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

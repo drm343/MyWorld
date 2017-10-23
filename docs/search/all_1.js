@@ -6,7 +6,6 @@ var searchData=
   ['ada_5fstyle_2eh',['ada_style.h',['../ada__style_8h.html',1,'']]],
   ['add',['add',['../struct_message___box___a_p_i.html#afe5c8364c24835fac37d23549201a629',1,'Message_Box_API']]],
   ['address',['ADDRESS',['../ada__style_8h.html#a69a946b289dab8777d7d69d0268f6170',1,'ada_style.h']]],
-  ['alive',['ALIVE',['../character-status_8h.html#a80aecc9fb5465212d8d153dee04a2427a4f34c5c191d6e0d028ca831b6c0b1571',1,'character-status.h']]],
-  ['attack',['attack',['../struct_character___a_p_i.html#ae447a49c2fd9477cc5beac8e646bb22f',1,'Character_API']]],
+  ['alive',['ALIVE',['../character_8h.html#a80aecc9fb5465212d8d153dee04a2427a4f34c5c191d6e0d028ca831b6c0b1571',1,'character.h']]],
   ['attackable',['attackable',['../struct_character___base.html#a06ab620407d002cb537cf626ac9db2a8',1,'Character_Base']]]
 ];
