@@ -7,12 +7,6 @@
 #include "helper/strings.h"
 
 
-/** @page 訊息欄
- *
- * 訊息欄的 Namespace 為 Message_Box_
- */
-
-
   /** @brief 訊息欄結構
    *
    * 用來顯示訊息用，不限定實作方式，也不限定開發者的設計方式，可以直接

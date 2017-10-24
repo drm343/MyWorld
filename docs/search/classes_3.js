@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point_5ftype',['Point_Type',['../struct_point___type.html',1,'']]]
+  ['history_5farray',['History_Array',['../struct_history___array.html',1,'']]]
 ];

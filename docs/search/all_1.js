@@ -6,5 +6,6 @@ var searchData=
   ['ada_5fstyle_2eh',['ada_style.h',['../ada__style_8h.html',1,'']]],
   ['address',['ADDRESS',['../ada__style_8h.html#a69a946b289dab8777d7d69d0268f6170',1,'ada_style.h']]],
   ['alive',['ALIVE',['../character_8h.html#a80aecc9fb5465212d8d153dee04a2427a4f34c5c191d6e0d028ca831b6c0b1571',1,'character.h']]],
+  ['array',['array',['../struct_history___array.html#aa066f1c832871fd9ba901273a34b3b86',1,'History_Array']]],
   ['attackable',['attackable',['../struct_character___base.html#a06ab620407d002cb537cf626ac9db2a8',1,'Character_Base']]]
 ];

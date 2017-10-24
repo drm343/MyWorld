@@ -14,7 +14,7 @@ var searchData=
   ['skill_5fpool_5faccess',['Skill_Pool_Access',['../character-skill_8h.html#a6e216d645dd4ffb8b351927b3dea3b20',1,'character-skill.h']]],
   ['skill_5fpool_5fapi',['Skill_Pool_API',['../struct_skill___pool___a_p_i.html',1,'']]],
   ['sp',['SP',['../main_8h.html#ad8b446ae30ed6acaa213141cbf64dd17',1,'main.h']]],
-  ['start',['start',['../struct_skill___pool___a_p_i.html#a1b77fc2a38bdfe1ddb82a7c35c6be9ea',1,'Skill_Pool_API::start()'],['../struct_camera___type.html#afc2f8f314a8320f679b970103148f22e',1,'Camera_Type::start()'],['../struct_two___point.html#acdb235aafb417efb1f168ddda5a4d0e8',1,'Two_Point::start()']]],
+  ['start',['start',['../struct_skill___pool___a_p_i.html#a1b77fc2a38bdfe1ddb82a7c35c6be9ea',1,'Skill_Pool_API::start()'],['../struct_history___array.html#a7dc2499e4825a78e484bb388ab29dc1d',1,'History_Array::start()'],['../struct_camera___type.html#afc2f8f314a8320f679b970103148f22e',1,'Camera_Type::start()'],['../struct_two___point.html#acdb235aafb417efb1f168ddda5a4d0e8',1,'Two_Point::start()']]],
   ['status',['Status',['../struct_status.html',1,'Status'],['../struct_skill.html#a9597bd41e83fe98fc4d5b8a7387f7ae2',1,'Skill::status()'],['../struct_character___base.html#a9597bd41e83fe98fc4d5b8a7387f7ae2',1,'Character_Base::status()'],['../character-status_8h.html#a3989eb1224c1473e452b5544a092f7e0',1,'Status():&#160;character-status.h'],['../namespace_8h.html#a57ed48a26a6a518c6bdc53f1a1767647',1,'STATUS():&#160;namespace.h']]],
   ['status_5faccess',['Status_Access',['../character-status_8h.html#ac92a7769b13bc8b69f84f1251ac59109',1,'character-status.h']]],
   ['status_5fattack',['Status_attack',['../character-status_8h.html#aba1ec1fa2ba213f07f4075e8ad8a7ea6',1,'character-status.h']]],
