@@ -1,0 +1,17 @@
+/** @mainpage Create your own roguelike in C
+ *
+ * 本專案使用 C 撰寫，需要安裝 SDL2、SDL2-ttf、libconfig，如果你是 windows 的使用者，請考慮使用 "Bash on Ubuntu"。
+ *
+ * 下列工具為選擇性的，可根據需求選擇是否安裝。<br>
+ * doxygen、graphviz、git、make、indent、blogc。
+ *
+ * @see 開發相關紀錄 https://drm343.github.io
+ *
+ * @tableofcontents
+ *
+ * <ul>
+ *   <li>@ref 名詞定義</li>
+ *   <li>@ref 命名規範</li>
+ * </ul>
+ *
+ */

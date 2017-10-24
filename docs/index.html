@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>主頁面</span></a></li>
+      <li><a href="pages.html"><span>相關頁面</span></a></li>
       <li><a href="annotated.html"><span>資料結構</span></a></li>
       <li><a href="files.html"><span>檔案</span></a></li>
       <li>
@@ -80,52 +81,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="contents">
 <div class="textblock"><p>本專案使用 C 撰寫，需要安裝 SDL2、SDL2-ttf、libconfig，如果你是 windows 的使用者，請考慮使用 "Bash on Ubuntu"。</p>
 <p>下列工具為選擇性的，可根據需求選擇是否安裝。<br />
- doxygen、graphviz、git、make、indent。</p>
+ doxygen、graphviz、git、make、indent、blogc。</p>
 <dl class="section see"><dt>參閱</dt><dd>開發相關紀錄 <a href="https://drm343.github.io">https://drm343.github.io</a></dd></dl>
-<h1><a class="anchor" id="名詞定義"></a>
-名詞定義</h1>
-<h2><a class="anchor" id="結構"></a>
-結構</h2>
-<p>文件中凡是指稱到結構的地方，一律指該結構本身。</p>
-<dl class="section note"><dt>註</dt><dd>程式中儘量不要直接用結構，而是使用結構的指標，只在生命周期極短可以使用 auto 的狀況下使用結構本身。</dd></dl>
-<h2><a class="anchor" id="物件"></a>
-物件</h2>
-<p>文件中凡是指稱到物件的地方，一律指該結構的指標，注意這點跟 C 標準中所指的物件並不相同。</p>
-<h2><a class="anchor" id="Access"></a>
-Access</h2>
-<p>這個名詞從 Ada 中取過來的，類似 C 的 Pointer，但擁有更多特性，凡是看到 type 後面加上 _Access 的 一律等同於前面所提物件在程式上的定義，這是為了避免使用太多 * 而採用的名稱慣例。</p>
-<p>文件中單純只寫 Access 的情況則可以看成物件在記憶體中的實際位置。</p>
-<dl class="section note"><dt>註</dt><dd>要注意這是 C 不是 Ada，因此 Access 並沒有真的像 Ada 一樣有更多特性可以使用。</dd></dl>
-<h2><a class="anchor" id="API"></a>
-API</h2>
-<p>凡是以 API 做結尾的，都是早期的設計，將會被重構，請儘量不要使用。</p>
-<h2><a class="anchor" id="角色"></a>
-角色</h2>
-<p>若沒有特別註解，則文件中的「角色」皆代表 Character_Status 物件。</p>
-<h2><a class="anchor" id="種族資料"></a>
-種族資料</h2>
-<p>目前的基本結構等同於角色，可以看成角色原型，所有的角色都會根據種族來建立出新角色。</p>
-<dl class="section note"><dt>註</dt><dd>目前只有玩家沒有種族資料，因為還沒建立玩家使用的種族設定跟程式碼。</dd></dl>
-<h2><a class="anchor" id="角色池"></a>
-角色池</h2>
-<p>若沒有特別註解，則文件中的「角色池」皆代表 Character_Pool 物件，至少包含種族資料 跟實際產生的角色資料。</p>
-<h2><a class="anchor" id="實體化"></a>
-實體化</h2>
-<p>指從角色池中找出對應種族，複製產生新角色後，將 Access 回傳讓使用者做後續處理的過程。</p>
-<h2><a class="anchor" id="圖形池"></a>
-圖形池</h2>
-<p>若沒有特別註解，則文件中的「圖形池」皆代表 <a class="el" href="struct_style___pool.html" title="圖形池，用來儲存可以顯在畫面上的圖形 ">Style_Pool</a> 的物件。</p>
-<h2><a class="anchor" id="地圖"></a>
-地圖</h2>
-<p>若沒有特別註解，則文件中的「地圖」皆代表 Map_Type 物件。</p>
-<dl class="section warning"><dt>警告</dt><dd>關於地圖的結構，後續可能會修改。</dd></dl>
-<h2><a class="anchor" id="訊息欄"></a>
-Message_Box</h2>
-<p>用來顯示訊息的地方，預設使用 SDL 實作，原本在 Ada 中是打算 Generics 的方式來讓實作 跟定義分開，並且通用化，目前用 C 先不要考慮通用的問題。 </p>
+<ul>
+<li>
+<a class="el" href="_xE5_x90_x8D_xE8_xA9_x9E_xE5_xAE_x9A_xE7_xBE_xA9.html#名詞定義">名詞定義</a> </li>
+<li>
+<a class="el" href="_xE5_x91_xBD_xE5_x90_x8D_xE8_xA6_x8F_xE7_xAF_x84.html#命名規範">命名規範</a> </li>
+</ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月24日 星期二 19:18:40, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月24日 星期二 21:19:01, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
