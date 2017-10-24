@@ -4,7 +4,6 @@
 #include <libconfig.h>
 #include <time.h>
 
-#include "character-skill.h"
 #include "helper/generic_function.h"
 
 #include "container/Status_List.h"

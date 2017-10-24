@@ -1,5 +1,7 @@
 #include "graphic-message.h"
 
+#include "container/History_Array.h"
+
 
   /** @brief 直接使用 SDL 內建結構，可以直接用到 SDL 中
   */
@@ -17,7 +19,8 @@ typedef SDL_Point *Message_Box_Point;
   */
 typedef struct Message_Box {
     Message_Box_Point box; /**< 顯示器的設定，可以畫出一個長方形 */
-    String_Intern history; /**< String Intern，可以確保相同文字只會有一份 */
+    History_Array *history; /**< 儲存 repo 中文字對應的編號 */
+    String_Intern repo; /**< String Intern，可以確保相同文字只會有一份 */
 } Message_Box;
 typedef Message_Box *Message_Box_Access;
 
@@ -40,7 +43,8 @@ static SDL_Point box_array[5] = {
 Message_Box_Access BOX(start) (void) {
     Message_Box_Access self = calloc(1, sizeof(Message_Box));
     self->box = box_array;
-    self->history = strings_new();
+    self->history = History_Array_start(10);
+    self->repo = strings_new();
     return self;
 }
 
@@ -49,7 +53,8 @@ Message_Box_Access BOX(start) (void) {
    * @param self 要釋放的訊息欄
   */
 void BOX(stop) (Message_Box_Access self) {
-    strings_free(self->history);
+    strings_free(self->repo);
+    History_Array_stop(self->history);
     free(self);
 }
 
@@ -97,7 +102,7 @@ void BOX(set_box) (Message_Box_Access self,
    * @return 歷史訊息總數
   */
 int BOX(history_count) (Message_Box_Access self) {
-    return strings_count(self->history);
+    return History_Array_last(self->history);
 }
 
 
@@ -106,8 +111,28 @@ int BOX(history_count) (Message_Box_Access self) {
    * @param index 想取出的訊息數字
    * @return 歷史訊息
   */
-const char *BOX(get_history_by_index) (Message_Box_Access self, int index) {
-    return strings_lookup_id(self->history, index);
+const char *BOX(get_history_by_index) (Message_Box_Access self,
+                                       uint8_t * index) {
+    bool has_previous = true;
+    const char *result = NULL;
+    uint32_t string_index = 0;
+
+    if (*index >= 0) {
+        string_index = History_Array_get_item(self->history, *index);
+    } else {
+        result = "";
+        has_previous = false;
+    }
+
+    if (string_index >= 1) {
+        result = strings_lookup_id(self->repo, string_index);
+        has_previous = History_Array_previous(self->history, index);
+    }
+
+    if (!has_previous) {
+        *index = -1;
+    }
+    return result;
 }
 
 
@@ -116,5 +141,6 @@ const char *BOX(get_history_by_index) (Message_Box_Access self, int index) {
    * @param message 想加入的訊息
   */
 void BOX(add_message) (Message_Box_Access self, char *message) {
-    strings_intern(self->history, message);
+    uint32_t id = strings_intern(self->repo, message);
+    History_Array_insert(self->history, id);
 }

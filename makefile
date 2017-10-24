@@ -40,12 +40,12 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/rectangle-use_self.o \
 	$(OBJ)/helper_function-strings.o \
 	$(OBJ)/strings-instance.o \
+	$(OBJ)/history_array.o \
 	$(OBJ)/graphic.o \
 	$(OBJ)/character.o \
 	$(OBJ)/character-status.o \
 	$(OBJ)/status_list.o \
 	$(OBJ)/status_pool.o \
-	$(OBJ)/character-skill.o \
 	$(OBJ)/map_system.o \
 	$(OBJ)/graphic-camera.o \
 	$(OBJ)/graphic-message.o \
@@ -60,7 +60,8 @@ DEP := $(LIBSTRINGS) $(AUTO_BUILD_DEP)
 
 
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
-	$(BIN)/gen_pool
+	$(BIN)/gen_pool \
+	$(BIN)/gen_cycle-base_type
 
 TOOLS := $(AUTO_BUILD_TOOLS)
 
@@ -126,7 +127,7 @@ $(CHECK_DIR):
 	mkdir -p $@
 
 clean:
-	rm -rf bin obj
+	rm -rf bin obj docs/*
 
 doc:
 	-rm -rf docs/*

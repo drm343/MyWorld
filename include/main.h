@@ -1,10 +1,6 @@
 #ifndef HEADER_MAIN
 #define HEADER_MAIN
 
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 #include <unistd.h>
 #include <libgen.h>
 

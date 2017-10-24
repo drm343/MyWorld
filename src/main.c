@@ -27,15 +27,9 @@ void draw_message_box(SDL_Renderer_Access render)
     SDL_Color white = { 255, 255, 255 };
     const char *item = NULL;
 
-    int current = Message_Box_history_count(box_1);
+    uint8_t current = Message_Box_history_count(box_1);
     for (int counter = 0; counter < 5; counter++) {
-        if (current >= 1) {
-            item = Message_Box_get_history_by_index(box_1, current);
-        } else {
-            item = "";
-        }
-
-        current--;
+        item = Message_Box_get_history_by_index(box_1, &current);
 
         SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
         SDL_RenderDrawLines(render, Message_Box_box(box_1), 5);

@@ -82,6 +82,7 @@ int BOX(history_count) (Message_Box_Access self);
    * @param index 想取出的訊息數字
    * @return 歷史訊息
   */
-const char *BOX(get_history_by_index) (Message_Box_Access self, int index);
+const char *BOX(get_history_by_index) (Message_Box_Access self,
+                                       uint8_t * index);
 
 #endif
