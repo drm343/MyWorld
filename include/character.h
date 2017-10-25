@@ -1,21 +1,16 @@
 #ifndef HEADER_CHARACTER
 #define HEADER_CHARACTER
 
+
+#include "namespace.h"
+
 #include "graphic.h"
 #include "point-use_self.h"
 
 
-/** @brief Namespace Character_Base_
- *
- * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
- *
- * 例如 init 必須寫成 Character_Base_init，如果外部程式要簡化呼叫，
- * 可以在程式中自行定義新的 macro，例如下面範例。
- *
- * \#define CHARA_BASE(name) Character_Base_#\#name<br>
- * CHARA_BASE(init)(self);
+/** @brief Namespace C_BASE
  */
-#define EXPORT(name) Character_Base_##name
+#define EXPORT(name) C_BASE(name)
 
 
 /** @brief 角色生存狀態

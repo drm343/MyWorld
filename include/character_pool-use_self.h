@@ -5,15 +5,7 @@
 #include "character_pool.h"
 
 
-/** @brief Namespace Graph_Pool_Access_
- *
- * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
- *
- * 例如 change 必須寫成 Graph_Pool_Access_change，如果外部程式要簡化呼叫，
- * 可以在程式中自行定義新的 macro，例如下面範例。
- *
- * \#define G_P(name) Graph_Pool_Access_#\#name<br>
- * G_C(init)(self);
+/** @brief Namespace CP_OBJECT
  */
 #define EXPORT(name) Character_Pool_Access_##name
 

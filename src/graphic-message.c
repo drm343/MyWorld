@@ -3,6 +3,11 @@
 #include "container/History_Array.h"
 
 
+/** @brief Namespace BOX
+ */
+#define EXPORT(name) BOX(name)
+
+
   /** @brief 直接使用 SDL 內建結構，可以直接用到 SDL 中
   */
 typedef SDL_Point *Message_Box_Point;
@@ -37,7 +42,7 @@ static SDL_Point box_array[5] = {
   /** @brief 啟動訊息欄
    * @return 訊息欄的 Access
   */
-Message_Box_Access BOX(start) (void) {
+Message_Box_Access EXPORT(start) (void) {
     Message_Box_Access self = calloc(1, sizeof(Message_Box));
     self->box = box_array;
     self->history = History_Array_start(10);
@@ -49,7 +54,7 @@ Message_Box_Access BOX(start) (void) {
   /** @brief 釋放訊息欄
    * @param self 要釋放的訊息欄
   */
-void BOX(stop) (Message_Box_Access self) {
+void EXPORT(stop) (Message_Box_Access self) {
     strings_free(self->repo);
     History_Array_stop(self->history);
     free(self);
@@ -63,7 +68,7 @@ void BOX(stop) (Message_Box_Access self) {
    * @param self 訊息欄
    * @return 點座標
   */
-SDL_Point *BOX(box) (Message_Box_Access self) {
+SDL_Point *EXPORT(box) (Message_Box_Access self) {
     return self->box;
 }
 
@@ -75,9 +80,9 @@ SDL_Point *BOX(box) (Message_Box_Access self) {
    * @param width 訊息欄寬度
    * @param height 訊息欄高度
   */
-void BOX(set_box) (Message_Box_Access self,
-                   int64_t start_x, int64_t start_y,
-                   int64_t width, int64_t height) {
+void EXPORT(set_box) (Message_Box_Access self,
+                      int64_t start_x, int64_t start_y,
+                      int64_t width, int64_t height) {
     box_array[0].x = start_x;
     box_array[0].y = start_y;
     box_array[4].x = start_x;
@@ -98,7 +103,7 @@ void BOX(set_box) (Message_Box_Access self,
    * @param self 訊息欄
    * @return 歷史訊息總數
   */
-int BOX(history_count) (Message_Box_Access self) {
+int EXPORT(history_count) (Message_Box_Access self) {
     return History_Array_last(self->history);
 }
 
@@ -108,8 +113,8 @@ int BOX(history_count) (Message_Box_Access self) {
    * @param index 想取出的訊息數字
    * @return 歷史訊息
   */
-const char *BOX(get_history_by_index) (Message_Box_Access self,
-                                       uint8_t * index) {
+const char *EXPORT(get_history_by_index) (Message_Box_Access self,
+                                          uint8_t * index) {
     bool has_previous = true;
     const char *result = NULL;
     uint32_t string_index = 0;
@@ -137,7 +142,9 @@ const char *BOX(get_history_by_index) (Message_Box_Access self,
    * @param self 訊息欄
    * @param message 想加入的訊息
   */
-void BOX(add_message) (Message_Box_Access self, char *message) {
+void EXPORT(add_message) (Message_Box_Access self, char *message) {
     uint32_t id = strings_intern(self->repo, message);
     History_Array_insert(self->history, id);
 }
+
+#undef EXPORT

@@ -1,7 +1,9 @@
 #include "character.h"
 
 
-#define EXPORT(name) Character_Base_##name
+/** @brief Namespace C_BASE
+ */
+#define EXPORT(name) C_BASE(name)
 
 
   /** @brief 初始化角色基本資料

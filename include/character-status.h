@@ -1,8 +1,15 @@
 #ifndef HEADER_CHARACTER_STATUS
 #define HEADER_CHARACTER_STATUS
 
+#include "namespace.h"
+
 #include "character.h"
 #include "message_base.h"
+
+
+/** @brief Namespace STATUS
+ */
+#define EXPORT(name) STATUS(name)
 
 
 /** @brief 角色陣營
@@ -59,19 +66,6 @@ typedef struct Status {
  * 參數的傳入、傳出，都是透過物件進行，建議直接使用 Status_Access 取代 Status *。
  */
 typedef Status *Status_Access;
-
-
-/** @brief Namespace Status_
- *
- * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
- *
- * 例如 init 必須寫成 Status_init，如果外部程式要簡化呼叫，
- * 可以在程式中自行定義新的 macro，例如下面範例。
- *
- * \#define S(name) Status_#\#name<br>
- * S(init)(self);
- */
-#define EXPORT(name) Status_##name
 
 
 /** @brief 初始化角色

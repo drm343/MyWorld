@@ -7,17 +7,9 @@
 #include "helper/debug.h"
 
 
-/** @brief Namespace Style_Pool_
- *
- * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
- *
- * 例如 start 必須寫成 Style_Pool_start，如果外部程式要簡化呼叫，
- * 可以在程式中自行定義新的 macro，例如下面範例。
- *
- * #define SP(name) Style_Pool_##name<br>
- * Style_Pool_Access pool = SP(start)(20);
+/** @brief Namespace STYLE_P
  */
-#define EXPORT(name) Style_Pool_##name
+#define EXPORT(name) STYLE_P(name)
 
 
   /** @brief 建立 Style_Pool 物件

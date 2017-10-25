@@ -1,8 +1,9 @@
 #include "character_pool.h"
 
 
-#define MAP(name) Map_Type_##name
-#define STATUS(name) Status_##name
+/** @brief Namespace CP
+ */
+#define EXPORT(name) CP(name)
 
 // ----------------------------------------------
 // Internal Object Struct
@@ -365,10 +366,6 @@ static Message_Type npc_reaction(Status * self, Status_List * enemy_group)
     Point_Access self_position = STATUS(get_position) (self);
     return Point_Type_over_there(self_position, target_position);
 }
-
-
-
-#define EXPORT(name) Character_Pool_##name
 
 
   /** @brief 產生角色池
@@ -1002,6 +999,4 @@ Is_Alive EXPORT(attack_player_by) (Character_Pool * self,
     return result;
 }
 
-#undef STATUS
-#undef MAP
 #undef EXPORT

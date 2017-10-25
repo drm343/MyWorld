@@ -38,13 +38,13 @@ void setup_mark(config_setting_t ** setting)
     Style_Access style_access = NULL;
     size_t len;
 
-    style_access = SP(malloc) (style_pool);
+    style_access = STYLE_P(malloc) (style_pool);
     style_access->name = "player";
 
     config_setting_lookup_string(*setting, "player", &player);
     style_access->mark = String_Repo_sign_in(player);
 
-    style_access = SP(malloc) (style_pool);
+    style_access = STYLE_P(malloc) (style_pool);
     style_access->name = "dead";
 
     config_setting_lookup_string(*setting, "dead", &dead);

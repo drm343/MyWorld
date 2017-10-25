@@ -1,8 +1,10 @@
 #include "character_pool-use_self.h"
 
 
-#define EXPORT(name) Character_Pool_Access_##name
-#define SUPER(name) Character_Pool_##name
+/** @brief Namespace CP_OBJECT
+ */
+#define EXPORT(name) CP_OBJECT(name)
+#define SUPER(name) CP(name)
 
 
 static Character_Pool_Access self = NULL;

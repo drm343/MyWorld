@@ -4,8 +4,8 @@
 // -----------------------------------
 // Init and free
 // -----------------------------------
-#define SUPER(name) Character_Base_##name
-#define EXPORT(name) Status_##name
+#define SUPER(name) C_BASE(name)
+#define EXPORT(name) STATUS(name)
 
 
 /** @brief 初始化角色
@@ -46,8 +46,6 @@ void EXPORT(copy) (Status_Access self, Status_Access from) {
     self->faction = from->faction;
     self->damage = from->damage;
 }
-
-#undef SUPER
 
 
 #ifdef DEBUG
@@ -249,3 +247,4 @@ Point_Access EXPORT(get_position) (Status_Access self) {
 }
 
 #undef EXPORT
+#undef SUPER

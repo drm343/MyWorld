@@ -1,8 +1,11 @@
 #include "map_system.h"
 
 
-#define SUPER(name) Two_Point_##name
-#define EXPORT(name) Map_Type_##name
+#define SUPER(name) T_POINT(name)
+
+/** @brief Namespace MAP
+ */
+#define EXPORT(name) MAP(name)
 
 
 /** @brief 建立地圖系統

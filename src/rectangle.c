@@ -1,7 +1,7 @@
 #include "rectangle.h"
 
 
-#define EXPORT(name) Rectangle_Type_##name
+#define EXPORT(name) RECT(name)
 
 /** @brief 建立新的 Rectangle_Type 物件
  * @return 物件的 Access

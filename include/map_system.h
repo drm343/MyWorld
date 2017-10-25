@@ -1,21 +1,16 @@
 #ifndef HEADER_MAP_SYSTEM_OBJECT
 #define HEADER_MAP_SYSTEM_OBJECT
 
+#include "namespace.h"
+
+
 #include "base_type.h"
 #include "two_point.h"
 
 
-/** @brief Namespace Map_Type_
- *
- * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
- *
- * 例如 create 必須寫成 Map_Type_create，如果外部程式要簡化呼叫，
- * 可以在程式中自行定義新的 macro，例如下面範例。
- *
- * \#define MAP(name) Map_Type_#\#name<br>
- * Map_Type *self = MAP(create)();
+/** @brief Namespace MAP
  */
-#define EXPORT(name) Map_Type_##name
+#define EXPORT(name) MAP(name)
 
 
 typedef Two_Point Map_Type;

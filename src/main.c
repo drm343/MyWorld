@@ -106,7 +106,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
     SDL_Surface *surfaceMessage = NULL;
     uint8_t counter = 0;
-    Style_Access result = SP(next) (style_pool, &counter);
+    Style_Access result = STYLE_P(next) (style_pool, &counter);
 
     while (result != NULL) {
         surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
@@ -116,13 +116,13 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
         SDL_FreeSurface(surfaceMessage);
 
-        result = SP(next) (style_pool, &counter);
+        result = STYLE_P(next) (style_pool, &counter);
     }
 
-    result = SP(find) (style_pool, "player");
+    result = STYLE_P(find) (style_pool, "player");
     STATUS(set_style) (camera_1->player, result);
 
-    Style_Access dead = SP(find) (style_pool, "dead");
+    Style_Access dead = STYLE_P(find) (style_pool, "dead");
     CAMERA(set_dead_style) (camera_1, dead);
     return EXECUTE_SUCCESS;
 }
@@ -143,7 +143,7 @@ void submain(const char *root_dir, const char *init_cfg,
     SDL_Renderer_Access render;
     bool running = true;
 
-    style_pool = SP(start) (256);
+    style_pool = STYLE_P(start) (256);
     character_pool = CP(create) (20, 100);
 
     CP_OBJECT(change) (character_pool);
@@ -232,7 +232,7 @@ void submain(const char *root_dir, const char *init_cfg,
         }
         draw_view(render);
     }
-    SP(free_texture) (style_pool);
+    STYLE_P(free_texture) (style_pool);
 
     SDL_DestroyRenderer(render);
     SDL_DestroyWindow(win);
@@ -246,7 +246,7 @@ void submain(const char *root_dir, const char *init_cfg,
     BOX(stop) (box_1);
     CAMERA(stop) (camera_1);
     CP(free) (character_pool);
-    SP(stop) (style_pool);
+    STYLE_P(stop) (style_pool);
 }
 
 

@@ -19,13 +19,6 @@
 
 /** @brief Virtual Point System
  *
- * 請儘量不要直接使用此結構
- */
-//struct Two_Point;
-
-
-/** @brief Virtual Point System
- *
  * 虛擬結構，用來實作其他可以用兩個點表示的系統。
  */
 //typedef struct Two_Point Two_Point;

@@ -4,6 +4,8 @@
 #include <libconfig.h>
 #include <time.h>
 
+#include "namespace.h"
+
 #include "helper/generic_function.h"
 
 #include "container/Status_List.h"
@@ -13,7 +15,9 @@
 #include "instance/strings.h"
 
 
-#define EXPORT(name) Character_Pool_##name
+/** @brief Namespace CP
+ */
+#define EXPORT(name) CP(name)
 
 
 /** @brief 角色池結構

@@ -1,10 +1,12 @@
 #ifndef HEADER_RECTANGLE_OBJECT
 #define HEADER_RECTANGLE_OBJECT
 
+#include "namespace.h"
+
 #include "two_point.h"
 
 
-#define EXPORT(name) Rectangle_Type_##name
+#define EXPORT(name) RECT(name)
 
 
 typedef Two_Point Rectangle_Type;

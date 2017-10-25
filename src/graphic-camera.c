@@ -1,7 +1,9 @@
 #include "graphic-camera.h"
 
-#define MAP(name) Map_Type_##name
-#define STATUS(name) Status_##name
+
+/** @brief Namespace CAMERA
+ */
+#define EXPORT(name) CAMERA(name)
 
 static int MAX_X = 0;
 static int MAX_Y = 0;
@@ -151,19 +153,6 @@ static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
 // ---------------------------------------------------
 // Export API
 // ---------------------------------------------------
-/** @brief Namespace Graphic_Camera_
- *
- * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
- *
- * 例如 start 必須寫成 Graphic_Camera_start，如果外部程式要簡化呼叫，
- * 可以在程式中自行定義新的 macro，例如下面範例。
- *
- * #define G_C(name) Graphic_Camera_##name<br>
- * G_C(init)(self);
- */
-#define EXPORT(name) Graphic_Camera_##name
-
-
   /** @brief 建立新的 Camera 物件
    * @return Camera 物件
    *
@@ -410,5 +399,4 @@ bool EXPORT(take) (Camera_Access self,
     return true;
 }
 
-#undef STATUS
-#undef MAP
+#undef EXPORT

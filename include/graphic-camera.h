@@ -1,9 +1,18 @@
 #ifndef HEADER_GRAPHIC_CAMERA
 #define HEADER_GRAPHIC_CAMERA
 
+
+#include "namespace.h"
+
+
 #include "character_pool-use_self.h"
 #include "map_system.h"
 #include "graphic-message.h"
+
+
+/** @brief Namespace CAMERA
+ */
+#define EXPORT(name) CAMERA(name)
 
 
 /** @brief Camera 模式
@@ -37,19 +46,6 @@ typedef struct {
     Map_Access map; /**< 地圖物件 */
 } Camera_Type;
 typedef Camera_Type *Camera_Access;
-
-
-/** @brief Namespace Graphic_Camera_
- *
- * 當使用 EXPORT 的函數時，必須加上 namespace 才能呼叫到正確的函數。
- *
- * 例如 start 必須寫成 Graphic_Camera_start，如果外部程式要簡化呼叫，
- * 可以在程式中自行定義新的 macro，例如下面範例。
- *
- * \#define G_C(name) Graphic_Camera_#\#name<br>
- * G_C(init)(self);
- */
-#define EXPORT(name) Graphic_Camera_##name
 
 
   /** @brief 建立新的 Camera 物件
@@ -118,4 +114,5 @@ bool EXPORT(take) (Camera_Access self,
                    Status_Access current, Message_Type message);
 
 #undef EXPORT
+
 #endif
