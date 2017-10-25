@@ -5,6 +5,7 @@
 #include "graphic.h"
 #include "helper/generic_function.h"
 #include "helper/debug.h"
+#include "instance/strings.h"
 
 
 /** @brief Namespace STYLE_P
@@ -82,6 +83,7 @@ Style_Access EXPORT(find) (Style_Pool_Access pool_access, const char *name) {
     uint8_t count = 0;
     uint8_t used = pool_access->max_size - pool_access->current_size;
     Style_Access result = NULL;
+    name = String_Repo_search(name);
 
     for (count; count < used; count++) {
         result = &(pool_access->pool[count]);
@@ -132,7 +134,8 @@ void EXPORT(debug) (Style_Pool_Access self) {
     DEBUG_PRINT("style is null? %s\n", BOOL_STRING(result));
     for (count; count < used; count++) {
         result = &(self->pool[count]);
-        DEBUG_PRINT("%s : %s\n", result->name, result->mark);
+        DEBUG_PRINT("%s : %s : %s\n", result->name, result->mark,
+                    BOOL_STRING(result->access != NULL));
     }
 #endif
 }

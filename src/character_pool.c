@@ -247,7 +247,7 @@ static Found_Result pool_find_by_position(Status_List *
         Point_Access npc_position = STATUS(get_position) (*npc);
 
         if (Point_Type_eq(point, (*npc)->Real_Position)) {
-            if ((*npc)->crossable == NO) {
+            if ((*npc)->Mark->crossable == NO) {
                 return FOUND;
             }
         }
@@ -443,21 +443,17 @@ Execute_Result EXPORT(parse_npc_config) (Character_Pool * self,
                 config_setting_get_elem(setting, counter);
 
             Status_Access npc = EXPORT(sign_in) (self);
-            Style_Access style_access = Style_Pool_malloc(style_pool);
-
-            STATUS(set_style) (npc, style_access);
 
             config_setting_lookup_string(npc_setting, "name", &value);
             value = String_Repo_sign_in(value);
             STATUS(set_name) (npc, value);
 
-            config_setting_lookup_string(npc_setting, "mark", &value);
-            value = String_Repo_sign_in(value);
-            STATUS(set_mark) (npc, value);
-
             config_setting_lookup_string(npc_setting, "race", &value);
             value = String_Repo_sign_in(value);
             STATUS(set_race) (npc, value);
+
+            Style_Access style_access = STYLE_P(find) (style_pool, value);
+            STATUS(set_style) (npc, style_access);
         }
     } else {
         goto DONE;

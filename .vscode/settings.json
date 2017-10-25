@@ -6,6 +6,8 @@
         "string_view": "c",
         "hash_map": "c",
         "bitset": "c",
-        "chrono": "c"
+        "chrono": "c",
+        "character_pool.h": "c",
+        "graphic-message.h": "c"
     }
 }

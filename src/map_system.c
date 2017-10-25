@@ -12,7 +12,9 @@
  * @return 地圖物件
  */
 Map_Type *EXPORT(create) (void) {
-    Map_Type *map = SUPER(create) ();
+    Map_Type *map = calloc(1, sizeof(Map_Type));
+    map->base = SUPER(create) ();
+    map->current = calloc(128 * 128, sizeof(int8_t));
     return map;
 }
 
@@ -21,7 +23,9 @@ Map_Type *EXPORT(create) (void) {
  * @param self 地圖物件
  */
 void EXPORT(free) (Map_Type * self) {
-    SUPER(free) (self);
+    SUPER(free) (self->base);
+    free(self->current);
+    free(self);
 }
 
 
@@ -31,7 +35,7 @@ void EXPORT(free) (Map_Type * self) {
  * @param y Y 座標位置
  */
 void EXPORT(set_top_left) (Map_Type * self, int32_t x, int32_t y) {
-    SUPER(set_start_x_and_y) (self, x, y);
+    SUPER(set_start_x_and_y) (self->base, x, y);
 }
 
 
@@ -41,7 +45,7 @@ void EXPORT(set_top_left) (Map_Type * self, int32_t x, int32_t y) {
  * 請不要釋放回傳的物件
  */
 Point_Access EXPORT(top_left) (Map_Type * self) {
-    return SUPER(get_start) (self);
+    return SUPER(get_start) (self->base);
 }
 
 
@@ -51,7 +55,7 @@ Point_Access EXPORT(top_left) (Map_Type * self) {
  * @param y Y 座標位置
  */
 void EXPORT(set_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
-    SUPER(set_end_x_and_y) (self, x, y);
+    SUPER(set_end_x_and_y) (self->base, x, y);
 }
 
 
@@ -61,7 +65,7 @@ void EXPORT(set_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
  * 請不要釋放回傳的物件
  */
 Point_Access EXPORT(bottom_right) (Map_Type * self) {
-    return SUPER(get_end) (self);
+    return SUPER(get_end) (self->base);
 }
 
 
@@ -69,7 +73,7 @@ Point_Access EXPORT(bottom_right) (Map_Type * self) {
  * @param self 地圖物件
  */
 int32_t EXPORT(top_left_x) (Map_Type * self) {
-    return Point_Type_x(SUPER(get_start) (self));
+    return Point_Type_x(SUPER(get_start) (self->base));
 }
 
 
@@ -77,7 +81,7 @@ int32_t EXPORT(top_left_x) (Map_Type * self) {
  * @param self 地圖物件
  */
 int32_t EXPORT(top_left_y) (Map_Type * self) {
-    return Point_Type_y(SUPER(get_start) (self));
+    return Point_Type_y(SUPER(get_start) (self->base));
 }
 
 
@@ -85,7 +89,7 @@ int32_t EXPORT(top_left_y) (Map_Type * self) {
  * @param self 地圖物件
  */
 int32_t EXPORT(bottom_right_x) (Map_Type * self) {
-    return Point_Type_x(SUPER(get_end) (self));
+    return Point_Type_x(SUPER(get_end) (self->base));
 }
 
 
@@ -93,7 +97,7 @@ int32_t EXPORT(bottom_right_x) (Map_Type * self) {
  * @param self 地圖物件
  */
 int32_t EXPORT(bottom_right_y) (Map_Type * self) {
-    return Point_Type_y(SUPER(get_end) (self));
+    return Point_Type_y(SUPER(get_end) (self->base));
 }
 
 
@@ -103,7 +107,7 @@ int32_t EXPORT(bottom_right_y) (Map_Type * self) {
  * @param y 需要移動的 Y 值
  */
 void EXPORT(move_top_left) (Map_Type * self, int32_t x, int32_t y) {
-    Point_Access_change(SUPER(get_start) (self));
+    Point_Access_change(SUPER(get_start) (self->base));
     Point_Access_add_x(x);
     Point_Access_add_y(y);
 }
@@ -115,7 +119,7 @@ void EXPORT(move_top_left) (Map_Type * self, int32_t x, int32_t y) {
  * @param y 需要移動的 Y 值
  */
 void EXPORT(move_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
-    Point_Access_change(SUPER(get_end) (self));
+    Point_Access_change(SUPER(get_end) (self->base));
     Point_Access_add_x(x);
     Point_Access_add_y(y);
 }

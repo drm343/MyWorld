@@ -91,17 +91,6 @@ void EXPORT(set_style) (Status_Access self, Style_Access style) {
 }
 
 
-/** @brief 設定角色圖形物件顯示的字
- * @param self 要設定的角色
- * @param mark 顯示文字
- *
- * @warning 此函數在後續設計可能被移到其他地方或是被移除
- */
-void EXPORT(set_mark) (Status_Access self, const char *mark) {
-    self->Mark->mark = mark;
-}
-
-
 // -----------------------------------------
 // Action
 // -----------------------------------------
@@ -132,8 +121,6 @@ Is_Alive EXPORT(attack) (Status_Access from, Status_Access to) {
 
     if (to->damage >= 3) {
         to->is_alive = DEAD;
-        to->crossable = true;
-        to->attackable = false;
     }
     return to->is_alive;
 }

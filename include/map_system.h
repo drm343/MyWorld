@@ -3,9 +3,9 @@
 
 #include "namespace.h"
 
-
 #include "base_type.h"
 #include "two_point.h"
+#include "graphic.h"
 
 
 /** @brief Namespace MAP
@@ -13,20 +13,34 @@
 #define EXPORT(name) MAP(name)
 
 
-typedef Two_Point Map_Type;
+typedef int8_t Level[128][128];
+
+
+typedef struct Map_Type {
+    Two_Point *base;
+    Level *current;
+} Map_Type;
 typedef Map_Type *Map_Access;
 
 
+// ----------------------------------------
+// Init Map_System
+// ----------------------------------------
 /** @brief 建立地圖系統
  * @return 地圖物件
  */
 Map_Type *EXPORT(create) (void);
+
 
 /** @brief 釋放地圖系統
  * @param self 地圖物件
  */
 void EXPORT(free) (Map_Type * self);
 
+
+// ----------------------------------------
+// Move Map
+// ----------------------------------------
 /** @brief 設定左上角的點座標
  * @param self 地圖物件
  * @param x X 座標位置

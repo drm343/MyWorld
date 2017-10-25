@@ -81,10 +81,6 @@ void Point_Type_add_y(Point_Type * self, int32_t y)
  */
 bool Point_Type_eq(Point_Type * self, Point_Type * other)
 {
-#ifdef DEBUG
-    DEBUG_PRINT("self is not null %s\n", BOOL_STRING(self != NULL));
-    DEBUG_PRINT("other is not null %s\n", BOOL_STRING(other != NULL));
-#endif
     if ((self->x == other->x) && (self->y == other->y)) {
         return true;
     }

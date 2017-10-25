@@ -32,8 +32,6 @@ typedef struct Character_Base {
     Style_Access Mark; /**< 角色圖形的 Access */
     Point_Access Real_Position; /**< 角色的真實座標 */
     Point_Access Graph_Position; /**< 顯示在畫面上的座標 */
-    Yes_No crossable; /**< 可不可以跨過去，後續會修改 */
-    Yes_No attackable; /**< 可不可以被攻擊，後續會修改 */
     Is_Alive is_alive; /**< 角色是否還存活，可以依靠此資訊取代 crossable */
     Use_Type status; /**< 是否使用中，可以依靠 Character_Pool 來分辨，後續會移除 */
 } Character_Base;

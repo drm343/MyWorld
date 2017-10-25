@@ -22,6 +22,7 @@ struct strings *global_repo = NULL;
 
 TTF_Font *USE_FONT = NULL;
 
+
 void draw_message_box(SDL_Renderer_Access render)
 {
     SDL_Color white = { 255, 255, 255 };
@@ -55,6 +56,7 @@ void draw_message_box(SDL_Renderer_Access render)
     }
 }
 
+
 void draw_view(SDL_Renderer_Access render)
 {
     SDL_Rect rect = {.x = 0,.y = 0,.w = GRID_LENGTH,.h = GRID_LENGTH };
@@ -72,14 +74,10 @@ void draw_view(SDL_Renderer_Access render)
     for (int next = 1; next < used; next++) {
         Status_Access npc = CP_OBJECT(get_instance_by_index) (next);
 
-#ifdef DEBUG
-        DEBUG_PRINT("real position is not null %s\n",
-                    BOOL_STRING(camera_1->player->Real_Position));
-#endif
-
         if (npc->status == IN_USE) {
             if (!Point_Type_eq
                 (npc->Real_Position, camera_1->player->Real_Position)) {
+
                 Point_Access_change(npc->Graph_Position);
                 rect.x = GRID_LENGTH * Point_Access_x();
                 rect.y = GRID_LENGTH * Point_Access_y();
@@ -91,6 +89,7 @@ void draw_view(SDL_Renderer_Access render)
 
     SDL_RenderPresent(render);
 }
+
 
 Execute_Result init_view(SDL_Renderer_Access render)
 {
@@ -161,12 +160,6 @@ void submain(const char *root_dir, const char *init_cfg,
     Status_Access Player = CP_OBJECT(use_player) ();
     STATUS(set_name) (Player, "雜魚");
     CAMERA(set_player) (camera_1, Player);
-
-#ifdef DEBUG
-    DEBUG_PRINT("name %s\n", camera_1->player->name);
-    DEBUG_PRINT("real position is not null %s\n",
-                BOOL_STRING(camera_1->player->Real_Position != NULL));
-#endif
 
     result = setup_style(init_cfg);
 

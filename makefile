@@ -1,4 +1,4 @@
-APP_NAME=rogue
+APP_NAME=myworld
 
 INDENT_NUMBER=4
 CASE_INDENT_NUMBER=4
@@ -26,8 +26,8 @@ LFLAGS=-Werror -L$(OBJ) -lmy_world
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
 # Use DEBUG=-DDEBUG will enable debug message.
-#DEBUG=-DDEBUG
-DEBUG=
+DEBUG=-DDEBUG
+#DEBUG=
 
 
 CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
@@ -46,6 +46,9 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/character-status.o \
 	$(OBJ)/status_list.o \
 	$(OBJ)/status_pool.o \
+	$(OBJ)/room.o \
+	$(OBJ)/room_pool.o \
+	$(OBJ)/room_tree.o \
 	$(OBJ)/map_system.o \
 	$(OBJ)/graphic-camera.o \
 	$(OBJ)/graphic-message.o \
@@ -61,7 +64,8 @@ DEP := $(LIBSTRINGS) $(AUTO_BUILD_DEP)
 
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
 	$(BIN)/gen_pool \
-	$(BIN)/gen_cycle-base_type
+	$(BIN)/gen_cycle-base_type \
+	$(BIN)/gen_normal_tree
 
 TOOLS := $(AUTO_BUILD_TOOLS)
 

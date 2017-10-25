@@ -123,15 +123,6 @@ void EXPORT(set_race) (Status_Access self, const char *race);
 void EXPORT(set_style) (Status_Access self, Style_Access style);
 
 
-/** @brief 設定角色圖形物件顯示的字
- * @param self 要設定的角色
- * @param mark 顯示文字
- *
- * @warning 此函數在後續設計可能被移到其他地方或是被移除
- */
-void EXPORT(set_mark) (Status_Access self, const char *mark);
-
-
 /** @brief 攻擊其他角色
  * @param from 進行攻擊的角色
  * @param to 被攻擊的角色

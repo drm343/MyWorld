@@ -31,24 +31,32 @@ void setup_window(config_setting_t ** setting)
 // Setup player and dead mark for now.
 void setup_mark(config_setting_t ** setting)
 {
-    const char *player;
-    const char *dead;
-    const char *key = NULL;
-    const char *item = NULL;
-    Style_Access style_access = NULL;
-    size_t len;
+    int total_counter = config_setting_length(*setting);
+    const char *value;
 
-    style_access = STYLE_P(malloc) (style_pool);
-    style_access->name = "player";
+    for (int counter = 0; counter < total_counter; counter++) {
+        config_setting_t *style_setting =
+            config_setting_get_elem(*setting, counter);
 
-    config_setting_lookup_string(*setting, "player", &player);
-    style_access->mark = String_Repo_sign_in(player);
+        const char *key = NULL;
 
-    style_access = STYLE_P(malloc) (style_pool);
-    style_access->name = "dead";
+        Style_Access style_access = STYLE_P(malloc) (style_pool);
+        config_setting_lookup_string(style_setting, "key", &key);
+        style_access->name = String_Repo_sign_in(key);
 
-    config_setting_lookup_string(*setting, "dead", &dead);
-    style_access->mark = String_Repo_sign_in(dead);
+        config_setting_lookup_string(style_setting, "mark", &key);
+        style_access->mark = String_Repo_sign_in(key);
+
+        int is_attackable = 0;
+        config_setting_lookup_bool(style_setting, "attackable",
+                                   &is_attackable);
+        style_access->attackable = is_attackable;
+
+        int is_crossable = 0;
+        config_setting_lookup_bool(style_setting, "crossable",
+                                   &is_crossable);
+        style_access->crossable = is_crossable;
+    }
 }
 
 // Default Execute_Result value is EXECUTE_FAILED.
@@ -82,7 +90,7 @@ Execute_Result setup_style(const char *file_path)
 
 
     /* check and setup mark */
-    setting = config_lookup(&cfg, "mark");
+    setting = config_lookup(&cfg, "style");
 
     if (setting != NULL) {
         setup_mark(&setting);

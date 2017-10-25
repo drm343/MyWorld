@@ -25,8 +25,6 @@ void EXPORT(init) (Character_Base * self) {
     Point_Access_set_x(-1);
     Point_Access_set_y(-1);
 
-    self->crossable = NO;
-    self->attackable = YES;
     self->is_alive = true;
     self->status = IN_USE;
 }
@@ -56,8 +54,6 @@ void EXPORT(copy) (Character_Base * self, Character_Base * from) {
     self->name = from->name;
     self->Mark = from->Mark;
 
-    self->crossable = from->crossable;
-    self->attackable = from->attackable;
     self->is_alive = ALIVE;
     self->status = IN_USE;
 }

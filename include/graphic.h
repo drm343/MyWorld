@@ -31,6 +31,8 @@ typedef struct {
 typedef struct {
     const char *name; /**< 比對用的名稱，通常為種族名稱 */
     const char *mark; /**< 顯示在畫面上的代表圖形 */
+    Yes_No crossable; /**< 可不可以跨過去 */
+    Yes_No attackable; /**< 可不可以被攻擊 */
     SDL_Texture_Access access; /**< SDL_Texture 的 Access */
 } Style;
 typedef Style *Style_Access;
