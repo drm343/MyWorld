@@ -5,6 +5,8 @@
  * 下列工具為選擇性的，可根據需求選擇是否安裝。<br>
  * doxygen、graphviz、git、make、indent、blogc。
  *
+ * 目前自動化建構可以從 make 或 tup 中選一個來使用。<br>
+ *
  * @see 開發相關紀錄 https://drm343.github.io
  *
  * @tableofcontents

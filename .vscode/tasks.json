@@ -11,7 +11,8 @@
         {
             "taskName": "app",
             "type": "shell",
-            "command": "make app",
+            //"command": "make app",
+            "command": "/opt/User/tup",
             "group": {
                 "kind": "build",
                 "isDefault": true

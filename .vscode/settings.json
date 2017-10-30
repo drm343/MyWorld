@@ -7,7 +7,7 @@
         "hash_map": "c",
         "bitset": "c",
         "chrono": "c",
-        "character_pool.h": "c",
-        "graphic-message.h": "c"
+        "character.h": "c",
+        "stdio.h": "c"
     }
 }
