@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <libconfig.h>
 
 const char *header_file_name = NULL;
@@ -147,13 +148,14 @@ void %s_stop(%s *access) {\n\
     free(access);\n\
 }\n\n";
 
-  int counter = snprintf(NULL, 0, format,
-      name, name);
-  char result[counter];
-  snprintf(result, counter + 1, format,
-      name, name);
+    int counter = snprintf(NULL, 0, format,
+        name, name);
+    char *result = calloc(counter + 1, sizeof(char));
+    snprintf(result, counter + 1, format,
+        name, name);
 
-  fprintf(file, result);
+    fprintf(file, result);
+    free(result);
 }
 
 
