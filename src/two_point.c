@@ -97,4 +97,16 @@ void EXPORT(set_end_x_and_y) (Two_Point * self, int32_t x, int32_t y) {
     Point_Access_set_y(y);
 }
 
+
+/** @brief 求出兩點距離
+ * @param self Two_Point 物件的 Access
+ * @return 長度
+ */
+int16_t EXPORT(diagonal_length) (Two_Point * self) {
+    int16_t diff_x = self->end->x - self->start->x;
+    int16_t diff_y = self->end->y - self->start->y;
+
+    return (int16_t) sqrt(pow(diff_x, 2) + pow(diff_y, 2));
+}
+
 #undef EXPORT

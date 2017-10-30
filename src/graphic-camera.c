@@ -34,11 +34,11 @@ static void print_vertical_mode(Camera_Access access)
 #endif
 
 
-static Yes_No occupy_position_by_others(Character_Pool_Access access,
+static Yes_No occupy_position_by_others(Game_Status_Access access,
                                         Point_Access point,
-                                        Status_Access * result)
+                                        Character_Access * result)
 {
-    if (CP(find_character) (access, result, point) == FOUND) {
+    if (GAME(find_character) (access, result, point) == FOUND) {
         return YES;
     } else {
         return NO;
@@ -224,7 +224,7 @@ void EXPORT(set_max_y) (Camera_Access self, int y) {
    *
    * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
   */
-void EXPORT(set_player) (Camera_Access self, Status_Access player) {
+void EXPORT(set_player) (Camera_Access self, Character_Access player) {
     Point_Access center = self->center;
     int32_t x = Point_Type_x(center);
     int32_t y = Point_Type_y(center);
@@ -269,10 +269,10 @@ void EXPORT(set_map) (Camera_Access self, Map_Access map) {
    * @return 當前必定回傳 true
   */
 bool EXPORT(take) (Camera_Access self,
-                   Character_Pool_Access from_pool,
+                   Game_Status_Access from_pool,
                    Message_Box_Access box_access,
-                   Status_Access current, Message_Type message) {
-    Status_Access npc = NULL;
+                   Character_Access current, Message_Type message) {
+    Character_Access npc = NULL;
     Style_Access dead = self->dead;
 
     Point_Access max_point = Point_Type_create();
@@ -313,9 +313,11 @@ bool EXPORT(take) (Camera_Access self,
         occupy_position_by_others(from_pool, point, &npc);
     if (result == NO) {
         int32_t y = Point_Type_y(vector);
+        Relation_Type current_relation;
+        Status_get_relation(current->status, current_relation);
 
         if ((y != 0) && (can_move_vertical(self, point) == YES)) {
-            if (current->faction == FACTION_PLAYER) {
+            if (current_relation == FACTION_PLAYER) {
                 camera_vertical_mode_setup(self, point, y);
             }
 
@@ -324,7 +326,7 @@ bool EXPORT(take) (Camera_Access self,
             Point_Access_add_y(y);
         } else if ((Point_Type_x(vector) != 0)
                    && (can_move_horizon(self, point) == YES)) {
-            if (current->faction == FACTION_PLAYER) {
+            if (current_relation == FACTION_PLAYER) {
                 camera_horizon_mode_setup(self, point,
                                           Point_Type_x(vector));
             }
@@ -338,41 +340,46 @@ bool EXPORT(take) (Camera_Access self,
 
         char *format = "%s(%s) 攻擊 %s(%s),造成 1 點傷害";
         int counter = snprintf(NULL, 0, format,
-                               current->name,
-                               STATUS(get_relation_string) (current),
-                               npc->name,
-                               STATUS(get_relation_string) (npc));
+                               current->status->name,
+                               STATUS(get_relation_string)
+                               (current->status),
+                               npc->status->name,
+                               STATUS(get_relation_string) (npc->status));
 
         char attack_message[counter];
         snprintf(attack_message, counter + 1, format,
-                 current->name,
-                 STATUS(get_relation_string) (current),
-                 npc->name, STATUS(get_relation_string) (npc));
+                 current->status->name,
+                 STATUS(get_relation_string) (current->status),
+                 npc->status->name,
+                 STATUS(get_relation_string) (npc->status));
         BOX(add_message) (box_access, attack_message);
+        Relation_Type npc_relation;
+        Status_get_relation(npc->status, npc_relation);
 
-        switch (npc->faction) {
+        switch (npc_relation) {
             case FACTION_PLAYER:
-                is_alive = CP(attack_player_by) (from_pool, current);
+                is_alive = GAME(attack_player_by) (from_pool, current);
                 break;
             case FACTION_ALLY:
-                is_alive = CP(attack_ally_by) (from_pool, current, npc);
+                is_alive = GAME(attack_ally_by) (from_pool, current, npc);
                 break;
             case FACTION_ENEMY:
-                is_alive = CP(attack_enemy_by) (from_pool, current, npc);
+                is_alive = GAME(attack_enemy_by) (from_pool, current, npc);
                 break;
             case FACTION_NEUTRAL:
-                is_alive = CP(attack_neutral_by) (from_pool, current, npc);
+                is_alive =
+                    GAME(attack_neutral_by) (from_pool, current, npc);
                 break;
             default:
                 break;
         }
 
         if (is_alive == DEAD) {
-            STATUS(set_style) (npc, dead);
+            CHARA(set_style) (npc, dead);
 
-            counter = String_ascii_length(npc->name);
+            counter = String_ascii_length(npc->status->name);
 
-            if (npc->faction == FACTION_PLAYER) {
+            if (npc->status->faction == FACTION_PLAYER) {
                 format = " 已死亡，任意按鍵離開遊戲";
                 counter = counter + String_ascii_length(format);
             } else {
@@ -381,7 +388,7 @@ bool EXPORT(take) (Camera_Access self,
             }
             char death_message[counter];
             snprintf(death_message, counter + 1, "%s%s",
-                     npc->name, format);
+                     npc->status->name, format);
             BOX(add_message) (box_access, death_message);
         }
     }
@@ -390,7 +397,7 @@ bool EXPORT(take) (Camera_Access self,
     Rectangle_Access_set_top_left_point(self->start);
     Rectangle_Access_set_down_right_point(max_point);
 
-    CP(calculate_graph_position) (from_pool, &rectangle);
+    GAME(calculate_graph_position) (from_pool, &rectangle);
 
   DONE:
     Point_Type_free(vector);

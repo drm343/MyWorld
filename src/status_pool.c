@@ -21,7 +21,7 @@ Status_Pool *Status_Pool_start(uint8_t max_size)
         content = &(result->item[index]);
 
         item = &(result->pool[index]);
-        item->is_used = UNUSE;
+        item->is_used = false;
         item->content = content;
     }
     return result;
@@ -43,8 +43,8 @@ Status *Status_Pool_malloc(Status_Pool * access)
     for (uint8_t index = 0; index < max_size; index++) {
         item = &(access->pool[index]);
 
-        if (item->is_used == UNUSE) {
-            item->is_used = IN_USE;
+        if (item->is_used == false) {
+            item->is_used = true;
             content = item->content;
             break;
         }

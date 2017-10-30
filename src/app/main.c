@@ -16,7 +16,7 @@ SDL_Rect position = {
 Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
 Map_Type *map_1;
-Character_Pool *character_pool = NULL;
+Game_Status *character_pool = NULL;
 struct strings *global_repo = NULL;
 
 
@@ -69,12 +69,13 @@ void draw_view(SDL_Renderer_Access render)
     SDL_RenderCopy(render, camera_1->player->Mark->access, NULL,
                    &(position));
 
-    uint8_t used = CP_OBJECT(instance_count) ();
+    uint8_t used = GAME(instance_count) (character_pool);
 
     for (int next = 1; next < used; next++) {
-        Status_Access npc = CP_OBJECT(get_instance_by_index) (next);
+        Character_Access npc =
+            GAME(get_instance_by_index) (character_pool, next);
 
-        if (npc->status == IN_USE) {
+        if (npc->status->status == IN_USE) {
             if (!Point_Type_eq
                 (npc->Real_Position, camera_1->player->Real_Position)) {
 
@@ -119,7 +120,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
     }
 
     result = STYLE_P(find) (style_pool, "player");
-    STATUS(set_style) (camera_1->player, result);
+    CHARA(set_style) (camera_1->player, result);
 
     Style_Access dead = STYLE_P(find) (style_pool, "dead");
     CAMERA(set_dead_style) (camera_1, dead);
@@ -130,7 +131,6 @@ Execute_Result init_view(SDL_Renderer_Access render)
 void submain(const char *root_dir, const char *init_cfg,
              const char *npc_cfg)
 {
-    Status_Access current = NULL;
     camera_1->player;
     Message_Type message = DO_NOTHING;
 
@@ -143,9 +143,7 @@ void submain(const char *root_dir, const char *init_cfg,
     bool running = true;
 
     style_pool = STYLE_P(start) (256);
-    character_pool = CP(create) (20, 100);
-
-    CP_OBJECT(change) (character_pool);
+    character_pool = GAME(create) (20, 100);
 
     camera_1 = CAMERA(start) ();
     box_1 = BOX(start) ();
@@ -157,8 +155,9 @@ void submain(const char *root_dir, const char *init_cfg,
     if (character_pool == NULL) {
         goto INIT_FAILED;
     }
-    Status_Access Player = CP_OBJECT(use_player) ();
-    STATUS(set_name) (Player, "雜魚");
+
+    Character_Access Player = GAME(use_player) (character_pool);
+    STATUS(set_name) (Player->status, "雜魚");
     CAMERA(set_player) (camera_1, Player);
 
     result = setup_style(init_cfg);
@@ -171,14 +170,14 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
 
-    CP_OBJECT(parse_npc_config) (npc_cfg, style_pool);
+    GAME(parse_npc_config) (character_pool, npc_cfg, style_pool);
 
     CAMERA(set_map) (camera_1, map_1);
 
-    CP_OBJECT(use_enemy) ("goblin", "g 1", camera_1->map);
-    CP_OBJECT(use_enemy) ("goblin", "g 2", camera_1->map);
-    CP_OBJECT(use_neutral) ("villager", "v 1", camera_1->map);
-    CP_OBJECT(use_neutral) ("villager", "v 2", camera_1->map);
+    GAME(use_enemy) (character_pool, "goblin", "g 1", camera_1->map);
+    GAME(use_enemy) (character_pool, "goblin", "g 2", camera_1->map);
+    GAME(use_neutral) (character_pool, "villager", "v 1", camera_1->map);
+    GAME(use_neutral) (character_pool, "villager", "v 2", camera_1->map);
 
     win =
         SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT,
@@ -192,11 +191,12 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
 
-    uint8_t instance_count = CP_OBJECT(instance_count) ();
+    Character_Access current = NULL;
+    uint8_t instance_count = GAME(instance_count) (character_pool);
     uint8_t index = instance_count;
     while (running) {
         current = camera_1->player;
-        message = CP_OBJECT(action) (current);
+        message = GAME(action) (character_pool, current);
 
         switch (message) {
             case QUIT:
@@ -213,12 +213,12 @@ void submain(const char *root_dir, const char *init_cfg,
         }
 
         for (index; index < instance_count; index++) {
-            current = CP_OBJECT(get_instance_by_index) (index);
+            current = GAME(get_instance_by_index) (character_pool, index);
 
-            if (current->is_alive == false) {
+            if (current->status->is_alive == false) {
                 continue;
             }
-            message = CP_OBJECT(action) (current);
+            message = GAME(action) (character_pool, current);
             running =
                 CAMERA(take) (camera_1, character_pool, box_1, current,
                               message);
@@ -238,7 +238,7 @@ void submain(const char *root_dir, const char *init_cfg,
   DONE:
     BOX(stop) (box_1);
     CAMERA(stop) (camera_1);
-    CP(free) (character_pool);
+    GAME(free) (character_pool);
     STYLE_P(stop) (style_pool);
 }
 
@@ -265,7 +265,6 @@ int main(int argc, char *argv[])
     char *root_dir = dirname(dirname(exist));
     int counter = String_ascii_length(root_dir);
 
-    // 在 Stack 分配固定長度的空間來初始化字串
     int total = counter + String_ascii_length(init_cfg_path);
     char init_cfg[total];
     snprintf(init_cfg, total + 1, "%s%s", root_dir, init_cfg_path);

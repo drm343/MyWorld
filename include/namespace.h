@@ -15,19 +15,9 @@
  */
 
 
-/** @brief namespace for May_Type
+/** @brief namespace for Character_Status
 */
-#define MAP(name) Map_Type_##name
-
-
-/** @brief namespace for Character_Pool_Access
-*/
-#define CP_OBJECT(name) Character_Pool_Access_##name
-
-
-/** @brief namespace for Character_Base
-*/
-#define C_BASE(name) Character_Base_##name
+#define CHARA(name) Character_##name
 
 
 /** @brief namespace for Character_Pool
@@ -35,9 +25,29 @@
 #define CP(name) Character_Pool_##name
 
 
+/** @brief namespace for Character_Pool_Access
+*/
+#define CP_OBJECT(name) Character_Pool_Access_##name
+
+
+/** @brief namespace for Character_Factory
+*/
+#define CF(name) Character_Factory_##name
+
+
+/** @brief namespace for May_Type
+*/
+#define MAP(name) Map_Type_##name
+
+
 /** @brief namespace for Camera
 */
 #define CAMERA(name) Graphic_Camera_##name
+
+
+/** @brief namespace for Game Status
+*/
+#define GAME(name) Game_Status_##name
 
 
 /** @brief namespace for Character_Status

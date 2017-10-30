@@ -2,7 +2,7 @@
 #define HEADER_CONTAINER_POOL_Room_Pool
 
 #include <stdint.h>
-#include "base_type.h"
+#include <stdbool.h>
 
 #include "room.h"
 
@@ -14,7 +14,7 @@
 
 typedef struct _Room_Item {
     Room *content;
-    Use_Type is_used;
+    bool is_used;
 } Room_Item;
 
 typedef struct {

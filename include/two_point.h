@@ -1,6 +1,9 @@
 #ifndef HEADER_TWO_POINT_OBJECT
 #define HEADER_TWO_POINT_OBJECT
 
+
+#include <math.h>
+
 #include "point-use_self.h"
 
 
@@ -98,6 +101,13 @@ void EXPORT(set_end) (Two_Point * self, Point_Access point);
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
 void EXPORT(set_end_x_and_y) (Two_Point * self, int32_t x, int32_t y);
+
+
+/** @brief 求出兩點距離
+ * @param self Two_Point 物件的 Access
+ * @return 長度
+ */
+int16_t EXPORT(diagonal_length) (Two_Point * self);
 
 #undef EXPORT
 #endif

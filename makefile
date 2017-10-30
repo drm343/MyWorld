@@ -21,7 +21,7 @@ INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
 
 # Compile flags
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
-LFLAGS=-Werror -L$(OBJ) -lmy_world
+LFLAGS=-Werror -L$(OBJ) -lm -lmy_world
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -41,19 +41,20 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/helper_function-strings.o \
 	$(OBJ)/strings-instance.o \
 	$(OBJ)/history_array.o \
-	$(OBJ)/graphic.o \
-	$(OBJ)/character.o \
-	$(OBJ)/character-status.o \
-	$(OBJ)/status_list.o \
+	$(OBJ)/style.o \
+	$(OBJ)/status.o \
 	$(OBJ)/status_pool.o \
+	$(OBJ)/character.o \
+	$(OBJ)/character_list.o \
+	$(OBJ)/character_pool.o \
+	$(OBJ)/character_factory.o \
 	$(OBJ)/room.o \
 	$(OBJ)/room_pool.o \
 	$(OBJ)/room_tree.o \
 	$(OBJ)/map_system.o \
+	$(OBJ)/game_status.o \
 	$(OBJ)/graphic-camera.o \
-	$(OBJ)/graphic-message.o \
-	$(OBJ)/character_pool.o \
-	$(OBJ)/character_pool-use_self.o
+	$(OBJ)/graphic-message.o
 
 
 LIBSTRINGS := $(OBJ)/block.o \
@@ -72,7 +73,7 @@ TOOLS := $(AUTO_BUILD_TOOLS)
 
 .PHONY: clean doc examples strings app test indent
 app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) indent
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@echo "build app done"
 
 
@@ -125,6 +126,10 @@ $(AUTO_BUILD_DEP):
 
 $(LIBSTRINGS):
 	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(CFLAGS) $(LFLAGS) intern/$(basename $(notdir $@)).c
+
+
+$(OBJ)/character_factory.o: src/factory/character_factory.c $(OBJ)/status_pool.o $(OBJ)/character_pool.o
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/factory/character_factory.c
 
 
 $(CHECK_DIR):

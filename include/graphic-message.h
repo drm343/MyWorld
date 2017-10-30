@@ -3,7 +3,7 @@
 
 #include "namespace.h"
 
-#include "graphic.h"
+#include "style.h"
 #include "helper/strings.h"
 
 

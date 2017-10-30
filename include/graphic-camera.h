@@ -5,7 +5,8 @@
 #include "namespace.h"
 
 
-#include "character_pool-use_self.h"
+#include "game_status.h"
+#include "character.h"
 #include "map_system.h"
 #include "graphic-message.h"
 
@@ -34,7 +35,7 @@ typedef enum {
  * start 跟 end 這兩個資料後續可以用 Rectangle 或 Two_Point 處理。
  */
 typedef struct {
-    Status_Access player; /**< 玩家角色資料 */
+    Character_Access player; /**< 玩家角色資料 */
     Style_Access dead; /**< 死亡用圖形 */
     Point_Access center; /**< 中心位置 */
     int64_t max_x; /**< 最大 x 值，預設為 25 */
@@ -83,7 +84,7 @@ void EXPORT(set_max_y) (Camera_Access self, int y);
    *
    * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
   */
-void EXPORT(set_player) (Camera_Access self, Status_Access player);
+void EXPORT(set_player) (Camera_Access self, Character_Access player);
 
 
   /** @brief 設定死亡時顯示的圖形
@@ -109,9 +110,9 @@ void EXPORT(set_map) (Camera_Access self, Map_Access map);
    * @return 當前必定回傳 true
   */
 bool EXPORT(take) (Camera_Access self,
-                   Character_Pool_Access from_pool,
+                   Game_Status_Access from_pool,
                    Message_Box_Access box_access,
-                   Status_Access current, Message_Type message);
+                   Character_Access current, Message_Type message);
 
 #undef EXPORT
 

@@ -2,9 +2,9 @@
 #define HEADER_CONTAINER_POOL_Status_Pool
 
 #include <stdint.h>
-#include "base_type.h"
+#include <stdbool.h>
 
-#include "character-status.h"
+#include "status.h"
 
 /** \file
  * 
@@ -14,7 +14,7 @@
 
 typedef struct _Status_Item {
     Status *content;
-    Use_Type is_used;
+    bool is_used;
 } Status_Item;
 
 typedef struct {

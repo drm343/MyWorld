@@ -19,6 +19,7 @@ void Room_set_random_position(Room * self, Point_Type * map_size,
 
     Two_Point_set_start(self->position, &start);
     Two_Point_set_end(self->position, &end);
+    self->diagonal_length = Two_Point_diagonal_length(self->position);
 }
 
 

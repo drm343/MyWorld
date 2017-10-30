@@ -1,5 +1,6 @@
 #ifndef HEADER_BASE_TYPE
 #define HEADER_BASE_TYPE
+
 #include <stdint.h>
 #include <stdbool.h>
 

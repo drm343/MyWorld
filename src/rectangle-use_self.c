@@ -1,4 +1,4 @@
-#include "rectangle-use_this.h"
+#include "rectangle-use_self.h"
 
 static Rectangle_Access self = NULL;
 

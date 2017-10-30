@@ -1,13 +1,13 @@
-#include "container/Status_List.h"
+#include "container/Character_List.h"
 /** \file
  * 
  * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。
  */
 
-Status_List *Status_List_start(uint8_t max_size)
+Character_List *Character_List_start(uint8_t max_size)
 {
-    Status_List *result = calloc(1, sizeof(Status_List));
-    Status_Node *list = calloc(max_size, sizeof(Status_Node));
+    Character_List *result = calloc(1, sizeof(Character_List));
+    Character_Node *list = calloc(max_size, sizeof(Character_Node));
 
     result->list = list;
     result->first = NULL;
@@ -18,20 +18,20 @@ Status_List *Status_List_start(uint8_t max_size)
     return result;
 }
 
-void Status_List_stop(Status_List * access)
+void Character_List_stop(Character_List * access)
 {
     free(access->list);
     free(access);
 }
 
-void Status_List_gc(Status_List * access)
+void Character_List_gc(Character_List * access)
 {
     uint8_t used = access->used;
     uint8_t instance_used = access->instance_counter;
-    Status_Node *unused_node = NULL;
-    Status_Node *current = access->first;
-    Status_Node *next = NULL;
-    Status_Node *previous = NULL;
+    Character_Node *unused_node = NULL;
+    Character_Node *current = access->first;
+    Character_Node *next = NULL;
+    Character_Node *previous = NULL;
 
     while (current != NULL) {
         next = current->next;
@@ -75,20 +75,20 @@ void Status_List_gc(Status_List * access)
     access->used = instance_used;
 }
 
-uint8_t Status_List_insert(Status_List * access, Status * item)
+uint8_t Character_List_insert(Character_List * access, Character * item)
 {
     uint8_t used = access->used;
     uint8_t max_size = access->max_size;
 
     if (used >= max_size) {
-        Status_List_gc(access);
+        Character_List_gc(access);
         used = access->used;
     }
 
     if (used < max_size) {
-        Status_Node *first = access->first;
-        Status_Node *last = access->last;
-        Status_Node *node = &(access->list[used]);
+        Character_Node *first = access->first;
+        Character_Node *last = access->last;
+        Character_Node *node = &(access->list[used]);
 
         node->previous = NULL;
         node->next = NULL;
@@ -113,12 +113,12 @@ uint8_t Status_List_insert(Status_List * access, Status * item)
     }
 }
 
-void Status_List_remove(Status_List * access, Status * item)
+void Character_List_remove(Character_List * access, Character * item)
 {
-    Status_Node *current = access->first;
-    Status_Node *next = NULL;
-    Status_Node *previous = NULL;
-    Status *current_item = NULL;
+    Character_Node *current = access->first;
+    Character_Node *next = NULL;
+    Character_Node *previous = NULL;
+    Character *current_item = NULL;
 
     while (current != NULL) {
         next = current->next;
@@ -153,10 +153,11 @@ void Status_List_remove(Status_List * access, Status * item)
     }
 }
 
-Status *Status_List_get_by_index(Status_List * access, uint8_t index)
+Character *Character_List_get_by_index(Character_List * access,
+                                       uint8_t index)
 {
-    Status_Node *current = access->first;
-    Status_Node *next = NULL;
+    Character_Node *current = access->first;
+    Character_Node *next = NULL;
 
     for (uint8_t counter = 0; counter < index; counter++) {
         next = current->next;
@@ -165,16 +166,16 @@ Status *Status_List_get_by_index(Status_List * access, uint8_t index)
     return current->content;
 }
 
-void Status_List_copy_all(Status_List * from, Status_List * to)
+void Character_List_copy_all(Character_List * from, Character_List * to)
 {
     uint8_t used = from->instance_counter;
 
-    Status_Node *current = from->first;
-    Status_Node *next = NULL;
+    Character_Node *current = from->first;
+    Character_Node *next = NULL;
 
     for (uint8_t index = 0; index < used; index++) {
         next = current->next;
-        Status_List_insert(to, current->content);
+        Character_List_insert(to, current->content);
         current = next;
     }
 }
