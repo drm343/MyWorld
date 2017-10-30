@@ -1,11 +1,11 @@
 <map id="include/two_point.h" name="include/two_point.h">
-<area shape="rect" id="node2" href="$map__system_8h.html" title="include/map_system.h" alt="" coords="5,162,159,189"/>
-<area shape="rect" id="node6" href="$rectangle_8h.html" title="include/rectangle.h" alt="" coords="190,80,321,107"/>
-<area shape="rect" id="node8" href="$room_8h.html" title="include/room.h" alt="" coords="378,80,485,107"/>
-<area shape="rect" id="node3" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="120,244,273,271"/>
-<area shape="rect" id="node4" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="56,319,223,345"/>
-<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="86,393,193,420"/>
-<area shape="rect" id="node7" href="$rectangle-use__self_8h.html" title="include/rectangle&#45;use\l_self.h" alt="" coords="183,155,328,196"/>
-<area shape="rect" id="node9" href="$_room___pool_8h.html" title="include/container/Room\l_Pool.h" alt="" coords="352,155,511,196"/>
-<area shape="rect" id="node10" href="$_room___tree_8h.html" title="include/container/Room\l_Tree.h" alt="" coords="535,155,693,196"/>
+<area shape="rect" id="node2" href="$map__system_8h.html" title="include/map_system.h" alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node6" href="$rectangle_8h.html" title="include/rectangle.h" alt="" coords="183,80,314,107"/>
+<area shape="rect" id="node8" href="$room_8h.html" title="include/room.h" alt="" coords="338,80,445,107"/>
+<area shape="rect" id="node3" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="71,244,224,271"/>
+<area shape="rect" id="node4" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="64,319,231,345"/>
+<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="94,393,201,420"/>
+<area shape="rect" id="node7" href="$rectangle-use__self_8h.html" title="include/rectangle&#45;use\l_self.h" alt="" coords="136,155,281,196"/>
+<area shape="rect" id="node9" href="$_room___pool_8h.html" title="include/container/Room\l_Pool.h" alt="" coords="308,155,467,196"/>
+<area shape="rect" id="node10" href="$_room___tree_8h.html" title="include/container/Room\l_Tree.h" alt="" coords="491,155,649,196"/>
 </map>

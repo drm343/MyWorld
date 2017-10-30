@@ -1,10 +1,10 @@
 <map id="include/status.h" name="include/status.h">
-<area shape="rect" id="node2" href="$character_8h.html" title="include/character.h" alt="" coords="259,87,391,114"/>
-<area shape="rect" id="node9" href="$_status___pool_8h.html" title="include/container/Status\l_Pool.h" alt="" coords="495,80,658,121"/>
-<area shape="rect" id="node3" href="$_character___list_8h.html" title="include/container/Character\l_List.h" alt="" coords="439,169,621,211"/>
-<area shape="rect" id="node4" href="$_character___pool_8h.html" title="include/container/Character\l_Pool.h" alt="" coords="234,169,415,211"/>
-<area shape="rect" id="node6" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="5,177,159,203"/>
-<area shape="rect" id="node7" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="69,266,236,293"/>
-<area shape="rect" id="node5" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="286,259,451,300"/>
-<area shape="rect" id="node8" href="$main_8h.html" title="include/main.h" alt="" coords="99,348,206,375"/>
+<area shape="rect" id="node2" href="$character_8h.html" title="include/character.h" alt="" coords="295,87,427,114"/>
+<area shape="rect" id="node9" href="$_status___pool_8h.html" title="include/container/Status\l_Pool.h" alt="" coords="491,80,654,121"/>
+<area shape="rect" id="node3" href="$_character___list_8h.html" title="include/container/Character\l_List.h" alt="" coords="395,169,577,211"/>
+<area shape="rect" id="node4" href="$_character___pool_8h.html" title="include/container/Character\l_Pool.h" alt="" coords="190,169,371,211"/>
+<area shape="rect" id="node6" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="12,177,165,203"/>
+<area shape="rect" id="node5" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="365,259,530,300"/>
+<area shape="rect" id="node7" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="5,266,172,293"/>
+<area shape="rect" id="node8" href="$main_8h.html" title="include/main.h" alt="" coords="35,348,142,375"/>
 </map>
