@@ -16,7 +16,7 @@ void gen_header(void) {
 #define HEADER_CONTAINER_POOL_%s\n\
 \n\
 #include <stdint.h>\n\
-#include \"base_type.h\"\n\
+#include <stdbool.h>\n\
 \n\
 #include \"%s\"\n\
 \n\
@@ -27,7 +27,7 @@ void gen_header(void) {
 \n\
 typedef struct _%s_Item {\n\
   %s *content;\n\
-  Use_Type is_used;\n\
+  bool is_used;\n\
 } %s_Item;\n\
 \n\
 typedef struct {\n\
@@ -101,7 +101,7 @@ void gen_function_start(void) {
     content = &(result->item[index]);\n\
 \n\
     item = &(result->pool[index]);\n\
-    item->is_used = UNUSE;\n\
+    item->is_used = false;\n\
     item->content = content;\n\
   }\n\
   return result;\n\
@@ -153,8 +153,8 @@ void gen_function_malloc(void) {
   for (uint8_t index = 0; index < max_size; index++) {\n\
     item = &(access->pool[index]);\n\
 \n\
-    if (item->is_used == UNUSE) {\n\
-      item->is_used = IN_USE;\n\
+    if (item->is_used == false) {\n\
+      item->is_used = true;\n\
       content = item->content;\n\
       break;\n\
     }\n\
