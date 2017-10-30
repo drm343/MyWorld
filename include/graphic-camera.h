@@ -6,8 +6,6 @@
 
 
 #include "game_status.h"
-#include "character.h"
-#include "map_system.h"
 #include "graphic-message.h"
 
 
