@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['malloc',['malloc',['../character__factory_8h.html#abe3d9739f42d0c809dd7bb816485713c',1,'character_factory.h']]],
   ['map_5ftype_5fbottom_5fright',['Map_Type_bottom_right',['../map__system_8h.html#a25c94017b01f9f6dcbfa8f27d21f66c4',1,'map_system.h']]],
   ['map_5ftype_5fbottom_5fright_5fx',['Map_Type_bottom_right_x',['../map__system_8h.html#a4f736c132f2b3a01e732583e2a06501d',1,'map_system.h']]],
   ['map_5ftype_5fbottom_5fright_5fy',['Map_Type_bottom_right_y',['../map__system_8h.html#a90f5c1d877480bec643c481b6d4e55a5',1,'map_system.h']]],

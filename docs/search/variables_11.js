@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertical',['vertical',['../struct_camera___type.html#ae7f5d3cdba7df040d79cb11c4300cba4',1,'Camera_Type']]]
+  ['used',['used',['../struct_character___list.html#a4b1141237b480e4c38afe96a59ca4cad',1,'Character_List::used()'],['../struct_room___tree.html#a5e1ebda31e026934b2091d2d0051818a',1,'Room_Tree::used()']]]
 ];

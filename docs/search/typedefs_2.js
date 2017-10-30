@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['natural',['Natural',['../base__type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c',1,'base_type.h']]]
+  ['level',['Level',['../map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18',1,'map_system.h']]]
 ];

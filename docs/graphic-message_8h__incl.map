@@ -1,7 +1,7 @@
 <map id="include/graphic&#45;message.h" name="include/graphic&#45;message.h">
-<area shape="rect" id="node2" href="$namespace_8h.html" title="namespace.h" alt="" coords="86,80,186,107"/>
-<area shape="rect" id="node3" href="$graphic_8h.html" title="graphic.h" alt="" coords="209,80,284,107"/>
-<area shape="rect" id="node9" href="$helper_2strings_8h.html" title="helper/strings.h" alt="" coords="425,80,535,107"/>
-<area shape="rect" id="node6" href="$base__type_8h.html" title="base_type.h" alt="" coords="264,155,357,181"/>
-<area shape="rect" id="node13" href="$debug_8h.html" title="helper/debug.h" alt="" coords="661,155,768,181"/>
+<area shape="rect" id="node2" href="$namespace_8h.html" title="namespace.h" alt="" coords="5,155,105,181"/>
+<area shape="rect" id="node3" href="$style_8h.html" title="style.h" alt="" coords="211,80,273,107"/>
+<area shape="rect" id="node9" href="$helper_2strings_8h.html" title="helper/strings.h" alt="" coords="547,80,657,107"/>
+<area shape="rect" id="node6" href="$type_8h.html" title="base/type.h" alt="" coords="389,155,479,181"/>
+<area shape="rect" id="node13" href="$debug_8h.html" title="helper/debug.h" alt="" coords="783,155,890,181"/>
 </map>

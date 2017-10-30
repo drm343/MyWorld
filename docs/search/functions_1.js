@@ -1,11 +1,27 @@
 var searchData=
 [
+  ['game_5fstatus_5faction',['Game_Status_action',['../game__status_8h.html#add18de1f3063d5f8a4c782bf3cad118d',1,'game_status.h']]],
+  ['game_5fstatus_5fattack_5fally_5fby',['Game_Status_attack_ally_by',['../game__status_8h.html#a4a4dd91e8ce817b0d345744e709b5b84',1,'game_status.h']]],
+  ['game_5fstatus_5fattack_5fenemy_5fby',['Game_Status_attack_enemy_by',['../game__status_8h.html#acd073316f3756a3f3de5375c9e28bb4a',1,'game_status.h']]],
+  ['game_5fstatus_5fattack_5fneutral_5fby',['Game_Status_attack_neutral_by',['../game__status_8h.html#af656439dae212ebc1324c96b81e533b6',1,'game_status.h']]],
+  ['game_5fstatus_5fattack_5fplayer_5fby',['Game_Status_attack_player_by',['../game__status_8h.html#aa04d4ff9a3d6c68547589e87beff8ac5',1,'game_status.h']]],
+  ['game_5fstatus_5fcalculate_5fgraph_5fposition',['Game_Status_calculate_graph_position',['../game__status_8h.html#add5457e84b6cc0483717a7942a8d894d',1,'game_status.h']]],
+  ['game_5fstatus_5fcreate',['Game_Status_create',['../game__status_8h.html#af8c3dcb36d77bccbf60954a293bbb48c',1,'game_status.h']]],
+  ['game_5fstatus_5ffind_5fcharacter',['Game_Status_find_character',['../game__status_8h.html#a14e62b12433b4cfd7d2c86242a44c6de',1,'game_status.h']]],
+  ['game_5fstatus_5ffree',['Game_Status_free',['../game__status_8h.html#a6f086d7115e91872fdad5b30c51ddea8',1,'game_status.h']]],
+  ['game_5fstatus_5fget_5finstance_5fby_5findex',['Game_Status_get_instance_by_index',['../game__status_8h.html#a4739cd51fa32757d46da73bcf7379965',1,'game_status.h']]],
+  ['game_5fstatus_5finstance_5fcount',['Game_Status_instance_count',['../game__status_8h.html#aa7f70dcd26da19c1b02ab4408f7dd22a',1,'game_status.h']]],
+  ['game_5fstatus_5fparse_5fnpc_5fconfig',['Game_Status_parse_npc_config',['../game__status_8h.html#ab102d0026c875fab4cfa0802e33999bc',1,'game_status.h']]],
+  ['game_5fstatus_5fuse_5fally',['Game_Status_use_ally',['../game__status_8h.html#a026eca524b65cb0af4518e52631ec74c',1,'game_status.h']]],
+  ['game_5fstatus_5fuse_5fenemy',['Game_Status_use_enemy',['../game__status_8h.html#a91892720e7468dc37bd12274ccdc8b9e',1,'game_status.h']]],
+  ['game_5fstatus_5fuse_5fneutral',['Game_Status_use_neutral',['../game__status_8h.html#a4da69adf7847a9dbb152c67636bd596f',1,'game_status.h']]],
+  ['game_5fstatus_5fuse_5fplayer',['Game_Status_use_player',['../game__status_8h.html#a2c377301047db74912a79807fddc778f',1,'game_status.h']]],
   ['graphic_5fcamera_5fset_5fdead_5fstyle',['Graphic_Camera_set_dead_style',['../graphic-camera_8h.html#a26f0730c82d8320c0de7fba29e6289d3',1,'graphic-camera.h']]],
   ['graphic_5fcamera_5fset_5fmap',['Graphic_Camera_set_map',['../graphic-camera_8h.html#ab2ce960bcdb7dc96b11757679f447f36',1,'graphic-camera.h']]],
   ['graphic_5fcamera_5fset_5fmax_5fx',['Graphic_Camera_set_max_x',['../graphic-camera_8h.html#a839e5e6b882f9a92b981cfa523a14715',1,'graphic-camera.h']]],
   ['graphic_5fcamera_5fset_5fmax_5fy',['Graphic_Camera_set_max_y',['../graphic-camera_8h.html#aada41b95db1196ad7be6a3ec4e264299',1,'graphic-camera.h']]],
-  ['graphic_5fcamera_5fset_5fplayer',['Graphic_Camera_set_player',['../graphic-camera_8h.html#ae592ff8b701ff199d9e5b02e228e51b6',1,'graphic-camera.h']]],
+  ['graphic_5fcamera_5fset_5fplayer',['Graphic_Camera_set_player',['../graphic-camera_8h.html#a5f9581cb56d155676590409113308420',1,'graphic-camera.h']]],
   ['graphic_5fcamera_5fstart',['Graphic_Camera_start',['../graphic-camera_8h.html#a484f1dca7334078853e474eb33e52fd4',1,'graphic-camera.h']]],
   ['graphic_5fcamera_5fstop',['Graphic_Camera_stop',['../graphic-camera_8h.html#a2f2bfebabf9305175e1c1042a56920bb',1,'graphic-camera.h']]],
-  ['graphic_5fcamera_5ftake',['Graphic_Camera_take',['../graphic-camera_8h.html#a19ddb8e4224f04e7f894ebb418dd560a',1,'graphic-camera.h']]]
+  ['graphic_5fcamera_5ftake',['Graphic_Camera_take',['../graphic-camera_8h.html#a887926e6f699e8cedace3fa9133ad75c',1,'graphic-camera.h']]]
 ];

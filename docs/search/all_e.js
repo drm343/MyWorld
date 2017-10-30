@@ -1,7 +1,8 @@
 var searchData=
 [
   ['parameter_2eh',['parameter.h',['../parameter_8h.html',1,'']]],
-  ['player',['player',['../struct_camera___type.html#ae271f3040d01366952b3603495591e4e',1,'Camera_Type']]],
+  ['parent',['parent',['../struct_room___tree___result.html#a3f69fb340495fb09b11d6a8f6b99a438',1,'Room_Tree_Result::parent()'],['../struct_room___tree___node.html#aac7a556bce72ed8b4b77f7e4d1a949d8',1,'Room_Tree_Node::parent()']]],
+  ['player',['player',['../struct_camera___type.html#aef87632a57148c31a5c6e47ce4c48e97',1,'Camera_Type']]],
   ['point_2duse_5fself_2eh',['point-use_self.h',['../point-use__self_8h.html',1,'']]],
   ['point_2eh',['point.h',['../point_8h.html',1,'']]],
   ['point_5faccess',['Point_Access',['../point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03',1,'point.h']]],
@@ -23,7 +24,8 @@ var searchData=
   ['point_5ftype_5fset_5fy',['Point_Type_set_y',['../point_8h.html#a4534a2ef4122d3dff80b63b3229dbd4b',1,'point.h']]],
   ['point_5ftype_5fx',['Point_Type_x',['../point_8h.html#a90528fff9d63330ae35dbc9d82565b0c',1,'point.h']]],
   ['point_5ftype_5fy',['Point_Type_y',['../point_8h.html#abb28b97e139c670819dd7bc91d883bb9',1,'point.h']]],
-  ['pool',['pool',['../struct_skill___pool.html#ab0dc4b321d9a6d7564c9b74b83d92787',1,'Skill_Pool::pool()'],['../struct_status___pool.html#a9eb8f8804bb30a92b4075219d52399c8',1,'Status_Pool::pool()'],['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool::pool()']]],
-  ['previous',['previous',['../struct___status___node.html#afc7492628abcb777f2fb97ef2176b0f3',1,'_Status_Node']]],
+  ['pool',['pool',['../struct_skill___pool.html#ab0dc4b321d9a6d7564c9b74b83d92787',1,'Skill_Pool::pool()'],['../struct_character___pool.html#ae6235ba19cf58c9bc1514f0a7f2f1c7b',1,'Character_Pool::pool()'],['../struct_room___pool.html#a0cc274cdc8c484f48437c70279b89e9c',1,'Room_Pool::pool()'],['../struct_room___tree.html#ab7f2abf2ef7443691ee655711fc20c0d',1,'Room_Tree::pool()'],['../struct_status___pool.html#a9eb8f8804bb30a92b4075219d52399c8',1,'Status_Pool::pool()'],['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool::pool()']]],
+  ['position',['position',['../struct_room.html#a1c2e56cf263aa411f564c0f62f2abd7d',1,'Room']]],
+  ['previous',['previous',['../struct___character___node.html#ae679fb5e296b512d2f34fea1230e426b',1,'_Character_Node']]],
   ['procedure',['PROCEDURE',['../ada__style_8h.html#aca2d184953d5f9a712d177da873a411d',1,'ada_style.h']]]
 ];

@@ -1,7 +1,9 @@
 <map id="include/map_system.h" name="include/map_system.h">
-<area shape="rect" id="node2" href="$base__type_8h.html" title="base_type.h" alt="" coords="34,229,127,256"/>
-<area shape="rect" id="node5" href="$two__point_8h.html" title="two_point.h" alt="" coords="127,80,216,107"/>
-<area shape="rect" id="node6" href="$point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="122,155,237,181"/>
-<area shape="rect" id="node7" href="$point_8h.html" title="point.h" alt="" coords="151,229,213,256"/>
-<area shape="rect" id="node9" href="$debug_8h.html" title="helper/debug.h" alt="" coords="282,304,389,331"/>
+<area shape="rect" id="node2" href="$namespace_8h.html" title="namespace.h" alt="" coords="5,155,105,181"/>
+<area shape="rect" id="node3" href="$type_8h.html" title="base/type.h" alt="" coords="405,229,495,256"/>
+<area shape="rect" id="node6" href="$two__point_8h.html" title="two_point.h" alt="" coords="491,80,580,107"/>
+<area shape="rect" id="node13" href="$style_8h.html" title="style.h" alt="" coords="286,80,347,107"/>
+<area shape="rect" id="node8" href="$point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="578,155,693,181"/>
+<area shape="rect" id="node9" href="$point_8h.html" title="point.h" alt="" coords="605,229,666,256"/>
+<area shape="rect" id="node11" href="$debug_8h.html" title="helper/debug.h" alt="" coords="693,304,799,331"/>
 </map>

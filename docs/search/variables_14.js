@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y',['y',['../struct_point___type.html#af64066d134a77e01b3d6eb8da813627a',1,'Point_Type']]]
+  ['x',['x',['../struct_point___type.html#af6d3062751bd565decb1a2cd3b63bdb2',1,'Point_Type']]]
 ];

@@ -1,16 +1,17 @@
 <map id="include/point.h" name="include/point.h">
-<area shape="rect" id="node2" href="$point-use__self_8h.html" title="include/point&#45;use_self.h" alt="" coords="467,80,626,107"/>
-<area shape="rect" id="node3" href="$character_8h.html" title="include/character.h" alt="" coords="402,155,534,181"/>
-<area shape="rect" id="node12" href="$two__point_8h.html" title="include/two_point.h" alt="" coords="569,155,703,181"/>
-<area shape="rect" id="node4" href="$character-status_8h.html" title="include/character&#45;status.h" alt="" coords="279,229,451,256"/>
-<area shape="rect" id="node5" href="$character-skill_8h.html" title="include/character&#45;skill.h" alt="" coords="193,311,351,338"/>
-<area shape="rect" id="node6" href="$_status___list_8h.html" title="include/container/Status\l_List.h" alt="" coords="376,304,539,345"/>
-<area shape="rect" id="node11" href="$_status___pool_8h.html" title="include/container/Status\l_Pool.h" alt="" coords="5,304,168,345"/>
-<area shape="rect" id="node7" href="$character__pool_8h.html" title="include/character_pool.h" alt="" coords="555,393,717,420"/>
-<area shape="rect" id="node8" href="$character__pool-use__self_8h.html" title="include/character_pool\l&#45;use_self.h" alt="" coords="589,468,741,509"/>
-<area shape="rect" id="node9" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="638,557,805,584"/>
-<area shape="rect" id="node10" href="$main_8h.html" title="include/main.h" alt="" coords="668,632,775,659"/>
-<area shape="rect" id="node13" href="$map__system_8h.html" title="include/map_system.h" alt="" coords="733,311,886,338"/>
-<area shape="rect" id="node14" href="$rectangle_8h.html" title="include/rectangle.h" alt="" coords="571,229,701,256"/>
-<area shape="rect" id="node15" href="$rectangle-use__this_8h.html" title="include/rectangle&#45;use\l_this.h" alt="" coords="563,304,709,345"/>
+<area shape="rect" id="node2" href="$point-use__self_8h.html" title="include/point&#45;use_self.h" alt="" coords="321,80,479,107"/>
+<area shape="rect" id="node3" href="$character_8h.html" title="include/character.h" alt="" coords="235,311,367,338"/>
+<area shape="rect" id="node10" href="$two__point_8h.html" title="include/two_point.h" alt="" coords="473,155,607,181"/>
+<area shape="rect" id="node4" href="$_character___list_8h.html" title="include/container/Character\l_List.h" alt="" coords="211,393,392,435"/>
+<area shape="rect" id="node5" href="$_character___pool_8h.html" title="include/container/Character\l_Pool.h" alt="" coords="5,393,187,435"/>
+<area shape="rect" id="node7" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="467,401,621,427"/>
+<area shape="rect" id="node8" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="461,490,627,517"/>
+<area shape="rect" id="node6" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="13,483,179,524"/>
+<area shape="rect" id="node9" href="$main_8h.html" title="include/main.h" alt="" coords="491,572,597,599"/>
+<area shape="rect" id="node11" href="$map__system_8h.html" title="include/map_system.h" alt="" coords="926,311,1079,338"/>
+<area shape="rect" id="node12" href="$rectangle_8h.html" title="include/rectangle.h" alt="" coords="415,229,545,256"/>
+<area shape="rect" id="node14" href="$room_8h.html" title="include/room.h" alt="" coords="587,229,693,256"/>
+<area shape="rect" id="node13" href="$rectangle-use__self_8h.html" title="include/rectangle&#45;use\l_self.h" alt="" coords="391,304,537,345"/>
+<area shape="rect" id="node15" href="$_room___pool_8h.html" title="include/container/Room\l_Pool.h" alt="" coords="561,304,719,345"/>
+<area shape="rect" id="node16" href="$_room___tree_8h.html" title="include/container/Room\l_Tree.h" alt="" coords="743,304,902,345"/>
 </map>

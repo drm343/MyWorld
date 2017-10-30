@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>MyWorld: include/game_status.h 檔案參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>主頁面</span></a></li>
+      <li><a href="pages.html"><span>相關頁面</span></a></li>
+      <li><a href="annotated.html"><span>資料結構</span></a></li>
+      <li class="current"><a href="files.html"><span>檔案</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>檔案列表</span></a></li>
+      <li><a href="globals.html"><span>全域資料</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">定義</a> &#124;
+<a href="#typedef-members">型態定義</a> &#124;
+<a href="#func-members">函式</a>  </div>
+  <div class="headertitle">
+<div class="title">game_status.h 檔案參考文件</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;libconfig.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="namespace_8h_source.html">namespace.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic__function_8h_source.html">helper/generic_function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="map__system_8h_source.html">map_system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="character_8h_source.html">character.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rectangle-use__self_8h_source.html">rectangle-use_self.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="instance_2strings_8h_source.html">instance/strings.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+game_status.h的包含相依圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="game__status_8h__incl.png" border="0" usemap="#include_2game__status_8h" alt=""/></div>
+<map name="include_2game__status_8h" id="include_2game__status_8h">
+<area shape="rect" id="node4" href="namespace_8h.html" title="namespace.h" alt="" coords="222,304,322,331"/><area shape="rect" id="node5" href="generic__function_8h.html" title="helper/generic_function.h" alt="" coords="430,379,596,405"/><area shape="rect" id="node8" href="map__system_8h.html" title="map_system.h" alt="" coords="515,155,623,181"/><area shape="rect" id="node20" href="character_8h.html" title="character.h" alt="" coords="294,155,380,181"/><area shape="rect" id="node23" href="rectangle-use__self_8h.html" title="rectangle&#45;use_self.h" alt="" coords="377,80,516,107"/><area shape="rect" id="node25" href="instance_2strings_8h.html" title="instance/strings.h" alt="" coords="997,80,1122,107"/><area shape="rect" id="node9" href="type_8h.html" title="base/type.h" alt="" coords="346,304,437,331"/><area shape="rect" id="node11" href="two__point_8h.html" title="two_point.h" alt="" coords="683,229,772,256"/><area shape="rect" id="node17" href="style_8h.html" title="style.h" alt="" coords="496,229,557,256"/><area shape="rect" id="node13" href="point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="720,304,834,331"/><area shape="rect" id="node14" href="point_8h.html" title="point.h" alt="" coords="293,379,354,405"/><area shape="rect" id="node15" href="debug_8h.html" title="helper/debug.h" alt="" coords="265,453,372,480"/><area shape="rect" id="node21" href="status_8h.html" title="status.h" alt="" coords="149,229,218,256"/><area shape="rect" id="node22" href="message__base_8h.html" title="message_base.h" alt="" coords="24,304,146,331"/><area shape="rect" id="node24" href="rectangle_8h.html" title="rectangle.h" alt="" coords="404,155,491,181"/><area shape="rect" id="node26" href="helper_2strings_8h.html" title="helper/strings.h" alt="" coords="620,379,731,405"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+本圖顯示出哪些檔案直接或間接include本檔 :</div>
+<div class="dyncontent">
+<div class="center"><img src="game__status_8h__dep__incl.png" border="0" usemap="#include_2game__status_8hdep" alt=""/></div>
+<map name="include_2game__status_8hdep" id="include_2game__status_8hdep">
+<area shape="rect" id="node2" href="graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="5,80,172,107"/><area shape="rect" id="node3" href="main_8h.html" title="include/main.h" alt="" coords="35,155,142,181"/></map>
+</div>
+</div>
+<p><a href="game__status_8h_source.html">查看本檔案的原始碼.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+定義</h2></td></tr>
+<tr class="memitem:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(name)&#160;&#160;&#160;<a class="el" href="namespace_8h.html#a49f9cb9b7142571f8bc33f997b1d28a7">GAME</a>(name)</td></tr>
+<tr class="memdesc:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace GAME.  <a href="#a4fe932c6483a71ec8f5f6e2bcd6b33aa">更多...</a><br /></td></tr>
+<tr class="separator:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+型態定義</h2></td></tr>
+<tr class="memitem:a866770080e28b4dc1b8bed3109351e3f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a></td></tr>
+<tr class="memdesc:a866770080e28b4dc1b8bed3109351e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">遊戲狀態結構  <a href="#a866770080e28b4dc1b8bed3109351e3f">更多...</a><br /></td></tr>
+<tr class="separator:a866770080e28b4dc1b8bed3109351e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e597b35df3ccbab40c86d0bf550f46b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a></td></tr>
+<tr class="memdesc:a8e597b35df3ccbab40c86d0bf550f46b"><td class="mdescLeft">&#160;</td><td class="mdescRight">遊戲狀態  <a href="#a8e597b35df3ccbab40c86d0bf550f46b">更多...</a><br /></td></tr>
+<tr class="separator:a8e597b35df3ccbab40c86d0bf550f46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:af8c3dcb36d77bccbf60954a293bbb48c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#af8c3dcb36d77bccbf60954a293bbb48c">Game_Status_create</a> (uint8_t max_config_size, uint8_t max_instance_size)</td></tr>
+<tr class="memdesc:af8c3dcb36d77bccbf60954a293bbb48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">產生遊戲狀態  <a href="#af8c3dcb36d77bccbf60954a293bbb48c">更多...</a><br /></td></tr>
+<tr class="separator:af8c3dcb36d77bccbf60954a293bbb48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f086d7115e91872fdad5b30c51ddea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a6f086d7115e91872fdad5b30c51ddea8">Game_Status_free</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self)</td></tr>
+<tr class="memdesc:a6f086d7115e91872fdad5b30c51ddea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">釋放遊戲狀態  <a href="#a6f086d7115e91872fdad5b30c51ddea8">更多...</a><br /></td></tr>
+<tr class="separator:a6f086d7115e91872fdad5b30c51ddea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab102d0026c875fab4cfa0802e33999bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#ab102d0026c875fab4cfa0802e33999bc">Game_Status_parse_npc_config</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, const char *file_path, <a class="el" href="style_8h.html#a831461837be60b6f95510a35a6dafb9e">Style_Pool_Access</a> <a class="el" href="main__set__config_8h.html#ac137a596979b0394ce1388b7d6a46ff2">style_pool</a>)</td></tr>
+<tr class="memdesc:ab102d0026c875fab4cfa0802e33999bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">分析角色設定檔，產生遊戲狀態  <a href="#ab102d0026c875fab4cfa0802e33999bc">更多...</a><br /></td></tr>
+<tr class="separator:ab102d0026c875fab4cfa0802e33999bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e62b12433b4cfd7d2c86242a44c6de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">Found_Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a14e62b12433b4cfd7d2c86242a44c6de">Game_Status_find_character</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> *npc, <a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> point)</td></tr>
+<tr class="memdesc:a14e62b12433b4cfd7d2c86242a44c6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">尋找該位置是否有任何角色  <a href="#a14e62b12433b4cfd7d2c86242a44c6de">更多...</a><br /></td></tr>
+<tr class="separator:a14e62b12433b4cfd7d2c86242a44c6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5457e84b6cc0483717a7942a8d894d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#add5457e84b6cc0483717a7942a8d894d">Game_Status_calculate_graph_position</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, <a class="el" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a> rectangle)</td></tr>
+<tr class="memdesc:add5457e84b6cc0483717a7942a8d894d"><td class="mdescLeft">&#160;</td><td class="mdescRight">重新計算所有角色在畫面上的顯示位置  <a href="#add5457e84b6cc0483717a7942a8d894d">更多...</a><br /></td></tr>
+<tr class="separator:add5457e84b6cc0483717a7942a8d894d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a026eca524b65cb0af4518e52631ec74c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a026eca524b65cb0af4518e52631ec74c">Game_Status_use_ally</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, const char *race, const char *name, <a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a> map)</td></tr>
+<tr class="memdesc:a026eca524b65cb0af4518e52631ec74c"><td class="mdescLeft">&#160;</td><td class="mdescRight">實體化友方角色  <a href="#a026eca524b65cb0af4518e52631ec74c">更多...</a><br /></td></tr>
+<tr class="separator:a026eca524b65cb0af4518e52631ec74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91892720e7468dc37bd12274ccdc8b9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a91892720e7468dc37bd12274ccdc8b9e">Game_Status_use_enemy</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, const char *race, const char *name, <a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a> map)</td></tr>
+<tr class="memdesc:a91892720e7468dc37bd12274ccdc8b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">實體化敵方角色  <a href="#a91892720e7468dc37bd12274ccdc8b9e">更多...</a><br /></td></tr>
+<tr class="separator:a91892720e7468dc37bd12274ccdc8b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da69adf7847a9dbb152c67636bd596f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a4da69adf7847a9dbb152c67636bd596f">Game_Status_use_neutral</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, const char *race, const char *name, <a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a> map)</td></tr>
+<tr class="memdesc:a4da69adf7847a9dbb152c67636bd596f"><td class="mdescLeft">&#160;</td><td class="mdescRight">實體化中立角色  <a href="#a4da69adf7847a9dbb152c67636bd596f">更多...</a><br /></td></tr>
+<tr class="separator:a4da69adf7847a9dbb152c67636bd596f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c377301047db74912a79807fddc778f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a2c377301047db74912a79807fddc778f">Game_Status_use_player</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self)</td></tr>
+<tr class="memdesc:a2c377301047db74912a79807fddc778f"><td class="mdescLeft">&#160;</td><td class="mdescRight">將玩家角色實體化  <a href="#a2c377301047db74912a79807fddc778f">更多...</a><br /></td></tr>
+<tr class="separator:a2c377301047db74912a79807fddc778f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f70dcd26da19c1b02ab4408f7dd22a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#aa7f70dcd26da19c1b02ab4408f7dd22a">Game_Status_instance_count</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self)</td></tr>
+<tr class="memdesc:aa7f70dcd26da19c1b02ab4408f7dd22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">回傳實體化角色總和  <a href="#aa7f70dcd26da19c1b02ab4408f7dd22a">更多...</a><br /></td></tr>
+<tr class="separator:aa7f70dcd26da19c1b02ab4408f7dd22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4739cd51fa32757d46da73bcf7379965"><td class="memItemLeft" align="right" valign="top"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a4739cd51fa32757d46da73bcf7379965">Game_Status_get_instance_by_index</a> (<a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a> *self, int index)</td></tr>
+<tr class="memdesc:a4739cd51fa32757d46da73bcf7379965"><td class="mdescLeft">&#160;</td><td class="mdescRight">根據編號回傳角色 Access  <a href="#a4739cd51fa32757d46da73bcf7379965">更多...</a><br /></td></tr>
+<tr class="separator:a4739cd51fa32757d46da73bcf7379965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add18de1f3063d5f8a4c782bf3cad118d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160">Message_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#add18de1f3063d5f8a4c782bf3cad118d">Game_Status_action</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> current_character)</td></tr>
+<tr class="memdesc:add18de1f3063d5f8a4c782bf3cad118d"><td class="mdescLeft">&#160;</td><td class="mdescRight">回傳角色行動訊息  <a href="#add18de1f3063d5f8a4c782bf3cad118d">更多...</a><br /></td></tr>
+<tr class="separator:add18de1f3063d5f8a4c782bf3cad118d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd073316f3756a3f3de5375c9e28bb4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#acd073316f3756a3f3de5375c9e28bb4a">Game_Status_attack_enemy_by</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> current, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> target)</td></tr>
+<tr class="memdesc:acd073316f3756a3f3de5375c9e28bb4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">攻擊敵方角色  <a href="#acd073316f3756a3f3de5375c9e28bb4a">更多...</a><br /></td></tr>
+<tr class="separator:acd073316f3756a3f3de5375c9e28bb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a4dd91e8ce817b0d345744e709b5b84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#a4a4dd91e8ce817b0d345744e709b5b84">Game_Status_attack_ally_by</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> current, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> target)</td></tr>
+<tr class="memdesc:a4a4dd91e8ce817b0d345744e709b5b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">攻擊友軍角色  <a href="#a4a4dd91e8ce817b0d345744e709b5b84">更多...</a><br /></td></tr>
+<tr class="separator:a4a4dd91e8ce817b0d345744e709b5b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af656439dae212ebc1324c96b81e533b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#af656439dae212ebc1324c96b81e533b6">Game_Status_attack_neutral_by</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> current, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> target)</td></tr>
+<tr class="memdesc:af656439dae212ebc1324c96b81e533b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">攻擊中立角色  <a href="#af656439dae212ebc1324c96b81e533b6">更多...</a><br /></td></tr>
+<tr class="separator:af656439dae212ebc1324c96b81e533b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04d4ff9a3d6c68547589e87beff8ac5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__status_8h.html#aa04d4ff9a3d6c68547589e87beff8ac5">Game_Status_attack_player_by</a> (<a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> self, <a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> current)</td></tr>
+<tr class="memdesc:aa04d4ff9a3d6c68547589e87beff8ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">攻擊玩家角色  <a href="#aa04d4ff9a3d6c68547589e87beff8ac5">更多...</a><br /></td></tr>
+<tr class="separator:aa04d4ff9a3d6c68547589e87beff8ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">定義巨集說明文件</h2>
+<a class="anchor" id="a4fe932c6483a71ec8f5f6e2bcd6b33aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXPORT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="namespace_8h.html#a49f9cb9b7142571f8bc33f997b1d28a7">GAME</a>(name)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Namespace GAME. </p>
+
+</div>
+</div>
+<h2 class="groupheader">型態定義說明文件</h2>
+<a class="anchor" id="a866770080e28b4dc1b8bed3109351e3f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a> <a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>遊戲狀態結構 </p>
+<p>建議直接使用結構名稱 Game_Status，而不用 struct Game_Status。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a8e597b35df3ccbab40c86d0bf550f46b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a>* <a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>遊戲狀態 </p>
+<p>僅提供 API 供使用者操作本結構。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">函式說明文件</h2>
+<a class="anchor" id="af8c3dcb36d77bccbf60954a293bbb48c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a> Game_Status_create </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>max_config_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>max_instance_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>產生遊戲狀態 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_config_size</td><td>種族最大值 </td></tr>
+    <tr><td class="paramname">max_instance_size</td><td>實體化角色最大值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>遊戲狀態 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f086d7115e91872fdad5b30c51ddea8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game_Status_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>釋放遊戲狀態 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab102d0026c875fab4cfa0802e33999bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a> Game_Status_parse_npc_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="style_8h.html#a831461837be60b6f95510a35a6dafb9e">Style_Pool_Access</a>&#160;</td>
+          <td class="paramname"><em>style_pool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>分析角色設定檔，產生遊戲狀態 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">file_path</td><td>設定檔位置 </td></tr>
+    <tr><td class="paramname">style_pool</td><td>用來儲存圖形的圖形池 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>設定結果 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14e62b12433b4cfd7d2c86242a44c6de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">Found_Result</a> Game_Status_find_character </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> *&#160;</td>
+          <td class="paramname"><em>npc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a>&#160;</td>
+          <td class="paramname"><em>point</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>尋找該位置是否有任何角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">npc</td><td>回傳 NPC 的 Access </td></tr>
+    <tr><td class="paramname">point</td><td>尋找的位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>搜尋結果</dd></dl>
+<p>npc 初始值必須設定為 NULL, 如果有找到，則會被設定為該 NPC 的 Address，該 npc 變數即可在函數外部使用。 </p>
+
+</div>
+</div>
+<a class="anchor" id="add5457e84b6cc0483717a7942a8d894d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game_Status_calculate_graph_position </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a>&#160;</td>
+          <td class="paramname"><em>rectangle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重新計算所有角色在畫面上的顯示位置 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">rectangle</td><td>當前螢幕對應實際位置所產生的的方形</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>根據方形的兩個點重新計算角色位置。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a026eca524b65cb0af4518e52631ec74c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> Game_Status_use_ally </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>race</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>實體化友方角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">race</td><td>角色種族 </td></tr>
+    <tr><td class="paramname">name</td><td>角色名稱 </td></tr>
+    <tr><td class="paramname">map</td><td>使用的地圖 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>實體化的角色</dd></dl>
+<p>本函數會根據種族來實體化角色，並回傳 Access，請使用該 Access 進行後續 設定。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a91892720e7468dc37bd12274ccdc8b9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> Game_Status_use_enemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>race</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>實體化敵方角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">race</td><td>角色種族 </td></tr>
+    <tr><td class="paramname">name</td><td>角色名稱 </td></tr>
+    <tr><td class="paramname">map</td><td>使用的地圖 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>實體化的角色</dd></dl>
+<p>本函數會根據種族來實體化角色，並回傳 Access，請使用該 Access 進行後續 設定。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a4da69adf7847a9dbb152c67636bd596f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> Game_Status_use_neutral </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>race</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>實體化中立角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">race</td><td>角色種族 </td></tr>
+    <tr><td class="paramname">name</td><td>角色名稱 </td></tr>
+    <tr><td class="paramname">map</td><td>使用的地圖 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>實體化的角色</dd></dl>
+<p>本函數會根據種族來實體化角色，並回傳 Access，請使用該 Access 進行後續 設定。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a2c377301047db74912a79807fddc778f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> Game_Status_use_player </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>將玩家角色實體化 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>回傳玩家角色 Access 以供後續設定 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa7f70dcd26da19c1b02ab4408f7dd22a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Game_Status_instance_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>回傳實體化角色總和 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>回傳總和數值 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4739cd51fa32757d46da73bcf7379965"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a> Game_Status_get_instance_by_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a866770080e28b4dc1b8bed3109351e3f">Game_Status</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>根據編號回傳角色 Access </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">index</td><td>要找出來的角色編號 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>回傳角色 Access </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="add18de1f3063d5f8a4c782bf3cad118d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160">Message_Type</a> Game_Status_action </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>current_character</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>回傳角色行動訊息 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">current_character</td><td>當前進行行動的角色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>回傳該角色的行動結果</dd></dl>
+<p>ALLY</p><ol type="1">
+<li>確定屬於 FACTION_ENEMY 的 NPC 數量 count</li>
+<li>根據 count 隨機取出一個 NPC</li>
+<li>根據雙方位置判斷該如何移動(先做測試用路徑搜尋)</li>
+</ol>
+<p>Enemy</p><ol type="1">
+<li>從 FACTION_ALLY、FACTION_NEUTRAL、FACTION_PLAYER 中隨機挑出一個 FACTION</li>
+<li>確定屬於該 FACTION 的 NPC 數量 count</li>
+<li>根據 count 隨機取出一個 NPC</li>
+<li>根據雙方位置判斷該如何移動(先做測試用路徑搜尋)</li>
+</ol>
+<p>NEUTRAL 隨機移動 </p>
+
+</div>
+</div>
+<a class="anchor" id="acd073316f3756a3f3de5375c9e28bb4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a> Game_Status_attack_enemy_by </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>攻擊敵方角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">current</td><td>進行攻擊的角色 </td></tr>
+    <tr><td class="paramname">target</td><td>被攻擊的敵方角色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>目標的生存狀況</dd></dl>
+<p>執行 character.attack 後，NPC 會改變立場，但遊戲狀態內也有記錄角色立場的欄位， 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。 </p>
+
+</div>
+</div>
+<a class="anchor" id="a4a4dd91e8ce817b0d345744e709b5b84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a> Game_Status_attack_ally_by </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>攻擊友軍角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">current</td><td>進行攻擊的角色 </td></tr>
+    <tr><td class="paramname">target</td><td>被攻擊的友軍角色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>目標的生存狀況</dd></dl>
+<p>執行 character.attack 後，NPC 會改變立場，但遊戲狀態內也有記錄角色立場的欄位， 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。 </p>
+
+</div>
+</div>
+<a class="anchor" id="af656439dae212ebc1324c96b81e533b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a> Game_Status_attack_neutral_by </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>攻擊中立角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">current</td><td>進行攻擊的角色 </td></tr>
+    <tr><td class="paramname">target</td><td>被攻擊的中立角色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>目標的生存狀況</dd></dl>
+<p>執行 character.attack 後，NPC 會改變立場，但遊戲狀態內也有記錄角色立場的欄位， 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。 </p>
+
+</div>
+</div>
+<a class="anchor" id="aa04d4ff9a3d6c68547589e87beff8ac5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="status_8h.html#a80aecc9fb5465212d8d153dee04a2427">Is_Alive</a> Game_Status_attack_player_by </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game__status_8h.html#a8e597b35df3ccbab40c86d0bf550f46b">Game_Status_Access</a>&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="character_8h.html#ac35edb4ac057ca0a0546cb2079ff5183">Character_Access</a>&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>攻擊玩家角色 </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>要使用的遊戲狀態 </td></tr>
+    <tr><td class="paramname">current</td><td>進行攻擊的角色 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>傳回值</dt><dd>目標的生存狀況 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2017年10月30日 星期一 22:57:35, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

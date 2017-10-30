@@ -92,43 +92,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <a href="rectangle_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_RECTANGLE_OBJECT</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_RECTANGLE_OBJECT</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="two__point_8h.html">two_point.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="namespace_8h.html">namespace.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">    7</a></span>&#160;<span class="preprocessor">#define EXPORT(name) Rectangle_Type_##name</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="two__point_8h.html">two_point.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">   10</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_two___point.html">Two_Point</a> <a class="code" href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">Rectangle_Type</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">   11</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_two___point.html">Rectangle_Type</a> *<a class="code" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="struct_two___point.html">Rectangle_Type</a> *<a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(create) (void);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(free) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_top_left_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                 <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(down_right_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_down_right_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                   <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#undef EXPORT</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="struct_two___point_html"><div class="ttname"><a href="struct_two___point.html">Two_Point</a></div><div class="ttdoc">Virtual Point System. </div><div class="ttdef"><b>Definition:</b> two_point.h:36</div></div>
-<div class="ttc" id="rectangle_8h_html_a0070e31ecbe3ebf9b358b4e66d8546c5"><div class="ttname"><a href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">Rectangle_Type</a></div><div class="ttdeci">Two_Point Rectangle_Type</div><div class="ttdef"><b>Definition:</b> rectangle.h:10</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">    9</a></span>&#160;<span class="preprocessor">#define EXPORT(name) RECT(name)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">   12</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_two___point.html">Two_Point</a> <a class="code" href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">Rectangle_Type</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">   13</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_two___point.html">Rectangle_Type</a> *<a class="code" href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="struct_two___point.html">Rectangle_Type</a> *<a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(create) (void);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(free) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_top_left_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                 <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(down_right_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_down_right_point) (<a class="code" href="struct_two___point.html">Rectangle_Type</a> * <span class="keyword">self</span>,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                   <a class="code" href="struct_point___type.html">Point_Access</a> point);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#undef EXPORT</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="struct_two___point_html"><div class="ttname"><a href="struct_two___point.html">Two_Point</a></div><div class="ttdoc">Virtual Point System. </div><div class="ttdef"><b>Definition:</b> two_point.h:32</div></div>
+<div class="ttc" id="rectangle_8h_html_a0070e31ecbe3ebf9b358b4e66d8546c5"><div class="ttname"><a href="rectangle_8h.html#a0070e31ecbe3ebf9b358b4e66d8546c5">Rectangle_Type</a></div><div class="ttdeci">Two_Point Rectangle_Type</div><div class="ttdef"><b>Definition:</b> rectangle.h:12</div></div>
+<div class="ttc" id="namespace_8h_html"><div class="ttname"><a href="namespace_8h.html">namespace.h</a></div></div>
 <div class="ttc" id="struct_point___type_html"><div class="ttname"><a href="struct_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> point.h:11</div></div>
-<div class="ttc" id="rectangle_8h_html_a4fe932c6483a71ec8f5f6e2bcd6b33aa"><div class="ttname"><a href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a></div><div class="ttdeci">#define EXPORT(name)</div><div class="ttdef"><b>Definition:</b> rectangle.h:7</div></div>
-<div class="ttc" id="rectangle_8h_html_abb459e8fed480e794c0ed67b6f350221"><div class="ttname"><a href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a></div><div class="ttdeci">Rectangle_Type * Rectangle_Access</div><div class="ttdef"><b>Definition:</b> rectangle.h:11</div></div>
+<div class="ttc" id="rectangle_8h_html_a4fe932c6483a71ec8f5f6e2bcd6b33aa"><div class="ttname"><a href="rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a></div><div class="ttdeci">#define EXPORT(name)</div><div class="ttdef"><b>Definition:</b> rectangle.h:9</div></div>
+<div class="ttc" id="rectangle_8h_html_abb459e8fed480e794c0ed67b6f350221"><div class="ttname"><a href="rectangle_8h.html#abb459e8fed480e794c0ed67b6f350221">Rectangle_Access</a></div><div class="ttdeci">Rectangle_Type * Rectangle_Access</div><div class="ttdef"><b>Definition:</b> rectangle.h:13</div></div>
 <div class="ttc" id="two__point_8h_html"><div class="ttname"><a href="two__point_8h.html">two_point.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月24日 星期二 21:19:01, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年10月30日 星期一 22:57:35, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

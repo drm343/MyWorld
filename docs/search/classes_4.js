@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point_5ftype',['Point_Type',['../struct_point___type.html',1,'']]]
+  ['map_5ftype',['Map_Type',['../struct_map___type.html',1,'']]]
 ];
