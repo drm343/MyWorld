@@ -62,18 +62,21 @@ Camera_Access EXPORT(start) (void);
 void EXPORT(stop) (Camera_Access self);
 
 
-  /** @brief 重設 max_x 的值
+  /** @brief 重設螢幕顯示最大值
    * @param self Camera 物件
-   * @param x 要設定的 max 值
+   * @param other 要設定的數值
   */
-void EXPORT(set_max_x) (Camera_Access self, int x);
+void EXPORT(set_max_by_point) (Camera_Access self, Point_Access other);
 
 
-  /** @brief 重設 max_y 的值
-   * @param self Camera 物件
-   * @param y 要設定的 max 值
-  */
-void EXPORT(set_max_y) (Camera_Access self, int y);
+  /** @brief 重設螢幕顯示最大值
+ * @param self 點座標
+ */
+#define Graphic_Camera_set_max(self, ...)\
+{\
+    Point_Type item = { __VA_ARGS__ };\
+    EXPORT(set_max_by_point)(self, &item);\
+}
 
 
   /** @brief 設定玩家角色

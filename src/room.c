@@ -9,16 +9,11 @@
 void Room_set_random_position(Room * self, Point_Type * map_size,
                               Therehold * setting)
 {
-    Point_Type start = { };
-    start.x = rand() % map_size->x;
-    start.y = rand() % map_size->y;
-
-    Point_Type end = { };
-    end.x = rand() % setting->end->x + setting->start->x;
-    end.y = rand() % setting->end->y + setting->start->y;
-
-    Two_Point_set_start(self->position, &start);
-    Two_Point_set_end(self->position, &end);
+    Two_Point_set_start(self->position,.x = rand() % map_size->x,.y =
+                        rand() % map_size->y);
+    Two_Point_set_end(self->position,.x =
+                      rand() % setting->end->x + setting->start->x,.y =
+                      rand() % setting->end->y + setting->start->y);
     self->diagonal_length = Two_Point_diagonal_length(self->position);
 }
 

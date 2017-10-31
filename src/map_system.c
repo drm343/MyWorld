@@ -35,7 +35,7 @@ void EXPORT(free) (Map_Type * self) {
  * @param y Y 座標位置
  */
 void EXPORT(set_top_left) (Map_Type * self, int32_t x, int32_t y) {
-    SUPER(set_start_x_and_y) (self->base, x, y);
+    SUPER(set_start) (self->base,.x = x,.y = y);
 }
 
 
@@ -55,7 +55,7 @@ Point_Access EXPORT(top_left) (Map_Type * self) {
  * @param y Y 座標位置
  */
 void EXPORT(set_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
-    SUPER(set_end_x_and_y) (self->base, x, y);
+    SUPER(set_end) (self->base,.x = x,.y = y);
 }
 
 
@@ -107,9 +107,7 @@ int32_t EXPORT(bottom_right_y) (Map_Type * self) {
  * @param y 需要移動的 Y 值
  */
 void EXPORT(move_top_left) (Map_Type * self, int32_t x, int32_t y) {
-    Point_Access_change(SUPER(get_start) (self->base));
-    Point_Access_add_x(x);
-    Point_Access_add_y(y);
+    Point_move(SUPER(get_start) (self->base),.x = x,.y = y);
 }
 
 
@@ -119,9 +117,7 @@ void EXPORT(move_top_left) (Map_Type * self, int32_t x, int32_t y) {
  * @param y 需要移動的 Y 值
  */
 void EXPORT(move_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
-    Point_Access_change(SUPER(get_end) (self->base));
-    Point_Access_add_x(x);
-    Point_Access_add_y(y);
+    Point_move(SUPER(get_end) (self->base),.x = x,.y = y);
 }
 
 #undef EXPORT

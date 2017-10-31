@@ -4,7 +4,7 @@
 
 #include <math.h>
 
-#include "point-use_self.h"
+#include "point.h"
 
 
 /** @brief Namespace Two_Point_
@@ -62,7 +62,7 @@ Point_Access EXPORT(get_start) (Two_Point * self);
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_start) (Two_Point * self, Point_Access point);
+void EXPORT(set_start_by_point) (Two_Point * self, Point_Access point);
 
 
 /** @brief 存入 Point 到 start
@@ -72,7 +72,11 @@ void EXPORT(set_start) (Two_Point * self, Point_Access point);
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_start_x_and_y) (Two_Point * self, int32_t x, int32_t y);
+#define Two_Point_set_start(self, ...) \
+{\
+    Point_Type item = { __VA_ARGS__ };\
+    Point_Type_set_by_point(self->start, &item);\
+}
 
 
 /** @brief 取出 Two_Point 的 end Point
@@ -90,7 +94,7 @@ Point_Access EXPORT(get_end) (Two_Point * self);
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_end) (Two_Point * self, Point_Access point);
+void EXPORT(set_end_by_point) (Two_Point * self, Point_Access point);
 
 
 /** @brief 存入 Point 到 end
@@ -100,7 +104,11 @@ void EXPORT(set_end) (Two_Point * self, Point_Access point);
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_end_x_and_y) (Two_Point * self, int32_t x, int32_t y);
+#define Two_Point_set_end(self, ...) \
+{\
+    Point_Type item = { __VA_ARGS__ };\
+    Point_Type_set_by_point(self->end, &item);\
+}
 
 
 /** @brief 求出兩點距離

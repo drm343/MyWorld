@@ -33,7 +33,7 @@ Point_Access EXPORT(top_left_point) (Rectangle_Type * self) {
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
 void EXPORT(set_top_left_point) (Rectangle_Type * self, Point_Access point) {
-    Two_Point_set_start(self, point);
+    Two_Point_set_start_by_point(self, point);
 }
 
 
@@ -53,7 +53,7 @@ Point_Access EXPORT(down_right_point) (Rectangle_Type * self) {
  */
 void EXPORT(set_down_right_point) (Rectangle_Type * self,
                                    Point_Access point) {
-    Two_Point_set_end(self, point);
+    Two_Point_set_end_by_point(self, point);
 }
 
 #undef EXPORT

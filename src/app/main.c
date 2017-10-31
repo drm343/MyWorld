@@ -16,7 +16,7 @@ SDL_Rect position = {
 Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
 Map_Type *map_1;
-Game_Status *character_pool = NULL;
+Game_Status *game_status_pool = NULL;
 struct strings *global_repo = NULL;
 
 
@@ -63,25 +63,25 @@ void draw_view(SDL_Renderer_Access render)
     SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(render);
 
-    Point_Access_change(camera_1->player->Graph_Position);
-    position.x = GRID_LENGTH * Point_Access_x();
-    position.y = GRID_LENGTH * Point_Access_y();
+    Point_Access graph_point = camera_1->player->Graph_Position;
+    position.x = GRID_LENGTH * Point_Type_x(graph_point);
+    position.y = GRID_LENGTH * Point_Type_y(graph_point);
     SDL_RenderCopy(render, camera_1->player->Mark->access, NULL,
                    &(position));
 
-    uint8_t used = GAME(instance_count) (character_pool);
+    uint8_t used = GAME(instance_count) (game_status_pool);
 
     for (int next = 1; next < used; next++) {
         Character_Access npc =
-            GAME(get_instance_by_index) (character_pool, next);
+            GAME(get_instance_by_index) (game_status_pool, next);
 
         if (npc->status->status == IN_USE) {
             if (!Point_Type_eq
                 (npc->Real_Position, camera_1->player->Real_Position)) {
 
-                Point_Access_change(npc->Graph_Position);
-                rect.x = GRID_LENGTH * Point_Access_x();
-                rect.y = GRID_LENGTH * Point_Access_y();
+                graph_point = npc->Graph_Position;
+                rect.x = GRID_LENGTH * Point_Type_x(graph_point);
+                rect.y = GRID_LENGTH * Point_Type_y(graph_point);
                 SDL_RenderCopy(render, npc->Mark->access, NULL, &(rect));
             }
         }
@@ -143,7 +143,7 @@ void submain(const char *root_dir, const char *init_cfg,
     bool running = true;
 
     style_pool = STYLE_P(start) (256);
-    character_pool = GAME(create) (20, 100);
+    game_status_pool = GAME(create) (20, 100);
 
     camera_1 = CAMERA(start) ();
     box_1 = BOX(start) ();
@@ -152,11 +152,11 @@ void submain(const char *root_dir, const char *init_cfg,
     if (TTF_Init() != 0) {
         goto INIT_FAILED;
     }
-    if (character_pool == NULL) {
+    if (game_status_pool == NULL) {
         goto INIT_FAILED;
     }
 
-    Character_Access Player = GAME(use_player) (character_pool);
+    Character_Access Player = GAME(use_player) (game_status_pool);
     STATUS(set_name) (Player->status, "雜魚");
     CAMERA(set_player) (camera_1, Player);
 
@@ -170,14 +170,14 @@ void submain(const char *root_dir, const char *init_cfg,
         goto INIT_FAILED;
     }
 
-    GAME(parse_npc_config) (character_pool, npc_cfg, style_pool);
+    GAME(parse_npc_config) (game_status_pool, npc_cfg, style_pool);
 
     CAMERA(set_map) (camera_1, map_1);
 
-    GAME(use_enemy) (character_pool, "goblin", "g 1", camera_1->map);
-    GAME(use_enemy) (character_pool, "goblin", "g 2", camera_1->map);
-    GAME(use_neutral) (character_pool, "villager", "v 1", camera_1->map);
-    GAME(use_neutral) (character_pool, "villager", "v 2", camera_1->map);
+    GAME(use_enemy) (game_status_pool, "goblin", "g 1", camera_1->map);
+    GAME(use_enemy) (game_status_pool, "goblin", "g 2", camera_1->map);
+    GAME(use_neutral) (game_status_pool, "villager", "v 1", camera_1->map);
+    GAME(use_neutral) (game_status_pool, "villager", "v 2", camera_1->map);
 
     win =
         SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT,
@@ -192,11 +192,11 @@ void submain(const char *root_dir, const char *init_cfg,
     }
 
     Character_Access current = NULL;
-    uint8_t instance_count = GAME(instance_count) (character_pool);
+    uint8_t instance_count = GAME(instance_count) (game_status_pool);
     uint8_t index = instance_count;
     while (running) {
         current = camera_1->player;
-        message = GAME(action) (character_pool, current);
+        message = GAME(action) (game_status_pool, current);
 
         switch (message) {
             case QUIT:
@@ -207,20 +207,21 @@ void submain(const char *root_dir, const char *init_cfg,
             default:
                 index = 1;
                 running =
-                    CAMERA(take) (camera_1, character_pool, box_1, current,
-                                  message);
+                    CAMERA(take) (camera_1, game_status_pool, box_1,
+                                  current, message);
                 break;
         }
 
         for (index; index < instance_count; index++) {
-            current = GAME(get_instance_by_index) (character_pool, index);
+            current =
+                GAME(get_instance_by_index) (game_status_pool, index);
 
             if (current->status->is_alive == false) {
                 continue;
             }
-            message = GAME(action) (character_pool, current);
+            message = GAME(action) (game_status_pool, current);
             running =
-                CAMERA(take) (camera_1, character_pool, box_1, current,
+                CAMERA(take) (camera_1, game_status_pool, box_1, current,
                               message);
         }
         draw_view(render);
@@ -238,7 +239,7 @@ void submain(const char *root_dir, const char *init_cfg,
   DONE:
     BOX(stop) (box_1);
     CAMERA(stop) (camera_1);
-    GAME(free) (character_pool);
+    GAME(free) (game_status_pool);
     STYLE_P(stop) (style_pool);
 }
 

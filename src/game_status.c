@@ -123,12 +123,12 @@ static Character_Access use_npc(Game_Status * self, const char *race,
 
         npc->Real_Position = Point_Type_create();
         npc->Graph_Position = Point_Type_create();
-        Point_Access_change(MAP(bottom_right) (map));
-        CHARA(set_random_position) (npc, Point_Access_x(),
-                                    Point_Access_y());
 
-        Point_Type_set_x(npc->Graph_Position, -1);
-        Point_Type_set_y(npc->Graph_Position, -1);
+        Point_Type *bottom_right = MAP(bottom_right) (map);
+        CHARA(set_random_position) (npc, Point_Type_x(bottom_right),
+                                    Point_Type_y(bottom_right));
+
+        Point_set(npc->Graph_Position,.x = -1,.y = -1);
         Character_List_insert(self->used, npc);
     }
     return npc;
@@ -396,13 +396,11 @@ static void reset_graph_position(Character_List * access,
     Point_Access start_point = Rectangle_Access_top_left_point();
     Point_Access end_point = Rectangle_Access_down_right_point();
 
-    Point_Access_change(start_point);
-    int64_t x = Point_Access_x();
-    int64_t y = Point_Access_y();
+    int64_t x = Point_Type_x(start_point);
+    int64_t y = Point_Type_y(start_point);
 
-    Point_Access_change(end_point);
-    int64_t max_x = Point_Access_x();
-    int64_t max_y = Point_Access_y();
+    int64_t max_x = Point_Type_x(end_point);
+    int64_t max_y = Point_Type_y(end_point);
 
     uint8_t used = access->instance_counter;
     Character_Access npc = NULL;
@@ -417,13 +415,9 @@ static void reset_graph_position(Character_List * access,
 
         if (((counter_x >= 0) || (counter_y >= 0)) &&
             ((counter_x < max_x) && (counter_y < max_y - 1))) {
-            Point_Access_change(npc->Graph_Position);
-            Point_Access_set_x(counter_x);
-            Point_Access_set_y(counter_y);
+            Point_set(npc->Graph_Position,.x = counter_x,.y = counter_y);
         } else {
-            Point_Access_change(npc->Graph_Position);
-            Point_Access_set_x(-1);
-            Point_Access_set_y(-1);
+            Point_set(npc->Graph_Position,.x = -1,.y = -1);
         }
     }
 }

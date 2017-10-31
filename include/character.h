@@ -3,7 +3,7 @@
 
 #include "namespace.h"
 
-#include "point-use_self.h"
+#include "point.h"
 #include "status.h"
 #include "style.h"
 

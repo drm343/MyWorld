@@ -34,7 +34,6 @@ CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
 
 
 AUTO_BUILD_DEP := $(OBJ)/point.o \
-	$(OBJ)/point-use_self.o \
 	$(OBJ)/two_point.o \
 	$(OBJ)/rectangle.o \
 	$(OBJ)/rectangle-use_self.o \
