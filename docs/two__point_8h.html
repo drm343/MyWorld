@@ -95,13 +95,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="point-use__self_8h_source.html">point-use_self.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="point_8h_source.html">point.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 two_point.h的包含相依圖:</div>
 <div class="dyncontent">
 <div class="center"><img src="two__point_8h__incl.png" border="0" usemap="#include_2two__point_8h" alt=""/></div>
 <map name="include_2two__point_8h" id="include_2two__point_8h">
-<area shape="rect" id="node3" href="point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="120,80,235,107"/><area shape="rect" id="node4" href="point_8h.html" title="point.h" alt="" coords="147,155,208,181"/><area shape="rect" id="node8" href="debug_8h.html" title="helper/debug.h" alt="" coords="283,229,389,256"/></map>
+<area shape="rect" id="node3" href="point_8h.html" title="point.h" alt="" coords="147,80,208,107"/><area shape="rect" id="node7" href="debug_8h.html" title="helper/debug.h" alt="" coords="283,155,389,181"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 本圖顯示出哪些檔案直接或間接include本檔 :</div>
@@ -124,6 +124,12 @@ two_point.h的包含相依圖:</div>
 <tr class="memitem:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(name)&#160;&#160;&#160;Two_Point_##name</td></tr>
 <tr class="memdesc:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace Two_Point_.  <a href="#a4fe932c6483a71ec8f5f6e2bcd6b33aa">更多...</a><br /></td></tr>
 <tr class="separator:a4fe932c6483a71ec8f5f6e2bcd6b33aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0410aef281f0c8db349a0822ec88975"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#ad0410aef281f0c8db349a0822ec88975">Two_Point_set_start</a>(self, ...)</td></tr>
+<tr class="memdesc:ad0410aef281f0c8db349a0822ec88975"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 start  <a href="#ad0410aef281f0c8db349a0822ec88975">更多...</a><br /></td></tr>
+<tr class="separator:ad0410aef281f0c8db349a0822ec88975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83d9f83f9182240ce3ff35ce8bd775f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#aa83d9f83f9182240ce3ff35ce8bd775f">Two_Point_set_end</a>(self, ...)</td></tr>
+<tr class="memdesc:aa83d9f83f9182240ce3ff35ce8bd775f"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 end  <a href="#aa83d9f83f9182240ce3ff35ce8bd775f">更多...</a><br /></td></tr>
+<tr class="separator:aa83d9f83f9182240ce3ff35ce8bd775f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 型態定義</h2></td></tr>
@@ -142,21 +148,15 @@ two_point.h的包含相依圖:</div>
 <tr class="memitem:a31a104ee477a9cc11ee10a2fdd0bc02a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#a31a104ee477a9cc11ee10a2fdd0bc02a">Two_Point_get_start</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self)</td></tr>
 <tr class="memdesc:a31a104ee477a9cc11ee10a2fdd0bc02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">取出 <a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 的 start Point  <a href="#a31a104ee477a9cc11ee10a2fdd0bc02a">更多...</a><br /></td></tr>
 <tr class="separator:a31a104ee477a9cc11ee10a2fdd0bc02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35109de9baea834d29692b3db3e6025a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#a35109de9baea834d29692b3db3e6025a">Two_Point_set_start</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self, <a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> point)</td></tr>
-<tr class="memdesc:a35109de9baea834d29692b3db3e6025a"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 start  <a href="#a35109de9baea834d29692b3db3e6025a">更多...</a><br /></td></tr>
-<tr class="separator:a35109de9baea834d29692b3db3e6025a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9798eb8a4dc06a861f2410b7246e45b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#a9798eb8a4dc06a861f2410b7246e45b0">Two_Point_set_start_x_and_y</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self, int32_t x, int32_t y)</td></tr>
-<tr class="memdesc:a9798eb8a4dc06a861f2410b7246e45b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 start  <a href="#a9798eb8a4dc06a861f2410b7246e45b0">更多...</a><br /></td></tr>
-<tr class="separator:a9798eb8a4dc06a861f2410b7246e45b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74fd491d1c79a58efa1e68de62bc54b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#a74fd491d1c79a58efa1e68de62bc54b5">Two_Point_set_start_by_point</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self, <a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> point)</td></tr>
+<tr class="memdesc:a74fd491d1c79a58efa1e68de62bc54b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 start  <a href="#a74fd491d1c79a58efa1e68de62bc54b5">更多...</a><br /></td></tr>
+<tr class="separator:a74fd491d1c79a58efa1e68de62bc54b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4bed5a3468477c9b3438af72c1b922e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#af4bed5a3468477c9b3438af72c1b922e">Two_Point_get_end</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self)</td></tr>
 <tr class="memdesc:af4bed5a3468477c9b3438af72c1b922e"><td class="mdescLeft">&#160;</td><td class="mdescRight">取出 <a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 的 end Point  <a href="#af4bed5a3468477c9b3438af72c1b922e">更多...</a><br /></td></tr>
 <tr class="separator:af4bed5a3468477c9b3438af72c1b922e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a404db338391c1d51aa324256747029b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#a404db338391c1d51aa324256747029b9">Two_Point_set_end</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self, <a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> point)</td></tr>
-<tr class="memdesc:a404db338391c1d51aa324256747029b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 end  <a href="#a404db338391c1d51aa324256747029b9">更多...</a><br /></td></tr>
-<tr class="separator:a404db338391c1d51aa324256747029b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0ffd01cf276320301f2a691dfb7c58d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#ab0ffd01cf276320301f2a691dfb7c58d">Two_Point_set_end_x_and_y</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self, int32_t x, int32_t y)</td></tr>
-<tr class="memdesc:ab0ffd01cf276320301f2a691dfb7c58d"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 end  <a href="#ab0ffd01cf276320301f2a691dfb7c58d">更多...</a><br /></td></tr>
-<tr class="separator:ab0ffd01cf276320301f2a691dfb7c58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429cc07a05ffd0698d320bd1c87cbaba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#a429cc07a05ffd0698d320bd1c87cbaba">Two_Point_set_end_by_point</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self, <a class="el" href="point_8h.html#a2e21dd3f36bfcac17204d0ffb51b3f03">Point_Access</a> point)</td></tr>
+<tr class="memdesc:a429cc07a05ffd0698d320bd1c87cbaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">存入 Point 到 end  <a href="#a429cc07a05ffd0698d320bd1c87cbaba">更多...</a><br /></td></tr>
+<tr class="separator:a429cc07a05ffd0698d320bd1c87cbaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc41028c2f65e4da74d89107cf3f46be"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="two__point_8h.html#acc41028c2f65e4da74d89107cf3f46be">Two_Point_diagonal_length</a> (<a class="el" href="struct_two___point.html">Two_Point</a> *self)</td></tr>
 <tr class="memdesc:acc41028c2f65e4da74d89107cf3f46be"><td class="mdescLeft">&#160;</td><td class="mdescRight">求出兩點距離  <a href="#acc41028c2f65e4da74d89107cf3f46be">更多...</a><br /></td></tr>
 <tr class="separator:acc41028c2f65e4da74d89107cf3f46be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +181,90 @@ two_point.h的包含相依圖:</div>
 <p>例如 create 必須寫成 Two_Point_create，如果外部程式要簡化呼叫， 可以在程式中自行定義新的 macro，例如下面範例。</p>
 <p>#define PKG(name) Two_Point_##name<br />
  <a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> *self = PKG(create)(); </p>
+
+</div>
+</div>
+<a class="anchor" id="ad0410aef281f0c8db349a0822ec88975"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Two_Point_set_start</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">self, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>巨集內容:</b><div class="fragment"><div class="line">{\</div>
+<div class="line">    Point_Type item = { __VA_ARGS__ };<a class="code" href="point_8h.html#acaf051687cff8771b2fa1dfbc87582a9">\</a></div>
+<div class="line"><a class="code" href="point_8h.html#acaf051687cff8771b2fa1dfbc87582a9">    Point_Type_set_by_point</a>(self-&gt;start, &amp;item);\</div>
+<div class="line">}</div>
+<div class="ttc" id="point_8h_html_acaf051687cff8771b2fa1dfbc87582a9"><div class="ttname"><a href="point_8h.html#acaf051687cff8771b2fa1dfbc87582a9">Point_Type_set_by_point</a></div><div class="ttdeci">void Point_Type_set_by_point(Point_Type *self, Point_Type *other)</div><div class="ttdoc">重設點座標 </div></div>
+</div><!-- fragment -->
+<p>存入 Point 到 start </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td><a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 物件的 Access </td></tr>
+    <tr><td class="paramname">x</td><td>X 座標位置 </td></tr>
+    <tr><td class="paramname">y</td><td>Y 座標位置</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。 </p>
+
+</div>
+</div>
+<a class="anchor" id="aa83d9f83f9182240ce3ff35ce8bd775f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Two_Point_set_end</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">self, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>巨集內容:</b><div class="fragment"><div class="line">{\</div>
+<div class="line">    Point_Type item = { __VA_ARGS__ };<a class="code" href="point_8h.html#acaf051687cff8771b2fa1dfbc87582a9">\</a></div>
+<div class="line"><a class="code" href="point_8h.html#acaf051687cff8771b2fa1dfbc87582a9">    Point_Type_set_by_point</a>(self-&gt;end, &amp;item);\</div>
+<div class="line">}</div>
+<div class="ttc" id="point_8h_html_acaf051687cff8771b2fa1dfbc87582a9"><div class="ttname"><a href="point_8h.html#acaf051687cff8771b2fa1dfbc87582a9">Point_Type_set_by_point</a></div><div class="ttdeci">void Point_Type_set_by_point(Point_Type *self, Point_Type *other)</div><div class="ttdoc">重設點座標 </div></div>
+</div><!-- fragment -->
+<p>存入 Point 到 end </p>
+<dl class="params"><dt>參數</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td><a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 物件的 Access </td></tr>
+    <tr><td class="paramname">x</td><td>X 座標位置 </td></tr>
+    <tr><td class="paramname">y</td><td>Y 座標位置</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。 </p>
 
 </div>
 </div>
@@ -271,12 +355,12 @@ two_point.h的包含相依圖:</div>
 
 </div>
 </div>
-<a class="anchor" id="a35109de9baea834d29692b3db3e6025a"></a>
+<a class="anchor" id="a74fd491d1c79a58efa1e68de62bc54b5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Two_Point_set_start </td>
+          <td class="memname">void Two_Point_set_start_by_point </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_two___point.html">Two_Point</a> *&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -300,49 +384,6 @@ two_point.h的包含相依圖:</div>
   <table class="params">
     <tr><td class="paramname">self</td><td><a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 物件的 Access </td></tr>
     <tr><td class="paramname">point</td><td>Point 物件的 Access</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。 </p>
-
-</div>
-</div>
-<a class="anchor" id="a9798eb8a4dc06a861f2410b7246e45b0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Two_Point_set_start_x_and_y </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_two___point.html">Two_Point</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>存入 Point 到 start </p>
-<dl class="params"><dt>參數</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">self</td><td><a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 物件的 Access </td></tr>
-    <tr><td class="paramname">x</td><td>X 座標位置 </td></tr>
-    <tr><td class="paramname">y</td><td>Y 座標位置</td></tr>
   </table>
   </dd>
 </dl>
@@ -376,12 +417,12 @@ two_point.h的包含相依圖:</div>
 
 </div>
 </div>
-<a class="anchor" id="a404db338391c1d51aa324256747029b9"></a>
+<a class="anchor" id="a429cc07a05ffd0698d320bd1c87cbaba"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Two_Point_set_end </td>
+          <td class="memname">void Two_Point_set_end_by_point </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_two___point.html">Two_Point</a> *&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -405,49 +446,6 @@ two_point.h的包含相依圖:</div>
   <table class="params">
     <tr><td class="paramname">self</td><td><a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 物件的 Access </td></tr>
     <tr><td class="paramname">point</td><td>Point 物件的 Access</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。 </p>
-
-</div>
-</div>
-<a class="anchor" id="ab0ffd01cf276320301f2a691dfb7c58d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Two_Point_set_end_x_and_y </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_two___point.html">Two_Point</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>存入 Point 到 end </p>
-<dl class="params"><dt>參數</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">self</td><td><a class="el" href="struct_two___point.html" title="Virtual Point System. ">Two_Point</a> 物件的 Access </td></tr>
-    <tr><td class="paramname">x</td><td>X 座標位置 </td></tr>
-    <tr><td class="paramname">y</td><td>Y 座標位置</td></tr>
   </table>
   </dd>
 </dl>
@@ -483,7 +481,7 @@ two_point.h的包含相依圖:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年10月30日 星期一 23:19:25, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2017年11月1日 星期三 02:26:17, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

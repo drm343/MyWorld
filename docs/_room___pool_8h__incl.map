@@ -1,7 +1,6 @@
 <map id="include/container/Room_Pool.h" name="include/container/Room_Pool.h">
-<area shape="rect" id="node4" href="$room_8h.html" title="room.h" alt="" coords="245,95,308,121"/>
-<area shape="rect" id="node5" href="$two__point_8h.html" title="two_point.h" alt="" coords="200,169,289,196"/>
-<area shape="rect" id="node7" href="$point-use__self_8h.html" title="point&#45;use_self.h" alt="" coords="87,244,202,271"/>
-<area shape="rect" id="node8" href="$point_8h.html" title="point.h" alt="" coords="118,319,179,345"/>
-<area shape="rect" id="node10" href="$debug_8h.html" title="helper/debug.h" alt="" coords="95,393,202,420"/>
+<area shape="rect" id="node4" href="$room_8h.html" title="room.h" alt="" coords="219,95,281,121"/>
+<area shape="rect" id="node5" href="$two__point_8h.html" title="two_point.h" alt="" coords="173,169,263,196"/>
+<area shape="rect" id="node7" href="$point_8h.html" title="point.h" alt="" coords="107,244,169,271"/>
+<area shape="rect" id="node9" href="$debug_8h.html" title="helper/debug.h" alt="" coords="183,319,290,345"/>
 </map>
