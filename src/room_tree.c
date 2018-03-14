@@ -44,7 +44,7 @@ Room_Tree_Result *Room_Tree_insert(Room_Tree * self, Room * item)
         return result;
     }
 
-  next:
+ next:
     if (root == NULL) {
         current->parent = parent;
 

@@ -10,7 +10,6 @@ static bool is_not_null(void)
     return false;
 }
 
-
 /** @brief 替換程式內部 Rectangle_Type 物件
  * @param this 需要使用的新物件
  * @return 回傳原物件的 Access

@@ -9,11 +9,9 @@
 #include "base/type.h"
 #include "message_base.h"
 
-
 /** @brief Namespace STATUS
  */
 #define EXPORT(name) STATUS(name)
-
 
 /** @brief 角色生存狀態
  *
@@ -23,7 +21,6 @@ typedef enum {
     DEAD,
     ALIVE
 } Is_Alive;
-
 
 /** @brief 角色陣營
  *
@@ -36,7 +33,6 @@ typedef enum {
     FACTION_NEUTRAL
 } Faction_Type;
 
-
 /** @brief 與玩家角色的關係
  *
  * 非玩家角色透過這個 type 來設定(預計)
@@ -47,19 +43,17 @@ typedef enum {
     RELATION_NEUTRAL = FACTION_NEUTRAL
 } Relation_Type;
 
-
 /** @brief 角色狀態結構
  */
 typedef struct Status {
-    const char *name; /**< 角色名稱 */
-    Is_Alive is_alive; /**< 角色是否還存活，可以依靠此資訊取代 crossable */
-    Use_Type status; /**< 是否使用中，可以依靠 Character_Pool 來分辨，後續會移除 */
+    const char *name;           /**< 角色名稱 */
+    Is_Alive is_alive;          /**< 角色是否還存活，可以依靠此資訊取代 crossable */
+    Use_Type status;            /**< 是否使用中，可以依靠 Character_Pool 來分辨，後續會移除 */
 
-    const char *race; /**< 角色種族 */
-    Faction_Type faction; /**< 角色跟玩家的關係 */
-    Natural damage; /**< 目前受到的傷害 */
+    const char *race;           /**< 角色種族 */
+    Faction_Type faction;       /**< 角色跟玩家的關係 */
+    Natural damage;             /**< 目前受到的傷害 */
 } Status;
-
 
 /** @brief 角色狀態物件
  *
@@ -67,9 +61,8 @@ typedef struct Status {
  */
 typedef Status *Status_Access;
 
-
-// -----------------------------------
-// Init and free
+//-----------------------------------
+//Init and free
 // -----------------------------------
 
 /** @brief 初始化角色狀態
@@ -77,14 +70,12 @@ typedef Status *Status_Access;
  */
 void EXPORT(init) (Status_Access self);
 
-
 /** @brief 釋放角色狀態
  * @param self 要釋放的角色狀態
  *
  * 並不會直接釋放 self 本身的 Access，這部份通常透過狀態池管理。
  */
 void EXPORT(free) (Status_Access self);
-
 
 /** @brief 複製角色狀態
  * @param self 空白的角色狀態
@@ -97,9 +88,8 @@ void EXPORT(free) (Status_Access self);
  */
 void EXPORT(copy) (Status_Access self, Status_Access from);
 
-
-// -----------------------------------------
-// Debug
+//-----------------------------------------
+//Debug
 // -----------------------------------------
 
 #ifdef DEBUG
@@ -109,9 +99,8 @@ void EXPORT(copy) (Status_Access self, Status_Access from);
 void EXPORT(print_status) (Status_Access self);
 #endif
 
-
-// -----------------------------------------
-// GET or SET BASE VALUE
+//-----------------------------------------
+//GET or SET BASE VALUE
 // -----------------------------------------
 
 /** @brief 設定角色名稱
@@ -120,13 +109,11 @@ void EXPORT(print_status) (Status_Access self);
  */
 void EXPORT(set_name) (Status_Access self, const char *name);
 
-
 /** @brief 設定角色種族
  * @param self 要設定的角色狀態
  * @param race 角色種族
  */
 void EXPORT(set_race) (Status_Access self, const char *race);
-
 
 /** @brief 確認角色是否存活
  * @param self 要顯示的角色狀態
@@ -134,9 +121,8 @@ void EXPORT(set_race) (Status_Access self, const char *race);
  */
 Is_Alive EXPORT(is_alive) (Status_Access self);
 
-
-// -----------------------------------------
-// Action
+//-----------------------------------------
+//Action
 // -----------------------------------------
 
 /** @brief 攻擊其他角色，修改對應狀態
@@ -147,9 +133,8 @@ Is_Alive EXPORT(is_alive) (Status_Access self);
  */
 Is_Alive EXPORT(attack) (Status_Access from, Status_Access to);
 
-
-// -----------------------------------------
-// RELATION
+//-----------------------------------------
+//RELATION
 // -----------------------------------------
 
 /** @brief 角色成為盟友
@@ -157,24 +142,20 @@ Is_Alive EXPORT(attack) (Status_Access from, Status_Access to);
  */
 void EXPORT(set_ally) (Status_Access self);
 
-
 /** @brief 角色成為敵人
  * @param self 轉換陣營的角色狀態
  */
 void EXPORT(set_enemy) (Status_Access self);
-
 
 /** @brief 角色成為中立方
  * @param self 轉換陣營的角色狀態
  */
 void EXPORT(set_neutral) (Status_Access self);
 
-
 /** @brief 隨機給予角色一個陣營
  * @param self 目標角色狀態
  */
 void EXPORT(set_random_relation) (Status_Access self);
-
 
 /** @brief 取得角色陣營
  * @param self 目標角色狀態
@@ -188,13 +169,11 @@ Relation_Type: Status_get_relation_origin, \
 char *: Status_get_relation_string, \
 default: Status_get_relation_origin)(self)
 
-
 /** @brief 取得角色陣營
  * @param self 目標角色狀態
  * @return 回傳角色陣營
  */
 Relation_Type EXPORT(get_relation_origin) (Status_Access self);
-
 
 /** @brief 取得角色陣營
  * @param self 目標角色狀態

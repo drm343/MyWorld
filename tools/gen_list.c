@@ -89,7 +89,7 @@ void %s_copy_all(%s *from, %s *to);\n\
       struct_name, name, name,
       name, name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -108,7 +108,7 @@ void gen_function_include(void) {
   snprintf(result, counter + 1, format,
       include_header_file_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -137,7 +137,7 @@ void gen_function_start(void) {
       name, name,
       struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -154,7 +154,7 @@ void %s_stop(%s *access) {\n\
     snprintf(result, counter + 1, format,
         name, name);
 
-    fprintf(file, result);
+    fprintf(file, "%s", result);
     free(result);
 }
 
@@ -222,7 +222,7 @@ void %s_gc(%s *access) {\n\
       struct_name, struct_name,
       struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -277,7 +277,7 @@ uint8_t %s_insert(%s *access, %s *item) {\n\
       name,
       struct_name, struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -331,7 +331,7 @@ void %s_remove(%s *access, %s *item) {\n\
       name, name, struct_name,
       struct_name, struct_name, struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -356,7 +356,7 @@ void gen_function_get_by_index(void) {
       struct_name, name, name,
       struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -383,7 +383,7 @@ void %s_copy_all(%s *from, %s *to) {\n\
       name, name, name,
       struct_name, struct_name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 

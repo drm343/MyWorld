@@ -59,7 +59,7 @@ typedef struct %s {\n\
         name, name, name, name, struct_name, name,
         name, name, name, name);
 
-    fprintf(file, result);
+    fprintf(file, "%s", result);
 }
 
 
@@ -90,7 +90,7 @@ name, name,
 name, name, name, struct_name,
 name, name);
 
-    fprintf(file, result);
+    fprintf(file, "%s", result);
 }
 
 
@@ -115,7 +115,7 @@ void gen_function_include(void) {
     snprintf(result, counter + 1, format,
       include_header_file_name);
 
-    fprintf(file, result);
+    fprintf(file, "%s", result);
 }
 
 
@@ -144,7 +144,7 @@ void gen_function_start(void) {
         name, name,
         name, name);
 
-    fprintf(file, result);
+    fprintf(file, "%s", result);
 }
 
 
@@ -163,7 +163,7 @@ void %s_stop(%s *self)\n\
     snprintf(result, counter + 1, format,
         name, name);
 
-    fprintf(file, result);
+    fprintf(file, "%s", result);
     free(result);
 }
 
@@ -229,7 +229,7 @@ void gen_function_insert(void) {
         name, name, name,
         struct_name);
 
-   fprintf(file, result);
+   fprintf(file, "%s", result);
 }
 
 

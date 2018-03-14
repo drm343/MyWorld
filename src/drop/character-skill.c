@@ -1,7 +1,7 @@
 #include "character-skill.h"
 
 // ------------------------------------
-// Skill API
+//Skill API
 // ------------------------------------
 static void set_skill_name(Skill_Access access, char *name)
 {
@@ -18,9 +18,8 @@ static void remove_skill(Skill_Access access)
     access->status = UNUSE;
 }
 
-
-// ------------------------------------
-// Pool API
+//------------------------------------
+//Pool API
 // ------------------------------------
 static Skill_Pool_Access pool_start(uint8_t size)
 {
@@ -70,15 +69,14 @@ static bool pool_find(Skill_Pool_Access access, Status_Access owner,
     return false;
 }
 
-// ------------------------------------
-// Expose API
+//------------------------------------
+//Expose API
 // ------------------------------------
 Skill_API skill = {
     .set_name = set_skill_name,
     .set_efficacy = set_skill_efficacy,
     .remove = remove_skill
 };
-
 
 Skill_Pool_API skill_pool = {
     .start = pool_start,

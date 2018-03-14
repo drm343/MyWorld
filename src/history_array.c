@@ -69,8 +69,7 @@ uint8_t History_Array_last(History_Array * self)
 
 bool History_Array_previous(History_Array * self, uint8_t * previous)
 {
-    uint8_t counter =
-        (*previous == 0) ? self->max_size - 1 : *previous - 1;
+    uint8_t counter = (*previous == 0) ? self->max_size - 1 : *previous - 1;
     uint8_t end_value =
         (self->start == 0) ? self->max_size - 1 : self->start - 1;
 

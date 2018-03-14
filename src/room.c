@@ -1,13 +1,13 @@
 #include "room.h"
 
-
 /** @brief 設定隨機初始位置
  * @param self 要設定的房間
  * @param map_size 地圖的大小
  * @param setting 房間閥值
  */
-void Room_set_random_position(Room * self, Point_Type * map_size,
-                              Therehold * setting)
+void
+Room_set_random_position(Room * self, Point_Type * map_size,
+                         Therehold * setting)
 {
     Two_Point_set_start(self->position,.x = rand() % map_size->x,.y =
                         rand() % map_size->y);
@@ -16,7 +16,6 @@ void Room_set_random_position(Room * self, Point_Type * map_size,
                       rand() % setting->end->y + setting->start->y);
     self->diagonal_length = Two_Point_diagonal_length(self->position);
 }
-
 
 /** @brief 比較兩個房間，確認哪個房間在左邊
  * @param self 自己的房間

@@ -1,6 +1,5 @@
 #include "rectangle.h"
 
-
 #define EXPORT(name) RECT(name)
 
 /** @brief 建立新的 Rectangle_Type 物件
@@ -25,7 +24,6 @@ Point_Access EXPORT(top_left_point) (Rectangle_Type * self) {
     return Two_Point_get_start(self);
 }
 
-
 /** @brief 存入 Rectangle 左上角的 Point_Type 物件
  * @param self Rectangle_Type 物件的 Access
  * @param point Point_Type 物件的 Access
@@ -35,7 +33,6 @@ Point_Access EXPORT(top_left_point) (Rectangle_Type * self) {
 void EXPORT(set_top_left_point) (Rectangle_Type * self, Point_Access point) {
     Two_Point_set_start_by_point(self, point);
 }
-
 
 /** @brief 取出 Rectangle 右下角的 Point_Type 物件
  * @param self Rectangle_Type 物件的 Access
@@ -51,8 +48,7 @@ Point_Access EXPORT(down_right_point) (Rectangle_Type * self) {
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_down_right_point) (Rectangle_Type * self,
-                                   Point_Access point) {
+void EXPORT(set_down_right_point) (Rectangle_Type * self, Point_Access point) {
     Two_Point_set_end_by_point(self, point);
 }
 

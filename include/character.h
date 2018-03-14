@@ -7,29 +7,25 @@
 #include "status.h"
 #include "style.h"
 
-
 /** @brief Namespace STATUS
  */
 #define EXPORT(name) CHARA(name)
 
-
 /** @brief 角色結構
  */
 typedef struct Character {
-    Point_Access Real_Position; /**< 角色的真實座標 */
-    Point_Access Graph_Position; /**< 顯示在畫面上的座標 */
+    Point_Access Real_Position;         /**< 角色的真實座標 */
+    Point_Access Graph_Position;        /**< 顯示在畫面上的座標 */
 
-    Status_Access status; /**< 角色狀態 */
-    Style_Access Mark; /**< 角色圖形 */
+    Status_Access status;       /**< 角色狀態 */
+    Style_Access Mark;          /**< 角色圖形 */
 } Character;
 typedef Character *Character_Access;
-
 
 /** @brief 初始化角色
  * @param self 要初始化的角色
  */
 void EXPORT(init) (Character_Access self);
-
 
 /** @brief 釋放角色
  * @param self 要釋放的角色
@@ -37,7 +33,6 @@ void EXPORT(init) (Character_Access self);
  * 並不會直接釋放 self 本身的 Access，這部份通常透過 Status_Pool 管理。
  */
 void EXPORT(free) (Character_Access self);
-
 
 /** @brief 複製角色資料
  * @param self 資料儲存的地方，通常為一個新的空角色
@@ -50,7 +45,6 @@ void EXPORT(free) (Character_Access self);
  */
 void EXPORT(copy) (Character_Access self, Character_Access from);
 
-
 #ifdef DEBUG
 /** @brief 顯示角色部份訊息，Debug 用
  * @param self 要顯示的角色
@@ -58,13 +52,11 @@ void EXPORT(copy) (Character_Access self, Character_Access from);
 void EXPORT(print_status) (Character_Access self);
 #endif
 
-
 /** @brief 設定角色圖形
  * @param self 要設定的角色
  * @param style 角色圖形
  */
 void EXPORT(set_style) (Character_Access self, Style_Access style);
-
 
 /** @brief 設定角色隨機座標
  * @param self 目標角色
@@ -73,7 +65,6 @@ void EXPORT(set_style) (Character_Access self, Style_Access style);
  */
 void EXPORT(set_random_position) (Character_Access self, int64_t max_x,
                                   int64_t max_y);
-
 
 /** @brief 取得角色真實座標
  * @param self 目標角色

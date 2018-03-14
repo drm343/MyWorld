@@ -1,11 +1,9 @@
 #ifndef HEADER_TWO_POINT_OBJECT
 #define HEADER_TWO_POINT_OBJECT
 
-
 #include <math.h>
 
 #include "point.h"
-
 
 /** @brief Namespace Two_Point_
  *
@@ -19,12 +17,11 @@
  */
 #define EXPORT(name) Two_Point_##name
 
-
 /** @brief Virtual Point System
  *
  * 虛擬結構，用來實作其他可以用兩個點表示的系統。
  */
-//typedef struct Two_Point Two_Point;
+// typedef struct Two_Point Two_Point;
 /** @brief Virtual Point System
  *
  * 虛擬結構，用來實作其他可以用兩個點表示的系統。
@@ -34,18 +31,15 @@ typedef struct Two_Point {
     Point_Type *end;
 } Two_Point;
 
-
 /** @brief 建立新的 Two_Point 物件
  * @return 物件的 Access
  */
 Two_Point *EXPORT(create) (void);
 
-
 /** @brief 釋放 Two_Point 物件
  * @param self Two_Point 物件的 Access
  */
 void EXPORT(free) (Two_Point * self);
-
 
 /** @brief 取出 Two_Point 的 start Point
  * @param self Two_Point 物件的 Access
@@ -55,7 +49,6 @@ void EXPORT(free) (Two_Point * self);
  */
 Point_Access EXPORT(get_start) (Two_Point * self);
 
-
 /** @brief 存入 Point 到 start
  * @param self Two_Point 物件的 Access
  * @param point Point 物件的 Access
@@ -63,7 +56,6 @@ Point_Access EXPORT(get_start) (Two_Point * self);
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
 void EXPORT(set_start_by_point) (Two_Point * self, Point_Access point);
-
 
 /** @brief 存入 Point 到 start
  * @param self Two_Point 物件的 Access
@@ -78,7 +70,6 @@ void EXPORT(set_start_by_point) (Two_Point * self, Point_Access point);
     Point_Type_set_by_point(self->start, &item);\
 }
 
-
 /** @brief 取出 Two_Point 的 end Point
  * @param self Two_Point 物件的 Access
  * @return end Point
@@ -87,7 +78,6 @@ void EXPORT(set_start_by_point) (Two_Point * self, Point_Access point);
  */
 Point_Access EXPORT(get_end) (Two_Point * self);
 
-
 /** @brief 存入 Point 到 end
  * @param self Two_Point 物件的 Access
  * @param point Point 物件的 Access
@@ -95,7 +85,6 @@ Point_Access EXPORT(get_end) (Two_Point * self);
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
 void EXPORT(set_end_by_point) (Two_Point * self, Point_Access point);
-
 
 /** @brief 存入 Point 到 end
  * @param self Two_Point 物件的 Access
@@ -109,7 +98,6 @@ void EXPORT(set_end_by_point) (Two_Point * self, Point_Access point);
     Point_Type item = { __VA_ARGS__ };\
     Point_Type_set_by_point(self->end, &item);\
 }
-
 
 /** @brief 求出兩點距離
  * @param self Two_Point 物件的 Access

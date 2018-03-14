@@ -29,7 +29,6 @@ void Character_List_stop(Character_List * access);
 void Character_List_gc(Character_List * access);
 uint8_t Character_List_insert(Character_List * access, Character * item);
 void Character_List_remove(Character_List * access, Character * item);
-Character *Character_List_get_by_index(Character_List * access,
-                                       uint8_t index);
+Character *Character_List_get_by_index(Character_List * access, uint8_t index);
 void Character_List_copy_all(Character_List * from, Character_List * to);
 #endif

@@ -4,7 +4,16 @@ INDENT_NUMBER=4
 CASE_INDENT_NUMBER=4
 
 # Compiler and Standard
-COMPILER=gcc
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S), FreeBSD)
+	INDENT=gindent
+	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I $(CURREND)/intern
+else
+	INDENT=indent
+	INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
+endif
+INDENT_STYLE=-linux
+COMPILER=gcc7
 
  # C11 only allow anonymous struct or union without a tag.
  # Enable ms-extensions for named struct.
@@ -17,7 +26,6 @@ PACKAGE=$(CURREND)/../AppDir
 BIN=$(CURREND)/bin
 OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
-INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
 
 # Compile flags
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
@@ -84,24 +92,19 @@ all: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) doc
 
 
 $(AUTO_BUILD_TOOLS):
-	gcc tools/$(basename $(notdir $@)).c -lconfig -o $@
+	$(COMPILER) $(INCLUDE) tools/$(basename $(notdir $@)).c -L/usr/local/lib -lconfig -o $@
 	$@
 
 
 indent:
-	find $(CURREND)/include -name '*.h' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
-	find $(CURREND)/src -name '*.c' -exec indent -kr -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
+	find $(CURREND)/include -name '*.h' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
+	find $(CURREND)/src -name '*.c' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
 	git checkout $(SRC)/helper_function-strings.c
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 
-
-strings: $(CHECK_DIR)
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) intern/block.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/block.o
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) intern/strings.c $(CFLAGS) $(LFLAGS) -c -o $(OBJ)/strings.o
-	ar cr $(OBJ)/libstrings.a $(OBJ)/block.o $(OBJ)/strings.o
-	ranlib $(OBJ)/libstrings.a
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) examples/check_strings.c $(CFLAGS) -L $(OBJ) -lstrings -o $(BIN)/app
+intern/config.h:
+	cd intern && cmake -G 'Unix Makefiles' -Wno-dev
 
 
 examples:
@@ -123,8 +126,8 @@ $(LIB_MY_WORLD): $(DEP)
 $(AUTO_BUILD_DEP):
 	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
 
-$(LIBSTRINGS):
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(CFLAGS) $(LFLAGS) intern/$(basename $(notdir $@)).c
+$(LIBSTRINGS): intern/config.h $(CHECK_DIR)
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) intern/$(basename $(notdir $@)).c
 
 
 $(OBJ)/character_factory.o: src/factory/character_factory.c $(OBJ)/status_pool.o $(OBJ)/character_pool.o

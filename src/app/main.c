@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 typedef SDL_Window *SDL_Window_Access;
 typedef SDL_Renderer *SDL_Renderer_Access;
 typedef SDL_Event *SDL_Event_Access;
@@ -19,9 +18,7 @@ Map_Type *map_1;
 Game_Status *game_status_pool = NULL;
 struct strings *global_repo = NULL;
 
-
 TTF_Font *USE_FONT = NULL;
-
 
 void draw_message_box(SDL_Renderer_Access render)
 {
@@ -56,7 +53,6 @@ void draw_message_box(SDL_Renderer_Access render)
     }
 }
 
-
 void draw_view(SDL_Renderer_Access render)
 {
     SDL_Rect rect = {.x = 0,.y = 0,.w = GRID_LENGTH,.h = GRID_LENGTH };
@@ -66,8 +62,7 @@ void draw_view(SDL_Renderer_Access render)
     Point_Access graph_point = camera_1->player->Graph_Position;
     position.x = GRID_LENGTH * Point_Type_x(graph_point);
     position.y = GRID_LENGTH * Point_Type_y(graph_point);
-    SDL_RenderCopy(render, camera_1->player->Mark->access, NULL,
-                   &(position));
+    SDL_RenderCopy(render, camera_1->player->Mark->access, NULL, &(position));
 
     uint8_t used = GAME(instance_count) (game_status_pool);
 
@@ -91,7 +86,6 @@ void draw_view(SDL_Renderer_Access render)
     SDL_RenderPresent(render);
 }
 
-
 Execute_Result init_view(SDL_Renderer_Access render)
 {
     SDL_Color white = { 255, 255, 255 };
@@ -103,16 +97,13 @@ Execute_Result init_view(SDL_Renderer_Access render)
 #endif
         return EXECUTE_FAILED;
     }
-
     SDL_Surface *surfaceMessage = NULL;
     uint8_t counter = 0;
     Style_Access result = STYLE_P(next) (style_pool, &counter);
 
     while (result != NULL) {
-        surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT,
-                                              result->mark, white);
-        result->access =
-            SDL_CreateTextureFromSurface(render, surfaceMessage);
+        surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT, result->mark, white);
+        result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
 
         SDL_FreeSurface(surfaceMessage);
 
@@ -127,9 +118,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
     return EXECUTE_SUCCESS;
 }
 
-
-void submain(const char *root_dir, const char *init_cfg,
-             const char *npc_cfg)
+void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
 {
     camera_1->player;
     Message_Type message = DO_NOTHING;
@@ -155,7 +144,6 @@ void submain(const char *root_dir, const char *init_cfg,
     if (game_status_pool == NULL) {
         goto INIT_FAILED;
     }
-
     Character_Access Player = GAME(use_player) (game_status_pool);
     STATUS(set_name) (Player->status, "雜魚");
     CAMERA(set_player) (camera_1, Player);
@@ -169,7 +157,6 @@ void submain(const char *root_dir, const char *init_cfg,
 
         goto INIT_FAILED;
     }
-
     GAME(parse_npc_config) (game_status_pool, npc_cfg, style_pool);
 
     CAMERA(set_map) (camera_1, map_1);
@@ -179,9 +166,7 @@ void submain(const char *root_dir, const char *init_cfg,
     GAME(use_neutral) (game_status_pool, "villager", "v 1", camera_1->map);
     GAME(use_neutral) (game_status_pool, "villager", "v 2", camera_1->map);
 
-    win =
-        SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT,
-                         SDL_WINDOW_OPENGL);
+    win = SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
     render =
         SDL_CreateRenderer(win, -1,
                            SDL_RENDERER_ACCELERATED |
@@ -190,7 +175,6 @@ void submain(const char *root_dir, const char *init_cfg,
     if (init_view(render) != EXECUTE_SUCCESS) {
         goto INIT_FAILED;
     }
-
     Character_Access current = NULL;
     uint8_t instance_count = GAME(instance_count) (game_status_pool);
     uint8_t index = instance_count;
@@ -213,8 +197,7 @@ void submain(const char *root_dir, const char *init_cfg,
         }
 
         for (index; index < instance_count; index++) {
-            current =
-                GAME(get_instance_by_index) (game_status_pool, index);
+            current = GAME(get_instance_by_index) (game_status_pool, index);
 
             if (current->status->is_alive == false) {
                 continue;
@@ -232,24 +215,23 @@ void submain(const char *root_dir, const char *init_cfg,
     SDL_DestroyWindow(win);
     TTF_CloseFont(USE_FONT);
 
-  INIT_FAILED:
+ INIT_FAILED:
     TTF_Quit();
     SDL_Quit();
 
-  DONE:
+ DONE:
     BOX(stop) (box_1);
     CAMERA(stop) (camera_1);
     GAME(free) (game_status_pool);
     STYLE_P(stop) (style_pool);
 }
 
-
 int main(int argc, char *argv[])
 {
     global_repo = strings_new();
     String_Repo_change(global_repo);
 
-    // 求出執行檔所在位置，根據此位置求出 root_dir
+    //求出執行檔�35 � ��位置，根據此位置求出root_dir
     char execution_path[1024];
     char *exist;
     exist = realpath(argv[0], execution_path);
@@ -258,8 +240,7 @@ int main(int argc, char *argv[])
     MAP(set_top_left) (map_1, 0, 0);
     MAP(set_bottom_right) (map_1, 40, 30);
 
-
-    // 建立 config file 的路徑
+    //建立config file � ��路徑
     char *init_cfg_path = "/config/init.cfg";
     char *npc_cfg_path = "/config/npc.cfg";
 

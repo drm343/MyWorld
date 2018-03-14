@@ -1,13 +1,11 @@
 #include "graphic-camera.h"
 
-
 /** @brief Namespace CAMERA
  */
 #define EXPORT(name) CAMERA(name)
 
 static int MAX_X = 0;
 static int MAX_Y = 0;
-
 
 #ifdef DEBUG
 static void print_mode(char *str, Camera_Mode mode)
@@ -33,7 +31,6 @@ static void print_vertical_mode(Camera_Access access)
 }
 #endif
 
-
 static Yes_No occupy_position_by_others(Game_Status_Access access,
                                         Point_Access point,
                                         Character_Access * result)
@@ -45,12 +42,11 @@ static Yes_No occupy_position_by_others(Game_Status_Access access,
     }
 }
 
-
+//--------------------------------------------------
+//Setup camera mode
 // --------------------------------------------------
-// Setup camera mode
-// --------------------------------------------------
-static void camera_horizon_mode_setup(Camera_Access access,
-                                      Point_Access point, int32_t x)
+static void
+camera_horizon_mode_setup(Camera_Access access, Point_Access point, int32_t x)
 {
     Point_Access center = access->center;
 
@@ -78,9 +74,8 @@ static void camera_horizon_mode_setup(Camera_Access access,
     }
 }
 
-
-static void camera_vertical_mode_setup(Camera_Access access,
-                                       Point_Access point, int32_t y)
+static void
+camera_vertical_mode_setup(Camera_Access access, Point_Access point, int32_t y)
 {
     Point_Access center = access->center;
 
@@ -108,9 +103,8 @@ static void camera_vertical_mode_setup(Camera_Access access,
     }
 }
 
-
-// --------------------------------------------------
-// Check move status
+//--------------------------------------------------
+//Check move status
 // --------------------------------------------------
 static Yes_No can_move_horizon(Camera_Access access, Point_Access point)
 {
@@ -130,7 +124,6 @@ static Yes_No can_move_horizon(Camera_Access access, Point_Access point)
     return result;
 }
 
-
 static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
 {
     Point_Access from = access->start;
@@ -148,17 +141,15 @@ static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
     return result;
 }
 
-
-
+//---------------------------------------------------
+//Export API
 // ---------------------------------------------------
-// Export API
-// ---------------------------------------------------
-  /** @brief 建立新的 Camera 物件
-   * @return Camera 物件
-   *
-   * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 EXPORT(set_max_x) 跟 EXPORT(set_max_y)
-   * 來修改。
-  */
+/** @brief 建立新的 Camera 物件
+ * @return Camera 物件
+ *
+ * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 EXPORT(set_max_x) 跟 EXPORT(set_max_y)
+ * 來修改。
+*/
 Camera_Access EXPORT(start) (void) {
     Camera_Access access = calloc(1, sizeof(Camera_Type));
     MAX_X = 25;
@@ -178,10 +169,9 @@ Camera_Access EXPORT(start) (void) {
     return access;
 }
 
-
-  /** @brief 釋放 Camera 物件
-   * @param self 要釋放的角色物件
-  */
+/** @brief 釋放 Camera 物件
+ * @param self 要釋放的角色物件
+*/
 void EXPORT(stop) (Camera_Access self) {
     Point_Type_free(self->start);
     Point_Type_free(self->end);
@@ -189,11 +179,10 @@ void EXPORT(stop) (Camera_Access self) {
     free(self);
 }
 
-
-  /** @brief 重設螢幕顯示最大值
-   * @param self Camera 物件
-   * @param other 要設定的數值
-  */
+/** @brief 重設螢幕顯示最大值
+ * @param self Camera 物件
+ * @param other 要設定的數值
+*/
 void EXPORT(set_max_by_point) (Camera_Access self, Point_Access other) {
     int x = other->x;
     int y = other->y;
@@ -205,13 +194,12 @@ void EXPORT(set_max_by_point) (Camera_Access self, Point_Access other) {
     MAX_Y = y;
 }
 
-
-  /** @brief 設定玩家角色
-   * @param self Camera 物件
-   * @param player 指定的玩家物件
-   *
-   * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
-  */
+/** @brief 設定玩家角色
+ * @param self Camera 物件
+ * @param player 指定的玩家物件
+ *
+ * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
+*/
 void EXPORT(set_player) (Camera_Access self, Character_Access player) {
     Point_Access center = self->center;
     int32_t x = Point_Type_x(center);
@@ -223,38 +211,36 @@ void EXPORT(set_player) (Camera_Access self, Character_Access player) {
     self->player = player;
 }
 
-
-  /** @brief 設定死亡時顯示的圖形
-   * @param self Camera 物件
-   * @param dead 指定的圖形
-  */
+/** @brief 設定死亡時顯示的圖形
+ * @param self Camera 物件
+ * @param dead 指定的圖形
+*/
 void EXPORT(set_dead_style) (Camera_Access self, Style_Access dead) {
     self->dead = dead;
 }
 
-
-  /** @brief 設定地圖物件
-   * @param self Camera 物件
-   * @param map 指定的地圖物件
-  */
+/** @brief 設定地圖物件
+ * @param self Camera 物件
+ * @param map 指定的地圖物件
+*/
 void EXPORT(set_map) (Camera_Access self, Map_Access map) {
     MAP(move_bottom_right) (map, -1, -1);
     self->map = map;
 }
 
-
-  /** @brief 處理訊息並更改角色資料
-   * @param self Camera 物件
-   * @param from_pool 角色池
-   * @param box_access 訊息視窗
-   * @param current 當前發出訊息的角色
-   * @param message 角色發出的訊息
-   * @return 當前必定回傳 true
-  */
-bool EXPORT(take) (Camera_Access self,
-                   Game_Status_Access from_pool,
-                   Message_Box_Access box_access,
-                   Character_Access current, Message_Type message) {
+/** @brief 處理訊息並更改角色資料
+ * @param self Camera 物件
+ * @param from_pool 角色池
+ * @param box_access 訊息視窗
+ * @param current 當前發出訊息的角色
+ * @param message 角色發出的訊息
+ * @return 當前必定回傳 true
+*/
+bool
+EXPORT(take) (Camera_Access self,
+              Game_Status_Access from_pool,
+              Message_Box_Access box_access,
+              Character_Access current, Message_Type message) {
     Character_Access npc = NULL;
     Style_Access dead = self->dead;
 
@@ -291,8 +277,7 @@ bool EXPORT(take) (Camera_Access self,
             break;
     }
 
-    Found_Result result =
-        occupy_position_by_others(from_pool, point, &npc);
+    Found_Result result = occupy_position_by_others(from_pool, point, &npc);
     if (result == NO) {
         int32_t y = Point_Type_y(vector);
         Relation_Type current_relation;
@@ -302,22 +287,18 @@ bool EXPORT(take) (Camera_Access self,
             if (current_relation == FACTION_PLAYER) {
                 camera_vertical_mode_setup(self, point, y);
             }
-
-            Point_move(current->Real_Position,.x =
-                       Point_Type_x(vector),.y = y);
+            Point_move(current->Real_Position,.x = Point_Type_x(vector),.y = y);
         } else if ((Point_Type_x(vector) != 0)
                    && (can_move_horizon(self, point) == YES)) {
             if (current_relation == FACTION_PLAYER) {
-                camera_horizon_mode_setup(self, point,
-                                          Point_Type_x(vector));
+                camera_horizon_mode_setup(self, point, Point_Type_x(vector));
             }
-
             Point_Type_move_by_point(current->Real_Position, vector);
         }
     } else {
         Is_Alive is_alive = ALIVE;
 
-        char *format = "%s(%s) 攻擊 %s(%s),造成 1 點傷害";
+        char *format = "%s(%s) 攻擊 %s(%s) 造成 1 點傷害";
         int counter = snprintf(NULL, 0, format,
                                current->status->name,
                                STATUS(get_relation_string)
@@ -329,8 +310,7 @@ bool EXPORT(take) (Camera_Access self,
         snprintf(attack_message, counter + 1, format,
                  current->status->name,
                  STATUS(get_relation_string) (current->status),
-                 npc->status->name,
-                 STATUS(get_relation_string) (npc->status));
+                 npc->status->name, STATUS(get_relation_string) (npc->status));
         BOX(add_message) (box_access, attack_message);
         Relation_Type npc_relation;
         Status_get_relation(npc->status, npc_relation);
@@ -346,8 +326,7 @@ bool EXPORT(take) (Camera_Access self,
                 is_alive = GAME(attack_enemy_by) (from_pool, current, npc);
                 break;
             case FACTION_NEUTRAL:
-                is_alive =
-                    GAME(attack_neutral_by) (from_pool, current, npc);
+                is_alive = GAME(attack_neutral_by) (from_pool, current, npc);
                 break;
             default:
                 break;
@@ -378,7 +357,7 @@ bool EXPORT(take) (Camera_Access self,
 
     GAME(calculate_graph_position) (from_pool, &rectangle);
 
-  DONE:
+ DONE:
     return true;
 }
 

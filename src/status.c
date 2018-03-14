@@ -1,10 +1,9 @@
 #include "status.h"
 
-
 #define EXPORT(name) STATUS(name)
 
 // -----------------------------------
-// Init and free
+//Init and free
 // -----------------------------------
 
 /** @brief 初始化角色狀態
@@ -17,7 +16,6 @@ void EXPORT(init) (Status_Access self) {
     self->faction = FACTION_NEUTRAL;
 }
 
-
 /** @brief 釋放角色狀態
  * @param self 要釋放的角色狀態
  *
@@ -27,7 +25,6 @@ void EXPORT(free) (Status_Access self) {
     self->status = UNUSE;
     self->faction = FACTION_NEUTRAL;
 }
-
 
 /** @brief 複製角色狀態
  * @param self 空白的角色狀態
@@ -49,9 +46,8 @@ void EXPORT(copy) (Status_Access self, Status_Access from) {
     self->damage = from->damage;
 }
 
-
-// -----------------------------------------
-// Debug
+//-----------------------------------------
+//Debug
 // -----------------------------------------
 
 #ifdef DEBUG
@@ -64,9 +60,8 @@ void EXPORT(print_status) (Status_Access self) {
 }
 #endif
 
-
-// -----------------------------------------
-// GET or SET BASE VALUE
+//-----------------------------------------
+//GET or SET BASE VALUE
 // -----------------------------------------
 
 /** @brief 設定角色名稱
@@ -77,7 +72,6 @@ void EXPORT(set_name) (Status_Access self, const char *name) {
     self->name = name;
 }
 
-
 /** @brief 設定角色種族
  * @param self 要設定的角色狀態
  * @param race 角色種族
@@ -85,7 +79,6 @@ void EXPORT(set_name) (Status_Access self, const char *name) {
 void EXPORT(set_race) (Status_Access self, const char *race) {
     self->race = race;
 }
-
 
 /** @brief 確認角色是否存活
  * @param self 要顯示的角色狀態
@@ -95,9 +88,8 @@ Is_Alive EXPORT(is_alive) (Status_Access self) {
     return self->is_alive;
 }
 
-
-// -----------------------------------------
-// Action
+//-----------------------------------------
+//Action
 // -----------------------------------------
 
 /** @brief 攻擊其他角色，修改對應狀態
@@ -131,9 +123,8 @@ Is_Alive EXPORT(attack) (Status_Access from, Status_Access to) {
     return to->is_alive;
 }
 
-
-// -----------------------------------------
-// RELATION
+//-----------------------------------------
+//RELATION
 // -----------------------------------------
 
 /** @brief 角色成為盟友
@@ -145,7 +136,6 @@ void EXPORT(set_ally) (Status_Access self) {
     }
 }
 
-
 /** @brief 角色成為敵人
  * @param self 轉換陣營的角色狀態
  */
@@ -155,7 +145,6 @@ void EXPORT(set_enemy) (Status_Access self) {
     }
 }
 
-
 /** @brief 角色成為中立方
  * @param self 轉換陣營的角色狀態
  */
@@ -164,7 +153,6 @@ void EXPORT(set_neutral) (Status_Access self) {
         self->faction = RELATION_NEUTRAL;
     }
 }
-
 
 /** @brief 隨機給予角色一個陣營
  * @param self 目標角色狀態
@@ -181,7 +169,6 @@ void EXPORT(set_random_relation) (Status_Access self) {
     }
 }
 
-
 /** @brief 取得角色陣營
  * @param self 目標角色狀態
  * @return 回傳角色陣營
@@ -189,7 +176,6 @@ void EXPORT(set_random_relation) (Status_Access self) {
 Relation_Type EXPORT(get_relation_origin) (Status_Access self) {
     return self->faction;
 }
-
 
 /** @brief 取得角色陣營
  * @param self 目標角色狀態

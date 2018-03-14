@@ -2,7 +2,6 @@
 
 #define EXPORT(name) Two_Point_##name
 
-
 /** @brief 建立新的 Two_Point 物件
  * @return 物件的 Access
  */
@@ -13,7 +12,6 @@ Two_Point *EXPORT(create) (void) {
     return self;
 }
 
-
 /** @brief 釋放 Two_Point 物件
  * @param self Two_Point 物件的 Access
  */
@@ -22,7 +20,6 @@ void EXPORT(free) (Two_Point * self) {
     Point_Type_free(self->end);
     free(self);
 }
-
 
 /** @brief 取出 Two_Point 的 start Point
  * @param self Two_Point 物件的 Access
@@ -34,7 +31,6 @@ Point_Access EXPORT(get_start) (Two_Point * self) {
     return self->start;
 }
 
-
 /** @brief 存入 Point 到 start
  * @param self Two_Point 物件的 Access
  * @param point Point 物件的 Access
@@ -45,7 +41,6 @@ void EXPORT(set_start_by_point) (Two_Point * self, Point_Access point) {
     Point_Type_set_by_point(self->start, point);
 }
 
-
 /** @brief 取出 Two_Point 的 end Point
  * @param self Two_Point 物件的 Access
  * @return end Point
@@ -53,7 +48,6 @@ void EXPORT(set_start_by_point) (Two_Point * self, Point_Access point) {
 Point_Access EXPORT(get_end) (Two_Point * self) {
     return self->end;
 }
-
 
 /** @brief 存入 Point 到 end
  * @param self Two_Point 物件的 Access
@@ -64,7 +58,6 @@ Point_Access EXPORT(get_end) (Two_Point * self) {
 void EXPORT(set_end_by_point) (Two_Point * self, Point_Access point) {
     Point_Type_set_by_point(self->end, point);
 }
-
 
 /** @brief 求出兩點距離
  * @param self Two_Point 物件的 Access

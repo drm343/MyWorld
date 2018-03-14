@@ -63,7 +63,7 @@ bool %s_previous(%s *self, uint8_t *previous);\n\
       name, name, //previous
       struct_name, name, name); //get_item
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -83,7 +83,7 @@ void gen_function_include(void) {
   snprintf(result, counter + 1, format,
       include_header_file_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -110,7 +110,7 @@ void gen_function_start(void) {
       name, name,
       struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -127,7 +127,7 @@ void %s_stop(%s *self) {\n\
   snprintf(result, counter + 1, format,
       name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -157,7 +157,7 @@ void gen_function_insert(void) {
   snprintf(result, counter + 1, format,
       struct_name, name, name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -174,7 +174,7 @@ uint8_t %s_index(%s *self)\n\
   snprintf(result, counter + 1, format,
       name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -207,7 +207,7 @@ bool %s_next(%s *self, uint8_t *next)\n\
   snprintf(result, counter + 1, format,
       name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -225,7 +225,7 @@ uint8_t %s_last(%s  *self)\n\
   snprintf(result, counter + 1, format,
       name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -253,7 +253,7 @@ bool %s_previous(%s *self, uint8_t *previous)\n\
   snprintf(result, counter + 1, format,
       name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -270,7 +270,7 @@ void gen_function_get_item(void) {
   snprintf(result, counter + 1, format,
       struct_name, name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 

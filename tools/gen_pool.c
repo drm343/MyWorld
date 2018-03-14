@@ -60,7 +60,7 @@ void %s_stop(%s *access);\n\
       name, name,
       struct_name, name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -79,7 +79,7 @@ void gen_function_include(void) {
   snprintf(result, counter + 1, format,
       include_header_file_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -121,7 +121,7 @@ void gen_function_start(void) {
       struct_name, struct_name,
       struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -139,7 +139,7 @@ void %s_stop(%s *access) {\n\
   snprintf(result, counter + 1, format,
       name, name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 
@@ -170,7 +170,7 @@ void gen_function_malloc(void) {
       struct_name, name, name,
       struct_name, struct_name);
 
-  fprintf(file, result);
+  fprintf(file, "%s", result);
 }
 
 

@@ -14,51 +14,41 @@
  * 如果外部程式要簡化呼叫，可以使用 namespace 中的 CP，並且簡寫成 CP(create)。
  */
 
-
 /** @brief namespace for Character_Status
 */
 #define CHARA(name) Character_##name
-
 
 /** @brief namespace for Character_Pool
 */
 #define CP(name) Character_Pool_##name
 
-
 /** @brief namespace for Character_Pool_Access
 */
 #define CP_OBJECT(name) Character_Pool_Access_##name
-
 
 /** @brief namespace for Character_Factory
 */
 #define CF(name) Character_Factory_##name
 
-
 /** @brief namespace for May_Type
 */
 #define MAP(name) Map_Type_##name
-
 
 /** @brief namespace for Camera
 */
 #define CAMERA(name) Graphic_Camera_##name
 
-
 /** @brief namespace for Game Status
 */
 #define GAME(name) Game_Status_##name
-
 
 /** @brief namespace for Character_Status
 */
 #define STATUS(name) Status_##name
 
-
 /** @brief namespace for Character_Status
 */
 #define STYLE_P(name) Style_Pool_##name
-
 
 /** @brief namespace for Message_Box
 */
@@ -67,7 +57,6 @@
 /** @brief namespace for Two_Point
  */
 #define T_POINT(name) Two_Point_##name
-
 
 /** @brief namespace for Rectangle_Type
  */

@@ -6,9 +6,7 @@ int HEIGHT = 600;
 const char *FONT_FAMILY = NULL;
 const char *GAME_TITLE = NULL;
 
-
 Style_Pool_Access style_pool = NULL;
-
 
 void setup_window(config_setting_t ** setting)
 {
@@ -27,8 +25,7 @@ void setup_window(config_setting_t ** setting)
     GAME_TITLE = String_Repo_sign_in(tmp);
 }
 
-
-// Setup player and dead mark for now.
+//Setup player and dead mark for now
 void setup_mark(config_setting_t ** setting)
 {
     int total_counter = config_setting_length(*setting);
@@ -48,19 +45,17 @@ void setup_mark(config_setting_t ** setting)
         style_access->mark = String_Repo_sign_in(key);
 
         int is_attackable = 0;
-        config_setting_lookup_bool(style_setting, "attackable",
-                                   &is_attackable);
+        config_setting_lookup_bool(style_setting, "attackable", &is_attackable);
         style_access->attackable = is_attackable;
 
         int is_crossable = 0;
-        config_setting_lookup_bool(style_setting, "crossable",
-                                   &is_crossable);
+        config_setting_lookup_bool(style_setting, "crossable", &is_crossable);
         style_access->crossable = is_crossable;
     }
 }
 
-// Default Execute_Result value is EXECUTE_FAILED.
-// Only run success will change the variable.
+    //Default Execute_Result value is EXECUTE_FAILED.
+        // Only run success will change the variable.
 Execute_Result setup_style(const char *file_path)
 {
     Execute_Result result = EXECUTE_FAILED;
@@ -77,8 +72,6 @@ Execute_Result setup_style(const char *file_path)
 
         goto DONE;
     }
-
-
     /* check and setup window */
     setting = config_lookup(&cfg, "window");
 
@@ -87,7 +80,6 @@ Execute_Result setup_style(const char *file_path)
     } else {
         goto DONE;
     }
-
 
     /* check and setup mark */
     setting = config_lookup(&cfg, "style");
@@ -99,7 +91,7 @@ Execute_Result setup_style(const char *file_path)
     }
 
     result = EXECUTE_SUCCESS;
-  DONE:
+ DONE:
     config_destroy(&cfg);
     return result;;
 }

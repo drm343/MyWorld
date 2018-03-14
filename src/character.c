@@ -1,11 +1,9 @@
 #include "character.h"
 
-
 // -----------------------------------
-// Init and free
+//Init and free
 // -----------------------------------
 #define EXPORT(name) CHARA(name)
-
 
 /** @brief 初始化角色
  * @param self 要初始化的角色
@@ -19,7 +17,6 @@ void EXPORT(init) (Character_Access self) {
     self->Graph_Position = Point_Type_create();
 }
 
-
 /** @brief 釋放角色
  * @param self 要釋放的角色
  *
@@ -30,7 +27,6 @@ void EXPORT(free) (Character_Access self) {
     Point_Type_free(self->Graph_Position);
     STATUS(free) (self->status);
 }
-
 
 /** @brief 複製角色資料
  * @param self 資料儲存的地方，通常為一個新的空角色
@@ -46,7 +42,6 @@ void EXPORT(copy) (Character_Access self, Character_Access from) {
     self->Mark = from->Mark;
 }
 
-
 #ifdef DEBUG
 /** @brief 顯示角色部份訊息，Debug 用
  * @param self 要顯示的角色
@@ -57,9 +52,8 @@ void EXPORT(print_status) (Character_Access self) {
 }
 #endif
 
-
-// -----------------------------------------
-// GET or SET BASE VALUE
+//-----------------------------------------
+//GET or SET BASE VALUE
 // -----------------------------------------
 /** @brief 設定角色圖形物件
  * @param self 要設定的角色
@@ -69,20 +63,19 @@ void EXPORT(set_style) (Character_Access self, Style_Access style) {
     self->Mark = style;
 }
 
-
-// -----------------------------------------
-// POSITION
+//-----------------------------------------
+//POSITION
 // -----------------------------------------
 /** @brief 設定角色隨機座標
  * @param self 目標角色
  * @param max_x 最大 x 隨機值最大
  * @param max_y 最大 y 隨機值最大
  */
-void EXPORT(set_random_position) (Character_Access self,
-                                  int64_t max_x, int64_t max_y) {
+void
+EXPORT(set_random_position) (Character_Access self,
+                             int64_t max_x, int64_t max_y) {
     Point_set(self->Real_Position,.x = rand() % max_x,.y = rand() % max_y);
 }
-
 
 /** @brief 取得角色真實座標
  * @param self 目標角色

@@ -4,13 +4,11 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-
 #define GENERIC_POOL(name, struct_name) typedef struct { \
   struct_name pool; \
   uint8_t max_size; \
   uint8_t current_size; \
 } name
-
 
 #define GENERIC_ARRAY(name, struct_name) typedef struct { \
   struct_name **pool; \
@@ -19,7 +17,6 @@
 } name; \
 \
 typedef name * name##_Access
-
 
 #define GENERIC_ARRAY_FUNCTIONS(name, struct_name) \
 static name##_Access name##_start(uint8_t size) { \

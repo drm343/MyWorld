@@ -1,8 +1,6 @@
 #include "factory/character_factory.h"
 
-
 #define EXPORT(name) CF(name)
-
 
 /** @brief 啟動角色建立工廠
  * @param max_size 最大實例數
@@ -15,7 +13,6 @@ Character_Factory *EXPORT(start) (uint8_t max_size) {
     return self;
 }
 
-
 /** @brief 關閉角色建立工廠
  * @param self 角色建立工廠
  */
@@ -24,7 +21,6 @@ void EXPORT(stop) (Character_Factory * self) {
     Character_Pool_stop(self->character);
     free(self);
 }
-
 
 /** @brief 建立新的空白角色卡
  * @param self 角色建立工廠
@@ -37,6 +33,5 @@ Character_Access EXPORT(malloc) (Character_Factory * self) {
     STATUS(init) (item->status);
     return item;
 }
-
 
 #undef EXPORT
