@@ -9,7 +9,7 @@
  * 用來設定房間右下角 x 跟 y 座標的範圍
  */
 typedef struct Therehold {
-    Two_Point;
+    struct Two_Point;
 } Therehold;
 
 typedef struct Room {

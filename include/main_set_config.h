@@ -45,11 +45,13 @@ void setup_mark(config_setting_t ** setting)
         style_access->mark = String_Repo_sign_in(key);
 
         int is_attackable = 0;
-        config_setting_lookup_bool(style_setting, "attackable", &is_attackable);
+        config_setting_lookup_bool(style_setting, "attackable",
+                                   &is_attackable);
         style_access->attackable = is_attackable;
 
         int is_crossable = 0;
-        config_setting_lookup_bool(style_setting, "crossable", &is_crossable);
+        config_setting_lookup_bool(style_setting, "crossable",
+                                   &is_crossable);
         style_access->crossable = is_crossable;
     }
 }
@@ -91,7 +93,7 @@ Execute_Result setup_style(const char *file_path)
     }
 
     result = EXECUTE_SUCCESS;
- DONE:
+  DONE:
     config_destroy(&cfg);
     return result;;
 }

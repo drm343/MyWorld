@@ -12,15 +12,15 @@ else
 	INDENT=indent
 	INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
 endif
-INDENT_STYLE=-linux
+INDENT_STYLE=-kr
 COMPILER=gcc7
+#COMPILER=clang50
 
- # C11 only allow anonymous struct or union without a tag.
- # Enable ms-extensions for named struct.
-C11=-std=gnu11 -fms-extensions
-STD=$(C11)
+# C11 only allow anonymous struct or union without a tag.
+# Enable ms-extensions for named struct.
+STD=-std=c11 -fms-extensions
 
- # Source and Include dir defined.
+# Source and Include dir defined.
 CURREND=`pwd`
 PACKAGE=$(CURREND)/../AppDir
 BIN=$(CURREND)/bin
@@ -28,7 +28,11 @@ OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
 
 # Compile flags
-CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
+ifeq ($(COMPILER), clang50)
+	CFLAGS=-Wl,-lSDL2 -Wl,-lSDL2_ttf -Wl,-L/usr/lib64 -Wl,-lz -Wl,-lconfig
+else
+	CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
+endif
 LFLAGS=-Werror -L$(OBJ) -lm -lmy_world
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
@@ -79,8 +83,8 @@ TOOLS := $(AUTO_BUILD_TOOLS)
 
 
 .PHONY: clean doc examples strings app test indent
-app: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) indent
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
+app: $(CHECK_DIR) indent $(TOOLS) $(LIB_MY_WORLD)
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.m $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@echo "build app done"
 
 

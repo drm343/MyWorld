@@ -132,7 +132,7 @@ Is_Alive EXPORT(attack) (Status_Access from, Status_Access to) {
  */
 void EXPORT(set_ally) (Status_Access self) {
     if (self->faction != FACTION_PLAYER) {
-        self->faction = RELATION_ALLY;
+        self->faction = FACTION_ALLY;
     }
 }
 
@@ -141,7 +141,7 @@ void EXPORT(set_ally) (Status_Access self) {
  */
 void EXPORT(set_enemy) (Status_Access self) {
     if (self->faction != FACTION_PLAYER) {
-        self->faction = RELATION_ENEMY;
+        self->faction = FACTION_ENEMY;
     }
 }
 
@@ -150,7 +150,7 @@ void EXPORT(set_enemy) (Status_Access self) {
  */
 void EXPORT(set_neutral) (Status_Access self) {
     if (self->faction != FACTION_PLAYER) {
-        self->faction = RELATION_NEUTRAL;
+        self->faction = FACTION_NEUTRAL;
     }
 }
 
@@ -173,7 +173,7 @@ void EXPORT(set_random_relation) (Status_Access self) {
  * @param self 目標角色狀態
  * @return 回傳角色陣營
  */
-Relation_Type EXPORT(get_relation_origin) (Status_Access self) {
+Faction_Type EXPORT(get_relation_origin) (Status_Access self) {
     return self->faction;
 }
 

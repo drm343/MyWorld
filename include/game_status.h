@@ -50,7 +50,8 @@ void EXPORT(free) (Game_Status_Access self);
 */
 Execute_Result
 EXPORT(parse_npc_config) (Game_Status_Access self,
-                          const char *file_path, Style_Pool_Access style_pool);
+                          const char *file_path,
+                          Style_Pool_Access style_pool);
 
 /** @brief 尋找該位置是否有任何角色
  * @param self 要使用的遊戲狀態
@@ -134,7 +135,8 @@ uint8_t EXPORT(instance_count) (Game_Status_Access self);
  * @param index 要找出來的角色編號
  * @return 回傳角色 Access
  */
-Character_Access EXPORT(get_instance_by_index) (Game_Status * self, int index);
+Character_Access EXPORT(get_instance_by_index) (Game_Status * self,
+                                                int index);
 
 /** @brief 回傳角色行動訊息
  * @param self 要使用的遊戲狀態
@@ -156,7 +158,8 @@ Character_Access EXPORT(get_instance_by_index) (Game_Status * self, int index);
  *  隨機移動
 */
 Message_Type
-EXPORT(action) (Game_Status_Access self, Character_Access current_character);
+EXPORT(action) (Game_Status_Access self,
+                Character_Access current_character);
 
 /** @brief 攻擊敵方角色
  * @param self 要使用的遊戲狀態
@@ -169,7 +172,8 @@ EXPORT(action) (Game_Status_Access self, Character_Access current_character);
 */
 Is_Alive
 EXPORT(attack_enemy_by) (Game_Status_Access self,
-                         Character_Access current, Character_Access target);
+                         Character_Access current,
+                         Character_Access target);
 
 /** @brief 攻擊友軍角色
  * @param self 要使用的遊戲狀態
@@ -195,7 +199,8 @@ EXPORT(attack_ally_by) (Game_Status_Access self,
 */
 Is_Alive
 EXPORT(attack_neutral_by) (Game_Status_Access self,
-                           Character_Access current, Character_Access target);
+                           Character_Access current,
+                           Character_Access target);
 
 /** @brief 攻擊玩家角色
  * @param self 要使用的遊戲狀態
@@ -203,6 +208,7 @@ EXPORT(attack_neutral_by) (Game_Status_Access self,
  * @return 目標的生存狀況
 */
 Is_Alive
-EXPORT(attack_player_by) (Game_Status_Access self, Character_Access current);
+EXPORT(attack_player_by) (Game_Status_Access self,
+                          Character_Access current);
 #undef EXPORT
 #endif

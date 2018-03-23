@@ -85,7 +85,8 @@ Style_Access EXPORT(find) (Style_Pool_Access self, const char *name);
  *
  * 請不要從外部手動修改 current_counter，後續可自行撰寫 macro 簡化成 foreach-like 型式。
 */
-Style_Access EXPORT(next) (Style_Pool_Access self, uint8_t * current_counter);
+Style_Access EXPORT(next) (Style_Pool_Access self,
+                           uint8_t * current_counter);
 
 /** @brief 顯示圖形池中的資料
  * @param self 要使用的圖形池

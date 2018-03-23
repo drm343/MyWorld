@@ -153,7 +153,8 @@ void Character_List_remove(Character_List * access, Character * item)
     }
 }
 
-Character *Character_List_get_by_index(Character_List * access, uint8_t index)
+Character *Character_List_get_by_index(Character_List * access,
+                                       uint8_t index)
 {
     Character_Node *current = access->first;
     Character_Node *next = NULL;

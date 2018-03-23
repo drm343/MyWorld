@@ -342,7 +342,7 @@ Message_Type Point_Type_near_by(Point_Type * self, Point_Type * other)
     }
     goto DONE;
 
- RANDOM_POSITION:
+  RANDOM_POSITION:
     switch (rand() % 4) {
         case 1:
             result = TOP;
@@ -358,7 +358,7 @@ Message_Type Point_Type_near_by(Point_Type * self, Point_Type * other)
             break;
     }
 
- DONE:
+  DONE:
     return result;
 }
 
@@ -418,7 +418,7 @@ static Message_Type player_reaction(bool is_alive)
     }
     goto DONE;
 
- CHECK_KEYDOWN:
+  CHECK_KEYDOWN:
     switch (event.key.keysym.sym) {
         case SDLK_UP:
             result = TOP;
@@ -438,7 +438,7 @@ static Message_Type player_reaction(bool is_alive)
         default:
             break;
     }
- DONE:
+  DONE:
     return result;
 }
 
@@ -506,7 +506,8 @@ void EXPORT(free) (Game_Status * self) {
 */
 Execute_Result
 EXPORT(parse_npc_config) (Game_Status * self,
-                          const char *file_path, Style_Pool_Access style_pool) {
+                          const char *file_path,
+                          Style_Pool_Access style_pool) {
     Execute_Result result = EXECUTE_FAILED;
     config_t cfg;
     config_setting_t *setting;
@@ -557,7 +558,7 @@ EXPORT(parse_npc_config) (Game_Status * self,
     }
 
     result = EXECUTE_SUCCESS;
- DONE:
+  DONE:
     config_destroy(&cfg);
     return result;;
 }
@@ -684,7 +685,8 @@ uint8_t EXPORT(instance_count) (Game_Status * self) {
  * @param index 要找出來的角色編號
  * @return 回傳角色 Access
  */
-Character_Access EXPORT(get_instance_by_index) (Game_Status * self, int index) {
+Character_Access EXPORT(get_instance_by_index) (Game_Status * self,
+                                                int index) {
     return Character_List_get_by_index(self->used, index);
 }
 
@@ -736,7 +738,8 @@ EXPORT(action) (Game_Status * self, Character_Access current_character) {
             total_target_number = 1 + ally_target_number
                 + neutral_target_number;
             weigh_value = 80 / total_target_number;
-            neutral_weigh_value = 100 - neutral_target_number * weigh_value;
+            neutral_weigh_value =
+                100 - neutral_target_number * weigh_value;
             ally_weigh_value =
                 100 - (neutral_target_number +
                        ally_target_number) * weigh_value;
@@ -749,14 +752,16 @@ EXPORT(action) (Game_Status * self, Character_Access current_character) {
                 target = EXPORT(get_instance_by_index) (self, 0);
                 target_position = CHARA(get_position) (target);
                 self_position = CHARA(get_position) (current_character);
-                result = Point_Type_over_there(self_position, target_position);
+                result =
+                    Point_Type_over_there(self_position, target_position);
             }
             break;
         case FACTION_NEUTRAL:
             target = EXPORT(get_instance_by_index) (self, 0);
             target_position = CHARA(get_position) (target);
             self_position = CHARA(get_position) (current_character);
-            result = faction_neutral_reaction(self_position, target_position);
+            result =
+                faction_neutral_reaction(self_position, target_position);
             break;
         default:
             result = player_reaction(is_alive);
@@ -776,7 +781,8 @@ EXPORT(action) (Game_Status * self, Character_Access current_character) {
 */
 Is_Alive
 EXPORT(attack_enemy_by) (Game_Status * self,
-                         Character_Access current, Character_Access target) {
+                         Character_Access current,
+                         Character_Access target) {
     Is_Alive result = STATUS(attack) (current->status, target->status);
     Character_List *enemy = self->enemy;
     Character_List_remove(enemy, target);
@@ -806,7 +812,8 @@ EXPORT(attack_enemy_by) (Game_Status * self,
 */
 Is_Alive
 EXPORT(attack_ally_by) (Game_Status * self,
-                        Character_Access current, Character_Access target) {
+                        Character_Access current,
+                        Character_Access target) {
     Is_Alive result = STATUS(attack) (current->status, target->status);
     Character_List *ally = self->ally;
     Character_List_remove(ally, target);
@@ -836,12 +843,13 @@ EXPORT(attack_ally_by) (Game_Status * self,
 */
 Is_Alive
 EXPORT(attack_neutral_by) (Game_Status * self,
-                           Character_Access current, Character_Access target) {
+                           Character_Access current,
+                           Character_Access target) {
     Is_Alive result = STATUS(attack) (current->status, target->status);
     Character_List *neutral = self->neutral;
     Character_List_remove(neutral, target);
 
-    Relation_Type faction;
+    Faction_Type faction;
     Status_get_relation(target->status, faction);
     switch (faction) {
         case FACTION_ENEMY:
@@ -862,7 +870,8 @@ EXPORT(attack_neutral_by) (Game_Status * self,
  * @param current 進行攻擊的角色
  * @return 目標的生存狀況
 */
-Is_Alive EXPORT(attack_player_by) (Game_Status * self, Character_Access current) {
+Is_Alive EXPORT(attack_player_by) (Game_Status * self,
+                                   Character_Access current) {
     Character_Access target = EXPORT(get_instance_by_index) (self, 0);
     Is_Alive result = STATUS(attack) (current->status, target->status);
     return result;

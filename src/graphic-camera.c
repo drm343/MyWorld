@@ -46,7 +46,8 @@ static Yes_No occupy_position_by_others(Game_Status_Access access,
 //Setup camera mode
 // --------------------------------------------------
 static void
-camera_horizon_mode_setup(Camera_Access access, Point_Access point, int32_t x)
+camera_horizon_mode_setup(Camera_Access access, Point_Access point,
+                          int32_t x)
 {
     Point_Access center = access->center;
 
@@ -75,7 +76,8 @@ camera_horizon_mode_setup(Camera_Access access, Point_Access point, int32_t x)
 }
 
 static void
-camera_vertical_mode_setup(Camera_Access access, Point_Access point, int32_t y)
+camera_vertical_mode_setup(Camera_Access access, Point_Access point,
+                           int32_t y)
 {
     Point_Access center = access->center;
 
@@ -277,21 +279,23 @@ EXPORT(take) (Camera_Access self,
             break;
     }
 
-    Found_Result result = occupy_position_by_others(from_pool, point, &npc);
+    Yes_No result = occupy_position_by_others(from_pool, point, &npc);
     if (result == NO) {
         int32_t y = Point_Type_y(vector);
-        Relation_Type current_relation;
+        Faction_Type current_relation;
         Status_get_relation(current->status, current_relation);
 
         if ((y != 0) && (can_move_vertical(self, point) == YES)) {
             if (current_relation == FACTION_PLAYER) {
                 camera_vertical_mode_setup(self, point, y);
             }
-            Point_move(current->Real_Position,.x = Point_Type_x(vector),.y = y);
+            Point_move(current->Real_Position,.x =
+                       Point_Type_x(vector),.y = y);
         } else if ((Point_Type_x(vector) != 0)
                    && (can_move_horizon(self, point) == YES)) {
             if (current_relation == FACTION_PLAYER) {
-                camera_horizon_mode_setup(self, point, Point_Type_x(vector));
+                camera_horizon_mode_setup(self, point,
+                                          Point_Type_x(vector));
             }
             Point_Type_move_by_point(current->Real_Position, vector);
         }
@@ -310,9 +314,10 @@ EXPORT(take) (Camera_Access self,
         snprintf(attack_message, counter + 1, format,
                  current->status->name,
                  STATUS(get_relation_string) (current->status),
-                 npc->status->name, STATUS(get_relation_string) (npc->status));
+                 npc->status->name,
+                 STATUS(get_relation_string) (npc->status));
         BOX(add_message) (box_access, attack_message);
-        Relation_Type npc_relation;
+        Faction_Type npc_relation;
         Status_get_relation(npc->status, npc_relation);
 
         switch (npc_relation) {
@@ -326,7 +331,8 @@ EXPORT(take) (Camera_Access self,
                 is_alive = GAME(attack_enemy_by) (from_pool, current, npc);
                 break;
             case FACTION_NEUTRAL:
-                is_alive = GAME(attack_neutral_by) (from_pool, current, npc);
+                is_alive =
+                    GAME(attack_neutral_by) (from_pool, current, npc);
                 break;
             default:
                 break;
@@ -357,7 +363,7 @@ EXPORT(take) (Camera_Access self,
 
     GAME(calculate_graph_position) (from_pool, &rectangle);
 
- DONE:
+  DONE:
     return true;
 }
 

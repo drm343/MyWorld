@@ -33,16 +33,6 @@ typedef enum {
     FACTION_NEUTRAL
 } Faction_Type;
 
-/** @brief 與玩家角色的關係
- *
- * 非玩家角色透過這個 type 來設定(預計)
- */
-typedef enum {
-    RELATION_ALLY = FACTION_ALLY,
-    RELATION_ENEMY = FACTION_ENEMY,
-    RELATION_NEUTRAL = FACTION_NEUTRAL
-} Relation_Type;
-
 /** @brief 角色狀態結構
  */
 typedef struct Status {
@@ -165,7 +155,7 @@ void EXPORT(set_random_relation) (Status_Access self);
  */
 #define Status_get_relation(self, return_variable) \
 return_variable = _Generic((return_variable), \
-Relation_Type: Status_get_relation_origin, \
+Faction_Type: Status_get_relation_origin, \
 char *: Status_get_relation_string, \
 default: Status_get_relation_origin)(self)
 
@@ -173,7 +163,7 @@ default: Status_get_relation_origin)(self)
  * @param self 目標角色狀態
  * @return 回傳角色陣營
  */
-Relation_Type EXPORT(get_relation_origin) (Status_Access self);
+Faction_Type EXPORT(get_relation_origin) (Status_Access self);
 
 /** @brief 取得角色陣營
  * @param self 目標角色狀態

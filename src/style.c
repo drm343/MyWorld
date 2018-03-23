@@ -44,11 +44,10 @@ void EXPORT(stop) (Style_Pool_Access self) {
  * 須修改程式中建立跟釋放 Style_Pool 的時機。
 */
 void EXPORT(free_texture) (Style_Pool_Access self) {
-    uint8_t count = 0;
     uint8_t used = self->max_size - self->current_size;
     Style_Access result = NULL;
 
-    for (count; count < used; count++) {
+    for (uint8_t count = 0; count < used; count++) {
         result = &(self->pool[count]);
 
         SDL_DestroyTexture(result->access);
@@ -74,12 +73,11 @@ Style_Access EXPORT(malloc) (Style_Pool_Access self) {
  * @return Style 物件的 Access，沒找到則會回傳 NULL
 */
 Style_Access EXPORT(find) (Style_Pool_Access pool_access, const char *name) {
-    uint8_t count = 0;
     uint8_t used = pool_access->max_size - pool_access->current_size;
     Style_Access result = NULL;
     name = String_Repo_search(name);
 
-    for (count; count < used; count++) {
+    for (uint8_t count = 0; count < used; count++) {
         result = &(pool_access->pool[count]);
 
         if (result->name == name) {
@@ -98,7 +96,8 @@ Style_Access EXPORT(find) (Style_Pool_Access pool_access, const char *name) {
  *
  * 請不要從外部手動修改 current_counter，後續可自行撰寫 macro 簡化成 foreach-like 型式。
 */
-Style_Access EXPORT(next) (Style_Pool_Access self, uint8_t * current_counter) {
+Style_Access EXPORT(next) (Style_Pool_Access self,
+                           uint8_t * current_counter) {
     uint8_t counter = *current_counter;
     uint8_t used = self->max_size - self->current_size;
     Style_Access result = NULL;
@@ -117,12 +116,11 @@ Style_Access EXPORT(next) (Style_Pool_Access self, uint8_t * current_counter) {
 */
 void EXPORT(debug) (Style_Pool_Access self) {
 #ifdef DEBUG
-    uint8_t count = 0;
     uint8_t used = self->max_size - self->current_size;
     Style_Access result = NULL;
 
     DEBUG_PRINT("style is null? %s\n", BOOL_STRING(result));
-    for (count; count < used; count++) {
+    for (uint8_t count = 0; count < used; count++) {
         result = &(self->pool[count]);
         DEBUG_PRINT("%s : %s : %s\n", result->name, result->mark,
                     BOOL_STRING(result->access != NULL));

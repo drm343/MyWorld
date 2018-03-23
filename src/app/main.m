@@ -120,7 +120,6 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
 void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
 {
-    camera_1->player;
     Message_Type message = DO_NOTHING;
 
     CONF_PATH = root_dir;
@@ -177,7 +176,7 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
     }
     Character_Access current = NULL;
     uint8_t instance_count = GAME(instance_count) (game_status_pool);
-    uint8_t index = instance_count;
+    uint8_t set_index = instance_count;
     while (running) {
         current = camera_1->player;
         message = GAME(action) (game_status_pool, current);
@@ -186,17 +185,17 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
             case QUIT:
                 running = false;
             case DO_NOTHING:
-                index = instance_count + 1;
+                set_index = instance_count + 1;
                 break;
             default:
-                index = 1;
+                set_index = 1;
                 running =
                     CAMERA(take) (camera_1, game_status_pool, box_1,
                                   current, message);
                 break;
         }
 
-        for (index; index < instance_count; index++) {
+        for (uint8_t index = set_index; index < instance_count; index++) {
             current = GAME(get_instance_by_index) (game_status_pool, index);
 
             if (current->status->is_alive == false) {
