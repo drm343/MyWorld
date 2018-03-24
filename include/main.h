@@ -11,6 +11,6 @@
 #include "helper/strings.h"
 #include "graphic-camera.h"
 
-#include "main_set_config.h"
+#include "MWMutableString.h"
 
 #endif

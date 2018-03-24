@@ -4,6 +4,16 @@ typedef SDL_Window *SDL_Window_Access;
 typedef SDL_Renderer *SDL_Renderer_Access;
 typedef SDL_Event *SDL_Event_Access;
 
+
+MWMutableString *ROOT_DIR = NULL;
+MWMutableString *FONT_FAMILY = NULL;
+MWMutableString *GAME_TITLE = NULL;
+
+
+int WIDTH = 800;
+int HEIGHT = 600;
+
+
 int GRID_LENGTH = 24;
 SDL_Rect position = {
     .x = 0,
@@ -19,6 +29,102 @@ Game_Status *game_status_pool = NULL;
 struct strings *global_repo = NULL;
 
 TTF_Font *USE_FONT = NULL;
+Style_Pool_Access style_pool = NULL;
+
+
+/** @brief 讀取設定檔，設定視窗畫面所需要的資料
+ */
+void setup_window(config_setting_t ** setting)
+{
+    const char *tmp;
+
+    config_setting_lookup_int(*setting, "width", &WIDTH);
+    config_setting_lookup_int(*setting, "height", &HEIGHT);
+
+    config_setting_lookup_string(*setting, "font-family", &tmp);
+    FONT_FAMILY = [[MWMutableString copy: ROOT_DIR] append:tmp];
+
+    config_setting_lookup_string(*setting, "title", &tmp);
+    GAME_TITLE =[MWMutableString create_with_c_string:tmp];
+}
+
+
+//Setup player and dead mark for now
+void setup_mark(config_setting_t ** setting)
+{
+    int total_counter = config_setting_length(*setting);
+    const char *value;
+
+    for (int counter = 0; counter < total_counter; counter++) {
+        config_setting_t *style_setting =
+            config_setting_get_elem(*setting, counter);
+
+        const char *key = NULL;
+
+        Style_Access style_access = STYLE_P(malloc) (style_pool);
+        config_setting_lookup_string(style_setting, "key", &key);
+        style_access->name = String_Repo_sign_in(key);
+
+        config_setting_lookup_string(style_setting, "mark", &key);
+        style_access->mark = String_Repo_sign_in(key);
+
+        int is_attackable = 0;
+        config_setting_lookup_bool(style_setting, "attackable",
+                                   &is_attackable);
+        style_access->attackable = is_attackable;
+
+        int is_crossable = 0;
+        config_setting_lookup_bool(style_setting, "crossable",
+                                   &is_crossable);
+        style_access->crossable = is_crossable;
+    }
+}
+
+
+// Default Execute_Result value is EXECUTE_FAILED.
+// Only run success will change the variable.
+Execute_Result setup_style()
+{
+    Execute_Result result = EXECUTE_FAILED;
+    config_t cfg;
+    config_setting_t *setting;
+    const char *str;
+
+    config_init(&cfg);
+    MWMutableString *INIT_CONFIG = [[MWMutableString copy: ROOT_DIR] append: "/config/init.cfg"];
+
+    /* Read the file. If there is an error, report it and exit. */
+    if (!config_read_file(&cfg, [INIT_CONFIG get_c_string])) {
+        fprintf(stderr, "%s:%d - %s\n", config_error_file(&cfg),
+                config_error_line(&cfg), config_error_text(&cfg));
+
+        goto DONE;
+    }
+    /* check and setup window */
+    setting = config_lookup(&cfg, "window");
+
+    if (setting != NULL) {
+        setup_window(&setting);
+    } else {
+        goto DONE;
+    }
+
+    /* check and setup mark */
+    setting = config_lookup(&cfg, "style");
+
+    if (setting != NULL) {
+        setup_mark(&setting);
+    } else {
+        goto DONE;
+    }
+
+    result = EXECUTE_SUCCESS;
+  DONE:
+    config_destroy(&cfg);
+    [INIT_CONFIG dealloc];
+    return result;;
+}
+
 
 void draw_message_box(SDL_Renderer_Access render)
 {
@@ -90,7 +196,8 @@ Execute_Result init_view(SDL_Renderer_Access render)
 {
     SDL_Color white = { 255, 255, 255 };
 
-    USE_FONT = TTF_OpenFont(FONT_FAMILY, 512);
+    USE_FONT = TTF_OpenFont([FONT_FAMILY get_c_string], 512);
+    [FONT_FAMILY dealloc];
     if (!USE_FONT) {
 #ifdef DEBUG
         DEBUG_PRINT("TTF_OpenFont: %s\n", TTF_GetError());
@@ -118,11 +225,10 @@ Execute_Result init_view(SDL_Renderer_Access render)
     return EXECUTE_SUCCESS;
 }
 
-void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
+void submain()
 {
     Message_Type message = DO_NOTHING;
 
-    CONF_PATH = root_dir;
     Execute_Result result = EXECUTE_FAILED;
     srand(time(NULL));
 
@@ -147,7 +253,7 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
     STATUS(set_name) (Player->status, "雜魚");
     CAMERA(set_player) (camera_1, Player);
 
-    result = setup_style(init_cfg);
+    result = setup_style();
 
     if (result == EXECUTE_FAILED) {
 #ifdef DEBUG
@@ -156,7 +262,10 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
 
         goto INIT_FAILED;
     }
-    GAME(parse_npc_config) (game_status_pool, npc_cfg, style_pool);
+    // 取得 config
+    MWMutableString *NPC_CONFIG = [[MWMutableString copy: ROOT_DIR] append: "/config/npc.cfg"];
+    GAME(parse_npc_config) (game_status_pool, [NPC_CONFIG get_c_string], style_pool);
+    [NPC_CONFIG dealloc];
 
     CAMERA(set_map) (camera_1, map_1);
 
@@ -165,7 +274,8 @@ void submain(const char *root_dir, const char *init_cfg, const char *npc_cfg)
     GAME(use_neutral) (game_status_pool, "villager", "v 1", camera_1->map);
     GAME(use_neutral) (game_status_pool, "villager", "v 2", camera_1->map);
 
-    win = SDL_CreateWindow(GAME_TITLE, 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
+    win = SDL_CreateWindow([GAME_TITLE get_c_string], 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
+    [GAME_TITLE dealloc];
     render =
         SDL_CreateRenderer(win, -1,
                            SDL_RENDERER_ACCELERATED |
@@ -230,32 +340,21 @@ int main(int argc, char *argv[])
     global_repo = strings_new();
     String_Repo_change(global_repo);
 
-    //求出執行檔�35 � ��位置，根據此位置求出root_dir
+    // 取得 root_dir
     char execution_path[1024];
     char *exist;
     exist = realpath(argv[0], execution_path);
+    ROOT_DIR = [MWMutableString create_with_c_string: dirname(dirname(exist))];
 
     map_1 = MAP(create) ();
     MAP(set_top_left) (map_1, 0, 0);
     MAP(set_bottom_right) (map_1, 40, 30);
 
-    //建立config file � ��路徑
-    char *init_cfg_path = "/config/init.cfg";
-    char *npc_cfg_path = "/config/npc.cfg";
-
-    char *root_dir = dirname(dirname(exist));
-    int counter = String_ascii_length(root_dir);
-
-    int total = counter + String_ascii_length(init_cfg_path);
-    char init_cfg[total];
-    snprintf(init_cfg, total + 1, "%s%s", root_dir, init_cfg_path);
-
-    total = counter + String_ascii_length(npc_cfg_path);
-    char npc_cfg[total];
-    snprintf(npc_cfg, total + 1, "%s%s", root_dir, npc_cfg_path);
-
-    submain(root_dir, init_cfg, npc_cfg);
+    submain();
 
     MAP(free) (map_1);
     strings_free(global_repo);
+
+    // 釋放已完成的 config
+    [ROOT_DIR dealloc];
 }

@@ -7,10 +7,10 @@ CASE_INDENT_NUMBER=4
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), FreeBSD)
 	INDENT=gindent
-	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I $(CURREND)/intern
+	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I $(CURREND)/submodules/intern -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
 else
 	INDENT=indent
-	INCLUDE=-I $(CURREND)/include -I $(CURREND)/intern
+	INCLUDE=-I $(CURREND)/include -I $(CURREND)/submodules/intern -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
 endif
 INDENT_STYLE=-kr
 COMPILER=gcc7
@@ -33,7 +33,7 @@ ifeq ($(COMPILER), clang50)
 else
 	CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
 endif
-LFLAGS=-Werror -L$(OBJ) -lm -lmy_world
+LFLAGS=-Werror -L$(OBJ) -lm -lmy_world -L$(CURREND)/submodules/MyWorldStep/Build/tmp -lMWStep ./submodules/CoreFoundation/Build/Release/Products/amd64/libCoreFoundation.a -luuid -lobjc
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -68,6 +68,8 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/graphic-message.o
 
 
+CF := submodules/CoreFoundation/Build/Release/Products/amd64
+
 LIBSTRINGS := $(OBJ)/block.o \
 	$(OBJ)/strings.o
 
@@ -82,7 +84,7 @@ AUTO_BUILD_TOOLS := $(BIN)/gen_list \
 TOOLS := $(AUTO_BUILD_TOOLS)
 
 
-.PHONY: clean doc examples strings app test indent
+.PHONY: clean doc examples strings CoreFoundation MyWorldStep app test indent
 app: $(CHECK_DIR) indent $(TOOLS) $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.m $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@echo "build app done"
@@ -107,8 +109,8 @@ indent:
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 
-intern/config.h:
-	cd intern && cmake -G 'Unix Makefiles' -Wno-dev
+submodules/intern/config.h:
+	cd submodules/intern && cmake -G 'Unix Makefiles' -Wno-dev
 
 
 examples:
@@ -130,12 +132,15 @@ $(LIB_MY_WORLD): $(DEP)
 $(AUTO_BUILD_DEP):
 	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
 
-$(LIBSTRINGS): intern/config.h $(CHECK_DIR)
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) intern/$(basename $(notdir $@)).c
+$(LIBSTRINGS): submodules/intern/config.h $(CHECK_DIR)
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) submodules/intern/$(basename $(notdir $@)).c
 
 
-$(OBJ)/character_factory.o: src/factory/character_factory.c $(OBJ)/status_pool.o $(OBJ)/character_pool.o
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/factory/character_factory.c
+CoreFoundation:
+	cd submodules/CoreFoundation && gmake
+
+MyWorldStep:
+	cd submodules/MyWorldStep && gmake clean && gmake
 
 
 $(CHECK_DIR):
