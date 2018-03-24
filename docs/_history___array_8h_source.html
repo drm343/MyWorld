@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.9.1"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MyWorld: include/container/History_Array.h 原始程式檔</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MyWorld
    </div>
   </td>
@@ -31,40 +29,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 產生者: Doxygen 1.8.9.1 -->
+<!-- 產生者: Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>主頁面</span></a></li>
-      <li><a href="pages.html"><span>相關頁面</span></a></li>
-      <li><a href="annotated.html"><span>資料結構</span></a></li>
-      <li class="current"><a href="files.html"><span>檔案</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>檔案列表</span></a></li>
-      <li><a href="globals.html"><span>全域資料</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -89,30 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="title">History_Array.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_history___array_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_CONTAINER_CYCLE_ARRAY_History_Array_WITH_BASE_TYPE</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_CONTAINER_CYCLE_ARRAY_History_Array_WITH_BASE_TYPE</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_history___array.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_history___array.html#aa066f1c832871fd9ba901273a34b3b86">   14</a></span>&#160;    uint32_t *<a class="code" href="struct_history___array.html#aa066f1c832871fd9ba901273a34b3b86">array</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_history___array.html#aafbb8d0fa7101a65447b6ede877c39d4">   15</a></span>&#160;    uint8_t <a class="code" href="struct_history___array.html#aafbb8d0fa7101a65447b6ede877c39d4">max_size</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_history___array.html#a024f97bceddc0b639c4377793df2d62c">   16</a></span>&#160;    uint8_t <a class="code" href="struct_history___array.html#a024f97bceddc0b639c4377793df2d62c">buffer</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_history___array.html#a7dc2499e4825a78e484bb388ab29dc1d">   17</a></span>&#160;    uint8_t <a class="code" href="struct_history___array.html#a7dc2499e4825a78e484bb388ab29dc1d">start</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;} <a class="code" href="struct_history___array.html">History_Array</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="struct_history___array.html">History_Array</a> *<a class="code" href="_history___array_8h.html#ad36ae50fc05e1e3da9209da66735ebae">History_Array_start</a>(uint8_t max_size);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_history___array_8h.html#a4060d0e6bd525a874b51ed9a6432b6b7">History_Array_stop</a>(<a class="code" href="struct_history___array.html">History_Array</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;uint32_t *<a class="code" href="_history___array_8h.html#a0f13f4decd4b282d5d7f2f68cc400746">History_Array_insert</a>(<a class="code" href="struct_history___array.html">History_Array</a> * <span class="keyword">self</span>, uint32_t item);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;uint8_t <a class="code" href="_history___array_8h.html#ae3fdb3161e43f57e904eeecf4c3558a8">History_Array_index</a>(<a class="code" href="struct_history___array.html">History_Array</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_history___array_8h.html#ac951f5fd442a5546c5abcc7869ff7772">History_Array_next</a>(<a class="code" href="struct_history___array.html">History_Array</a> * <span class="keyword">self</span>, uint8_t * next);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;uint8_t <a class="code" href="_history___array_8h.html#a62932e02f9e6d499160dde7fddca560c">History_Array_last</a>(<a class="code" href="struct_history___array.html">History_Array</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_history___array_8h.html#a2f5151340ee94c266795a0aa067f7376">History_Array_previous</a>(<a class="code" href="struct_history___array.html">History_Array</a> * <span class="keyword">self</span>, uint8_t * previous);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;uint32_t <a class="code" href="_history___array_8h.html#a05352e014b23286a857721ff80d88294">History_Array_get_item</a>(<a class="code" href="struct_history___array.html">History_Array</a> * <span class="keyword">self</span>, uint8_t next);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="_history___array_8h_html_ad36ae50fc05e1e3da9209da66735ebae"><div class="ttname"><a href="_history___array_8h.html#ad36ae50fc05e1e3da9209da66735ebae">History_Array_start</a></div><div class="ttdeci">History_Array * History_Array_start(uint8_t max_size)</div></div>
+<a href="_history___array_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_CONTAINER_CYCLE_ARRAY_History_Array_WITH_BASE_TYPE</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_CONTAINER_CYCLE_ARRAY_History_Array_WITH_BASE_TYPE</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_history___array.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_history___array.html#aa066f1c832871fd9ba901273a34b3b86">   14</a></span>&#160;    uint32_t *<a class="code" href="struct_history___array.html#aa066f1c832871fd9ba901273a34b3b86">array</a>;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_history___array.html#aafbb8d0fa7101a65447b6ede877c39d4">   15</a></span>&#160;    uint8_t <a class="code" href="struct_history___array.html#aafbb8d0fa7101a65447b6ede877c39d4">max_size</a>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_history___array.html#a024f97bceddc0b639c4377793df2d62c">   16</a></span>&#160;    uint8_t <a class="code" href="struct_history___array.html#a024f97bceddc0b639c4377793df2d62c">buffer</a>;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_history___array.html#a7dc2499e4825a78e484bb388ab29dc1d">   17</a></span>&#160;    uint8_t <a class="code" href="struct_history___array.html#a7dc2499e4825a78e484bb388ab29dc1d">start</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;} <a class="code" href="struct_history___array.html">History_Array</a>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="struct_history___array.html">History_Array</a> * <a class="code" href="_history___array_8h.html#ad36ae50fc05e1e3da9209da66735ebae">History_Array_start</a>(uint8_t max_size);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_history___array_8h.html#a4060d0e6bd525a874b51ed9a6432b6b7">History_Array_stop</a>(<a class="code" href="struct_history___array.html">History_Array</a> *<span class="keyword">self</span>);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;uint32_t * <a class="code" href="_history___array_8h.html#a0f13f4decd4b282d5d7f2f68cc400746">History_Array_insert</a>(<a class="code" href="struct_history___array.html">History_Array</a> *<span class="keyword">self</span>, uint32_t item);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;uint8_t <a class="code" href="_history___array_8h.html#ae3fdb3161e43f57e904eeecf4c3558a8">History_Array_index</a>(<a class="code" href="struct_history___array.html">History_Array</a> *<span class="keyword">self</span>);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_history___array_8h.html#ac951f5fd442a5546c5abcc7869ff7772">History_Array_next</a>(<a class="code" href="struct_history___array.html">History_Array</a> *<span class="keyword">self</span>, uint8_t *next);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;uint8_t <a class="code" href="_history___array_8h.html#a62932e02f9e6d499160dde7fddca560c">History_Array_last</a>(<a class="code" href="struct_history___array.html">History_Array</a> *<span class="keyword">self</span>);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_history___array_8h.html#a2f5151340ee94c266795a0aa067f7376">History_Array_previous</a>(<a class="code" href="struct_history___array.html">History_Array</a> *<span class="keyword">self</span>, uint8_t *previous);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;uint32_t <a class="code" href="_history___array_8h.html#a05352e014b23286a857721ff80d88294">History_Array_get_item</a>(<a class="code" href="struct_history___array.html">History_Array</a> *<span class="keyword">self</span>, uint8_t next);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="_history___array_8h_html_ad36ae50fc05e1e3da9209da66735ebae"><div class="ttname"><a href="_history___array_8h.html#ad36ae50fc05e1e3da9209da66735ebae">History_Array_start</a></div><div class="ttdeci">History_Array * History_Array_start(uint8_t max_size)</div></div>
 <div class="ttc" id="struct_history___array_html_aafbb8d0fa7101a65447b6ede877c39d4"><div class="ttname"><a href="struct_history___array.html#aafbb8d0fa7101a65447b6ede877c39d4">History_Array::max_size</a></div><div class="ttdeci">uint8_t max_size</div><div class="ttdef"><b>Definition:</b> History_Array.h:15</div></div>
 <div class="ttc" id="struct_history___array_html_a7dc2499e4825a78e484bb388ab29dc1d"><div class="ttname"><a href="struct_history___array.html#a7dc2499e4825a78e484bb388ab29dc1d">History_Array::start</a></div><div class="ttdeci">uint8_t start</div><div class="ttdef"><b>Definition:</b> History_Array.h:17</div></div>
 <div class="ttc" id="_history___array_8h_html_a0f13f4decd4b282d5d7f2f68cc400746"><div class="ttname"><a href="_history___array_8h.html#a0f13f4decd4b282d5d7f2f68cc400746">History_Array_insert</a></div><div class="ttdeci">uint32_t * History_Array_insert(History_Array *self, uint32_t item)</div></div>
@@ -128,9 +82,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年11月1日 星期三 02:26:17, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2018年3月24日 星期六 22:56:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
+</a> 1.8.13
 </small></address>
 </body>
 </html>

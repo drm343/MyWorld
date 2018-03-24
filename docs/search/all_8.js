@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['height',['height',['../struct_font_config.html#ae9dd60c7f899e4ca0fc3b3e9d692244b',1,'FontConfig::height()'],['../main__set__config_8h.html#a4e81322eb1085aca9cd7c5527f5e4c6b',1,'HEIGHT():&#160;main_set_config.h']]],
+  ['height',['height',['../struct_font_config.html#ae9dd60c7f899e4ca0fc3b3e9d692244b',1,'FontConfig']]],
   ['history_5farray',['History_Array',['../struct_history___array.html',1,'']]],
   ['history_5farray_2eh',['History_Array.h',['../_history___array_8h.html',1,'']]],
   ['history_5farray_5fget_5fitem',['History_Array_get_item',['../_history___array_8h.html#a05352e014b23286a857721ff80d88294',1,'History_Array.h']]],

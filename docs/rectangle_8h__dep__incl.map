@@ -1,6 +1,6 @@
 <map id="include/rectangle.h" name="include/rectangle.h">
-<area shape="rect" id="node2" href="$rectangle-use__self_8h.html" title="include/rectangle&#45;use\l_self.h" alt="" coords="16,80,161,121"/>
-<area shape="rect" id="node3" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="12,169,165,196"/>
-<area shape="rect" id="node4" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="5,244,172,271"/>
-<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="35,319,142,345"/>
+<area shape="rect" id="node2" href="$rectangle-use__self_8h.html" title="include/rectangle&#45;use\l_self.h" alt="" coords="17,80,180,121"/>
+<area shape="rect" id="node3" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="14,169,183,196"/>
+<area shape="rect" id="node4" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="5,244,192,271"/>
+<area shape="rect" id="node5" href="$main_8h.html" title="include/main.h" alt="" coords="39,319,158,345"/>
 </map>

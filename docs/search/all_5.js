@@ -1,10 +1,7 @@
 var searchData=
 [
   ['efficacy',['efficacy',['../struct_skill.html#a002d9dd9a754b753d24242eba79167b4',1,'Skill']]],
-  ['else',['ELSE',['../ada__style_8h.html#a0a70ee0cbf5b1738be4c9463c529ce72',1,'ada_style.h']]],
-  ['elseif',['ELSEIF',['../ada__style_8h.html#a9cd8bdd349a8c9604630be628156d152',1,'ada_style.h']]],
-  ['end',['end',['../struct_camera___type.html#a46e5791a9969c47511302c17a9246375',1,'Camera_Type::end()'],['../struct_two___point.html#a5cc981b26e5e3f802a3ed90477c360e0',1,'Two_Point::end()'],['../ada__style_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f',1,'END():&#160;ada_style.h']]],
-  ['end_5fwhen',['END_WHEN',['../ada__style_8h.html#a9de19cd62ffe0399d1f7c2d008cd2680',1,'ada_style.h']]],
+  ['end',['end',['../struct_camera___type.html#a46e5791a9969c47511302c17a9246375',1,'Camera_Type::end()'],['../struct_two___point.html#a5cc981b26e5e3f802a3ed90477c360e0',1,'Two_Point::end()']]],
   ['execute_5ffailed',['EXECUTE_FAILED',['../type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8',1,'type.h']]],
   ['execute_5fresult',['Execute_Result',['../type_8h.html#ac174637f2f335bc1ba1bc16a4f433911',1,'type.h']]],
   ['execute_5fsuccess',['EXECUTE_SUCCESS',['../type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff',1,'type.h']]],

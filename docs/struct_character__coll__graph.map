@@ -1,5 +1,5 @@
 <map id="Character" name="Character">
-<area shape="rect" id="node2" href="$struct_point___type.html" title="Point_Type" alt="" coords="5,5,93,32"/>
-<area shape="rect" id="node3" href="$struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="143,5,195,32"/>
-<area shape="rect" id="node4" href="$struct_status.html" title="角色狀態結構 " alt="" coords="219,5,279,32"/>
+<area shape="rect" id="node2" href="$struct_point___type.html" title="Point_Type" alt="" coords="5,5,97,32"/>
+<area shape="rect" id="node3" href="$struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="153,5,208,32"/>
+<area shape="rect" id="node4" href="$struct_status.html" title="角色狀態結構 " alt="" coords="232,5,295,32"/>
 </map>

@@ -20,7 +20,6 @@ var searchData=
   ['game_5fstatus_5fuse_5fenemy',['Game_Status_use_enemy',['../game__status_8h.html#a91892720e7468dc37bd12274ccdc8b9e',1,'game_status.h']]],
   ['game_5fstatus_5fuse_5fneutral',['Game_Status_use_neutral',['../game__status_8h.html#a4da69adf7847a9dbb152c67636bd596f',1,'game_status.h']]],
   ['game_5fstatus_5fuse_5fplayer',['Game_Status_use_player',['../game__status_8h.html#a2c377301047db74912a79807fddc778f',1,'game_status.h']]],
-  ['game_5ftitle',['GAME_TITLE',['../main__set__config_8h.html#ac0e86d6e761574373738afd3e18f85a4',1,'main_set_config.h']]],
   ['generic_5farray',['GENERIC_ARRAY',['../generic__function_8h.html#a965ad7aedd5747e0fe06bcf06c2ca7f5',1,'generic_function.h']]],
   ['generic_5farray_5ffunctions',['GENERIC_ARRAY_FUNCTIONS',['../generic__function_8h.html#a01f1878e9d90e5f574d19e592ed853e5',1,'generic_function.h']]],
   ['generic_5ffunction_2eh',['generic_function.h',['../generic__function_8h.html',1,'']]],

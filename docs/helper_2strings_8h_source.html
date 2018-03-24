@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.9.1"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MyWorld: include/helper/strings.h 原始程式檔</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MyWorld
    </div>
   </td>
@@ -31,40 +29,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 產生者: Doxygen 1.8.9.1 -->
+<!-- 產生者: Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>主頁面</span></a></li>
-      <li><a href="pages.html"><span>相關頁面</span></a></li>
-      <li><a href="annotated.html"><span>資料結構</span></a></li>
-      <li class="current"><a href="files.html"><span>檔案</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>檔案列表</span></a></li>
-      <li><a href="globals.html"><span>全域資料</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -89,41 +66,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="title">strings.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="helper_2strings_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_STRING_HELPER</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_STRING_HELPER</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_2strings_8h.html">strings.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html">helper/debug.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>strings *<a class="code" href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f">String_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44">String_ascii_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d">String_width_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, int64_t full_size);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="debug_8h_html"><div class="ttname"><a href="debug_8h.html">debug.h</a></div></div>
+<a href="helper_2strings_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_STRING_HELPER</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_STRING_HELPER</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_2strings_8h.html">strings.h</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html">helper/debug.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">   11</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>strings *<a class="code" href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f">String_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44">String_ascii_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="helper_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d">String_width_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, int64_t full_size);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="debug_8h_html"><div class="ttname"><a href="debug_8h.html">debug.h</a></div></div>
 <div class="ttc" id="helper_2strings_8h_html_afc75f1d965e0694a1a15d6169f0d0a44"><div class="ttname"><a href="helper_2strings_8h.html#afc75f1d965e0694a1a15d6169f0d0a44">String_ascii_length</a></div><div class="ttdeci">size_t String_ascii_length(const char *str)</div><div class="ttdoc">求出 ascii 版本的 string 長度 </div></div>
 <div class="ttc" id="helper_2strings_8h_html"><div class="ttname"><a href="helper_2strings_8h.html">strings.h</a></div></div>
-<div class="ttc" id="helper_2strings_8h_html_aa0497d0b1b8b6c751aeda054e8873562"><div class="ttname"><a href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a></div><div class="ttdeci">struct strings * String_Intern</div><div class="ttdef"><b>Definition:</b> strings.h:13</div></div>
+<div class="ttc" id="helper_2strings_8h_html_aa0497d0b1b8b6c751aeda054e8873562"><div class="ttname"><a href="helper_2strings_8h.html#aa0497d0b1b8b6c751aeda054e8873562">String_Intern</a></div><div class="ttdeci">struct strings * String_Intern</div><div class="ttdef"><b>Definition:</b> strings.h:11</div></div>
 <div class="ttc" id="helper_2strings_8h_html_a3466c562ebd9f656dab84e8e347e507d"><div class="ttname"><a href="helper_2strings_8h.html#a3466c562ebd9f656dab84e8e347e507d">String_width_length</a></div><div class="ttdeci">size_t String_width_length(const char *str, int64_t full_size)</div><div class="ttdoc">求出顯示在螢幕所需要的長度 </div></div>
 <div class="ttc" id="helper_2strings_8h_html_a0e7a8182f928757f28aee0871ceb768f"><div class="ttname"><a href="helper_2strings_8h.html#a0e7a8182f928757f28aee0871ceb768f">String_length</a></div><div class="ttdeci">size_t String_length(const char *str)</div><div class="ttdoc">求出 UTF8 版本的 string 長度 </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年11月1日 星期三 02:26:17, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2018年3月24日 星期六 22:56:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
+</a> 1.8.13
 </small></address>
 </body>
 </html>

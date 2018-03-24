@@ -1,8 +1,8 @@
 <map id="Camera_Type" name="Camera_Type">
-<area shape="rect" id="node2" href="$struct_point___type.html" title="Point_Type" alt="" coords="24,5,112,32"/>
-<area shape="rect" id="node4" href="$struct_character.html" title="角色結構 " alt="" coords="186,231,265,257"/>
-<area shape="rect" id="node7" href="$struct_two___point.html" title="Virtual Point System. " alt="" coords="26,111,110,137"/>
-<area shape="rect" id="node3" href="$struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="357,111,409,137"/>
-<area shape="rect" id="node5" href="$struct_status.html" title="角色狀態結構 " alt="" coords="134,111,194,137"/>
-<area shape="rect" id="node6" href="$struct_map___type.html" title="Map_Type" alt="" coords="66,231,148,257"/>
+<area shape="rect" id="node2" href="$struct_point___type.html" title="Point_Type" alt="" coords="25,5,117,32"/>
+<area shape="rect" id="node4" href="$struct_character.html" title="角色結構 " alt="" coords="190,231,275,257"/>
+<area shape="rect" id="node7" href="$struct_two___point.html" title="Virtual Point System. " alt="" coords="28,111,115,137"/>
+<area shape="rect" id="node3" href="$struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="373,111,428,137"/>
+<area shape="rect" id="node5" href="$struct_status.html" title="角色狀態結構 " alt="" coords="139,111,201,137"/>
+<area shape="rect" id="node6" href="$struct_map___type.html" title="Map_Type" alt="" coords="61,231,148,257"/>
 </map>

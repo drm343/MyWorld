@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.9.1"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MyWorld: include/base/type.h 原始程式檔</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MyWorld
    </div>
   </td>
@@ -31,40 +29,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 產生者: Doxygen 1.8.9.1 -->
+<!-- 產生者: Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>主頁面</span></a></li>
-      <li><a href="pages.html"><span>相關頁面</span></a></li>
-      <li><a href="annotated.html"><span>資料結構</span></a></li>
-      <li class="current"><a href="files.html"><span>檔案</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>檔案列表</span></a></li>
-      <li><a href="globals.html"><span>全域資料</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -89,58 +66,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="title">type.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="type_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_BASE_TYPE</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_BASE_TYPE</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">    8</a></span>&#160;<span class="keyword">typedef</span> uint8_t <a class="code" href="type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">   11</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="type_8h.html#a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472">   12</a></span>&#160;    <a class="code" href="type_8h.html#a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472">NOT_FOUND</a> = 0,</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154">   13</a></span>&#160;    <a class="code" href="type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154">FOUND</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;} <a class="code" href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">Found_Result</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">   17</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">   18</a></span>&#160;    <a class="code" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a> = 0,</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">   19</a></span>&#160;    <a class="code" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a>,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;} <a class="code" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">   24</a></span>&#160;    <a class="code" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">   25</a></span>&#160;    <a class="code" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;} <a class="code" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="type_8h.html#aef70d5719063dfab39816702cdd282b6">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">   30</a></span>&#160;    <a class="code" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">NO</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">   31</a></span>&#160;    <a class="code" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">YES</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;} <a class="code" href="type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="type_8h_html_a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472"><div class="ttname"><a href="type_8h.html#a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472">NOT_FOUND</a></div><div class="ttdef"><b>Definition:</b> type.h:12</div></div>
-<div class="ttc" id="type_8h_html_aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6"><div class="ttname"><a href="type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">YES</a></div><div class="ttdef"><b>Definition:</b> type.h:31</div></div>
-<div class="ttc" id="type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423"><div class="ttname"><a href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div><div class="ttdef"><b>Definition:</b> type.h:25</div></div>
-<div class="ttc" id="type_8h_html_ac174637f2f335bc1ba1bc16a4f433911"><div class="ttname"><a href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a></div><div class="ttdeci">Execute_Result</div><div class="ttdef"><b>Definition:</b> type.h:17</div></div>
-<div class="ttc" id="type_8h_html_ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff"><div class="ttname"><a href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a></div><div class="ttdef"><b>Definition:</b> type.h:18</div></div>
-<div class="ttc" id="type_8h_html_a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154"><div class="ttname"><a href="type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154">FOUND</a></div><div class="ttdef"><b>Definition:</b> type.h:13</div></div>
-<div class="ttc" id="type_8h_html_aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31"><div class="ttname"><a href="type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">NO</a></div><div class="ttdef"><b>Definition:</b> type.h:30</div></div>
-<div class="ttc" id="type_8h_html_ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8"><div class="ttname"><a href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a></div><div class="ttdef"><b>Definition:</b> type.h:19</div></div>
-<div class="ttc" id="type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6"><div class="ttname"><a href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a></div><div class="ttdeci">Use_Type</div><div class="ttdef"><b>Definition:</b> type.h:23</div></div>
-<div class="ttc" id="type_8h_html_a81c7d09b805c146131afef23d04eee1f"><div class="ttname"><a href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">Found_Result</a></div><div class="ttdeci">Found_Result</div><div class="ttdef"><b>Definition:</b> type.h:11</div></div>
-<div class="ttc" id="type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568"><div class="ttname"><a href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a></div><div class="ttdef"><b>Definition:</b> type.h:24</div></div>
-<div class="ttc" id="type_8h_html_a09c068f2f9eb2f2f675d6d195858d68c"><div class="ttname"><a href="type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a></div><div class="ttdeci">uint8_t Natural</div><div class="ttdef"><b>Definition:</b> type.h:8</div></div>
-<div class="ttc" id="type_8h_html_aef70d5719063dfab39816702cdd282b6"><div class="ttname"><a href="type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a></div><div class="ttdeci">Yes_No</div><div class="ttdef"><b>Definition:</b> type.h:29</div></div>
+<a href="type_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_BASE_TYPE</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_BASE_TYPE</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">    7</a></span>&#160;<span class="keyword">typedef</span> uint8_t <a class="code" href="type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a>;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">    9</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="type_8h.html#a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472">   10</a></span>&#160;    <a class="code" href="type_8h.html#a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472">NOT_FOUND</a> = 0,</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154">   11</a></span>&#160;    <a class="code" href="type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154">FOUND</a></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;} <a class="code" href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">Found_Result</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">   15</a></span>&#160;    <a class="code" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a> = 0,</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">   16</a></span>&#160;    <a class="code" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a>,</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;} <a class="code" href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">   20</a></span>&#160;    <a class="code" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a>,</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">   21</a></span>&#160;    <a class="code" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="type_8h.html#aef70d5719063dfab39816702cdd282b6">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">   25</a></span>&#160;    <a class="code" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">NO</a>,</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">   26</a></span>&#160;    <a class="code" href="type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">YES</a></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <a class="code" href="type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="type_8h_html_a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472"><div class="ttname"><a href="type_8h.html#a81c7d09b805c146131afef23d04eee1facdaa2919bac56fe1090eb3dbb9526472">NOT_FOUND</a></div><div class="ttdef"><b>Definition:</b> type.h:10</div></div>
+<div class="ttc" id="type_8h_html_aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6"><div class="ttname"><a href="type_8h.html#aef70d5719063dfab39816702cdd282b6a99f136a862ba5c7d16967231c29f09d6">YES</a></div><div class="ttdef"><b>Definition:</b> type.h:26</div></div>
+<div class="ttc" id="type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423"><div class="ttname"><a href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6aba098e18111a14d6cf6c57c7c5f96423">IN_USE</a></div><div class="ttdef"><b>Definition:</b> type.h:21</div></div>
+<div class="ttc" id="type_8h_html_ac174637f2f335bc1ba1bc16a4f433911"><div class="ttname"><a href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911">Execute_Result</a></div><div class="ttdeci">Execute_Result</div><div class="ttdef"><b>Definition:</b> type.h:14</div></div>
+<div class="ttc" id="type_8h_html_ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff"><div class="ttname"><a href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff">EXECUTE_SUCCESS</a></div><div class="ttdef"><b>Definition:</b> type.h:15</div></div>
+<div class="ttc" id="type_8h_html_a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154"><div class="ttname"><a href="type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154">FOUND</a></div><div class="ttdef"><b>Definition:</b> type.h:11</div></div>
+<div class="ttc" id="type_8h_html_aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31"><div class="ttname"><a href="type_8h.html#aef70d5719063dfab39816702cdd282b6a0d077f5b932ce05e5b9f30c6087a2f31">NO</a></div><div class="ttdef"><b>Definition:</b> type.h:25</div></div>
+<div class="ttc" id="type_8h_html_ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8"><div class="ttname"><a href="type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8">EXECUTE_FAILED</a></div><div class="ttdef"><b>Definition:</b> type.h:16</div></div>
+<div class="ttc" id="type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6"><div class="ttname"><a href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6">Use_Type</a></div><div class="ttdeci">Use_Type</div><div class="ttdef"><b>Definition:</b> type.h:19</div></div>
+<div class="ttc" id="type_8h_html_a81c7d09b805c146131afef23d04eee1f"><div class="ttname"><a href="type_8h.html#a81c7d09b805c146131afef23d04eee1f">Found_Result</a></div><div class="ttdeci">Found_Result</div><div class="ttdef"><b>Definition:</b> type.h:9</div></div>
+<div class="ttc" id="type_8h_html_a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568"><div class="ttname"><a href="type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6a7c4e07744e4a077d981d068071023568">UNUSE</a></div><div class="ttdef"><b>Definition:</b> type.h:20</div></div>
+<div class="ttc" id="type_8h_html_a09c068f2f9eb2f2f675d6d195858d68c"><div class="ttname"><a href="type_8h.html#a09c068f2f9eb2f2f675d6d195858d68c">Natural</a></div><div class="ttdeci">uint8_t Natural</div><div class="ttdef"><b>Definition:</b> type.h:7</div></div>
+<div class="ttc" id="type_8h_html_aef70d5719063dfab39816702cdd282b6"><div class="ttname"><a href="type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a></div><div class="ttdeci">Yes_No</div><div class="ttdef"><b>Definition:</b> type.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年11月1日 星期三 02:26:17, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2018年3月24日 星期六 22:56:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
+</a> 1.8.13
 </small></address>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <map id="_Room_Item" name="_Room_Item">
-<area shape="rect" id="node2" href="$struct_room.html" title="Room" alt="" coords="25,199,83,225"/>
-<area shape="rect" id="node3" href="$struct_two___point.html" title="Virtual Point System. " alt="" coords="12,109,96,136"/>
-<area shape="rect" id="node4" href="$struct_point___type.html" title="Point_Type" alt="" coords="10,5,98,32"/>
+<area shape="rect" id="node2" href="$struct_room.html" title="Room" alt="" coords="27,199,86,225"/>
+<area shape="rect" id="node3" href="$struct_two___point.html" title="Virtual Point System. " alt="" coords="13,109,100,136"/>
+<area shape="rect" id="node4" href="$struct_point___type.html" title="Point_Type" alt="" coords="11,5,103,32"/>
 </map>

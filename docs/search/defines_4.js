@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['else',['ELSE',['../ada__style_8h.html#a0a70ee0cbf5b1738be4c9463c529ce72',1,'ada_style.h']]],
-  ['elseif',['ELSEIF',['../ada__style_8h.html#a9cd8bdd349a8c9604630be628156d152',1,'ada_style.h']]],
-  ['end',['END',['../ada__style_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f',1,'ada_style.h']]],
-  ['end_5fwhen',['END_WHEN',['../ada__style_8h.html#a9de19cd62ffe0399d1f7c2d008cd2680',1,'ada_style.h']]],
-  ['export',['EXPORT',['../character_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;character.h'],['../character__factory_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;character_factory.h'],['../game__status_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;game_status.h'],['../graphic-camera_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;graphic-camera.h'],['../graphic-message_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;graphic-message.h'],['../map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;map_system.h'],['../rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;rectangle.h'],['../status_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;status.h'],['../style_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;style.h'],['../two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;two_point.h']]]
+  ['game',['GAME',['../namespace_8h.html#a49f9cb9b7142571f8bc33f997b1d28a7',1,'namespace.h']]],
+  ['generic_5farray',['GENERIC_ARRAY',['../generic__function_8h.html#a965ad7aedd5747e0fe06bcf06c2ca7f5',1,'generic_function.h']]],
+  ['generic_5farray_5ffunctions',['GENERIC_ARRAY_FUNCTIONS',['../generic__function_8h.html#a01f1878e9d90e5f574d19e592ed853e5',1,'generic_function.h']]],
+  ['generic_5fpool',['GENERIC_POOL',['../generic__function_8h.html#a0da56b67b0e87f9edb3672306c02392b',1,'generic_function.h']]],
+  ['graphic_5fcamera_5fset_5fmax',['Graphic_Camera_set_max',['../graphic-camera_8h.html#a46f10dbd11f5718505c49ea7d2fca45d',1,'graphic-camera.h']]]
 ];

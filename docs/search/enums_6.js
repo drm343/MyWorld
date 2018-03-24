@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['use_5ftype',['Use_Type',['../type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6',1,'type.h']]]
+  ['yes_5fno',['Yes_No',['../type_8h.html#aef70d5719063dfab39816702cdd282b6',1,'type.h']]]
 ];

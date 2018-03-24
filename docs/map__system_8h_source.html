@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.9.1"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MyWorld: include/map_system.h 原始程式檔</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MyWorld
    </div>
   </td>
@@ -31,40 +29,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 產生者: Doxygen 1.8.9.1 -->
+<!-- 產生者: Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>主頁面</span></a></li>
-      <li><a href="pages.html"><span>相關頁面</span></a></li>
-      <li><a href="annotated.html"><span>資料結構</span></a></li>
-      <li class="current"><a href="files.html"><span>檔案</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>檔案列表</span></a></li>
-      <li><a href="globals.html"><span>全域資料</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -89,92 +66,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="title">map_system.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="map__system_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_MAP_SYSTEM_OBJECT</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_MAP_SYSTEM_OBJECT</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="namespace_8h.html">namespace.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="type_8h.html">base/type.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="two__point_8h.html">two_point.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="style_8h.html">style.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">   13</a></span>&#160;<span class="preprocessor">#define EXPORT(name) MAP(name)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">   16</a></span>&#160;<span class="keyword">typedef</span> int8_t <a class="code" href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">Level</a>[128][128];</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_map___type.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_map___type.html">Map_Type</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_map___type.html#a66a38703f504bb120d8cd9d10ba19cb2">   20</a></span>&#160;    <a class="code" href="struct_two___point.html">Two_Point</a> *<a class="code" href="struct_map___type.html#a66a38703f504bb120d8cd9d10ba19cb2">base</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_map___type.html#acb595283843d9d0e6bf8556057083b9e">   21</a></span>&#160;    <a class="code" href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">Level</a> *<a class="code" href="struct_map___type.html#acb595283843d9d0e6bf8556057083b9e">current</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <a class="code" href="map__system_8h.html#ad67d400b4c7ef6363e50538d3c68fb61">Map_Type</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">   23</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_map___type.html">Map_Type</a> *<a class="code" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// ----------------------------------------</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Init Map_System</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// ----------------------------------------</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span><a class="code" href="struct_map___type.html">Map_Type</a> *<a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(create) (void);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(free) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// ----------------------------------------</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Move Map</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// ----------------------------------------</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_top_left) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_bottom_right) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(bottom_right) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left_x) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left_y) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(bottom_right_x) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(bottom_right_y) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(move_top_left) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(move_bottom_right) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#undef EXPORT</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="struct_two___point_html"><div class="ttname"><a href="struct_two___point.html">Two_Point</a></div><div class="ttdoc">Virtual Point System. </div><div class="ttdef"><b>Definition:</b> two_point.h:32</div></div>
-<div class="ttc" id="map__system_8h_html_a79484bfb6aa49f60b395b7c8ba58ea18"><div class="ttname"><a href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">Level</a></div><div class="ttdeci">int8_t Level[128][128]</div><div class="ttdef"><b>Definition:</b> map_system.h:16</div></div>
+<a href="map__system_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_MAP_SYSTEM_OBJECT</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_MAP_SYSTEM_OBJECT</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="namespace_8h.html">namespace.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="type_8h.html">base/type.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="two__point_8h.html">two_point.h</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="style_8h.html">style.h</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">   12</a></span>&#160;<span class="preprocessor">#define EXPORT(name) MAP(name)</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">   14</a></span>&#160;<span class="keyword">typedef</span> int8_t <a class="code" href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">Level</a>[128][128];</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_map___type.html">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_map___type.html">Map_Type</a> {</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_map___type.html#a66a38703f504bb120d8cd9d10ba19cb2">   17</a></span>&#160;    <a class="code" href="struct_two___point.html">Two_Point</a> *<a class="code" href="struct_map___type.html#a66a38703f504bb120d8cd9d10ba19cb2">base</a>;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_map___type.html#acb595283843d9d0e6bf8556057083b9e">   18</a></span>&#160;    <a class="code" href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">Level</a> *<a class="code" href="struct_map___type.html#acb595283843d9d0e6bf8556057083b9e">current</a>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} <a class="code" href="map__system_8h.html#ad67d400b4c7ef6363e50538d3c68fb61">Map_Type</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">   20</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_map___type.html">Map_Type</a> *<a class="code" href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//----------------------------------------</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//Init Map_System</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ----------------------------------------</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span><a class="code" href="struct_map___type.html">Map_Type</a> *<a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(create) (void);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(free) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//----------------------------------------</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//Move Map</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// ----------------------------------------</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_top_left) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(set_bottom_right) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<a class="code" href="struct_point___type.html">Point_Access</a> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(bottom_right) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left_x) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(top_left_y) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(bottom_right_x) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;int32_t <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(bottom_right_y) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(move_top_left) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a>(move_bottom_right) (<a class="code" href="struct_map___type.html">Map_Type</a> * <span class="keyword">self</span>, int32_t x, int32_t y);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#undef EXPORT</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="struct_two___point_html"><div class="ttname"><a href="struct_two___point.html">Two_Point</a></div><div class="ttdoc">Virtual Point System. </div><div class="ttdef"><b>Definition:</b> two_point.h:29</div></div>
+<div class="ttc" id="map__system_8h_html_a79484bfb6aa49f60b395b7c8ba58ea18"><div class="ttname"><a href="map__system_8h.html#a79484bfb6aa49f60b395b7c8ba58ea18">Level</a></div><div class="ttdeci">int8_t Level[128][128]</div><div class="ttdef"><b>Definition:</b> map_system.h:14</div></div>
 <div class="ttc" id="map__system_8h_html_ad67d400b4c7ef6363e50538d3c68fb61"><div class="ttname"><a href="map__system_8h.html#ad67d400b4c7ef6363e50538d3c68fb61">Map_Type</a></div><div class="ttdeci">struct Map_Type Map_Type</div></div>
-<div class="ttc" id="map__system_8h_html_a57a6976d6a3130e3c74d247740ca436e"><div class="ttname"><a href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a></div><div class="ttdeci">Map_Type * Map_Access</div><div class="ttdef"><b>Definition:</b> map_system.h:23</div></div>
+<div class="ttc" id="map__system_8h_html_a57a6976d6a3130e3c74d247740ca436e"><div class="ttname"><a href="map__system_8h.html#a57a6976d6a3130e3c74d247740ca436e">Map_Access</a></div><div class="ttdeci">Map_Type * Map_Access</div><div class="ttdef"><b>Definition:</b> map_system.h:20</div></div>
 <div class="ttc" id="namespace_8h_html"><div class="ttname"><a href="namespace_8h.html">namespace.h</a></div></div>
-<div class="ttc" id="struct_point___type_html"><div class="ttname"><a href="struct_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> point.h:11</div></div>
-<div class="ttc" id="struct_map___type_html_acb595283843d9d0e6bf8556057083b9e"><div class="ttname"><a href="struct_map___type.html#acb595283843d9d0e6bf8556057083b9e">Map_Type::current</a></div><div class="ttdeci">Level * current</div><div class="ttdef"><b>Definition:</b> map_system.h:21</div></div>
+<div class="ttc" id="struct_point___type_html"><div class="ttname"><a href="struct_point___type.html">Point_Type</a></div><div class="ttdef"><b>Definition:</b> point.h:10</div></div>
+<div class="ttc" id="struct_map___type_html_acb595283843d9d0e6bf8556057083b9e"><div class="ttname"><a href="struct_map___type.html#acb595283843d9d0e6bf8556057083b9e">Map_Type::current</a></div><div class="ttdeci">Level * current</div><div class="ttdef"><b>Definition:</b> map_system.h:18</div></div>
 <div class="ttc" id="style_8h_html"><div class="ttname"><a href="style_8h.html">style.h</a></div></div>
 <div class="ttc" id="two__point_8h_html"><div class="ttname"><a href="two__point_8h.html">two_point.h</a></div></div>
-<div class="ttc" id="map__system_8h_html_a4fe932c6483a71ec8f5f6e2bcd6b33aa"><div class="ttname"><a href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a></div><div class="ttdeci">#define EXPORT(name)</div><div class="ttdoc">Namespace MAP. </div><div class="ttdef"><b>Definition:</b> map_system.h:13</div></div>
-<div class="ttc" id="struct_map___type_html_a66a38703f504bb120d8cd9d10ba19cb2"><div class="ttname"><a href="struct_map___type.html#a66a38703f504bb120d8cd9d10ba19cb2">Map_Type::base</a></div><div class="ttdeci">Two_Point * base</div><div class="ttdef"><b>Definition:</b> map_system.h:20</div></div>
+<div class="ttc" id="map__system_8h_html_a4fe932c6483a71ec8f5f6e2bcd6b33aa"><div class="ttname"><a href="map__system_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa">EXPORT</a></div><div class="ttdeci">#define EXPORT(name)</div><div class="ttdoc">Namespace MAP. </div><div class="ttdef"><b>Definition:</b> map_system.h:12</div></div>
+<div class="ttc" id="struct_map___type_html_a66a38703f504bb120d8cd9d10ba19cb2"><div class="ttname"><a href="struct_map___type.html#a66a38703f504bb120d8cd9d10ba19cb2">Map_Type::base</a></div><div class="ttdeci">Two_Point * base</div><div class="ttdef"><b>Definition:</b> map_system.h:17</div></div>
 <div class="ttc" id="type_8h_html"><div class="ttname"><a href="type_8h.html">type.h</a></div></div>
-<div class="ttc" id="struct_map___type_html"><div class="ttname"><a href="struct_map___type.html">Map_Type</a></div><div class="ttdef"><b>Definition:</b> map_system.h:19</div></div>
+<div class="ttc" id="struct_map___type_html"><div class="ttname"><a href="struct_map___type.html">Map_Type</a></div><div class="ttdef"><b>Definition:</b> map_system.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年11月1日 星期三 02:26:17, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2018年3月24日 星期六 22:56:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
+</a> 1.8.13
 </small></address>
 </body>
 </html>

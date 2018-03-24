@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['relation_5ftype',['Relation_Type',['../status_8h.html#a418c1dcd8805ec9527985a86e0d494d7',1,'status.h']]]
+  ['use_5ftype',['Use_Type',['../type_8h.html#a2ff2f0382fbea56e6ff4bbd03c3098f6',1,'type.h']]]
 ];

@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.9.1"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MyWorld: include/container/Character_List.h 原始程式檔</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -11,9 +12,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MyWorld
    </div>
   </td>
@@ -31,40 +29,19 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 產生者: Doxygen 1.8.9.1 -->
+<!-- 產生者: Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>主頁面</span></a></li>
-      <li><a href="pages.html"><span>相關頁面</span></a></li>
-      <li><a href="annotated.html"><span>資料結構</span></a></li>
-      <li class="current"><a href="files.html"><span>檔案</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜尋" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>檔案列表</span></a></li>
-      <li><a href="globals.html"><span>全域資料</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -89,39 +66,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 <div class="title">Character_List.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_character___list_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_CONTAINER_LIST_Character_List</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_CONTAINER_LIST_Character_List</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="character_8h.html">character.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct___character___node.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___character___node.html">_Character_Node</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct___character___node.html#a484649fab97030668af7c6f64355b9c0">   13</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct___character___node.html">_Character_Node</a> *<a class="code" href="struct___character___node.html#a484649fab97030668af7c6f64355b9c0">next</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct___character___node.html#ae679fb5e296b512d2f34fea1230e426b">   14</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct___character___node.html">_Character_Node</a> *<a class="code" href="struct___character___node.html#ae679fb5e296b512d2f34fea1230e426b">previous</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct___character___node.html#ab9c78eda434766686816788f72e76063">   15</a></span>&#160;    <a class="code" href="struct_character.html">Character</a> *<a class="code" href="struct___character___node.html#ab9c78eda434766686816788f72e76063">content</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;} <a class="code" href="_character___list_8h.html#a8e0ef3bbf0f812488cddd0ddd79ec45f">Character_Node</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_character___list.html">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_character___list.html#a6f28603550d2c35493a50bbe580e40af">   19</a></span>&#160;    <a class="code" href="struct___character___node.html">Character_Node</a> *<a class="code" href="struct_character___list.html#a6f28603550d2c35493a50bbe580e40af">list</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_character___list.html#aafbb8d0fa7101a65447b6ede877c39d4">   20</a></span>&#160;    uint8_t <a class="code" href="struct_character___list.html#aafbb8d0fa7101a65447b6ede877c39d4">max_size</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_character___list.html#a4b1141237b480e4c38afe96a59ca4cad">   21</a></span>&#160;    uint8_t <a class="code" href="struct_character___list.html#a4b1141237b480e4c38afe96a59ca4cad">used</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_character___list.html#adfc9a8b4783d1efb0214b432f06d5793">   22</a></span>&#160;    uint8_t <a class="code" href="struct_character___list.html#adfc9a8b4783d1efb0214b432f06d5793">instance_counter</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_character___list.html#a7a0bdcb9f33e390c955d4aad72dd0cfe">   23</a></span>&#160;    <a class="code" href="struct___character___node.html">Character_Node</a> *<a class="code" href="struct_character___list.html#a7a0bdcb9f33e390c955d4aad72dd0cfe">first</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_character___list.html#a83c559c26ba87eeec6b92790fd745b2c">   24</a></span>&#160;    <a class="code" href="struct___character___node.html">Character_Node</a> *<a class="code" href="struct_character___list.html#a83c559c26ba87eeec6b92790fd745b2c">last</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;} <a class="code" href="struct_character___list.html">Character_List</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="struct_character___list.html">Character_List</a> *<a class="code" href="_character___list_8h.html#a0ea8182640edcfc3d1c15e980fa1f3f0">Character_List_start</a>(uint8_t max_size);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a877c6163e639d8aa77608a1f854dce5f">Character_List_stop</a>(<a class="code" href="struct_character___list.html">Character_List</a> * access);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a39df9b75772115d4424a4cf08c1b46b4">Character_List_gc</a>(<a class="code" href="struct_character___list.html">Character_List</a> * access);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;uint8_t <a class="code" href="_character___list_8h.html#a28152432b91187b4b11b9981c86db452">Character_List_insert</a>(<a class="code" href="struct_character___list.html">Character_List</a> * access, <a class="code" href="struct_character.html">Character</a> * item);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a4450a683f0c9cf4412f8f7eb7f6749fb">Character_List_remove</a>(<a class="code" href="struct_character___list.html">Character_List</a> * access, <a class="code" href="struct_character.html">Character</a> * item);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="struct_character.html">Character</a> *<a class="code" href="_character___list_8h.html#ad8c26000ee89a0dc7a1f87e9c85a92c8">Character_List_get_by_index</a>(<a class="code" href="struct_character___list.html">Character_List</a> * access,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                       uint8_t index);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a0c909d365ed63694bb7355e9f48d4bec">Character_List_copy_all</a>(<a class="code" href="struct_character___list.html">Character_List</a> * from, <a class="code" href="struct_character___list.html">Character_List</a> * to);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="character_8h_html"><div class="ttname"><a href="character_8h.html">character.h</a></div></div>
+<a href="_character___list_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_CONTAINER_LIST_Character_List</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_CONTAINER_LIST_Character_List</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="character_8h.html">character.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct___character___node.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___character___node.html">_Character_Node</a> {</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct___character___node.html#a484649fab97030668af7c6f64355b9c0">   13</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct___character___node.html">_Character_Node</a> *<a class="code" href="struct___character___node.html#a484649fab97030668af7c6f64355b9c0">next</a>;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct___character___node.html#ae679fb5e296b512d2f34fea1230e426b">   14</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct___character___node.html">_Character_Node</a> *<a class="code" href="struct___character___node.html#ae679fb5e296b512d2f34fea1230e426b">previous</a>;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct___character___node.html#ab9c78eda434766686816788f72e76063">   15</a></span>&#160;    <a class="code" href="struct_character.html">Character</a> *<a class="code" href="struct___character___node.html#ab9c78eda434766686816788f72e76063">content</a>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;} <a class="code" href="_character___list_8h.html#a8e0ef3bbf0f812488cddd0ddd79ec45f">Character_Node</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_character___list.html">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_character___list.html#a6f28603550d2c35493a50bbe580e40af">   19</a></span>&#160;    <a class="code" href="struct___character___node.html">Character_Node</a> *<a class="code" href="struct_character___list.html#a6f28603550d2c35493a50bbe580e40af">list</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_character___list.html#aafbb8d0fa7101a65447b6ede877c39d4">   20</a></span>&#160;    uint8_t <a class="code" href="struct_character___list.html#aafbb8d0fa7101a65447b6ede877c39d4">max_size</a>;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_character___list.html#a4b1141237b480e4c38afe96a59ca4cad">   21</a></span>&#160;    uint8_t <a class="code" href="struct_character___list.html#a4b1141237b480e4c38afe96a59ca4cad">used</a>;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_character___list.html#adfc9a8b4783d1efb0214b432f06d5793">   22</a></span>&#160;    uint8_t <a class="code" href="struct_character___list.html#adfc9a8b4783d1efb0214b432f06d5793">instance_counter</a>;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_character___list.html#a7a0bdcb9f33e390c955d4aad72dd0cfe">   23</a></span>&#160;    <a class="code" href="struct___character___node.html">Character_Node</a> *<a class="code" href="struct_character___list.html#a7a0bdcb9f33e390c955d4aad72dd0cfe">first</a>;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_character___list.html#a83c559c26ba87eeec6b92790fd745b2c">   24</a></span>&#160;    <a class="code" href="struct___character___node.html">Character_Node</a> *<a class="code" href="struct_character___list.html#a83c559c26ba87eeec6b92790fd745b2c">last</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;} <a class="code" href="struct_character___list.html">Character_List</a>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="struct_character___list.html">Character_List</a>* <a class="code" href="_character___list_8h.html#a0ea8182640edcfc3d1c15e980fa1f3f0">Character_List_start</a>(uint8_t max_size);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a877c6163e639d8aa77608a1f854dce5f">Character_List_stop</a>(<a class="code" href="struct_character___list.html">Character_List</a> *access);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a39df9b75772115d4424a4cf08c1b46b4">Character_List_gc</a>(<a class="code" href="struct_character___list.html">Character_List</a> *access);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;uint8_t <a class="code" href="_character___list_8h.html#a28152432b91187b4b11b9981c86db452">Character_List_insert</a>(<a class="code" href="struct_character___list.html">Character_List</a> *access, <a class="code" href="struct_character.html">Character</a> *item);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a4450a683f0c9cf4412f8f7eb7f6749fb">Character_List_remove</a>(<a class="code" href="struct_character___list.html">Character_List</a> *access, <a class="code" href="struct_character.html">Character</a> *item);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="struct_character.html">Character</a>* <a class="code" href="_character___list_8h.html#ad8c26000ee89a0dc7a1f87e9c85a92c8">Character_List_get_by_index</a>(<a class="code" href="struct_character___list.html">Character_List</a> *access, uint8_t index);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_character___list_8h.html#a0c909d365ed63694bb7355e9f48d4bec">Character_List_copy_all</a>(<a class="code" href="struct_character___list.html">Character_List</a> *from, <a class="code" href="struct_character___list.html">Character_List</a> *to);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="character_8h_html"><div class="ttname"><a href="character_8h.html">character.h</a></div></div>
 <div class="ttc" id="struct___character___node_html"><div class="ttname"><a href="struct___character___node.html">_Character_Node</a></div><div class="ttdef"><b>Definition:</b> Character_List.h:12</div></div>
-<div class="ttc" id="struct_character_html"><div class="ttname"><a href="struct_character.html">Character</a></div><div class="ttdoc">角色結構 </div><div class="ttdef"><b>Definition:</b> character.h:18</div></div>
+<div class="ttc" id="struct_character_html"><div class="ttname"><a href="struct_character.html">Character</a></div><div class="ttdoc">角色結構 </div><div class="ttdef"><b>Definition:</b> character.h:16</div></div>
 <div class="ttc" id="struct_character___list_html"><div class="ttname"><a href="struct_character___list.html">Character_List</a></div><div class="ttdef"><b>Definition:</b> Character_List.h:18</div></div>
 <div class="ttc" id="struct_character___list_html_a83c559c26ba87eeec6b92790fd745b2c"><div class="ttname"><a href="struct_character___list.html#a83c559c26ba87eeec6b92790fd745b2c">Character_List::last</a></div><div class="ttdeci">Character_Node * last</div><div class="ttdef"><b>Definition:</b> Character_List.h:24</div></div>
 <div class="ttc" id="_character___list_8h_html_a877c6163e639d8aa77608a1f854dce5f"><div class="ttname"><a href="_character___list_8h.html#a877c6163e639d8aa77608a1f854dce5f">Character_List_stop</a></div><div class="ttdeci">void Character_List_stop(Character_List *access)</div></div>
@@ -143,9 +90,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2017年11月1日 星期三 02:26:17, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2018年3月24日 星期六 22:56:56, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
+</a> 1.8.13
 </small></address>
 </body>
 </html>

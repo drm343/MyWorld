@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['setup_5fmark',['setup_mark',['../main__set__config_8h.html#ae6ad63c22cf04abb77813e184c3b4d52',1,'main_set_config.h']]],
-  ['setup_5fstyle',['setup_style',['../main__set__config_8h.html#a34037616a5e1d73d6c5e92f0507ed888',1,'main_set_config.h']]],
-  ['setup_5fwindow',['setup_window',['../main__set__config_8h.html#a23e7b035380399d4c5ba41232c69e5b9',1,'main_set_config.h']]],
   ['start',['start',['../character__factory_8h.html#ac414e627fcba08b5a3f10b1510e772ea',1,'character_factory.h']]],
   ['status_5fattack',['Status_attack',['../status_8h.html#aba1ec1fa2ba213f07f4075e8ad8a7ea6',1,'status.h']]],
   ['status_5fcopy',['Status_copy',['../status_8h.html#afa944b3f114f3a7acbeca664a9aba019',1,'status.h']]],
   ['status_5ffree',['Status_free',['../status_8h.html#acdb4379bcbec8cc8746cbda98314497d',1,'status.h']]],
-  ['status_5fget_5frelation_5forigin',['Status_get_relation_origin',['../status_8h.html#af259f78aadd90e9eba7e2b58c81a0db3',1,'status.h']]],
+  ['status_5fget_5frelation_5forigin',['Status_get_relation_origin',['../status_8h.html#aa45efdef0bf42337ee0d451b0fe6baa3',1,'status.h']]],
   ['status_5fget_5frelation_5fstring',['Status_get_relation_string',['../status_8h.html#af1a1dfa9cbd89cf5a6b6ec7cde3dbda9',1,'status.h']]],
   ['status_5finit',['Status_init',['../status_8h.html#afce510e4aa743e7cd8d67bb7a9002ac9',1,'status.h']]],
   ['status_5fis_5falive',['Status_is_alive',['../status_8h.html#ab08d96b4bffb5eacad042927bc6340d4',1,'status.h']]],
