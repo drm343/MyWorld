@@ -75,5 +75,16 @@ bpt_key_t EXPORT(history_count) (Message_Box_Access self);
 const char *EXPORT(get_history_by_index) (Message_Box_Access self,
                                           bpt_key_t index);
 
+/** @brief 檢查是否有更新
+ * @param self 訊息欄
+ * @return 是否有新訊息
+*/
+bool EXPORT(is_updated) (Message_Box_Access self);
+
+/** @brief 告訴 Message Box 更新已完成
+ * @param self 訊息欄
+*/
+void EXPORT(update_done) (Message_Box_Access self);
+
 #undef EXPORT
 #endif

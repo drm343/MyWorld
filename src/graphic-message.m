@@ -20,21 +20,22 @@ typedef SDL_Point *Message_Box_Point;
 typedef struct Message_Box {
     Message_Box_Point box;      /**< 顯示器的設定，可以畫出一個長方形 */
     bpt_t history;              /**< 儲存要顯示的訊息 */
-    int64_t counter;
+    int64_t counter;            /**< 提供給使用者抓出最新資訊用的計數器 */
+    bool is_need_updated;            /**< 是否有更新 */
 } Message_Box;
 typedef Message_Box *Message_Box_Access;
 
 static SDL_Point box_array[5] = {
     {
-     0, 20 * 24},
+     0, 0},
     {
-     0, 600},
+     0, 120},
     {
-     799, 600},
+     799, 120},
     {
-     799, 20 * 24},
+     799, 0},
     {
-     0, 20 * 24}
+     0, 0}
 };
 
 //--------------------------------
@@ -48,6 +49,7 @@ Message_Box_Access EXPORT(start) (void) {
     self->box = box_array;
     self->history = NULL;
     self->counter = 0;
+    self->is_need_updated = true;
     return self;
 }
 
@@ -146,6 +148,25 @@ void EXPORT(add_message) (Message_Box_Access self, const char *message) {
         self->history = bpt_assoc_and_release(self->history, self->counter, result);
     }
     self->counter = self->counter + 1;
+    self->is_need_updated = true;
+}
+
+//--------------------------------
+// Update Status
+// --------------------------------
+/** @brief 檢查是否有更新
+ * @param self 訊息欄
+ * @return 是否有新訊息
+*/
+bool EXPORT(is_updated) (Message_Box_Access self) {
+    return !(self->is_need_updated);
+}
+
+/** @brief 告訴 Message Box 更新已完成
+ * @param self 訊息欄
+*/
+void EXPORT(update_done) (Message_Box_Access self) {
+    self->is_need_updated = false;
 }
 
 #undef EXPORT

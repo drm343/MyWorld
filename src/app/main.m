@@ -130,20 +130,44 @@ void draw_message_box(SDL_Renderer_Access render)
     SDL_Color white = { 255, 255, 255 };
     const char *item = NULL;
 
+    SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
+    {
+        SDL_Rect clean_message_box_area = {
+            .x = 0,
+            .y = 20 * 24,
+            .w = 799,
+            .h = 120
+        };
+        SDL_RenderSetViewport( render, &clean_message_box_area);
+    }
+
+    if (Message_Box_is_updated(box_1)) {
+        goto DONE;
+    }
+    {
+        SDL_Rect clean_message_box_area = {
+            .x = 0,
+            .y = 0,
+            .w = 799,
+            .h = 120
+        };
+        SDL_RenderFillRect(render, &clean_message_box_area);
+    }
+
+    SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
+    SDL_RenderDrawLines(render, Message_Box_box(box_1), 5);
+
     bpt_key_t current = Message_Box_history_count(box_1) - 1;
     for (int counter = 0; counter < 5; counter++) {
         item = Message_Box_get_history_by_index(box_1, current);
         current = current - 1;
-
-        SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
-        SDL_RenderDrawLines(render, Message_Box_box(box_1), 5);
 
         SDL_Surface *surfaceMessage = NULL;
 
         if (item != NULL) {
             SDL_Rect box = {
                 .x = 0,
-                .y = (20 + counter) * 24,
+                .y = counter * 24,
                 .w = String_width_length(item, 24),
                 .h = 24
             };
@@ -157,13 +181,23 @@ void draw_message_box(SDL_Renderer_Access render)
             SDL_DestroyTexture(access);
         }
     }
+DONE:
+    Message_Box_update_done(box_1);
 }
 
 void draw_view(SDL_Renderer_Access render)
 {
-    SDL_Rect rect = {.x = 0,.y = 0,.w = GRID_LENGTH,.h = GRID_LENGTH };
     SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
-    SDL_RenderClear(render);
+    //SDL_RenderClear(render);
+
+    SDL_Rect clean_character_area = {
+        .x = 0,
+        .y = 0,
+        .w = 799,
+        .h = 20 * 24
+    };
+    SDL_RenderSetViewport( render, &clean_character_area);
+    SDL_RenderFillRect(render, &clean_character_area);
 
     Point_Access graph_point = camera_1->player->Graph_Position;
     position.x = GRID_LENGTH * Point_Type_x(graph_point);
@@ -171,6 +205,7 @@ void draw_view(SDL_Renderer_Access render)
     SDL_RenderCopy(render, camera_1->player->Mark->access, NULL, &(position));
 
     uint8_t used = GAME(instance_count) (game_status_pool);
+    SDL_Rect rect = {.x = 0,.y = 0,.w = GRID_LENGTH,.h = GRID_LENGTH };
 
     for (int next = 1; next < used; next++) {
         Character_Access npc =
