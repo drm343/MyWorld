@@ -1,6 +1,9 @@
 #ifndef HEADER_GRAPHIC_MESSAGE
 #define HEADER_GRAPHIC_MESSAGE
 
+
+#include "bitmapped_patricia_tree.h"
+
 #include "namespace.h"
 
 #include "style.h"
@@ -56,13 +59,13 @@ EXPORT(set_box) (Message_Box_Access self,
  * @param self 訊息欄
  * @param message 想加入的訊息
 */
-void EXPORT(add_message) (Message_Box_Access self, char *message);
+void EXPORT(add_message) (Message_Box_Access self, const char *message);
 
 /** @brief 目前的歷史訊息總數
  * @param self 訊息欄
  * @return 歷史訊息總數
 */
-int EXPORT(history_count) (Message_Box_Access self);
+bpt_key_t EXPORT(history_count) (Message_Box_Access self);
 
 /** @brief 根據 index 取出對應的歷史訊息
  * @param self 訊息欄
@@ -70,7 +73,7 @@ int EXPORT(history_count) (Message_Box_Access self);
  * @return 歷史訊息
 */
 const char *EXPORT(get_history_by_index) (Message_Box_Access self,
-                                          uint8_t * index);
+                                          bpt_key_t index);
 
 #undef EXPORT
 #endif

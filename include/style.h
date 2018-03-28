@@ -4,6 +4,8 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
+#include "MWMutableString.h"
+
 #include "base/type.h"
 #include "namespace.h"
 
@@ -25,8 +27,8 @@ typedef struct {
 /** @brief 顯示在螢幕上的圖形結構
  */
 typedef struct {
-    const char *name;           /**< 比對用的名稱，通常為種族名稱 */
-    const char *mark;           /**< 顯示在畫面上的代表圖形 */
+    MWMutableString *name;      /**< 比對用的名稱，通常為種族名稱 */
+    MWMutableString *mark;      /**< 顯示在畫面上的代表圖形 */
     Yes_No crossable;           /**< 可不可以跨過去 */
     Yes_No attackable;          /**< 可不可以被攻擊 */
     SDL_Texture_Access access;  /**< SDL_Texture 的 Access */

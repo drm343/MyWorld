@@ -5,7 +5,6 @@
 #include "style.h"
 #include "helper/generic_function.h"
 #include "helper/debug.h"
-#include "instance/strings.h"
 
 /** @brief Namespace STYLE_P
  */
@@ -31,6 +30,12 @@ Style_Pool_Access EXPORT(start) (int size) {
  * 若需要釋放，請透過外部管理函數釋放 name 跟 mark。
 */
 void EXPORT(stop) (Style_Pool_Access self) {
+    uint8_t counter = 0;
+    Style_Access item = NULL;
+    while (item = EXPORT(next)(self, &counter)) {
+        [item->name dealloc];
+        [item->mark dealloc];
+    }
     free(self->pool);
     free(self);
 }
@@ -75,17 +80,19 @@ Style_Access EXPORT(malloc) (Style_Pool_Access self) {
 Style_Access EXPORT(find) (Style_Pool_Access pool_access, const char *name) {
     uint8_t used = pool_access->max_size - pool_access->current_size;
     Style_Access result = NULL;
-    name = String_Repo_search(name);
+    MWMutableString *find_name = [MWMutableString create_with_c_string: name];
 
     for (uint8_t count = 0; count < used; count++) {
         result = &(pool_access->pool[count]);
 
-        if (result->name == name) {
-            return result;
+        if ([result->name equal: find_name]) {
+            goto DONE;
         }
     }
     result = NULL;
 
+DONE:
+    [find_name dealloc];
     return result;
 }
 

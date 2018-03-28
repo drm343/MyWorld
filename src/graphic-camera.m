@@ -302,21 +302,19 @@ EXPORT(take) (Camera_Access self,
     } else {
         Is_Alive is_alive = ALIVE;
 
-        char *format = "%s(%s) 攻擊 %s(%s) 造成 1 點傷害";
-        int counter = snprintf(NULL, 0, format,
-                               current->status->name,
-                               STATUS(get_relation_string)
-                               (current->status),
-                               npc->status->name,
-                               STATUS(get_relation_string) (npc->status));
+        CFStringRef attack_message;
+        {
+            MWMutableString *format = [MWMutableString create_with_c_string: "%s(%s) 攻擊 %s(%s) 造成 1 點傷害"];
+            attack_message = CFStringCreateWithFormat( NULL, NULL, [format get], 
+                    [current->status->name get_c_string],
+                    STATUS(get_relation_string) (current->status),
+                    [npc->status->name get_c_string],
+                    STATUS(get_relation_string) (npc->status));
+            [format dealloc];
+        }
 
-        char attack_message[counter];
-        snprintf(attack_message, counter + 1, format,
-                 current->status->name,
-                 STATUS(get_relation_string) (current->status),
-                 npc->status->name,
-                 STATUS(get_relation_string) (npc->status));
-        BOX(add_message) (box_access, attack_message);
+        BOX(add_message) (box_access, CFStringGetCStringPtr (attack_message, kCFStringEncodingASCII));
+        CFRelease(attack_message);
         Faction_Type npc_relation;
         Status_get_relation(npc->status, npc_relation);
 
@@ -341,19 +339,15 @@ EXPORT(take) (Camera_Access self,
         if (is_alive == DEAD) {
             CHARA(set_style) (npc, dead);
 
-            counter = String_ascii_length(npc->status->name);
-
+            const char *format = NULL;
             if (npc->status->faction == FACTION_PLAYER) {
                 format = " 已死亡，任意按鍵離開遊戲";
-                counter = counter + String_ascii_length(format);
             } else {
                 format = " 死亡";
-                counter = counter + String_ascii_length(format);
             }
-            char death_message[counter];
-            snprintf(death_message, counter + 1, "%s%s",
-                     npc->status->name, format);
-            BOX(add_message) (box_access, death_message);
+            MWMutableString *death_message = [[MWMutableString create_with_c_string: [npc->status->name get_c_string]] append: format];
+            BOX(add_message) (box_access, [death_message get_c_string]);
+            [death_message dealloc];
         }
     }
 

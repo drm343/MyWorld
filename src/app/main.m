@@ -26,7 +26,6 @@ Camera_Access camera_1 = NULL;
 Message_Box_Access box_1 = NULL;
 Map_Type *map_1;
 Game_Status *game_status_pool = NULL;
-struct strings *global_repo = NULL;
 
 TTF_Font *USE_FONT = NULL;
 Style_Pool_Access style_pool = NULL;
@@ -63,10 +62,10 @@ void setup_mark(config_setting_t ** setting)
 
         Style_Access style_access = STYLE_P(malloc) (style_pool);
         config_setting_lookup_string(style_setting, "key", &key);
-        style_access->name = String_Repo_sign_in(key);
+        style_access->name = [MWMutableString create_with_c_string: key];
 
         config_setting_lookup_string(style_setting, "mark", &key);
-        style_access->mark = String_Repo_sign_in(key);
+        style_access->mark = [MWMutableString create_with_c_string: key];
 
         int is_attackable = 0;
         config_setting_lookup_bool(style_setting, "attackable",
@@ -131,9 +130,10 @@ void draw_message_box(SDL_Renderer_Access render)
     SDL_Color white = { 255, 255, 255 };
     const char *item = NULL;
 
-    uint8_t current = Message_Box_history_count(box_1);
+    bpt_key_t current = Message_Box_history_count(box_1) - 1;
     for (int counter = 0; counter < 5; counter++) {
-        item = Message_Box_get_history_by_index(box_1, &current);
+        item = Message_Box_get_history_by_index(box_1, current);
+        current = current - 1;
 
         SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
         SDL_RenderDrawLines(render, Message_Box_box(box_1), 5);
@@ -209,7 +209,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
     Style_Access result = STYLE_P(next) (style_pool, &counter);
 
     while (result != NULL) {
-        surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT, result->mark, white);
+        surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT, [result->mark get_c_string], white);
         result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
 
         SDL_FreeSurface(surfaceMessage);
@@ -337,9 +337,6 @@ void submain()
 
 int main(int argc, char *argv[])
 {
-    global_repo = strings_new();
-    String_Repo_change(global_repo);
-
     // 取得 root_dir
     char execution_path[1024];
     char *exist;
@@ -353,7 +350,6 @@ int main(int argc, char *argv[])
     submain();
 
     MAP(free) (map_1);
-    strings_free(global_repo);
 
     // 釋放已完成的 config
     [ROOT_DIR dealloc];

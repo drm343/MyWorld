@@ -13,17 +13,17 @@
  */
 
 typedef struct _Character_Item {
-    Character *content;
-    bool is_used;
+  Character *content;
+  bool is_used;
 } Character_Item;
 
 typedef struct {
-    Character_Item *pool;
-    Character *item;
-    uint8_t max_size;
+  Character_Item *pool;
+  Character *item;
+  uint8_t max_size;
 } Character_Pool;
 
-Character_Pool *Character_Pool_start(uint8_t max_size);
-void Character_Pool_stop(Character_Pool * access);
-Character *Character_Pool_malloc(Character_Pool * access);
+Character_Pool* Character_Pool_start(uint8_t max_size);
+void Character_Pool_stop(Character_Pool *access);
+Character* Character_Pool_malloc(Character_Pool *access);
 #endif

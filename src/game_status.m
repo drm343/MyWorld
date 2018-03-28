@@ -72,19 +72,24 @@ static void set_used(Game_Status * access, uint8_t max_size)
 static Found_Result pool_find(Character_List * access,
                               Character_Access * npc, const char *race)
 {
-    race = String_Repo_search(race);
-
     uint8_t max_size = access->instance_counter;
+    MWMutableString *find_race = [MWMutableString create_with_c_string: race];
+    Found_Result result = NOT_FOUND;
 
     for (uint8_t index = 0; index < max_size; index++) {
         *npc = Character_List_get_by_index(access, index);
 
-        if ((*npc)->status->race == race) {
-            return FOUND;
+        MWMutableString *npc_race = (*npc)->status->race;
+        if ([npc_race equal: find_race]) {
+            result = FOUND;
+            goto DONE;
         }
     }
     *npc = NULL;
-    return NOT_FOUND;
+
+DONE:
+    [find_race dealloc];
+    return result;
 }
 
 /** @brief 分配一個半完成初始化的角色實體
@@ -539,11 +544,9 @@ EXPORT(parse_npc_config) (Game_Status * self,
 
             const char *name;
             config_setting_lookup_string(npc_setting, "name", &name);
-            name = String_Repo_sign_in(name);
 
             const char *race;
             config_setting_lookup_string(npc_setting, "race", &race);
-            race = String_Repo_sign_in(race);
 
             Style_Access style = STYLE_P(find) (style_pool, race);
 

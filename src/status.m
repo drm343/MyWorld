@@ -36,12 +36,12 @@ void EXPORT(free) (Status_Access self) {
  * 因此請確保角色資料的 Access 不會在複製後被釋放。
  */
 void EXPORT(copy) (Status_Access self, Status_Access from) {
-    self->name = from->name;
+    self->name = [MWMutableString copy: from->name];
 
     self->is_alive = ALIVE;
     self->status = IN_USE;
 
-    self->race = from->race;
+    self->race = [MWMutableString copy: from->race];
     self->faction = from->faction;
     self->damage = from->damage;
 }
@@ -55,7 +55,7 @@ void EXPORT(copy) (Status_Access self, Status_Access from) {
  * @param self 要顯示的角色
  */
 void EXPORT(print_status) (Status_Access self) {
-    DEBUG_PRINT("%s : %s\n", self->name, self->race);
+    DEBUG_PRINT("%s : %s\n", [self->name get_c_string], [self->race get_c_string]);
     DEBUG_PRINT("Damage: %d\n", self->damage);
 }
 #endif
@@ -69,7 +69,13 @@ void EXPORT(print_status) (Status_Access self) {
  * @param name 角色名稱
  */
 void EXPORT(set_name) (Status_Access self, const char *name) {
-    self->name = name;
+    if (self->name == NULL) {
+        self->name = [MWMutableString create_with_c_string: name];
+    }
+    else {
+        [self->name dealloc];
+        self->name = [MWMutableString create_with_c_string: name];
+    }
 }
 
 /** @brief 設定角色種族
@@ -77,7 +83,13 @@ void EXPORT(set_name) (Status_Access self, const char *name) {
  * @param race 角色種族
  */
 void EXPORT(set_race) (Status_Access self, const char *race) {
-    self->race = race;
+    if (self->race == NULL) {
+        self->race = [MWMutableString create_with_c_string: race];
+    }
+    else {
+        [self->race dealloc];
+        self->race = [MWMutableString create_with_c_string: race];
+    }
 }
 
 /** @brief 確認角色是否存活

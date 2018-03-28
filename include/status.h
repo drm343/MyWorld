@@ -9,6 +9,10 @@
 #include "base/type.h"
 #include "message_base.h"
 
+
+#include "MWMutableString.h"
+
+
 /** @brief Namespace STATUS
  */
 #define EXPORT(name) STATUS(name)
@@ -36,11 +40,11 @@ typedef enum {
 /** @brief 角色狀態結構
  */
 typedef struct Status {
-    const char *name;           /**< 角色名稱 */
+    MWMutableString *name;           /**< 角色名稱 */
     Is_Alive is_alive;          /**< 角色是否還存活，可以依靠此資訊取代 crossable */
     Use_Type status;            /**< 是否使用中，可以依靠 Character_Pool 來分辨，後續會移除 */
 
-    const char *race;           /**< 角色種族 */
+    MWMutableString *race;           /**< 角色種族 */
     Faction_Type faction;       /**< 角色跟玩家的關係 */
     Natural damage;             /**< 目前受到的傷害 */
 } Status;

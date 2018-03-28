@@ -11,7 +11,7 @@
 #include "map_system.h"
 #include "character.h"
 #include "rectangle-use_self.h"
-#include "instance/strings.h"
+
 
 /** @brief Namespace GAME
  */

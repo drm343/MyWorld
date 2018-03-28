@@ -7,14 +7,14 @@ CASE_INDENT_NUMBER=4
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), FreeBSD)
 	INDENT=gindent
-	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I $(CURREND)/submodules/intern -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
+	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I$(CURREND)/submodules/mulklib -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
 else
 	INDENT=indent
-	INCLUDE=-I $(CURREND)/include -I $(CURREND)/submodules/intern -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
+	INCLUDE=-I $(CURREND)/include -I$(CURREND)/submodules/mulklib -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
 endif
 INDENT_STYLE=-kr
 COMPILER=gcc7
-#COMPILER=clang50
+
 
 # C11 only allow anonymous struct or union without a tag.
 # Enable ms-extensions for named struct.
@@ -28,12 +28,8 @@ OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
 
 # Compile flags
-ifeq ($(COMPILER), clang50)
-	CFLAGS=-Wl,-lSDL2 -Wl,-lSDL2_ttf -Wl,-L/usr/lib64 -Wl,-lz -Wl,-lconfig
-else
-	CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
-endif
-LFLAGS=-Werror -L$(OBJ) -lm -lmy_world -L$(CURREND)/submodules/MyWorldStep/Build/tmp -lMWStep ./submodules/CoreFoundation/Build/Release/Products/amd64/libCoreFoundation.a -luuid -lobjc
+CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
+LFLAGS=-Werror -L$(OBJ) -lm -lmy_world -L$(CURREND)/submodules/MyWorldStep/Build/tmp -lMWStep ./submodules/CoreFoundation/Build/Release/Products/amd64/libCoreFoundation.a ./submodules/mulklib/libmulklib.a -luuid -lobjc
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -50,7 +46,6 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/rectangle.o \
 	$(OBJ)/rectangle-use_self.o \
 	$(OBJ)/helper_function-strings.o \
-	$(OBJ)/strings-instance.o \
 	$(OBJ)/history_array.o \
 	$(OBJ)/style.o \
 	$(OBJ)/status.o \
@@ -70,10 +65,7 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 
 CF := submodules/CoreFoundation/Build/Release/Products/amd64
 
-LIBSTRINGS := $(OBJ)/block.o \
-	$(OBJ)/strings.o
-
-DEP := $(LIBSTRINGS) $(AUTO_BUILD_DEP)
+DEP := $(AUTO_BUILD_DEP)
 
 
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
@@ -109,9 +101,6 @@ indent:
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 
-submodules/intern/config.h:
-	cd submodules/intern && cmake -G 'Unix Makefiles' -Wno-dev
-
 
 examples:
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) examples/container.c $(CFLAGS) $(LFLAGS) -o $(BIN)/app
@@ -130,10 +119,7 @@ $(LIB_MY_WORLD): $(DEP)
 	ranlib $(LIB_MY_WORLD)
 
 $(AUTO_BUILD_DEP):
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
-
-$(LIBSTRINGS): submodules/intern/config.h $(CHECK_DIR)
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) submodules/intern/$(basename $(notdir $@)).c
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).m
 
 
 CoreFoundation:

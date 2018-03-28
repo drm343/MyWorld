@@ -13,17 +13,17 @@
  */
 
 typedef struct _Status_Item {
-    Status *content;
-    bool is_used;
+  Status *content;
+  bool is_used;
 } Status_Item;
 
 typedef struct {
-    Status_Item *pool;
-    Status *item;
-    uint8_t max_size;
+  Status_Item *pool;
+  Status *item;
+  uint8_t max_size;
 } Status_Pool;
 
-Status_Pool *Status_Pool_start(uint8_t max_size);
-void Status_Pool_stop(Status_Pool * access);
-Status *Status_Pool_malloc(Status_Pool * access);
+Status_Pool* Status_Pool_start(uint8_t max_size);
+void Status_Pool_stop(Status_Pool *access);
+Status* Status_Pool_malloc(Status_Pool *access);
 #endif

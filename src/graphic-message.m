@@ -1,6 +1,7 @@
 #include "graphic-message.h"
 
-#include "container/History_Array.h"
+#include "MWMutableString.h"
+
 
 /** @brief Namespace BOX
  */
@@ -18,8 +19,8 @@ typedef SDL_Point *Message_Box_Point;
 */
 typedef struct Message_Box {
     Message_Box_Point box;      /**< 顯示器的設定，可以畫出一個長方形 */
-    History_Array *history;     /**< 儲存 repo 中文字對應的編號 */
-    String_Intern repo;         /**< String Intern，可以確保相同文字只會有一份 */
+    bpt_t history;              /**< 儲存要顯示的訊息 */
+    int64_t counter;
 } Message_Box;
 typedef Message_Box *Message_Box_Access;
 
@@ -45,8 +46,8 @@ static SDL_Point box_array[5] = {
 Message_Box_Access EXPORT(start) (void) {
     Message_Box_Access self = calloc(1, sizeof(Message_Box));
     self->box = box_array;
-    self->history = History_Array_start(10);
-    self->repo = strings_new();
+    self->history = NULL;
+    self->counter = 0;
     return self;
 }
 
@@ -54,8 +55,7 @@ Message_Box_Access EXPORT(start) (void) {
  * @param self 要釋放的訊息欄
 */
 void EXPORT(stop) (Message_Box_Access self) {
-    strings_free(self->repo);
-    History_Array_stop(self->history);
+    bpt_release(self->history);
     free(self);
 }
 
@@ -100,8 +100,8 @@ EXPORT(set_box) (Message_Box_Access self,
  * @param self 訊息欄
  * @return 歷史訊息總數
 */
-int EXPORT(history_count) (Message_Box_Access self) {
-    return History_Array_last(self->history);
+bpt_key_t EXPORT(history_count) (Message_Box_Access self) {
+    return self->counter;
 }
 
 /** @brief 根據 index 取出對應的歷史訊息
@@ -110,35 +110,42 @@ int EXPORT(history_count) (Message_Box_Access self) {
  * @return 歷史訊息
 */
 const char *EXPORT(get_history_by_index) (Message_Box_Access self,
-                                          uint8_t * index) {
-    bool has_previous = true;
-    const char *result = NULL;
-    uint32_t string_index = 0;
-
-    if (*index >= 0) {
-        string_index = History_Array_get_item(self->history, *index);
-    } else {
-        result = "";
-        has_previous = false;
+                                          bpt_key_t index) {
+    if (index >= 0) {
+        if (bpt_has_key(self->history, index)) {
+            MWMutableString *result = (MWMutableString *)bpt_get(self->history, index);
+            return [result get_c_string];
+        }
     }
-
-    if (string_index >= 1) {
-        result = strings_lookup_id(self->repo, string_index);
-        has_previous = History_Array_previous(self->history, index);
-    }
-    if (!has_previous) {
-        *index = -1;
-    }
-    return result;
+    return "";
 }
 
 /** @brief 新增訊息到訊息欄
  * @param self 訊息欄
  * @param message 想加入的訊息
 */
-void EXPORT(add_message) (Message_Box_Access self, char *message) {
-    uint32_t id = strings_intern(self->repo, message);
-    History_Array_insert(self->history, id);
+void EXPORT(add_message) (Message_Box_Access self, const char *message) {
+    void auto_release(bpt_key_t key, void *value) {
+        MWMutableString *str = (MWMutableString *)value;
+        [str dealloc];
+    }
+
+    bpt_t bpt_assoc_and_release(bpt_t bpt, bpt_key_t key, void *value) {
+        bpt_t new_bpt = bpt_assoc(bpt, key, value);
+        bpt_set_dealloc_hook(new_bpt, key, auto_release);
+        bpt_release(bpt);
+        return new_bpt;
+    }
+
+    MWMutableString *result = [MWMutableString create_with_c_string: message];
+    if (self->counter == 0) {
+        self->history = bpt_assoc (NULL, 0, result);
+        bpt_set_dealloc_hook(self->history, 0, auto_release);
+    }
+    else {
+        self->history = bpt_assoc_and_release(self->history, self->counter, result);
+    }
+    self->counter = self->counter + 1;
 }
 
 #undef EXPORT

@@ -1,68 +1,12 @@
-#include "MWMutableString.h"
-
-#include <stdio.h>
+#include "helper/strings.h"
 
 
-@implementation MWMutableString
-+(id)create_with_c_string: (const char *) str {
-    MWMutableString *obj = [[MWMutableString alloc] set: str];
-    return obj;
-}
-+(id)copy: (id) other {
-    MWMutableString *obj = [MWMutableString alloc];
-    [obj set_by_cf: CFStringCreateMutableCopy( NULL, 0, [other get])];
-    return obj;
-}
--(void)dealloc {
-    CFRelease( mstr );
-    [super dealloc];
-}
--(CFMutableStringRef)get {
-    return mstr;
-}
--(const char *)get_c_string {
-    return CFStringGetCStringPtr(mstr, kCFStringEncodingASCII);
-}
--(id)set: (const char *) str {
-    if (mstr != NULL) {
-        CFRelease(mstr);
-        mstr = NULL;
-    }
-    mstr = CFStringCreateMutable( NULL, 0 );
-    CFStringAppendCString( mstr, str, kCFStringEncodingASCII);
-    return self;
-}
--(id)set_by_cf: (CFMutableStringRef) str {
-    if (mstr != NULL) {
-        CFRelease(mstr);
-        mstr = NULL;
-    }
-    mstr = str;
-    return self;
-}
--(id)append: (const char *) str {
-    CFStringAppendCString( mstr, str, kCFStringEncodingASCII);
-    return self;
-}
--(void)debug{
-    CFShow( mstr );
-}
--(Boolean)equal: (id) other {
-    return CFEqual(mstr, [other get]);
-}
-/** @brief 求出 ascii 版本的 string 長度
- * @return 長度
- */
--(size_t) ascii_length {
-    const char *str = CFStringGetCStringPtr(mstr, kCFStringEncodingASCII);
-    return strlen(str);
-}
 /** @brief 求出 UTF8 版本的 string 長度
+ * @param str 想求長度的 String 物件
  * @return 長度
  */
--(size_t) length {
-    const char *str = CFStringGetCStringPtr(mstr, kCFStringEncodingASCII);
-
+size_t String_length(const char *str)
+{
     size_t max_counter = strlen(str);
     size_t move_position = 0;
     int64_t len = 0;
@@ -92,13 +36,24 @@
     return len;
 }
 
+
+/** @brief 求出 ascii 版本的 string 長度
+ * @param str 想求長度的 String 物件
+ * @return 長度
+ */
+size_t String_ascii_length(const char *str)
+{
+    return strlen(str);
+}
+
+
 /** @brief 求出顯示在螢幕所需要的長度
+ * @param str 想求長度的 String 物件
  * @param full_size 一個全形文字的長度
  * @return 長度
  */
--(size_t) String_width_length: (int64_t) full_size {
-    const char *str = CFStringGetCStringPtr(mstr, kCFStringEncodingASCII);
-
+size_t String_width_length(const char *str, int64_t full_size)
+{
     size_t max_counter = strlen(str);
     size_t index = 0;
     size_t move_position = 0;
@@ -129,4 +84,3 @@
     }
     return len * (full_size / 2);
 }
-@end

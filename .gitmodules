@@ -1,7 +1,6 @@
-[submodule "intern"]
-	path = submodules/intern
-  url = https://github.com/chriso/intern.git
-	branch = remove-objc-string
 [submodule "CoreFoundation"]
 	path = submodules/CoreFoundation
 	url = https://github.com/drm343/CoreFoundation.git
+[submodule "pure_functional_maps"]
+	path = submodules/mulklib
+	url = git@github.com:drm343/mulklib.git
