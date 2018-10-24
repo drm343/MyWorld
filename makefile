@@ -7,13 +7,13 @@ CASE_INDENT_NUMBER=4
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), FreeBSD)
 	INDENT=gindent
-	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I$(CURREND)/submodules/mulklib -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
+	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I$(CURREND)/submodules/mulklib
 else
 	INDENT=indent
-	INCLUDE=-I $(CURREND)/include -I$(CURREND)/submodules/mulklib -I$(CURREND)/submodules/MyWorldStep/include -I$(CURREND)/submodules/CoreFoundation/CoreFoundation/include
+	INCLUDE=-I $(CURREND)/include -I$(CURREND)/submodules/mulklib
 endif
 INDENT_STYLE=-kr
-COMPILER=gcc7
+COMPILER=gcc-7
 
 
 # C11 only allow anonymous struct or union without a tag.
@@ -29,7 +29,7 @@ SRC=$(CURREND)/src
 
 # Compile flags
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
-LFLAGS=-Werror -L$(OBJ) -lm -lmy_world -L$(CURREND)/submodules/MyWorldStep/Build/tmp -lMWStep ./submodules/CoreFoundation/Build/Release/Products/amd64/libCoreFoundation.a ./submodules/mulklib/libmulklib.a -luuid -lobjc
+LFLAGS=-Werror -L$(OBJ) -lmy_world ./submodules/mulklib/libmulklib.a -lm
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -39,7 +39,6 @@ DEBUG=-DDEBUG
 
 
 CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
-
 
 AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/two_point.o \
@@ -63,9 +62,7 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/graphic-message.o
 
 
-CF := submodules/CoreFoundation/Build/Release/Products/amd64
-
-DEP := $(AUTO_BUILD_DEP)
+DEP := $(AUTO_BUILD_DEP) $(AUTO_BUILD_DEP_WITH_MATH)
 
 
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
@@ -76,9 +73,9 @@ AUTO_BUILD_TOOLS := $(BIN)/gen_list \
 TOOLS := $(AUTO_BUILD_TOOLS)
 
 
-.PHONY: clean doc examples strings CoreFoundation MyWorldStep app test indent
+.PHONY: clean doc examples strings app test indent
 app: $(CHECK_DIR) indent $(TOOLS) $(LIB_MY_WORLD)
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.m $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@echo "build app done"
 
 
@@ -96,8 +93,8 @@ $(AUTO_BUILD_TOOLS):
 
 indent:
 	find $(CURREND)/include -name '*.h' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
-	find $(CURREND)/src -name '*.c' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
-	git checkout $(SRC)/helper_function-strings.c
+	#find $(CURREND)/src -name '*.c' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
+	#git checkout $(SRC)/helper_function-strings.c
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 
@@ -118,15 +115,12 @@ $(LIB_MY_WORLD): $(DEP)
 	ar cr $(LIB_MY_WORLD) $(DEP)
 	ranlib $(LIB_MY_WORLD)
 
+
 $(AUTO_BUILD_DEP):
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).m
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
 
-
-CoreFoundation:
-	cd submodules/CoreFoundation && gmake
-
-MyWorldStep:
-	cd submodules/MyWorldStep && gmake clean && gmake
+$(AUTO_BUILD_DEP_WITH_MATH):
+	$(COMPILER) $(DEBUG) -o $@ -c $(STD) -lm $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
 
 
 $(CHECK_DIR):

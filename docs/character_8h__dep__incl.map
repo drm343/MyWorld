@@ -1,8 +1,0 @@
-<map id="include/character.h" name="include/character.h">
-<area shape="rect" id="node2" href="$_character___list_8h.html" title="include/container/Character\l_List.h" alt="" coords="5,80,207,121"/>
-<area shape="rect" id="node3" href="$_character___pool_8h.html" title="include/container/Character\l_Pool.h" alt="" coords="231,80,432,121"/>
-<area shape="rect" id="node5" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="456,87,625,114"/>
-<area shape="rect" id="node4" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="239,169,423,211"/>
-<area shape="rect" id="node6" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="447,177,634,203"/>
-<area shape="rect" id="node7" href="$main_8h.html" title="include/main.h" alt="" coords="481,259,600,285"/>
-</map>

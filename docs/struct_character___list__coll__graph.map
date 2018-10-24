@@ -1,7 +1,0 @@
-<map id="Character_List" name="Character_List">
-<area shape="rect" id="node2" href="$struct___character___node.html" title="_Character_Node" alt="" coords="114,200,247,227"/>
-<area shape="rect" id="node3" href="$struct_character.html" title="角色結構 " alt="" coords="138,109,223,136"/>
-<area shape="rect" id="node4" href="$struct_point___type.html" title="Point_Type" alt="" coords="5,5,97,32"/>
-<area shape="rect" id="node5" href="$struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="153,5,208,32"/>
-<area shape="rect" id="node6" href="$struct_status.html" title="角色狀態結構 " alt="" coords="232,5,295,32"/>
-</map>

@@ -1,6 +1,3 @@
-[submodule "CoreFoundation"]
-	path = submodules/CoreFoundation
-	url = https://github.com/drm343/CoreFoundation.git
 [submodule "pure_functional_maps"]
 	path = submodules/mulklib
 	url = git@github.com:drm343/mulklib.git

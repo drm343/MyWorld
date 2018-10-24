@@ -7,7 +7,7 @@
 #include "namespace.h"
 
 #include "style.h"
-#include "helper/strings.h"
+#include "String.h"
 
 /** @brief Namespace BOX
  */
@@ -72,8 +72,8 @@ bpt_key_t EXPORT(history_count) (Message_Box_Access self);
  * @param index 想取出的訊息數字
  * @return 歷史訊息
 */
-const char *EXPORT(get_history_by_index) (Message_Box_Access self,
-                                          bpt_key_t index);
+ImmutableString EXPORT(get_history_by_index) (Message_Box_Access self,
+                                              bpt_key_t index);
 
 /** @brief 檢查是否有更新
  * @param self 訊息欄

@@ -1,6 +1,9 @@
 #ifndef HEADER_MAIN
 #define HEADER_MAIN
 
+#define _GNU_SOURCE
+#include <stdlib.h>
+
 #include <unistd.h>
 #include <libgen.h>
 
@@ -8,9 +11,8 @@
 
 #include "namespace.h"
 
-#include "helper/strings.h"
 #include "graphic-camera.h"
 
-#include "MWMutableString.h"
+#include "String.h"
 
 #endif

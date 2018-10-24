@@ -4,8 +4,7 @@
  * 此結構與程式由 Container tools 自動產生，若非必要，請勿手動修改本檔案。
  */
 
-Character_List *Character_List_start(uint8_t max_size)
-{
+Character_List* Character_List_start(uint8_t max_size) {
     Character_List *result = calloc(1, sizeof(Character_List));
     Character_Node *list = calloc(max_size, sizeof(Character_Node));
 
@@ -18,14 +17,12 @@ Character_List *Character_List_start(uint8_t max_size)
     return result;
 }
 
-void Character_List_stop(Character_List * access)
-{
+void Character_List_stop(Character_List *access) {
     free(access->list);
     free(access);
 }
 
-void Character_List_gc(Character_List * access)
-{
+void Character_List_gc(Character_List *access) {
     uint8_t used = access->used;
     uint8_t instance_used = access->instance_counter;
     Character_Node *unused_node = NULL;
@@ -42,7 +39,8 @@ void Character_List_gc(Character_List * access)
 
             if (unused_node == current) {
                 break;
-            } else if (unused_node->content == NULL) {
+            }
+            else if (unused_node->content == NULL) {
                 unused_node->content = current->content;
                 unused_node->next = NULL;
                 unused_node->previous = NULL;
@@ -59,24 +57,23 @@ void Character_List_gc(Character_List * access)
                 if (previous != NULL) {
                     previous->next = unused_node;
                     current->previous = NULL;
-                    unused_node->previous = previous;
+                    unused_node ->previous = previous;
                 }
 
                 if (next != NULL) {
                     next->previous = unused_node;
                     current->next = NULL;
                     unused_node->next = next;
-                }
-                break;
-            }
+                 }
+                 break;
+             }
         }
         current = next;
     }
     access->used = instance_used;
 }
 
-uint8_t Character_List_insert(Character_List * access, Character * item)
-{
+uint8_t Character_List_insert(Character_List *access, Character *item) {
     uint8_t used = access->used;
     uint8_t max_size = access->max_size;
 
@@ -100,7 +97,8 @@ uint8_t Character_List_insert(Character_List * access, Character * item)
 
         if (last == NULL) {
             access->last = node;
-        } else {
+        }
+        else {
             last->next = node;
             node->previous = last;
             access->last = node;
@@ -108,13 +106,13 @@ uint8_t Character_List_insert(Character_List * access, Character * item)
         access->used = used + 1;
         access->instance_counter = access->instance_counter + 1;
         return used;
-    } else {
+    }
+    else {
         return -1;
     }
 }
 
-void Character_List_remove(Character_List * access, Character * item)
-{
+void Character_List_remove(Character_List *access, Character *item) {
     Character_Node *current = access->first;
     Character_Node *next = NULL;
     Character_Node *previous = NULL;
@@ -143,7 +141,8 @@ void Character_List_remove(Character_List * access, Character * item)
 
             if (current == access->first) {
                 access->first = next;
-            } else if (current == access->last) {
+            }
+            else if (current == access->last) {
                 access->last = previous;
             }
             access->instance_counter = access->instance_counter - 1;
@@ -153,9 +152,7 @@ void Character_List_remove(Character_List * access, Character * item)
     }
 }
 
-Character *Character_List_get_by_index(Character_List * access,
-                                       uint8_t index)
-{
+Character* Character_List_get_by_index(Character_List *access, uint8_t index) {
     Character_Node *current = access->first;
     Character_Node *next = NULL;
 
@@ -166,8 +163,7 @@ Character *Character_List_get_by_index(Character_List * access,
     return current->content;
 }
 
-void Character_List_copy_all(Character_List * from, Character_List * to)
-{
+void Character_List_copy_all(Character_List *from, Character_List *to) {
     uint8_t used = from->instance_counter;
 
     Character_Node *current = from->first;

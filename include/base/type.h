@@ -22,8 +22,8 @@ typedef enum {
 } Use_Type;
 
 typedef enum {
-    _NO,
-    _YES
+    NO,
+    YES
 } Yes_No;
 
 #endif
