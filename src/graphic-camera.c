@@ -308,8 +308,8 @@ EXPORT(take) (Camera_Access self,
             int len = snprintf(NULL, 0,
                                "%s(%s) 攻擊 %s(%s) 造成 1 點傷害",
                                current->status->name->str,
-                               STATUS(get_relation_string) (current->
-                                                            status),
+                               STATUS(get_relation_string)
+                               (current->status),
                                npc->status->name->str,
                                STATUS(get_relation_string) (npc->status));
             attack_message = malloc((len + 1) * sizeof(char));

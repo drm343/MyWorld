@@ -1,7 +1,7 @@
 #include <math.h>
 
 #include "Rectangle.h"
-#include "base/Class.h"
+#include "BaseClass.h"
 
 #define EXPORT(name) RECT(name)
 

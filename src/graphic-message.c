@@ -1,10 +1,6 @@
 #include "graphic-message.h"
 
 
-/** @brief Namespace BOX
- */
-#define EXPORT(name) BOX(name)
-
 /** @brief 直接使用 SDL 內建結構，可以直接用到 SDL 中
 */
 typedef SDL_Point *Message_Box_Point;
@@ -42,7 +38,7 @@ static SDL_Point box_array[5] = {
 /** @brief 啟動訊息欄
  * @return 訊息欄的 Access
 */
-Message_Box_Access EXPORT(start) (void) {
+Message_Box_Access BOX(start) (void) {
     Message_Box_Access self = calloc(1, sizeof(Message_Box));
     self->box = box_array;
     self->history = NULL;
@@ -54,7 +50,7 @@ Message_Box_Access EXPORT(start) (void) {
 /** @brief 釋放訊息欄
  * @param self 要釋放的訊息欄
 */
-void EXPORT(stop) (Message_Box_Access self) {
+void BOX(stop) (Message_Box_Access self) {
     bpt_release(self->history);
     free(self);
 }
@@ -66,7 +62,7 @@ void EXPORT(stop) (Message_Box_Access self) {
  * @param self 訊息欄
  * @return 點座標
 */
-SDL_Point *EXPORT(box) (Message_Box_Access self) {
+SDL_Point *BOX(box) (Message_Box_Access self) {
     return self->box;
 }
 
@@ -78,9 +74,9 @@ SDL_Point *EXPORT(box) (Message_Box_Access self) {
  * @param height 訊息欄高度
 */
 void
-EXPORT(set_box) (Message_Box_Access self,
-                 int64_t start_x, int64_t start_y,
-                 int64_t width, int64_t height) {
+BOX(set_box) (Message_Box_Access self,
+              int64_t start_x, int64_t start_y,
+              int64_t width, int64_t height) {
     box_array[0].x = start_x;
     box_array[0].y = start_y;
     box_array[4].x = start_x;
@@ -100,7 +96,7 @@ EXPORT(set_box) (Message_Box_Access self,
  * @param self 訊息欄
  * @return 歷史訊息總數
 */
-bpt_key_t EXPORT(history_count) (Message_Box_Access self) {
+bpt_key_t BOX(history_count) (Message_Box_Access self) {
     return self->counter;
 }
 
@@ -109,8 +105,8 @@ bpt_key_t EXPORT(history_count) (Message_Box_Access self) {
  * @param index 想取出的訊息數字
  * @return 歷史訊息
 */
-ImmutableString EXPORT(get_history_by_index) (Message_Box_Access self,
-                                              bpt_key_t index) {
+ImmutableString BOX(get_history_by_index) (Message_Box_Access self,
+                                           bpt_key_t index) {
     if (index >= 0) {
         if (bpt_has_key(self->history, index)) {
             ImmutableString result =
@@ -125,7 +121,7 @@ ImmutableString EXPORT(get_history_by_index) (Message_Box_Access self,
  * @param self 訊息欄
  * @param message 想加入的訊息
 */
-void EXPORT(add_message) (Message_Box_Access self, const char *message) {
+void BOX(add_message) (Message_Box_Access self, const char *message) {
     void auto_release(bpt_key_t key, void *value) {
         ImmutableString str = (ImmutableString) value;
         String_free(str);
@@ -157,15 +153,13 @@ void EXPORT(add_message) (Message_Box_Access self, const char *message) {
  * @param self 訊息欄
  * @return 是否有新訊息
 */
-bool EXPORT(is_updated) (Message_Box_Access self) {
+bool BOX(is_updated) (Message_Box_Access self) {
     return !(self->is_need_updated);
 }
 
 /** @brief 告訴 Message Box 更新已完成
  * @param self 訊息欄
 */
-void EXPORT(update_done) (Message_Box_Access self) {
+void BOX(update_done) (Message_Box_Access self) {
     self->is_need_updated = false;
 }
-
-#undef EXPORT

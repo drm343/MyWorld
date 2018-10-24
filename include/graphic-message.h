@@ -13,9 +13,6 @@
 */
 #define BOX(name) Message_Box_##name
 
-/** @brief Namespace BOX
- */
-#define EXPORT(name) BOX(name)
 
 /** @brief 訊息欄結構
  *
@@ -34,18 +31,18 @@ typedef Message_Box *Message_Box_Access;
 /** @brief 啟動訊息欄
  * @return 訊息欄的 Access
 */
-Message_Box_Access EXPORT(start) (void);
+Message_Box_Access BOX(start) (void);
 
 /** @brief 釋放訊息欄
  * @param self 要釋放的訊息欄
 */
-void EXPORT(stop) (Message_Box_Access self);
+void BOX(stop) (Message_Box_Access self);
 
 /** @brief 取出畫面用的 box 點座標
  * @param self 訊息欄
  * @return 點座標
 */
-SDL_Point *EXPORT(box) (Message_Box_Access self);
+SDL_Point *BOX(box) (Message_Box_Access self);
 
 /** @brief 設定畫面用的 box 點座標
  * @param self 訊息欄
@@ -55,40 +52,39 @@ SDL_Point *EXPORT(box) (Message_Box_Access self);
  * @param height 訊息欄高度
 */
 void
-EXPORT(set_box) (Message_Box_Access self,
-                 int64_t start_x, int64_t start_y,
-                 int64_t width, int64_t height);
+BOX(set_box) (Message_Box_Access self,
+              int64_t start_x, int64_t start_y,
+              int64_t width, int64_t height);
 
 /** @brief 新增訊息到訊息欄
  * @param self 訊息欄
  * @param message 想加入的訊息
 */
-void EXPORT(add_message) (Message_Box_Access self, const char *message);
+void BOX(add_message) (Message_Box_Access self, const char *message);
 
 /** @brief 目前的歷史訊息總數
  * @param self 訊息欄
  * @return 歷史訊息總數
 */
-bpt_key_t EXPORT(history_count) (Message_Box_Access self);
+bpt_key_t BOX(history_count) (Message_Box_Access self);
 
 /** @brief 根據 index 取出對應的歷史訊息
  * @param self 訊息欄
  * @param index 想取出的訊息數字
  * @return 歷史訊息
 */
-ImmutableString EXPORT(get_history_by_index) (Message_Box_Access self,
-                                              bpt_key_t index);
+ImmutableString BOX(get_history_by_index) (Message_Box_Access self,
+                                           bpt_key_t index);
 
 /** @brief 檢查是否有更新
  * @param self 訊息欄
  * @return 是否有新訊息
 */
-bool EXPORT(is_updated) (Message_Box_Access self);
+bool BOX(is_updated) (Message_Box_Access self);
 
 /** @brief 告訴 Message Box 更新已完成
  * @param self 訊息欄
 */
-void EXPORT(update_done) (Message_Box_Access self);
+void BOX(update_done) (Message_Box_Access self);
 
-#undef EXPORT
 #endif

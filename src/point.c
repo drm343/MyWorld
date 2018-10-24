@@ -1,5 +1,5 @@
 #include "Point.h"
-#include "base/Class.h"
+#include "BaseClass.h"
 
 /** @brief 建立新的 Point 物件
  * @return 新建立的物件

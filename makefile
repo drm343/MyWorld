@@ -50,6 +50,9 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/character_list.o \
 	$(OBJ)/character_pool.o \
 	$(OBJ)/character_factory.o \
+	$(OBJ)/Morph.o \
+	$(OBJ)/Morph-SDL2.o \
+	$(OBJ)/Morph-Message.o \
 	$(OBJ)/room.o \
 	$(OBJ)/room_pool.o \
 	$(OBJ)/room_tree.o \
