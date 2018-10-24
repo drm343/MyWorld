@@ -2,18 +2,16 @@
 #define HEADER_ROOM
 
 #include <stdbool.h>
-#include "two_point.h"
+#include "Rectangle.h"
 
 /**@brief 房間閥值
  *
  * 用來設定房間右下角 x 跟 y 座標的範圍
  */
-typedef struct Therehold {
-    struct Two_Point;
-} Therehold;
+typedef Rectangle Therehold;
 
 typedef struct Room {
-    Two_Point *position;
+    Rectangle super;
     int16_t diagonal_length;
 } Room;
 
@@ -23,8 +21,7 @@ typedef struct Room {
  * @param setting 房間閥值
  */
 void
-Room_set_random_position(Room * self, Point_Type * map_size,
-                         Therehold * setting);
+Room_set_random_position(Room * self, Point map_size, Therehold setting);
 
 /** @brief 比較兩個房間，確認哪個房間在左邊
  * @param self 自己的房間

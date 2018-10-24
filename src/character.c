@@ -13,8 +13,8 @@
 void EXPORT(init) (Character_Access self) {
     STATUS(init) (self->status);
 
-    self->Real_Position = Point_Type_create();
-    self->Graph_Position = Point_Type_create();
+    self->Real_Position = Point_create();
+    self->Graph_Position = Point_create();
 }
 
 /** @brief 釋放角色
@@ -23,8 +23,8 @@ void EXPORT(init) (Character_Access self) {
  * 並不會直接釋放 self 本身的 Access，這部份通常透過 Status_Pool 管理。
  */
 void EXPORT(free) (Character_Access self) {
-    Point_Type_free(self->Real_Position);
-    Point_Type_free(self->Graph_Position);
+    Point_free(self->Real_Position);
+    Point_free(self->Graph_Position);
     STATUS(free) (self->status);
 }
 
@@ -74,14 +74,14 @@ void EXPORT(set_style) (Character_Access self, Style_Access style) {
 void
 EXPORT(set_random_position) (Character_Access self,
                              int64_t max_x, int64_t max_y) {
-    Point_set(self->Real_Position,.x = rand() % max_x,.y = rand() % max_y);
+    Point_set(self->Real_Position, .x = rand() % max_x, .y = rand() % max_y);
 }
 
 /** @brief 取得角色真實座標
  * @param self 目標角色
  * @return 回傳座標
  */
-Point_Access EXPORT(get_position) (Character_Access self) {
+Point EXPORT(get_position) (Character_Access self) {
     return self->Real_Position;
 }
 

@@ -10,7 +10,7 @@
 
 #include "map_system.h"
 #include "character.h"
-#include "rectangle-use_self.h"
+#include "Rectangle.h"
 
 
 /** @brief Namespace GAME
@@ -64,7 +64,7 @@ EXPORT(parse_npc_config) (Game_Status_Access self,
 */
 Found_Result
 EXPORT(find_character) (Game_Status_Access self,
-                        Character_Access * npc, Point_Access point);
+                        Character_Access * npc, Point point);
 
 /** @brief 重新計算所有角色在畫面上的顯示位置
  * @param self 要使用的遊戲狀態
@@ -74,7 +74,7 @@ EXPORT(find_character) (Game_Status_Access self,
  */
 void
 EXPORT(calculate_graph_position) (Game_Status_Access self,
-                                  Rectangle_Access rectangle);
+                                  Rectangle rectangle);
 
 /** @brief 實體化友方角色
  * @param self 要使用的遊戲狀態

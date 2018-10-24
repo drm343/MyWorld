@@ -3,7 +3,7 @@
 
 #include "namespace.h"
 
-#include "point.h"
+#include "Point.h"
 #include "status.h"
 #include "style.h"
 
@@ -14,8 +14,8 @@
 /** @brief 角色結構
  */
 typedef struct Character {
-    Point_Access Real_Position;         /**< 角色的真實座標 */
-    Point_Access Graph_Position;        /**< 顯示在畫面上的座標 */
+    Point Real_Position;         /**< 角色的真實座標 */
+    Point Graph_Position;        /**< 顯示在畫面上的座標 */
 
     Status_Access status;       /**< 角色狀態 */
     Style_Access Mark;          /**< 角色圖形 */
@@ -70,7 +70,7 @@ void EXPORT(set_random_position) (Character_Access self, int64_t max_x,
  * @param self 目標角色
  * @return 回傳座標
  */
-Point_Access EXPORT(get_position) (Character_Access self);
+Point EXPORT(get_position) (Character_Access self);
 
 #undef EXPORT
 #endif

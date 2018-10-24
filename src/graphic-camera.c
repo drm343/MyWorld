@@ -1,11 +1,14 @@
 #include "graphic-camera.h"
 
+
 /** @brief Namespace CAMERA
  */
 #define EXPORT(name) CAMERA(name)
 
 static int MAX_X = 0;
 static int MAX_Y = 0;
+static Rectangle rectangle = NULL;
+
 
 #ifdef DEBUG
 static void print_mode(char *str, Camera_Mode mode)
@@ -32,7 +35,7 @@ static void print_vertical_mode(Camera_Access access)
 #endif
 
 static Yes_No occupy_position_by_others(Game_Status_Access access,
-                                        Point_Access point,
+                                        Point point,
                                         Character_Access * result)
 {
     if (GAME(find_character) (access, result, point) == FOUND) {
@@ -46,13 +49,13 @@ static Yes_No occupy_position_by_others(Game_Status_Access access,
 //Setup camera mode
 // --------------------------------------------------
 static void
-camera_horizon_mode_setup(Camera_Access access, Point_Access point,
+camera_horizon_mode_setup(Camera_Access access, Point point,
                           int32_t x)
 {
-    Point_Access center = access->center;
+    Point center = access->center;
 
-    Point_Access from = access->start;
-    Point_Access to = access->end;
+    Point from = access->start;
+    Point to = access->end;
 
     Map_Access map = access->map;
     int32_t map_end_x = MAP(bottom_right_x) (map);
@@ -76,13 +79,13 @@ camera_horizon_mode_setup(Camera_Access access, Point_Access point,
 }
 
 static void
-camera_vertical_mode_setup(Camera_Access access, Point_Access point,
+camera_vertical_mode_setup(Camera_Access access, Point point,
                            int32_t y)
 {
-    Point_Access center = access->center;
+    Point center = access->center;
 
-    Point_Access from = access->start;
-    Point_Access to = access->end;
+    Point from = access->start;
+    Point to = access->end;
 
     Map_Access map = access->map;
     int32_t map_end_y = MAP(bottom_right_y) (map);
@@ -108,10 +111,10 @@ camera_vertical_mode_setup(Camera_Access access, Point_Access point,
 //--------------------------------------------------
 //Check move status
 // --------------------------------------------------
-static Yes_No can_move_horizon(Camera_Access access, Point_Access point)
+static Yes_No can_move_horizon(Camera_Access access, Point point)
 {
-    Point_Access from = access->start;
-    Point_Access to = access->end;
+    Point from = access->start;
+    Point to = access->end;
 
     Map_Access map = access->map;
     int32_t map_end_x = MAP(bottom_right_x) (map);
@@ -126,10 +129,10 @@ static Yes_No can_move_horizon(Camera_Access access, Point_Access point)
     return result;
 }
 
-static Yes_No can_move_vertical(Camera_Access access, Point_Access point)
+static Yes_No can_move_vertical(Camera_Access access, Point point)
 {
-    Point_Access from = access->start;
-    Point_Access to = access->end;
+    Point from = access->start;
+    Point to = access->end;
 
     Map_Access map = access->map;
     int32_t map_end_y = MAP(bottom_right_y) (map);
@@ -156,9 +159,9 @@ Camera_Access EXPORT(start) (void) {
     Camera_Access access = calloc(1, sizeof(Camera_Type));
     MAX_X = 25;
     MAX_Y = 21;
-    access->start = Point_Type_create();
-    access->end = Point_Type_create();
-    access->center = Point_Type_create();
+    access->start = Point_create();
+    access->end = Point_create();
+    access->center = Point_create();
 
     EXPORT(set_max) (access,.x = MAX_X,.y = MAX_Y);
 
@@ -168,6 +171,7 @@ Camera_Access EXPORT(start) (void) {
     access->horizon = CAMERA_UNDEFINE;
     access->vertical = CAMERA_UNDEFINE;
     access->map = NULL;
+    rectangle = RECT(create)();
     return access;
 }
 
@@ -175,9 +179,10 @@ Camera_Access EXPORT(start) (void) {
  * @param self 要釋放的角色物件
 */
 void EXPORT(stop) (Camera_Access self) {
-    Point_Type_free(self->start);
-    Point_Type_free(self->end);
-    Point_Type_free(self->center);
+    RECT(free)(rectangle);
+    Point_free(self->start);
+    Point_free(self->end);
+    Point_free(self->center);
     free(self);
 }
 
@@ -185,7 +190,7 @@ void EXPORT(stop) (Camera_Access self) {
  * @param self Camera 物件
  * @param other 要設定的數值
 */
-void EXPORT(set_max_by_point) (Camera_Access self, Point_Access other) {
+void EXPORT(set_max_by_point) (Camera_Access self, Point other) {
     int x = other->x;
     int y = other->y;
 
@@ -203,9 +208,9 @@ void EXPORT(set_max_by_point) (Camera_Access self, Point_Access other) {
  * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
 */
 void EXPORT(set_player) (Camera_Access self, Character_Access player) {
-    Point_Access center = self->center;
-    int32_t x = Point_Type_x(center);
-    int32_t y = Point_Type_y(center);
+    Point center = self->center;
+    int32_t x = Point_x(center);
+    int32_t y = Point_y(center);
 
     Point_set(player->Real_Position,.x = x,.y = y);
     Point_set(player->Graph_Position,.x = x,.y = y);
@@ -246,16 +251,16 @@ EXPORT(take) (Camera_Access self,
     Character_Access npc = NULL;
     Style_Access dead = self->dead;
 
-    Point_Type raw_max_point;
-    Point_Access max_point = &raw_max_point;
+    struct Point raw_max_point;
+    Point max_point = &raw_max_point;
     Point_set(max_point,.x = self->max_x,.y = self->max_y);
 
-    Point_Type raw_point;
-    Point_Access point = &raw_point;
-    Point_Type_set_by_point(point, current->Real_Position);
+    struct Point raw_point;
+    Point point = &raw_point;
+    Point_set_by_point(point, current->Real_Position);
 
-    Point_Type raw_vector;
-    Point_Access vector = &raw_vector;
+    struct Point raw_vector;
+    Point vector = &raw_vector;
 
     switch (message) {
         case TOP:
@@ -281,7 +286,7 @@ EXPORT(take) (Camera_Access self,
 
     Yes_No result = occupy_position_by_others(from_pool, point, &npc);
     if (result == NO) {
-        int32_t y = Point_Type_y(vector);
+        int32_t y = Point_y(vector);
         Faction_Type current_relation;
         Status_get_relation(current->status, current_relation);
 
@@ -290,14 +295,14 @@ EXPORT(take) (Camera_Access self,
                 camera_vertical_mode_setup(self, point, y);
             }
             Point_move(current->Real_Position,.x =
-                       Point_Type_x(vector),.y = y);
-        } else if ((Point_Type_x(vector) != 0)
+                       Point_x(vector),.y = y);
+        } else if ((Point_x(vector) != 0)
                    && (can_move_horizon(self, point) == YES)) {
             if (current_relation == FACTION_PLAYER) {
                 camera_horizon_mode_setup(self, point,
-                                          Point_Type_x(vector));
+                                          Point_x(vector));
             }
-            Point_Type_move_by_point(current->Real_Position, vector);
+            Point_move_by_point(current->Real_Position, vector);
         }
     } else {
         Is_Alive is_alive = ALIVE;
@@ -365,11 +370,10 @@ EXPORT(take) (Camera_Access self,
         }
     }
 
-    Rectangle_Access_auto_create(rectangle, origin);
-    Rectangle_Access_set_top_left_point(self->start);
-    Rectangle_Access_set_down_right_point(max_point);
+    RECT(set_position)(rectangle, self->start);
+    RECT(set_extent)(rectangle, max_point);
 
-    GAME(calculate_graph_position) (from_pool, &rectangle);
+    GAME(calculate_graph_position) (from_pool, rectangle);
 
   DONE:
     return true;

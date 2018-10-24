@@ -50,15 +50,4 @@
 */
 #define STYLE_P(name) Style_Pool_##name
 
-/** @brief namespace for Message_Box
-*/
-#define BOX(name) Message_Box_##name
-
-/** @brief namespace for Two_Point
- */
-#define T_POINT(name) Two_Point_##name
-
-/** @brief namespace for Rectangle_Type
- */
-#define RECT(name) Rectangle_Type_##name
 #endif

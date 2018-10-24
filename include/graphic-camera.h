@@ -30,11 +30,11 @@ typedef enum {
 typedef struct {
     Character_Access player;    /**< 玩家角色資料 */
     Style_Access dead;          /**< 死亡用圖形 */
-    Point_Access center;        /**< 中心位置 */
+    Point center;        /**< 中心位置 */
     int64_t max_x;              /**< 最大 x 值，預設為 25 */
     int64_t max_y;              /**< 最大 y 值，預設為 21 */
-    Point_Access start;         /**< 攝影機左上角位置 */
-    Point_Access end;           /**< 攝影機右下角位置 */
+    Point start;         /**< 攝影機左上角位置 */
+    Point end;           /**< 攝影機右下角位置 */
     Camera_Mode horizon;        /**< 攝影機水平方向模式 */
     Camera_Mode vertical;       /**< 攝影機垂直方向模式 */
     Map_Access map;             /**< 地圖物件 */
@@ -58,14 +58,14 @@ void EXPORT(stop) (Camera_Access self);
  * @param self Camera 物件
  * @param other 要設定的數值
 */
-void EXPORT(set_max_by_point) (Camera_Access self, Point_Access other);
+void EXPORT(set_max_by_point) (Camera_Access self, Point other);
 
 /** @brief 重設螢幕顯示最大值
 * @param self 點座標
 */
 #define Graphic_Camera_set_max(self, ...)\
 {\
-    Point_Type item = { __VA_ARGS__ };\
+    struct Point item = { __VA_ARGS__ };\
     EXPORT(set_max_by_point)(self, &item);\
 }
 

@@ -199,9 +199,9 @@ void draw_view(SDL_Renderer_Access render)
     SDL_RenderSetViewport( render, &clean_character_area);
     SDL_RenderFillRect(render, &clean_character_area);
 
-    Point_Access graph_point = camera_1->player->Graph_Position;
-    position.x = GRID_LENGTH * Point_Type_x(graph_point);
-    position.y = GRID_LENGTH * Point_Type_y(graph_point);
+    Point graph_point = camera_1->player->Graph_Position;
+    position.x = GRID_LENGTH * Point_x(graph_point);
+    position.y = GRID_LENGTH * Point_y(graph_point);
     SDL_RenderCopy(render, camera_1->player->Mark->access, NULL, &(position));
 
     uint8_t used = GAME(instance_count) (game_status_pool);
@@ -212,12 +212,12 @@ void draw_view(SDL_Renderer_Access render)
             GAME(get_instance_by_index) (game_status_pool, next);
 
         if (npc->status->status == IN_USE) {
-            if (!Point_Type_eq
+            if (!Point_equal
                 (npc->Real_Position, camera_1->player->Real_Position)) {
 
                 graph_point = npc->Graph_Position;
-                rect.x = GRID_LENGTH * Point_Type_x(graph_point);
-                rect.y = GRID_LENGTH * Point_Type_y(graph_point);
+                rect.x = GRID_LENGTH * Point_x(graph_point);
+                rect.y = GRID_LENGTH * Point_y(graph_point);
                 SDL_RenderCopy(render, npc->Mark->access, NULL, &(rect));
             }
         }
@@ -296,7 +296,6 @@ void submain()
 #ifdef DEBUG
         DEBUG_MESSAGE("config setup failed\n");
 #endif
-
         goto INIT_FAILED;
     }
     // 取得 config
@@ -381,7 +380,7 @@ int main(int argc, char *argv[])
     ROOT_DIR = String_create(dirname(dirname(exist)));
 
     map_1 = MAP(create) ();
-    MAP(set_top_left) (map_1, 0, 0);
+    MAP(set_position) (map_1, 0, 0);
     MAP(set_bottom_right) (map_1, 40, 30);
 
     submain();

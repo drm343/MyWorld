@@ -9,6 +9,10 @@
 #include "style.h"
 #include "String.h"
 
+/** @brief namespace for Message_Box
+*/
+#define BOX(name) Message_Box_##name
+
 /** @brief Namespace BOX
  */
 #define EXPORT(name) BOX(name)

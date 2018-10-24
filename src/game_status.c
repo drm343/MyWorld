@@ -118,12 +118,12 @@ static Character_Access use_npc(Game_Status * self, const char *race,
 
         npc->Mark = origin_npc->Mark;
 
-        npc->Real_Position = Point_Type_create();
-        npc->Graph_Position = Point_Type_create();
+        npc->Real_Position = Point_create();
+        npc->Graph_Position = Point_create();
 
-        Point_Type *bottom_right = MAP(bottom_right) (map);
-        CHARA(set_random_position) (npc, Point_Type_x(bottom_right),
-                                    Point_Type_y(bottom_right));
+        Point bottom_right = MAP(bottom_right) (map);
+        CHARA(set_random_position) (npc, Point_x(bottom_right),
+                                    Point_y(bottom_right));
 
         Point_set(npc->Graph_Position,.x = -1,.y = -1);
         Character_List_insert(self->used, npc);
@@ -273,15 +273,15 @@ static bool pool_all_copy(Status_Pool * from, Status_Pool * to)
 
 static Found_Result pool_find_by_position(Character_List * access,
                                           Character_Access * npc,
-                                          Point_Access point)
+                                          Point point)
 {
     uint8_t used = access->instance_counter;
 
     for (uint8_t count = 0; count < used; count++) {
         *npc = Character_List_get_by_index(access, count);
 
-        Point_Access npc_position = CHARA(get_position) (*npc);
-        if (Point_Type_eq(point, (*npc)->Real_Position)) {
+        Point npc_position = CHARA(get_position) (*npc);
+        if (Point_equal(point, (*npc)->Real_Position)) {
             if ((*npc)->Mark->crossable == NO) {
                 return FOUND;
             }
@@ -294,12 +294,12 @@ static Found_Result pool_find_by_position(Character_List * access,
 //----------------------------------------------
 //External API
 // ----------------------------------------------
-Message_Type Point_Type_over_there(Point_Type * self, Point_Type * other)
+Message_Type Point_over_there(Point self, Point other)
 {
     Message_Type result = DO_NOTHING;
 
-    int32_t diff_x = Point_Type_x(self) - Point_Type_x(other);
-    int32_t diff_y = Point_Type_y(self) - Point_Type_y(other);
+    int32_t diff_x = Point_x(self) - Point_x(other);
+    int32_t diff_y = Point_y(self) - Point_y(other);
     int32_t abs_x = abs(diff_x);
     int32_t abs_y = abs(diff_y);
 
@@ -319,12 +319,12 @@ Message_Type Point_Type_over_there(Point_Type * self, Point_Type * other)
     return result;
 }
 
-Message_Type Point_Type_near_by(Point_Type * self, Point_Type * other)
+Message_Type Point_near_by(Point self, Point other)
 {
     Message_Type result = DO_NOTHING;
 
-    int32_t diff_x = Point_Type_x(self) - Point_Type_x(other);
-    int32_t diff_y = Point_Type_y(self) - Point_Type_y(other);
+    int32_t diff_x = Point_x(self) - Point_x(other);
+    int32_t diff_y = Point_y(self) - Point_y(other);
     int32_t abs_x = abs(diff_x);
     int32_t abs_y = abs(diff_y);
 
@@ -368,17 +368,16 @@ Message_Type Point_Type_near_by(Point_Type * self, Point_Type * other)
 }
 
 static void
-reset_graph_position(Character_List * access, Rectangle_Access rectangle)
+reset_graph_position(Character_List * access, Rectangle rectangle)
 {
-    Rectangle_Access_change(rectangle);
-    Point_Access start_point = Rectangle_Access_top_left_point();
-    Point_Access end_point = Rectangle_Access_down_right_point();
+    Point start_point = RECT(position)(rectangle);
+    Point end_point = RECT(extent)(rectangle);
 
-    int64_t x = Point_Type_x(start_point);
-    int64_t y = Point_Type_y(start_point);
+    int64_t x = Point_x(start_point);
+    int64_t y = Point_y(start_point);
 
-    int64_t max_x = Point_Type_x(end_point);
-    int64_t max_y = Point_Type_y(end_point);
+    int64_t max_x = Point_x(end_point);
+    int64_t max_y = Point_y(end_point);
 
     uint8_t used = access->instance_counter;
     Character_Access npc = NULL;
@@ -447,10 +446,10 @@ static Message_Type player_reaction(bool is_alive)
     return result;
 }
 
-static Message_Type faction_neutral_reaction(Point_Access self,
-                                             Point_Access player)
+static Message_Type faction_neutral_reaction(Point self,
+                                             Point player)
 {
-    return Point_Type_near_by(self, player);
+    return Point_near_by(self, player);
 }
 
 static Message_Type npc_reaction(Character_Access self,
@@ -464,9 +463,9 @@ static Message_Type npc_reaction(Character_Access self,
     uint8_t target_number = rand() % used;
     Character_Access target =
         Character_List_get_by_index(enemy_group, target_number);
-    Point_Access target_position = CHARA(get_position) (target);
-    Point_Access self_position = CHARA(get_position) (self);
-    return Point_Type_over_there(self_position, target_position);
+    Point target_position = CHARA(get_position) (target);
+    Point self_position = CHARA(get_position) (self);
+    return Point_over_there(self_position, target_position);
 }
 
 /** @brief 產生遊戲狀態
@@ -577,7 +576,7 @@ EXPORT(parse_npc_config) (Game_Status * self,
 */
 Found_Result
 EXPORT(find_character) (Game_Status * self,
-                        Character_Access * npc, Point_Access point) {
+                        Character_Access * npc, Point point) {
     Found_Result result = pool_find_by_position(self->used, npc, point);
     return result;
 }
@@ -590,7 +589,7 @@ EXPORT(find_character) (Game_Status * self,
  */
 void
 EXPORT(calculate_graph_position) (Game_Status * self,
-                                  Rectangle_Access rectangle) {
+                                  Rectangle rectangle) {
     reset_graph_position(self->used, rectangle);
 }
 
@@ -667,8 +666,8 @@ EXPORT(use_neutral) (Game_Status * self,
 Character_Access EXPORT(use_player) (Game_Status * self) {
     Character_Access player = Character_Factory_malloc(self->used_pool);
     STATUS(init) (player->status);
-    player->Real_Position = Point_Type_create();
-    player->Graph_Position = Point_Type_create();
+    player->Real_Position = Point_create();
+    player->Graph_Position = Point_create();
 
     player->status->faction = FACTION_PLAYER;
     Character_List_insert(self->used, player);
@@ -726,8 +725,8 @@ EXPORT(action) (Game_Status * self, Character_Access current_character) {
     uint8_t ally_weigh_value = 0;
 
     Character_Access target = NULL;
-    Point_Access target_position = NULL;
-    Point_Access self_position = NULL;
+    Point target_position = NULL;
+    Point self_position = NULL;
 
     switch (current_character->status->faction) {
         case FACTION_ALLY:
@@ -756,7 +755,7 @@ EXPORT(action) (Game_Status * self, Character_Access current_character) {
                 target_position = CHARA(get_position) (target);
                 self_position = CHARA(get_position) (current_character);
                 result =
-                    Point_Type_over_there(self_position, target_position);
+                    Point_over_there(self_position, target_position);
             }
             break;
         case FACTION_NEUTRAL:

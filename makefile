@@ -18,7 +18,7 @@ COMPILER=gcc-7
 
 # C11 only allow anonymous struct or union without a tag.
 # Enable ms-extensions for named struct.
-STD=-std=c11 -fms-extensions
+STD=-std=gnu11 -fms-extensions
 
 # Source and Include dir defined.
 CURREND=`pwd`
@@ -41,11 +41,8 @@ DEBUG=-DDEBUG
 CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
 
 AUTO_BUILD_DEP := $(OBJ)/point.o \
-	$(OBJ)/two_point.o \
 	$(OBJ)/rectangle.o \
-	$(OBJ)/rectangle-use_self.o \
-	$(OBJ)/helper_function-strings.o \
-	$(OBJ)/history_array.o \
+	$(OBJ)/String.o \
 	$(OBJ)/style.o \
 	$(OBJ)/status.o \
 	$(OBJ)/status_pool.o \
@@ -62,12 +59,11 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/graphic-message.o
 
 
-DEP := $(AUTO_BUILD_DEP) $(AUTO_BUILD_DEP_WITH_MATH)
+DEP := $(AUTO_BUILD_DEP)
 
 
 AUTO_BUILD_TOOLS := $(BIN)/gen_list \
 	$(BIN)/gen_pool \
-	$(BIN)/gen_cycle-base_type \
 	$(BIN)/gen_normal_tree
 
 TOOLS := $(AUTO_BUILD_TOOLS)
@@ -94,7 +90,7 @@ $(AUTO_BUILD_TOOLS):
 indent:
 	find $(CURREND)/include -name '*.h' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
 	#find $(CURREND)/src -name '*.c' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
-	#git checkout $(SRC)/helper_function-strings.c
+	#git checkout $(SRC)/String.c
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 
@@ -117,9 +113,6 @@ $(LIB_MY_WORLD): $(DEP)
 
 
 $(AUTO_BUILD_DEP):
-	$(COMPILER) $(DEBUG) -o $@ -c $(STD) $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
-
-$(AUTO_BUILD_DEP_WITH_MATH):
 	$(COMPILER) $(DEBUG) -o $@ -c $(STD) -lm $(INCLUDE) $(SRC)/$(basename $(notdir $@)).c
 
 

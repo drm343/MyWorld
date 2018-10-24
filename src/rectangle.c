@@ -1,56 +1,90 @@
-#include "rectangle.h"
+#include <math.h>
+
+#include "Rectangle.h"
+#include "base/Class.h"
 
 #define EXPORT(name) RECT(name)
 
-/** @brief 建立新的 Rectangle_Type 物件
- * @return 物件的 Access
+/** @brief Rectangle
+ *
+ * 用來表示各種長方形。
  */
-Rectangle_Type *EXPORT(create) (void) {
-    return Two_Point_create();
+typedef struct Rectangle {
+    Point position;
+    /**< position 起始座標 */
+    Point extent;
+    /**< extent 長度及寬度 */
+} *Rectangle;
+
+/** @brief 建立新的 Rectangle 物件
+ * @return Rectangle 物件
+ */
+Rectangle EXPORT(create) (void)
+{
+    Rectangle self = NEW(Rectangle);
+    self->position = Point_create();
+    self->extent = Point_create();
+    return self;
 }
 
-/** @brief 釋放 Rectangle_Type 物件
- * @param self Rectangle_Type 物件的 Access
+/** @brief 釋放 Rectangle 物件
+ * @param self Rectangle 物件
  */
-void EXPORT(free) (Rectangle_Type * self) {
-    Two_Point_free(self);
+void EXPORT(free) (Rectangle self)
+{
+    Point_free(self->position);
+    Point_free(self->extent);
+    free(self);
 }
 
-/** @brief 取出 Rectangle 左上角的 Point_Type 物件
- * @param self Rectangle_Type 物件的 Access
- * @return 左上角的座標
+/** @brief 取出 Rectangle 的 position
+ * @param self Rectangle 物件
+ * @return position
  */
-Point_Access EXPORT(top_left_point) (Rectangle_Type * self) {
-    return Two_Point_get_start(self);
+Point EXPORT(position) (Rectangle self) {
+    return self->position;
 }
 
-/** @brief 存入 Rectangle 左上角的 Point_Type 物件
- * @param self Rectangle_Type 物件的 Access
- * @param point Point_Type 物件的 Access
+/** @brief 修改 Rectangle 的 position
+ * @param self Rectangle 物件
+ * @param point 新的 position，Point 物件
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_top_left_point) (Rectangle_Type * self, Point_Access point) {
-    Two_Point_set_start_by_point(self, point);
+void EXPORT(set_position) (Rectangle self,
+                                 Point point) {
+    Point_set_by_point(self->position, point);
 }
 
-/** @brief 取出 Rectangle 右下角的 Point_Type 物件
- * @param self Rectangle_Type 物件的 Access
- * @return 右下角的座標
+/** @brief 取出 Rectangle 的長寬
+ * @param self Rectangle 物件
+ * @return 長寬
  */
-Point_Access EXPORT(down_right_point) (Rectangle_Type * self) {
-    return Two_Point_get_end(self);
+Point EXPORT(extent) (Rectangle self) {
+    return self->extent;
 }
 
-/** @brief 存入 Rectangle 右下角的 Point_Type 物件
- * @param self Rectangle_Type 物件的 Access
- * @param point Point_Type 物件的 Access
+/** @brief 修改 Rectangle 的長寬
+ * @param self Rectangle 物件
+ * @param point 新的長寬
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_down_right_point) (Rectangle_Type * self,
-                                   Point_Access point) {
-    Two_Point_set_end_by_point(self, point);
+void EXPORT(set_extent) (Rectangle self,
+                                   Point point) {
+    Point_set_by_point(self->extent, point);
+}
+
+
+/** @brief 求出兩點距離
+ * @param self Rectangle 物件
+ * @return 長度
+ */
+int16_t EXPORT(diagonal_length) (Rectangle self) {
+    int16_t diff_x = self->extent->x - self->position->x;
+    int16_t diff_y = self->extent->y - self->position->y;
+
+    return (int16_t) sqrt(pow(diff_x, 2) + pow(diff_y, 2));
 }
 
 #undef EXPORT
