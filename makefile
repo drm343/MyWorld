@@ -89,8 +89,7 @@ $(AUTO_BUILD_TOOLS):
 
 indent:
 	find $(CURREND)/include -name '*.h' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
-	#find $(CURREND)/src -name '*.c' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
-	#git checkout $(SRC)/String.c
+	find $(CURREND)/src -name '*.c' ! -name 'String.c' -exec $(INDENT) $(INDENT_STYLE) -i$(INDENT_NUMBER) -cli$(CASE_INDENT_NUMBER) -nut {} \;
 	find $(CURREND)/include -name *~ -exec rm {} \;
 	find $(CURREND)/src -name *~ -exec rm {} \;
 

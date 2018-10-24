@@ -31,7 +31,7 @@ void EXPORT(free) (Map_Type * self) {
  * @param y Y 座標位置
  */
 void EXPORT(set_position) (Map_Type * self, int32_t x, int32_t y) {
-    RECT_set_position (self->super, .x = x, .y = y);
+    RECT_set_position(self->super,.x = x,.y = y);
 }
 
 /** @brief 取出地圖座標
@@ -50,7 +50,7 @@ Point EXPORT(position) (Map_Type * self) {
  * @param y Y 座標位置
  */
 void EXPORT(set_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
-    RECT_set_extent (self->super, .x = x, .y = y);
+    RECT_set_extent(self->super,.x = x,.y = y);
 }
 
 /** @brief 取出右下角的點物件
@@ -96,7 +96,7 @@ int32_t EXPORT(bottom_right_y) (Map_Type * self) {
  * @param y 需要移動的 Y 值
  */
 void EXPORT(move_top_left) (Map_Type * self, int32_t x, int32_t y) {
-    Point_move(SUPER(position) (self->super), .x = x, .y = y);
+    Point_move(SUPER(position) (self->super),.x = x,.y = y);
 }
 
 /** @brief 移動右下角的點座標
@@ -105,7 +105,7 @@ void EXPORT(move_top_left) (Map_Type * self, int32_t x, int32_t y) {
  * @param y 需要移動的 Y 值
  */
 void EXPORT(move_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
-    Point_move(SUPER(extent) (self->super), .x = x, .y = y);
+    Point_move(SUPER(extent) (self->super),.x = x,.y = y);
 }
 
 #undef EXPORT

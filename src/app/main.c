@@ -90,7 +90,8 @@ Execute_Result setup_style()
     const char *str;
 
     config_init(&cfg);
-    ImmutableString INIT_CONFIG = String_append_c_str(ROOT_DIR, "/config/init.cfg");
+    ImmutableString INIT_CONFIG =
+        String_append_c_str(ROOT_DIR, "/config/init.cfg");
 
     /* Read the file. If there is an error, report it and exit. */
     if (!config_read_file(&cfg, INIT_CONFIG->str)) {
@@ -138,7 +139,7 @@ void draw_message_box(SDL_Renderer_Access render)
             .w = 799,
             .h = 120
         };
-        SDL_RenderSetViewport( render, &clean_message_box_area);
+        SDL_RenderSetViewport(render, &clean_message_box_area);
     }
 
     if (Message_Box_is_updated(box_1)) {
@@ -172,7 +173,8 @@ void draw_message_box(SDL_Renderer_Access render)
                 .h = 24
             };
 
-            surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT, item->str, white);
+            surfaceMessage =
+                TTF_RenderUTF8_Solid(USE_FONT, item->str, white);
             SDL_Texture_Access access =
                 SDL_CreateTextureFromSurface(render, surfaceMessage);
             SDL_FreeSurface(surfaceMessage);
@@ -181,7 +183,7 @@ void draw_message_box(SDL_Renderer_Access render)
             SDL_DestroyTexture(access);
         }
     }
-DONE:
+  DONE:
     Message_Box_update_done(box_1);
 }
 
@@ -196,13 +198,14 @@ void draw_view(SDL_Renderer_Access render)
         .w = 799,
         .h = 20 * 24
     };
-    SDL_RenderSetViewport( render, &clean_character_area);
+    SDL_RenderSetViewport(render, &clean_character_area);
     SDL_RenderFillRect(render, &clean_character_area);
 
     Point graph_point = camera_1->player->Graph_Position;
     position.x = GRID_LENGTH * Point_x(graph_point);
     position.y = GRID_LENGTH * Point_y(graph_point);
-    SDL_RenderCopy(render, camera_1->player->Mark->access, NULL, &(position));
+    SDL_RenderCopy(render, camera_1->player->Mark->access, NULL,
+                   &(position));
 
     uint8_t used = GAME(instance_count) (game_status_pool);
     SDL_Rect rect = {.x = 0,.y = 0,.w = GRID_LENGTH,.h = GRID_LENGTH };
@@ -244,8 +247,10 @@ Execute_Result init_view(SDL_Renderer_Access render)
     Style_Access result = STYLE_P(next) (style_pool, &counter);
 
     while (result != NULL) {
-        surfaceMessage = TTF_RenderUTF8_Solid(USE_FONT, result->mark->str, white);
-        result->access = SDL_CreateTextureFromSurface(render, surfaceMessage);
+        surfaceMessage =
+            TTF_RenderUTF8_Solid(USE_FONT, result->mark->str, white);
+        result->access =
+            SDL_CreateTextureFromSurface(render, surfaceMessage);
 
         SDL_FreeSurface(surfaceMessage);
 
@@ -299,7 +304,8 @@ void submain()
         goto INIT_FAILED;
     }
     // 取得 config
-    ImmutableString NPC_CONFIG = String_append_c_str(ROOT_DIR, "/config/npc.cfg");
+    ImmutableString NPC_CONFIG =
+        String_append_c_str(ROOT_DIR, "/config/npc.cfg");
     GAME(parse_npc_config) (game_status_pool, NPC_CONFIG->str, style_pool);
     String_free(NPC_CONFIG);
 
@@ -310,7 +316,9 @@ void submain()
     GAME(use_neutral) (game_status_pool, "villager", "v 1", camera_1->map);
     GAME(use_neutral) (game_status_pool, "villager", "v 2", camera_1->map);
 
-    win = SDL_CreateWindow(GAME_TITLE->str, 0, 0, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
+    win =
+        SDL_CreateWindow(GAME_TITLE->str, 0, 0, WIDTH, HEIGHT,
+                         SDL_WINDOW_OPENGL);
     String_free(GAME_TITLE);
     render =
         SDL_CreateRenderer(win, -1,
@@ -342,7 +350,8 @@ void submain()
         }
 
         for (uint8_t index = set_index; index < instance_count; index++) {
-            current = GAME(get_instance_by_index) (game_status_pool, index);
+            current =
+                GAME(get_instance_by_index) (game_status_pool, index);
 
             if (current->status->is_alive == false) {
                 continue;
@@ -360,11 +369,11 @@ void submain()
     SDL_DestroyWindow(win);
     TTF_CloseFont(USE_FONT);
 
- INIT_FAILED:
+  INIT_FAILED:
     TTF_Quit();
     SDL_Quit();
 
- DONE:
+  DONE:
     BOX(stop) (box_1);
     CAMERA(stop) (camera_1);
     GAME(free) (game_status_pool);

@@ -110,10 +110,11 @@ bpt_key_t EXPORT(history_count) (Message_Box_Access self) {
  * @return 歷史訊息
 */
 ImmutableString EXPORT(get_history_by_index) (Message_Box_Access self,
-                                          bpt_key_t index) {
+                                              bpt_key_t index) {
     if (index >= 0) {
         if (bpt_has_key(self->history, index)) {
-            ImmutableString result = (ImmutableString)bpt_get(self->history, index);
+            ImmutableString result =
+                (ImmutableString) bpt_get(self->history, index);
             return result;
         }
     }
@@ -126,7 +127,7 @@ ImmutableString EXPORT(get_history_by_index) (Message_Box_Access self,
 */
 void EXPORT(add_message) (Message_Box_Access self, const char *message) {
     void auto_release(bpt_key_t key, void *value) {
-        ImmutableString str = (ImmutableString)value;
+        ImmutableString str = (ImmutableString) value;
         String_free(str);
     }
 
@@ -139,11 +140,11 @@ void EXPORT(add_message) (Message_Box_Access self, const char *message) {
 
     ImmutableString result = String_create(message);
     if (self->counter == 0) {
-        self->history = bpt_assoc (NULL, 0, result);
+        self->history = bpt_assoc(NULL, 0, result);
         bpt_set_dealloc_hook(self->history, 0, auto_release);
-    }
-    else {
-        self->history = bpt_assoc_and_release(self->history, self->counter, result);
+    } else {
+        self->history =
+            bpt_assoc_and_release(self->history, self->counter, result);
     }
     self->counter = self->counter + 1;
     self->is_need_updated = true;

@@ -71,8 +71,7 @@ void EXPORT(print_status) (Status_Access self) {
 void EXPORT(set_name) (Status_Access self, const char *name) {
     if (self->name == NULL) {
         self->name = String_create(name);
-    }
-    else {
+    } else {
         String_free(self->name);
         self->name = String_create(name);
     }
@@ -85,8 +84,7 @@ void EXPORT(set_name) (Status_Access self, const char *name) {
 void EXPORT(set_race) (Status_Access self, const char *race) {
     if (self->race == NULL) {
         self->race = String_create(race);
-    }
-    else {
+    } else {
         String_free(self->race);
         self->race = String_create(race);
     }

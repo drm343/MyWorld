@@ -74,7 +74,7 @@ void EXPORT(set_style) (Character_Access self, Style_Access style) {
 void
 EXPORT(set_random_position) (Character_Access self,
                              int64_t max_x, int64_t max_y) {
-    Point_set(self->Real_Position, .x = rand() % max_x, .y = rand() % max_y);
+    Point_set(self->Real_Position,.x = rand() % max_x,.y = rand() % max_y);
 }
 
 /** @brief 取得角色真實座標

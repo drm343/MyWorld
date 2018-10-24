@@ -87,7 +87,7 @@ static Found_Result pool_find(Character_List * access,
     }
     *npc = NULL;
 
-DONE:
+  DONE:
     String_free(find_race);
     return result;
 }
@@ -370,8 +370,8 @@ Message_Type Point_near_by(Point self, Point other)
 static void
 reset_graph_position(Character_List * access, Rectangle rectangle)
 {
-    Point start_point = RECT(position)(rectangle);
-    Point end_point = RECT(extent)(rectangle);
+    Point start_point = RECT(position) (rectangle);
+    Point end_point = RECT(extent) (rectangle);
 
     int64_t x = Point_x(start_point);
     int64_t y = Point_y(start_point);
@@ -446,8 +446,7 @@ static Message_Type player_reaction(bool is_alive)
     return result;
 }
 
-static Message_Type faction_neutral_reaction(Point self,
-                                             Point player)
+static Message_Type faction_neutral_reaction(Point self, Point player)
 {
     return Point_near_by(self, player);
 }
@@ -754,8 +753,7 @@ EXPORT(action) (Game_Status * self, Character_Access current_character) {
                 target = EXPORT(get_instance_by_index) (self, 0);
                 target_position = CHARA(get_position) (target);
                 self_position = CHARA(get_position) (current_character);
-                result =
-                    Point_over_there(self_position, target_position);
+                result = Point_over_there(self_position, target_position);
             }
             break;
         case FACTION_NEUTRAL:

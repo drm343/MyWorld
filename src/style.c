@@ -32,7 +32,7 @@ Style_Pool_Access EXPORT(start) (int size) {
 void EXPORT(stop) (Style_Pool_Access self) {
     uint8_t counter = 0;
     Style_Access item = NULL;
-    while (item = EXPORT(next)(self, &counter)) {
+    while (item = EXPORT(next) (self, &counter)) {
         String_free(item->name);
         String_free(item->mark);
     }
@@ -91,7 +91,7 @@ Style_Access EXPORT(find) (Style_Pool_Access pool_access, const char *name) {
     }
     result = NULL;
 
-DONE:
+  DONE:
     String_free(find_name);
     return result;
 }

@@ -49,8 +49,7 @@ static Yes_No occupy_position_by_others(Game_Status_Access access,
 //Setup camera mode
 // --------------------------------------------------
 static void
-camera_horizon_mode_setup(Camera_Access access, Point point,
-                          int32_t x)
+camera_horizon_mode_setup(Camera_Access access, Point point, int32_t x)
 {
     Point center = access->center;
 
@@ -79,8 +78,7 @@ camera_horizon_mode_setup(Camera_Access access, Point point,
 }
 
 static void
-camera_vertical_mode_setup(Camera_Access access, Point point,
-                           int32_t y)
+camera_vertical_mode_setup(Camera_Access access, Point point, int32_t y)
 {
     Point center = access->center;
 
@@ -171,7 +169,7 @@ Camera_Access EXPORT(start) (void) {
     access->horizon = CAMERA_UNDEFINE;
     access->vertical = CAMERA_UNDEFINE;
     access->map = NULL;
-    rectangle = RECT(create)();
+    rectangle = RECT(create) ();
     return access;
 }
 
@@ -179,7 +177,7 @@ Camera_Access EXPORT(start) (void) {
  * @param self 要釋放的角色物件
 */
 void EXPORT(stop) (Camera_Access self) {
-    RECT(free)(rectangle);
+    RECT(free) (rectangle);
     Point_free(self->start);
     Point_free(self->end);
     Point_free(self->center);
@@ -294,13 +292,11 @@ EXPORT(take) (Camera_Access self,
             if (current_relation == FACTION_PLAYER) {
                 camera_vertical_mode_setup(self, point, y);
             }
-            Point_move(current->Real_Position,.x =
-                       Point_x(vector),.y = y);
+            Point_move(current->Real_Position,.x = Point_x(vector),.y = y);
         } else if ((Point_x(vector) != 0)
                    && (can_move_horizon(self, point) == YES)) {
             if (current_relation == FACTION_PLAYER) {
-                camera_horizon_mode_setup(self, point,
-                                          Point_x(vector));
+                camera_horizon_mode_setup(self, point, Point_x(vector));
             }
             Point_move_by_point(current->Real_Position, vector);
         }
@@ -309,17 +305,20 @@ EXPORT(take) (Camera_Access self,
 
         char *attack_message;
         {
-            int len = snprintf(NULL, 0, "%s(%s) 攻擊 %s(%s) 造成 1 點傷害",
-                    current->status->name->str,
-                    STATUS(get_relation_string) (current->status),
-                    npc->status->name->str,
-                    STATUS(get_relation_string) (npc->status));
+            int len = snprintf(NULL, 0,
+                               "%s(%s) 攻擊 %s(%s) 造成 1 點傷害",
+                               current->status->name->str,
+                               STATUS(get_relation_string) (current->
+                                                            status),
+                               npc->status->name->str,
+                               STATUS(get_relation_string) (npc->status));
             attack_message = malloc((len + 1) * sizeof(char));
-            snprintf(attack_message, len + 1, "%s(%s) 攻擊 %s(%s) 造成 1 點傷害",
-                    current->status->name->str,
-                    STATUS(get_relation_string) (current->status),
-                    npc->status->name->str,
-                    STATUS(get_relation_string) (npc->status));
+            snprintf(attack_message, len + 1,
+                     "%s(%s) 攻擊 %s(%s) 造成 1 點傷害",
+                     current->status->name->str,
+                     STATUS(get_relation_string) (current->status),
+                     npc->status->name->str,
+                     STATUS(get_relation_string) (npc->status));
         }
 
         BOX(add_message) (box_access, attack_message);
@@ -358,20 +357,18 @@ EXPORT(take) (Camera_Access self,
             char *death_message;
             {
                 int len = snprintf(NULL, 0, "%s%s",
-                        npc->status->name->str,
-                        format);
+                                   npc->status->name->str,
+                                   format);
                 death_message = malloc((len + 1) * sizeof(char));
-                snprintf(NULL, 0, "%s%s",
-                        npc->status->name->str,
-                        format);
+                snprintf(NULL, 0, "%s%s", npc->status->name->str, format);
             }
             BOX(add_message) (box_access, death_message);
             free(death_message);
         }
     }
 
-    RECT(set_position)(rectangle, self->start);
-    RECT(set_extent)(rectangle, max_point);
+    RECT(set_position) (rectangle, self->start);
+    RECT(set_extent) (rectangle, max_point);
 
     GAME(calculate_graph_position) (from_pool, rectangle);
 

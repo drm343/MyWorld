@@ -6,13 +6,16 @@
  * @param setting 房間閥值
  */
 void
-Room_set_random_position(Room * self, Point map_size,
-                         Therehold setting)
+Room_set_random_position(Room * self, Point map_size, Therehold setting)
 {
-    RECT_set_position(self->super, .x = rand() % map_size->x, .y = rand() % map_size->y);
-    RECT_set_extent(self->super, .x = rand() % RECT(extent)(setting)->x + RECT(position)(setting)->x,
-                      .y = RECT(extent)(setting)->y + RECT(position)(setting)->y);
-    self->diagonal_length = RECT(diagonal_length)(self->super);
+    RECT_set_position(self->super,.x = rand() % map_size->x,.y =
+                      rand() % map_size->y);
+    RECT_set_extent(self->super,.x =
+                    rand() % RECT(extent) (setting)->x +
+                    RECT(position) (setting)->x,.y =
+                    RECT(extent) (setting)->y +
+                    RECT(position) (setting)->y);
+    self->diagonal_length = RECT(diagonal_length) (self->super);
 }
 
 /** @brief 比較兩個房間，確認哪個房間在左邊
@@ -22,8 +25,8 @@ Room_set_random_position(Room * self, Point map_size,
  */
 bool Room_compare_small(Room * self, Room * other)
 {
-    Point self_position = RECT(position)(self->super);
-    Point other_position = RECT(position)(other->super);
+    Point self_position = RECT(position) (self->super);
+    Point other_position = RECT(position) (other->super);
 
     if (self_position->x < other_position->x) {
         return true;

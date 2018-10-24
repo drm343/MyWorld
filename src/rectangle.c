@@ -19,8 +19,7 @@ typedef struct Rectangle {
 /** @brief 建立新的 Rectangle 物件
  * @return Rectangle 物件
  */
-Rectangle EXPORT(create) (void)
-{
+Rectangle EXPORT(create) (void) {
     Rectangle self = NEW(Rectangle);
     self->position = Point_create();
     self->extent = Point_create();
@@ -30,8 +29,7 @@ Rectangle EXPORT(create) (void)
 /** @brief 釋放 Rectangle 物件
  * @param self Rectangle 物件
  */
-void EXPORT(free) (Rectangle self)
-{
+void EXPORT(free) (Rectangle self) {
     Point_free(self->position);
     Point_free(self->extent);
     free(self);
@@ -51,8 +49,7 @@ Point EXPORT(position) (Rectangle self) {
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_position) (Rectangle self,
-                                 Point point) {
+void EXPORT(set_position) (Rectangle self, Point point) {
     Point_set_by_point(self->position, point);
 }
 
@@ -70,8 +67,7 @@ Point EXPORT(extent) (Rectangle self) {
  *
  * 此函數會將 point 內容複製到 self 物件內，使用後可安心釋放傳入的 point。
  */
-void EXPORT(set_extent) (Rectangle self,
-                                   Point point) {
+void EXPORT(set_extent) (Rectangle self, Point point) {
     Point_set_by_point(self->extent, point);
 }
 
