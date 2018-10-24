@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyWorld: $title</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="contents">
+<div class="toc"><h3>目錄</h3>
+<ul><li class="level1"><a href="#名詞定義">名詞定義</a><ul><li class="level2"><a href="#結構">結構</a></li>
+<li class="level2"><a href="#物件">物件</a></li>
+<li class="level2"><a href="#Access">Access</a></li>
+<li class="level2"><a href="#角色">角色</a></li>
+<li class="level2"><a href="#角色狀態">角色狀態</a></li>
+<li class="level2"><a href="#角色建立工廠">角色建立工廠</a></li>
+<li class="level2"><a href="#種族資料">種族資料</a></li>
+<li class="level2"><a href="#實體化">實體化</a></li>
+<li class="level2"><a href="#Game_Status">Game_Status</a></li>
+<li class="level2"><a href="#圖形池">圖形池</a></li>
+<li class="level2"><a href="#地圖">地圖</a></li>
+<li class="level2"><a href="#訊息欄">Message_Box</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="名詞定義"></a>
+名詞定義</h1>
+<h2><a class="anchor" id="結構"></a>
+結構</h2>
+<p>文件中凡是指稱到結構的地方，一律指該結構本身。</p>
+<dl class="section note"><dt>註</dt><dd>程式中儘量不要直接用結構，而是使用結構的指標，只在生命周期極短可以使用 auto 的狀況下使用結構本身。</dd></dl>
+<h2><a class="anchor" id="物件"></a>
+物件</h2>
+<p>文件中凡是指稱到物件的地方，一律指該結構的指標，注意這點跟 C 標準中所指的物件並不相同。</p>
+<h2><a class="anchor" id="Access"></a>
+Access</h2>
+<p>這個名詞從 Ada 中取過來的，類似 C 的 Pointer，但擁有更多特性，凡是看到 type 後面加上 _Access 的 一律等同於前面所提物件在程式上的定義，這是為了避免使用太多 * 而採用的名稱慣例。</p>
+<p>文件中單純只寫 Access 的情況則可以看成物件在記憶體中的實際位置。</p>
+<dl class="section note"><dt>註</dt><dd>要注意這是 C 不是 Ada，因此 Access 並沒有真的像 Ada 一樣有更多特性可以使用。</dd></dl>
+<h2><a class="anchor" id="角色"></a>
+角色</h2>
+<p>若沒有特別註解，則文件中的「角色」皆代表 <a class="el" href="struct_character.html" title="角色結構 ">Character</a> 物件。</p>
+<h2><a class="anchor" id="角色狀態"></a>
+角色狀態</h2>
+<p>若沒有特別註解，則文件中的「角色狀態」皆代表 <a class="el" href="struct_status.html" title="角色狀態結構 ">Status</a> 物件。</p>
+<h2><a class="anchor" id="角色建立工廠"></a>
+角色建立工廠</h2>
+<p>Character_Factory，生產角色卡來建立角色用的工具，將記憶體管理相關的工作放到這裡。</p>
+<h2><a class="anchor" id="種族資料"></a>
+種族資料</h2>
+<p>基本結構等同於角色，可以看成角色原型，所有的角色都會根據種族來建立出新角色。</p>
+<dl class="section note"><dt>註</dt><dd>目前只有玩家沒有種族資料，因為還沒建立玩家使用的種族設定跟程式碼。</dd></dl>
+<h2><a class="anchor" id="實體化"></a>
+實體化</h2>
+<p>指從複製種族資料來產生新角色開始，到使用者完成後續處理設定的過程。</p>
+<h2><a class="anchor" id="Game_Status"></a>
+Game_Status</h2>
+<p>暫時的名稱，用來保存種族資料跟已經實體化的角色資料，未來會加上樓層相關資料。</p>
+<h2><a class="anchor" id="圖形池"></a>
+圖形池</h2>
+<p>若沒有特別註解，則文件中的「圖形池」皆代表 <a class="el" href="struct_style___pool.html" title="圖形池，用來儲存可以顯在畫面上的圖形 ">Style_Pool</a> 的物件。</p>
+<h2><a class="anchor" id="地圖"></a>
+地圖</h2>
+<p>若沒有特別註解，則文件中的「地圖」皆代表 <a class="el" href="struct_map___type.html">Map_Type</a> 物件，根據情況，未來可能跟樓層合併。</p>
+<dl class="section warning"><dt>警告</dt><dd>關於地圖的結構，後續可能會修改。</dd></dl>
+<h2><a class="anchor" id="訊息欄"></a>
+Message_Box</h2>
+<p>用來顯示訊息的地方，預設使用 SDL 實作，原本在 Ada 中是打算 Generics 的方式來讓實作 跟定義分開，並且通用化，目前用 C 先不要考慮通用的問題。 </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2018年10月24日 星期三 21:46:37, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

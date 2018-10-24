@@ -1,0 +1,15 @@
+<map id="include/String.h" name="include/String.h">
+<area shape="rect" id="node2" href="$status_8h.html" title="include/status.h" alt="" coords="467,81,582,108"/>
+<area shape="rect" id="node9" href="$main_8h.html" title="include/main.h" alt="" coords="433,409,539,436"/>
+<area shape="rect" id="node11" href="$style_8h.html" title="include/style.h" alt="" coords="321,81,427,108"/>
+<area shape="rect" id="node13" href="$graphic-message_8h.html" title="include/graphic&#45;message.h" alt="" coords="5,156,183,182"/>
+<area shape="rect" id="node14" href="$strings_8h.html" title="include/helper/strings.h" alt="" coords="880,81,1036,108"/>
+<area shape="rect" id="node3" href="$character_8h.html" title="include/character.h" alt="" coords="384,156,516,182"/>
+<area shape="rect" id="node10" href="$_status___pool_8h.html" title="include/container/Status\l_Pool.h" alt="" coords="642,230,805,272"/>
+<area shape="rect" id="node4" href="$_character___list_8h.html" title="include/container/Character\l_List.h" alt="" coords="231,230,413,272"/>
+<area shape="rect" id="node5" href="$_character___pool_8h.html" title="include/container/Character\l_Pool.h" alt="" coords="437,230,618,272"/>
+<area shape="rect" id="node7" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="53,238,207,264"/>
+<area shape="rect" id="node6" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="542,320,707,361"/>
+<area shape="rect" id="node8" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="47,327,213,354"/>
+<area shape="rect" id="node12" href="$map__system_8h.html" title="include/map_system.h" alt="" coords="207,156,360,182"/>
+</map>

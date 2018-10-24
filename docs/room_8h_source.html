@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyWorld: include/room.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">room.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="room_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_ROOM</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_ROOM</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_rectangle_8h.html">Rectangle.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="room_8h.html#a10fa1393744abc61db2adb9d4759028d">   11</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="_rectangle_8h.html#a0c85495f953ca53e5f51b979e5be4339">Rectangle</a> <a class="code" href="room_8h.html#a10fa1393744abc61db2adb9d4759028d">Therehold</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_room.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_room.html">Room</a> {</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_room.html#a9f0c0cab357402f197fd224709a15415">   14</a></span>&#160;    <a class="code" href="_rectangle_8h.html#a0c85495f953ca53e5f51b979e5be4339">Rectangle</a> <a class="code" href="struct_room.html#a9f0c0cab357402f197fd224709a15415">super</a>;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_room.html#a7c923a4d198acf244e3aaf4ad3b7ce5b">   15</a></span>&#160;    int16_t <a class="code" href="struct_room.html#a7c923a4d198acf244e3aaf4ad3b7ce5b">diagonal_length</a>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;} <a class="code" href="room_8h.html#abb026b6b79c6b8d90094b867cee9c07d">Room</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="room_8h.html#acac0afbfc4f5b9aab61de5a5bf1716c2">Room_set_random_position</a>(<a class="code" href="struct_room.html">Room</a> * <span class="keyword">self</span>, <a class="code" href="struct_point.html">Point</a> map_size, <a class="code" href="room_8h.html#a10fa1393744abc61db2adb9d4759028d">Therehold</a> setting);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="room_8h.html#a157e979461cb61b2a028c8e47a776abd">Room_compare_small</a>(<a class="code" href="struct_room.html">Room</a> * <span class="keyword">self</span>, <a class="code" href="struct_room.html">Room</a> * other);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="room_8h_html_abb026b6b79c6b8d90094b867cee9c07d"><div class="ttname"><a href="room_8h.html#abb026b6b79c6b8d90094b867cee9c07d">Room</a></div><div class="ttdeci">struct Room Room</div></div>
+<div class="ttc" id="struct_point_html"><div class="ttname"><a href="struct_point.html">Point</a></div><div class="ttdef"><b>Definition:</b> Point.h:10</div></div>
+<div class="ttc" id="struct_room_html"><div class="ttname"><a href="struct_room.html">Room</a></div><div class="ttdef"><b>Definition:</b> room.h:13</div></div>
+<div class="ttc" id="_rectangle_8h_html_a0c85495f953ca53e5f51b979e5be4339"><div class="ttname"><a href="_rectangle_8h.html#a0c85495f953ca53e5f51b979e5be4339">Rectangle</a></div><div class="ttdeci">struct Rectangle * Rectangle</div><div class="ttdef"><b>Definition:</b> Rectangle.h:13</div></div>
+<div class="ttc" id="_rectangle_8h_html"><div class="ttname"><a href="_rectangle_8h.html">Rectangle.h</a></div></div>
+<div class="ttc" id="struct_room_html_a9f0c0cab357402f197fd224709a15415"><div class="ttname"><a href="struct_room.html#a9f0c0cab357402f197fd224709a15415">Room::super</a></div><div class="ttdeci">Rectangle super</div><div class="ttdef"><b>Definition:</b> room.h:14</div></div>
+<div class="ttc" id="room_8h_html_acac0afbfc4f5b9aab61de5a5bf1716c2"><div class="ttname"><a href="room_8h.html#acac0afbfc4f5b9aab61de5a5bf1716c2">Room_set_random_position</a></div><div class="ttdeci">void Room_set_random_position(Room *self, Point map_size, Therehold setting)</div><div class="ttdoc">設定隨機初始位置 </div></div>
+<div class="ttc" id="struct_room_html_a7c923a4d198acf244e3aaf4ad3b7ce5b"><div class="ttname"><a href="struct_room.html#a7c923a4d198acf244e3aaf4ad3b7ce5b">Room::diagonal_length</a></div><div class="ttdeci">int16_t diagonal_length</div><div class="ttdef"><b>Definition:</b> room.h:15</div></div>
+<div class="ttc" id="room_8h_html_a10fa1393744abc61db2adb9d4759028d"><div class="ttname"><a href="room_8h.html#a10fa1393744abc61db2adb9d4759028d">Therehold</a></div><div class="ttdeci">Rectangle Therehold</div><div class="ttdoc">房間閥值 </div><div class="ttdef"><b>Definition:</b> room.h:11</div></div>
+<div class="ttc" id="room_8h_html_a157e979461cb61b2a028c8e47a776abd"><div class="ttname"><a href="room_8h.html#a157e979461cb61b2a028c8e47a776abd">Room_compare_small</a></div><div class="ttdeci">bool Room_compare_small(Room *self, Room *other)</div><div class="ttdoc">比較兩個房間，確認哪個房間在左邊 </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2018年10月24日 星期三 21:46:37, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<map id="Character_Factory" name="Character_Factory">
+<area shape="rect" id="node2" href="$struct_status___pool.html" title="Status_Pool" alt="" coords="299,303,393,329"/>
+<area shape="rect" id="node3" href="$struct___status___item.html" title="_Status_Item" alt="" coords="225,213,325,240"/>
+<area shape="rect" id="node4" href="$struct_status.html" title="角色狀態結構 " alt="" coords="243,109,303,136"/>
+<area shape="rect" id="node8" href="$struct_character.html" title="角色結構 " alt="" coords="112,213,191,240"/>
+<area shape="rect" id="node5" href="$struct_immutable_string.html" title="ImmutableString" alt="" coords="145,5,262,32"/>
+<area shape="rect" id="node10" href="$struct_style.html" title="顯示在螢幕上的圖形結構 " alt="" coords="139,109,191,136"/>
+<area shape="rect" id="node6" href="$struct_character___pool.html" title="Character_Pool" alt="" coords="159,392,271,419"/>
+<area shape="rect" id="node7" href="$struct___character___item.html" title="_Character_Item" alt="" coords="156,303,275,329"/>
+<area shape="rect" id="node9" href="$struct_point.html" title="Point" alt="" coords="5,109,57,136"/>
+</map>

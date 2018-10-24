@@ -1,0 +1,5 @@
+<map id="Status_Pool" name="Status_Pool">
+<area shape="rect" id="node2" href="$struct___status___item.html" title="_Status_Item" alt="" coords="97,199,197,225"/>
+<area shape="rect" id="node3" href="$struct_status.html" title="角色狀態結構 " alt="" coords="34,109,94,136"/>
+<area shape="rect" id="node4" href="$struct_immutable_string.html" title="ImmutableString" alt="" coords="5,5,123,32"/>
+</map>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyWorld: include/String.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">String.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_string_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STRING_CLASS</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define STRING_CLASS</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_string_8h.html">string.h</a>&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="type_8h.html">base/type.h</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html">helper/debug.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_immutable_string.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_immutable_string.html">ImmutableString</a> {</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_immutable_string.html#ab50d783982593ef993ea0b68f7ad8b80">   13</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="struct_immutable_string.html#ab50d783982593ef993ea0b68f7ad8b80">str</a>;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_immutable_string.html#a94e808d206eb20a622bce8983d99f987">   14</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="struct_immutable_string.html#a94e808d206eb20a622bce8983d99f987">utf8_length</a>;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_immutable_string.html#a85560142d1f803c20f52afdc818f17ad">   15</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="struct_immutable_string.html#a85560142d1f803c20f52afdc818f17ad">ascii_length</a>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_immutable_string.html#a5a14511a2b86aaa2ee40d38a6511dcb7">   16</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="struct_immutable_string.html#a5a14511a2b86aaa2ee40d38a6511dcb7">width_length</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;} *<a class="code" href="_string_8h.html#a6293b4fc0e7a25c332053edf9d267f4c">ImmutableString</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_string_8h.html#ad3e751db56ff9b3744b0b41be5886612">String_reset_width</a>(int64_t size);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="struct_immutable_string.html">ImmutableString</a> <a class="code" href="_string_8h.html#ab9ddda72500e4c1cbb53a3746062a92d">String_create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="struct_immutable_string.html#ab50d783982593ef993ea0b68f7ad8b80">str</a>);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="struct_immutable_string.html">ImmutableString</a> <a class="code" href="_string_8h.html#a91b1610f7011625c19dc01d928c24418">String_copy</a>(<a class="code" href="struct_immutable_string.html">ImmutableString</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="struct_immutable_string.html">ImmutableString</a> <a class="code" href="_string_8h.html#ae71f721629a83fa9a25963b917cfd23f">String_append_c_str</a>(<a class="code" href="struct_immutable_string.html">ImmutableString</a> <span class="keyword">self</span>, <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="struct_immutable_string.html#ab50d783982593ef993ea0b68f7ad8b80">str</a>);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_string_8h.html#ab4d2dd1c0c9c27b99a09d4b963f0e5f8">String_free</a>(<a class="code" href="struct_immutable_string.html">ImmutableString</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a> <a class="code" href="_string_8h.html#ad86eadad9d0bdddaa95716118b3599d5">String_equal</a>(<a class="code" href="struct_immutable_string.html">ImmutableString</a> a, <a class="code" href="struct_immutable_string.html">ImmutableString</a> b);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="struct_immutable_string_html"><div class="ttname"><a href="struct_immutable_string.html">ImmutableString</a></div><div class="ttdef"><b>Definition:</b> String.h:12</div></div>
+<div class="ttc" id="struct_immutable_string_html_ab50d783982593ef993ea0b68f7ad8b80"><div class="ttname"><a href="struct_immutable_string.html#ab50d783982593ef993ea0b68f7ad8b80">ImmutableString::str</a></div><div class="ttdeci">char * str</div><div class="ttdef"><b>Definition:</b> String.h:13</div></div>
+<div class="ttc" id="_string_8h_html_a6293b4fc0e7a25c332053edf9d267f4c"><div class="ttname"><a href="_string_8h.html#a6293b4fc0e7a25c332053edf9d267f4c">ImmutableString</a></div><div class="ttdeci">struct ImmutableString * ImmutableString</div></div>
+<div class="ttc" id="debug_8h_html"><div class="ttname"><a href="debug_8h.html">debug.h</a></div></div>
+<div class="ttc" id="_string_8h_html_ad3e751db56ff9b3744b0b41be5886612"><div class="ttname"><a href="_string_8h.html#ad3e751db56ff9b3744b0b41be5886612">String_reset_width</a></div><div class="ttdeci">void String_reset_width(int64_t size)</div><div class="ttdoc">設定字體在螢幕上的寬度 </div></div>
+<div class="ttc" id="struct_immutable_string_html_a5a14511a2b86aaa2ee40d38a6511dcb7"><div class="ttname"><a href="struct_immutable_string.html#a5a14511a2b86aaa2ee40d38a6511dcb7">ImmutableString::width_length</a></div><div class="ttdeci">size_t width_length</div><div class="ttdef"><b>Definition:</b> String.h:16</div></div>
+<div class="ttc" id="_string_8h_html_ad86eadad9d0bdddaa95716118b3599d5"><div class="ttname"><a href="_string_8h.html#ad86eadad9d0bdddaa95716118b3599d5">String_equal</a></div><div class="ttdeci">Yes_No String_equal(ImmutableString a, ImmutableString b)</div><div class="ttdoc">比較兩個字串是否相等 </div></div>
+<div class="ttc" id="_string_8h_html_ab4d2dd1c0c9c27b99a09d4b963f0e5f8"><div class="ttname"><a href="_string_8h.html#ab4d2dd1c0c9c27b99a09d4b963f0e5f8">String_free</a></div><div class="ttdeci">void String_free(ImmutableString self)</div><div class="ttdoc">釋放 ImmutableString 物件 </div></div>
+<div class="ttc" id="struct_immutable_string_html_a94e808d206eb20a622bce8983d99f987"><div class="ttname"><a href="struct_immutable_string.html#a94e808d206eb20a622bce8983d99f987">ImmutableString::utf8_length</a></div><div class="ttdeci">size_t utf8_length</div><div class="ttdef"><b>Definition:</b> String.h:14</div></div>
+<div class="ttc" id="_string_8h_html_ab9ddda72500e4c1cbb53a3746062a92d"><div class="ttname"><a href="_string_8h.html#ab9ddda72500e4c1cbb53a3746062a92d">String_create</a></div><div class="ttdeci">ImmutableString String_create(const char *str)</div><div class="ttdoc">建立 ImmutableString 物件 </div></div>
+<div class="ttc" id="_string_8h_html_ae71f721629a83fa9a25963b917cfd23f"><div class="ttname"><a href="_string_8h.html#ae71f721629a83fa9a25963b917cfd23f">String_append_c_str</a></div><div class="ttdeci">ImmutableString String_append_c_str(ImmutableString self, const char *str)</div><div class="ttdoc">將兩個 String 相連產生新字串 </div></div>
+<div class="ttc" id="_string_8h_html"><div class="ttname"><a href="_string_8h.html">String.h</a></div></div>
+<div class="ttc" id="_string_8h_html_a91b1610f7011625c19dc01d928c24418"><div class="ttname"><a href="_string_8h.html#a91b1610f7011625c19dc01d928c24418">String_copy</a></div><div class="ttdeci">ImmutableString String_copy(ImmutableString self)</div><div class="ttdoc">複製字串 </div></div>
+<div class="ttc" id="type_8h_html_aef70d5719063dfab39816702cdd282b6"><div class="ttname"><a href="type_8h.html#aef70d5719063dfab39816702cdd282b6">Yes_No</a></div><div class="ttdeci">Yes_No</div><div class="ttdef"><b>Definition:</b> type.h:24</div></div>
+<div class="ttc" id="struct_immutable_string_html_a85560142d1f803c20f52afdc818f17ad"><div class="ttname"><a href="struct_immutable_string.html#a85560142d1f803c20f52afdc818f17ad">ImmutableString::ascii_length</a></div><div class="ttdeci">size_t ascii_length</div><div class="ttdef"><b>Definition:</b> String.h:15</div></div>
+<div class="ttc" id="type_8h_html"><div class="ttname"><a href="type_8h.html">type.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2018年10月24日 星期三 21:46:37, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

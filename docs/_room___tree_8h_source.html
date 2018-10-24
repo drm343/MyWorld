@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyWorld: include/container/Room_Tree.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_e0f5f6345e438c73b9ae78ec2940718c.html">container</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Room_Tree.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_room___tree_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_CONTAINER_TREE_Room_Tree</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_CONTAINER_TREE_Room_Tree</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="room_8h.html">room.h</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_room___tree___result.html">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_room___tree___result.html">Room_Tree_Result</a> {</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_room___tree___result.html#a3f69fb340495fb09b11d6a8f6b99a438">   15</a></span>&#160;    <a class="code" href="struct_room.html">Room</a> *<a class="code" href="struct_room___tree___result.html#a3f69fb340495fb09b11d6a8f6b99a438">parent</a>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_room___tree___result.html#a2f63a94e7dad14643d207863696a6a8d">   16</a></span>&#160;    <a class="code" href="struct_room.html">Room</a> *<a class="code" href="struct_room___tree___result.html#a2f63a94e7dad14643d207863696a6a8d">child</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;} <a class="code" href="_room___tree_8h.html#a5ef1da9d36c90386c629fa371b6ec0b6">Room_Tree_Result</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_room___tree___node.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_room___tree___node.html">Room_Tree_Node</a> {</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_room___tree___node.html#aac7a556bce72ed8b4b77f7e4d1a949d8">   20</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_room___tree___node.html">Room_Tree_Node</a> *<a class="code" href="struct_room___tree___node.html#aac7a556bce72ed8b4b77f7e4d1a949d8">parent</a>;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_room___tree___node.html#ac43ebe1e32a24e1283757fcdf255297f">   21</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_room___tree___node.html">Room_Tree_Node</a> *<a class="code" href="struct_room___tree___node.html#ac43ebe1e32a24e1283757fcdf255297f">left</a>;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_room___tree___node.html#a2054ede1482341806b6dd210d92ece1d">   22</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_room___tree___node.html">Room_Tree_Node</a> *<a class="code" href="struct_room___tree___node.html#a2054ede1482341806b6dd210d92ece1d">right</a>;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_room___tree___node.html#a27659c274249e7f8d222f7623d8c212f">   23</a></span>&#160;    <a class="code" href="struct_room.html">Room</a> *<a class="code" href="struct_room___tree___node.html#a27659c274249e7f8d222f7623d8c212f">content</a>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <a class="code" href="_room___tree_8h.html#a6a6511ec8d541f87542ae74cc11af15a">Room_Tree_Node</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_room___tree.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_room___tree.html">Room_Tree</a> {</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_room___tree.html#ab7f2abf2ef7443691ee655711fc20c0d">   27</a></span>&#160;    <a class="code" href="struct_room___tree___node.html">Room_Tree_Node</a> *<a class="code" href="struct_room___tree.html#ab7f2abf2ef7443691ee655711fc20c0d">pool</a>;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_room___tree.html#a170ab85fc6794cdeffb42de37640478f">   28</a></span>&#160;    <a class="code" href="struct_room___tree___node.html">Room_Tree_Node</a> *<a class="code" href="struct_room___tree.html#a170ab85fc6794cdeffb42de37640478f">root</a>;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_room___tree.html#a5d749e86bf9e5299c1a5af7bcce2397c">   29</a></span>&#160;    uint32_t <a class="code" href="struct_room___tree.html#a5d749e86bf9e5299c1a5af7bcce2397c">max_size</a>;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_room___tree.html#a5e1ebda31e026934b2091d2d0051818a">   30</a></span>&#160;    uint32_t <a class="code" href="struct_room___tree.html#a5e1ebda31e026934b2091d2d0051818a">used</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <a class="code" href="_room___tree_8h.html#a795078b28de6c84c07408467d7f86fa0">Room_Tree</a>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_room___tree_8h.html#a8426b6bc7d904dd8e399970e0a30bf8a">   33</a></span>&#160;<span class="preprocessor">#define Room_Tree_destruct(PARENT, CHILD, RESULT) \</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">{\</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">Room_Tree_Result *DISCARD = RESULT;\</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">PARENT = DISCARD-&gt;parent;\</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">CHILD = DISCARD-&gt;child;\</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">free(DISCARD);\</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">}</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="struct_room___tree.html">Room_Tree</a> *<a class="code" href="_room___tree_8h.html#a68af0d7933e3e73652110666408cf744">Room_Tree_start</a>(uint32_t max_size);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_room___tree_8h.html#ad633bd939fae8f60be9501f3007783c6">Room_Tree_stop</a>(<a class="code" href="struct_room___tree.html">Room_Tree</a> * <span class="keyword">self</span>);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="struct_room___tree___result.html">Room_Tree_Result</a> *<a class="code" href="_room___tree_8h.html#a284b2c9a3f8380f34e077210e3802e71">Room_insert</a>(<a class="code" href="struct_room___tree.html">Room_Tree</a> * <span class="keyword">self</span>, <a class="code" href="struct_room___tree.html">Room_Tree</a> * item);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="struct_room___tree___node_html"><div class="ttname"><a href="struct_room___tree___node.html">Room_Tree_Node</a></div><div class="ttdef"><b>Definition:</b> Room_Tree.h:19</div></div>
+<div class="ttc" id="struct_room___tree_html_a5d749e86bf9e5299c1a5af7bcce2397c"><div class="ttname"><a href="struct_room___tree.html#a5d749e86bf9e5299c1a5af7bcce2397c">Room_Tree::max_size</a></div><div class="ttdeci">uint32_t max_size</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:29</div></div>
+<div class="ttc" id="struct_room___tree___result_html_a3f69fb340495fb09b11d6a8f6b99a438"><div class="ttname"><a href="struct_room___tree___result.html#a3f69fb340495fb09b11d6a8f6b99a438">Room_Tree_Result::parent</a></div><div class="ttdeci">Room * parent</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:15</div></div>
+<div class="ttc" id="struct_room___tree_html_a170ab85fc6794cdeffb42de37640478f"><div class="ttname"><a href="struct_room___tree.html#a170ab85fc6794cdeffb42de37640478f">Room_Tree::root</a></div><div class="ttdeci">Room_Tree_Node * root</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:28</div></div>
+<div class="ttc" id="_room___tree_8h_html_a68af0d7933e3e73652110666408cf744"><div class="ttname"><a href="_room___tree_8h.html#a68af0d7933e3e73652110666408cf744">Room_Tree_start</a></div><div class="ttdeci">Room_Tree * Room_Tree_start(uint32_t max_size)</div></div>
+<div class="ttc" id="struct_room___tree___result_html"><div class="ttname"><a href="struct_room___tree___result.html">Room_Tree_Result</a></div><div class="ttdef"><b>Definition:</b> Room_Tree.h:14</div></div>
+<div class="ttc" id="_room___tree_8h_html_ad633bd939fae8f60be9501f3007783c6"><div class="ttname"><a href="_room___tree_8h.html#ad633bd939fae8f60be9501f3007783c6">Room_Tree_stop</a></div><div class="ttdeci">void Room_Tree_stop(Room_Tree *self)</div></div>
+<div class="ttc" id="struct_room___tree___node_html_a2054ede1482341806b6dd210d92ece1d"><div class="ttname"><a href="struct_room___tree___node.html#a2054ede1482341806b6dd210d92ece1d">Room_Tree_Node::right</a></div><div class="ttdeci">struct Room_Tree_Node * right</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:22</div></div>
+<div class="ttc" id="struct_room___tree_html_ab7f2abf2ef7443691ee655711fc20c0d"><div class="ttname"><a href="struct_room___tree.html#ab7f2abf2ef7443691ee655711fc20c0d">Room_Tree::pool</a></div><div class="ttdeci">Room_Tree_Node * pool</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:27</div></div>
+<div class="ttc" id="_room___tree_8h_html_a6a6511ec8d541f87542ae74cc11af15a"><div class="ttname"><a href="_room___tree_8h.html#a6a6511ec8d541f87542ae74cc11af15a">Room_Tree_Node</a></div><div class="ttdeci">struct Room_Tree_Node Room_Tree_Node</div></div>
+<div class="ttc" id="_room___tree_8h_html_a284b2c9a3f8380f34e077210e3802e71"><div class="ttname"><a href="_room___tree_8h.html#a284b2c9a3f8380f34e077210e3802e71">Room_insert</a></div><div class="ttdeci">Room_Tree_Result * Room_insert(Room_Tree *self, Room_Tree *item)</div></div>
+<div class="ttc" id="struct_room___tree_html_a5e1ebda31e026934b2091d2d0051818a"><div class="ttname"><a href="struct_room___tree.html#a5e1ebda31e026934b2091d2d0051818a">Room_Tree::used</a></div><div class="ttdeci">uint32_t used</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:30</div></div>
+<div class="ttc" id="struct_room___tree___node_html_ac43ebe1e32a24e1283757fcdf255297f"><div class="ttname"><a href="struct_room___tree___node.html#ac43ebe1e32a24e1283757fcdf255297f">Room_Tree_Node::left</a></div><div class="ttdeci">struct Room_Tree_Node * left</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:21</div></div>
+<div class="ttc" id="struct_room_html"><div class="ttname"><a href="struct_room.html">Room</a></div><div class="ttdef"><b>Definition:</b> room.h:13</div></div>
+<div class="ttc" id="room_8h_html"><div class="ttname"><a href="room_8h.html">room.h</a></div></div>
+<div class="ttc" id="_room___tree_8h_html_a795078b28de6c84c07408467d7f86fa0"><div class="ttname"><a href="_room___tree_8h.html#a795078b28de6c84c07408467d7f86fa0">Room_Tree</a></div><div class="ttdeci">struct Room_Tree Room_Tree</div></div>
+<div class="ttc" id="struct_room___tree___node_html_a27659c274249e7f8d222f7623d8c212f"><div class="ttname"><a href="struct_room___tree___node.html#a27659c274249e7f8d222f7623d8c212f">Room_Tree_Node::content</a></div><div class="ttdeci">Room * content</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:23</div></div>
+<div class="ttc" id="_room___tree_8h_html_a5ef1da9d36c90386c629fa371b6ec0b6"><div class="ttname"><a href="_room___tree_8h.html#a5ef1da9d36c90386c629fa371b6ec0b6">Room_Tree_Result</a></div><div class="ttdeci">struct Room_Tree_Result Room_Tree_Result</div></div>
+<div class="ttc" id="struct_room___tree_html"><div class="ttname"><a href="struct_room___tree.html">Room_Tree</a></div><div class="ttdef"><b>Definition:</b> Room_Tree.h:26</div></div>
+<div class="ttc" id="struct_room___tree___node_html_aac7a556bce72ed8b4b77f7e4d1a949d8"><div class="ttname"><a href="struct_room___tree___node.html#aac7a556bce72ed8b4b77f7e4d1a949d8">Room_Tree_Node::parent</a></div><div class="ttdeci">struct Room_Tree_Node * parent</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:20</div></div>
+<div class="ttc" id="struct_room___tree___result_html_a2f63a94e7dad14643d207863696a6a8d"><div class="ttname"><a href="struct_room___tree___result.html#a2f63a94e7dad14643d207863696a6a8d">Room_Tree_Result::child</a></div><div class="ttdeci">Room * child</div><div class="ttdef"><b>Definition:</b> Room_Tree.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2018年10月24日 星期三 21:46:37, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyWorld: include/Point.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Point.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_point_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_OBJECT_NEW_POINT_TYPE</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_OBJECT_NEW_POINT_TYPE</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html">helper/debug.h</a>&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="struct_point.html">   10</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_point.html">Point</a> {</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_point.html#af6d3062751bd565decb1a2cd3b63bdb2">   11</a></span>&#160;    int32_t <a class="code" href="struct_point.html#af6d3062751bd565decb1a2cd3b63bdb2">x</a>;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_point.html#af64066d134a77e01b3d6eb8da813627a">   13</a></span>&#160;    int32_t <a class="code" href="struct_point.html#af64066d134a77e01b3d6eb8da813627a">y</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;} *<a class="code" href="_point_8h.html#a1f9386eb1cf5ee55c259c4f7e8a34eb3">Point</a>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="struct_point.html">Point</a> <a class="code" href="_point_8h.html#a885ff9c9a07f933961177021777a40c7">Point_create</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_point_8h.html#acc064fcd0d03977db64ce0ebcdc9b9e9">Point_free</a>(<a class="code" href="struct_point.html">Point</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;int32_t <a class="code" href="_point_8h.html#a369f905a1605acf45e88e5ffb908bd98">Point_x</a>(<a class="code" href="struct_point.html">Point</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;int32_t <a class="code" href="_point_8h.html#a1d22997ab2610c6854864674050693ef">Point_y</a>(<a class="code" href="struct_point.html">Point</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_point_8h.html#a1bb878ce302067bfcb4a52b8e76942a8">Point_set_by_point</a>(<a class="code" href="struct_point.html">Point</a> <span class="keyword">self</span>, <a class="code" href="struct_point.html">Point</a> other);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_point_8h.html#a8e2e869cf86ebcf10c303449fc8acc53">Point_move_by_point</a>(<a class="code" href="struct_point.html">Point</a> <span class="keyword">self</span>, <a class="code" href="struct_point.html">Point</a> other);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="_point_8h.html#a6e79248e927521ac1f23faf8013036ed">   54</a></span>&#160;<span class="preprocessor">#define Point_set(self, ...) \</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">{\</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">    struct Point item = { __VA_ARGS__ };\</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">    Point_set_by_point(self, &amp;item);\</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">}</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="_point_8h.html#ac82734dd7d31a11c776d678c8a03edcf">   63</a></span>&#160;<span class="preprocessor">#define Point_move(self, ...) \</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">{\</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">    struct Point item = { __VA_ARGS__ };\</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">    Point_move_by_point(self, &amp;item);\</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">}</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_point_8h.html#a572582c7b7c761b98342269bd905a62a">Point_equal</a>(<a class="code" href="struct_point.html">Point</a> <span class="keyword">self</span>, <a class="code" href="struct_point.html">Point</a> other);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_point_8h.html#a9ff34b4a29f7f4c9424c493f7a76dac7">Point_print</a>(<a class="code" href="struct_point.html">Point</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="_point_8h_html_a8e2e869cf86ebcf10c303449fc8acc53"><div class="ttname"><a href="_point_8h.html#a8e2e869cf86ebcf10c303449fc8acc53">Point_move_by_point</a></div><div class="ttdeci">void Point_move_by_point(Point self, Point other)</div><div class="ttdoc">移動點座標 </div></div>
+<div class="ttc" id="debug_8h_html"><div class="ttname"><a href="debug_8h.html">debug.h</a></div></div>
+<div class="ttc" id="_point_8h_html_a1f9386eb1cf5ee55c259c4f7e8a34eb3"><div class="ttname"><a href="_point_8h.html#a1f9386eb1cf5ee55c259c4f7e8a34eb3">Point</a></div><div class="ttdeci">struct Point * Point</div></div>
+<div class="ttc" id="_point_8h_html_a9ff34b4a29f7f4c9424c493f7a76dac7"><div class="ttname"><a href="_point_8h.html#a9ff34b4a29f7f4c9424c493f7a76dac7">Point_print</a></div><div class="ttdeci">void Point_print(Point self)</div><div class="ttdoc">顯示內容 </div></div>
+<div class="ttc" id="struct_point_html"><div class="ttname"><a href="struct_point.html">Point</a></div><div class="ttdef"><b>Definition:</b> Point.h:10</div></div>
+<div class="ttc" id="_point_8h_html_a885ff9c9a07f933961177021777a40c7"><div class="ttname"><a href="_point_8h.html#a885ff9c9a07f933961177021777a40c7">Point_create</a></div><div class="ttdeci">Point Point_create(void)</div><div class="ttdoc">建立新的 Point 物件 </div></div>
+<div class="ttc" id="struct_point_html_af64066d134a77e01b3d6eb8da813627a"><div class="ttname"><a href="struct_point.html#af64066d134a77e01b3d6eb8da813627a">Point::y</a></div><div class="ttdeci">int32_t y</div><div class="ttdef"><b>Definition:</b> Point.h:13</div></div>
+<div class="ttc" id="_point_8h_html_a1d22997ab2610c6854864674050693ef"><div class="ttname"><a href="_point_8h.html#a1d22997ab2610c6854864674050693ef">Point_y</a></div><div class="ttdeci">int32_t Point_y(Point self)</div><div class="ttdoc">取出 Point y 欄位的數值 </div></div>
+<div class="ttc" id="_point_8h_html_acc064fcd0d03977db64ce0ebcdc9b9e9"><div class="ttname"><a href="_point_8h.html#acc064fcd0d03977db64ce0ebcdc9b9e9">Point_free</a></div><div class="ttdeci">void Point_free(Point self)</div><div class="ttdoc">釋放 Point 物件 </div></div>
+<div class="ttc" id="struct_point_html_af6d3062751bd565decb1a2cd3b63bdb2"><div class="ttname"><a href="struct_point.html#af6d3062751bd565decb1a2cd3b63bdb2">Point::x</a></div><div class="ttdeci">int32_t x</div><div class="ttdef"><b>Definition:</b> Point.h:11</div></div>
+<div class="ttc" id="_point_8h_html_a572582c7b7c761b98342269bd905a62a"><div class="ttname"><a href="_point_8h.html#a572582c7b7c761b98342269bd905a62a">Point_equal</a></div><div class="ttdeci">bool Point_equal(Point self, Point other)</div><div class="ttdoc">比較兩點是否相等 </div></div>
+<div class="ttc" id="_point_8h_html_a1bb878ce302067bfcb4a52b8e76942a8"><div class="ttname"><a href="_point_8h.html#a1bb878ce302067bfcb4a52b8e76942a8">Point_set_by_point</a></div><div class="ttdeci">void Point_set_by_point(Point self, Point other)</div><div class="ttdoc">重設點座標 </div></div>
+<div class="ttc" id="_point_8h_html_a369f905a1605acf45e88e5ffb908bd98"><div class="ttname"><a href="_point_8h.html#a369f905a1605acf45e88e5ffb908bd98">Point_x</a></div><div class="ttdeci">int32_t Point_x(Point self)</div><div class="ttdoc">取出 Point x 欄位的數值 </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2018年10月24日 星期三 21:46:37, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
