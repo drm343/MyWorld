@@ -7,19 +7,13 @@
 #define M_MESSAGE(name) Morph_Message_##name
 
 
-typedef struct Morph_Message *Morph_Message;
+typedef Morph Morph_Message;
 
 
 /** @brief 建立 Morph_Message
  * @return Morph Message
 */
-Morph_Message M_MESSAGE(create) (SDL_Renderer * render);
-
-
-/** @brief 刪除 Morph_Message
- * @param self Morph Message 物件
-*/
-void M_MESSAGE(free) (Morph_Message self);
+Morph_Message M_MESSAGE(create) (void);
 
 
 /** @brief 新增訊息到訊息欄
@@ -27,5 +21,11 @@ void M_MESSAGE(free) (Morph_Message self);
  * @param message 想加入的訊息
 */
 void M_MESSAGE(add_message) (Morph_Message self, const char *message);
+
+
+/** @brief 確認是不是訊息顯示欄
+ * @param self 訊息顯示欄
+*/
+bool M_MESSAGE(is_morph_message) (Morph_Message self);
 
 #endif

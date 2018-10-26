@@ -7,10 +7,10 @@ CASE_INDENT_NUMBER=4
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), FreeBSD)
 	INDENT=gindent
-	INCLUDE=-I /usr/local/include -I $(CURREND)/include -I$(CURREND)/submodules/mulklib
+	INCLUDE=-I /usr/local/include -I $(CURREND)/include
 else
 	INDENT=indent
-	INCLUDE=-I $(CURREND)/include -I$(CURREND)/submodules/mulklib
+	INCLUDE=-I $(CURREND)/include
 endif
 INDENT_STYLE=-kr
 COMPILER=gcc-7
@@ -22,14 +22,21 @@ STD=-std=gnu11 -fms-extensions
 
 # Source and Include dir defined.
 CURREND=`pwd`
-PACKAGE=$(CURREND)/../AppDir
-BIN=$(CURREND)/bin
-OBJ=$(CURREND)/obj
 SRC=$(CURREND)/src
+CONFIG=$(CURREND)/config
+OBJ=$(CURREND)/obj
+DOCS=$(CURREND)/docs
+FONTS=$(CURREND)/static/fonts
+
+PACKAGE=$(CURREND)/BUILD
+BIN=$(PACKAGE)/bin
+USER=$(PACKAGE)/USER
+
+TOOLS_BIN=$(CURREND)/tools/bin
 
 # Compile flags
 CFLAGS=-lSDL2 -lSDL2_ttf -L/usr/lib64 -lz -lconfig
-LFLAGS=-Werror -L$(OBJ) -lmy_world ./submodules/mulklib/libmulklib.a -lm
+LFLAGS=-Werror -L$(OBJ) -lmy_world -lm -luuid
 
 LIB_MY_WORLD=$(OBJ)/libmy_world.a
 
@@ -38,9 +45,11 @@ DEBUG=-DDEBUG
 #DEBUG=
 
 
-CHECK_DIR := $(OBJ) $(BIN) $(CURREND)/static/fonts
+CHECK_DIR := $(TOOLS_BIN) $(OBJ) $(USER) $(BIN) $(FONTS)
 
-AUTO_BUILD_DEP := $(OBJ)/point.o \
+AUTO_BUILD_DEP := \
+	$(OBJ)/BaseClass.o \
+	$(OBJ)/point.o \
 	$(OBJ)/rectangle.o \
 	$(OBJ)/String.o \
 	$(OBJ)/style.o \
@@ -52,6 +61,7 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 	$(OBJ)/character_factory.o \
 	$(OBJ)/Morph.o \
 	$(OBJ)/Morph-SDL2.o \
+	$(OBJ)/Morph-SubWindow.o \
 	$(OBJ)/Morph-Message.o \
 	$(OBJ)/room.o \
 	$(OBJ)/room_pool.o \
@@ -65,9 +75,9 @@ AUTO_BUILD_DEP := $(OBJ)/point.o \
 DEP := $(AUTO_BUILD_DEP)
 
 
-AUTO_BUILD_TOOLS := $(BIN)/gen_list \
-	$(BIN)/gen_pool \
-	$(BIN)/gen_normal_tree
+AUTO_BUILD_TOOLS := $(TOOLS_BIN)/gen_list \
+	$(TOOLS_BIN)/gen_pool \
+	$(TOOLS_BIN)/gen_normal_tree
 
 TOOLS := $(AUTO_BUILD_TOOLS)
 
@@ -75,11 +85,10 @@ TOOLS := $(AUTO_BUILD_TOOLS)
 .PHONY: clean doc examples strings app test indent
 app: $(CHECK_DIR) indent $(TOOLS) $(LIB_MY_WORLD)
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
+	@cp -r $(CONFIG) $(USER)
+	@cp -r $(FONTS) $(USER)
 	@echo "build app done"
 
-
-all: $(CHECK_DIR) $(TOOLS) $(LIB_MY_WORLD) doc
-	@echo "build all done"
 
 
 %(TOOLS): $(AUTO_BUILD_TOOLS)
@@ -101,14 +110,6 @@ examples:
 	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) examples/container.c $(CFLAGS) $(LFLAGS) -o $(BIN)/app
 
 
-build: all $(PACKAGE)
-	rsync -avh $(CURREND)/static $(PACKAGE)
-	rsync -avh $(CURREND)/config $(PACKAGE)
-	rsync -avh $(CURREND)/bin $(PACKAGE)
-
-$(PACKAGE):
-	mkdir -p $(PACKAGE)
-
 $(LIB_MY_WORLD): $(DEP)
 	ar cr $(LIB_MY_WORLD) $(DEP)
 	ranlib $(LIB_MY_WORLD)
@@ -122,9 +123,12 @@ $(CHECK_DIR):
 	mkdir -p $@
 
 clean:
-	rm -rf bin obj docs/*
+	rm -rf $(TOOLS_BIN)/* $(BIN)/* $(OBJ)/* $(DOCS)/*
 
 doc:
-	-rm -rf docs/*
-	@doxygen && cd docs && mv html/* . && rm -rf html
-	touch docs/.nojekyll
+	-rm -rf $(DOCS)/*
+	@doxygen && cd $(DOCS) && mv html/* . && rm -rf html
+	touch $(DOCS)/.nojekyll
+
+test:
+	$(BIN)/$(APP_NAME)

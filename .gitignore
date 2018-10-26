@@ -3,7 +3,7 @@ obj/*
 *.o
 
 # Execute Binary
-bin/*
+BUILD/*
 
 # Static file include lib that thay are not compile by makefile
 static

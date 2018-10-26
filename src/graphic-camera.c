@@ -236,7 +236,7 @@ void EXPORT(set_map) (Camera_Access self, Map_Access map) {
 /** @brief 處理訊息並更改角色資料
  * @param self Camera 物件
  * @param from_pool 角色池
- * @param box_access 訊息視窗
+ * @param box_window 訊息視窗
  * @param current 當前發出訊息的角色
  * @param message 角色發出的訊息
  * @return 當前必定回傳 true
@@ -244,7 +244,7 @@ void EXPORT(set_map) (Camera_Access self, Map_Access map) {
 bool
 EXPORT(take) (Camera_Access self,
               Game_Status_Access from_pool,
-              Message_Box_Access box_access,
+              Morph_SubWindow box_window,
               Character_Access current, Message_Type message) {
     Character_Access npc = NULL;
     Style_Access dead = self->dead;
@@ -321,7 +321,7 @@ EXPORT(take) (Camera_Access self,
                      STATUS(get_relation_string) (npc->status));
         }
 
-        BOX(add_message) (box_access, attack_message);
+        SUBWINDOW(add_message) (box_window, attack_message);
         free(attack_message);
         Faction_Type npc_relation;
         Status_get_relation(npc->status, npc_relation);
@@ -360,9 +360,10 @@ EXPORT(take) (Camera_Access self,
                                    npc->status->name->str,
                                    format);
                 death_message = malloc((len + 1) * sizeof(char));
-                snprintf(NULL, 0, "%s%s", npc->status->name->str, format);
+                snprintf(death_message, len + 1, "%s%s",
+                         npc->status->name->str, format);
             }
-            BOX(add_message) (box_access, death_message);
+            SUBWINDOW(add_message) (box_window, death_message);
             free(death_message);
         }
     }

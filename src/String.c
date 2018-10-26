@@ -40,7 +40,7 @@ static size_t String_length(const char *str)
             break;
         } else {
 #ifdef DEBUG
-            DEBUG_PRINT("%s is not utf8 string or bug\n", str);
+            DEBUG_PRINT("%s is not a utf8 string, or this is a bug\n", str);
 #endif
             break;
         }
@@ -78,7 +78,7 @@ static size_t String_width_length(const char *str)
             break;
         } else {
 #ifdef DEBUG
-            DEBUG_PRINT("%s is not utf8 string or bug\n", str);
+            DEBUG_PRINT("%s is not a utf8 string, or this is a bug\n", str);
 #endif
             break;
         }

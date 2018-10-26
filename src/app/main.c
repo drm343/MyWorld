@@ -23,7 +23,7 @@ SDL_Rect position = {
 };
 
 Camera_Access camera_1 = NULL;
-Message_Box_Access box_1 = NULL;
+Morph_SubWindow box_1 = NULL;
 Map_Type *map_1;
 Game_Status *game_status_pool = NULL;
 
@@ -91,7 +91,7 @@ Execute_Result setup_style()
 
     config_init(&cfg);
     ImmutableString INIT_CONFIG =
-        String_append_c_str(ROOT_DIR, "/config/init.cfg");
+        String_append_c_str(ROOT_DIR, "/USER/config/init.cfg");
 
     /* Read the file. If there is an error, report it and exit. */
     if (!config_read_file(&cfg, INIT_CONFIG->str)) {
@@ -126,67 +126,6 @@ Execute_Result setup_style()
 }
 
 
-void draw_message_box(SDL_Renderer_Access render)
-{
-    SDL_Color white = { 255, 255, 255 };
-    ImmutableString item = NULL;
-
-    SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
-    {
-        SDL_Rect clean_message_box_area = {
-            .x = 0,
-            .y = 20 * 24,
-            .w = 799,
-            .h = 120
-        };
-        SDL_RenderSetViewport(render, &clean_message_box_area);
-    }
-
-    if (Message_Box_is_updated(box_1)) {
-        goto DONE;
-    }
-    {
-        SDL_Rect clean_message_box_area = {
-            .x = 0,
-            .y = 0,
-            .w = 799,
-            .h = 120
-        };
-        SDL_RenderFillRect(render, &clean_message_box_area);
-    }
-
-    SDL_SetRenderDrawColor(render, white.r, white.g, white.b, 0);
-    SDL_RenderDrawLines(render, Message_Box_box(box_1), 5);
-
-    bpt_key_t current = Message_Box_history_count(box_1) - 1;
-    for (int counter = 0; counter < 5; counter++) {
-        item = Message_Box_get_history_by_index(box_1, current);
-        current = current - 1;
-
-        SDL_Surface *surfaceMessage = NULL;
-
-        if (item != NULL) {
-            SDL_Rect box = {
-                .x = 0,
-                .y = counter * 24,
-                .w = item->width_length,
-                .h = 24
-            };
-
-            surfaceMessage =
-                TTF_RenderUTF8_Solid(USE_FONT, item->str, white);
-            SDL_Texture_Access access =
-                SDL_CreateTextureFromSurface(render, surfaceMessage);
-            SDL_FreeSurface(surfaceMessage);
-
-            SDL_RenderCopy(render, access, NULL, &(box));
-            SDL_DestroyTexture(access);
-        }
-    }
-  DONE:
-    Message_Box_update_done(box_1);
-}
-
 void draw_view(SDL_Renderer_Access render)
 {
     SDL_SetRenderDrawColor(render, 0, 0, 0, SDL_ALPHA_OPAQUE);
@@ -198,7 +137,6 @@ void draw_view(SDL_Renderer_Access render)
         .w = 799,
         .h = 20 * 24
     };
-    SDL_RenderSetViewport(render, &clean_character_area);
     SDL_RenderFillRect(render, &clean_character_area);
 
     Point graph_point = camera_1->player->Graph_Position;
@@ -225,7 +163,7 @@ void draw_view(SDL_Renderer_Access render)
             }
         }
     }
-    draw_message_box(render);
+    box_1->draw(box_1);
 
     SDL_RenderPresent(render);
 }
@@ -237,9 +175,7 @@ Execute_Result init_view(SDL_Renderer_Access render)
     USE_FONT = TTF_OpenFont(FONT_FAMILY->str, 512);
     String_free(FONT_FAMILY);
     if (!USE_FONT) {
-#ifdef DEBUG
         DEBUG_PRINT("TTF_OpenFont: %s\n", TTF_GetError());
-#endif
         return EXECUTE_FAILED;
     }
     SDL_Surface *surfaceMessage = NULL;
@@ -262,6 +198,8 @@ Execute_Result init_view(SDL_Renderer_Access render)
 
     Style_Access dead = STYLE_P(find) (style_pool, "dead");
     CAMERA(set_dead_style) (camera_1, dead);
+
+    box_1 = BOX(start) (render, USE_FONT);
     return EXECUTE_SUCCESS;
 }
 
@@ -280,7 +218,6 @@ void submain()
     game_status_pool = GAME(create) (20, 100);
 
     camera_1 = CAMERA(start) ();
-    box_1 = BOX(start) ();
 
     SDL_Init(SDL_INIT_EVERYTHING);
     if (TTF_Init() != 0) {
@@ -298,14 +235,12 @@ void submain()
     result = setup_style();
 
     if (result == EXECUTE_FAILED) {
-#ifdef DEBUG
         DEBUG_MESSAGE("config setup failed\n");
-#endif
         goto INIT_FAILED;
     }
     // 取得 config
     ImmutableString NPC_CONFIG =
-        String_append_c_str(ROOT_DIR, "/config/npc.cfg");
+        String_append_c_str(ROOT_DIR, "/USER/config/npc.cfg");
     GAME(parse_npc_config) (game_status_pool, NPC_CONFIG->str, style_pool);
     String_free(NPC_CONFIG);
 
@@ -374,7 +309,7 @@ void submain()
     SDL_Quit();
 
   DONE:
-    BOX(stop) (box_1);
+    box_1->free(box_1);
     CAMERA(stop) (camera_1);
     GAME(free) (game_status_pool);
     STYLE_P(stop) (style_pool);

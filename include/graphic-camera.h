@@ -92,7 +92,7 @@ void EXPORT(set_map) (Camera_Access self, Map_Access map);
 /** @brief 處理訊息並更改角色資料
  * @param self Camera 物件
  * @param from_pool 角色池
- * @param box_access 訊息視窗
+ * @param box_window 訊息視窗
  * @param current 當前發出訊息的角色
  * @param message 角色發出的訊息
  * @return 當前必定回傳 true
@@ -100,7 +100,7 @@ void EXPORT(set_map) (Camera_Access self, Map_Access map);
 bool
 EXPORT(take) (Camera_Access self,
               Game_Status_Access from_pool,
-              Message_Box_Access box_access,
+              Morph_SubWindow box_window,
               Character_Access current, Message_Type message);
 
 #undef EXPORT
