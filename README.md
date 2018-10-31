@@ -11,9 +11,9 @@ doxygen, graphviz,
 
 Use for gen documents.
 
-## Build automation(Choose)
+## Build application
 
-You can use make or tup for now.
+Just type make.
 
 ## Note
 Please download a font then place in "static/fonts". Remember to change font-family at "config/init.cfg" and complie again.
