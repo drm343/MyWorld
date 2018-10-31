@@ -28,12 +28,12 @@ typedef struct MORPH (Property) {
     /**< owner 此 Morph 上層 Morph, NULL 表示為最上層 */
     Morph submorph;
     /**< submorph 此 Morph 的下層 Morph, NULL 表示為最下層 */
-    char *id;
-    /**< id 用來判斷 Morph 的 Custom_Property 是否相同 */
 } *MORPH(Property);
 
 typedef struct Morph {
-    MORPH(Property) morph;
+    Class class;
+    /**< class 用來判斷 Morph 的 Custom_Property 是否相同 */
+     MORPH(Property) morph;
     Custom_Property property;
 
     /** @brief 釋放 Morph 物件

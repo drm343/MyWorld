@@ -1,7 +1,5 @@
 #include "Morph.h"
 
-static char *CLASS_ID = NULL;
-
 
 typedef struct Custom_Property {
 } *Custom_Property;
@@ -32,8 +30,8 @@ static void MORPH(free) (Morph self) {
         Point_free(morph->position);
         Point_free(morph->extent);
         self->auto_free_color(self);
-        free(morph->id);
         free(morph);
+        RELEASE_CLASS(self->class);
         free(self);
     }
 }
@@ -138,17 +136,15 @@ static Morph MORPH(submorph) (Morph self) {
  * @return 新建立的物件
  */
 Morph MORPH(create) (ColorCallback init_color, ColorCallback free_color) {
-    if (CLASS_ID == NULL) {
-        CLASS_ID = NEW_CLASS_ID();
-    }
     Morph self = NEW(Morph);
+    self->class = NULL;
+
     self->morph = NEW(Morph_Property);
     self->morph->position = Point_create();
     self->morph->extent = Point_create();
     self->morph->name = String_create("");
     self->morph->owner = NULL;
     self->morph->submorph = NULL;
-    self->morph->id = CLASS_ID;
     self->property = NULL;
 
     self->free = MORPH(free);
@@ -177,8 +173,5 @@ Morph MORPH(create) (ColorCallback init_color, ColorCallback free_color) {
  * @return 確認結果
  */
 bool MORPH(is_the_same_id) (Morph self, Morph other) {
-    if (strcmp(self->morph->id, other->morph->id) == 0) {
-        return true;
-    }
-    return false;
+    return CHECK_CLASS(self->class, other->class);
 }

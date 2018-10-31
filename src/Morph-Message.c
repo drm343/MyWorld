@@ -1,6 +1,6 @@
 #include "Morph-Message.h"
 
-static char *CLASS_ID = NULL;
+static Class CLASS_ID = NULL;
 
 
 typedef struct Custom_Property {
@@ -21,7 +21,10 @@ typedef struct Custom_Property {
 static void M_MESSAGE(free) (Morph_Message self) {
     if (self != NULL) {
         Custom_Property property = self->property;
-        String_free(property->string);
+
+        if (property->string != NULL) {
+            String_free(property->string);
+        }
         SDL_DestroyTexture(property->texture);
         void (*super_free) (Morph) = property->super_free;
         super_free(self);
@@ -156,12 +159,17 @@ Morph_Message M_MESSAGE(create) (void) {
         DEBUG_MESSAGE("This line will not appear\n");
         return NULL;
     }
+
     if (CLASS_ID == NULL) {
         CLASS_ID = NEW_CLASS_ID();
+    } else {
+        CLASS_ID->counter = CLASS_ID->counter + 1;
     }
+
     Morph_Message self =
         MORPH(create) (M_SDL2(init_color), M_SDL2(free_color));
-    self->morph->id = CLASS_ID;
+
+    self->class = CLASS_ID;
 
     Custom_Property property = NEW(Custom_Property);
     self->property = property;
@@ -197,8 +205,5 @@ void M_MESSAGE(add_message) (Morph_Message self, const char *message) {
  * @param self 訊息顯示欄
 */
 bool M_MESSAGE(is_morph_message) (Morph_Message self) {
-    if (strcmp(self->morph->id, CLASS_ID) == 0) {
-        return true;
-    }
-    return false;
+    return CHECK_CLASS(self->class, CLASS_ID);
 }

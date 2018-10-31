@@ -2,7 +2,8 @@
 #include "helper/debug.h"
 
 
-static char *CLASS_ID = NULL;
+static Class CLASS_ID = NULL;
+
 
 //--------------------------------
 // Graphic Box points
@@ -116,18 +117,24 @@ Morph_SubWindow SUBWINDOW(create) (void) {
         DEBUG_MESSAGE("This line will not appear\n");
         return NULL;
     }
+
     if (CLASS_ID == NULL) {
         CLASS_ID = NEW_CLASS_ID();
+    } else {
+        CLASS_ID->counter = CLASS_ID->counter + 1;
     }
+
     Morph_SubWindow self =
         MORPH(create) (M_SDL2(init_color), M_SDL2(free_color));
-    self->morph->id = CLASS_ID;
-    self->property = NEW(Custom_Property);
 
+    self->class = CLASS_ID;
+
+    self->property = NEW(Custom_Property);
     self->property->max_counter = 5;
     self->property->current_counter = 0;
     self->property->render = M_SDL2(render) ();
     self->property->super_add = self->add;
+
     self->add = SUBWINDOW(add);
     self->property->last = NULL;
     self->draw = SUBWINDOW(draw);
