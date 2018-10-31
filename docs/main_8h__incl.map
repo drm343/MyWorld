@@ -1,17 +1,22 @@
 <map id="include/main.h" name="include/main.h">
-<area shape="rect" id="node7" href="$namespace_8h.html" title="namespace.h" alt="" coords="348,393,448,420"/>
-<area shape="rect" id="node8" href="$graphic-camera_8h.html" title="graphic&#45;camera.h" alt="" coords="498,80,621,107"/>
-<area shape="rect" id="node22" href="$_string_8h.html" title="String.h" alt="" coords="1030,393,1097,420"/>
-<area shape="rect" id="node9" href="$game__status_8h.html" title="game_status.h" alt="" coords="505,155,613,181"/>
-<area shape="rect" id="node26" href="$graphic-message_8h.html" title="graphic&#45;message.h" alt="" coords="907,229,1039,256"/>
-<area shape="rect" id="node11" href="$generic__function_8h.html" title="helper/generic_function.h" alt="" coords="5,393,172,420"/>
-<area shape="rect" id="node13" href="$map__system_8h.html" title="map_system.h" alt="" coords="775,229,883,256"/>
-<area shape="rect" id="node16" href="$_rectangle_8h.html" title="Rectangle.h" alt="" coords="436,311,528,338"/>
-<area shape="rect" id="node23" href="$character_8h.html" title="character.h" alt="" coords="664,229,751,256"/>
-<area shape="rect" id="node14" href="$type_8h.html" title="base/type.h" alt="" coords="917,468,1007,495"/>
-<area shape="rect" id="node19" href="$style_8h.html" title="style.h" alt="" coords="859,311,921,338"/>
-<area shape="rect" id="node17" href="$_point_8h.html" title="Point.h" alt="" coords="261,393,324,420"/>
-<area shape="rect" id="node18" href="$debug_8h.html" title="helper/debug.h" alt="" coords="690,468,797,495"/>
-<area shape="rect" id="node24" href="$status_8h.html" title="status.h" alt="" coords="755,311,825,338"/>
-<area shape="rect" id="node25" href="$message__base_8h.html" title="message_base.h" alt="" coords="575,393,696,420"/>
+<area shape="rect" id="node7" href="$namespace_8h.html" title="namespace.h" alt="" coords="730,603,830,629"/>
+<area shape="rect" id="node8" href="$graphic-camera_8h.html" title="graphic&#45;camera.h" alt="" coords="699,80,821,107"/>
+<area shape="rect" id="node22" href="$_string_8h.html" title="String.h" alt="" coords="305,603,372,629"/>
+<area shape="rect" id="node9" href="$game__status_8h.html" title="game_status.h" alt="" coords="946,379,1054,405"/>
+<area shape="rect" id="node26" href="$graphic-message_8h.html" title="graphic&#45;message.h" alt="" coords="595,155,727,181"/>
+<area shape="rect" id="node11" href="$generic__function_8h.html" title="helper/generic_function.h" alt="" coords="1291,603,1458,629"/>
+<area shape="rect" id="node13" href="$map__system_8h.html" title="map_system.h" alt="" coords="1102,453,1210,480"/>
+<area shape="rect" id="node16" href="$_rectangle_8h.html" title="Rectangle.h" alt="" coords="1194,528,1286,555"/>
+<area shape="rect" id="node23" href="$character_8h.html" title="character.h" alt="" coords="907,453,994,480"/>
+<area shape="rect" id="node14" href="$type_8h.html" title="base/type.h" alt="" coords="935,677,1025,704"/>
+<area shape="rect" id="node19" href="$style_8h.html" title="style.h" alt="" coords="580,528,641,555"/>
+<area shape="rect" id="node17" href="$_point_8h.html" title="Point.h" alt="" coords="1153,603,1215,629"/>
+<area shape="rect" id="node18" href="$debug_8h.html" title="helper/debug.h" alt="" coords="769,677,876,704"/>
+<area shape="rect" id="node24" href="$status_8h.html" title="status.h" alt="" coords="927,528,996,555"/>
+<area shape="rect" id="node25" href="$message__base_8h.html" title="message_base.h" alt="" coords="1007,603,1129,629"/>
+<area shape="rect" id="node27" href="$_morph-_sub_window_8h.html" title="Morph&#45;SubWindow.h" alt="" coords="481,229,623,256"/>
+<area shape="rect" id="node28" href="$_morph-_message_8h.html" title="Morph&#45;Message.h" alt="" coords="486,304,613,331"/>
+<area shape="rect" id="node29" href="$_morph-_s_d_l2_8h.html" title="Morph&#45;SDL2.h" alt="" coords="453,379,560,405"/>
+<area shape="rect" id="node30" href="$_morph_8h.html" title="Morph.h" alt="" coords="385,453,455,480"/>
+<area shape="rect" id="node31" href="$_base_class_8h.html" title="BaseClass.h" alt="" coords="103,528,201,555"/>
 </map>

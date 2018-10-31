@@ -11,5 +11,6 @@ var searchData=
   ['font',['font',['../struct_font_config.html#abf5bfa705e66ffc1ddaa6ce46c960873',1,'FontConfig']]],
   ['fontconfig',['FontConfig',['../struct_font_config.html',1,'']]],
   ['found',['FOUND',['../type_8h.html#a81c7d09b805c146131afef23d04eee1fa3fe5ffe68b10eb48b4a8b17eefe60154',1,'type.h']]],
-  ['found_5fresult',['Found_Result',['../type_8h.html#a81c7d09b805c146131afef23d04eee1f',1,'type.h']]]
+  ['found_5fresult',['Found_Result',['../type_8h.html#a81c7d09b805c146131afef23d04eee1f',1,'type.h']]],
+  ['free',['free',['../struct_morph.html#aeab3286eb66c09214bd8f566a446e3d3',1,'Morph']]]
 ];

@@ -1,8 +1,11 @@
 var searchData=
 [
   ['sdl_5ftexture_5faccess',['SDL_Texture_Access',['../style_8h.html#afe3d393bd435084057cc073f2d992808',1,'style.h']]],
+  ['set_5fcolor',['set_color',['../struct_morph.html#a641163dc1936e13d55aa574cca7cb3d6',1,'Morph']]],
   ['set_5fefficacy',['set_efficacy',['../struct_skill___a_p_i.html#ae71b01e092b2bf3aa5ad088f7908a2c4',1,'Skill_API']]],
-  ['set_5fname',['set_name',['../struct_skill___a_p_i.html#a85126764a7d0d0aa59ee462cc67e59c6',1,'Skill_API']]],
+  ['set_5fextent',['set_extent',['../struct_morph.html#adcb91aa5735a3ed59a754501630e1e4e',1,'Morph']]],
+  ['set_5fname',['set_name',['../struct_skill___a_p_i.html#a85126764a7d0d0aa59ee462cc67e59c6',1,'Skill_API::set_name()'],['../struct_morph.html#a3e99e1cd364c78b6d792a74c8ef30798',1,'Morph::set_name()']]],
+  ['set_5fposition',['set_position',['../struct_morph.html#a37be2adaf5a65907967393511e81089d',1,'Morph']]],
   ['skill',['Skill',['../struct_skill.html',1,'Skill'],['../character-skill_8h.html#a67c933a1eead57732778ffc366896171',1,'skill():&#160;character-skill.h']]],
   ['skill_5faccess',['Skill_Access',['../character-skill_8h.html#a23384531887ef895c534efb2fe1eed9e',1,'character-skill.h']]],
   ['skill_5fapi',['Skill_API',['../struct_skill___a_p_i.html',1,'']]],
@@ -61,5 +64,7 @@ var searchData=
   ['style_5fpool_5fnext',['Style_Pool_next',['../style_8h.html#a7a5bb954948641e473298e8e78f08c84',1,'style.h']]],
   ['style_5fpool_5fstart',['Style_Pool_start',['../style_8h.html#a7979e596b99a8620cd905fbf97dd7e04',1,'style.h']]],
   ['style_5fpool_5fstop',['Style_Pool_stop',['../style_8h.html#af24b3c146fdb176a97914a9f46ea8d61',1,'style.h']]],
+  ['submorph',['submorph',['../struct_morph___property.html#ac15fe5df5363d67719b5bba0edba77e9',1,'Morph_Property::submorph()'],['../struct_morph.html#a3bf5bc27f7701413ca11f0357eafbedf',1,'Morph::submorph()']]],
+  ['subwindow',['SUBWINDOW',['../_morph-_sub_window_8h.html#a04249069978d6274b4ef129b359dbf3d',1,'Morph-SubWindow.h']]],
   ['super',['super',['../struct_map___type.html#a9f0c0cab357402f197fd224709a15415',1,'Map_Type::super()'],['../struct_room.html#a9f0c0cab357402f197fd224709a15415',1,'Room::super()']]]
 ];

@@ -1,15 +1,20 @@
 <map id="include/Point.h" name="include/Point.h">
-<area shape="rect" id="node2" href="$character_8h.html" title="include/character.h" alt="" coords="303,80,435,107"/>
-<area shape="rect" id="node9" href="$_rectangle_8h.html" title="include/Rectangle.h" alt="" coords="469,80,606,107"/>
-<area shape="rect" id="node14" href="$two__point_8h.html" title="include/two_point.h" alt="" coords="630,80,765,107"/>
+<area shape="rect" id="node2" href="$character_8h.html" title="include/character.h" alt="" coords="299,80,431,107"/>
+<area shape="rect" id="node9" href="$_rectangle_8h.html" title="include/Rectangle.h" alt="" coords="526,80,663,107"/>
+<area shape="rect" id="node14" href="$_morph_8h.html" title="include/Morph.h" alt="" coords="688,80,803,107"/>
+<area shape="rect" id="node19" href="$two__point_8h.html" title="include/two_point.h" alt="" coords="827,80,962,107"/>
 <area shape="rect" id="node3" href="$_character___list_8h.html" title="include/container/Character\l_List.h" alt="" coords="5,155,187,196"/>
 <area shape="rect" id="node4" href="$_character___pool_8h.html" title="include/container/Character\l_Pool.h" alt="" coords="211,155,392,196"/>
-<area shape="rect" id="node6" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="406,251,559,278"/>
-<area shape="rect" id="node5" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="216,244,381,285"/>
-<area shape="rect" id="node7" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="399,333,566,360"/>
-<area shape="rect" id="node8" href="$main_8h.html" title="include/main.h" alt="" coords="429,408,536,435"/>
+<area shape="rect" id="node6" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="403,251,557,278"/>
+<area shape="rect" id="node5" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="213,244,379,285"/>
+<area shape="rect" id="node7" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="669,483,835,509"/>
+<area shape="rect" id="node8" href="$main_8h.html" title="include/main.h" alt="" coords="699,557,805,584"/>
 <area shape="rect" id="node10" href="$map__system_8h.html" title="include/map_system.h" alt="" coords="518,162,671,189"/>
 <area shape="rect" id="node11" href="$room_8h.html" title="include/room.h" alt="" coords="696,162,803,189"/>
-<area shape="rect" id="node12" href="$_room___pool_8h.html" title="include/container/Room\l_Pool.h" alt="" coords="627,244,786,285"/>
-<area shape="rect" id="node13" href="$_room___tree_8h.html" title="include/container/Room\l_Tree.h" alt="" coords="810,244,969,285"/>
+<area shape="rect" id="node12" href="$_room___pool_8h.html" title="include/container/Room\l_Pool.h" alt="" coords="581,244,739,285"/>
+<area shape="rect" id="node13" href="$_room___tree_8h.html" title="include/container/Room\l_Tree.h" alt="" coords="763,244,922,285"/>
+<area shape="rect" id="node15" href="$_morph-_s_d_l2_8h.html" title="include/Morph&#45;SDL2.h" alt="" coords="891,162,1042,189"/>
+<area shape="rect" id="node16" href="$_morph-_message_8h.html" title="include/Morph&#45;Message.h" alt="" coords="947,251,1117,278"/>
+<area shape="rect" id="node17" href="$_morph-_sub_window_8h.html" title="include/Morph&#45;SubWindow.h" alt="" coords="833,333,1021,360"/>
+<area shape="rect" id="node18" href="$graphic-message_8h.html" title="include/graphic&#45;message.h" alt="" coords="782,408,959,435"/>
 </map>

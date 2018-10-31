@@ -1,0 +1,5 @@
+<map id="Morph" name="Morph">
+<area shape="rect" id="node2" href="$struct_morph___property.html" title="Morph_Property" alt="" coords="141,216,256,243"/>
+<area shape="rect" id="node3" href="$struct_immutable_string.html" title="ImmutableString" alt="" coords="5,111,123,137"/>
+<area shape="rect" id="node4" href="$struct_point.html" title="Point" alt="" coords="231,5,283,32"/>
+</map>

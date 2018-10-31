@@ -1,18 +1,11 @@
 var searchData=
 [
-  ['rectangle_5ftype_5fcreate',['Rectangle_Type_create',['../_rectangle_8h.html#aac80c6fe429fafc74e27b86086546c64',1,'Rectangle.h']]],
-  ['rectangle_5ftype_5fdiagonal_5flength',['Rectangle_Type_diagonal_length',['../_rectangle_8h.html#afce2345f0e3f6c3af94bfde23c338473',1,'Rectangle.h']]],
-  ['rectangle_5ftype_5fextent',['Rectangle_Type_extent',['../_rectangle_8h.html#a28965e9b9182206f0283d2b73bbeabe4',1,'Rectangle.h']]],
-  ['rectangle_5ftype_5ffree',['Rectangle_Type_free',['../_rectangle_8h.html#a6cf21dcdb861e20fd60afa3e4e6106fc',1,'Rectangle.h']]],
-  ['rectangle_5ftype_5fposition',['Rectangle_Type_position',['../_rectangle_8h.html#aaf34e2992289aa0bf13c00185bae48f0',1,'Rectangle.h']]],
-  ['rectangle_5ftype_5fset_5fextent',['Rectangle_Type_set_extent',['../_rectangle_8h.html#a9671072fc389cfcd949e4c481cde745d',1,'Rectangle.h']]],
-  ['rectangle_5ftype_5fset_5fposition',['Rectangle_Type_set_position',['../_rectangle_8h.html#ab8c1b022a4308f388f2fdc3f089fcc50',1,'Rectangle.h']]],
-  ['room_5fcompare_5fsmall',['Room_compare_small',['../room_8h.html#a157e979461cb61b2a028c8e47a776abd',1,'room.h']]],
-  ['room_5finsert',['Room_insert',['../_room___tree_8h.html#a284b2c9a3f8380f34e077210e3802e71',1,'Room_Tree.h']]],
-  ['room_5fpool_5fmalloc',['Room_Pool_malloc',['../_room___pool_8h.html#a0a7c99f87a94ea3d9bbededa3d333392',1,'Room_Pool.h']]],
-  ['room_5fpool_5fstart',['Room_Pool_start',['../_room___pool_8h.html#a355375dc026d871ac95954fb1fc7b4de',1,'Room_Pool.h']]],
-  ['room_5fpool_5fstop',['Room_Pool_stop',['../_room___pool_8h.html#af367fdf1d49e84eda8750c76b95abdd5',1,'Room_Pool.h']]],
-  ['room_5fset_5frandom_5fposition',['Room_set_random_position',['../room_8h.html#acac0afbfc4f5b9aab61de5a5bf1716c2',1,'room.h']]],
-  ['room_5ftree_5fstart',['Room_Tree_start',['../_room___tree_8h.html#a68af0d7933e3e73652110666408cf744',1,'Room_Tree.h']]],
-  ['room_5ftree_5fstop',['Room_Tree_stop',['../_room___tree_8h.html#ad633bd939fae8f60be9501f3007783c6',1,'Room_Tree.h']]]
+  ['point_5fcreate',['Point_create',['../_point_8h.html#a885ff9c9a07f933961177021777a40c7',1,'Point.h']]],
+  ['point_5fequal',['Point_equal',['../_point_8h.html#a572582c7b7c761b98342269bd905a62a',1,'Point.h']]],
+  ['point_5ffree',['Point_free',['../_point_8h.html#acc064fcd0d03977db64ce0ebcdc9b9e9',1,'Point.h']]],
+  ['point_5fmove_5fby_5fpoint',['Point_move_by_point',['../_point_8h.html#a8e2e869cf86ebcf10c303449fc8acc53',1,'Point.h']]],
+  ['point_5fprint',['Point_print',['../_point_8h.html#a9ff34b4a29f7f4c9424c493f7a76dac7',1,'Point.h']]],
+  ['point_5fset_5fby_5fpoint',['Point_set_by_point',['../_point_8h.html#a1bb878ce302067bfcb4a52b8e76942a8',1,'Point.h']]],
+  ['point_5fx',['Point_x',['../_point_8h.html#a369f905a1605acf45e88e5ffb908bd98',1,'Point.h']]],
+  ['point_5fy',['Point_y',['../_point_8h.html#a1d22997ab2610c6854864674050693ef',1,'Point.h']]]
 ];

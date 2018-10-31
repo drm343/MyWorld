@@ -39,13 +39,15 @@ var searchData=
   ['character_5fset_5frandom_5fposition',['Character_set_random_position',['../character_8h.html#a61e195f6240fe4a14426e6c83b8aac26',1,'character.h']]],
   ['character_5fset_5fstyle',['Character_set_style',['../character_8h.html#a652756cccce11cb0733fe66af378bd1f',1,'character.h']]],
   ['child',['child',['../struct_room___tree___result.html#a2f63a94e7dad14643d207863696a6a8d',1,'Room_Tree_Result']]],
-  ['class_2eh',['Class.h',['../_class_8h.html',1,'']]],
-  ['color',['color',['../struct_font_config.html#a5d4bf4af47a2396f00e16ad1d967995d',1,'FontConfig']]],
+  ['class',['CLASS',['../_morph_8h.html#aeb04f2e0012cb07d68538599161c9693',1,'Morph.h']]],
+  ['color',['color',['../struct_morph___property.html#aa776c4fdb7342ebe6702546a4781740d',1,'Morph_Property::color()'],['../struct_morph.html#a84a5597a2d4a81d8f9f1e7438c80560b',1,'Morph::color()'],['../struct_font_config.html#a5d4bf4af47a2396f00e16ad1d967995d',1,'FontConfig::color()']]],
+  ['colorcallback',['ColorCallback',['../_morph_8h.html#a22932949ee86d321b43ec1bfa43327e4',1,'Morph.h']]],
   ['content',['content',['../struct___character___node.html#ab9c78eda434766686816788f72e76063',1,'_Character_Node::content()'],['../struct___character___item.html#ab9c78eda434766686816788f72e76063',1,'_Character_Item::content()'],['../struct___room___item.html#a27659c274249e7f8d222f7623d8c212f',1,'_Room_Item::content()'],['../struct_room___tree___node.html#a27659c274249e7f8d222f7623d8c212f',1,'Room_Tree_Node::content()'],['../struct___status___item.html#aa4c42e448a9cce08dc6a0a13a96aa0a6',1,'_Status_Item::content()']]],
   ['cp',['CP',['../namespace_8h.html#a6898a2c9c983312569a56a14796fe7e5',1,'namespace.h']]],
   ['cp_5fobject',['CP_OBJECT',['../namespace_8h.html#a48b95107a1c5218b5dae7f626a92998c',1,'namespace.h']]],
   ['crossable',['crossable',['../struct_style.html#a39b1af64a01fe21b7484882119105129',1,'Style']]],
   ['current',['current',['../struct_map___type.html#acb595283843d9d0e6bf8556057083b9e',1,'Map_Type']]],
   ['current_5fsize',['current_size',['../struct_skill___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Skill_Pool::current_size()'],['../struct_style___pool.html#a70f486fd5854e384161646a2eebfcdab',1,'Style_Pool::current_size()']]],
+  ['custom_5fproperty',['Custom_Property',['../_morph_8h.html#a19c8452aad234f0f49927f479e684b53',1,'Morph.h']]],
   ['create_20your_20own_20roguelike_20in_20c',['Create your own roguelike in C',['../index.html',1,'']]]
 ];
