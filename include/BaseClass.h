@@ -11,6 +11,12 @@
 
 
 #define NEW(type) calloc(1, sizeof(struct type));
+#define NEW_CLASS(variable) calloc(1, sizeof(*variable));
+
+
+/* @brief 給 Class 使用的自訂屬性
+ */
+typedef struct Custom_Property *Custom_Property;
 
 
 typedef struct Class {

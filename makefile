@@ -56,7 +56,9 @@ AUTO_BUILD_DEP := \
 	$(OBJ)/status.o \
 	$(OBJ)/status_pool.o \
 	$(OBJ)/character.o \
-	$(OBJ)/character_list.o \
+	$(OBJ)/List.o \
+	$(OBJ)/List-Faction.o \
+	$(OBJ)/List-Faction_Group.o \
 	$(OBJ)/character_pool.o \
 	$(OBJ)/character_factory.o \
 	$(OBJ)/Morph.o \
@@ -75,7 +77,7 @@ AUTO_BUILD_DEP := \
 DEP := $(AUTO_BUILD_DEP)
 
 
-AUTO_BUILD_TOOLS := $(TOOLS_BIN)/gen_list \
+AUTO_BUILD_TOOLS := \
 	$(TOOLS_BIN)/gen_pool \
 	$(TOOLS_BIN)/gen_normal_tree
 
@@ -123,11 +125,15 @@ $(CHECK_DIR):
 	mkdir -p $@
 
 clean:
-	rm -rf $(TOOLS_BIN)/* $(BIN)/* $(OBJ)/* $(DOCS)/*
+	@cp $(DOCS)/CNAME .
+	rm -rf $(TOOLS_BIN)/* $(BIN)/* $(OBJ)/*
+	@cp CNAME $(DOCS)/CNAME
 
 doc:
+	@cp $(DOCS)/CNAME .
 	-rm -rf $(DOCS)/*
 	@doxygen && cd $(DOCS) && mv html/* . && rm -rf html
+	@cp CNAME $(DOCS)/CNAME
 	touch $(DOCS)/.nojekyll
 
 test:

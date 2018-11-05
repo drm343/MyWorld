@@ -14,10 +14,6 @@
  * 如果外部程式要簡化呼叫，可以使用 namespace 中的 CP，並且簡寫成 CP(create)。
  */
 
-/** @brief namespace for Character_Status
-*/
-#define CHARA(name) Character_##name
-
 /** @brief namespace for Character_Pool
 */
 #define CP(name) Character_Pool_##name

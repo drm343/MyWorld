@@ -124,19 +124,6 @@ EXPORT(use_neutral) (Game_Status_Access self,
  */
 Character_Access EXPORT(use_player) (Game_Status_Access self);
 
-/** @brief 回傳實體化角色總和
- * @param self 要使用的遊戲狀態
- * @return 回傳總和數值
- */
-uint8_t EXPORT(instance_count) (Game_Status_Access self);
-
-/** @brief 根據編號回傳角色 Access
- * @param self 要使用的遊戲狀態
- * @param index 要找出來的角色編號
- * @return 回傳角色 Access
- */
-Character_Access EXPORT(get_instance_by_index) (Game_Status * self,
-                                                int index);
 
 /** @brief 回傳角色行動訊息
  * @param self 要使用的遊戲狀態
@@ -210,5 +197,20 @@ EXPORT(attack_neutral_by) (Game_Status_Access self,
 Is_Alive
 EXPORT(attack_player_by) (Game_Status_Access self,
                           Character_Access current);
+
+
+/** @brief 重設 iterator 並回傳角色
+ * @param self 要使用的遊戲狀態
+ * @return 第一個角色
+*/
+Character_Access EXPORT(reset_iterator) (Game_Status * self);
+
+
+/** @brief 從 iterator 取出下一個角色
+ * @param self 要使用的遊戲狀態
+ * @param npc iterator 目前的 npc
+ * @return 下一個角色
+*/
+Character_Access EXPORT(next) (Game_Status * self, Character_Access npc);
 #undef EXPORT
 #endif

@@ -9,7 +9,6 @@
 #define MORPH(name) Morph_##name
 #define CLASS struct Morph *
 
-typedef struct Custom_Property *Custom_Property;
 typedef struct Morph *Morph;
 
 typedef void (*ColorCallback) (Morph self);

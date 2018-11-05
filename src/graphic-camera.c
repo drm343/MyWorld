@@ -372,7 +372,6 @@ EXPORT(take) (Camera_Access self,
     RECT(set_extent) (rectangle, max_point);
 
     GAME(calculate_graph_position) (from_pool, rectangle);
-
   DONE:
     return true;
 }

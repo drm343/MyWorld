@@ -145,13 +145,12 @@ void draw_view(SDL_Renderer_Access render)
     SDL_RenderCopy(render, camera_1->player->Mark->access, NULL,
                    &(position));
 
-    uint8_t used = GAME(instance_count) (game_status_pool);
+    Character_Access npc = GAME(reset_iterator) (game_status_pool);
+    CHARA(reset_turn_order) (npc);
     SDL_Rect rect = {.x = 0,.y = 0,.w = GRID_LENGTH,.h = GRID_LENGTH };
 
-    for (int next = 1; next < used; next++) {
-        Character_Access npc =
-            GAME(get_instance_by_index) (game_status_pool, next);
-
+    for (npc = GAME(next) (game_status_pool, npc); npc != NULL;
+         npc = GAME(next) (game_status_pool, npc)) {
         if (npc->status->status == IN_USE) {
             if (!Point_equal
                 (npc->Real_Position, camera_1->player->Real_Position)) {
@@ -161,6 +160,7 @@ void draw_view(SDL_Renderer_Access render)
                 rect.y = GRID_LENGTH * Point_y(graph_point);
                 SDL_RenderCopy(render, npc->Mark->access, NULL, &(rect));
             }
+            CHARA(reset_turn_order) (npc);
         }
     }
     box_1->draw(box_1);
@@ -264,50 +264,48 @@ void submain()
         goto INIT_FAILED;
     }
     Character_Access current = NULL;
-    uint8_t instance_count = GAME(instance_count) (game_status_pool);
-    uint8_t set_index = instance_count;
     while (running) {
-        current = camera_1->player;
+        current = GAME(reset_iterator) (game_status_pool);
         message = GAME(action) (game_status_pool, current);
 
         switch (message) {
             case QUIT:
                 running = false;
             case DO_NOTHING:
-                set_index = instance_count + 1;
+                CHARA(next_turn) (current);
+                goto DRAW;
                 break;
             default:
-                set_index = 1;
                 running =
                     CAMERA(take) (camera_1, game_status_pool, box_1,
                                   current, message);
-                break;
+                CHARA(next_turn) (current);
+                goto NPC_ACTION;
         }
 
-        for (uint8_t index = set_index; index < instance_count; index++) {
-            current =
-                GAME(get_instance_by_index) (game_status_pool, index);
-
+      NPC_ACTION:
+        for (current = GAME(next) (game_status_pool, current);
+             current != NULL;
+             current = GAME(next) (game_status_pool, current)) {
             if (current->status->is_alive == false) {
                 continue;
             }
             message = GAME(action) (game_status_pool, current);
             running =
-                CAMERA(take) (camera_1, game_status_pool, box_1, current,
-                              message);
+                CAMERA(take) (camera_1, game_status_pool,
+                              box_1, current, message);
+            CHARA(next_turn) (current);
         }
+      DRAW:
         draw_view(render);
     }
     STYLE_P(free_texture) (style_pool);
-
     SDL_DestroyRenderer(render);
     SDL_DestroyWindow(win);
     TTF_CloseFont(USE_FONT);
-
   INIT_FAILED:
     TTF_Quit();
     SDL_Quit();
-
   DONE:
     box_1->free(box_1);
     CAMERA(stop) (camera_1);
@@ -322,15 +320,11 @@ int main(int argc, char *argv[])
     char *exist;
     exist = realpath(argv[0], execution_path);
     ROOT_DIR = String_create(dirname(dirname(exist)));
-
     map_1 = MAP(create) ();
     MAP(set_position) (map_1, 0, 0);
     MAP(set_bottom_right) (map_1, 40, 30);
-
     submain();
-
     MAP(free) (map_1);
-
     // 釋放已完成的 config
     String_free(ROOT_DIR);
 }
