@@ -264,8 +264,13 @@ void submain()
         goto INIT_FAILED;
     }
     Character_Access current = NULL;
+    Iterator iterator = NULL;
     while (running) {
-        current = GAME(reset_iterator) (game_status_pool);
+        if (iterator == NULL) {
+            iterator = GAME(action_order) (game_status_pool);
+        }
+        current = ITER(reset_iterator) (iterator);
+
         message = GAME(action) (game_status_pool, current);
 
         switch (message) {
@@ -284,9 +289,9 @@ void submain()
         }
 
       NPC_ACTION:
-        for (current = GAME(next) (game_status_pool, current);
-             current != NULL;
-             current = GAME(next) (game_status_pool, current)) {
+        for (current = ITER(next) (iterator);
+             ITER(done) (iterator) != true;
+             current = ITER(next) (iterator)) {
             if (current->status->is_alive == false) {
                 continue;
             }
@@ -296,6 +301,7 @@ void submain()
                               box_1, current, message);
             CHARA(next_turn) (current);
         }
+        iterator = NULL;
       DRAW:
         draw_view(render);
     }

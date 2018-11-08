@@ -11,11 +11,12 @@
 #include "map_system.h"
 #include "character.h"
 #include "Rectangle.h"
+#include "List-Iterator.h"
 
 
-/** @brief Namespace GAME
- */
-#define EXPORT(name) GAME(name)
+/** @brief namespace for Game Status
+*/
+#define GAME(name) Game_Status_##name
 
 /** @brief 遊戲狀態結構
  *
@@ -35,12 +36,12 @@ typedef Game_Status *Game_Status_Access;
  * @return 遊戲狀態
 */
 Game_Status_Access
-EXPORT(create) (uint8_t max_config_size, uint8_t max_instance_size);
+GAME(create) (uint8_t max_config_size, uint8_t max_instance_size);
 
 /** @brief 釋放遊戲狀態
  * @param self 要使用的遊戲狀態
 */
-void EXPORT(free) (Game_Status_Access self);
+void GAME(free) (Game_Status_Access self);
 
 /** @brief 分析角色設定檔，產生遊戲狀態
  * @param self 要使用的遊戲狀態
@@ -49,9 +50,9 @@ void EXPORT(free) (Game_Status_Access self);
  * @return 設定結果
 */
 Execute_Result
-EXPORT(parse_npc_config) (Game_Status_Access self,
-                          const char *file_path,
-                          Style_Pool_Access style_pool);
+GAME(parse_npc_config) (Game_Status_Access self,
+                        const char *file_path,
+                        Style_Pool_Access style_pool);
 
 /** @brief 尋找該位置是否有任何角色
  * @param self 要使用的遊戲狀態
@@ -63,8 +64,8 @@ EXPORT(parse_npc_config) (Game_Status_Access self,
  * Address，該 npc 變數即可在函數外部使用。
 */
 Found_Result
-EXPORT(find_character) (Game_Status_Access self,
-                        Character_Access * npc, Point point);
+GAME(find_character) (Game_Status_Access self,
+                      Character_Access * npc, Point point);
 
 /** @brief 重新計算所有角色在畫面上的顯示位置
  * @param self 要使用的遊戲狀態
@@ -73,8 +74,8 @@ EXPORT(find_character) (Game_Status_Access self,
  * 根據方形的兩個點重新計算角色位置。
  */
 void
-EXPORT(calculate_graph_position) (Game_Status_Access self,
-                                  Rectangle rectangle);
+GAME(calculate_graph_position) (Game_Status_Access self,
+                                Rectangle rectangle);
 
 /** @brief 實體化友方角色
  * @param self 要使用的遊戲狀態
@@ -87,8 +88,8 @@ EXPORT(calculate_graph_position) (Game_Status_Access self,
  * 設定。
  */
 Character_Access
-EXPORT(use_ally) (Game_Status_Access self,
-                  const char *race, const char *name, Map_Access map);
+GAME(use_ally) (Game_Status_Access self,
+                const char *race, const char *name, Map_Access map);
 
 /** @brief 實體化敵方角色
  * @param self 要使用的遊戲狀態
@@ -101,8 +102,8 @@ EXPORT(use_ally) (Game_Status_Access self,
  * 設定。
  */
 Character_Access
-EXPORT(use_enemy) (Game_Status_Access self,
-                   const char *race, const char *name, Map_Access map);
+GAME(use_enemy) (Game_Status_Access self,
+                 const char *race, const char *name, Map_Access map);
 
 /** @brief 實體化中立角色
  * @param self 要使用的遊戲狀態
@@ -115,14 +116,14 @@ EXPORT(use_enemy) (Game_Status_Access self,
  * 設定。
  */
 Character_Access
-EXPORT(use_neutral) (Game_Status_Access self,
-                     const char *race, const char *name, Map_Access map);
+GAME(use_neutral) (Game_Status_Access self,
+                   const char *race, const char *name, Map_Access map);
 
 /** @brief 將玩家角色實體化
  * @param self 要使用的遊戲狀態
  * @return 回傳玩家角色 Access 以供後續設定
  */
-Character_Access EXPORT(use_player) (Game_Status_Access self);
+Character_Access GAME(use_player) (Game_Status_Access self);
 
 
 /** @brief 回傳角色行動訊息
@@ -145,8 +146,7 @@ Character_Access EXPORT(use_player) (Game_Status_Access self);
  *  隨機移動
 */
 Message_Type
-EXPORT(action) (Game_Status_Access self,
-                Character_Access current_character);
+GAME(action) (Game_Status_Access self, Character_Access current_character);
 
 /** @brief 攻擊敵方角色
  * @param self 要使用的遊戲狀態
@@ -158,9 +158,8 @@ EXPORT(action) (Game_Status_Access self,
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-EXPORT(attack_enemy_by) (Game_Status_Access self,
-                         Character_Access current,
-                         Character_Access target);
+GAME(attack_enemy_by) (Game_Status_Access self,
+                       Character_Access current, Character_Access target);
 
 /** @brief 攻擊友軍角色
  * @param self 要使用的遊戲狀態
@@ -172,8 +171,8 @@ EXPORT(attack_enemy_by) (Game_Status_Access self,
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-EXPORT(attack_ally_by) (Game_Status_Access self,
-                        Character_Access current, Character_Access target);
+GAME(attack_ally_by) (Game_Status_Access self,
+                      Character_Access current, Character_Access target);
 
 /** @brief 攻擊中立角色
  * @param self 要使用的遊戲狀態
@@ -185,9 +184,9 @@ EXPORT(attack_ally_by) (Game_Status_Access self,
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-EXPORT(attack_neutral_by) (Game_Status_Access self,
-                           Character_Access current,
-                           Character_Access target);
+GAME(attack_neutral_by) (Game_Status_Access self,
+                         Character_Access current,
+                         Character_Access target);
 
 /** @brief 攻擊玩家角色
  * @param self 要使用的遊戲狀態
@@ -195,15 +194,14 @@ EXPORT(attack_neutral_by) (Game_Status_Access self,
  * @return 目標的生存狀況
 */
 Is_Alive
-EXPORT(attack_player_by) (Game_Status_Access self,
-                          Character_Access current);
+GAME(attack_player_by) (Game_Status_Access self, Character_Access current);
 
 
 /** @brief 重設 iterator 並回傳角色
  * @param self 要使用的遊戲狀態
  * @return 第一個角色
 */
-Character_Access EXPORT(reset_iterator) (Game_Status * self);
+Character_Access GAME(reset_iterator) (Game_Status * self);
 
 
 /** @brief 從 iterator 取出下一個角色
@@ -211,6 +209,12 @@ Character_Access EXPORT(reset_iterator) (Game_Status * self);
  * @param npc iterator 目前的 npc
  * @return 下一個角色
 */
-Character_Access EXPORT(next) (Game_Status * self, Character_Access npc);
-#undef EXPORT
+Character_Access GAME(next) (Game_Status * self, Character_Access npc);
+
+
+/** @brief 建立執行順序
+ * @param self 要使用的遊戲狀態
+ * @return 角色行動順序
+*/
+Iterator GAME(action_order) (Game_Status * self);
 #endif

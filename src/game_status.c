@@ -3,9 +3,6 @@
 #include "List-Faction_Group.h"
 #include "factory/character_factory.h"
 
-/** @brief Namespace GAME
- */
-#define EXPORT(name) GAME(name)
 
 // ----------------------------------------------
 //Internal Object Struct
@@ -470,7 +467,7 @@ static Message_Type npc_reaction(Character_Access self,
  * @return 遊戲狀態 Access
 */
 Game_Status_Access
-EXPORT(create) (uint8_t max_config_size, uint8_t max_instance_size) {
+GAME(create) (uint8_t max_config_size, uint8_t max_instance_size) {
     Game_Status_Access self = calloc(1, sizeof(Game_Status));
     set_prepare(self, max_config_size);
     init_group(self, max_instance_size);
@@ -486,7 +483,7 @@ EXPORT(create) (uint8_t max_config_size, uint8_t max_instance_size) {
  *
  * Status_Pool 擁有角色 Access 的管理權，因此必須比 Status_List 晚釋放。
 */
-void EXPORT(free) (Game_Status * self) {
+void GAME(free) (Game_Status * self) {
     /*
        self->ally->free(self->ally);
        self->neutral->free(self->neutral);
@@ -508,9 +505,9 @@ void EXPORT(free) (Game_Status * self) {
  * @return 設定結果
 */
 Execute_Result
-EXPORT(parse_npc_config) (Game_Status * self,
-                          const char *file_path,
-                          Style_Pool_Access style_pool) {
+GAME(parse_npc_config) (Game_Status * self,
+                        const char *file_path,
+                        Style_Pool_Access style_pool) {
     Execute_Result result = EXECUTE_FAILED;
     config_t cfg;
     config_setting_t *setting;
@@ -574,8 +571,8 @@ EXPORT(parse_npc_config) (Game_Status * self,
  * Address，該 npc 變數即可在函數外部使用。
 */
 Found_Result
-EXPORT(find_character) (Game_Status * self,
-                        Character_Access * npc, Point point) {
+GAME(find_character) (Game_Status * self,
+                      Character_Access * npc, Point point) {
     Found_Result result =
         pool_find_group_by_position(self->group, npc, point);
     return result;
@@ -588,8 +585,7 @@ EXPORT(find_character) (Game_Status * self,
  * 根據方形的兩個點重新計算角色位置。
  */
 void
-EXPORT(calculate_graph_position) (Game_Status * self,
-                                  Rectangle rectangle) {
+GAME(calculate_graph_position) (Game_Status * self, Rectangle rectangle) {
     reset_group_graph_position(self->group, rectangle);
 }
 
@@ -604,8 +600,8 @@ EXPORT(calculate_graph_position) (Game_Status * self,
  * 設定。
  */
 Character_Access
-EXPORT(use_ally) (Game_Status * self, const char *race,
-                  const char *name, Map_Access map) {
+GAME(use_ally) (Game_Status * self, const char *race,
+                const char *name, Map_Access map) {
     Character_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
@@ -626,8 +622,8 @@ EXPORT(use_ally) (Game_Status * self, const char *race,
  * 設定。
  */
 Character_Access
-EXPORT(use_enemy) (Game_Status * self, const char *race,
-                   const char *name, Map_Access map) {
+GAME(use_enemy) (Game_Status * self, const char *race,
+                 const char *name, Map_Access map) {
     Character_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
@@ -648,8 +644,8 @@ EXPORT(use_enemy) (Game_Status * self, const char *race,
  * 設定。
  */
 Character_Access
-EXPORT(use_neutral) (Game_Status * self,
-                     const char *race, const char *name, Map_Access map) {
+GAME(use_neutral) (Game_Status * self,
+                   const char *race, const char *name, Map_Access map) {
     Character_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
@@ -663,7 +659,7 @@ EXPORT(use_neutral) (Game_Status * self,
  * @param self 要使用的遊戲狀態
  * @return 回傳玩家角色 Access 以供後續設定
  */
-Character_Access EXPORT(use_player) (Game_Status * self) {
+Character_Access GAME(use_player) (Game_Status * self) {
     Character_Access player = Character_Factory_malloc(self->used_pool);
     STATUS(init) (player->status);
     player->Real_Position = Point_create();
@@ -696,7 +692,7 @@ Character_Access EXPORT(use_player) (Game_Status * self) {
  *  隨機移動
 */
 Message_Type
-EXPORT(action) (Game_Status * self, Character_Access current_character) {
+GAME(action) (Game_Status * self, Character_Access current_character) {
     Message_Type result = DO_NOTHING;
     uint8_t target_group_number;
     bool is_alive = current_character->status->is_alive;
@@ -771,9 +767,8 @@ EXPORT(action) (Game_Status * self, Character_Access current_character) {
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-EXPORT(attack_enemy_by) (Game_Status * self,
-                         Character_Access current,
-                         Character_Access target) {
+GAME(attack_enemy_by) (Game_Status * self,
+                       Character_Access current, Character_Access target) {
     Is_Alive result = STATUS(attack) (current->status, target->status);
     Faction_List enemy = self->enemy;
     enemy->remove(enemy, target);
@@ -802,9 +797,8 @@ EXPORT(attack_enemy_by) (Game_Status * self,
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-EXPORT(attack_ally_by) (Game_Status * self,
-                        Character_Access current,
-                        Character_Access target) {
+GAME(attack_ally_by) (Game_Status * self,
+                      Character_Access current, Character_Access target) {
     Is_Alive result = STATUS(attack) (current->status, target->status);
     Faction_List ally = self->ally;
     ally->remove(ally, target);
@@ -833,9 +827,9 @@ EXPORT(attack_ally_by) (Game_Status * self,
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-EXPORT(attack_neutral_by) (Game_Status * self,
-                           Character_Access current,
-                           Character_Access target) {
+GAME(attack_neutral_by) (Game_Status * self,
+                         Character_Access current,
+                         Character_Access target) {
     Is_Alive result = STATUS(attack) (current->status, target->status);
     Faction_List neutral = self->neutral;
     neutral->remove(neutral, target);
@@ -861,8 +855,8 @@ EXPORT(attack_neutral_by) (Game_Status * self,
  * @param current 進行攻擊的角色
  * @return 目標的生存狀況
 */
-Is_Alive EXPORT(attack_player_by) (Game_Status * self,
-                                   Character_Access current) {
+Is_Alive GAME(attack_player_by) (Game_Status * self,
+                                 Character_Access current) {
     Character_Access target = self->player;
     Is_Alive result = STATUS(attack) (current->status, target->status);
     return result;
@@ -872,7 +866,7 @@ Is_Alive EXPORT(attack_player_by) (Game_Status * self,
  * @param self 要使用的遊戲狀態
  * @return 第一個角色
 */
-Character_Access EXPORT(reset_iterator) (Game_Status * self) {
+Character_Access GAME(reset_iterator) (Game_Status * self) {
     Character_Access npc = NULL;
 
     self->current = self->group->reset_iterator(self->group);
@@ -896,7 +890,7 @@ Character_Access EXPORT(reset_iterator) (Game_Status * self) {
  * @param npc iterator 目前的 npc
  * @return 下一個角色
 */
-Character_Access EXPORT(next) (Game_Status * self, Character_Access npc) {
+Character_Access GAME(next) (Game_Status * self, Character_Access npc) {
     npc = self->current->next(self->current, npc);
   NPC_CHECK:
     if (npc == NULL) {
@@ -911,4 +905,11 @@ Character_Access EXPORT(next) (Game_Status * self, Character_Access npc) {
     return npc;
 }
 
-#undef EXPORT
+
+/** @brief 建立執行順序
+ * @param self 要使用的遊戲狀態
+ * @return 角色行動順序
+*/
+Iterator GAME(action_order) (Game_Status * self) {
+    return F_GROUP(to_iterator) (self->group);
+}

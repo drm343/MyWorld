@@ -57,6 +57,7 @@ AUTO_BUILD_DEP := \
 	$(OBJ)/status_pool.o \
 	$(OBJ)/character.o \
 	$(OBJ)/List.o \
+	$(OBJ)/List-Iterator.o \
 	$(OBJ)/List-Faction.o \
 	$(OBJ)/List-Faction_Group.o \
 	$(OBJ)/character_pool.o \

@@ -34,10 +34,6 @@
 */
 #define CAMERA(name) Graphic_Camera_##name
 
-/** @brief namespace for Game Status
-*/
-#define GAME(name) Game_Status_##name
-
 /** @brief namespace for Character_Status
 */
 #define STATUS(name) Status_##name
