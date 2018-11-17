@@ -15,7 +15,6 @@ void EXPORT(init) (Character_Access self) {
 
     self->Real_Position = Point_create();
     self->Graph_Position = Point_create();
-    self->end_of_turn = false;
 }
 
 /** @brief 釋放角色
@@ -84,23 +83,6 @@ EXPORT(set_random_position) (Character_Access self,
  */
 Point EXPORT(get_position) (Character_Access self) {
     return self->Real_Position;
-}
-
-//-----------------------------------------
-// TURN
-//-----------------------------------------
-/** @brief 重置角色的回合標記
- * @param self 目標角色
- */
-void EXPORT(reset_turn_order) (Character_Access self) {
-    self->end_of_turn = false;
-}
-
-/** @brief 角色回合結束
- * @param self 目標角色
- */
-void EXPORT(next_turn) (Character_Access self) {
-    self->end_of_turn = true;
 }
 
 #undef EXPORT

@@ -5,7 +5,10 @@
 
 typedef struct Custom_Property {
     ImmutableString name;
+    List target;
+
     void (*super_free) (List self);
+     Message_Type(*action) (Character_Access charater, List targets);
 } *Custom_Property;
 
 
@@ -22,6 +25,11 @@ static void FACTION(free) (List self) {
     if (property->name != NULL) {
         String_free(property->name);
     }
+
+    if (property->target != NULL) {
+        List target = property->target;
+        target->free(target);
+    }
     free(property);
     super_free(self);
 }
@@ -32,6 +40,7 @@ Faction_List FACTION(create) (void) {
     Custom_Property property = NEW(Custom_Property);
     property->name = NULL;
     property->super_free = self->free;
+    property->target = NULL;
     self->property = property;
     self->free = FACTION(free);
     return self;
@@ -43,6 +52,7 @@ Faction_List FACTION(create_with_free) (void) {
     Custom_Property property = NEW(Custom_Property);
     property->name = NULL;
     property->super_free = self->free;
+    property->target = NULL;
     self->property = property;
     self->free = FACTION(free);
     return self;
@@ -103,4 +113,19 @@ void FACTION(set_name) (Faction_List self, char *name) {
 
 char *FACTION(name) (Faction_List self) {
     return self->property->name->str;
+}
+
+
+void FACTION(set_action) (Faction_List self, Action callback) {
+    self->property->action = callback;
+}
+
+
+Action FACTION(action) (Faction_List self) {
+    return self->property->action;
+}
+
+
+void FACTION(add_target) (Faction_List self, List target) {
+    self->property->target = target;
 }

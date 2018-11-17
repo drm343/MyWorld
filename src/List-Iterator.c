@@ -8,9 +8,10 @@ typedef struct Custom_Property {
 
 
 static void ITER(free) (Iterator self) {
-    void (*super_free) (List self) = self->property->super_free;
+    Custom_Property property = self->property;
+    void (*super_free) (List self) = property->super_free;
 
-    free(self->property);
+    free(property);
     super_free(self);
 }
 
@@ -18,7 +19,8 @@ static void ITER(free) (Iterator self) {
 Iterator ITER(create) (void) {
     Iterator self = LIST(create) (NULL, NULL, NULL);
     self->property = NEW(Custom_Property);
-    self->property->super_free = self->free;
+    void (*super_free) (List self) = self->free;
+    self->property->super_free = super_free;
     self->free = ITER(free);
     return self;
 }

@@ -146,7 +146,6 @@ void draw_view(SDL_Renderer_Access render)
                    &(position));
 
     Character_Access npc = GAME(reset_iterator) (game_status_pool);
-    CHARA(reset_turn_order) (npc);
     SDL_Rect rect = {.x = 0,.y = 0,.w = GRID_LENGTH,.h = GRID_LENGTH };
 
     for (npc = GAME(next) (game_status_pool, npc); npc != NULL;
@@ -160,9 +159,9 @@ void draw_view(SDL_Renderer_Access render)
                 rect.y = GRID_LENGTH * Point_y(graph_point);
                 SDL_RenderCopy(render, npc->Mark->access, NULL, &(rect));
             }
-            CHARA(reset_turn_order) (npc);
         }
     }
+
     box_1->draw(box_1);
 
     SDL_RenderPresent(render);
@@ -277,14 +276,12 @@ void submain()
             case QUIT:
                 running = false;
             case DO_NOTHING:
-                CHARA(next_turn) (current);
                 goto DRAW;
                 break;
             default:
                 running =
                     CAMERA(take) (camera_1, game_status_pool, box_1,
                                   current, message);
-                CHARA(next_turn) (current);
                 goto NPC_ACTION;
         }
 
@@ -299,7 +296,6 @@ void submain()
             running =
                 CAMERA(take) (camera_1, game_status_pool,
                               box_1, current, message);
-            CHARA(next_turn) (current);
         }
         iterator = NULL;
       DRAW:
@@ -313,6 +309,10 @@ void submain()
     TTF_Quit();
     SDL_Quit();
   DONE:
+    if (iterator != NULL) {
+        iterator->free(iterator);
+        iterator = NULL;
+    }
     box_1->free(box_1);
     CAMERA(stop) (camera_1);
     GAME(free) (game_status_pool);

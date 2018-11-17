@@ -24,6 +24,124 @@ typedef struct Game_Status {
     Faction_List current;    /**< 使用在 iterator 中 */
 } Game_Status;
 
+
+//----------------------------------------------
+//External API
+// ----------------------------------------------
+Message_Type Point_over_there(Point self, Point other)
+{
+    Message_Type result = DO_NOTHING;
+
+    int32_t diff_x = Point_x(self) - Point_x(other);
+    int32_t diff_y = Point_y(self) - Point_y(other);
+    int32_t abs_x = abs(diff_x);
+    int32_t abs_y = abs(diff_y);
+
+    if (abs_x >= abs_y) {
+        if (diff_x >= 0) {
+            result = LEFT;
+        } else {
+            result = RIGHT;
+        }
+    } else {
+        if (diff_y >= 0) {
+            result = TOP;
+        } else {
+            result = DOWN;
+        }
+    }
+    return result;
+}
+
+
+Message_Type Point_near_by(Point self, Point other)
+{
+    Message_Type result = DO_NOTHING;
+
+    int32_t diff_x = Point_x(self) - Point_x(other);
+    int32_t diff_y = Point_y(self) - Point_y(other);
+    int32_t abs_x = abs(diff_x);
+    int32_t abs_y = abs(diff_y);
+
+    if (abs_x >= abs_y) {
+        if (diff_x >= 2) {
+            result = LEFT;
+        } else if (diff_x <= -2) {
+            result = RIGHT;
+        } else {
+            goto RANDOM_POSITION;
+        }
+    } else {
+        if (diff_y >= 2) {
+            result = TOP;
+        } else if (diff_y <= -2) {
+            result = DOWN;
+        } else {
+            goto RANDOM_POSITION;
+        }
+    }
+    goto DONE;
+
+  RANDOM_POSITION:
+    switch (rand() % 4) {
+        case 1:
+            result = TOP;
+            break;
+        case 2:
+            result = DOWN;
+            break;
+        case 3:
+            result = LEFT;
+            break;
+        default:
+            result = RIGHT;
+            break;
+    }
+
+  DONE:
+    return result;
+}
+
+
+static void reset_graph_position(Faction_List list, Rectangle rectangle)
+{
+    Point start_point = RECT(position) (rectangle);
+    Point end_point = RECT(extent) (rectangle);
+
+    int64_t x = Point_x(start_point);
+    int64_t y = Point_y(start_point);
+
+    int64_t max_x = Point_x(end_point);
+    int64_t max_y = Point_y(end_point);
+
+    Character_Access npc = NULL;
+    int64_t counter_x = 0;
+    int64_t counter_y = 0;
+
+    for (npc = list->reset_iterator(list); npc != NULL;
+         npc = list->next(list, npc)) {
+        counter_x = npc->Real_Position->x - x;
+        counter_y = npc->Real_Position->y - y;
+
+        if (((counter_x >= 0) || (counter_y >= 0)) &&
+            ((counter_x < max_x) && (counter_y < max_y - 1))) {
+            Point_set(npc->Graph_Position,.x = counter_x,.y = counter_y);
+        } else {
+            Point_set(npc->Graph_Position,.x = -1,.y = -1);
+        }
+    }
+}
+
+
+static void reset_group_graph_position(Faction_Group group,
+                                       Rectangle rectangle)
+{
+    for (Faction_List list = group->reset_iterator(group); list != NULL;
+         list = group->next(group, list)) {
+        reset_graph_position(list, rectangle);
+    }
+}
+
 //----------------------------------------------
 //Internal API
 // ----------------------------------------------
@@ -128,6 +246,58 @@ static Character_Access use_npc(Game_Status * self, const char *race,
     return npc;
 }
 
+
+static Message_Type player_reaction(Character_Access self,
+                                    Faction_List enemy_group)
+{
+    bool is_alive = self->status->is_alive;
+
+    Message_Type result = DO_NOTHING;
+    SDL_Event event;
+
+    if (SDL_PollEvent(&event)) {
+        switch (event.type) {
+            case SDL_QUIT:
+                result = QUIT;
+                break;
+            case SDL_KEYDOWN:
+                if (is_alive == YES) {
+                    goto CHECK_KEYDOWN;
+                } else {
+                    result = QUIT;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    goto DONE;
+
+  CHECK_KEYDOWN:
+    switch (event.key.keysym.sym) {
+        case SDLK_UP:
+            result = TOP;
+            break;
+        case SDLK_DOWN:
+            result = DOWN;
+            break;
+        case SDLK_LEFT:
+            result = LEFT;
+            break;
+        case SDLK_RIGHT:
+            result = RIGHT;
+            break;
+        case SDLK_q:
+            result = QUIT;
+            break;
+        default:
+            break;
+    }
+  DONE:
+    return result;
+}
+
+
 /** @brief 設定玩家本身的陣營
  * @param access 要使用的 Game_Status
  */
@@ -138,9 +308,25 @@ static void init_player(Game_Status * access)
     if (faction_player == NULL) {
         access->faction_player = FACTION(create) ();
         FACTION(set_name) (access->faction_player, "player");
+        FACTION(set_action) (access->faction_player, player_reaction);
     }
     F_GROUP(link) (access->group, access->faction_player);
 }
+
+
+static Message_Type npc_reaction(Character_Access self,
+                                 Faction_List enemy_group)
+{
+    Character_Access target = FACTION(get_random_target) (enemy_group);
+
+    if (target == NULL) {
+        return DO_NOTHING;
+    }
+    Point target_position = CHARA(get_position) (target);
+    Point self_position = CHARA(get_position) (self);
+    return Point_over_there(self_position, target_position);
+}
+
 
 /** @brief 設定友方角色總量的上限值
  * @param access 要使用的 Game_Status
@@ -152,9 +338,19 @@ static void init_ally(Game_Status * access)
     if (ally == NULL) {
         access->ally = FACTION(create) ();
         FACTION(set_name) (access->ally, "ally");
+        FACTION(set_action) (access->ally, npc_reaction);
     }
     F_GROUP(link) (access->group, access->ally);
 }
+
+
+static Message_Type enemy_reaction(Character_Access self,
+                                   Faction_List enemy_group)
+{
+    Faction_List target_list = F_GROUP(get_random_target) (enemy_group);
+    return npc_reaction(self, target_list);
+}
+
 
 /** @brief 設定敵方角色總量的上限值
  * @param access 要使用的 Game_Status
@@ -166,9 +362,22 @@ static void init_enemy(Game_Status * access)
     if (enemy == NULL) {
         access->enemy = FACTION(create) ();
         FACTION(set_name) (access->enemy, "enemy");
+        FACTION(set_action) (access->ally, enemy_reaction);
     }
     F_GROUP(link) (access->group, access->enemy);
 }
+
+
+static Message_Type neutral_npc_reaction(Character_Access self,
+                                         Faction_List follow_faction)
+{
+    Character_Access player =
+        follow_faction->reset_iterator(follow_faction);
+    Point target_position = CHARA(get_position) (player);
+    Point self_position = CHARA(get_position) (self);
+    return Point_near_by(self_position, target_position);
+}
+
 
 /** @brief 設定中立角色總量的上限值
  * @param access 要使用的 Game_Status
@@ -180,6 +389,7 @@ static void init_neutral(Game_Status * access)
     if (neutral == NULL) {
         access->neutral = FACTION(create) ();
         FACTION(set_name) (access->neutral, "neutral");
+        FACTION(set_action) (access->neutral, neutral_npc_reaction);
     }
     F_GROUP(link) (access->group, access->neutral);
 }
@@ -279,188 +489,6 @@ static Found_Result pool_find_group_by_position(Faction_Group group,
     return NOT_FOUND;
 }
 
-//----------------------------------------------
-//External API
-// ----------------------------------------------
-Message_Type Point_over_there(Point self, Point other)
-{
-    Message_Type result = DO_NOTHING;
-
-    int32_t diff_x = Point_x(self) - Point_x(other);
-    int32_t diff_y = Point_y(self) - Point_y(other);
-    int32_t abs_x = abs(diff_x);
-    int32_t abs_y = abs(diff_y);
-
-    if (abs_x >= abs_y) {
-        if (diff_x >= 0) {
-            result = LEFT;
-        } else {
-            result = RIGHT;
-        }
-    } else {
-        if (diff_y >= 0) {
-            result = TOP;
-        } else {
-            result = DOWN;
-        }
-    }
-    return result;
-}
-
-Message_Type Point_near_by(Point self, Point other)
-{
-    Message_Type result = DO_NOTHING;
-
-    int32_t diff_x = Point_x(self) - Point_x(other);
-    int32_t diff_y = Point_y(self) - Point_y(other);
-    int32_t abs_x = abs(diff_x);
-    int32_t abs_y = abs(diff_y);
-
-    if (abs_x >= abs_y) {
-        if (diff_x >= 2) {
-            result = LEFT;
-        } else if (diff_x <= -2) {
-            result = RIGHT;
-        } else {
-            goto RANDOM_POSITION;
-        }
-    } else {
-        if (diff_y >= 2) {
-            result = TOP;
-        } else if (diff_y <= -2) {
-            result = DOWN;
-        } else {
-            goto RANDOM_POSITION;
-        }
-    }
-    goto DONE;
-
-  RANDOM_POSITION:
-    switch (rand() % 4) {
-        case 1:
-            result = TOP;
-            break;
-        case 2:
-            result = DOWN;
-            break;
-        case 3:
-            result = LEFT;
-            break;
-        default:
-            result = RIGHT;
-            break;
-    }
-
-  DONE:
-    return result;
-}
-
-
-static void reset_graph_position(Faction_List list, Rectangle rectangle)
-{
-    Point start_point = RECT(position) (rectangle);
-    Point end_point = RECT(extent) (rectangle);
-
-    int64_t x = Point_x(start_point);
-    int64_t y = Point_y(start_point);
-
-    int64_t max_x = Point_x(end_point);
-    int64_t max_y = Point_y(end_point);
-
-    Character_Access npc = NULL;
-    int64_t counter_x = 0;
-    int64_t counter_y = 0;
-
-    for (npc = list->reset_iterator(list); npc != NULL;
-         npc = list->next(list, npc)) {
-        counter_x = npc->Real_Position->x - x;
-        counter_y = npc->Real_Position->y - y;
-
-        if (((counter_x >= 0) || (counter_y >= 0)) &&
-            ((counter_x < max_x) && (counter_y < max_y - 1))) {
-            Point_set(npc->Graph_Position,.x = counter_x,.y = counter_y);
-        } else {
-            Point_set(npc->Graph_Position,.x = -1,.y = -1);
-        }
-    }
-}
-
-
-static void reset_group_graph_position(Faction_Group group,
-                                       Rectangle rectangle)
-{
-    for (Faction_List list = group->reset_iterator(group); list != NULL;
-         list = group->next(group, list)) {
-        reset_graph_position(list, rectangle);
-    }
-}
-
-
-static Message_Type player_reaction(bool is_alive)
-{
-    Message_Type result = DO_NOTHING;
-    SDL_Event event;
-
-    if (SDL_PollEvent(&event)) {
-        switch (event.type) {
-            case SDL_QUIT:
-                result = QUIT;
-                break;
-            case SDL_KEYDOWN:
-                if (is_alive == YES) {
-                    goto CHECK_KEYDOWN;
-                } else {
-                    result = QUIT;
-                }
-                break;
-            default:
-                break;
-        }
-    }
-    goto DONE;
-
-  CHECK_KEYDOWN:
-    switch (event.key.keysym.sym) {
-        case SDLK_UP:
-            result = TOP;
-            break;
-        case SDLK_DOWN:
-            result = DOWN;
-            break;
-        case SDLK_LEFT:
-            result = LEFT;
-            break;
-        case SDLK_RIGHT:
-            result = RIGHT;
-            break;
-        case SDLK_q:
-            result = QUIT;
-            break;
-        default:
-            break;
-    }
-  DONE:
-    return result;
-}
-
-static Message_Type faction_neutral_reaction(Point self, Point player)
-{
-    return Point_near_by(self, player);
-}
-
-static Message_Type npc_reaction(Character_Access self,
-                                 Faction_List enemy_group)
-{
-    Character_Access target = FACTION(get_random_target) (enemy_group);
-
-    if (target == NULL) {
-        return DO_NOTHING;
-    }
-    Point target_position = CHARA(get_position) (target);
-    Point self_position = CHARA(get_position) (self);
-    return Point_over_there(self_position, target_position);
-}
-
 /** @brief 產生遊戲狀態
  * @param max_config_size 種族最大值
  * @param max_instance_size 實體化角色最大值
@@ -475,6 +503,20 @@ GAME(create) (uint8_t max_config_size, uint8_t max_instance_size) {
     init_ally(self);
     init_enemy(self);
     init_neutral(self);
+
+    Faction_Group target_group = F_GROUP(create_without_free_list) ();
+    F_GROUP(link) (target_group, self->enemy);
+    FACTION(add_target) (self->ally, target_group);
+
+    target_group = F_GROUP(create_without_free_list) ();
+    F_GROUP(link) (target_group, self->faction_player);
+    F_GROUP(link) (target_group, self->ally);
+    F_GROUP(link) (target_group, self->neutral);
+    FACTION(add_target) (self->enemy, target_group);
+
+    target_group = F_GROUP(create_without_free_list) ();
+    F_GROUP(link) (target_group, self->faction_player);
+    FACTION(add_target) (self->neutral, target_group);
     return self;
 }
 
@@ -694,66 +736,23 @@ Character_Access GAME(use_player) (Game_Status * self) {
 Message_Type
 GAME(action) (Game_Status * self, Character_Access current_character) {
     Message_Type result = DO_NOTHING;
-    uint8_t target_group_number;
-    bool is_alive = current_character->status->is_alive;
-    bool is_end_of_turn = current_character->end_of_turn;
-
-    uint8_t total_target_number = 1;
-    uint8_t neutral_target_number = 0;
-    uint8_t ally_target_number = 0;
-    uint8_t weigh_value = 0;
-    uint8_t neutral_weigh_value = 0;
-    uint8_t ally_weigh_value = 0;
-
-    Character_Access target = NULL;
-    Point target_position = NULL;
-    Point self_position = NULL;
-
-    if (is_end_of_turn == true) {
-        goto NEXT_CHARACTER;
-    }
 
     switch (current_character->status->faction) {
         case FACTION_ALLY:
             result = npc_reaction(current_character, self->enemy);
             break;
         case FACTION_ENEMY:
-            target_group_number = rand() % 100;
-            ally_target_number = self->ally->size(self->ally);
-            neutral_target_number = self->neutral->size(self->neutral);
-
-            total_target_number = 1 + ally_target_number
-                + neutral_target_number;
-            weigh_value = 80 / total_target_number;
-            neutral_weigh_value =
-                100 - neutral_target_number * weigh_value;
-            ally_weigh_value =
-                100 - (neutral_target_number +
-                       ally_target_number) * weigh_value;
-
-            if (target_group_number >= neutral_weigh_value) {
-                result = npc_reaction(current_character, self->neutral);
-            } else if (target_group_number >= ally_weigh_value) {
-                result = npc_reaction(current_character, self->ally);
-            } else {
-                target = self->player;
-                target_position = CHARA(get_position) (target);
-                self_position = CHARA(get_position) (current_character);
-                result = Point_over_there(self_position, target_position);
-            }
+            result = enemy_reaction(current_character, self->group);
             break;
         case FACTION_NEUTRAL:
-            target = self->player;
-            target_position = CHARA(get_position) (target);
-            self_position = CHARA(get_position) (current_character);
             result =
-                faction_neutral_reaction(self_position, target_position);
+                neutral_npc_reaction(current_character,
+                                     self->faction_player);
             break;
         default:
-            result = player_reaction(is_alive);
+            result = player_reaction(current_character, NULL);
             break;
     }
-  NEXT_CHARACTER:
     return result;
 }
 

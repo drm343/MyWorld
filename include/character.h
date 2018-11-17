@@ -25,7 +25,6 @@ typedef struct Character {
 
     Status_Access status;       /**< 角色狀態 */
     Style_Access Mark;          /**< 角色圖形 */
-    bool end_of_turn;           /**< 回合是否結束 */
 } Character;
 typedef Character *Character_Access;
 
@@ -78,20 +77,6 @@ void EXPORT(set_random_position) (Character_Access self, int64_t max_x,
  * @return 回傳座標
  */
 Point EXPORT(get_position) (Character_Access self);
-
-
-//-----------------------------------------
-// TURN
-//-----------------------------------------
-/** @brief 重置角色的回合標記
- * @param self 目標角色
- */
-void EXPORT(reset_turn_order) (Character_Access self);
-
-/** @brief 角色回合結束
- * @param self 目標角色
- */
-void EXPORT(next_turn) (Character_Access self);
 
 #undef EXPORT
 #endif
