@@ -87,7 +87,7 @@ TOOLS := $(AUTO_BUILD_TOOLS)
 
 .PHONY: clean doc examples strings app test indent
 app: $(CHECK_DIR) indent $(TOOLS) $(LIB_MY_WORLD)
-	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/app/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
+	$(COMPILER) $(DEBUG) $(STD) $(INCLUDE) $(SRC)/main.c $(CFLAGS) $(LFLAGS) -o $(BIN)/$(APP_NAME)
 	@cp -r $(CONFIG) $(USER)
 	@cp -r $(FONTS) $(USER)
 	@echo "build app done"
