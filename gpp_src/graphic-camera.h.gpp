@@ -1,8 +1,10 @@
-#ifndef HEADER_GRAPHIC_CAMERA
-#define HEADER_GRAPHIC_CAMERA
+#include NAMESPACE.gpp
+#define EXPORT CAMERA
+\#ifndef HEADER_GRAPHIC_CAMERA
+\#define HEADER_GRAPHIC_CAMERA
 
-#include "game_status.h"
-#include "graphic-message.h"
+\#include "game_status.h"
+\#include "graphic-message.h"
 
 /** @brief Camera 模式
  *
@@ -38,29 +40,29 @@ typedef Camera_Type *Camera_Access;
 /** @brief 建立新的 Camera 物件
  * @return Camera 物件
  *
- * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 Graphic_Camera_set_max_x 跟 Graphic_Camera_set_max_y
+ * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 EXPORT(set_max_x) 跟 EXPORT(set_max_y)
  * 來修改。
 */
-Camera_Access Graphic_Camera_start(void);
+Camera_Access EXPORT(start) (void);
 
 /** @brief 釋放 Camera 物件
  * @param self 要初始化的角色物件
 */
-void Graphic_Camera_stop(Camera_Access self);
+void EXPORT(stop) (Camera_Access self);
 
 /** @brief 重設螢幕顯示最大值
  * @param self Camera 物件
  * @param other 要設定的數值
 */
-void Graphic_Camera_set_max_by_point(Camera_Access self, Point other);
+void EXPORT(set_max_by_point) (Camera_Access self, Point other);
 
 /** @brief 重設螢幕顯示最大值
 * @param self 點座標
 */
-#define Graphic_Camera_set_max(self, ...)\
-{\
-    struct Point item = { __VA_ARGS__ };\
-    Graphic_Camera_set_max_by_point(self, &item);\
+\#define Graphic_Camera_set_max(self, ...)\\
+{\\
+    struct Point item = { __VA_ARGS__ };\\
+    EXPORT(set_max_by_point)(self, &item);\\
 }
 
 /** @brief 設定玩家角色
@@ -69,20 +71,19 @@ void Graphic_Camera_set_max_by_point(Camera_Access self, Point other);
  *
  * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
 */
-void Graphic_Camera_set_player(Camera_Access self,
-                               Character_Access player);
+void EXPORT(set_player) (Camera_Access self, Character_Access player);
 
 /** @brief 設定死亡時顯示的圖形
  * @param self Camera 物件
  * @param dead 指定的圖形
 */
-void Graphic_Camera_set_dead_style(Camera_Access self, Style_Access dead);
+void EXPORT(set_dead_style) (Camera_Access self, Style_Access dead);
 
 /** @brief 設定地圖物件
  * @param self Camera 物件
  * @param map 指定的地圖物件
 */
-void Graphic_Camera_set_map(Camera_Access self, Map_Access map);
+void EXPORT(set_map) (Camera_Access self, Map_Access map);
 
 /** @brief 處理訊息並更改角色資料
  * @param self Camera 物件
@@ -93,9 +94,9 @@ void Graphic_Camera_set_map(Camera_Access self, Map_Access map);
  * @return 當前必定回傳 true
 */
 bool
-Graphic_Camera_take(Camera_Access self,
-                    Game_Status_Access from_pool,
-                    Morph_SubWindow box_window,
-                    Character_Access current, Message_Type message);
+EXPORT(take) (Camera_Access self,
+              Game_Status_Access from_pool,
+              Morph_SubWindow box_window,
+              Character_Access current, Message_Type message);
 
-#endif
+\#endif

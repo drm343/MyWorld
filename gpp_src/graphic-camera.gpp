@@ -1,19 +1,21 @@
-#include "graphic-camera.h"
+#include NAMESPACE.gpp
+#define EXPORT CAMERA
+\#include "graphic-camera.h"
 
 static int MAX_X = 0;
 static int MAX_Y = 0;
 static Rectangle rectangle = NULL;
 
 
-#ifdef DEBUG
+\#ifdef DEBUG
 static void print_mode(char *str, Camera_Mode mode)
 {
     switch (mode) {
         case CAMERA_MOVE:
-            DEBUG_PRINT("%s MOVEn", str);
+            DEBUG_PRINT("%s MOVE\n", str);
             break;
         default:
-            DEBUG_PRINT("%s FIXn", str);
+            DEBUG_PRINT("%s FIX\n", str);
             break;
     }
 }
@@ -27,13 +29,13 @@ static void print_vertical_mode(Camera_Access access)
 {
     print_mode("vertical: ", access->horizon);
 }
-#endif
+\#endif
 
 static Yes_No occupy_position_by_others(Game_Status_Access access,
                                         Point point,
                                         Character_Access * result)
 {
-    if (Game_Status_find_character(access, result, point) == FOUND) {
+    if (GAME(find_character) (access, result, point) == FOUND) {
         return YES;
     } else {
         return NO;
@@ -52,7 +54,7 @@ camera_horizon_mode_setup(Camera_Access access, Point point, int32_t x)
     Point to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_x = Map_Type_bottom_right_x(map);
+    int32_t map_end_x = MAP(bottom_right_x) (map);
 
     if ((point->x > (center->x - 1))
         && ((point->x + 1) < (map_end_x - (center->x - 1)))) {
@@ -81,7 +83,7 @@ camera_vertical_mode_setup(Camera_Access access, Point point, int32_t y)
     Point to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_y = Map_Type_bottom_right_y(map);
+    int32_t map_end_y = MAP(bottom_right_y) (map);
 
     if ((point->y > (center->y - 1))
         && ((point->y + 1) < (map_end_y - (center->y - 1)))) {
@@ -110,7 +112,7 @@ static Yes_No can_move_horizon(Camera_Access access, Point point)
     Point to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_x = Map_Type_bottom_right_x(map);
+    int32_t map_end_x = MAP(bottom_right_x) (map);
     Yes_No result = YES;
 
     if ((from->x <= 0) && (point->x < 0)) {
@@ -128,7 +130,7 @@ static Yes_No can_move_vertical(Camera_Access access, Point point)
     Point to = access->end;
 
     Map_Access map = access->map;
-    int32_t map_end_y = Map_Type_bottom_right_y(map);
+    int32_t map_end_y = MAP(bottom_right_y) (map);
     Yes_No result = YES;
 
     if ((from->y <= 0) && (point->y < 0)) {
@@ -145,11 +147,10 @@ static Yes_No can_move_vertical(Camera_Access access, Point point)
 /** @brief 建立新的 Camera 物件
  * @return Camera 物件
  *
- * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 Graphic_Camera_set_max_x 跟 Graphic_Camera_set_max_y
+ * MAX_X 的預設值為 25，MAX_Y 的預設值為 21，可透過 EXPORT(set_max_x) 跟 EXPORT(set_max_y)
  * 來修改。
 */
-Camera_Access Graphic_Camera_start(void)
-{
+Camera_Access EXPORT(start) (void) {
     Camera_Access access = calloc(1, sizeof(Camera_Type));
     MAX_X = 25;
     MAX_Y = 21;
@@ -157,7 +158,7 @@ Camera_Access Graphic_Camera_start(void)
     access->end = Point_create();
     access->center = Point_create();
 
-    Graphic_Camera_set_max(access,.x = MAX_X,.y = MAX_Y);
+    EXPORT(set_max) (access,.x = MAX_X,.y = MAX_Y);
 
     Point_set(access->start, 0, 0);
     Point_set(access->end,.x = MAX_X - 1,.y = MAX_Y - 1);
@@ -172,8 +173,7 @@ Camera_Access Graphic_Camera_start(void)
 /** @brief 釋放 Camera 物件
  * @param self 要釋放的角色物件
 */
-void Graphic_Camera_stop(Camera_Access self)
-{
+void EXPORT(stop) (Camera_Access self) {
     RECT(free) (rectangle);
     Point_free(self->start);
     Point_free(self->end);
@@ -185,8 +185,7 @@ void Graphic_Camera_stop(Camera_Access self)
  * @param self Camera 物件
  * @param other 要設定的數值
 */
-void Graphic_Camera_set_max_by_point(Camera_Access self, Point other)
-{
+void EXPORT(set_max_by_point) (Camera_Access self, Point other) {
     int x = other->x;
     int y = other->y;
 
@@ -203,8 +202,7 @@ void Graphic_Camera_set_max_by_point(Camera_Access self, Point other)
  *
  * @warning 初始化時會將真實座標直接當成圖形座標，因為初始座標是固定在螢幕中間的點，這個點會固定不變，之後會修改
 */
-void Graphic_Camera_set_player(Camera_Access self, Character_Access player)
-{
+void EXPORT(set_player) (Camera_Access self, Character_Access player) {
     Point center = self->center;
     int32_t x = Point_x(center);
     int32_t y = Point_y(center);
@@ -219,8 +217,7 @@ void Graphic_Camera_set_player(Camera_Access self, Character_Access player)
  * @param self Camera 物件
  * @param dead 指定的圖形
 */
-void Graphic_Camera_set_dead_style(Camera_Access self, Style_Access dead)
-{
+void EXPORT(set_dead_style) (Camera_Access self, Style_Access dead) {
     self->dead = dead;
 }
 
@@ -228,9 +225,8 @@ void Graphic_Camera_set_dead_style(Camera_Access self, Style_Access dead)
  * @param self Camera 物件
  * @param map 指定的地圖物件
 */
-void Graphic_Camera_set_map(Camera_Access self, Map_Access map)
-{
-    Map_Type_move_bottom_right(map, -1, -1);
+void EXPORT(set_map) (Camera_Access self, Map_Access map) {
+    MAP(move_bottom_right) (map, -1, -1);
     self->map = map;
 }
 
@@ -243,11 +239,10 @@ void Graphic_Camera_set_map(Camera_Access self, Map_Access map)
  * @return 當前必定回傳 true
 */
 bool
-Graphic_Camera_take(Camera_Access self,
-                    Game_Status_Access from_pool,
-                    Morph_SubWindow box_window,
-                    Character_Access current, Message_Type message)
-{
+EXPORT(take) (Camera_Access self,
+              Game_Status_Access from_pool,
+              Morph_SubWindow box_window,
+              Character_Access current, Message_Type message) {
     Character_Access npc = NULL;
     Style_Access dead = self->dead;
 
@@ -310,16 +305,17 @@ Graphic_Camera_take(Camera_Access self,
             int len = snprintf(NULL, 0,
                                "%s(%s) 攻擊 %s(%s) 造成 1 點傷害",
                                current->status->name->str,
-                               Status_get_relation_string(current->status),
+                               STATUS(get_relation_string)
+                               (current->status),
                                npc->status->name->str,
-                               Status_get_relation_string(npc->status));
+                               STATUS(get_relation_string) (npc->status));
             attack_message = malloc((len + 1) * sizeof(char));
             snprintf(attack_message, len + 1,
                      "%s(%s) 攻擊 %s(%s) 造成 1 點傷害",
                      current->status->name->str,
-                     Status_get_relation_string(current->status),
+                     STATUS(get_relation_string) (current->status),
                      npc->status->name->str,
-                     Status_get_relation_string(npc->status));
+                     STATUS(get_relation_string) (npc->status));
         }
 
         SUBWINDOW(add_message) (box_window, attack_message);
@@ -329,27 +325,24 @@ Graphic_Camera_take(Camera_Access self,
 
         switch (npc_relation) {
             case FACTION_PLAYER:
-                is_alive =
-                    Game_Status_attack_player_by(from_pool, current);
+                is_alive = GAME(attack_player_by) (from_pool, current);
                 break;
             case FACTION_ALLY:
-                is_alive =
-                    Game_Status_attack_ally_by(from_pool, current, npc);
+                is_alive = GAME(attack_ally_by) (from_pool, current, npc);
                 break;
             case FACTION_ENEMY:
-                is_alive =
-                    Game_Status_attack_enemy_by(from_pool, current, npc);
+                is_alive = GAME(attack_enemy_by) (from_pool, current, npc);
                 break;
             case FACTION_NEUTRAL:
                 is_alive =
-                    Game_Status_attack_neutral_by(from_pool, current, npc);
+                    GAME(attack_neutral_by) (from_pool, current, npc);
                 break;
             default:
                 break;
         }
 
         if (is_alive == DEAD) {
-            Character_set_style(npc, dead);
+            CHARA(set_style) (npc, dead);
 
             const char *format = NULL;
             if (npc->status->faction == FACTION_PLAYER) {
@@ -375,7 +368,7 @@ Graphic_Camera_take(Camera_Access self,
     RECT(set_position) (rectangle, self->start);
     RECT(set_extent) (rectangle, max_point);
 
-    Game_Status_calculate_graph_position(from_pool, rectangle);
+    GAME(calculate_graph_position) (from_pool, rectangle);
   DONE:
     return true;
 }

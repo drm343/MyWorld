@@ -1,0 +1,2 @@
+#define CONTENT Status
+#include BASE_POOL.gpp

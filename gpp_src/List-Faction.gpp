@@ -1,6 +1,7 @@
-#include "List-Faction.h"
+#include NAMESPACE.gpp
+\#include "List-Faction.h"
 
-#include "String.h"
+\#include "String.h"
 
 
 typedef struct Custom_Property {
@@ -14,7 +15,7 @@ typedef struct Custom_Property {
 
 static void FACTION(free_content) (void *content) {
     Character_Access self = content;
-    Character_free(self);
+    CHARA(free) (self);
 }
 
 

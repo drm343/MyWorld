@@ -1,0 +1,34 @@
+#define CONCAT #1#2
+#define CONCAT_LINE #1_#2
+#define ITEM CONCAT(CONTENT,_Item)
+#define POOL CONCAT(CONTENT,_Pool)
+#define EXPORT(func) CONCAT_LINE(POOL,func)
+\#ifndef HEADER
+\#define HEADER
+
+\#include <stdint.h>
+\#include <stdbool.h>
+
+\#include "INCLUDE_HEADER"
+
+/** \file
+ * 
+ * 此結構與程式由 gpp 自動產生。
+ * 請修改 BASE_POOL.h.gpp。
+ */
+
+typedef struct ITEM {
+  CONTENT *content;
+  bool is_used;
+} ITEM;
+
+typedef struct {
+  ITEM *pool;
+  CONTENT *item;
+  uint8_t max_size;
+} POOL;
+
+POOL* EXPORT(start)(uint8_t max_size);
+void EXPORT(stop)(POOL *access);
+CONTENT* EXPORT(malloc)(POOL *access);
+\#endif

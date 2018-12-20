@@ -1,0 +1,4 @@
+#define HEADER HEADER_Room_Pool
+#define INCLUDE_HEADER room.h
+#define CONTENT Room
+#include BASE_POOL.h.gpp

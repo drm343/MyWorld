@@ -1,7 +1,8 @@
-#include "game_status.h"
+#include NAMESPACE.gpp
+\#include "game_status.h"
 
-#include "List-Faction_Group.h"
-#include "character_factory.h"
+\#include "List-Faction_Group.h"
+\#include "character_factory.h"
 
 
 // ----------------------------------------------
@@ -228,18 +229,18 @@ static Character_Access use_npc(Game_Status * self, const char *race,
 
     if (result == FOUND) {
         npc = Character_Factory_malloc(self->used_pool);
-        Status_copy(npc->status, origin_npc->status);
+        STATUS(copy) (npc->status, origin_npc->status);
 
-        Status_set_name(npc->status, name);
+        STATUS(set_name) (npc->status, name);
 
         npc->Mark = origin_npc->Mark;
 
         npc->Real_Position = Point_create();
         npc->Graph_Position = Point_create();
 
-        Point bottom_right = Map_Type_bottom_right(map);
-        Character_set_random_position(npc, Point_x(bottom_right),
-                                      Point_y(bottom_right));
+        Point bottom_right = MAP(bottom_right) (map);
+        CHARA(set_random_position) (npc, Point_x(bottom_right),
+                                    Point_y(bottom_right));
 
         Point_set(npc->Graph_Position,.x = -1,.y = -1);
     }
@@ -322,8 +323,8 @@ static Message_Type npc_reaction(Character_Access self,
     if (target == NULL) {
         return DO_NOTHING;
     }
-    Point target_position = Character_get_position(target);
-    Point self_position = Character_get_position(self);
+    Point target_position = CHARA(get_position) (target);
+    Point self_position = CHARA(get_position) (self);
     return Point_over_there(self_position, target_position);
 }
 
@@ -373,8 +374,8 @@ static Message_Type neutral_npc_reaction(Character_Access self,
 {
     Character_Access player =
         follow_faction->reset_iterator(follow_faction);
-    Point target_position = Character_get_position(player);
-    Point self_position = Character_get_position(self);
+    Point target_position = CHARA(get_position) (player);
+    Point self_position = CHARA(get_position) (self);
     return Point_near_by(self_position, target_position);
 }
 
@@ -453,7 +454,7 @@ static bool pool_all_copy(Status_Pool * from, Status_Pool * to)
         if (from_item->is_used == IN_USE) {
             Status *from_status = from_item->content;
             Status *to_status = Status_Pool_malloc(to);
-            Status_copy(to_status, from_status);
+            STATUS(copy) (to_status, from_status);
         }
     }
     return false;
@@ -465,7 +466,7 @@ static Found_Result pool_find_by_position(Faction_List list,
 {
     for (*npc = list->reset_iterator(list); *npc != NULL;
          *npc = list->next(list, *npc)) {
-        Point npc_position = Character_get_position(*npc);
+        Point npc_position = CHARA(get_position) (*npc);
         if (Point_equal(point, (*npc)->Real_Position)) {
             if ((*npc)->Mark->crossable == NO) {
                 return FOUND;
@@ -495,8 +496,7 @@ static Found_Result pool_find_group_by_position(Faction_Group group,
  * @return 遊戲狀態 Access
 */
 Game_Status_Access
-Game_Status_create(uint8_t max_config_size, uint8_t max_instance_size)
-{
+GAME(create) (uint8_t max_config_size, uint8_t max_instance_size) {
     Game_Status_Access self = calloc(1, sizeof(Game_Status));
     set_prepare(self, max_config_size);
     init_group(self, max_instance_size);
@@ -526,8 +526,7 @@ Game_Status_create(uint8_t max_config_size, uint8_t max_instance_size)
  *
  * Status_Pool 擁有角色 Access 的管理權，因此必須比 Status_List 晚釋放。
 */
-void Game_Status_free(Game_Status * self)
-{
+void GAME(free) (Game_Status * self) {
     /*
        self->ally->free(self->ally);
        self->neutral->free(self->neutral);
@@ -549,10 +548,9 @@ void Game_Status_free(Game_Status * self)
  * @return 設定結果
 */
 Execute_Result
-Game_Status_parse_npc_config(Game_Status * self,
-                             const char *file_path,
-                             Style_Pool_Access style_pool)
-{
+GAME(parse_npc_config) (Game_Status * self,
+                        const char *file_path,
+                        Style_Pool_Access style_pool) {
     Execute_Result result = EXECUTE_FAILED;
     config_t cfg;
     config_setting_t *setting;
@@ -562,6 +560,11 @@ Game_Status_parse_npc_config(Game_Status * self,
 
     /* Read the file. If there is an error, report it and exit. */
     if (!config_read_file(&cfg, file_path)) {
+#ifdef DEBUG
+        DEBUG_PRINT
+            ("%s:%d - %s\n", config_error_file(&cfg),
+             config_error_line(&cfg), config_error_text(&cfg));
+#endif
 
         goto DONE;
     }
@@ -583,12 +586,12 @@ Game_Status_parse_npc_config(Game_Status * self,
             const char *race;
             config_setting_lookup_string(npc_setting, "race", &race);
 
-            Style_Access style = Style_Pool_find(style_pool, race);
+            Style_Access style = STYLE_P(find) (style_pool, race);
 
             Character_Access npc = Character_Factory_malloc(self->prepare);
-            Status_set_name(npc->status, name);
-            Status_set_race(npc->status, race);
-            Character_set_style(npc, style);
+            STATUS(set_name) (npc->status, name);
+            STATUS(set_race) (npc->status, race);
+            CHARA(set_style) (npc, style);
             self->race->insert(self->race, npc);
         }
     } else {
@@ -611,9 +614,8 @@ Game_Status_parse_npc_config(Game_Status * self,
  * Address，該 npc 變數即可在函數外部使用。
 */
 Found_Result
-Game_Status_find_character(Game_Status * self,
-                           Character_Access * npc, Point point)
-{
+GAME(find_character) (Game_Status * self,
+                      Character_Access * npc, Point point) {
     Found_Result result =
         pool_find_group_by_position(self->group, npc, point);
     return result;
@@ -626,9 +628,7 @@ Game_Status_find_character(Game_Status * self,
  * 根據方形的兩個點重新計算角色位置。
  */
 void
-Game_Status_calculate_graph_position(Game_Status * self,
-                                     Rectangle rectangle)
-{
+GAME(calculate_graph_position) (Game_Status * self, Rectangle rectangle) {
     reset_group_graph_position(self->group, rectangle);
 }
 
@@ -643,13 +643,12 @@ Game_Status_calculate_graph_position(Game_Status * self,
  * 設定。
  */
 Character_Access
-Game_Status_use_ally(Game_Status * self, const char *race,
-                     const char *name, Map_Access map)
-{
+GAME(use_ally) (Game_Status * self, const char *race,
+                const char *name, Map_Access map) {
     Character_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
-        Status_set_ally(npc->status);
+        STATUS(set_ally) (npc->status);
         add_ally(self, npc);
     }
     return npc;
@@ -666,13 +665,12 @@ Game_Status_use_ally(Game_Status * self, const char *race,
  * 設定。
  */
 Character_Access
-Game_Status_use_enemy(Game_Status * self, const char *race,
-                      const char *name, Map_Access map)
-{
+GAME(use_enemy) (Game_Status * self, const char *race,
+                 const char *name, Map_Access map) {
     Character_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
-        Status_set_enemy(npc->status);
+        STATUS(set_enemy) (npc->status);
         add_enemy(self, npc);
     }
     return npc;
@@ -689,13 +687,12 @@ Game_Status_use_enemy(Game_Status * self, const char *race,
  * 設定。
  */
 Character_Access
-Game_Status_use_neutral(Game_Status * self,
-                        const char *race, const char *name, Map_Access map)
-{
+GAME(use_neutral) (Game_Status * self,
+                   const char *race, const char *name, Map_Access map) {
     Character_Access npc = use_npc(self, race, name, map);
 
     if (npc != NULL) {
-        Status_set_neutral(npc->status);
+        STATUS(set_neutral) (npc->status);
         add_neutral(self, npc);
     }
     return npc;
@@ -705,10 +702,9 @@ Game_Status_use_neutral(Game_Status * self,
  * @param self 要使用的遊戲狀態
  * @return 回傳玩家角色 Access 以供後續設定
  */
-Character_Access Game_Status_use_player(Game_Status * self)
-{
+Character_Access GAME(use_player) (Game_Status * self) {
     Character_Access player = Character_Factory_malloc(self->used_pool);
-    Status_init(player->status);
+    STATUS(init) (player->status);
     player->Real_Position = Point_create();
     player->Graph_Position = Point_create();
 
@@ -739,8 +735,7 @@ Character_Access Game_Status_use_player(Game_Status * self)
  *  隨機移動
 */
 Message_Type
-Game_Status_action(Game_Status * self, Character_Access current_character)
-{
+GAME(action) (Game_Status * self, Character_Access current_character) {
     Message_Type result = DO_NOTHING;
 
     switch (current_character->status->faction) {
@@ -772,11 +767,9 @@ Game_Status_action(Game_Status * self, Character_Access current_character)
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-Game_Status_attack_enemy_by(Game_Status * self,
-                            Character_Access current,
-                            Character_Access target)
-{
-    Is_Alive result = Status_attack(current->status, target->status);
+GAME(attack_enemy_by) (Game_Status * self,
+                       Character_Access current, Character_Access target) {
+    Is_Alive result = STATUS(attack) (current->status, target->status);
     Faction_List enemy = self->enemy;
     enemy->remove(enemy, target);
 
@@ -804,11 +797,9 @@ Game_Status_attack_enemy_by(Game_Status * self,
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-Game_Status_attack_ally_by(Game_Status * self,
-                           Character_Access current,
-                           Character_Access target)
-{
-    Is_Alive result = Status_attack(current->status, target->status);
+GAME(attack_ally_by) (Game_Status * self,
+                      Character_Access current, Character_Access target) {
+    Is_Alive result = STATUS(attack) (current->status, target->status);
     Faction_List ally = self->ally;
     ally->remove(ally, target);
 
@@ -836,11 +827,10 @@ Game_Status_attack_ally_by(Game_Status * self,
  * 直接呼叫 character.attack 不會改變 pool 內的立場，因此必須透過 pool 轉呼叫。
 */
 Is_Alive
-Game_Status_attack_neutral_by(Game_Status * self,
-                              Character_Access current,
-                              Character_Access target)
-{
-    Is_Alive result = Status_attack(current->status, target->status);
+GAME(attack_neutral_by) (Game_Status * self,
+                         Character_Access current,
+                         Character_Access target) {
+    Is_Alive result = STATUS(attack) (current->status, target->status);
     Faction_List neutral = self->neutral;
     neutral->remove(neutral, target);
 
@@ -865,11 +855,10 @@ Game_Status_attack_neutral_by(Game_Status * self,
  * @param current 進行攻擊的角色
  * @return 目標的生存狀況
 */
-Is_Alive Game_Status_attack_player_by(Game_Status * self,
-                                      Character_Access current)
-{
+Is_Alive GAME(attack_player_by) (Game_Status * self,
+                                 Character_Access current) {
     Character_Access target = self->player;
-    Is_Alive result = Status_attack(current->status, target->status);
+    Is_Alive result = STATUS(attack) (current->status, target->status);
     return result;
 }
 
@@ -877,8 +866,7 @@ Is_Alive Game_Status_attack_player_by(Game_Status * self,
  * @param self 要使用的遊戲狀態
  * @return 第一個角色
 */
-Character_Access Game_Status_reset_iterator(Game_Status * self)
-{
+Character_Access GAME(reset_iterator) (Game_Status * self) {
     Character_Access npc = NULL;
 
     self->current = self->group->reset_iterator(self->group);
@@ -902,8 +890,7 @@ Character_Access Game_Status_reset_iterator(Game_Status * self)
  * @param npc iterator 目前的 npc
  * @return 下一個角色
 */
-Character_Access Game_Status_next(Game_Status * self, Character_Access npc)
-{
+Character_Access GAME(next) (Game_Status * self, Character_Access npc) {
     npc = self->current->next(self->current, npc);
   NPC_CHECK:
     if (npc == NULL) {
@@ -923,7 +910,6 @@ Character_Access Game_Status_next(Game_Status * self, Character_Access npc)
  * @param self 要使用的遊戲狀態
  * @return 角色行動順序
 */
-Iterator Game_Status_action_order(Game_Status * self)
-{
+Iterator GAME(action_order) (Game_Status * self) {
     return F_GROUP(to_iterator) (self->group);
 }

@@ -1,4 +1,5 @@
-#include "graphic-message.h"
+#include NAMESPACE.gpp
+\#include "graphic-message.h"
 
 //--------------------------------
 // Control API
@@ -10,8 +11,7 @@
  *
  * 未來會將 SDL_Renderer 改為 Morph_World
 */
-Morph_SubWindow Message_Box_start(SDL_Renderer * render, TTF_Font * font)
-{
+Morph_SubWindow BOX(start) (SDL_Renderer * render, TTF_Font * font) {
     M_SDL2(change_render) (render);
     M_SDL2(set_font) (font);
     Morph_SubWindow self = SUBWINDOW(create) ();

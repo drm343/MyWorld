@@ -1,0 +1,2 @@
+#define CONTENT Room
+#include BASE_POOL.gpp

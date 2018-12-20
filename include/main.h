@@ -9,8 +9,6 @@
 
 #include <libconfig.h>
 
-#include "namespace.h"
-
 #include "graphic-camera.h"
 
 #include "String.h"

@@ -1,4 +1,4 @@
-#include "Character_Pool.h"
+#include "Status_Pool.h"
 
 /** file
  * 
@@ -6,14 +6,14 @@
  * 請修改 BASE_POOL.gpp。
  */
 
-Character_Pool *Character_Pool_start(uint8_t max_size)
+Status_Pool *Status_Pool_start(uint8_t max_size)
 {
-    Character_Pool *result = calloc(1, sizeof(Character_Pool));
-    Character *instance = calloc(max_size, sizeof(Character));
-    Character_Item *pool = calloc(max_size, sizeof(Character_Item));
+    Status_Pool *result = calloc(1, sizeof(Status_Pool));
+    Status *instance = calloc(max_size, sizeof(Status));
+    Status_Item *pool = calloc(max_size, sizeof(Status_Item));
 
-    Character *content = NULL;
-    Character_Item *item = NULL;
+    Status *content = NULL;
+    Status_Item *item = NULL;
 
     result->pool = pool;
     result->item = instance;
@@ -29,17 +29,17 @@ Character_Pool *Character_Pool_start(uint8_t max_size)
     return result;
 }
 
-void Character_Pool_stop(Character_Pool * access)
+void Status_Pool_stop(Status_Pool * access)
 {
     free(access->pool);
     free(access->item);
     free(access);
 }
 
-Character *Character_Pool_malloc(Character_Pool * access)
+Status *Status_Pool_malloc(Status_Pool * access)
 {
-    Character *content = NULL;
-    Character_Item *item = NULL;
+    Status *content = NULL;
+    Status_Item *item = NULL;
     uint8_t max_size = access->max_size;
 
     for (uint8_t index = 0; index < max_size; index++) {

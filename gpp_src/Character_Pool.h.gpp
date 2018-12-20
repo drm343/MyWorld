@@ -1,0 +1,4 @@
+#define HEADER HEADER_Character_Pool
+#define INCLUDE_HEADER character.h
+#define CONTENT Character
+#include BASE_POOL.h.gpp

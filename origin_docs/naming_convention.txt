@@ -12,6 +12,14 @@
  *
  * 只有透過 typedef 重新命名的結構能在最後方加上 _Access，也只有這種狀況下才能命名為 _Access。
  *
+ * 這個名詞從 Ada 中取過來的，類似 C 的 Pointer，但擁有更多特性，凡是看到 type 後面加上 _Access 的
+ * 一律等同於前面所提物件在程式上的定義，這是為了避免使用太多 * 而採用的名稱慣例。
+ *
+ * 文件中單純只寫 Access 的情況則可以看成物件在記憶體中的實際位置。
+ *
+ * @note 要注意這是 C 不是 Ada，因此 Access 並沒有真的像 Ada 一樣有更多特性可以使用。
+ * @warning 未來將會移除
+ *
  * @subsection Object_Access
  *
  * 結構如果出現 ** 的地方，請 typedef 改成 _Object_Access，避免太多星號導致程式碼難以 debug 或閱讀。

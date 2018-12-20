@@ -1,12 +1,10 @@
-#ifndef HEADER_CHARACTER_FACTORY
-#define HEADER_CHARACTER_FACTORY
+#include NAMESPACE.gpp
+#define EXPORT CF
+\#ifndef HEADER_CHARACTER_FACTORY
+\#define HEADER_CHARACTER_FACTORY
 
-#include "namespace.h"
-
-#include "container/Character_Pool.h"
-#include "container/Status_Pool.h"
-
-#define EXPORT(name) CF(name)
+\#include "Character_Pool.h"
+\#include "Status_Pool.h"
 
 /** @brief 用來建立角色的預備池
  */
@@ -31,6 +29,4 @@ void EXPORT(stop) (Character_Factory * self);
  * @return 空白角色，可以做後續設定
  */
 Character_Access EXPORT(malloc) (Character_Factory * self);
-
-#undef EXPORT
-#endif
+\#endif

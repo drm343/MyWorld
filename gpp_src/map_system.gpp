@@ -1,12 +1,14 @@
-#include "map_system.h"
+#include NAMESPACE.gpp
+#define SUPER RECT
+#define EXPORT MAP
+\#include "map_system.h"
 
 /** @brief 建立地圖系統
  * @return 地圖物件
  */
-Map_Type *Map_Type_create(void)
-{
+Map_Type *EXPORT(create) (void) {
     Map_Type *map = calloc(1, sizeof(Map_Type));
-    map->super = RECT(create) ();
+    map->super = SUPER(create) ();
     map->current = calloc(128 * 128, sizeof(int8_t));
     return map;
 }
@@ -14,9 +16,8 @@ Map_Type *Map_Type_create(void)
 /** @brief 釋放地圖系統
  * @param self 地圖物件
  */
-void Map_Type_free(Map_Type * self)
-{
-    RECT(free) (self->super);
+void EXPORT(free) (Map_Type * self) {
+    SUPER(free) (self->super);
     free(self->current);
     free(self);
 }
@@ -26,8 +27,7 @@ void Map_Type_free(Map_Type * self)
  * @param x X 座標位置
  * @param y Y 座標位置
  */
-void Map_Type_set_position(Map_Type * self, int32_t x, int32_t y)
-{
+void EXPORT(set_position) (Map_Type * self, int32_t x, int32_t y) {
     RECT_set_position(self->super,.x = x,.y = y);
 }
 
@@ -37,9 +37,8 @@ void Map_Type_set_position(Map_Type * self, int32_t x, int32_t y)
  *
  * 請不要釋放回傳的物件
  */
-Point Map_Type_position(Map_Type * self)
-{
-    return RECT(position) (self->super);
+Point EXPORT(position) (Map_Type * self) {
+    return SUPER(position) (self->super);
 }
 
 /** @brief 設定右下角的點座標
@@ -47,8 +46,7 @@ Point Map_Type_position(Map_Type * self)
  * @param x X 座標位置
  * @param y Y 座標位置
  */
-void Map_Type_set_bottom_right(Map_Type * self, int32_t x, int32_t y)
-{
+void EXPORT(set_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
     RECT_set_extent(self->super,.x = x,.y = y);
 }
 
@@ -57,41 +55,36 @@ void Map_Type_set_bottom_right(Map_Type * self, int32_t x, int32_t y)
  *
  * 請不要釋放回傳的物件
  */
-Point Map_Type_bottom_right(Map_Type * self)
-{
-    return RECT(extent) (self->super);
+Point EXPORT(bottom_right) (Map_Type * self) {
+    return SUPER(extent) (self->super);
 }
 
 /** @brief 取得左上角的 X 座標
  * @param self 地圖物件
  */
-int32_t Map_Type_top_left_x(Map_Type * self)
-{
-    return Point_x(RECT(position) (self->super));
+int32_t EXPORT(top_left_x) (Map_Type * self) {
+    return Point_x(SUPER(position) (self->super));
 }
 
 /** @brief 取得左上角的 Y 座標
  * @param self 地圖物件
  */
-int32_t Map_Type_top_left_y(Map_Type * self)
-{
-    return Point_y(RECT(position) (self->super));
+int32_t EXPORT(top_left_y) (Map_Type * self) {
+    return Point_y(SUPER(position) (self->super));
 }
 
 /** @brief 取得右下角的 X 座標
  * @param self 地圖物件
  */
-int32_t Map_Type_bottom_right_x(Map_Type * self)
-{
-    return Point_x(RECT(extent) (self->super));
+int32_t EXPORT(bottom_right_x) (Map_Type * self) {
+    return Point_x(SUPER(extent) (self->super));
 }
 
 /** @brief 取得右下角的 Y 座標
  * @param self 地圖物件
  */
-int32_t Map_Type_bottom_right_y(Map_Type * self)
-{
-    return Point_y(RECT(extent) (self->super));
+int32_t EXPORT(bottom_right_y) (Map_Type * self) {
+    return Point_y(SUPER(extent) (self->super));
 }
 
 /** @brief 移動左上角的點座標
@@ -99,9 +92,8 @@ int32_t Map_Type_bottom_right_y(Map_Type * self)
  * @param x 需要移動的 X 值
  * @param y 需要移動的 Y 值
  */
-void Map_Type_move_top_left(Map_Type * self, int32_t x, int32_t y)
-{
-    Point_move(RECT(position) (self->super),.x = x,.y = y);
+void EXPORT(move_top_left) (Map_Type * self, int32_t x, int32_t y) {
+    Point_move(SUPER(position) (self->super),.x = x,.y = y);
 }
 
 /** @brief 移動右下角的點座標
@@ -109,7 +101,6 @@ void Map_Type_move_top_left(Map_Type * self, int32_t x, int32_t y)
  * @param x 需要移動的 X 值
  * @param y 需要移動的 Y 值
  */
-void Map_Type_move_bottom_right(Map_Type * self, int32_t x, int32_t y)
-{
-    Point_move(RECT(extent) (self->super),.x = x,.y = y);
+void EXPORT(move_bottom_right) (Map_Type * self, int32_t x, int32_t y) {
+    Point_move(SUPER(extent) (self->super),.x = x,.y = y);
 }
