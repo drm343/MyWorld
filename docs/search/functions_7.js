@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['two_5fpoint_5fcreate',['Two_Point_create',['../two__point_8h.html#a163f417215acd34c7e1616319f2d7902',1,'two_point.h']]],
-  ['two_5fpoint_5fdiagonal_5flength',['Two_Point_diagonal_length',['../two__point_8h.html#acc41028c2f65e4da74d89107cf3f46be',1,'two_point.h']]],
-  ['two_5fpoint_5ffree',['Two_Point_free',['../two__point_8h.html#a1d4ab451b9d501da589efb8573b85405',1,'two_point.h']]],
-  ['two_5fpoint_5fget_5fend',['Two_Point_get_end',['../two__point_8h.html#af4bed5a3468477c9b3438af72c1b922e',1,'two_point.h']]],
-  ['two_5fpoint_5fget_5fstart',['Two_Point_get_start',['../two__point_8h.html#a31a104ee477a9cc11ee10a2fdd0bc02a',1,'two_point.h']]],
-  ['two_5fpoint_5fset_5fend_5fby_5fpoint',['Two_Point_set_end_by_point',['../two__point_8h.html#a429cc07a05ffd0698d320bd1c87cbaba',1,'two_point.h']]],
-  ['two_5fpoint_5fset_5fstart_5fby_5fpoint',['Two_Point_set_start_by_point',['../two__point_8h.html#a74fd491d1c79a58efa1e68de62bc54b5',1,'two_point.h']]]
+  ['point_5fcreate',['Point_create',['../_point_8h.html#a885ff9c9a07f933961177021777a40c7',1,'Point.h']]],
+  ['point_5fequal',['Point_equal',['../_point_8h.html#a572582c7b7c761b98342269bd905a62a',1,'Point.h']]],
+  ['point_5ffree',['Point_free',['../_point_8h.html#acc064fcd0d03977db64ce0ebcdc9b9e9',1,'Point.h']]],
+  ['point_5fmove_5fby_5fpoint',['Point_move_by_point',['../_point_8h.html#a8e2e869cf86ebcf10c303449fc8acc53',1,'Point.h']]],
+  ['point_5fprint',['Point_print',['../_point_8h.html#a9ff34b4a29f7f4c9424c493f7a76dac7',1,'Point.h']]],
+  ['point_5fset_5fby_5fpoint',['Point_set_by_point',['../_point_8h.html#a1bb878ce302067bfcb4a52b8e76942a8',1,'Point.h']]],
+  ['point_5fx',['Point_x',['../_point_8h.html#a369f905a1605acf45e88e5ffb908bd98',1,'Point.h']]],
+  ['point_5fy',['Point_y',['../_point_8h.html#a1d22997ab2610c6854864674050693ef',1,'Point.h']]]
 ];

@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['damage',['damage',['../struct_status.html#ae6d3b45ea23da90a0a72f4f2163045cd',1,'Status']]],
-  ['dead',['dead',['../struct_camera___type.html#acdf4b5173be19457f884590b7009df6d',1,'Camera_Type::dead()'],['../status_8h.html#a80aecc9fb5465212d8d153dee04a2427a11fd9ca455f92c69c084484d5cd803c2',1,'DEAD():&#160;status.h']]],
-  ['debug_2eh',['debug.h',['../debug_8h.html',1,'']]],
-  ['debug_5fmessage',['DEBUG_MESSAGE',['../debug_8h.html#a0ee30bef129130d19b9ea7f69bcbe7bd',1,'debug.h']]],
-  ['debug_5fprint',['DEBUG_PRINT',['../debug_8h.html#aed581de90eb37c5e3a311b1936e7f0d6',1,'debug.h']]],
-  ['definition_2etxt',['definition.txt',['../definition_8txt.html',1,'']]],
-  ['diagonal_5flength',['diagonal_length',['../struct_room.html#a7c923a4d198acf244e3aaf4ad3b7ce5b',1,'Room']]],
-  ['do_5fnothing',['DO_NOTHING',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160aa3c06bc7e4d652a970cab72026c6fed1',1,'message_base.h']]],
-  ['down',['DOWN',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160a9b0b4a95b99523966e0e34ffdadac9da',1,'message_base.h']]],
-  ['draw',['draw',['../struct_morph.html#ae42034977859cb166b66d86386a3cac7',1,'Morph']]]
+  ['efficacy',['efficacy',['../struct_skill.html#a002d9dd9a754b753d24242eba79167b4',1,'Skill']]],
+  ['end',['end',['../struct_camera___type.html#a5e56230dd4075ef4564edea7f36c4f59',1,'Camera_Type::end()'],['../struct_two___point.html#a5cc981b26e5e3f802a3ed90477c360e0',1,'Two_Point::end()']]],
+  ['execute_5ffailed',['EXECUTE_FAILED',['../type_8h.html#ac174637f2f335bc1ba1bc16a4f433911add840221af60b1d779abd8ab0ce320b8',1,'type.h']]],
+  ['execute_5fresult',['Execute_Result',['../type_8h.html#ac174637f2f335bc1ba1bc16a4f433911',1,'type.h']]],
+  ['execute_5fsuccess',['EXECUTE_SUCCESS',['../type_8h.html#ac174637f2f335bc1ba1bc16a4f433911ae8296ec2ca8a80cf58568cd42dd422ff',1,'type.h']]],
+  ['export',['EXPORT',['../_rectangle_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;Rectangle.h'],['../two__point_8h.html#a4fe932c6483a71ec8f5f6e2bcd6b33aa',1,'EXPORT():&#160;two_point.h']]],
+  ['extent',['extent',['../struct_morph___property.html#a9e81b92c872eb6eff99fcd7de1dea576',1,'Morph_Property::extent()'],['../struct_morph.html#a7bb824bb154a27378567cc6fc72c8aaf',1,'Morph::extent()']]]
 ];

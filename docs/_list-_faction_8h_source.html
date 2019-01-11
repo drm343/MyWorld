@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyWorld: include/List-Faction.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MyWorld
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">List-Faction.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_list-_faction_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HEADER_LIST_FACTION_CLASS</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HEADER_LIST_FACTION_CLASS</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_list_8h.html">List.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="character_8h.html">character.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">    8</a></span>&#160;<span class="preprocessor">#define FACTION(name) Faction_List_##name</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_list-_faction_8h.html#a63b918433633c65d25e54e9f44b2450c">   10</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="struct_list.html">List</a> <a class="code" href="_list-_faction_8h.html#a63b918433633c65d25e54e9f44b2450c">Faction_List</a>;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="_list-_faction_8h.html#aee77e5a6ede43362fcec3f99aecdeb95">   11</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160">Message_Type</a>(*<a class="code" href="_list-_faction_8h.html#aee77e5a6ede43362fcec3f99aecdeb95">Action</a>) (<a class="code" href="struct_character.html">Character_Access</a> charater, <a class="code" href="struct_list.html">List</a> targets);</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="struct_list.html">Faction_List</a> <a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(create) (void);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="struct_list.html">Faction_List</a> <a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(create_with_free) (void);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="struct_character.html">Character_Access</a> <a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(get_random_target) (<a class="code" href="struct_list.html">Faction_List</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(set_name) (<a class="code" href="struct_list.html">Faction_List</a> <span class="keyword">self</span>, <span class="keywordtype">char</span> *name);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(name) (<a class="code" href="struct_list.html">Faction_List</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(set_action) (<a class="code" href="struct_list.html">Faction_List</a> <span class="keyword">self</span>, <a class="code" href="_list-_faction_8h.html#aee77e5a6ede43362fcec3f99aecdeb95">Action</a> callback);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="_list-_faction_8h.html#aee77e5a6ede43362fcec3f99aecdeb95">Action</a> <a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(action) (<a class="code" href="struct_list.html">Faction_List</a> <span class="keyword">self</span>);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a>(add_target) (<a class="code" href="struct_list.html">Faction_List</a> <span class="keyword">self</span>, <a class="code" href="struct_list.html">List</a> target);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="character_8h_html"><div class="ttname"><a href="character_8h.html">character.h</a></div></div>
+<div class="ttc" id="struct_character_html"><div class="ttname"><a href="struct_character.html">Character</a></div><div class="ttdoc">角色結構 </div><div class="ttdef"><b>Definition:</b> character.h:11</div></div>
+<div class="ttc" id="_list-_faction_8h_html_a63b918433633c65d25e54e9f44b2450c"><div class="ttname"><a href="_list-_faction_8h.html#a63b918433633c65d25e54e9f44b2450c">Faction_List</a></div><div class="ttdeci">List Faction_List</div><div class="ttdef"><b>Definition:</b> List-Faction.h:10</div></div>
+<div class="ttc" id="message__base_8h_html_a1b620cd54f3d6b48f3c5f7979545b160"><div class="ttname"><a href="message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160">Message_Type</a></div><div class="ttdeci">Message_Type</div><div class="ttdef"><b>Definition:</b> message_base.h:4</div></div>
+<div class="ttc" id="_list-_faction_8h_html_ab3f9a36608d530db0300b6d9a1047971"><div class="ttname"><a href="_list-_faction_8h.html#ab3f9a36608d530db0300b6d9a1047971">FACTION</a></div><div class="ttdeci">#define FACTION(name)</div><div class="ttdef"><b>Definition:</b> List-Faction.h:8</div></div>
+<div class="ttc" id="_list-_faction_8h_html_aee77e5a6ede43362fcec3f99aecdeb95"><div class="ttname"><a href="_list-_faction_8h.html#aee77e5a6ede43362fcec3f99aecdeb95">Action</a></div><div class="ttdeci">Message_Type(* Action)(Character_Access charater, List targets)</div><div class="ttdef"><b>Definition:</b> List-Faction.h:11</div></div>
+<div class="ttc" id="struct_list_html"><div class="ttname"><a href="struct_list.html">List</a></div><div class="ttdef"><b>Definition:</b> List.h:33</div></div>
+<div class="ttc" id="_list_8h_html"><div class="ttname"><a href="_list_8h.html">List.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生日期:2019年1月11日 星期五 19:42:32, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

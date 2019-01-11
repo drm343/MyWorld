@@ -1,7 +1,6 @@
 <map id="include/status.h" name="include/status.h">
 <area shape="rect" id="node3" href="$debug_8h.html" title="helper/debug.h" alt="" coords="93,155,200,181"/>
-<area shape="rect" id="node5" href="$namespace_8h.html" title="namespace.h" alt="" coords="365,80,465,107"/>
-<area shape="rect" id="node6" href="$type_8h.html" title="base/type.h" alt="" coords="325,155,416,181"/>
-<area shape="rect" id="node9" href="$message__base_8h.html" title="message_base.h" alt="" coords="489,80,610,107"/>
-<area shape="rect" id="node10" href="$_string_8h.html" title="String.h" alt="" coords="199,80,265,107"/>
+<area shape="rect" id="node5" href="$type_8h.html" title="base/type.h" alt="" coords="325,155,416,181"/>
+<area shape="rect" id="node8" href="$message__base_8h.html" title="message_base.h" alt="" coords="365,80,486,107"/>
+<area shape="rect" id="node9" href="$_string_8h.html" title="String.h" alt="" coords="199,80,265,107"/>
 </map>

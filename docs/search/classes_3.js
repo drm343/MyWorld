@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['immutablestring',['ImmutableString',['../struct_immutable_string.html',1,'']]]
+  ['list',['List',['../struct_list.html',1,'']]],
+  ['list_5fproperty',['List_Property',['../struct_list___property.html',1,'']]]
 ];

@@ -1,4 +1,20 @@
 var searchData=
 [
-  ['owner',['owner',['../struct_skill.html#a53d54fd6b3d68b923ee1e7a2be5c9ffa',1,'Skill::owner()'],['../struct_morph___property.html#ace7c3e610300f43399da0b4de246b4c8',1,'Morph_Property::owner()']]]
+  ['player',['player',['../struct_camera___type.html#aef87632a57148c31a5c6e47ce4c48e97',1,'Camera_Type']]],
+  ['point',['Point',['../struct_point.html',1,'Point'],['../_point_8h.html#a1f9386eb1cf5ee55c259c4f7e8a34eb3',1,'Point():&#160;Point.h']]],
+  ['point_2eh',['Point.h',['../_point_8h.html',1,'']]],
+  ['point_5fcreate',['Point_create',['../_point_8h.html#a885ff9c9a07f933961177021777a40c7',1,'Point.h']]],
+  ['point_5fequal',['Point_equal',['../_point_8h.html#a572582c7b7c761b98342269bd905a62a',1,'Point.h']]],
+  ['point_5ffree',['Point_free',['../_point_8h.html#acc064fcd0d03977db64ce0ebcdc9b9e9',1,'Point.h']]],
+  ['point_5fmove',['Point_move',['../_point_8h.html#ac82734dd7d31a11c776d678c8a03edcf',1,'Point.h']]],
+  ['point_5fmove_5fby_5fpoint',['Point_move_by_point',['../_point_8h.html#a8e2e869cf86ebcf10c303449fc8acc53',1,'Point.h']]],
+  ['point_5fprint',['Point_print',['../_point_8h.html#a9ff34b4a29f7f4c9424c493f7a76dac7',1,'Point.h']]],
+  ['point_5fset',['Point_set',['../_point_8h.html#a6e79248e927521ac1f23faf8013036ed',1,'Point.h']]],
+  ['point_5fset_5fby_5fpoint',['Point_set_by_point',['../_point_8h.html#a1bb878ce302067bfcb4a52b8e76942a8',1,'Point.h']]],
+  ['point_5fx',['Point_x',['../_point_8h.html#a369f905a1605acf45e88e5ffb908bd98',1,'Point.h']]],
+  ['point_5fy',['Point_y',['../_point_8h.html#a1d22997ab2610c6854864674050693ef',1,'Point.h']]],
+  ['pool',['pool',['../struct_skill___pool.html#ab0dc4b321d9a6d7564c9b74b83d92787',1,'Skill_Pool::pool()'],['../struct_character___pool.html#ae6235ba19cf58c9bc1514f0a7f2f1c7b',1,'Character_Pool::pool()'],['../struct_room___pool.html#a0cc274cdc8c484f48437c70279b89e9c',1,'Room_Pool::pool()'],['../struct_status___pool.html#a9eb8f8804bb30a92b4075219d52399c8',1,'Status_Pool::pool()'],['../struct_style___pool.html#ae68cb63156c957f564d9a9017ac70a8d',1,'Style_Pool::pool()']]],
+  ['position',['position',['../struct_morph___property.html#ad2a909baca1c640ce68abccca12ca396',1,'Morph_Property::position()'],['../struct_morph.html#a41b1dda400ba90c403fbd3263fd343c2',1,'Morph::position()']]],
+  ['previous',['previous',['../struct_node.html#a9a9311efc5dc64017bf492a386b77b0d',1,'Node']]],
+  ['property',['property',['../struct_list.html#ae723bad120ff889bb3b6039b0568a341',1,'List::property()'],['../struct_morph.html#ae723bad120ff889bb3b6039b0568a341',1,'Morph::property()']]]
 ];

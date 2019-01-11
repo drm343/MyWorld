@@ -71,7 +71,10 @@ var menudata={children:[
 {text:"y",url:"globals_y.html#index_y"}]},
 {text:"函式",url:"globals_func.html",children:[
 {text:"c",url:"globals_func.html#index_c"},
+{text:"f",url:"globals_func.html#index_f"},
 {text:"g",url:"globals_func.html#index_g"},
+{text:"i",url:"globals_func.html#index_i"},
+{text:"l",url:"globals_func.html#index_l"},
 {text:"m",url:"globals_func.html#index_m"},
 {text:"n",url:"globals_func.html#index_n"},
 {text:"p",url:"globals_func.html#index_p"},
@@ -80,7 +83,9 @@ var menudata={children:[
 {text:"t",url:"globals_func.html#index_t"}]},
 {text:"變數",url:"globals_vars.html"},
 {text:"型態定義",url:"globals_type.html",children:[
+{text:"a",url:"globals_type.html#index_a"},
 {text:"c",url:"globals_type.html#index_c"},
+{text:"f",url:"globals_type.html#index_f"},
 {text:"g",url:"globals_type.html#index_g"},
 {text:"i",url:"globals_type.html#index_i"},
 {text:"l",url:"globals_type.html#index_l"},
@@ -92,15 +97,4 @@ var menudata={children:[
 {text:"t",url:"globals_type.html#index_t"}]},
 {text:"列舉型態",url:"globals_enum.html"},
 {text:"列舉值",url:"globals_eval.html"},
-{text:"定義",url:"globals_defs.html",children:[
-{text:"b",url:"globals_defs.html#index_b"},
-{text:"c",url:"globals_defs.html#index_c"},
-{text:"d",url:"globals_defs.html#index_d"},
-{text:"e",url:"globals_defs.html#index_e"},
-{text:"g",url:"globals_defs.html#index_g"},
-{text:"m",url:"globals_defs.html#index_m"},
-{text:"n",url:"globals_defs.html#index_n"},
-{text:"p",url:"globals_defs.html#index_p"},
-{text:"r",url:"globals_defs.html#index_r"},
-{text:"s",url:"globals_defs.html#index_s"},
-{text:"t",url:"globals_defs.html#index_t"}]}]}]}]}
+{text:"定義",url:"globals_defs.html"}]}]}]}

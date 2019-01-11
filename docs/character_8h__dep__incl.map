@@ -1,8 +1,9 @@
 <map id="include/character.h" name="include/character.h">
-<area shape="rect" id="node2" href="$_character___list_8h.html" title="include/container/Character\l_List.h" alt="" coords="5,80,187,121"/>
-<area shape="rect" id="node3" href="$_character___pool_8h.html" title="include/container/Character\l_Pool.h" alt="" coords="211,80,392,121"/>
-<area shape="rect" id="node5" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="417,87,570,114"/>
-<area shape="rect" id="node4" href="$character__factory_8h.html" title="include/factory/character\l_factory.h" alt="" coords="219,169,384,211"/>
-<area shape="rect" id="node6" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="410,177,577,203"/>
-<area shape="rect" id="node7" href="$main_8h.html" title="include/main.h" alt="" coords="440,259,547,285"/>
+<area shape="rect" id="node2" href="$_character___pool_8h.html" title="include/Character_Pool.h" alt="" coords="17,80,185,107"/>
+<area shape="rect" id="node4" href="$game__status_8h.html" title="include/game_status.h" alt="" coords="215,80,369,107"/>
+<area shape="rect" id="node7" href="$_list-_faction_8h.html" title="include/List&#45;Faction.h" alt="" coords="393,80,540,107"/>
+<area shape="rect" id="node3" href="$character__factory_8h.html" title="include/character_factory.h" alt="" coords="5,162,184,189"/>
+<area shape="rect" id="node5" href="$graphic-camera_8h.html" title="include/graphic&#45;camera.h" alt="" coords="209,162,375,189"/>
+<area shape="rect" id="node6" href="$main_8h.html" title="include/main.h" alt="" coords="239,244,345,271"/>
+<area shape="rect" id="node8" href="$_list-_faction___group_8h.html" title="include/List&#45;Faction\l_Group.h" alt="" coords="399,155,534,196"/>
 </map>

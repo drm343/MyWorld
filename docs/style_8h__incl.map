@@ -1,6 +1,5 @@
 <map id="include/style.h" name="include/style.h">
 <area shape="rect" id="node4" href="$_string_8h.html" title="String.h" alt="" coords="264,80,331,107"/>
-<area shape="rect" id="node8" href="$type_8h.html" title="base/type.h" alt="" coords="385,155,476,181"/>
-<area shape="rect" id="node11" href="$namespace_8h.html" title="namespace.h" alt="" coords="430,80,530,107"/>
-<area shape="rect" id="node10" href="$debug_8h.html" title="helper/debug.h" alt="" coords="204,155,311,181"/>
+<area shape="rect" id="node8" href="$type_8h.html" title="base/type.h" alt="" coords="405,155,496,181"/>
+<area shape="rect" id="node10" href="$debug_8h.html" title="helper/debug.h" alt="" coords="224,155,331,181"/>
 </map>

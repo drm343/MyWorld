@@ -1,4 +1,4 @@
 <map id="Room_Pool" name="Room_Pool">
-<area shape="rect" id="node2" href="$struct___room___item.html" title="_Room_Item" alt="" coords="69,95,166,121"/>
-<area shape="rect" id="node3" href="$struct_room.html" title="Room" alt="" coords="7,5,65,32"/>
+<area shape="rect" id="node2" href="$struct_room___item.html" title="Room_Item" alt="" coords="69,95,160,121"/>
+<area shape="rect" id="node3" href="$struct_room.html" title="Room" alt="" coords="9,5,66,32"/>
 </map>

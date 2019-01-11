@@ -59,7 +59,8 @@ $(function() {
 </div><!-- top -->
 <div class="contents">
 <div class="toc"><h3>目錄</h3>
-<ul><li class="level1"><a href="#命名規範">命名規範</a><ul><li class="level2"><a href="#Object_Access">Object_Access</a></li>
+<ul><li class="level1"><a href="#命名規範">命名規範</a><ul><li class="level2"><a href="#Access">Access</a></li>
+<li class="level2"><a href="#Object_Access">Object_Access</a></li>
 <li class="level2"><a href="#Namespace">Namespace</a></li>
 <li class="level2"><a href="#API">API</a></li>
 <li class="level2"><a href="#內部使用的函數">內部使用的函數</a></li>
@@ -74,12 +75,16 @@ $(function() {
 <h2><a class="anchor" id="Access"></a>
 Access</h2>
 <p>只有透過 typedef 重新命名的結構能在最後方加上 _Access，也只有這種狀況下才能命名為 _Access。</p>
+<p>這個名詞從 Ada 中取過來的，類似 C 的 Pointer，但擁有更多特性，凡是看到 type 後面加上 _Access 的 一律等同於前面所提物件在程式上的定義，這是為了避免使用太多 * 而採用的名稱慣例。</p>
+<p>文件中單純只寫 Access 的情況則可以看成物件在記憶體中的實際位置。</p>
+<dl class="section note"><dt>註</dt><dd>要注意這是 C 不是 Ada，因此 Access 並沒有真的像 Ada 一樣有更多特性可以使用。 </dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>未來將會移除</dd></dl>
 <h2><a class="anchor" id="Object_Access"></a>
 Object_Access</h2>
 <p>結構如果出現 ** 的地方，請 typedef 改成 _Object_Access，避免太多星號導致程式碼難以 debug 或閱讀。</p>
 <h2><a class="anchor" id="Namespace"></a>
 Namespace</h2>
-<p>利用 macro 做 namespace，請在 <a class="el" href="namespace_8h.html">namespace.h</a> 中加入定義。</p>
+<p>利用 macro 做 namespace，請在 namespace.h 中加入定義。</p>
 <p>程式中寫 EXPORT 的都代表該函數對外開放，之後為了統一命名空間，會將 EXPORT 轉換為相對應的 namespace macro。</p>
 <h2><a class="anchor" id="API"></a>
 API</h2>
@@ -94,7 +99,7 @@ API</h2>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-產生日期:2018年10月31日 星期三 23:50:26, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
+產生日期:2019年1月11日 星期五 19:42:32, 專案:MyWorld, 產生器: &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

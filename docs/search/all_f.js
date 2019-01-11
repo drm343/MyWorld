@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['quit',['QUIT',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160a76bdc8adfd6c6463ab269ff4c06be9b4',1,'message_base.h']]]
+  ['race',['race',['../struct_status.html#a9b76de32916a710bdbe9435bb8d83b5a',1,'Status']]],
+  ['real_5fposition',['Real_Position',['../struct_character.html#a854171329b65e2f5ca856e190d7b45aa',1,'Character']]],
+  ['rect',['RECT',['../_rectangle_8h.html#abe81970494b081bc033e8543c9747705',1,'Rectangle.h']]],
+  ['rect_5fset_5fextent',['RECT_set_extent',['../_rectangle_8h.html#ae94c232b5f993eeef940c09086fe4d6a',1,'Rectangle.h']]],
+  ['rect_5fset_5fposition',['RECT_set_position',['../_rectangle_8h.html#a3b193166c6acdd7c62283b48ad3e0b07',1,'Rectangle.h']]],
+  ['rectangle',['Rectangle',['../_rectangle_8h.html#a0c85495f953ca53e5f51b979e5be4339',1,'Rectangle.h']]],
+  ['rectangle_2eh',['Rectangle.h',['../_rectangle_8h.html',1,'']]],
+  ['rectangle_5ftype_5fcreate',['Rectangle_Type_create',['../_rectangle_8h.html#aac80c6fe429fafc74e27b86086546c64',1,'Rectangle.h']]],
+  ['rectangle_5ftype_5fdiagonal_5flength',['Rectangle_Type_diagonal_length',['../_rectangle_8h.html#afce2345f0e3f6c3af94bfde23c338473',1,'Rectangle.h']]],
+  ['rectangle_5ftype_5fextent',['Rectangle_Type_extent',['../_rectangle_8h.html#a28965e9b9182206f0283d2b73bbeabe4',1,'Rectangle.h']]],
+  ['rectangle_5ftype_5ffree',['Rectangle_Type_free',['../_rectangle_8h.html#a6cf21dcdb861e20fd60afa3e4e6106fc',1,'Rectangle.h']]],
+  ['rectangle_5ftype_5fposition',['Rectangle_Type_position',['../_rectangle_8h.html#aaf34e2992289aa0bf13c00185bae48f0',1,'Rectangle.h']]],
+  ['rectangle_5ftype_5fset_5fextent',['Rectangle_Type_set_extent',['../_rectangle_8h.html#a9671072fc389cfcd949e4c481cde745d',1,'Rectangle.h']]],
+  ['rectangle_5ftype_5fset_5fposition',['Rectangle_Type_set_position',['../_rectangle_8h.html#ab8c1b022a4308f388f2fdc3f089fcc50',1,'Rectangle.h']]],
+  ['release_5fclass',['RELEASE_CLASS',['../_base_class_8h.html#a237f39e293bce9e565b9a588cba47629',1,'BaseClass.h']]],
+  ['remove',['remove',['../struct_skill___a_p_i.html#ae051dc72b0e6a4616fb0eadeafd139f4',1,'Skill_API::remove()'],['../struct_list.html#a07d1dffc9c07340b719f5fc9d3e3e96c',1,'List::remove()']]],
+  ['reset_5fiterator',['reset_iterator',['../struct_list.html#adbe39b02b0cc7e55386aeb8eed9e9cf6',1,'List']]],
+  ['right',['RIGHT',['../message__base_8h.html#a1b620cd54f3d6b48f3c5f7979545b160aec8379af7490bb9eaaf579cf17876f38',1,'message_base.h']]],
+  ['room',['Room',['../struct_room.html',1,'Room'],['../room_8h.html#abb026b6b79c6b8d90094b867cee9c07d',1,'Room():&#160;room.h']]],
+  ['room_2eh',['room.h',['../room_8h.html',1,'']]],
+  ['room_5fcompare_5fsmall',['Room_compare_small',['../room_8h.html#a157e979461cb61b2a028c8e47a776abd',1,'room.h']]],
+  ['room_5fitem',['Room_Item',['../struct_room___item.html',1,'Room_Item'],['../_room___pool_8h.html#a2f69cd9e4dcccbf26ca9c3b28c9ab784',1,'Room_Item():&#160;Room_Pool.h']]],
+  ['room_5fpool',['Room_Pool',['../struct_room___pool.html',1,'']]],
+  ['room_5fpool_2eh',['Room_Pool.h',['../_room___pool_8h.html',1,'']]],
+  ['room_5fpool_5fmalloc',['Room_Pool_malloc',['../_room___pool_8h.html#a0a7c99f87a94ea3d9bbededa3d333392',1,'Room_Pool.h']]],
+  ['room_5fpool_5fstart',['Room_Pool_start',['../_room___pool_8h.html#a355375dc026d871ac95954fb1fc7b4de',1,'Room_Pool.h']]],
+  ['room_5fpool_5fstop',['Room_Pool_stop',['../_room___pool_8h.html#af367fdf1d49e84eda8750c76b95abdd5',1,'Room_Pool.h']]],
+  ['room_5fset_5frandom_5fposition',['Room_set_random_position',['../room_8h.html#acac0afbfc4f5b9aab61de5a5bf1716c2',1,'room.h']]]
 ];
