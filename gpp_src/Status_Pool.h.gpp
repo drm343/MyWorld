@@ -1,4 +1,0 @@
-#define HEADER HEADER_Status_Pool
-#define INCLUDE_HEADER status.h
-#define CONTENT Status
-#include BASE_POOL.h.gpp
