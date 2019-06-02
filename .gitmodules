@@ -1,6 +1,0 @@
-[submodule "pure_functional_maps"]
-	path = submodules/mulklib
-	url = git@github.com:drm343/mulklib.git
-[submodule "avl"]
-	path = submodules/avl
-	url = git@github.com:drm343/avl.git
