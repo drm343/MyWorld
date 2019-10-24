@@ -6,7 +6,7 @@
 
 #include "String.h"
 
-#include "base/type.h"
+#include "type.h"
 
 
 typedef SDL_Texture *SDL_Texture_Access;

@@ -1,0 +1,10 @@
+prefix=./src/base
+exec_prefix=${prefix}
+libdir=${exec_prefix}
+includedir=${exec_prefix}
+ 
+Name: libbase
+Description:
+Version: 0.0.1
+Libs: ${libdir}/String.o ${libdir}/class.o ${libdir}/point.o ${libdir}/rectangle.o
+Cflags: -I${includedir}

@@ -1,0 +1,10 @@
+prefix=./src/list
+exec_prefix=${prefix}
+libdir=${exec_prefix}
+includedir=${exec_prefix}
+ 
+Name: liblist
+Description: List
+Version: 0.0.1
+Libs: ${libdir}/List.o ${libdir}/List-Iterator.o ${libdir}/List-Faction.o ${libdir}/List-Faction_Group.o
+Cflags: -I${includedir}

@@ -1,0 +1,10 @@
+prefix=./src/graphic
+exec_prefix=${prefix}
+libdir=${exec_prefix}
+includedir=${exec_prefix}
+ 
+Name: libgraphic
+Description:
+Version: 0.0.1
+Libs: ${libdir}/camera.o ${libdir}/message.o ${libdir}/style.o
+Cflags: -I${includedir}

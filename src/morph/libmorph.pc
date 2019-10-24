@@ -1,0 +1,10 @@
+prefix=./src/morph
+exec_prefix=${prefix}
+libdir=${exec_prefix}
+includedir=${exec_prefix}
+ 
+Name: libmorph
+Description: Morph graphic system
+Version: 0.0.1
+Libs:
+Cflags: -I${includedir}

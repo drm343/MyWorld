@@ -130,6 +130,7 @@ ImmutableString String_append_c_str(ImmutableString self, const char *str)
     strcat(other->str, str);
     other->utf8_length = String_length(str);
     other->width_length = String_width_length(str);
+    return other;
 }
 
 /** @brief 釋放 ImmutableString 物件

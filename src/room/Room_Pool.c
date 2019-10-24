@@ -1,10 +1,5 @@
 #include "Room_Pool.h"
 
-/** file
- * 
- * 此結構與程式由 gpp 自動產生。
- * 請修改 BASE_POOL.gpp。
- */
 
 Room_Pool *Room_Pool_start(uint8_t max_size)
 {

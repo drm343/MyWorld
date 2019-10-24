@@ -6,11 +6,6 @@
 
 #include "room.h"
 
-/** file
- * 
- * 此結構與程式由 gpp 自動產生。
- * 請修改 BASE_POOL.h.gpp。
- */
 
 typedef struct Room_Item {
     Room *content;

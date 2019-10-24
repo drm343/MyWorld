@@ -1,7 +1,7 @@
 #ifndef HEADER_MAP_SYSTEM_OBJECT
 #define HEADER_MAP_SYSTEM_OBJECT
 
-#include "base/type.h"
+#include "type.h"
 #include "Rectangle.h"
 #include "style.h"
 

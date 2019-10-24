@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "base/type.h"
+#include "type.h"
 #include "helper/debug.h"
 
 

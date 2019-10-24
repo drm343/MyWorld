@@ -1,0 +1,10 @@
+prefix=./src/character
+exec_prefix=${prefix}
+libdir=${exec_prefix}
+includedir=${exec_prefix}
+ 
+Name: libcharacter
+Description:
+Version: 0.0.1
+Libs: ${libdir}/Character_Pool.o ${libdir}/Status_Pool.o ${libdir}/character.o ${libdir}/character_factory.o ${libdir}/status.o
+Cflags: -I${includedir}

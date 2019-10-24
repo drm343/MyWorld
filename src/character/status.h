@@ -5,7 +5,7 @@
 
 #include "helper/debug.h"
 
-#include "base/type.h"
+#include "type.h"
 #include "message_base.h"
 
 
