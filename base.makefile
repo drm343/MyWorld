@@ -1,7 +1,7 @@
 COMPILER ?= gcc
 STD ?=-std=gnu11 -fms-extensions
 DEBUG=-DDEBUG
-INCLUDE_DEP += -I ../base
+INCLUDE_DEP += -I ../base -I ../pool
 
 .PHONY: clean pc
 

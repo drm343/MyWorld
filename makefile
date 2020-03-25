@@ -47,7 +47,7 @@ DEBUG=-DDEBUG
 
 CHECK_DIR := $(USER) $(BIN) $(FONTS) $(PKGCONFIG)
 
-DEP := base pool morph room character list graphic application
+DEP := base morph room character list graphic application
 INCLUDE += $(foreach i, $(DEP), `pkg-config $i --cflags`)
 
 
