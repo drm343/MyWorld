@@ -11,14 +11,14 @@ typedef struct Custom_Property {
     /** @brief 呼叫 Morph 的上一層 free 函數
      * @param self Morph 物件
      */
-    void (*super_free) (Morph self);
+    void (*super_free)(Morph self);
 } *Custom_Property;
 
 
 /** @brief 刪除 Morph_Message
  * @param self Morph Message 物件
 */
-static void M_MESSAGE(free) (Morph_Message self) {
+static void morph_msg_free (Morph_Message self) {
     if (self != NULL) {
         Custom_Property property = self->property;
 
@@ -26,7 +26,7 @@ static void M_MESSAGE(free) (Morph_Message self) {
             String_free(property->string);
         }
         SDL_DestroyTexture(property->texture);
-        void (*super_free) (Morph) = property->super_free;
+        void (*super_free)(Morph) = property->super_free;
         super_free(self);
         free(property);
     }
@@ -38,10 +38,10 @@ static void M_MESSAGE(free) (Morph_Message self) {
  * @param message 要儲存的訊息
  * @return Morph Message
 */
-static Custom_Property M_MESSAGE(new_custom_property) (Morph_Message self,
+static Custom_Property morph_msg_new_custom_property (Morph_Message self,
                                                        const char *message)
 {
-    TTF_Font *USE_FONT = M_SDL2(font) ();
+    TTF_Font * USE_FONT = morph_sdl2_font ();
 
     Custom_Property origin_property = self->property;
     Custom_Property property = NEW(Custom_Property);
@@ -66,9 +66,9 @@ static Custom_Property M_MESSAGE(new_custom_property) (Morph_Message self,
  * @param self Morph
  * @param message 要儲存的訊息
 */
-static void M_MESSAGE(reset_custom_property) (Morph_Message self,
+static void morph_msg_reset_custom_property (Morph_Message self,
                                               const char *message) {
-    TTF_Font *USE_FONT = M_SDL2(font) ();
+    TTF_Font * USE_FONT = morph_sdl2_font ();
     Custom_Property property = self->property;
 
     String_free(property->string);
@@ -89,7 +89,7 @@ static void M_MESSAGE(reset_custom_property) (Morph_Message self,
 /** @brief 釋放 Custom_Property
  * @param property
 */
-static void M_MESSAGE(free_custom_property) (Custom_Property property) {
+static void morph_msg_free_custom_property (Custom_Property property) {
     if (property->string != NULL) {
         String_free(property->string);
     }
@@ -103,7 +103,7 @@ static void M_MESSAGE(free_custom_property) (Custom_Property property) {
  * @param self 訊息欄
  * @param property 想修改的 property
 */
-static void M_MESSAGE(update_property) (Morph_Message self,
+static void morph_msg_update_property (Morph_Message self,
                                         Custom_Property property) {
     Custom_Property origin_property = self->property;
     self->property = property;
@@ -114,20 +114,20 @@ static void M_MESSAGE(update_property) (Morph_Message self,
     }
 
     if (self->morph->submorph != NULL) {
-        if (M_MESSAGE(is_morph_message) (self->morph->submorph) == true) {
-            M_MESSAGE(update_property) (self->morph->submorph,
+        if (morph_msg_is_morph_message (self->morph->submorph) == true) {
+            morph_msg_update_property (self->morph->submorph,
                                         origin_property);
             return;
         }
     }
-    M_MESSAGE(free_custom_property) (origin_property);
+    morph_msg_free_custom_property (origin_property);
 }
 
 
 /** @brief 在螢幕上畫出 Morph 物件
  * @param self Morph 物件
  */
-static void M_MESSAGE(draw) (Morph_Message self) {
+static void morph_msg_draw (Morph_Message self) {
     Point position = self->position(self);
     Point extent = self->extent(self);
 
@@ -154,32 +154,30 @@ static void M_MESSAGE(draw) (Morph_Message self) {
 /** @brief 建立 Morph_Message
  * @return Morph Message
 */
-Morph_Message M_MESSAGE(create) (void) {
-    if (M_SDL2(is_setup_success) () == false) {
+Morph_Message morph_msg_create (void) {
+    if (morph_sdl2_is_setup_success () == false) {
         DEBUG_MESSAGE("This line will not appear\n");
         return NULL;
     }
 
     if (CLASS_ID == NULL) {
         CLASS_ID = NEW_CLASS_ID();
-    } else {
+    }
+    else {
         CLASS_ID->counter = CLASS_ID->counter + 1;
     }
 
     Morph_Message self =
-        MORPH(create) (M_SDL2(init_color), M_SDL2(free_color));
-
+        morph_create (morph_sdl2_init_color, morph_sdl2_free_color);
     self->class = CLASS_ID;
-
     Custom_Property property = NEW(Custom_Property);
     self->property = property;
-    self->property->render = M_SDL2(render) ();
+    self->property->render = morph_sdl2_render ();
     self->property->string = NULL;
     self->property->texture = NULL;
-
     self->property->super_free = self->free;
-    self->free = M_MESSAGE(free);
-    self->draw = M_MESSAGE(draw);
+    self->free = morph_msg_free;
+    self->draw = morph_msg_draw;
     return self;
 }
 
@@ -188,22 +186,23 @@ Morph_Message M_MESSAGE(create) (void) {
  * @param self 訊息欄
  * @param message 想加入的訊息
 */
-void M_MESSAGE(add_message) (Morph_Message self, const char *message) {
+void morph_msg_add_message(Morph_Message self, const char *message) {
     if (self->morph->submorph != NULL) {
-        if (M_MESSAGE(is_morph_message) (self->morph->submorph) == true) {
+        if (morph_msg_is_morph_message (self->morph->submorph) == true) {
             Custom_Property property =
-                M_MESSAGE(new_custom_property) (self, message);
-            M_MESSAGE(update_property) (self->morph->submorph, property);
+                morph_msg_new_custom_property (self,
+                        message);
+            morph_msg_update_property (self->morph->submorph, property);
             return;
         }
     }
-    M_MESSAGE(reset_custom_property) (self, message);
+    morph_msg_reset_custom_property(self, message);
 }
 
 
 /** @brief 確認是不是訊息顯示欄
  * @param self 訊息顯示欄
 */
-bool M_MESSAGE(is_morph_message) (Morph_Message self) {
+bool morph_msg_is_morph_message (Morph_Message self) {
     return CHECK_CLASS(self->class, CLASS_ID);
 }

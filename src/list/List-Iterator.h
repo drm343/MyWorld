@@ -4,29 +4,26 @@
 #include "List.h"
 
 
-#define ITER(name) Iterator_##name
-
-
 /* @brief 用來簡化 Faction_Group 的 reset_iterator 跟 next 操作
  */
 typedef List Iterator;
 
-Iterator ITER(create) (void);
-void ITER(copy) (Iterator self, List from);
+Iterator Iterator_create (void);
+void Iterator_copy (Iterator self, List from);
 
 
 /* @brief 重設 Iterator 並且回傳第一個資料
  * @param self Iterator 自己
  * @return 第一個資料
  */
-void *ITER(reset_iterator) (Iterator self);
+void *Iterator_reset_iterator (Iterator self);
 
 
 /* @brief 取出 Iterator 的下一個資料
  * @param self Iterator 自己
  * @return 下一個資料
  */
-void *ITER(next) (Iterator self);
+void *Iterator_next (Iterator self);
 
 
 /* @brief 驗證 Iterator 是否完成
@@ -37,5 +34,5 @@ void *ITER(next) (Iterator self);
  *
  * 需要不會自己釋放的版本來重複使用 Iterator 的記憶體並且減少要求記憶體的次數。
  */
-bool ITER(done) (Iterator self);
+bool Iterator_done (Iterator self);
 #endif

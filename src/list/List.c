@@ -5,14 +5,14 @@ typedef struct Custom_Property {
 } *Custom_Property;
 
 
-static void LIST(free) (List self) {
+static void list_free (List self) {
     if (self == NULL) {
         return;
     }
     List_Property list = self->list;
     Node current = NULL;
     Node next = NULL;
-    void (*free_content) (void *content) = self->free_content;
+    void (*free_content)(void *content) = self->free_content;
 
     if (list->first != NULL) {
         current = list->first;
@@ -33,7 +33,7 @@ static void LIST(free) (List self) {
 }
 
 
-static uint8_t LIST(insert) (List self, void *item) {
+static uint8_t list_insert (List self, void *item) {
     List_Property list = self->list;
     uint8_t counter = list->counter;
 
@@ -64,14 +64,14 @@ static uint8_t LIST(insert) (List self, void *item) {
 }
 
 
-static bool LIST(remove) (List self, void *item) {
+static bool list_remove (List self, void *item) {
     List_Property list = self->list;
 
     Node current = list->first;
     Node next = NULL;
     Node previous = NULL;
     void *current_item = NULL;
-    bool(*content_is_equal) (void *content_1, void *content_2) =
+    bool (*content_is_equal)(void *content_1, void *content_2) =
         self->content_is_equal;
 
     while (current != NULL) {
@@ -108,7 +108,7 @@ static bool LIST(remove) (List self, void *item) {
 }
 
 
-static void LIST(show) (List self) {
+static void list_show (List self) {
     List_Property list = self->list;
     Node current;
     Node next;
@@ -129,7 +129,7 @@ static void LIST(show) (List self) {
 }
 
 
-static void *LIST(reset_iterator) (List self) {
+static void *list_reset_iterator (List self) {
     List_Property list = self->list;
     Node current = list->first;
     list->current = current;
@@ -142,7 +142,7 @@ static void *LIST(reset_iterator) (List self) {
 }
 
 
-static void *LIST(next) (List self, void *item) {
+static void *list_next (List self, void *item) {
     List_Property list = self->list;
 
     Node current = NULL;
@@ -150,7 +150,7 @@ static void *LIST(next) (List self, void *item) {
     Node next = NULL;
     Node previous = NULL;
     void *current_item = NULL;
-    bool(*content_is_equal) (void *content_1, void *content_2) =
+    bool (*content_is_equal)(void *content_1, void *content_2) =
         self->content_is_equal;
 
     bool BACKWARD = true;
@@ -203,12 +203,12 @@ static void *LIST(next) (List self, void *item) {
 }
 
 
-static uint8_t LIST(size) (List self) {
+static uint8_t list_size (List self) {
     return self->list->counter;
 }
 
 
-List LIST(create) (COMPARE content_is_equal, CALLBACK free_content,
+List list_create (COMPARE content_is_equal, CALLBACK free_content,
                    CALLBACK show_content) {
     List self;
     self = calloc(1, sizeof(*self));
@@ -226,12 +226,12 @@ List LIST(create) (COMPARE content_is_equal, CALLBACK free_content,
     self->free_content = free_content;
     self->show_content = show_content;
     self->content_is_equal = content_is_equal;
-    self->free = LIST(free);
-    self->insert = LIST(insert);
-    self->remove = LIST(remove);
-    self->show = LIST(show);
-    self->reset_iterator = LIST(reset_iterator);
-    self->next = LIST(next);
-    self->size = LIST(size);
+    self->free = list_free;
+    self->insert = list_insert;
+    self->remove = list_remove;
+    self->show = list_show;
+    self->reset_iterator = list_reset_iterator;
+    self->next = list_next;
+    self->size = list_size;
     return self;
 }

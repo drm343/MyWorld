@@ -5,25 +5,25 @@ typedef struct Custom_Property {
 } *Custom_Property;
 
 
-static void F_GROUP(free_list) (void *content) {
+static void faction_group_free_list (void *content) {
     List self = content;
     self->free(self);
 }
 
 
-Faction_Group F_GROUP(create) (void) {
-    Faction_Group self = LIST(create) (NULL, F_GROUP(free_list), NULL);
+Faction_Group faction_group_create (void) {
+    Faction_Group self = list_create (NULL, faction_group_free_list, NULL);
     return self;
 }
 
 
-Faction_Group F_GROUP(create_without_free_list) (void) {
-    Faction_Group self = LIST(create) (NULL, NULL, NULL);
+Faction_Group faction_group_create_without_free_list (void) {
+    Faction_Group self = list_create (NULL, NULL, NULL);
     return self;
 }
 
 
-Faction_List F_GROUP(get_random_target) (Faction_Group self) {
+Faction_List faction_group_get_random_target (Faction_Group self) {
     List_Property list = self->list;
 
     uint8_t used = list->counter;
@@ -66,18 +66,18 @@ Faction_List F_GROUP(get_random_target) (Faction_Group self) {
 }
 
 
-void F_GROUP(link) (Faction_Group self, List item) {
+void faction_group_link (Faction_Group self, List item) {
     item->list->owner = self;
     self->insert(self, item);
 }
 
 
-Iterator F_GROUP(to_iterator) (Faction_Group self) {
-    Iterator iterator = ITER(create) ();
+Iterator faction_group_to_iterator (Faction_Group self) {
+    Iterator iterator = Iterator_create ();
 
     for (Faction_List list = self->reset_iterator(self); list != NULL;
          list = self->next(self, list)) {
-        ITER(copy) (iterator, list);
+        Iterator_copy (iterator, list);
     }
     return iterator;
 }

@@ -5,11 +5,8 @@
 #include "String.h"
 
 
-#define LIST(name) List_##name
-
-
-typedef void (*CALLBACK) (void *content);
-typedef bool(*COMPARE) (void *content_1, void *content_2);
+typedef void (*CALLBACK)(void *content);
+typedef bool (*COMPARE)(void *content_1, void *content_2);
 typedef struct List *List;
 
 
@@ -32,22 +29,22 @@ typedef struct List_Property {
 
 typedef struct List {
     Class class;
-     LIST(Property) list;
+     List_Property list;
     Custom_Property property;
 
-    void (*free_content) (void *content);
-    void (*show_content) (void *content);
-     bool(*content_is_equal) (void *content_1, void *content_2);
-    void (*free) (struct List * self);
+    void (*free_content)(void *content);
+    void (*show_content)(void *content);
+    bool (*content_is_equal)(void *content_1, void *content_2);
+    void (*free)(struct List * self);
      uint8_t(*insert) (struct List * self, void *item);
-     bool(*remove) (struct List * self, void *item);
-    void (*show) (struct List * self);
-    void *(*reset_iterator) (struct List * self);
-    void *(*next) (struct List * self, void *item);
+    bool (*remove)(struct List * self, void *item);
+    void (*show)(struct List * self);
+    void *(*reset_iterator)(struct List * self);
+    void *(*next)(struct List * self, void *item);
      uint8_t(*size) (struct List * self);
 } *List;
 
 
-List LIST(create) (COMPARE content_is_equal, CALLBACK free_content,
+List list_create (COMPARE content_is_equal, CALLBACK free_content,
                    CALLBACK show_content);
 #endif

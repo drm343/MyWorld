@@ -4,16 +4,15 @@
 #include "List-Faction.h"
 #include "List-Iterator.h"
 
-#define F_GROUP(name) Faction_Group_##name
 
 typedef List Faction_Group;
 
-Faction_Group F_GROUP(create) (void);
-Faction_Group F_GROUP(create_without_free_list) (void);
+Faction_Group faction_group_create (void);
+Faction_Group faction_group_create_without_free_list (void);
 
-void F_GROUP(link) (Faction_Group self, List item);
+void faction_group_link (Faction_Group self, List item);
 
-Faction_List F_GROUP(get_random_target) (Faction_Group self);
+Faction_List faction_group_get_random_target (Faction_Group self);
 
-Iterator F_GROUP(to_iterator) (Faction_Group self);
+Iterator faction_group_to_iterator (Faction_Group self);
 #endif
